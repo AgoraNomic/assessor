@@ -184,6 +184,7 @@ class _AssessmentReceiver {
 
     class _VotingReciever {
         private val m_votes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
+        private val m_totalEndorsements = mutableMapOf<Player, Player>()
 
         class _VotesReceiver(private val proposal: ProposalNumber) {
             private val m_map = mutableMapOf<Player, _MutableVote>()
@@ -248,6 +249,10 @@ class _AssessmentReceiver {
             }
         }
 
+        infix fun Player.alwaysEndorses(other: Player) {
+            m_totalEndorsements[this] = other
+        }
+
         fun votes(proposal: ProposalNumber, block: _VotesReceiver.() -> Unit) {
             val receiver = _VotesReceiver(proposal)
             receiver.block()
@@ -255,7 +260,21 @@ class _AssessmentReceiver {
         }
 
         fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
-            return m_votes
+            return m_votes.mapValues { (_, voteMap) ->
+                val newMap = voteMap.map.toMutableMap()
+
+                for (endorsement in m_totalEndorsements) {
+                    if (newMap.containsKey(endorsement.key)) continue
+
+                    if (newMap.containsKey(endorsement.value)) {
+                        newMap[endorsement.key] = newMap[endorsement.value]!!.copy()
+                    } else {
+                        throw IllegalStateException("Invalid use of alwaysEndorses")
+                    }
+                }
+
+                SingleProposalVoteMap(newMap)
+            }
         }
     }
 
