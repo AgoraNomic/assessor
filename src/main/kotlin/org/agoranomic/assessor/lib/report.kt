@@ -113,7 +113,9 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
     }
 }
 
-fun report(resolutionMap: ProposalResolutionMap): String {
+data class ReportConfig(val voteComments: Boolean = true)
+
+fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     val output = StringBuilder()
@@ -134,7 +136,7 @@ fun report(resolutionMap: ProposalResolutionMap): String {
             emitProposalVotes(resolution.votes)
             emitProposalAI(resolution, proposal.ai)
             emitProposalOutcome(resolution)
-            emitVoteComments(resolution)
+            if (config.voteComments) emitVoteComments(resolution)
             emitNewLine()
         }
 
