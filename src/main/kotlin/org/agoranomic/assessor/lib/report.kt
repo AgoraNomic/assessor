@@ -14,7 +14,7 @@ fun StringBuilder.emitLine(string: String) {
 }
 
 fun StringBuilder.emitHeader() {
-    emitLine("I hereby resolve all of the below proposals.")
+    emitLine("I hereby resolve the Agoran decisions to adopt the below proposals.")
 }
 
 fun StringBuilder.emitQuorum(quorum: Int) {
