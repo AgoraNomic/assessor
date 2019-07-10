@@ -90,14 +90,20 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
     val sortedProposals = proposals.sortedBy { it.number }
 
     if (sortedProposals.isNotEmpty()) {
-        emitLine("The id, title, and text of each ADOPTED proposal is included below:")
+        emitLine("The full text of each ADOPTED proposal is included below:")
         emitNewLine()
 
         for (proposal in sortedProposals) {
             emitSeparator()
             emitLine("ID: ${proposal.number}")
             emitLine("Title: ${proposal.title}")
+            emitLine("Adoption index: ${proposal.ai}")
+            emitLine("Author: ${proposal.author.name}")
+            emitLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
+            emitNewLine()
+            emitNewLine()
             emitString(proposal.text.trim())
+            emitNewLine()
             emitNewLine()
         }
 

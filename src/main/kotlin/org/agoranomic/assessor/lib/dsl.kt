@@ -106,6 +106,8 @@ class _AssessmentReceiver {
             private var m_text: String? = null
             private var m_votes: SingleProposalVoteMap? = null
             private var m_ai: ProposalAI? = null
+            private var m_author: Player? = null
+            private var m_coauthors: List<Player>? = null
 
             constructor(number: ProposalNumber) {
                 this.m_number = number
@@ -117,6 +119,14 @@ class _AssessmentReceiver {
 
             fun text(str: String) {
                 m_text = str
+            }
+
+            fun author(value: Player) {
+                m_author = value
+            }
+
+            fun coauthors(vararg players: Player) {
+                m_coauthors = players.toList()
             }
 
             fun adoption_index(value: ProposalAI) {
@@ -137,6 +147,8 @@ class _AssessmentReceiver {
                     m_number,
                     m_ai ?: throw IllegalStateException("Must specify AI"),
                     m_title ?: throw IllegalStateException("Must specify proposal title"),
+                    m_author ?: throw IllegalStateException("Must specify author"),
+                    m_coauthors ?: emptyList(),
                     m_text ?: throw IllegalStateException("Must specify proposal text")
                 )
             }
