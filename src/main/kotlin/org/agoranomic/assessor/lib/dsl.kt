@@ -46,7 +46,12 @@ data class MultiProposalVoteMap(private val map: Map<ProposalNumber, SinglePropo
     }
 }
 
-data class AssessmentData(val quorum: Int, val votingStrengths: VotingStrengthMap, val proposals: Set<Proposal>, val votes: MultiProposalVoteMap)
+data class AssessmentData(
+    val quorum: Int,
+    val votingStrengths: VotingStrengthMap,
+    val proposals: Set<Proposal>,
+    val votes: MultiProposalVoteMap
+)
 
 class _AssessmentReceiver {
 
@@ -182,6 +187,7 @@ class _AssessmentReceiver {
 
         class _VotesReceiver(private val proposal: ProposalNumber) {
             private val m_map = mutableMapOf<Player, _MutableVote>()
+            private val m_endorsements = mutableMapOf<Player, Player>()
 
             data class _MutableVote(val value: VoteKind, var comment: String? = null)
 
@@ -192,17 +198,53 @@ class _AssessmentReceiver {
                 return vote
             }
 
+            infix fun Player.endorses(other: Player) {
+                m_endorsements[this] = other
+            }
+
             infix fun _MutableVote.comment(value: String) {
                 this.comment = value
             }
 
+            private fun isVoter(player: Player): Boolean {
+                return (m_map.containsKey(player) || m_endorsements.containsKey(player))
+            }
+
+            private fun resolveVote(player: Player, vararg playersSeen: Player): Vote {
+                if (m_map.containsKey(player)) return {
+                    val rawVote = m_map[player]!!
+                    Vote(rawVote.value, rawVote.comment)
+                }()
+
+                if (m_endorsements.containsKey(player)) return {
+                    val endorsee = m_endorsements[player]!!
+                    if (playersSeen.contains(endorsee)) throw IllegalStateException("Endorsement cycle")
+
+                    val ret: Vote
+
+                    if (isVoter(endorsee)) {
+                        ret = resolveVote(
+                            endorsee,
+                            *((playersSeen.toList() + player).toTypedArray())
+                        ).copy(comment = "Endorsement of ${endorsee.name}")
+                    } else {
+                        ret = Vote(
+                            VoteKind.PRESENT,
+                            "Inextricable: endorsed non-voter"
+                        )
+                    }
+
+                    ret
+                }()
+
+                val isEndorsement = playersSeen.isNotEmpty()
+                if (isEndorsement) return Vote(VoteKind.PRESENT, "Inextricable: endorsement of non-voter")
+                else throw IllegalArgumentException("No vote information for $player.")
+            }
+
             fun compile(): SingleProposalVoteMap {
-                return SingleProposalVoteMap(m_map.mapValues { (_, vote) ->
-                    Vote(
-                        vote.value,
-                        vote.comment
-                    )
-                })
+                val simpleVotes = (m_map.keys + m_endorsements.keys).associateWith { resolveVote(it) }
+                return SingleProposalVoteMap(simpleVotes)
             }
         }
 
