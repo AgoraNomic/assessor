@@ -183,6 +183,8 @@ spaceship
                 G votes FOR
                 JasonCobb votes FOR
             }
+
+            Telnaior alwaysEndorses G
         }
     }
 }
