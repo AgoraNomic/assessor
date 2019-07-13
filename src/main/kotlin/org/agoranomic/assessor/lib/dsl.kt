@@ -271,7 +271,7 @@ class _AssessmentReceiver {
             }()
 
             if (isEndorsement) return inextricableEndorsement()
-            else throw IllegalArgumentException("No vote information for $player.")
+            else throw IllegalArgumentException("No vote information for ${player.name} on proposal $proposal.")
         }
 
         fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
