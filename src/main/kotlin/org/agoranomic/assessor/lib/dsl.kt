@@ -82,7 +82,7 @@ class _AssessmentReceiver {
             this.comment = value
         }
 
-        fun defaultStrength(strength: VotingStrengthValue) {
+        fun default(strength: VotingStrengthValue) {
             this.m_defaultStrength = strength
         }
 

@@ -9,7 +9,7 @@ fun `assessment 8196 to 8201`(): AssessmentData {
         quorum(7)
 
         votingStrength {
-            defaultStrength(3)
+            default(3)
 
             G strength 4 comment PM
             Corona strength 1 comment BLOTS
