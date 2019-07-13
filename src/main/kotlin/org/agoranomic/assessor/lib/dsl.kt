@@ -189,7 +189,7 @@ class _AssessmentReceiver {
         private val m_directVotes = mutableMapOf<Player, Map<ProposalNumber, Vote>>()
         private val m_endorsements = mutableMapOf<Player, Map<ProposalNumber, Endorsement>>()
 
-        class _VotesReceiver(private val player: Player) {
+        class _VotesReceiver(private val m_proposals: List<ProposalNumber>, private val player: Player) {
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
             private val m_endorsements = mutableListOf<_MutableEndorsement>()
 
@@ -198,6 +198,8 @@ class _AssessmentReceiver {
             }
 
             infix fun VoteKind.on(proposal: ProposalNumber): _MutableVote {
+                require(m_proposals.contains(proposal)) { "No such proposal $proposal" }
+
                 val vote = _MutableVote(this)
                 m_map[proposal] = vote
                 return vote
@@ -214,6 +216,8 @@ class _AssessmentReceiver {
             }
 
             infix fun _MutableEndorsement.on(proposal: ProposalNumber) {
+                require(m_proposals.contains(proposal)) { "No such proposal $proposal" }
+
                 this.proposal = proposal
             }
 
@@ -241,7 +245,7 @@ class _AssessmentReceiver {
         }
 
         fun votes(player: Player, block: _VotesReceiver.()->Unit) {
-            val receiver = _VotesReceiver(player)
+            val receiver = _VotesReceiver(m_proposals, player)
             receiver.block()
             val result = receiver.compile()
             m_directVotes[player] = result.votes
