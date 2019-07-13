@@ -246,6 +246,8 @@ class _AssessmentReceiver {
         }
 
         fun votes(player: Player, block: _VotesReceiver.()->Unit) {
+            require(!(m_directVotes.containsKey(player) || m_endorsements.containsKey(player))) { "Votes already specified for player ${player.name}" }
+
             val receiver = _VotesReceiver(m_proposals, player)
             receiver.block()
             val result = receiver.compile()
