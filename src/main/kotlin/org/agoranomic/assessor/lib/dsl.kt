@@ -94,7 +94,7 @@ class _AssessmentReceiver {
         }
     }
 
-    fun votingStrength(block: _VotingStrengthReceiver.() -> Unit) {
+    fun strengths(block: _VotingStrengthReceiver.() -> Unit) {
         val receiver = _VotingStrengthReceiver()
         receiver.block()
         m_votingStrengths = receiver.compile()

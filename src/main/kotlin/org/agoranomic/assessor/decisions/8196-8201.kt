@@ -8,7 +8,7 @@ fun `assessment 8196 to 8201`(): AssessmentData {
     return assessment {
         quorum(7)
 
-        votingStrength {
+        strengths {
             default(3)
 
             G strength 4 comment PM
