@@ -193,7 +193,7 @@ class _AssessmentReceiver {
             }
 
             infix fun VoteKind.on(proposal: ProposalNumber): _MutableVote {
-                require(m_proposals.contains(proposal)) { "No such proposal $proposal" }
+                checkProposal(proposal)
 
                 val vote = _MutableVote(this)
                 m_map[proposal] = vote
@@ -210,8 +210,14 @@ class _AssessmentReceiver {
                 return value
             }
 
-            infix fun _MutableEndorsement.on(proposal: ProposalNumber) {
+            private fun checkProposal(proposal: ProposalNumber) {
                 require(m_proposals.contains(proposal)) { "No such proposal $proposal" }
+                require(!m_map.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
+                require(m_endorsements.none { it.proposal == proposal }) { "Vote already specified for proposal $proposal" }
+            }
+
+            infix fun _MutableEndorsement.on(proposal: ProposalNumber) {
+                checkProposal(proposal)
 
                 this.proposal = proposal
             }
