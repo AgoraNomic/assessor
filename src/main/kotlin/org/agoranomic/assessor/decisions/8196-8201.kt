@@ -128,77 +128,76 @@ the following list, to read in full:
         }
 
         voting {
-            votes(8196) {
-                RLee votes AGAINST
-                JasonCobb votes AGAINST
-                Murphy votes PRESENT
-                Aris votes PRESENT
-                G votes AGAINST
-                twg endorses JasonCobb
-                Falsifian votes AGAINST
-                Walker votes AGAINST
-                Trigon votes PRESENT
+            votes(RLee) {
+                AGAINST on 8196
+                AGAINST on 8198
+                AGAINST on 8199
+                AGAINST on 8200
+                FOR on 8201
             }
 
-            // Decision on 8197 was never initiated
-//            votes(8197) {
-//                RLee votes AGAINST
-//                JasonCobb votes AGAINST
-//                Murphy votes AGAINST
-//                Aris votes AGAINST
-//                G votes FOR
-//                twg votes AGAINST
-//                Falsifian votes AGAINST
-//                Walker votes AGAINST
-//                Trigon votes AGAINST
-//            }
-
-            votes(8198) {
-                RLee votes AGAINST
-                JasonCobb votes FOR
-                Murphy votes FOR
-                Aris votes FOR
-                G votes AGAINST
-                twg endorses JasonCobb
-                Falsifian votes FOR
-                Walker votes FOR
-                Trigon votes FOR
+            votes(JasonCobb) {
+                AGAINST on 8196
+                FOR on 8198
+                AGAINST on 8199
+                FOR on 8200
+                FOR on 8201
             }
 
-            votes(8199) {
-                RLee votes AGAINST
-                JasonCobb votes AGAINST
-                Murphy votes AGAINST
-                Aris votes FOR
-                G votes AGAINST
-                twg endorses JasonCobb
-                Falsifian votes AGAINST
-                Walker votes AGAINST
-                Trigon votes PRESENT
+            votes(Murphy) {
+                PRESENT on 8196
+                FOR on 8198
+                AGAINST on 8199
+                PRESENT on 8200
+                PRESENT on 8201
             }
 
-            votes(8200) {
-                RLee votes AGAINST
-                JasonCobb votes FOR
-                Murphy votes PRESENT
-                Aris votes FOR
-                G votes FOR
-                twg endorses G
-                Falsifian votes FOR comment NO_VETO
-                Walker votes FOR
-                Trigon votes FOR
+            votes(Aris) {
+                PRESENT on 8196
+                FOR on 8198
+                FOR on 8199
+                FOR on 8200
+                FOR on 8201
             }
 
-            votes(8201) {
-                RLee votes FOR
-                JasonCobb votes FOR
-                Murphy votes PRESENT
-                Aris votes FOR
-                G votes PRESENT
-                twg endorses Aris
-                Falsifian votes FOR comment NO_VETO
-                Walker votes AGAINST
-                Trigon votes AGAINST
+            votes(G) {
+                AGAINST on 8196
+                AGAINST on 8198
+                AGAINST on 8199
+                FOR on 8200
+                PRESENT on 8201
+            }
+
+            votes(twg) {
+                endorses(JasonCobb) on 8196
+                endorses(JasonCobb) on 8198
+                endorses(JasonCobb) on 8199
+                endorses(G) on 8200
+                endorses(Aris) on 8201
+            }
+
+            votes(Falsifian) {
+                AGAINST on 8196
+                FOR on 8198
+                AGAINST on 8199
+                FOR on 8200 comment NO_VETO
+                FOR on 8201 comment NO_VETO
+            }
+
+            votes(Walker) {
+                AGAINST on 8196
+                FOR on 8198
+                AGAINST on 8199
+                FOR on 8200
+                AGAINST on 8201
+            }
+
+            votes(Trigon) {
+                PRESENT on 8196
+                FOR on 8198
+                PRESENT on 8199
+                FOR on 8200
+                AGAINST on 8201
             }
 
             Telnaior alwaysEndorses G

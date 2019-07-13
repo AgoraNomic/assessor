@@ -144,47 +144,34 @@ spaceship
         }
 
         voting {
-            votes(8188) {
-                Falsifian votes FOR comment NO_VETO
-                G votes FOR
-                JasonCobb votes FOR
-            }
-
-            votes(8189) {
-                Falsifian votes FOR comment NO_VETO
-                G votes FOR
-                JasonCobb votes FOR
-            }
-
-            votes(8190) {
-                Falsifian votes FOR comment NO_VETO
-                G votes FOR
-                JasonCobb votes FOR
-            }
-
-            votes(8191) {
-                Falsifian votes FOR comment NO_VETO
-                G votes AGAINST
-                JasonCobb votes FOR
-            }
-
-            votes(8192) {
-                Falsifian votes FOR comment NO_VETO
-                G votes FOR
-                JasonCobb votes FOR
-            }
-
-            // Proposal 8183 doesn't exist
-
-            // Proposal 8184 doesn't exist
-
-            votes(8195) {
-                Falsifian votes FOR comment NO_VETO
-                G votes FOR
-                JasonCobb votes FOR
+            votes(G) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                AGAINST on 8191
+                FOR on 8192
+                FOR on 8195
             }
 
             Telnaior alwaysEndorses G
+
+            votes(JasonCobb) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                FOR on 8192
+                FOR on 8195
+            }
+
+            votes(Falsifian) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                FOR on 8192
+                FOR on 8195
+            }
         }
     }
 }

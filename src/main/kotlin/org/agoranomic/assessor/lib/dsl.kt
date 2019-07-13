@@ -35,6 +35,10 @@ data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
     }
 }
 
+data class Endorsement(val endorsee: Player, val isSilent: Boolean)
+
+data class SinglePlayerVoteMap(val votes: Map<ProposalNumber, Vote>, val endorsements: Map<ProposalNumber, Endorsement>)
+
 data class MultiProposalVoteMap(private val map: Map<ProposalNumber, SingleProposalVoteMap>) {
     val proposals = map.keys
 
@@ -54,7 +58,6 @@ data class AssessmentData(
 )
 
 class _AssessmentReceiver {
-
     private var m_votingStrengths: VotingStrengthMap? = null
     private val m_proposals = mutableListOf<Proposal>()
     private var m_proposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
@@ -182,104 +185,108 @@ class _AssessmentReceiver {
         m_proposals += receiver.compile()
     }
 
-    class _VotingReciever {
-        private val m_votes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
-        private val m_totalEndorsements = mutableMapOf<Player, Player>()
+    class _VotingReciever(private val m_proposals: List<ProposalNumber>) {
+        private val m_directVotes = mutableMapOf<Player, Map<ProposalNumber, Vote>>()
+        private val m_endorsements = mutableMapOf<Player, Map<ProposalNumber, Endorsement>>()
 
-        class _VotesReceiver(private val proposal: ProposalNumber) {
-            private val m_map = mutableMapOf<Player, _MutableVote>()
-            private val m_endorsements = mutableMapOf<Player, Player>()
+        class _VotesReceiver(private val player: Player) {
+            private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
+            private val m_endorsements = mutableListOf<_MutableEndorsement>()
 
-            data class _MutableVote(val value: VoteKind, var comment: String? = null)
+            data class _MutableVote(val value: VoteKind, var comment: String? = null) {
+                fun compile() = Vote(value, comment)
+            }
 
-            infix fun Player.votes(value: VoteKind): _MutableVote {
-                val vote =
-                    _MutableVote(value)
-                m_map[this] = vote
+            infix fun VoteKind.on(proposal: ProposalNumber): _MutableVote {
+                val vote = _MutableVote(this)
+                m_map[proposal] = vote
                 return vote
             }
 
-            infix fun Player.endorses(other: Player) {
-                m_endorsements[this] = other
+            data class _MutableEndorsement(val endorsee: Player, var proposal: ProposalNumber?) {
+                fun compile() = (proposal ?: throw IllegalStateException("Proposal not specified in endorsement")) to Endorsement(endorsee, false)
+            }
+
+            fun endorses(player: Player): _MutableEndorsement {
+                val value = _MutableEndorsement(player, null)
+                m_endorsements += value
+                return value
+            }
+
+            infix fun _MutableEndorsement.on(proposal: ProposalNumber) {
+                this.proposal = proposal
             }
 
             infix fun _MutableVote.comment(value: String) {
                 this.comment = value
             }
 
-            private fun isVoter(player: Player): Boolean {
-                return (m_map.containsKey(player) || m_endorsements.containsKey(player))
-            }
-
-            private fun resolveVote(player: Player, vararg playersSeen: Player): Vote {
-                if (m_map.containsKey(player)) return {
-                    val rawVote = m_map[player]!!
-                    Vote(rawVote.value, rawVote.comment)
-                }()
-
-                if (m_endorsements.containsKey(player)) return {
-                    val endorsee = m_endorsements[player]!!
-                    if (playersSeen.contains(endorsee)) throw IllegalStateException("Endorsement cycle")
-
-                    val ret: Vote
-
-                    if (isVoter(endorsee)) {
-                        ret = resolveVote(
-                            endorsee,
-                            *((playersSeen.toList() + player).toTypedArray())
-                        ).copy(comment = "Endorsement of ${endorsee.name}")
-                    } else {
-                        ret = Vote(
-                            VoteKind.PRESENT,
-                            "Inextricable: endorsed non-voter"
-                        )
-                    }
-
-                    ret
-                }()
-
-                val isEndorsement = playersSeen.isNotEmpty()
-                if (isEndorsement) return Vote(VoteKind.PRESENT, "Inextricable: endorsement of non-voter")
-                else throw IllegalArgumentException("No vote information for $player.")
-            }
-
-            fun compile(): SingleProposalVoteMap {
-                val simpleVotes = (m_map.keys + m_endorsements.keys).associateWith { resolveVote(it) }
-                return SingleProposalVoteMap(simpleVotes)
+            fun compile(): SinglePlayerVoteMap {
+                return SinglePlayerVoteMap(m_map.mapValues {
+                    (_, value) -> value.compile()
+                }, m_endorsements.map {
+                    it.compile()
+                }.toMap())
             }
         }
 
         infix fun Player.alwaysEndorses(other: Player) {
-            m_totalEndorsements[this] = other
+            val endorsements = mutableMapOf<ProposalNumber, Endorsement>()
+
+            for (proposal in m_proposals) {
+                endorsements[proposal] = Endorsement(other, true)
+            }
+
+            m_endorsements[this] = endorsements
         }
 
-        fun votes(proposal: ProposalNumber, block: _VotesReceiver.() -> Unit) {
-            val receiver = _VotesReceiver(proposal)
+        fun votes(player: Player, block: _VotesReceiver.()->Unit) {
+            val receiver = _VotesReceiver(player)
             receiver.block()
-            m_votes[proposal] = receiver.compile()
+            val result = receiver.compile()
+            m_directVotes[player] = result.votes
+            m_endorsements[player] = result.endorsements
+        }
+
+        private fun resolveVote(proposal: ProposalNumber, player: Player, useEndorsementMessage: Boolean, vararg playersSeen: Player): Vote {
+            val isEndorsement = playersSeen.isNotEmpty()
+
+            fun Vote.withEndorsementComment(): Vote = if (isEndorsement && useEndorsementMessage) copy(comment = "Endorsement of ${player.name}") else this
+
+            fun inextricableEndorsement(): Vote = Vote(VoteKind.PRESENT, "Endorsement of non-voter ${player.name}")
+
+            val playerDirect = m_directVotes[player]
+            if (playerDirect != null && playerDirect.containsKey(proposal)) return m_directVotes[player]!![proposal]!!.withEndorsementComment()
+
+            val playerEndorsements = m_endorsements[player]
+            if (playerEndorsements != null && playerEndorsements.containsKey(proposal)) return {
+                val endorsee = m_endorsements[player]!![proposal]!!.endorsee
+                if (playersSeen.contains(endorsee)) throw IllegalStateException("Endorsement cycle")
+
+                resolveVote(proposal, endorsee, useEndorsementMessage, *((playersSeen.toList() + player).toTypedArray()))
+            }()
+
+            if (isEndorsement) return inextricableEndorsement()
+            else throw IllegalArgumentException("No vote information for $player.")
         }
 
         fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
-            return m_votes.mapValues { (_, voteMap) ->
-                val newMap = voteMap.map.toMutableMap()
+            val map = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
 
-                for (endorsement in m_totalEndorsements) {
-                    if (newMap.containsKey(endorsement.key)) continue
+            for (proposal in m_proposals) {
+                val proposalMap = mutableMapOf<Player, Vote>()
 
-                    if (newMap.containsKey(endorsement.value)) {
-                        newMap[endorsement.key] = newMap[endorsement.value]!!.copy()
-                    } else {
-                        throw IllegalStateException("Invalid use of alwaysEndorses")
-                    }
-                }
+                for (voter in (m_directVotes.keys + m_endorsements.keys)) proposalMap[voter] = resolveVote(proposal, voter, m_endorsements[voter]?.get(proposal)?.isSilent?.not() ?: true)
 
-                SingleProposalVoteMap(newMap)
+                map[proposal] = SingleProposalVoteMap(proposalMap)
             }
+
+            return map
         }
     }
 
     fun voting(block: _VotingReciever.() -> Unit) {
-        val receiver = _VotingReciever()
+        val receiver = _VotingReciever(m_proposals.map { it.number })
         receiver.block()
         m_proposalVotes.putAll(receiver.compile())
     }
