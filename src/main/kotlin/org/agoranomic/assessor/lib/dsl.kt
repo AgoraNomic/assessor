@@ -88,13 +88,8 @@ class _AssessmentReceiver {
 
         fun compile(): VotingStrengthMap {
             return VotingStrengthMap(
-                m_defaultStrength ?: throw IllegalStateException("Must specify default voting strength"),
-                m_customStrengths.mapValues { (_, strength) ->
-                    VotingStrength(
-                        strength.value,
-                        strength.comment
-                    )
-                }
+                m_defaultStrength ?: error("Must specify default voting strength"),
+                m_customStrengths.mapValues { (_, strength) -> VotingStrength(strength.value, strength.comment) }
             )
         }
     }
@@ -153,11 +148,11 @@ class _AssessmentReceiver {
             fun compile(): Proposal {
                 return Proposal(
                     m_number,
-                    m_ai ?: throw IllegalStateException("Must specify AI"),
-                    m_title ?: throw IllegalStateException("Must specify proposal title"),
-                    m_author ?: throw IllegalStateException("Must specify author"),
+                    m_ai ?: error("Must specify AI"),
+                    m_title ?: error("Must specify proposal title"),
+                    m_author ?: error("Must specify author"),
                     m_coauthors ?: emptyList(),
-                    m_text ?: throw IllegalStateException("Must specify proposal text")
+                    m_text ?: error("Must specify proposal text")
                 )
             }
         }
@@ -206,7 +201,7 @@ class _AssessmentReceiver {
             }
 
             data class _MutableEndorsement(val endorsee: Player, var proposal: ProposalNumber?) {
-                fun compile() = (proposal ?: throw IllegalStateException("Proposal not specified in endorsement")) to Endorsement(endorsee, false)
+                fun compile() = (proposal ?: error("Proposal not specified in endorsement")) to Endorsement(endorsee, false)
             }
 
             fun endorses(player: Player): _MutableEndorsement {
@@ -265,7 +260,7 @@ class _AssessmentReceiver {
             val playerEndorsements = m_endorsements[player]
             if (playerEndorsements != null && playerEndorsements.containsKey(proposal)) return {
                 val endorsee = m_endorsements[player]!![proposal]!!.endorsee
-                if (playersSeen.contains(endorsee)) throw IllegalStateException("Endorsement cycle")
+                if (playersSeen.contains(endorsee)) error("Endorsement cycle")
 
                 resolveVote(proposal, endorsee, useEndorsementMessage, *((playersSeen.toList() + player).toTypedArray()))
             }()
@@ -300,16 +295,16 @@ class _AssessmentReceiver {
     }
 
     fun compile(): AssessmentData {
-        val quorum = m_quorum ?: throw IllegalStateException("Must specify quorum")
-        val votingStrengths = m_votingStrengths ?: throw IllegalStateException("Must specify voting strengths")
-        val proposalVotes = m_proposalVotes ?: throw IllegalStateException("Must specify votes")
+        val quorum = m_quorum ?: error("Must specify quorum")
+        val votingStrengths = m_votingStrengths ?: error("Must specify voting strengths")
+        val proposalVotes = m_proposalVotes
 
         for (proposalNumber in m_proposalVotes.keys) {
-            if (m_proposals.find { it.number == proposalNumber } == null) throw IllegalStateException("Votes specified for unknown proposal " + proposalNumber)
+            if (m_proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal " + proposalNumber)
         }
 
         for (proposal in m_proposals.map { it.number }) {
-            if (!(m_proposalVotes.containsKey(proposal))) throw IllegalStateException("Votes not specified for proposal " + proposal)
+            if (!(m_proposalVotes.containsKey(proposal))) error("Votes not specified for proposal " + proposal)
         }
 
         return AssessmentData(
