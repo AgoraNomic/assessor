@@ -283,7 +283,13 @@ class _AssessmentReceiver {
             for (proposal in m_proposals) {
                 val proposalMap = mutableMapOf<Player, Vote>()
 
-                for (voter in (m_directVotes.keys + m_endorsements.keys)) proposalMap[voter] = resolveVote(proposal, voter, m_endorsements[voter]?.get(proposal)?.isSilent?.not() ?: true)
+                for (voter in (m_directVotes.keys + m_endorsements.keys).filter { p ->
+                    (m_directVotes[p]?.containsKey(proposal) ?: false) ||
+                            (m_endorsements[p]?.containsKey(proposal) ?: false)
+                }) {
+                    proposalMap[voter] =
+                        resolveVote(proposal, voter, m_endorsements[voter]?.get(proposal)?.isSilent?.not() ?: true)
+                }
 
                 map[proposal] = SingleProposalVoteMap(proposalMap)
             }
