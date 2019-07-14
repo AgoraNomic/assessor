@@ -183,6 +183,7 @@ class _AssessmentReceiver {
     class _VotingReciever(private val m_proposals: List<ProposalNumber>) {
         private val m_directVotes = mutableMapOf<Player, Map<ProposalNumber, Vote>>()
         private val m_endorsements = mutableMapOf<Player, Map<ProposalNumber, Endorsement>>()
+        private val m_totalEndorsements = mutableMapOf<Player, Player>()
 
         class _VotesReceiver(private val m_proposals: List<ProposalNumber>, private val player: Player) {
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
@@ -236,13 +237,7 @@ class _AssessmentReceiver {
         }
 
         infix fun Player.alwaysEndorses(other: Player) {
-            val endorsements = mutableMapOf<ProposalNumber, Endorsement>()
-
-            for (proposal in m_proposals) {
-                endorsements[proposal] = Endorsement(other, true)
-            }
-
-            m_endorsements[this] = endorsements
+            m_totalEndorsements[this] = other
         }
 
         fun votes(player: Player, block: _VotesReceiver.()->Unit) {
@@ -289,6 +284,14 @@ class _AssessmentReceiver {
                 }) {
                     proposalMap[voter] =
                         resolveVote(proposal, voter, m_endorsements[voter]?.get(proposal)?.isSilent?.not() ?: true)
+                }
+
+                for (totalEndorsement in m_totalEndorsements) {
+                    val endorserVote = proposalMap[totalEndorsement.key]
+                    if (endorserVote != null) error("Invalid use of alwaysEndorses: ${totalEndorsement.key.name} voted on proposal $proposal.")
+
+                    val endorseeVote = proposalMap[totalEndorsement.value]
+                    if (endorseeVote != null) proposalMap[totalEndorsement.key] = endorseeVote
                 }
 
                 map[proposal] = SingleProposalVoteMap(proposalMap)
