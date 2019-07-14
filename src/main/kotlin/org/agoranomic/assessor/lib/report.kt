@@ -36,6 +36,8 @@ fun StringBuilder.emitProposalVotes(voteMap: SingleProposalVoteMap) {
     emitVoteKind(VoteKind.FOR)
     emitVoteKind(VoteKind.AGAINST)
     emitVoteKind(VoteKind.PRESENT)
+
+    emitLine("BALLOTS: ${voteMap.voteCount}")
 }
 
 fun StringBuilder.emitSingleVotingStrength(player: Player, strength: VotingStrength) {
