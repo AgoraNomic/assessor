@@ -26,18 +26,18 @@ fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitNewLine()
 }
 
-fun StringBuilder.emitProposalVotes(voteMap: SingleProposalVoteMap) {
+fun StringBuilder.emitProposalVotes(voteMap: SingleProposalVoteMap, voteKindVoteCounts: Boolean) {
     fun emitVoteKind(voteKind: VoteKind) {
-        emitString("${voteKind.name}: ")
-        emitString(voteMap.filterVoteKind(voteKind).map { it.name }.sorted().joinToString(", "))
+        val matchingVotes = voteMap.filterVoteKind(voteKind)
+
+        emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
+        emitString(matchingVotes.map { it.name }.sorted().joinToString(", "))
         emitNewLine()
     }
 
     emitVoteKind(VoteKind.FOR)
     emitVoteKind(VoteKind.AGAINST)
     emitVoteKind(VoteKind.PRESENT)
-
-    emitLine("BALLOTS: ${voteMap.voteCount}")
 }
 
 fun StringBuilder.emitSingleVotingStrength(player: Player, strength: VotingStrength) {
@@ -115,7 +115,7 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
     }
 }
 
-data class ReportConfig(val voteComments: Boolean = true)
+data class ReportConfig(val voteComments: Boolean = true, val totalBallotCount: Boolean = true, val voteKindBallotCount: Boolean = true)
 
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
@@ -135,7 +135,8 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
             val resolution = resolutionMap[proposal.number]
 
             emitProposalHeader(proposal)
-            emitProposalVotes(resolution.votes)
+            emitProposalVotes(resolution.votes, config.voteKindBallotCount)
+            if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
             emitProposalAI(resolution, proposal.ai)
             emitProposalOutcome(resolution)
             if (config.voteComments) emitVoteComments(resolution)
