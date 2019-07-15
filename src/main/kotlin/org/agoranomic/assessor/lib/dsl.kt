@@ -187,7 +187,7 @@ class _AssessmentReceiver {
 
         class _VotesReceiver(private val m_proposals: List<ProposalNumber>, private val player: Player) {
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
-            private val m_endorsements = mutableListOf<_MutableEndorsement>()
+            private val m_endorsements = mutableMapOf<ProposalNumber, Endorsement>()
 
             data class _MutableVote(val value: VoteKind, var comment: String? = null) {
                 fun compile() = Vote(value, comment)
@@ -201,26 +201,21 @@ class _AssessmentReceiver {
                 return vote
             }
 
-            data class _MutableEndorsement(val endorsee: Player, var proposal: ProposalNumber?) {
-                fun compile() = (proposal ?: error("Proposal not specified in endorsement")) to Endorsement(endorsee, false)
-            }
+            data class _HalfEndorsement(val endorsee: Player)
 
-            fun endorses(player: Player): _MutableEndorsement {
-                val value = _MutableEndorsement(player, null)
-                m_endorsements += value
-                return value
+            fun endorses(player: Player): _HalfEndorsement {
+                return _HalfEndorsement(player)
             }
 
             private fun checkProposal(proposal: ProposalNumber) {
                 require(m_proposals.contains(proposal)) { "No such proposal $proposal" }
                 require(!m_map.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
-                require(m_endorsements.none { it.proposal == proposal }) { "Vote already specified for proposal $proposal" }
+                require(!m_endorsements.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
             }
 
-            infix fun _MutableEndorsement.on(proposal: ProposalNumber) {
+            infix fun _HalfEndorsement.on(proposal: ProposalNumber) {
                 checkProposal(proposal)
-
-                this.proposal = proposal
+                m_endorsements[proposal] = Endorsement(this.endorsee, false)
             }
 
             infix fun _MutableVote.comment(value: String) {
@@ -230,9 +225,7 @@ class _AssessmentReceiver {
             fun compile(): SinglePlayerVoteMap {
                 return SinglePlayerVoteMap(m_map.mapValues {
                     (_, value) -> value.compile()
-                }, m_endorsements.map {
-                    it.compile()
-                }.toMap())
+                }, m_endorsements)
             }
         }
 
