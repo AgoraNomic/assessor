@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  fatJar:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:11.0.2-jdk
@@ -38,5 +38,60 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      # run tests!
-      - run: gradle test
+      - run:
+          name: Build fat jar
+          command: gradle fatJar
+
+      - persist_to_workspace:
+          root: build/libs
+          paths: assessor.jar
+
+  reports-generate:
+    docker:
+      - image: circleci/openjdk:11.0.2-jdk
+    steps:
+      - checkout
+      - attach_workspace:
+          at: workspace
+      - run:
+          name: Build reports
+          command: java -jar workspace/assessor.jar all
+      - run:
+          name: Move reports dir
+          command: mv out workspace/reports
+      - persist_to_workspace:
+          root: workspace
+          paths: reports
+  reports-deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: workspace
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "ci-build@agoranomic.org"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "1b:a0:f8:4f:da:a0:be:ce:6c:08:ca:a1:d9:73:0d:ad"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] CI Updates" --dist workspace/reports
+workflows:
+  version: 2
+  build_and_report:
+    jobs:
+      - fatJar
+      - reports-generate:
+          requires:
+            - fatJar
+      - reports-deploy:
+          requires:
+            - reports-generate
+          filters:
+            branches:
+              only: master
