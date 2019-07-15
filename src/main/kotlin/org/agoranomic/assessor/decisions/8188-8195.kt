@@ -153,7 +153,7 @@ spaceship
                 FOR on 8195
             }
 
-            Telnaior alwaysEndorses G
+            Telnaior matches G
 
             votes(JasonCobb) {
                 FOR on 8188

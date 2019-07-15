@@ -200,8 +200,8 @@ the following list, to read in full:
                 AGAINST on 8201
             }
 
-            Telnaior alwaysEndorses G
-            Tarhulindur alwaysEndorses RLee
+            Telnaior matches G
+            Tarhulindur matches RLee
         }
     }
 }

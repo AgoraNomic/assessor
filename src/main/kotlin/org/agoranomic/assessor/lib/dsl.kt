@@ -236,7 +236,7 @@ class _AssessmentReceiver {
             }
         }
 
-        infix fun Player.alwaysEndorses(other: Player) {
+        infix fun Player.matches(other: Player) {
             m_totalEndorsements[this] = other
         }
 

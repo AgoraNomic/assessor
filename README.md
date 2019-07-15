@@ -71,8 +71,8 @@ assessment {
         [...]
 
         // For things like zombies, where two players cast the exact same votes
-        <player> alwaysEndorses <player>
-        // e.g.: X alwaysEndorses Y
+        <player> matches <player>
+        // e.g.: X matches Y
         // This is not intended for use where two players just happen to have the same vote
     }
 }
