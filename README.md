@@ -65,6 +65,16 @@ assessment {
             endorses(<player>) on <proposal #>
             // e.g.: endorses(X) on 9999
 
+            // Identical vote on each proposal
+            <vote> on all
+            // e.g.: FOR on all
+            // Also works with comments
+            <vote> on all comment <comment>
+            // e.g.: FOR on all comment "stupid example comment"
+            // Also works with endorsements
+            endorses(<player>) on all
+            // e.g.: endorses(X) on all
+
             [...]
         }
 

@@ -189,6 +189,9 @@ class _AssessmentReceiver {
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
             private val m_endorsements = mutableMapOf<ProposalNumber, Endorsement>()
 
+            public class _All
+            public val all = _All()
+
             data class _MutableVote(val value: VoteKind, var comment: String? = null) {
                 fun compile() = Vote(value, comment)
             }
@@ -198,6 +201,17 @@ class _AssessmentReceiver {
 
                 val vote = _MutableVote(this)
                 m_map[proposal] = vote
+                return vote
+            }
+
+            infix fun VoteKind.on(all: _All): _MutableVote {
+                val vote = _MutableVote(this)
+
+                for (proposal in m_proposals) {
+                    checkProposal(proposal)
+                    m_map[proposal] = vote
+                }
+
                 return vote
             }
 
@@ -216,6 +230,12 @@ class _AssessmentReceiver {
             infix fun _HalfEndorsement.on(proposal: ProposalNumber) {
                 checkProposal(proposal)
                 m_endorsements[proposal] = Endorsement(this.endorsee, false)
+            }
+
+            infix fun _HalfEndorsement.on(all: _All) {
+                for (proposal in m_proposals) {
+                    this on proposal
+                }
             }
 
             infix fun _MutableVote.comment(value: String) {
