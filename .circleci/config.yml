@@ -1,42 +1,104 @@
-# Java Gradle CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
-version: 2
-jobs:
-  fatJar:
+aliases:
+  checkout_with_cache: &checkout_with_cache
+    - restore_cache:
+        keys:
+          - source-v1-{{ .Branch }}-{{ .Revision }}
+          - source-v1-{{ .Branch }}-
+          - source-v1-
+    - checkout
+    - save_cache:
+        key: source-v1-{{ .Branch }}-{{ .Revision }}
+        paths: ".git"
+
+  jvm_docker: &jvm_docker
     docker:
-      # specify the version you desire here
       - image: circleci/openjdk:11.0.2-jdk
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
-
+  jvm_options: &jvm_options
     environment:
       # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
       TERM: dumb
 
-    steps:
-      - checkout
+  working_dir: &working_dir
+    working_directory: ~/repo
 
-      # Download and cache dependencies
+  jvm_default: &jvm_default
+    <<: *jvm_docker
+    <<: *jvm_options
+    <<: *working_dir
+
+version: 2
+jobs:
+  build:
+    <<: *jvm_default
+
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths: ".git"
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "build.gradle" }}
-            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
       - run: gradle dependencies
-
       - save_cache:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      - restore_cache:
+          keys:
+            - v1-build-{{ .Revision }}
+            - v1-build-
+      - run: gradle build
+      - save_cache:
+          paths:
+            - ~/.gradle
+            - build
+          key: v1-build-{{ .Revision }}
+
+  fatJar:
+    <<: *jvm_default
+
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths: ".git"
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            - v1-dependencies-
+      - run: gradle dependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      - restore_cache:
+          keys:
+            - v1-build-{{ .Revision }}
+            - v1-build-
+      - run: gradle build
+      - save_cache:
+          paths:
+            - ~/.gradle
+            - build
+          key: v1-build-{{ .Revision }}
 
       - run:
           name: Build fat jar
@@ -47,10 +109,19 @@ jobs:
           paths: assessor.jar
 
   reports-generate:
-    docker:
-      - image: circleci/openjdk:11.0.2-jdk
+    <<: *jvm_default
+
     steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
       - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths: ".git"
+
       - attach_workspace:
           at: workspace
       - run:
@@ -62,11 +133,21 @@ jobs:
       - persist_to_workspace:
           root: workspace
           paths: reports
+
   reports-deploy:
     docker:
       - image: node:8.10.0
     steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
       - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths: ".git"
+
       - attach_workspace:
           at: workspace
       - run:
@@ -81,11 +162,15 @@ jobs:
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dotfiles --message "[skip ci] CI Updates" --dist workspace/reports
+
 workflows:
   version: 2
   build_and_report:
     jobs:
-      - fatJar
+      - build
+      - fatJar:
+          requires:
+            - build
       - reports-generate:
           requires:
             - fatJar
