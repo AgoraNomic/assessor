@@ -17,6 +17,17 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Agora Assessor',
+                'Implementation-Version': version,
+                'Main-Class': 'org.agoranomic.assessor.decisions.RunnerKt'
+    }
+    archiveName = "assessor.jar"
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 compileKotlin {
     kotlinOptions.jvmTarget = "11"
 }
