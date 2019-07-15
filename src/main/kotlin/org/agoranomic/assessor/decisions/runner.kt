@@ -25,7 +25,7 @@ fun createOutDir(): Path {
 
 fun writeAssessment(name: String, value: AssessmentData) {
     val outDir = createOutDir()
-    val outFile = outDir.resolve(name)
+    val outFile = outDir.resolve(name + ".txt")
 
     Files.writeString(outFile, report(resolve(value)))
 }
