@@ -278,7 +278,7 @@ class _AssessmentReceiver {
                 val endorsee = m_endorsements[player]!![proposal]!!.endorsee
                 if (playersSeen.contains(endorsee)) error("Endorsement cycle")
 
-                resolveVote(proposal, endorsee, useEndorsementMessage, *((playersSeen.toList() + player).toTypedArray()))
+                resolveVote(proposal, endorsee, useEndorsementMessage, *((playersSeen.toList() + player).toTypedArray())).withEndorsementComment()
             }()
 
             if (isEndorsement) return inextricableEndorsement()
