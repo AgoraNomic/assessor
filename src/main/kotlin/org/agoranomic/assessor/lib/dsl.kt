@@ -51,6 +51,7 @@ data class MultiProposalVoteMap(private val map: Map<ProposalNumber, SinglePropo
 }
 
 data class AssessmentData(
+    val name: String,
     val quorum: Int,
     val votingStrengths: VotingStrengthMap,
     val proposals: Set<Proposal>,
@@ -62,6 +63,7 @@ class _AssessmentReceiver {
     private val m_proposals = mutableListOf<Proposal>()
     private var m_proposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
     private var m_quorum: Int? = null
+    private var m_name: String? = null
 
     class _VotingStrengthReceiver {
         private var m_defaultStrength: VotingStrengthValue? = null
@@ -324,6 +326,10 @@ class _AssessmentReceiver {
         m_quorum = value
     }
 
+    fun name(value: String) {
+        m_name = value
+    }
+
     fun compile(): AssessmentData {
         val quorum = m_quorum ?: error("Must specify quorum")
         val votingStrengths = m_votingStrengths ?: error("Must specify voting strengths")
@@ -338,6 +344,7 @@ class _AssessmentReceiver {
         }
 
         return AssessmentData(
+            m_name ?: error("Must specify name"),
             quorum,
             votingStrengths,
             m_proposals.toSet(),

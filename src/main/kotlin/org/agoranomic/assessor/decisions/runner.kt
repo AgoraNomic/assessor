@@ -9,7 +9,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
 
-private val assessments = mapOf("8188-8195" to `assessment 8188 to 8195`(), "8196-8201" to `assessment 8196 to 8201`())
+private val assessments = listOf(`assessment 8188 to 8195`(), `assessment 8196 to 8201`()).associateBy { it.name }
 
 inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
