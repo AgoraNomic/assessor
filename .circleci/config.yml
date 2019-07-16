@@ -126,10 +126,7 @@ jobs:
           at: workspace
       - run:
           name: Build reports
-          command: java -jar workspace/assessor.jar all
-      - run:
-          name: Move reports dir
-          command: mv out workspace/reports
+          command: java -jar workspace/assessor.jar all --dir workspace/reports
       - persist_to_workspace:
           root: workspace
           paths: reports
