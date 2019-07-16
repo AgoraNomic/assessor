@@ -220,6 +220,15 @@ to read
                 // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
                 // TODO resolve conditional vote on 8195: AGAINST IF VETO ELSE FOR
             }
+
+            votes(RLee) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                FOR on 8192
+                PRESENT on 8195
+            }
         }
     }
 }
