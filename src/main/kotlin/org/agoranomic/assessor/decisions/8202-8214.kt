@@ -8,6 +8,15 @@ fun `assessment 8202 to 8214`(): AssessmentData {
         name("8202-8217")
         quorum(7)
 
+        // TODO update for time of assessment
+        strengths {
+            G strength 4 comment PM
+            Corona strength 1 comment BLOTS
+            twg strength 1 comment BLOTS
+            DMargaux strength 2 comment BLOTS
+            PSS strength 2 comment BLOTS
+        }
+
         proposals {
             proposal(8202) {
                 title("Police Power")
