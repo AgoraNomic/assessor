@@ -6,7 +6,7 @@ import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8202 to 8214`(): AssessmentData {
     return assessment {
-        name("8202-8217")
+        name("8202-8214")
         quorum(7)
 
         // TODO update for time of assessment
