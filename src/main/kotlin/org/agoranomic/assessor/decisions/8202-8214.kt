@@ -323,6 +323,22 @@ following:
                 FOR on 8213
                 FOR on 8214
             }
+
+            votes(JasonCobb) {
+                FOR on 8202
+                FOR on 8203
+                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                AGAINST on 8205
+                FOR on 8206
+                AGAINST on 8207
+                FOR on 8208
+                AGAINST on 8209
+                FOR on 8210
+                FOR on 8211
+                FOR on 8212
+                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
