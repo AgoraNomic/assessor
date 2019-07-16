@@ -250,7 +250,7 @@ Repeal Rule 2517."""
             proposal(8213) {
                 title("Space Fixes")
                 ai(1.0)
-                author(JasonCobb)
+                author(nch)
 
                 text(
                     """
