@@ -341,6 +341,22 @@ following:
                 // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
                 // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
             }
+
+            votes(Trigon) {
+                FOR on 8202
+                PRESENT on 8203
+                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                PRESENT on 8205
+                FOR on 8206
+                // TODO resolve conditional vote on 8207: FOR if G. transfers 766 Coins to Trigon by time of resolution, else AGAINST
+                FOR on 8208
+                AGAINST on 8209
+                FOR on 8210
+                FOR on 8211
+                PRESENT on 8212
+                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
