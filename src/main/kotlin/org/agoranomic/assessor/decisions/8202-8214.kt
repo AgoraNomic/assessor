@@ -373,6 +373,22 @@ following:
                 // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
                 // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
             }
+
+            votes(RLee) {
+                FOR on 8202
+                FOR on 8203
+                FOR on 8204
+                FOR on 8205
+                PRESENT on 8206
+                PRESENT on 8207
+                AGAINST on 8208
+                FOR on 8209
+                AGAINST on 8210
+                FOR on 8211
+                FOR on 8212
+                FOR on 8213
+                FOR on 8214
+            }
         }
     }
 }
