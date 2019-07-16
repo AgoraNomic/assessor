@@ -5,6 +5,9 @@ import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8202 to 8214`(): AssessmentData {
     return assessment {
+        name("8202-8217")
+        quorum(7)
+
         proposals {
             proposal(8202) {
                 title("Police Power")
