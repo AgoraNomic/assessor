@@ -393,6 +393,10 @@ following:
             votes(Halian) {
                 endorses(RLee) on all
             }
+
+            votes(L) {
+                endorses(DMargaux) on all
+            }
         }
     }
 }
