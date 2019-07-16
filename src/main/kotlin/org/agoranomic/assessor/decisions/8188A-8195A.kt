@@ -229,6 +229,10 @@ to read
                 FOR on 8192
                 PRESENT on 8195
             }
+
+            votes(Halian) {
+                endorses(RLee) on all
+            }
         }
     }
 }
