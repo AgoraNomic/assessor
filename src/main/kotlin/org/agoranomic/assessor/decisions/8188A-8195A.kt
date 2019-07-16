@@ -211,6 +211,15 @@ to read
                 // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
                 PRESENT on 8195
             }
+
+            votes(DMargaux) {
+                // TODO resolve conditional vote on 8188: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8189: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8190: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8191: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8195: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
