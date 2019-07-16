@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8188A to 8195A`(): AssessmentData {
@@ -173,6 +174,15 @@ to read
             }
         }
 
-        // TODO: voting
+        voting {
+            votes(Aris) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8195
+            }
+        }
     }
 }
