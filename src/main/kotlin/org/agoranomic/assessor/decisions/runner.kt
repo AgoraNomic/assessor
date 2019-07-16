@@ -15,6 +15,10 @@ inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
 const val VOTE_COMMENTS_YES = "vote-comments"
 const val VOTE_COMMENTS_NO = "no-vote-comments"
+const val BALLOTS_LINE_YES = "ballots-line"
+const val BALLOTS_LINE_NO = "no-ballots-line"
+const val VOTE_KIND_COUNTS_YES = "vote-counts"
+const val VOTE_KIND_COUNTS_NO = "no-vote-counts"
 const val DEST_STDOUT = "stdout"
 const val DEST_FILE = "file"
 const val DEST_DIR = "dir"
@@ -74,6 +78,28 @@ fun main(args: Array<String>) {
 
     options.addOptionGroup(optGroupVoteComments)
 
+    val optBallotsLineYes = Option.builder().longOpt(BALLOTS_LINE_YES).desc("Print BALLOTS line").build()
+    val optBallotsLineNo = Option.builder().longOpt(BALLOTS_LINE_NO).desc("Don't print BALLOTS line").build()
+    val optGroupBallotsLint = OptionGroup().let {
+        it.addOption(optBallotsLineYes)
+        it.addOption(optBallotsLineNo)
+
+        it
+    }
+
+    options.addOptionGroup(optGroupBallotsLint)
+
+    val optSubVoteCountYes = Option.builder().longOpt(VOTE_KIND_COUNTS_YES).desc("Print vote counts").build()
+    val optSubVoteCountNo = Option.builder().longOpt(VOTE_KIND_COUNTS_NO).desc("Don't print vote counts").build()
+    val optGroupSubVoteCount = OptionGroup().let {
+        it.addOption(optSubVoteCountYes)
+        it.addOption(optSubVoteCountNo)
+
+        it
+    }
+
+    options.addOptionGroup(optGroupSubVoteCount)
+
     val optFormLong = Option.builder().longOpt(FORM_LONG).desc("Generally longer form").build()
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
     val optGroupForm = OptionGroup().let {
@@ -118,6 +144,12 @@ fun main(args: Array<String>) {
 
     if (provided(optVoteCommentsYes)) config = config.copy(voteComments = true)
     if (provided(optVoteCommentsNo)) config = config.copy(voteComments = false)
+
+    if (provided(optBallotsLineYes)) config = config.copy(totalBallotCount = true)
+    if (provided(optBallotsLineNo)) config = config.copy(totalBallotCount = false)
+
+    if (provided(optSubVoteCountYes)) config = config.copy(voteKindBallotCount = true)
+    if (provided(optSubVoteCountNo)) config = config.copy(voteKindBallotCount = false)
 
     val toAssess: List<Pair<String, AssessmentData>> = run {
         val argList = commandLine.argList
