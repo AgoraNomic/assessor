@@ -183,6 +183,15 @@ to read
                 // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
                 FOR on 8195
             }
+
+            votes(nch) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8195
+            }
         }
     }
 }
