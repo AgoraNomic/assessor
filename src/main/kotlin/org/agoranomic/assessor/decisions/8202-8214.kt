@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8202 to 8214`(): AssessmentData {
@@ -287,6 +288,24 @@ following:
   the year, and a sector exists with an ID equivalent to the current day
   of the month then those sectors are adjacent."""
                 )
+            }
+        }
+
+        voting {
+            votes(Aris) {
+                FOR on 8202
+                PRESENT on 8203
+                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                AGAINST on 8205
+                FOR on 8206
+                AGAINST on 8207
+                AGAINST on 8208
+                AGAINST on 8209
+                FOR on 8210
+                FOR on 8211
+                FOR on 8212
+                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
             }
         }
     }
