@@ -115,6 +115,11 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
     }
 }
 
+fun StringBuilder.emitWithDelimiter(string: String) {
+    emitLine(string)
+    emitLine("=".repeat(string.length))
+}
+
 data class ReportConfig(val voteComments: Boolean = true, val totalBallotCount: Boolean = true, val voteKindBallotCount: Boolean = true)
 
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
@@ -123,6 +128,8 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
     val output = StringBuilder()
 
     output.run {
+        emitWithDelimiter("RESOLUTION OF ${resolutionMap.assessmentName}")
+        emitNewLine()
         emitHeader()
         emitNewLine()
         emitQuorum(resolutionMap.quorum)

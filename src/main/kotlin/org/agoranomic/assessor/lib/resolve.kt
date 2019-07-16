@@ -43,7 +43,7 @@ fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, v
     )
 }
 
-data class ProposalResolutionMap(val proposals: Set<Proposal>, private val map: Map<ProposalNumber, ResolutionData>, val quorum: Int, val votingStrengths: VotingStrengthMap) {
+data class ProposalResolutionMap(val assessmentName: String, val proposals: Set<Proposal>, private val map: Map<ProposalNumber, ResolutionData>, val quorum: Int, val votingStrengths: VotingStrengthMap) {
     operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
@@ -60,5 +60,5 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
         map += proposal.number to resolve(assessmentData.quorum, assessmentData.votingStrengths, proposal.ai, assessmentData.votes[proposal.number])
     }
 
-    return ProposalResolutionMap(assessmentData.proposals, map, assessmentData.quorum, assessmentData.votingStrengths)
+    return ProposalResolutionMap(assessmentData.name, assessmentData.proposals, map, assessmentData.quorum, assessmentData.votingStrengths)
 }
