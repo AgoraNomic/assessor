@@ -126,7 +126,7 @@ jobs:
           at: workspace
       - run:
           name: Build reports
-          command: java -jar workspace/assessor.jar all --dir workspace/reports
+          command: java -jar workspace/assessor.jar all --long --dir workspace/reports
       - persist_to_workspace:
           root: workspace
           paths: reports
