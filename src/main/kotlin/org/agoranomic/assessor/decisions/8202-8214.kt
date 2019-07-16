@@ -307,6 +307,22 @@ following:
                 // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
                 // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
             }
+
+            votes(nch) {
+                FOR on 8202
+                AGAINST on 8203
+                PRESENT on 8204
+                // TODO resolve conditional vote on 8205: FOR unless anybody votes FOR after nch otherwise AGAINST
+                FOR on 8206
+                // TODO resolve conditional vote on 8207: FOR if G. pledges to give nch a black ribbon else AGAINST
+                PRESENT on 8208
+                FOR on 8209
+                FOR on 8210
+                FOR on 8211
+                FOR on 8212
+                FOR on 8213
+                FOR on 8214
+            }
         }
     }
 }
