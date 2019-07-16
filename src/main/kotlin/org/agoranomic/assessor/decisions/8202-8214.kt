@@ -11,6 +11,8 @@ fun `assessment 8202 to 8214`(): AssessmentData {
 
         // TODO update for time of assessment
         strengths {
+            default(3)
+
             G strength 4 comment PM
             Corona strength 1 comment BLOTS
             twg strength 1 comment BLOTS
