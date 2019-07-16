@@ -128,7 +128,7 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
     val output = StringBuilder()
 
     output.run {
-        emitWithDelimiter("RESOLUTION OF ${resolutionMap.assessmentName}")
+        emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.assessmentName}")
         emitNewLine()
         emitHeader()
         emitNewLine()
