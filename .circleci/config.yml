@@ -131,6 +131,10 @@ jobs:
           root: workspace
           paths: reports
 
+      - store_artifacts:
+          path: workspace/reports
+          destination: reports
+
   reports-deploy:
     docker:
       - image: node:8.10.0
