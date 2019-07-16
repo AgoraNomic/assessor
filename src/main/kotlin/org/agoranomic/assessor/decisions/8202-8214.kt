@@ -357,6 +357,22 @@ following:
                 // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
                 // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
             }
+
+            votes(DMargaux) {
+                // TODO resolve conditional vote on 8202: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8203: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8205: AGAINST IF VETO ELSE FOR
+                AGAINST on 8206
+                // NO VOTE on 8207
+                PRESENT on 8208
+                // TODO resolve conditional vote on 8209: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8210: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8211: AGAINST IF VETO ELSE FOR
+                PRESENT on 8212
+                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
