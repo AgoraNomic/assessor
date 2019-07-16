@@ -389,6 +389,10 @@ following:
                 FOR on 8213
                 FOR on 8214
             }
+
+            votes(Halian) {
+                endorses(RLee) on all
+            }
         }
     }
 }
