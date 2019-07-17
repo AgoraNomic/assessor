@@ -127,10 +127,32 @@ jobs:
       - run:
           name: Build reports
           command: java -jar workspace/assessor.jar all --long --dir workspace/reports
+      - run:
+          name: Generate index.md
+          command: |
+            REPORTS_DIR=workspace/reports
+            shopt -s nullglob
+            REPORTS=($REPORTS_DIR/*)
+            IFS=$'\n'
+            REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
+
+            INDEX_FILE=$REPORTS_DIR/index.md
+            touch $INDEX_FILE
+
+            echo "Reports: ${REPORTS[*]}"
+            echo "Assessor's Archive:" >> $INDEX_FILE
+            echo "" >> $INDEX_FILE
+            echo "[Latest Assessment]($(basename "${REPORTS[0]}"))" >> $INDEX_FILE
+            echo "" >> $INDEX_FILE
+            echo "List of assessments:" >> $INDEX_FILE
+            echo "" >> $INDEX_FILE
+            for report in "${REPORTS[@]}"; do
+              REPORT_FILENAME=$(basename "$report")
+              echo "* [$REPORT_FILENAME]($REPORT_FILENAME)" >> $INDEX_FILE;
+            done;
       - persist_to_workspace:
           root: workspace
           paths: reports
-
       - store_artifacts:
           path: workspace/reports
           destination: reports
