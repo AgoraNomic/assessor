@@ -397,6 +397,22 @@ following:
             votes(L) {
                 endorses(DMargaux) on all
             }
+
+            votes(Murphy) {
+                FOR on 8202
+                FOR on 8203
+                FOR on 8204
+                AGAINST on 8205
+                FOR on 8206
+                AGAINST on 8207
+                FOR on 8208
+                AGAINST on 8209
+                FOR on 8210
+                PRESENT on 8211
+                AGAINST on 8212
+                FOR on 8213
+                FOR on 8214
+            }
         }
     }
 }
