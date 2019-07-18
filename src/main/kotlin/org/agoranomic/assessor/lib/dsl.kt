@@ -182,12 +182,14 @@ class _AssessmentReceiver {
         m_proposals += receiver.compile()
     }
 
-    class _VotingReciever(private val m_proposals: List<ProposalNumber>) {
+    class _VotingReciever(private val m_proposals: List<Proposal>) {
+        private val m_proposalNumbers = m_proposals.map { it.number }
         private val m_directVotes = mutableMapOf<Player, Map<ProposalNumber, Vote>>()
         private val m_endorsements = mutableMapOf<Player, Map<ProposalNumber, Endorsement>>()
         private val m_totalEndorsements = mutableMapOf<Player, Player>()
 
-        class _VotesReceiver(private val m_proposals: List<ProposalNumber>, private val player: Player) {
+        class _VotesReceiver(private val m_proposals: List<Proposal>, private val player: Player) {
+            private val m_proposalNumbers = m_proposals.map { it.number }
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
             private val m_endorsements = mutableMapOf<ProposalNumber, Endorsement>()
 
@@ -209,7 +211,7 @@ class _AssessmentReceiver {
             infix fun VoteKind.on(all: _All): _MutableVote {
                 val vote = _MutableVote(this)
 
-                for (proposal in m_proposals) {
+                for (proposal in m_proposalNumbers) {
                     checkProposal(proposal)
                     m_map[proposal] = vote
                 }
@@ -224,7 +226,7 @@ class _AssessmentReceiver {
             }
 
             private fun checkProposal(proposal: ProposalNumber) {
-                require(m_proposals.contains(proposal)) { "No such proposal $proposal" }
+                require(m_proposalNumbers.contains(proposal)) { "No such proposal $proposal" }
                 require(!m_map.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
                 require(!m_endorsements.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
             }
@@ -235,7 +237,7 @@ class _AssessmentReceiver {
             }
 
             infix fun _HalfEndorsement.on(all: _All) {
-                for (proposal in m_proposals) {
+                for (proposal in m_proposalNumbers) {
                     this on proposal
                 }
             }
@@ -290,7 +292,7 @@ class _AssessmentReceiver {
         fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
             val map = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
 
-            for (proposal in m_proposals) {
+            for (proposal in m_proposalNumbers) {
                 val proposalMap = mutableMapOf<Player, Vote>()
 
                 for (voter in (m_directVotes.keys + m_endorsements.keys).filter { p ->
@@ -317,7 +319,7 @@ class _AssessmentReceiver {
     }
 
     fun voting(block: _VotingReciever.() -> Unit) {
-        val receiver = _VotingReciever(m_proposals.map { it.number })
+        val receiver = _VotingReciever(m_proposals)
         receiver.block()
         m_proposalVotes.putAll(receiver.compile())
     }
