@@ -246,6 +246,14 @@ to read
                 FOR on 8192
                 FOR on 8195
             }
+
+            votes(twg) {
+                endorses(author) on all
+            }
+
+            votes(JacobArduino) {
+                endorses(twg) on all
+            }
         }
     }
 }
