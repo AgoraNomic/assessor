@@ -413,6 +413,26 @@ following:
                 FOR on 8213
                 FOR on 8214
             }
+
+            votes(twg) {
+                endorses(JasonCobb) on 8202
+                endorses(JasonCobb) on 8203
+                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE ENDORSE R. LEE
+                // TODO resolve conditional vote on 8205: FOR IF LAST BALLOT CAST TO EVALUATE TO FOR, ELSE AGAINST; IF OTHERWISE INEXTRICABLE, AGAINST
+                endorses(DMargaux) on 8206
+                AGAINST on 8207
+                endorses(JasonCobb) on 8208
+                AGAINST on 8209
+                AGAINST on 8210
+                endorses(G) on 8211
+                endorses(JasonCobb) on 8212
+                endorses(nch) on 8213
+                endorses(nch) on 8214
+            }
+
+            votes(JacobArduino) {
+                endorses(twg) on all
+            }
         }
     }
 }
