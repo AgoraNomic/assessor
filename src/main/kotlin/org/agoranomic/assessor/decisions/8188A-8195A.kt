@@ -237,6 +237,15 @@ to read
             votes(L) {
                 endorses(DMargaux) on all
             }
+
+            votes(Murphy) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                FOR on 8192
+                FOR on 8195
+            }
         }
     }
 }
