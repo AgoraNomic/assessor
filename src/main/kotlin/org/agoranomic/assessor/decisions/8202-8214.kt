@@ -317,7 +317,7 @@ following:
                 // TODO resolve conditional vote on 8207: FOR if G. pledges to give nch a black ribbon else AGAINST
                 PRESENT on 8208
                 FOR on 8209
-                FOR on 8210
+                AGAINST on 8210
                 FOR on 8211
                 FOR on 8212
                 FOR on 8213
