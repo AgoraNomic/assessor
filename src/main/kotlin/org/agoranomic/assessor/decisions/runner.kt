@@ -24,6 +24,7 @@ const val DEST_FILE = "file"
 const val DEST_DIR = "dir"
 const val FORM_LONG = "long"
 const val FORM_SHORT = "short"
+const val FORM_OFFICIAL = "official"
 
 enum class Form {
     LONG(
@@ -31,7 +32,11 @@ enum class Form {
     ),
     SHORT(
         ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
-    );
+    ),
+    OFFICIAL(
+        ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
+    ),
+    ;
 
     val reportConfig: ReportConfig
 
@@ -102,9 +107,11 @@ fun main(args: Array<String>) {
 
     val optFormLong = Option.builder().longOpt(FORM_LONG).desc("Generally longer form").build()
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
+    val optFormOfficial = Option.builder().longOpt(FORM_OFFICIAL).desc("Official report form").build()
     val optGroupForm = OptionGroup().let {
         it.addOption(optFormLong)
         it.addOption(optFormShort)
+        it.addOption(optFormOfficial)
 
         it
     }
@@ -137,6 +144,7 @@ fun main(args: Array<String>) {
         var value = DEFAULT_FORM
         if (provided(optFormLong)) value = Form.LONG
         if (provided(optFormShort)) value = Form.SHORT
+        if (provided(optFormOfficial)) value = Form.OFFICIAL
         return@run value
     }
 
