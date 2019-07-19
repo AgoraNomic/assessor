@@ -333,7 +333,7 @@ following:
                 AGAINST on 8207
                 FOR on 8208
                 AGAINST on 8209
-                FOR on 8210
+                endorses(G) on 8210
                 FOR on 8211
                 FOR on 8212
                 // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
