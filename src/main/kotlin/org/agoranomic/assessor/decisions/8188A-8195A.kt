@@ -1,8 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.VoteKind.FOR
-import org.agoranomic.assessor.lib.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8188A to 8195A`(): AssessmentData {
@@ -254,6 +253,17 @@ to read
             votes(JacobArduino) {
                 endorses(twg) on all
             }
+
+            votes(G) {
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                FOR on 8192
+                AGAINST on 8195
+            }
+
+            Telnaior matches G
         }
     }
 }
