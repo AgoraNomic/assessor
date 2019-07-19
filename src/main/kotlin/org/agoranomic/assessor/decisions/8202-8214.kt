@@ -15,9 +15,7 @@ fun `assessment 8202 to 8214`(): AssessmentData {
 
             G strength 4 comment PM
             Corona strength 1 comment BLOTS
-            twg strength 1 comment BLOTS
-            DMargaux strength 2 comment BLOTS
-            PSS strength 2 comment BLOTS
+            twg strength 2 comment BLOTS
         }
 
         proposals {
