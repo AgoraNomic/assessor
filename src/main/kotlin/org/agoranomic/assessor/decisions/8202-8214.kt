@@ -454,7 +454,7 @@ following:
                 AGAINST on 8203
                 AGAINST on 8204
                 endorses(G) on 8205
-                AGAINST on 8206
+                FOR on 8206
                 AGAINST on 8207 /* if exists */
                 FOR on 8208
                 AGAINST on 8209
