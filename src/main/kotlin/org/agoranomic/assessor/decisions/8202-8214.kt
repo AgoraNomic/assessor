@@ -451,6 +451,7 @@ following:
             Telnaior matches G
 
             votes(Falsifian) {
+                /* NO VOTE on 8202 */
                 AGAINST on 8203
                 AGAINST on 8204
                 endorses(G) on 8205
