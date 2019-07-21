@@ -122,6 +122,7 @@ debt"].""")
                 title("Timeline Control Ordnance v2")
                 ai(3.0)
                 author(Aris)
+                coauthors(omd, JasonCobb)
 
                 text("""
 Enact a new power 3.1 Rule, entitled "Timelines", with the following text:
