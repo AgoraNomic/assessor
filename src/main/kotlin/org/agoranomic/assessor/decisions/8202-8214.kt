@@ -449,6 +449,21 @@ following:
             }
 
             Telnaior matches G
+
+            votes(Falsifian) {
+                AGAINST on 8203
+                AGAINST on 8204
+                endorses(G) on 8205
+                AGAINST on 8206
+                AGAINST on 8207 /* if exists */
+                FOR on 8208
+                AGAINST on 8209
+                AGAINST on 8210
+                FOR on 8211
+                FOR on 8212
+                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
+                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
