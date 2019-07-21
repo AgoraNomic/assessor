@@ -22,7 +22,8 @@ fun `assessment 8202 to 8214`(): AssessmentData {
             proposal(8202) {
                 title("Police Power")
                 ai(1.7)
-                author(JasonCobb)
+                author(Falsifian)
+                coauthors(JasonCobb)
 
                 text(
                     """
