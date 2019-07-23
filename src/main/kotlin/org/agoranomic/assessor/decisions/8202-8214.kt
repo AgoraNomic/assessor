@@ -9,7 +9,6 @@ fun `assessment 8202 to 8214`(): AssessmentData {
         name("8202-8214")
         quorum(7)
 
-        // TODO update for time of assessment
         strengths {
             default(3)
 
@@ -296,7 +295,7 @@ following:
             votes(Aris) {
                 FOR on 8202
                 PRESENT on 8203
-                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                FOR on 8204
                 AGAINST on 8205
                 FOR on 8206
                 AGAINST on 8207
@@ -305,17 +304,17 @@ following:
                 FOR on 8210
                 FOR on 8211
                 FOR on 8212
-                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+                FOR on 8213
+                FOR on 8214
             }
 
             votes(nch) {
                 FOR on 8202
                 AGAINST on 8203
                 PRESENT on 8204
-                // TODO resolve conditional vote on 8205: FOR unless anybody votes FOR after nch otherwise AGAINST
+                AGAINST on 8205 comment "Conditional resolved: somebody voted FOR after nch"
                 FOR on 8206
-                // TODO resolve conditional vote on 8207: FOR if G. pledges to give nch a black ribbon else AGAINST
+                AGAINST on 8207 comment "Conditional resovled: G. did not pledge to give nch a black ribbon"
                 PRESENT on 8208
                 FOR on 8209
                 AGAINST on 8210
@@ -328,7 +327,7 @@ following:
             votes(JasonCobb) {
                 FOR on 8202
                 FOR on 8203
-                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                FOR on 8204
                 AGAINST on 8205
                 FOR on 8206
                 AGAINST on 8207
@@ -337,40 +336,40 @@ following:
                 endorses(G) on 8210
                 FOR on 8211
                 FOR on 8212
-                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+                FOR on 8213
+                FOR on 8214
             }
 
             votes(Trigon) {
                 FOR on 8202
                 PRESENT on 8203
-                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
+                FOR on 8204
                 PRESENT on 8205
                 FOR on 8206
-                // TODO resolve conditional vote on 8207: FOR if G. transfers 766 Coins to Trigon by time of resolution, else AGAINST
+                AGAINST on 8207 comment "Conditional resolved: G. did not transfer 766 Coins to Trigon"
                 FOR on 8208
                 AGAINST on 8209
                 FOR on 8210
                 FOR on 8211
                 PRESENT on 8212
-                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+                FOR on 8213
+                FOR on 8214
             }
 
             votes(DMargaux) {
-                // TODO resolve conditional vote on 8202: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8203: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8205: AGAINST IF VETO ELSE FOR
+                FOR on 8202
+                FOR on 8203
+                FOR on 8204
+                FOR on 8205
                 AGAINST on 8206
                 // NO VOTE on 8207
                 PRESENT on 8208
-                // TODO resolve conditional vote on 8209: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8210: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8211: AGAINST IF VETO ELSE FOR
+                FOR on 8209
+                FOR on 8210
+                FOR on 8211
                 PRESENT on 8212
-                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+                FOR on 8213
+                FOR on 8214
             }
 
             votes(RLee) {
@@ -416,8 +415,8 @@ following:
             votes(twg) {
                 endorses(JasonCobb) on 8202
                 endorses(JasonCobb) on 8203
-                // TODO resolve conditional vote on 8204: AGAINST IF VETO ELSE ENDORSE R. LEE
-                // TODO resolve conditional vote on 8205: FOR IF LAST BALLOT CAST TO EVALUATE TO FOR, ELSE AGAINST; IF OTHERWISE INEXTRICABLE, AGAINST
+                endorses(RLee) on 8204
+                AGAINST on 8205 comment "Conditional resolved: not last ballot cast to evaluate to FOR"
                 endorses(DMargaux) on 8206
                 AGAINST on 8207
                 endorses(JasonCobb) on 8208
@@ -463,8 +462,8 @@ following:
                 AGAINST on 8210
                 FOR on 8211
                 FOR on 8212
-                // TODO resolve conditional vote on 8213: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8214: AGAINST IF VETO ELSE FOR
+                FOR on 8213
+                FOR on 8214
             }
         }
     }
