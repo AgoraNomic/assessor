@@ -5,4 +5,5 @@ Assessor's Archive:
 List of assessments:
 
 * [8196-8201.txt](8196-8201.txt)
+* [8188A-8195A.txt](8188A-8195A.txt)
 * [8188-8195.txt](8188-8195.txt)
