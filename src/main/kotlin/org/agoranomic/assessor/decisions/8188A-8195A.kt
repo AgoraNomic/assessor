@@ -9,7 +9,6 @@ fun `assessment 8188A to 8195A`(): AssessmentData {
         name("8188A-8195A")
         quorum(7)
 
-        // TODO update for time of assessment
         strengths {
             default(3)
 
@@ -179,7 +178,7 @@ to read
                 FOR on 8189
                 FOR on 8190
                 FOR on 8191
-                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8192
                 FOR on 8195
             }
 
@@ -188,7 +187,7 @@ to read
                 FOR on 8189
                 FOR on 8190
                 FOR on 8191
-                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8192
                 AGAINST on 8195
             }
 
@@ -197,7 +196,7 @@ to read
                 FOR on 8189
                 FOR on 8190
                 FOR on 8191
-                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8192
                 FOR on 8195
             }
 
@@ -206,17 +205,17 @@ to read
                 FOR on 8189
                 FOR on 8190
                 FOR on 8191
-                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8192
                 PRESENT on 8195
             }
 
             votes(DMargaux) {
-                // TODO resolve conditional vote on 8188: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8189: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8190: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8191: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8195: AGAINST IF VETO ELSE FOR
+                FOR on 8188
+                FOR on 8189
+                FOR on 8190
+                FOR on 8191
+                FOR on 8192
+                FOR on 8195
             }
 
             votes(RLee) {
@@ -269,7 +268,7 @@ to read
                 FOR on 8189
                 FOR on 8190
                 FOR on 8191
-                // TODO resolve conditional vote on 8192: AGAINST IF VETO ELSE FOR
+                FOR on 8192
                 AGAINST on 8195
             }
         }
