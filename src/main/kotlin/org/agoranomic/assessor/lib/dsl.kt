@@ -97,6 +97,8 @@ class _AssessmentReceiver {
     }
 
     fun strengths(block: _VotingStrengthReceiver.() -> Unit) {
+        require(m_votingStrengths == null) { "Voting strengths specified twice" }
+
         val receiver = _VotingStrengthReceiver()
         receiver.block()
         m_votingStrengths = receiver.compile()
@@ -119,22 +121,27 @@ class _AssessmentReceiver {
             }
 
             fun title(str: String) {
+                require(m_title == null) { "Title specified twice" }
                 m_title = str
             }
 
             fun text(str: String) {
+                require(m_text == null) { "Text specified twice" }
                 m_text = str
             }
 
             fun author(value: Player) {
+                require(m_author == null) { "Author specified twice" }
                 m_author = value
             }
 
             fun coauthors(vararg players: Player) {
+                require(m_coauthors == null) { "Coauthors specified twice" }
                 m_coauthors = players.toList()
             }
 
             fun adoption_index(value: ProposalAI) {
+                require(m_ai == null) { "Adoption index specified twice" }
                 m_ai = value
             }
 
@@ -339,10 +346,14 @@ class _AssessmentReceiver {
     }
 
     fun quorum(value: Int) {
+        require(m_quorum == null) { "Quorum specified twice" }
+
         m_quorum = value
     }
 
     fun name(value: String) {
+        require(m_name == null) { "Name specified twice" }
+
         m_name = value
     }
 
