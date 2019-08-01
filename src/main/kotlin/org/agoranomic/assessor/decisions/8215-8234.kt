@@ -348,47 +348,6 @@ days."""
                 )
             }
 
-            proposal(8226) {
-                title("Cancelling Proposals (arr. for violin)")
-                ai(3.0)
-                author(JacobArduino)
-                coauthors(twg, G)
-
-                text(
-                    """
-[ This has bugged me for a while (no pun intended): if a broken proposal makes
-   it to its voting period, even if the error is then discovered, it tends not
-   to percolate through to everyone doing the voting, and the proposal gets
-   adopted anyway. I've been trying to get around this by just endorsing the
-   proposal's author, on the basis that e's the most likely to notice if there
-   is a problem and can then change eir vote to AGAINST, but that has its own
-   problems. I feel this is a fairly neat solution with enough safeguards to
-   stop it being abused. ]
-
-[ This second version removes reliance on the Assessor to support the action,
-  and adds protection against the Speaker's delay (which would function here
-  as a veto). ]
-
-Enact a new rule, "Cancelling Erroneous Proposals", Power=3.0, with the
-following text:
-
-  During the voting period of an Agoran decision determining whether or not
-  to adopt a proposal, its author CAN with support cancel the decision.
-
-  It is RECOMMENDED that this ability only be used if the proposal contains
-  a textual error preventing it from having the effect its author intended.
-
-  The Speaker is not eligible to object to an announcement of intent to
-  perform an action permitted by this rule.
-
-Amend Rule 955, "Determining the Will of Agora", by adding the following list
-item to the unnumbered list in between the two previously existing items:
-
-  - If the decision has been cancelled, as permitted by rules of power 3 or
-    greater, the outcome is instead CANCELLED."""
-                )
-            }
-
             proposal(8227) {
                 title("Fresh start v2")
                 ai(3.1)
