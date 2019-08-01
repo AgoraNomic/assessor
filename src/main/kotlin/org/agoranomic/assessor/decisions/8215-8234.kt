@@ -610,6 +610,11 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 FOR on 8233
                 endorses(G /* Herald */) on 8234
             }
+
+            votes(DMargaux) {
+                // TODO resolve conditional vote on ALL: ENDORSE final non-conditional non-endorse voter
+                // This makes my life hell
+            }
         }
     }
 }
