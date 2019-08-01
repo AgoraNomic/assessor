@@ -35,7 +35,7 @@ data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
     }
 }
 
-data class Endorsement(val endorsee: Player, val isSilent: Boolean)
+data class Endorsement(val endorsee: Player)
 
 data class SinglePlayerVoteMap(val votes: Map<ProposalNumber, Vote>, val endorsements: Map<ProposalNumber, Endorsement>)
 
@@ -256,7 +256,7 @@ class _AssessmentReceiver {
 
             infix fun _HalfEndorsement.on(proposal: ProposalNumber) {
                 checkProposal(proposal)
-                m_endorsements[proposal] = Endorsement(this.endorsee, false)
+                m_endorsements[proposal] = Endorsement(this.endorsee)
             }
 
             infix fun _HalfEndorsement.on(all: _All) {
@@ -298,10 +298,10 @@ class _AssessmentReceiver {
             m_endorsements[player] = result.endorsements
         }
 
-        private fun resolveVote(proposal: ProposalNumber, player: Player, useEndorsementMessage: Boolean, vararg playersSeen: Player): Vote {
+        private fun resolveVote(proposal: ProposalNumber, player: Player, vararg playersSeen: Player): Vote {
             val isEndorsement = playersSeen.isNotEmpty()
 
-            fun Vote.withEndorsementComment(): Vote = if (isEndorsement && useEndorsementMessage) copy(comment = "Endorsement of ${player.name}") else this
+            fun Vote.withEndorsementComment(): Vote = if (isEndorsement) copy(comment = "Endorsement of ${player.name}") else this
 
             fun inextricableEndorsement(): Vote = Vote(VoteKind.PRESENT, "Endorsement of non-voter ${player.name}")
 
@@ -313,7 +313,7 @@ class _AssessmentReceiver {
                 val endorsee = m_endorsements[player]!![proposal]!!.endorsee
                 if (playersSeen.contains(endorsee)) error("Endorsement cycle")
 
-                resolveVote(proposal, endorsee, useEndorsementMessage, *((playersSeen.toList() + player).toTypedArray())).withEndorsementComment()
+                resolveVote(proposal, endorsee, *((playersSeen.toList() + player).toTypedArray())).withEndorsementComment()
             }()
 
             if (isEndorsement) return inextricableEndorsement()
@@ -331,7 +331,7 @@ class _AssessmentReceiver {
                             (m_endorsements[p]?.containsKey(proposal) ?: false)
                 }) {
                     proposalMap[voter] =
-                        resolveVote(proposal, voter, m_endorsements[voter]?.get(proposal)?.isSilent?.not() ?: true)
+                        resolveVote(proposal, voter)
                 }
 
                 for (totalEndorsement in m_totalEndorsements) {
