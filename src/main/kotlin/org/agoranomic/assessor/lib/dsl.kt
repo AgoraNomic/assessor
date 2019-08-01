@@ -50,6 +50,10 @@ data class MultiProposalVoteMap(private val map: Map<ProposalNumber, SinglePropo
     }
 }
 
+@DslMarker
+@Target(AnnotationTarget.CLASS)
+annotation class AssessmentDSL
+
 data class AssessmentData(
     val name: String,
     val quorum: Int,
@@ -58,6 +62,7 @@ data class AssessmentData(
     val votes: MultiProposalVoteMap
 )
 
+@AssessmentDSL
 class _AssessmentReceiver {
     private var m_votingStrengths: VotingStrengthMap? = null
     private val m_proposals = mutableListOf<Proposal>()
@@ -65,6 +70,7 @@ class _AssessmentReceiver {
     private var m_quorum: Int? = null
     private var m_name: String? = null
 
+    @AssessmentDSL
     class _VotingStrengthReceiver {
         private var m_defaultStrength: VotingStrengthValue? = null
         private var m_customStrengths = mutableMapOf<Player, _MutableVotingStrength>()
@@ -104,9 +110,11 @@ class _AssessmentReceiver {
         m_votingStrengths = receiver.compile()
     }
 
+    @AssessmentDSL
     class _ProposalsReceiver {
         private val m_proposals = mutableListOf<Proposal>()
 
+        @AssessmentDSL
         class _ProposalReceiver {
             private val m_number: ProposalNumber
             private var m_title: String? = null
@@ -189,12 +197,14 @@ class _AssessmentReceiver {
         m_proposals += receiver.compile()
     }
 
+    @AssessmentDSL
     class _VotingReciever(private val m_proposals: List<Proposal>) {
         private val m_proposalNumbers = m_proposals.map { it.number }
         private val m_directVotes = mutableMapOf<Player, Map<ProposalNumber, Vote>>()
         private val m_endorsements = mutableMapOf<Player, Map<ProposalNumber, Endorsement>>()
         private val m_totalEndorsements = mutableMapOf<Player, Player>()
 
+        @AssessmentDSL
         class _VotesReceiver(private val m_proposals: List<Proposal>, private val player: Player) {
             private val m_proposalNumbers = m_proposals.map { it.number }
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
