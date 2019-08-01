@@ -35,7 +35,7 @@ data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
     }
 }
 
-data class Endorsement(val endorsee: Player)
+data class Endorsement(val endorsee: Player, var comment: String?)
 
 data class SinglePlayerVoteMap(val votes: Map<ProposalNumber, Vote>, val endorsements: Map<ProposalNumber, Endorsement>)
 
@@ -208,13 +208,17 @@ class _AssessmentReceiver {
         class _VotesReceiver(private val m_proposals: List<Proposal>, private val player: Player) {
             private val m_proposalNumbers = m_proposals.map { it.number }
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
-            private val m_endorsements = mutableMapOf<ProposalNumber, Endorsement>()
+            private val m_endorsements = mutableMapOf<ProposalNumber, _MutableEndorsement>()
 
             public class _All
             public val all = _All()
 
             data class _MutableVote(val value: VoteKind, var comment: String? = null) {
                 fun compile() = Vote(value, comment)
+            }
+
+            data class _MutableEndorsement(val endorsee: Player, var comment: String? = null) {
+                fun compile() = Endorsement(endorsee, comment)
             }
 
             infix fun VoteKind.on(proposal: ProposalNumber): _MutableVote {
@@ -254,9 +258,12 @@ class _AssessmentReceiver {
                 require(!m_endorsements.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
             }
 
-            infix fun _HalfEndorsement.on(proposal: ProposalNumber) {
+            infix fun _HalfEndorsement.on(proposal: ProposalNumber): _MutableEndorsement {
                 checkProposal(proposal)
-                m_endorsements[proposal] = Endorsement(this.endorsee)
+
+                val mutableEndorsement = _MutableEndorsement(this.endorsee)
+                m_endorsements[proposal] = mutableEndorsement
+                return mutableEndorsement
             }
 
             infix fun _HalfEndorsement.on(all: _All) {
@@ -280,7 +287,7 @@ class _AssessmentReceiver {
             fun compile(): SinglePlayerVoteMap {
                 return SinglePlayerVoteMap(m_map.mapValues {
                     (_, value) -> value.compile()
-                }, m_endorsements)
+                }, m_endorsements.mapValues { (_, value) -> value.compile() })
             }
         }
 
@@ -327,9 +334,10 @@ class _AssessmentReceiver {
 
                 val endorseeVote = resolveVote(proposal, endorsement.endorsee, *((playersSeen.toList() + player).toTypedArray()))
                 val endorseeName = endorsement.endorsee.name
+                val endorseeComment = endorsement.comment
 
                 if (endorseeVote == null) return Vote(VoteKind.PRESENT, "Endorsement of non-voter $endorseeName")
-                else return endorseeVote.copy(comment = "Endorsement of $endorseeName")
+                else return endorseeVote.copy(comment = "Endorsement of $endorseeName" + (if (endorseeComment != null) ": " + endorseeComment else ""))
             }
 
             if (hasTotalEndorsement) {
