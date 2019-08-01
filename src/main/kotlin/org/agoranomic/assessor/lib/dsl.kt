@@ -298,54 +298,66 @@ class _AssessmentReceiver {
             m_endorsements[player] = result.endorsements
         }
 
-        private fun resolveVote(proposal: ProposalNumber, player: Player, vararg playersSeen: Player): Vote {
-            val isEndorsement = playersSeen.isNotEmpty()
 
-            fun Vote.withEndorsementComment(): Vote = if (isEndorsement) copy(comment = "Endorsement of ${player.name}") else this
+        private fun resolveVote(proposal: ProposalNumber, player: Player, vararg playersSeen: Player): Vote? {
+            require(!playersSeen.contains(player)) { "Endorsement loop" }
 
-            fun inextricableEndorsement(): Vote = Vote(VoteKind.PRESENT, "Endorsement of non-voter ${player.name}")
+            val directVote = m_directVotes[player]?.get(proposal)
+            val hasDirectVote = directVote != null
 
-            val playerDirect = m_directVotes[player]
-            if (playerDirect != null && playerDirect.containsKey(proposal)) return m_directVotes[player]!![proposal]!!.withEndorsementComment()
+            val endorsement = m_endorsements[player]?.get(proposal)
+            val hasEndorsement = endorsement != null
 
-            val playerEndorsements = m_endorsements[player]
-            if (playerEndorsements != null && playerEndorsements.containsKey(proposal)) return {
-                val endorsee = m_endorsements[player]!![proposal]!!.endorsee
-                if (playersSeen.contains(endorsee)) error("Endorsement cycle")
+            val totalEndorsement = m_totalEndorsements[player]
+            val hasTotalEndorsement = totalEndorsement != null
 
-                resolveVote(proposal, endorsee, *((playersSeen.toList() + player).toTypedArray())).withEndorsementComment()
-            }()
+            val voteCount = listOf(hasDirectVote, hasEndorsement, hasTotalEndorsement).count { it == true }
+            if (voteCount == 0) return null
 
-            if (isEndorsement) return inextricableEndorsement()
-            else throw IllegalArgumentException("No vote information for ${player.name} on proposal $proposal.")
+            require(voteCount == 1) { "More than one vote cast on $proposal by ${player.name}" }
+
+            if (hasDirectVote) {
+                directVote!!
+
+                return directVote
+            }
+
+            if (hasEndorsement) {
+                endorsement!!
+
+                val endorseeVote = resolveVote(proposal, endorsement.endorsee, *((playersSeen.toList() + player).toTypedArray()))
+                val endorseeName = endorsement.endorsee.name
+
+                if (endorseeVote == null) return Vote(VoteKind.PRESENT, "Endorsement of non-voter $endorseeName")
+                else return endorseeVote.copy(comment = "Endorsement of $endorseeName")
+            }
+
+            if (hasTotalEndorsement) {
+                totalEndorsement!!
+
+                return resolveVote(proposal, totalEndorsement, *((playersSeen.toList() + player).toTypedArray()))
+            }
+
+            throw IllegalStateException("Unimplemented vote type")
         }
 
         fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
-            val map = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
+            val allProposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
+
+            val allPlayers = (m_directVotes.keys + m_endorsements.keys + m_totalEndorsements.keys).distinct()
 
             for (proposal in m_proposalNumbers) {
-                val proposalMap = mutableMapOf<Player, Vote>()
+                val proposalVotes = mutableMapOf<Player, Vote>()
 
-                for (voter in (m_directVotes.keys + m_endorsements.keys).filter { p ->
-                    (m_directVotes[p]?.containsKey(proposal) ?: false) ||
-                            (m_endorsements[p]?.containsKey(proposal) ?: false)
-                }) {
-                    proposalMap[voter] =
-                        resolveVote(proposal, voter)
+                for (player in allPlayers) {
+                    val vote = resolveVote(proposal, player)
+                    if (vote != null) proposalVotes[player] = vote
                 }
 
-                for (totalEndorsement in m_totalEndorsements) {
-                    val endorserVote = proposalMap[totalEndorsement.key]
-                    if (endorserVote != null) error("Invalid use of alwaysEndorses: ${totalEndorsement.key.name} voted on proposal $proposal.")
-
-                    val endorseeVote = proposalMap[totalEndorsement.value]
-                    if (endorseeVote != null) proposalMap[totalEndorsement.key] = endorseeVote
-                }
-
-                map[proposal] = SingleProposalVoteMap(proposalMap)
+                allProposalVotes[proposal] = SingleProposalVoteMap(proposalVotes)
             }
 
-            return map
+            return allProposalVotes
         }
     }
 
