@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8215 to 8234`(): AssessmentData {
@@ -569,6 +570,27 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             G strength 4 comment PM
             Corona strength 1 comment BLOTS
             twg strength 2 comment BLOTS
+        }
+
+        voting {
+            votes(Falsifian) {
+                endorses(G) on 8215
+                AGAINST on 8216
+                endorses(G) on 8217
+                endorses(JasonCobb) on 8218
+                PRESENT on 8221
+                endorses(JasonCobb) on 8222
+                AGAINST on 8223
+                PRESENT on 8224
+                FOR on 8227
+                endorses(G) on 8228
+                AGAINST on 8229
+                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
+                AGAINST on 8231
+                endorses(Murphy) on 8232
+                AGAINST on 8233
+                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
