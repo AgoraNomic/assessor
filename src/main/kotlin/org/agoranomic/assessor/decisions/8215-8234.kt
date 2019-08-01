@@ -106,6 +106,7 @@ with the text
                 title("Unified fine creation syntax")
                 ai(3.0)
                 author(JasonCobb)
+                coauthors(Aris)
 
                 text(
                     """
