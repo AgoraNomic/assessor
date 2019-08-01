@@ -563,5 +563,12 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 )
             }
         }
+
+        strengths {
+            default(3)
+            G strength 4 comment PM
+            Corona strength 1 comment BLOTS
+            twg strength 2 comment BLOTS
+        }
     }
 }
