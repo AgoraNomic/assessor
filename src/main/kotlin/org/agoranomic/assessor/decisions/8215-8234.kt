@@ -336,18 +336,6 @@ days."""
                 )
             }
 
-            proposal(8225) {
-                title("Remove Inactive Sods!")
-                ai(3.0)
-                author(RLee)
-
-                text(
-                    """
-Deregister each player who has not posted to a public forum in 30
-days."""
-                )
-            }
-
             proposal(8227) {
                 title("Fresh start v2")
                 ai(3.1)
