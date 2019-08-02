@@ -22,7 +22,7 @@ fun StringBuilder.emitQuorum(quorum: Int) {
 }
 
 fun StringBuilder.emitProposalHeader(proposal: Proposal) {
-    this.append("RESOLUTION OF PROPOSAL ${proposal.number} (\"${proposal.title}\")")
+    this.append("PROPOSAL ${proposal.number} (\"${proposal.title}\")")
     emitNewLine()
 }
 
