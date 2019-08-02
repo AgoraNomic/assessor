@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.lib
 
-fun StringBuilder.emitNewLine() {
+fun StringBuilder.emitLine() {
     this.append('\n')
 }
 
@@ -10,7 +10,7 @@ fun StringBuilder.emitString(string: String) {
 
 fun StringBuilder.emitLine(string: String) {
     emitString(string)
-    emitNewLine()
+    emitLine()
 }
 
 fun StringBuilder.emitHeader() {
@@ -23,7 +23,7 @@ fun StringBuilder.emitQuorum(quorum: Int) {
 
 fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     this.append("PROPOSAL ${proposal.number} (\"${proposal.title}\")")
-    emitNewLine()
+    emitLine()
 }
 
 fun StringBuilder.emitProposalVotes(voteMap: SingleProposalVoteMap, voteKindVoteCounts: Boolean) {
@@ -32,7 +32,7 @@ fun StringBuilder.emitProposalVotes(voteMap: SingleProposalVoteMap, voteKindVote
 
         emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
         emitString(matchingVotes.map { it.name }.sorted().joinToString(", "))
-        emitNewLine()
+        emitLine()
     }
 
     emitVoteKind(VoteKind.FOR)
@@ -47,7 +47,7 @@ fun StringBuilder.emitSingleVotingStrength(player: Player, strength: VotingStren
         emitString(" (${strength.comment})")
     }
 
-    emitNewLine()
+    emitLine()
 }
 
 
@@ -93,7 +93,7 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
 
     if (sortedProposals.isNotEmpty()) {
         emitLine("The full text of each ADOPTED proposal is included below:")
-        emitNewLine()
+        emitLine()
 
         for (proposal in sortedProposals) {
             emitSeparator()
@@ -102,11 +102,11 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
             emitLine("Adoption index: ${proposal.ai}")
             emitLine("Author: ${proposal.author.name}")
             emitLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
-            emitNewLine()
-            emitNewLine()
+            emitLine()
+            emitLine()
             emitString(proposal.text.trim())
-            emitNewLine()
-            emitNewLine()
+            emitLine()
+            emitLine()
         }
 
         emitSeparator()
@@ -129,14 +129,14 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
 
     output.run {
         emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.assessmentName}")
-        emitNewLine()
+        emitLine()
         emitHeader()
-        emitNewLine()
+        emitLine()
         emitQuorum(resolutionMap.quorum)
-        emitNewLine()
+        emitLine()
         emitVotingStrengths(resolutionMap.votingStrengths)
-        emitNewLine()
-        emitNewLine()
+        emitLine()
+        emitLine()
 
         for (proposal in sortedProposals) {
             val resolution = resolutionMap[proposal.number]
@@ -147,10 +147,10 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
             emitProposalAI(resolution, proposal.ai)
             emitProposalOutcome(resolution)
             if (config.voteComments) emitVoteComments(resolution)
-            emitNewLine()
+            emitLine()
         }
 
-        emitNewLine()
+        emitLine()
 
         emitProposalText(resolutionMap.filterResult(ProposalResult.ADOPTED).keys.map { it.lookupIn(sortedProposals) })
     }
