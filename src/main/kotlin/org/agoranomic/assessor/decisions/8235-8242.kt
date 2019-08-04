@@ -316,6 +316,14 @@ Rule 2532 (Zombies):
                 FOR on 8241
                 FOR on 8242
             }
+
+            votes(twg) {
+                FOR on all
+            }
+
+            votes(JacobArduino) {
+                endorses(twg) on all
+            }
         }
     }
 }
