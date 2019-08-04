@@ -646,7 +646,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 AGAINST on 8224
                 AGAINST on 8227
                 FOR on 8228
-                PRESENT on 8229
+                FOR on 8229
                 PRESENT on 8230
                 PRESENT on 8231
                 FOR on 8232
