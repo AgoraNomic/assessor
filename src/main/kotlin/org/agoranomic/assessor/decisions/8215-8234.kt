@@ -634,6 +634,27 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 AGAINST on 8233
                 FOR on 8234
             }
+
+            votes(G) {
+                FOR on 8215
+                AGAINST on 8216
+                FOR on 8217
+                FOR on 8218
+                FOR on 8221
+                FOR on 8222
+                AGAINST on 8223
+                AGAINST on 8224
+                AGAINST on 8227
+                FOR on 8228
+                PRESENT on 8229
+                PRESENT on 8230
+                PRESENT on 8231
+                FOR on 8232
+                AGAINST on 8233
+                FOR on 8234
+            }
+
+            Telnaior matches G
         }
     }
 }
