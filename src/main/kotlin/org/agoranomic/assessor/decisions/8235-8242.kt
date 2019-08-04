@@ -9,6 +9,13 @@ fun `assessment 8235 to 8242`(): AssessmentData {
 
         quorum(9)
 
+        strengths {
+            default(3)
+            G strength 4 comment PM
+            Corona strength 1 comment BLOTS
+            twg strength 2 comment BLOTS
+        }
+
         proposals {
             proposal(8235) {
                 title("Unified fine creation syntax")
