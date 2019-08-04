@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8235 to 8242`(): AssessmentData {
@@ -302,6 +303,19 @@ Rule 2532 (Zombies):
   master switch is set to Agora.""")
             }
 
+        }
+
+        voting {
+            votes(JasonCobb) {
+                FOR on 8235
+                FOR on 8236
+                FOR on 8237
+                FOR on 8238
+                FOR on 8239
+                FOR on 8240
+                FOR on 8241
+                FOR on 8242
+            }
         }
     }
 }
