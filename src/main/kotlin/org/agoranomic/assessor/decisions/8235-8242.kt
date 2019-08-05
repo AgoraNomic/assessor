@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 fun `assessment 8235 to 8242`(): AssessmentData {
@@ -323,6 +323,17 @@ Rule 2532 (Zombies):
 
             votes(JacobArduino) {
                 endorses(twg) on all
+            }
+
+            votes(Falsifian) {
+                PRESENT on 8235
+                PRESENT on 8236
+                AGAINST on 8237
+                endorses(twg) on 8238
+                PRESENT on 8239
+                endorses(JasonCobb) on 8240
+                endorses(JasonCobb) on 8241
+                FOR on 8242
             }
         }
     }
