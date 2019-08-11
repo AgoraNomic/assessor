@@ -13,7 +13,8 @@ private val assessments = listOf(
     `assessment 8188 to 8195`(),
     `assessment 8196 to 8201`(),
     `assessment 8188A to 8195A`(),
-    `assessment 8202 to 8214`()
+    `assessment 8202 to 8214`(),
+    `assessment 8215 to 8234`()
 ).associateBy { it.name }
 
 inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
