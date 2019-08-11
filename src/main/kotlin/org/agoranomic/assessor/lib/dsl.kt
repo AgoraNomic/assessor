@@ -280,6 +280,10 @@ class _AssessmentReceiver {
                 }
             }
 
+            infix fun _MutableEndorsement.comment(str: String) {
+                this.comment = str
+            }
+
             infix fun _MutableVote.comment(value: String) {
                 this.comment = value
             }
