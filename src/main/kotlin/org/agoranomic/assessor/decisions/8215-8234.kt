@@ -585,11 +585,11 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 AGAINST on 8227
                 endorses(G) on 8228
                 AGAINST on 8229
-                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
+                FOR on 8230 comment NO_VETO
                 AGAINST on 8231
                 endorses(Murphy) on 8232
                 AGAINST on 8233
-                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+                FOR on 8234 comment NO_VETO
             }
 
             votes(Murphy) {
@@ -612,8 +612,21 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             }
 
             votes(DMargaux) {
-                // TODO resolve conditional vote on ALL: ENDORSE final non-conditional non-endorse voter
-                // This makes my life hell
+                endorses(G) on 8215 comment "Final non-conditional ballot"
+                endorses(G) on 8216 comment "Final non-conditional ballot"
+                endorses(G) on 8217 comment "Final non-conditional ballot"
+                endorses(G) on 8218 comment "Final non-conditional ballot"
+                endorses(G) on 8221 comment "Final non-conditional ballot"
+                endorses(G) on 8222 comment "Final non-conditional ballot"
+                endorses(G) on 8223 comment "Final non-conditional ballot"
+                endorses(G) on 8224 comment "Final non-conditional ballot"
+                endorses(Falsifian) on 8227 comment "Final non-conditional ballot"
+                endorses(G) on 8228 comment "Final non-conditional ballot"
+                endorses(Telnaior) on 8229 comment "Final non-conditional ballot"
+                endorses(G) on 8230 comment "Final non-conditional ballot"
+                endorses(G) on 8231 comment "Final non-conditional ballot"
+                endorses(G) on 8232 comment "Final non-conditional ballot"
+                endorses(G) on 8234 comment "Final non-conditional ballot"
             }
 
             votes(JasonCobb) {
