@@ -335,6 +335,17 @@ Rule 2532 (Zombies):
                 endorses(JasonCobb) on 8241
                 FOR on 8242
             }
+
+            votes(omd) {
+                FOR on 8235
+                FOR on 8236
+                PRESENT on 8237
+                FOR on 8238
+                FOR on 8239
+                FOR on 8240
+                // NO VOTE on 8241
+                FOR on 8242
+            }
         }
     }
 }
