@@ -346,6 +346,14 @@ Rule 2532 (Zombies):
                 // NO VOTE on 8241
                 FOR on 8242
             }
+
+            votes(G) {
+                PRESENT on all
+            }
+
+            votes(Telnaior) {
+                PRESENT on all
+            }
         }
     }
 }
