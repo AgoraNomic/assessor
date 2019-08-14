@@ -354,6 +354,17 @@ Rule 2532 (Zombies):
             votes(Telnaior) {
                 PRESENT on all
             }
+
+            votes(Murphy) {
+                PRESENT on 8235
+                AGAINST on 8236
+                PRESENT on 8237
+                FOR on 8238
+                AGAINST on 8239
+                PRESENT on 8240
+                PRESENT on 8241
+                PRESENT on 8242
+            }
         }
     }
 }
