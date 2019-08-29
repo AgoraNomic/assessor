@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.decisions
 
+import io.github.classgraph.ClassGraph
 import org.agoranomic.assessor.lib.AssessmentData
 import org.agoranomic.assessor.lib.ReportConfig
 import org.agoranomic.assessor.lib.report
@@ -8,15 +9,13 @@ import org.apache.commons.cli.*
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
+import kotlin.reflect.KFunction
+import kotlin.reflect.jvm.jvmName
+import kotlin.reflect.jvm.kotlinFunction
 
-private val assessments = listOf(
-    `assessment 8188 to 8195`(),
-    `assessment 8196 to 8201`(),
-    `assessment 8188A to 8195A`(),
-    `assessment 8202 to 8214`(),
-    `assessment 8215 to 8234`(),
-    `assessment 8235 to 8242`()
-).associateBy { it.name }
+@Target(AnnotationTarget.FUNCTION)
+@Retention(AnnotationRetention.RUNTIME)
+annotation class UseAssessment
 
 inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
@@ -55,6 +54,8 @@ enum class Form {
 val DEFAULT_FORM = Form.LONG
 
 fun main(args: Array<String>) {
+    val assessments = findAnnotatedAssessmentMethods()
+
     val options = Options()
 
     val optDestStdout = Option.builder().longOpt(DEST_STDOUT).desc("Print resolutions to the standard output").build()
@@ -233,4 +234,29 @@ fun main(args: Array<String>) {
                 }
         }
     }
+}
+
+private fun findAnnotatedAssessmentMethods(): Map<String, AssessmentData> {
+    val packageName = "org.agoranomic.assessor.decisions"
+    val annotationName = UseAssessment::class.jvmName
+
+    val classGraph = ClassGraph().enableAllInfo().whitelistPackages(packageName)
+
+    val rawAssessments = mutableListOf<AssessmentData>()
+
+    classGraph.scan().use { result ->
+        result!!
+
+        val classInfoList = result.getClassesWithMethodAnnotation(annotationName)!!
+
+        for (classInfo in classInfoList) {
+            for (methodInfo in classInfo.methodInfo) {
+                if (methodInfo.hasAnnotation(annotationName)) {
+                    rawAssessments += (methodInfo.loadClassAndGetMethod().kotlinFunction as KFunction<AssessmentData>).call()
+                }
+            }
+        }
+    }
+
+    return rawAssessments.associateBy { it.name }
 }

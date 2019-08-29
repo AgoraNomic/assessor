@@ -4,6 +4,7 @@ import org.agoranomic.assessor.lib.AssessmentData
 import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
+@UseAssessment
 fun `assessment 8188A to 8195A`(): AssessmentData {
     return assessment {
         name("8188A-8195A")
