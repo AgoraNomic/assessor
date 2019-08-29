@@ -32,7 +32,7 @@ const val FORM_LONG = "long"
 const val FORM_SHORT = "short"
 const val FORM_OFFICIAL = "official"
 
-enum class Form {
+enum class Form(val reportConfig: ReportConfig) {
     LONG(
         ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
     ),
@@ -44,11 +44,6 @@ enum class Form {
     ),
     ;
 
-    val reportConfig: ReportConfig
-
-    constructor(reportConfig: ReportConfig) {
-        this.reportConfig = reportConfig
-    }
 }
 
 val DEFAULT_FORM = Form.LONG
