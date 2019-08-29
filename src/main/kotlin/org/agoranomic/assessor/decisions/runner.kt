@@ -17,22 +17,22 @@ import kotlin.reflect.jvm.kotlinFunction
 @Retention(AnnotationRetention.RUNTIME)
 annotation class UseAssessment
 
-inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
+private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
-const val VOTE_COMMENTS_YES = "vote-comments"
-const val VOTE_COMMENTS_NO = "no-vote-comments"
-const val BALLOTS_LINE_YES = "ballots-line"
-const val BALLOTS_LINE_NO = "no-ballots-line"
-const val VOTE_KIND_COUNTS_YES = "vote-counts"
-const val VOTE_KIND_COUNTS_NO = "no-vote-counts"
-const val DEST_STDOUT = "stdout"
-const val DEST_FILE = "file"
-const val DEST_DIR = "dir"
-const val FORM_LONG = "long"
-const val FORM_SHORT = "short"
-const val FORM_OFFICIAL = "official"
+private const val VOTE_COMMENTS_YES = "vote-comments"
+private const val VOTE_COMMENTS_NO = "no-vote-comments"
+private const val BALLOTS_LINE_YES = "ballots-line"
+private const val BALLOTS_LINE_NO = "no-ballots-line"
+private const val VOTE_KIND_COUNTS_YES = "vote-counts"
+private const val VOTE_KIND_COUNTS_NO = "no-vote-counts"
+private const val DEST_STDOUT = "stdout"
+private const val DEST_FILE = "file"
+private const val DEST_DIR = "dir"
+private const val FORM_LONG = "long"
+private const val FORM_SHORT = "short"
+private const val FORM_OFFICIAL = "official"
 
-enum class Form(val reportConfig: ReportConfig) {
+private enum class Form(val reportConfig: ReportConfig) {
     LONG(
         ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
     ),
@@ -46,7 +46,7 @@ enum class Form(val reportConfig: ReportConfig) {
 
 }
 
-val DEFAULT_FORM = Form.LONG
+private val DEFAULT_FORM = Form.LONG
 
 fun main(args: Array<String>) {
     val assessments = findAnnotatedAssessmentMethods()
