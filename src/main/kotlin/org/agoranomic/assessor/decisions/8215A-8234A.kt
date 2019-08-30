@@ -577,6 +577,25 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 AGAINST on 8233
                 // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
             }
+
+            votes(JasonCobb) {
+                FOR on 8215
+                AGAINST on 8216
+                PRESENT on 8217
+                FOR on 8218
+                FOR on 8221
+                FOR on 8222
+                AGAINST on 8223
+                AGAINST on 8224
+                endorses(Falsifian) on 8227
+                FOR on 8228
+                AGAINST on 8229
+                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
+                AGAINST on 8231
+                FOR on 8232
+                AGAINST on 8233
+                FOR on 8234
+            }
         }
     }
 }
