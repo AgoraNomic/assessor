@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -112,6 +113,14 @@ Proposal Pool.""")
                 // TODO resolve conditional vote on 8245: AGAINST if valid ballot by Aris voting AGAINST, otherwise FOR
                 endorses(JasonCobb) on 8246
                 // TODO resolve conditional vote on 8247: AGAINST IF VETO ELSE FOR
+            }
+
+            votes(Aris) {
+                FOR on 8243
+                FOR on 8244
+                FOR on 8245
+                FOR on 8246
+                // TODO resolve conditional vote on 8247: AGAINST IF VETO ELSE PRESENT
             }
         }
     }
