@@ -6,6 +6,7 @@ import org.agoranomic.assessor.lib.assessment
 @UseAssessment
 fun `assessment 8215A-8234A`(): AssessmentData {
     return assessment {
+        name("8215A-8234A")
         quorum(4)
 
         strengths {
