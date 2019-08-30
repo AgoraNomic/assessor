@@ -1,6 +1,8 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.VoteKind.PRESENT
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -539,7 +541,24 @@ Append the following paragraph to Rule 2510 (Such is Karma):
         }
 
         voting {
-
+            votes(Falsifian) {
+                endorses(G) on 8215
+                AGAINST on 8216
+                endorses(G) on 8217
+                endorses(JasonCobb) on 8218
+                PRESENT on 8221
+                endorses(JasonCobb) on 8222
+                AGAINST on 8223
+                PRESENT on 8224
+                AGAINST on 8227
+                endorses(G) on 8228
+                PRESENT on 8229
+                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
+                AGAINST on 8231
+                endorses(Murphy) on 8232
+                AGAINST on 8233
+                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
