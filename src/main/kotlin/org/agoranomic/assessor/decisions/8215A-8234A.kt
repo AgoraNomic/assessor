@@ -6,6 +6,8 @@ import org.agoranomic.assessor.lib.assessment
 @UseAssessment
 fun `assessment 8215A-8234A`(): AssessmentData {
     return assessment {
+        quorum(4)
+
         strengths {
             default(3)
             Corona strength 1 comment BLOTS
