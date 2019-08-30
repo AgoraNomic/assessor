@@ -537,5 +537,9 @@ Append the following paragraph to Rule 2510 (Such is Karma):
   set such that the sum of all Karma values in the game equals 0.""")
             }
         }
+
+        voting {
+
+        }
     }
 }
