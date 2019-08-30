@@ -9,6 +9,11 @@ fun `assessment 8243 to 8247`(): AssessmentData {
         name("8243-8247")
         quorum(4)
 
+        strengths {
+            default(3)
+            Corona strength 1 comment BLOTS
+        }
+
         proposals {
             proposal(8243) {
                 title("Self-ratifying regulations")
