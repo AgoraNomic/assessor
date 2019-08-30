@@ -6,6 +6,11 @@ import org.agoranomic.assessor.lib.assessment
 @UseAssessment
 fun `assessment 8215A-8234A`(): AssessmentData {
     return assessment {
+        strengths {
+            default(3)
+            Corona strength 1 comment BLOTS
+        }
+
         proposals {
             proposal(8215) {
                 title("recusal simplification")
