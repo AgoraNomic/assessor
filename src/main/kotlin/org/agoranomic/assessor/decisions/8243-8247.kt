@@ -122,6 +122,14 @@ Proposal Pool.""")
                 FOR on 8246
                 // TODO resolve conditional vote on 8247: AGAINST IF VETO ELSE PRESENT
             }
+
+            votes(JasonCobb) {
+                FOR on 8243
+                FOR on 8244
+                endorses(G) on 8245
+                FOR on 8246
+                FOR on 8247
+            }
         }
     }
 }
