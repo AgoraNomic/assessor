@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -129,6 +129,18 @@ Proposal Pool.""")
                 endorses(G) on 8245
                 FOR on 8246
                 FOR on 8247
+            }
+
+            votes(twg) {
+                AGAINST on 8243
+                PRESENT on 8244
+                endorses(Aris) on 8245
+                endorses(JasonCobb) on 8246
+                FOR on 8247
+            }
+
+            votes(JacobArduino) {
+                endorses(twg) on all
             }
         }
     }
