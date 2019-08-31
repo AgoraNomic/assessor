@@ -596,6 +596,29 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 AGAINST on 8233
                 FOR on 8234
             }
+
+            votes(twg) {
+                endorses(G) on 8215
+                AGAINST on 8216
+                endorses(G) on 8217
+                endorses(JasonCobb) on 8218
+                PRESENT on 8221
+                endorses(JasonCobb) on 8222
+                AGAINST on 8223
+                AGAINST on 8224
+                AGAINST on 8227
+                PRESENT on 8228
+                PRESENT on 8229
+                endorses(Murphy) on 8230
+                endorses(Murphy) on 8231
+                FOR on 8232
+                AGAINST on 8233
+                endorses(G) on 8234
+            }
+
+            votes(JacobArduino) {
+                endorses(twg) on all
+            }
         }
     }
 }
