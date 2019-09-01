@@ -108,7 +108,7 @@ Proposal Pool.""")
 
         voting {
             votes(Falsifian) {
-                endorses(JasonCobb) on 8243
+                AGAINST on 8243
                 endorses(JasonCobb) on 8244
                 // TODO resolve conditional vote on 8245: AGAINST if valid ballot by Aris voting AGAINST, otherwise FOR
                 endorses(JasonCobb) on 8246
