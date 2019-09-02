@@ -619,6 +619,25 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             votes(JacobArduino) {
                 endorses(twg) on all
             }
+
+            votes(Trigon) {
+                FOR on 8215
+                PRESENT on 8216
+                PRESENT on 8217
+                FOR on 8218
+                FOR on 8221
+                PRESENT on 8222
+                FOR on 8223
+                PRESENT on 8224
+                FOR on 8227
+                FOR on 8228
+                // TODO resolve conditional vote on 8229: AGAINST IF VETO ELSE FOR
+                AGAINST on 8230
+                AGAINST on 8231
+                FOR on 8232
+                AGAINST on 8233
+                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+            }
         }
     }
 }
