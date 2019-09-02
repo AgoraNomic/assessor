@@ -142,6 +142,14 @@ Proposal Pool.""")
             votes(JacobArduino) {
                 endorses(twg) on all
             }
+
+            votes(Trigon) {
+                PRESENT on 8243
+                FOR on 8244
+                FOR on 8245
+                FOR on 8246
+                FOR on 8247
+            }
         }
     }
 }
