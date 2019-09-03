@@ -151,6 +151,14 @@ Proposal Pool.""")
                 FOR on 8246
                 FOR on 8247
             }
+
+            votes(G) {
+                AGAINST on 8243
+                FOR on 8244
+                endorses(Aris) on 8245
+                FOR on 8246
+                AGAINST on 8247
+            }
         }
     }
 }
