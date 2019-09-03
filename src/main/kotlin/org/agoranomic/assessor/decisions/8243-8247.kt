@@ -12,6 +12,7 @@ fun `assessment 8243 to 8247`(): AssessmentData {
 
         strengths {
             default(3)
+            G strength 4 comment PM
             Corona strength 1 comment BLOTS
         }
 
