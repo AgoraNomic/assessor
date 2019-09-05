@@ -111,9 +111,9 @@ Proposal Pool.""")
             votes(Falsifian) {
                 AGAINST on 8243
                 endorses(JasonCobb) on 8244
-                // TODO resolve conditional vote on 8245: AGAINST if valid ballot by Aris voting AGAINST, otherwise FOR
+                FOR on 8245 comment "Conditional resolved: Aris did not vote AGAINST"
                 endorses(JasonCobb) on 8246
-                // TODO resolve conditional vote on 8247: AGAINST IF VETO ELSE FOR
+                FOR on 8247 comment NO_VETO
             }
 
             votes(Aris) {
@@ -121,7 +121,7 @@ Proposal Pool.""")
                 FOR on 8244
                 FOR on 8245
                 FOR on 8246
-                // TODO resolve conditional vote on 8247: AGAINST IF VETO ELSE PRESENT
+                PRESENT on 8247 comment NO_VETO
             }
 
             votes(JasonCobb) {
