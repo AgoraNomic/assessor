@@ -563,7 +563,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             votes(Aris) {
                 FOR on 8215
                 AGAINST on 8216
-                // TODO resolve conditional vote on 8217: ENDORSE JASON COBB UNLESS PRESENT ELSE FOR
+                // TODO resolve conditional vote on 8217: ENDORSE G. UNLESS PRESENT ELSE FOR
                 AGAINST on 8218
                 FOR on 8221
                 // TODO resolve conditional vote on 8222: ENDORSE JASON COBB UNLESS PRESENT ELSE FOR
