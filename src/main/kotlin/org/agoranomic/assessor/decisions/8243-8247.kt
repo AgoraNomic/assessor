@@ -111,7 +111,7 @@ Proposal Pool.""")
             votes(Falsifian) {
                 AGAINST on 8243
                 endorse(JasonCobb) on 8244
-                FOR on 8245 comment "Conditional resolved: Aris did not vote AGAINST"
+                FOR on 8245 comment conditional("Aris did not vote AGAINST")
                 endorse(JasonCobb) on 8246
                 FOR on 8247 comment NO_VETO
             }
