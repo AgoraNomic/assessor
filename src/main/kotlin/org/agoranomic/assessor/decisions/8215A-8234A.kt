@@ -553,30 +553,30 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 AGAINST on 8227
                 endorses(G) on 8228
                 PRESENT on 8229
-                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
+                FOR on 8230 comment NO_VETO
                 AGAINST on 8231
                 endorses(Murphy) on 8232
                 AGAINST on 8233
-                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+                FOR on 8234 comment NO_VETO
             }
 
             votes(Aris) {
                 FOR on 8215
                 AGAINST on 8216
-                // TODO resolve conditional vote on 8217: ENDORSE G. UNLESS PRESENT ELSE FOR
+                endorses(G) on 8217
                 AGAINST on 8218
                 FOR on 8221
-                // TODO resolve conditional vote on 8222: ENDORSE JASON COBB UNLESS PRESENT ELSE FOR
+                endorses(JasonCobb) on 8222
                 AGAINST on 8223
                 AGAINST on 8224
                 AGAINST on 8227
                 FOR on 8228
                 FOR on 8229
-                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
-                // TODO resolve conditional vote on 8231: AGAINST IF VETO ELSE PRESENT
+                FOR on 8230 comment NO_VETO
+                PRESENT on 8231 comment NO_VETO
                 PRESENT on 8232
                 AGAINST on 8233
-                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+                FOR on 8234 comment NO_VETO
             }
 
             votes(JasonCobb) {
@@ -591,7 +591,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 endorses(Falsifian) on 8227
                 FOR on 8228
                 FOR on 8229
-                // TODO resolve conditional vote on 8230: AGAINST IF VETO ELSE FOR
+                FOR on 8230 comment NO_VETO
                 AGAINST on 8231
                 FOR on 8232
                 AGAINST on 8233
@@ -632,12 +632,12 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 PRESENT on 8224
                 FOR on 8227
                 FOR on 8228
-                // TODO resolve conditional vote on 8229: AGAINST IF VETO ELSE FOR
+                FOR on 8229 comment NO_VETO
                 AGAINST on 8230
                 AGAINST on 8231
                 FOR on 8232
                 AGAINST on 8233
-                // TODO resolve conditional vote on 8234: AGAINST IF VETO ELSE FOR
+                FOR on 8234 comment NO_VETO
             }
 
             votes(G) {
