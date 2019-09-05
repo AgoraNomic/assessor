@@ -323,17 +323,17 @@ Rule 2532 (Zombies):
             }
 
             votes(JacobArduino) {
-                endorses(twg) on all
+                endorse(twg) on all
             }
 
             votes(Falsifian) {
                 PRESENT on 8235
                 PRESENT on 8236
                 AGAINST on 8237
-                endorses(twg) on 8238
+                endorse(twg) on 8238
                 PRESENT on 8239
-                endorses(JasonCobb) on 8240
-                endorses(JasonCobb) on 8241
+                endorse(JasonCobb) on 8240
+                endorse(JasonCobb) on 8241
                 FOR on 8242
             }
 

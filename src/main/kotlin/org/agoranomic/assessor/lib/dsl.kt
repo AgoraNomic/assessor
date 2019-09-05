@@ -246,11 +246,11 @@ class _AssessmentReceiver {
             class _Author
             public val author = _Author()
 
-            fun endorses(player: Player): _HalfEndorsement {
+            fun endorse(player: Player): _HalfEndorsement {
                 return _HalfEndorsement(player)
             }
 
-            fun endorses(author: _Author) = _AuthorEndorsement
+            fun endorse(author: _Author) = _AuthorEndorsement
 
             private fun checkProposal(proposal: ProposalNumber) {
                 require(m_proposalNumbers.contains(proposal)) { "No such proposal $proposal" }
@@ -272,7 +272,7 @@ class _AssessmentReceiver {
                 }
             }
 
-            infix fun _AuthorEndorsement.on(proposal: ProposalNumber) = endorses(m_proposals.lookupOrFail(proposal).author) on proposal
+            infix fun _AuthorEndorsement.on(proposal: ProposalNumber) = endorse(m_proposals.lookupOrFail(proposal).author) on proposal
 
             infix fun _AuthorEndorsement.on(all: _All) {
                 for (proposal in m_proposalNumbers) {

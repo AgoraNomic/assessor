@@ -229,11 +229,11 @@ to read
             }
 
             votes(Halian) {
-                endorses(RLee) on all
+                endorse(RLee) on all
             }
 
             votes(L) {
-                endorses(DMargaux) on all
+                endorse(DMargaux) on all
             }
 
             votes(Murphy) {
@@ -246,11 +246,11 @@ to read
             }
 
             votes(twg) {
-                endorses(author) on all
+                endorse(author) on all
             }
 
             votes(JacobArduino) {
-                endorses(twg) on all
+                endorse(twg) on all
             }
 
             votes(G) {

@@ -62,8 +62,8 @@ assessment {
             // e.g.: FOR on 9999 comment "conditional resolved"
 
             // Endorsing vote
-            endorses(<player>) on <proposal #>
-            // e.g.: endorses(X) on 9999
+            endorse(<player>) on <proposal #>
+            // e.g.: endorse(X) on 9999
 
             // Identical vote on each proposal
             <vote> on all
@@ -72,8 +72,8 @@ assessment {
             <vote> on all comment <comment>
             // e.g.: FOR on all comment "stupid example comment"
             // Also works with endorsements
-            endorses(<player>) on all
-            // e.g.: endorses(X) on all
+            endorse(<player>) on all
+            // e.g.: endorse(X) on all
 
             [...]
         }

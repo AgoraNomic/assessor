@@ -542,20 +542,20 @@ Append the following paragraph to Rule 2510 (Such is Karma):
 
         voting {
             votes(Falsifian) {
-                endorses(G) on 8215
+                endorse(G) on 8215
                 AGAINST on 8216
-                endorses(G) on 8217
-                endorses(JasonCobb) on 8218
+                endorse(G) on 8217
+                endorse(JasonCobb) on 8218
                 PRESENT on 8221
-                endorses(JasonCobb) on 8222
+                endorse(JasonCobb) on 8222
                 AGAINST on 8223
                 PRESENT on 8224
                 AGAINST on 8227
-                endorses(G) on 8228
+                endorse(G) on 8228
                 PRESENT on 8229
                 FOR on 8230 comment NO_VETO
                 AGAINST on 8231
-                endorses(Murphy) on 8232
+                endorse(Murphy) on 8232
                 AGAINST on 8233
                 FOR on 8234 comment NO_VETO
             }
@@ -563,10 +563,10 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             votes(Aris) {
                 FOR on 8215
                 AGAINST on 8216
-                endorses(G) on 8217
+                endorse(G) on 8217
                 AGAINST on 8218
                 FOR on 8221
-                endorses(JasonCobb) on 8222
+                endorse(JasonCobb) on 8222
                 AGAINST on 8223
                 AGAINST on 8224
                 AGAINST on 8227
@@ -588,7 +588,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 FOR on 8222
                 AGAINST on 8223
                 AGAINST on 8224
-                endorses(Falsifian) on 8227
+                endorse(Falsifian) on 8227
                 FOR on 8228
                 FOR on 8229
                 FOR on 8230 comment NO_VETO
@@ -599,26 +599,26 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             }
 
             votes(twg) {
-                endorses(G) on 8215
+                endorse(G) on 8215
                 AGAINST on 8216
-                endorses(G) on 8217
-                endorses(JasonCobb) on 8218
+                endorse(G) on 8217
+                endorse(JasonCobb) on 8218
                 PRESENT on 8221
-                endorses(JasonCobb) on 8222
+                endorse(JasonCobb) on 8222
                 AGAINST on 8223
                 AGAINST on 8224
                 AGAINST on 8227
                 PRESENT on 8228
                 PRESENT on 8229
-                endorses(Murphy) on 8230
-                endorses(Murphy) on 8231
+                endorse(Murphy) on 8230
+                endorse(Murphy) on 8231
                 FOR on 8232
                 AGAINST on 8233
-                endorses(G) on 8234
+                endorse(G) on 8234
             }
 
             votes(JacobArduino) {
-                endorses(twg) on all
+                endorse(twg) on all
             }
 
             votes(Trigon) {
@@ -644,7 +644,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 FOR on 8215
                 AGAINST on 8216
                 FOR on 8217
-                endorses(Aris) on 8218
+                endorse(Aris) on 8218
                 FOR on 8221
                 FOR on 8222
                 AGAINST on 8223

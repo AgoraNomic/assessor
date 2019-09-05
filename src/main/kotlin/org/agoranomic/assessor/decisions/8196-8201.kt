@@ -171,11 +171,11 @@ the following list, to read in full:
             }
 
             votes(twg) {
-                endorses(JasonCobb) on 8196
-                endorses(JasonCobb) on 8198
-                endorses(JasonCobb) on 8199
-                endorses(G) on 8200
-                endorses(Aris) on 8201
+                endorse(JasonCobb) on 8196
+                endorse(JasonCobb) on 8198
+                endorse(JasonCobb) on 8199
+                endorse(G) on 8200
+                endorse(Aris) on 8201
             }
 
             votes(Falsifian) {

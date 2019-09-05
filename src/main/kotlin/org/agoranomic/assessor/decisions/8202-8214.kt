@@ -334,7 +334,7 @@ following:
                 AGAINST on 8207
                 FOR on 8208
                 AGAINST on 8209
-                endorses(G) on 8210
+                endorse(G) on 8210
                 FOR on 8211
                 FOR on 8212
                 FOR on 8213
@@ -390,11 +390,11 @@ following:
             }
 
             votes(Halian) {
-                endorses(RLee) on all
+                endorse(RLee) on all
             }
 
             votes(L) {
-                endorses(DMargaux) on all
+                endorse(DMargaux) on all
             }
 
             votes(Murphy) {
@@ -414,23 +414,23 @@ following:
             }
 
             votes(twg) {
-                endorses(JasonCobb) on 8202
-                endorses(JasonCobb) on 8203
-                endorses(RLee) on 8204
+                endorse(JasonCobb) on 8202
+                endorse(JasonCobb) on 8203
+                endorse(RLee) on 8204
                 AGAINST on 8205 comment "Conditional resolved: not last ballot cast to evaluate to FOR"
-                endorses(DMargaux) on 8206
+                endorse(DMargaux) on 8206
                 AGAINST on 8207
-                endorses(JasonCobb) on 8208
+                endorse(JasonCobb) on 8208
                 AGAINST on 8209
                 AGAINST on 8210
-                endorses(G) on 8211
-                endorses(JasonCobb) on 8212
-                endorses(nch) on 8213
-                endorses(nch) on 8214
+                endorse(G) on 8211
+                endorse(JasonCobb) on 8212
+                endorse(nch) on 8213
+                endorse(nch) on 8214
             }
 
             votes(JacobArduino) {
-                endorses(twg) on all
+                endorse(twg) on all
             }
 
             votes(G) {
@@ -455,7 +455,7 @@ following:
                 FOR on 8202
                 AGAINST on 8203
                 AGAINST on 8204
-                endorses(G) on 8205
+                endorse(G) on 8205
                 FOR on 8206
                 AGAINST on 8207 /* if exists */
                 FOR on 8208

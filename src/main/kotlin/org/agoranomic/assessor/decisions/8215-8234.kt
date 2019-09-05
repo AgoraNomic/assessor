@@ -575,20 +575,20 @@ Append the following paragraph to Rule 2510 (Such is Karma):
 
         voting {
             votes(Falsifian) {
-                endorses(G) on 8215
+                endorse(G) on 8215
                 AGAINST on 8216
-                endorses(G) on 8217
-                endorses(JasonCobb) on 8218
+                endorse(G) on 8217
+                endorse(JasonCobb) on 8218
                 PRESENT on 8221
-                endorses(JasonCobb) on 8222
+                endorse(JasonCobb) on 8222
                 AGAINST on 8223
                 PRESENT on 8224
                 AGAINST on 8227
-                endorses(G) on 8228
+                endorse(G) on 8228
                 AGAINST on 8229
                 FOR on 8230 comment NO_VETO
                 AGAINST on 8231
-                endorses(Murphy) on 8232
+                endorse(Murphy) on 8232
                 AGAINST on 8233
                 FOR on 8234 comment NO_VETO
             }
@@ -609,25 +609,25 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 FOR on 8231
                 FOR on 8232
                 FOR on 8233
-                endorses(G /* Herald */) on 8234
+                endorse(G /* Herald */) on 8234
             }
 
             votes(DMargaux) {
-                endorses(G) on 8215 comment "Final non-conditional ballot"
-                endorses(G) on 8216 comment "Final non-conditional ballot"
-                endorses(G) on 8217 comment "Final non-conditional ballot"
-                endorses(G) on 8218 comment "Final non-conditional ballot"
-                endorses(G) on 8221 comment "Final non-conditional ballot"
-                endorses(G) on 8222 comment "Final non-conditional ballot"
-                endorses(G) on 8223 comment "Final non-conditional ballot"
-                endorses(G) on 8224 comment "Final non-conditional ballot"
-                endorses(Falsifian) on 8227 comment "Final non-conditional ballot"
-                endorses(G) on 8228 comment "Final non-conditional ballot"
-                endorses(Telnaior) on 8229 comment "Final non-conditional ballot"
-                endorses(G) on 8230 comment "Final non-conditional ballot"
-                endorses(G) on 8231 comment "Final non-conditional ballot"
-                endorses(G) on 8232 comment "Final non-conditional ballot"
-                endorses(G) on 8234 comment "Final non-conditional ballot"
+                endorse(G) on 8215 comment "Final non-conditional ballot"
+                endorse(G) on 8216 comment "Final non-conditional ballot"
+                endorse(G) on 8217 comment "Final non-conditional ballot"
+                endorse(G) on 8218 comment "Final non-conditional ballot"
+                endorse(G) on 8221 comment "Final non-conditional ballot"
+                endorse(G) on 8222 comment "Final non-conditional ballot"
+                endorse(G) on 8223 comment "Final non-conditional ballot"
+                endorse(G) on 8224 comment "Final non-conditional ballot"
+                endorse(Falsifian) on 8227 comment "Final non-conditional ballot"
+                endorse(G) on 8228 comment "Final non-conditional ballot"
+                endorse(Telnaior) on 8229 comment "Final non-conditional ballot"
+                endorse(G) on 8230 comment "Final non-conditional ballot"
+                endorse(G) on 8231 comment "Final non-conditional ballot"
+                endorse(G) on 8232 comment "Final non-conditional ballot"
+                endorse(G) on 8234 comment "Final non-conditional ballot"
             }
 
             votes(JasonCobb) {
@@ -639,7 +639,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
                 FOR on 8222
                 AGAINST on 8223
                 AGAINST on 8224
-                endorses(G) on 8227
+                endorse(G) on 8227
                 FOR on 8228
                 AGAINST on 8229
                 AGAINST on 8230

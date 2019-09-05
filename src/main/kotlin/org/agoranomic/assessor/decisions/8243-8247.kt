@@ -110,9 +110,9 @@ Proposal Pool.""")
         voting {
             votes(Falsifian) {
                 AGAINST on 8243
-                endorses(JasonCobb) on 8244
+                endorse(JasonCobb) on 8244
                 FOR on 8245 comment "Conditional resolved: Aris did not vote AGAINST"
-                endorses(JasonCobb) on 8246
+                endorse(JasonCobb) on 8246
                 FOR on 8247 comment NO_VETO
             }
 
@@ -127,7 +127,7 @@ Proposal Pool.""")
             votes(JasonCobb) {
                 FOR on 8243
                 FOR on 8244
-                endorses(G) on 8245
+                endorse(G) on 8245
                 FOR on 8246
                 FOR on 8247
             }
@@ -135,13 +135,13 @@ Proposal Pool.""")
             votes(twg) {
                 AGAINST on 8243
                 PRESENT on 8244
-                endorses(Aris) on 8245
-                endorses(JasonCobb) on 8246
+                endorse(Aris) on 8245
+                endorse(JasonCobb) on 8246
                 FOR on 8247
             }
 
             votes(JacobArduino) {
-                endorses(twg) on all
+                endorse(twg) on all
             }
 
             votes(Trigon) {
@@ -155,7 +155,7 @@ Proposal Pool.""")
             votes(G) {
                 AGAINST on 8243
                 FOR on 8244
-                endorses(Aris) on 8245
+                endorse(Aris) on 8245
                 FOR on 8246
                 AGAINST on 8247
             }
