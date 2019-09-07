@@ -35,8 +35,9 @@ fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, v
 
     if (votes.voters.size < quorum) return ResolutionData(ProposalResult.FAILED_QUORUM, strengthFor, strengthAgainst, votes)
 
+    // Resolution as specified in R955
     return ResolutionData(
-        if ((ai * strengthAgainst) >= strengthFor) ProposalResult.REJECTED else ProposalResult.ADOPTED,
+        if (strengthFor >= (ai * strengthAgainst) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
         strengthFor,
         strengthAgainst,
         votes
