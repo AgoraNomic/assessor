@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -318,6 +319,17 @@ Rule 2532 (Zombies):
             }
         }
 
-        voting {}
+        voting {
+            votes(JasonCobb) {
+                FOR on 8235
+                FOR on 8236
+                AGAINST on 8237
+                FOR on 8238
+                FOR on 8239
+                FOR on 8240
+                FOR on 8241
+                PRESENT on 8242
+            }
+        }
     }
 }
