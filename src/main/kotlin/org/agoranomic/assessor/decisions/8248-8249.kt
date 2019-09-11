@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -57,6 +58,11 @@ allowed.]"""
             }
         }
 
-        voting {}
+        voting {
+            votes(JasonCobb) {
+                FOR on 8248
+                FOR on 8249
+            }
+        }
     }
 }
