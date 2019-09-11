@@ -9,6 +9,12 @@ fun `assessment 8235A to 8242A`(): AssessmentData {
         name("8235A-8242A")
         quorum(5)
 
+        strengths {
+            default(3)
+
+            G strength 4 comment PM
+        }
+
         proposals {
             proposal(8235) {
                 title("Unified fine creation syntax")
