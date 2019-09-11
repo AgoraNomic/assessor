@@ -9,6 +9,12 @@ fun `assessment 8248 to 8249`(): AssessmentData {
         name("8248-8249")
         quorum(5)
 
+        strengths {
+            default(3)
+
+            G strength 4 comment PM
+        }
+
         proposals {
             proposal(8248) {
                 title("Publishing definition")
