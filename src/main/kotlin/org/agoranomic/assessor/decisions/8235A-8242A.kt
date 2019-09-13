@@ -330,6 +330,10 @@ Rule 2532 (Zombies):
                 FOR on 8241
                 PRESENT on 8242
             }
+
+            votes(Bernie) {
+                endorse(JasonCobb) on all
+            }
         }
     }
 }
