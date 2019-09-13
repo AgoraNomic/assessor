@@ -334,6 +334,17 @@ Rule 2532 (Zombies):
             votes(Bernie) {
                 endorse(JasonCobb) on all
             }
+
+            votes(Trigon) {
+                FOR on 8235
+                FOR on 8236
+                AGAINST on 8237
+                FOR on 8238
+                FOR on 8239
+                FOR on 8240
+                FOR on 8241
+                FOR on 8242
+            }
         }
     }
 }
