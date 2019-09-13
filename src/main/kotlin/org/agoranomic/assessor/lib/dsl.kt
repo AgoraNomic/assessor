@@ -210,8 +210,8 @@ class _AssessmentReceiver {
             private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
             private val m_endorsements = mutableMapOf<ProposalNumber, _MutableEndorsement>()
 
-            public class _All
-            public val all = _All()
+            public object _All
+            public val all = _All
 
             data class _MutableVote(val value: VoteKind, var comment: String? = null) {
                 fun compile() = Vote(value, comment)
