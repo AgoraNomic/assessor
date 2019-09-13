@@ -67,6 +67,11 @@ allowed.]"""
             votes(Bernie) {
                 endorse(JasonCobb) on all
             }
+
+            votes(Trigon) {
+                FOR on 8248
+                FOR on 8249
+            }
         }
     }
 }
