@@ -63,6 +63,10 @@ allowed.]"""
                 FOR on 8248
                 FOR on 8249
             }
+
+            votes(Bernie) {
+                endorse(JasonCobb) on all
+            }
         }
     }
 }
