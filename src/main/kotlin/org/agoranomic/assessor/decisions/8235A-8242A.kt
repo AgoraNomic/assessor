@@ -360,6 +360,14 @@ Rule 2532 (Zombies):
             votes(Gaelan) {
                 endorse(Murphy) on all
             }
+
+            votes(twg) {
+                endorse(Murphy) on all
+            }
+
+            votes(JacobArduino) {
+                endorse(twg) on all
+            }
         }
     }
 }
