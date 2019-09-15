@@ -72,6 +72,15 @@ allowed.]"""
                 FOR on 8248
                 FOR on 8249
             }
+
+            votes(Murphy) {
+                FOR on 8248
+                FOR on 8249
+            }
+
+            votes(Gaelan) {
+                endorse(Murphy) on all
+            }
         }
     }
 }
