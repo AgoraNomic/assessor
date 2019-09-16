@@ -89,6 +89,15 @@ allowed.]"""
             votes(JacobArduino) {
                 endorse(twg) on all
             }
+
+            votes(Falsifian) {
+                endorse(JasonCobb) on 8248
+                // TODO resolve conditional vote on 8249: AGAINST IF VETO, AGAINST if twg AGAINST, else FOR
+            }
+
+            votes(ATMunn) {
+                endorse(Falsifian) on all
+            }
         }
     }
 }
