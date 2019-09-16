@@ -384,6 +384,17 @@ Rule 2532 (Zombies):
             votes(ATMunn) {
                 endorse(Falsifian) on all
             }
+
+            votes(Aris) {
+                FOR on 8235
+                FOR on 8236
+                AGAINST on 8237
+                AGAINST on 8238
+                AGAINST on 8239
+                FOR on 8240
+                FOR on 8241
+                FOR on 8242
+            }
         }
     }
 }
