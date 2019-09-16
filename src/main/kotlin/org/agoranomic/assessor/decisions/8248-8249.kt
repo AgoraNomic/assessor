@@ -98,6 +98,11 @@ allowed.]"""
             votes(ATMunn) {
                 endorse(Falsifian) on all
             }
+
+            votes(Aris) {
+                FOR on 8248
+                // TODO resolve conditional vote on 8249: AGAINST IF VETO ELSE PRESENT
+            }
         }
     }
 }
