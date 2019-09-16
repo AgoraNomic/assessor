@@ -368,6 +368,21 @@ Rule 2532 (Zombies):
             votes(JacobArduino) {
                 endorse(twg) on all
             }
+
+            votes(Falsifian) {
+                PRESENT on 8235
+                PRESENT on 8236
+                AGAINST on 8237
+                // TODO resolve conditional vote on 8238: AGAINST if twg AGAINST, else FOR
+                PRESENT on 8239
+                endorse(JasonCobb) on 8240
+                endorse(JasonCobb) on 8241
+                FOR on 8242
+            }
+
+            votes(ATMunn) {
+                endorse(Falsifian) on all
+            }
         }
     }
 }
