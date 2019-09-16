@@ -103,6 +103,13 @@ allowed.]"""
                 FOR on 8248
                 // TODO resolve conditional vote on 8249: AGAINST IF VETO ELSE PRESENT
             }
+
+            votes(G) {
+                FOR on 8248
+                FOR on 8249
+            }
+
+            Rance matches G
         }
     }
 }
