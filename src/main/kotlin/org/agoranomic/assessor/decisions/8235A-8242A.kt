@@ -395,6 +395,19 @@ Rule 2532 (Zombies):
                 FOR on 8241
                 FOR on 8242
             }
+
+            votes(G) {
+                PRESENT on 8235
+                PRESENT on 8236
+                AGAINST on 8237
+                AGAINST on 8238
+                AGAINST on 8239
+                endorse(Aris) on 8240
+                PRESENT on 8241
+                AGAINST on 8242
+            }
+
+            Rance matches G
         }
     }
 }
