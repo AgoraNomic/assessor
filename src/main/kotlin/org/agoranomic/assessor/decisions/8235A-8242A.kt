@@ -408,6 +408,10 @@ Rule 2532 (Zombies):
             }
 
             Rance matches G
+
+            votes(o) {
+                endorse(Trigon) on all
+            }
         }
     }
 }
