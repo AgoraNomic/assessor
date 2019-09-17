@@ -374,7 +374,7 @@ Rule 2532 (Zombies):
                 PRESENT on 8235
                 PRESENT on 8236
                 AGAINST on 8237
-                // TODO resolve conditional vote on 8238: AGAINST if twg AGAINST, else FOR
+                AGAINST on 8238
                 PRESENT on 8239
                 endorse(JasonCobb) on 8240
                 endorse(JasonCobb) on 8241
