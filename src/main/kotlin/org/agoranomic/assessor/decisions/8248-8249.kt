@@ -110,6 +110,10 @@ allowed.]"""
             }
 
             Rance matches G
+
+            votes(o) {
+                endorse(Trigon) on all
+            }
         }
     }
 }
