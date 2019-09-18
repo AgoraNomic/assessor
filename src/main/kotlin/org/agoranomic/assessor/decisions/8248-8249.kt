@@ -1,7 +1,9 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.PRESENT
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -92,7 +94,7 @@ allowed.]"""
 
             votes(Falsifian) {
                 endorse(JasonCobb) on 8248
-                // TODO resolve conditional vote on 8249: AGAINST IF VETO, AGAINST if twg AGAINST, else FOR
+                FOR on 8249 comment conditional("No veto, twg not AGAINST")
             }
 
             votes(ATMunn) {
@@ -101,7 +103,7 @@ allowed.]"""
 
             votes(Aris) {
                 FOR on 8248
-                // TODO resolve conditional vote on 8249: AGAINST IF VETO ELSE PRESENT
+                PRESENT on 8249 comment NO_VETO
             }
 
             votes(G) {
