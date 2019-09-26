@@ -5,36 +5,38 @@ import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
-fun `assessment 8243 to 8247`(): AssessmentData {
-    return assessment {
-        name("8243-8247")
-        quorum(4)
+fun `assessment 8243 to 8247`() = assessment {
+    name("8243-8247")
+    quorum(4)
 
-        strengths {
-            default(3)
-            G strength 4 comment PM
-            Corona strength 1 comment BLOTS
-        }
+    strengths {
+        default(3)
+        G strength 4 comment PM
+        Corona strength 1 comment BLOTS
+    }
 
-        proposals {
-            proposal(8243) {
-                title("Self-ratifying regulations")
-                ai(3.0)
-                author(JasonCobb)
+    proposals {
+        proposal(8243) {
+            title("Self-ratifying regulations")
+            ai(3.0)
+            author(JasonCobb)
 
-                text("""
+            text(
+                """
 Amend Rule 2493 by replacing the sentence beginning "Regulations are
 tracked" with sentence "Regulations are tracked in their Promulgator's
 weekly report; a public document purporting to be this portion of a
-report is self-ratifying.".""")
-            }
+report is self-ratifying."."""
+            )
+        }
 
-            proposal(8244) {
-                title("Crime Cleanup")
-                ai(3.0)
-                author(JasonCobb)
+        proposal(8244) {
+            title("Crime Cleanup")
+            ai(3.0)
+            author(JasonCobb)
 
-                text("""
+            text(
+                """
 Amend Rule 2143 by replacing the text "Class-2 crime" with the text
 "Class 2 Crime".
 
@@ -50,15 +52,17 @@ Amend Rule 2589 by replacing the text "Class-3 Crime" with the text
 "Class 3 Crime".
 
 Amend Rule 2593 by replacing the text "Class-5 Crime" with the text
-"Class 5 Crime".""")
-            }
+"Class 5 Crime"."""
+            )
+        }
 
-            proposal(8245) {
-                title("Pool drain timing")
-                ai(3.0)
-                author(G)
+        proposal(8245) {
+            title("Pool drain timing")
+            ai(3.0)
+            author(G)
 
-                text("""
+            text(
+                """
 Amend Rule 1607 (Distribution) by replacing:
       In a given Agoran week, the Promotor SHALL, as part of eir weekly
       duties, distribute all proposals in the Proposal Pool except for
@@ -75,15 +79,17 @@ that was in the pool at the beginning of the week.  Further,
 for proposals inserted in a week, the promotor has the option
 of either distributing them that week or leaving them for the
 next week, so Aris's "please don't make any changes until
-I distribute" emails are less needed, and e can time stuff.]""")
-            }
+I distribute" emails are less needed, and e can time stuff.]"""
+            )
+        }
 
-            proposal(8246) {
-                title("Tracking of Master")
-                ai(2.0)
-                author(JasonCobb)
+        proposal(8246) {
+            title("Tracking of Master")
+            ai(2.0)
+            author(JasonCobb)
 
-                text("""
+            text(
+                """
 Amend Rule 2532 ("Zombies") by replacing the sentence beginning "Master
 is a secured player switch" with the following sentence:
 
@@ -92,73 +98,75 @@ is a secured player switch" with the following sentence:
 
 
 [This isn't currently made explicit at the definition of Master, but is
-required by the last paragraph of Rule 2139.]""")
-            }
-
-            proposal(8247) {
-                title("Quorum Defailure")
-                ai(1.0)
-                author(JacobArduino)
-                coauthors(twg)
-
-                text("""
-Add each proposal with an ID number between 8235 and 8242 inclusive to the
-Proposal Pool.""")
-            }
+required by the last paragraph of Rule 2139.]"""
+            )
         }
 
-        voting {
-            votes(Falsifian) {
-                AGAINST on 8243
-                endorse(JasonCobb) on 8244
-                FOR on 8245 comment conditional("Aris did not vote AGAINST")
-                endorse(JasonCobb) on 8246
-                FOR on 8247 comment NO_VETO
-            }
+        proposal(8247) {
+            title("Quorum Defailure")
+            ai(1.0)
+            author(JacobArduino)
+            coauthors(twg)
 
-            votes(Aris) {
-                FOR on 8243
-                FOR on 8244
-                FOR on 8245
-                FOR on 8246
-                PRESENT on 8247 comment NO_VETO
-            }
+            text(
+                """
+Add each proposal with an ID number between 8235 and 8242 inclusive to the
+Proposal Pool."""
+            )
+        }
+    }
 
-            votes(JasonCobb) {
-                FOR on 8243
-                FOR on 8244
-                endorse(G) on 8245
-                FOR on 8246
-                FOR on 8247
-            }
+    voting {
+        votes(Falsifian) {
+            AGAINST on 8243
+            endorse(JasonCobb) on 8244
+            FOR on 8245 comment conditional("Aris did not vote AGAINST")
+            endorse(JasonCobb) on 8246
+            FOR on 8247 comment NO_VETO
+        }
 
-            votes(twg) {
-                AGAINST on 8243
-                PRESENT on 8244
-                endorse(Aris) on 8245
-                endorse(JasonCobb) on 8246
-                FOR on 8247
-            }
+        votes(Aris) {
+            FOR on 8243
+            FOR on 8244
+            FOR on 8245
+            FOR on 8246
+            PRESENT on 8247 comment NO_VETO
+        }
 
-            votes(JacobArduino) {
-                endorse(twg) on all
-            }
+        votes(JasonCobb) {
+            FOR on 8243
+            FOR on 8244
+            endorse(G) on 8245
+            FOR on 8246
+            FOR on 8247
+        }
 
-            votes(Trigon) {
-                PRESENT on 8243
-                FOR on 8244
-                FOR on 8245
-                FOR on 8246
-                FOR on 8247
-            }
+        votes(twg) {
+            AGAINST on 8243
+            PRESENT on 8244
+            endorse(Aris) on 8245
+            endorse(JasonCobb) on 8246
+            FOR on 8247
+        }
 
-            votes(G) {
-                AGAINST on 8243
-                FOR on 8244
-                endorse(Aris) on 8245
-                FOR on 8246
-                AGAINST on 8247
-            }
+        votes(JacobArduino) {
+            endorse(twg) on all
+        }
+
+        votes(Trigon) {
+            PRESENT on 8243
+            FOR on 8244
+            FOR on 8245
+            FOR on 8246
+            FOR on 8247
+        }
+
+        votes(G) {
+            AGAINST on 8243
+            FOR on 8244
+            endorse(Aris) on 8245
+            FOR on 8246
+            AGAINST on 8247
         }
     }
 }

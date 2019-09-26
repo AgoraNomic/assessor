@@ -5,26 +5,26 @@ import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
-fun `assessment 8235 to 8242`(): AssessmentData {
-    return assessment {
-        name("8235-8242")
+fun `assessment 8235 to 8242`() = assessment {
+    name("8235-8242")
 
-        quorum(9)
+    quorum(9)
 
-        strengths {
-            default(3)
-            G strength 4 comment PM
-            Corona strength 1 comment BLOTS
-            twg strength 2 comment BLOTS
-        }
+    strengths {
+        default(3)
+        G strength 4 comment PM
+        Corona strength 1 comment BLOTS
+        twg strength 2 comment BLOTS
+    }
 
-        proposals {
-            proposal(8235) {
-                title("Unified fine creation syntax")
-                ai(3.0)
-                author(JasonCobb)
+    proposals {
+        proposal(8235) {
+            title("Unified fine creation syntax")
+            ai(3.0)
+            author(JasonCobb)
 
-                text("""
+            text(
+                """
 Amend Rule 2555 ("Blots") by replacing the text "To Levy a Fine" with
 the text "To levy a fine".
 
@@ -40,16 +40,18 @@ with the sentence
 
 Amend Rule 2479 ("Official Justice") by replacing the text "levying a
 fine of up to 2 blots on em" with the text "levying a fine of (a value
-not exceeding 2) on em".""")
-            }
+not exceeding 2) on em"."""
+            )
+        }
 
-            proposal(8236) {
-                title("Definition de-capitalization")
-                ai(3.0)
-                author(JasonCobb)
-                coauthors(Aris)
+        proposal(8236) {
+            title("Definition de-capitalization")
+            ai(3.0)
+            author(JasonCobb)
+            coauthors(Aris)
 
-                text("""
+            text(
+                """
 Amend Rule 1728 to read, in whole:
 
   The following methods of taking actions are known as "dependent
@@ -106,16 +108,18 @@ Amend the only list in Rule 2124 ("Agoran Satisfaction") to read:
 
   3. The action is to be performed with N Agoran consent, and the
   number of Supporters of the intent is less than or equal to N times
-  the number of Objectors to the intent.""")
-            }
+  the number of Objectors to the intent."""
+            )
+        }
 
-            proposal(8237) {
-                title("Repairing Defeated Spaceships v3")
-                ai(3.0)
-                author(JasonCobb)
-                coauthors(twg, JasonCobb)
+        proposal(8237) {
+            title("Repairing Defeated Spaceships v3")
+            ai(3.0)
+            author(JasonCobb)
+            coauthors(twg, JasonCobb)
 
-                text("""
+            text(
+                """
 Amend Rule 2595 by replacing the text "Any player CAN, by
 announcement, spend a coin to increase the Armour of a Pilotable
 Spaceship e owns by 1." with the text "Any player CAN pay a fee of 1
@@ -133,16 +137,18 @@ Amend Rule 2591 by replacing the text "Spaceships are a class of fixed
 asset" with "Spaceships are a class of fixed indestructible asset".
 
 [Change from the original: "pay... 1 coin increase" -> "pay... 1 coin to
-increase"]""")
-            }
+increase"]"""
+            )
+        }
 
-            proposal(8238) {
-                title("Cancelling Proposals (arr. for violin)")
-                ai(3.0)
-                author(JacobArduino)
-                coauthors(twg, G)
+        proposal(8238) {
+            title("Cancelling Proposals (arr. for violin)")
+            ai(3.0)
+            author(JacobArduino)
+            coauthors(twg, G)
 
-                text("""
+            text(
+                """
 [ This has bugged me for a while (no pun intended): if a broken proposal makes
    it to its voting period, even if the error is then discovered, it tends not
    to percolate through to everyone doing the voting, and the proposal gets
@@ -172,16 +178,18 @@ Amend Rule 955, "Determining the Will of Agora", by adding the following list
 item to the unnumbered list in between the two previously existing items:
 
   - If the decision has been cancelled, as permitted by rules of power 3 or
-    greater, the outcome is instead CANCELLED.""")
-            }
+    greater, the outcome is instead CANCELLED."""
+            )
+        }
 
-            proposal(8239) {
-                title("The Editor (v2.0.1)")
-                ai(1.0)
-                author(JasonCobb)
-                coauthors(G, Aris, Trigon)
+        proposal(8239) {
+            title("The Editor (v2.0.1)")
+            ai(1.0)
+            author(JasonCobb)
+            coauthors(G, Aris, Trigon)
 
-                text("""
+            text(
+                """
 [Comment: Creates a new role, the Editor, who is the same person as the
 Rulekeepor and which is responsible for promulgating regulations
 (Editorial Guidelines) about non-substantive elements of the Ruleset.
@@ -210,15 +218,17 @@ Enact a new Rule with power 1, title "The Editor", and text as follows:
   Editorial Guidelines.
 
   Causing an Editorial Guideline to be inconsistent with any other
-  Editorial Guideline is the Class 1 Crime of Editorial Hypocrisy.""")
-            }
+  Editorial Guideline is the Class 1 Crime of Editorial Hypocrisy."""
+            )
+        }
 
-            proposal(8240) {
-                title("Regulation clarification")
-                ai(3.0)
-                author(JasonCobb)
+        proposal(8240) {
+            title("Regulation clarification")
+            ai(3.0)
+            author(JasonCobb)
 
-                text("""
+            text(
+                """
 [Comment: Currently, R2493 reads as if any person who happens to be
 Promulgator can enact/amend/repeal _any_ regulation (without otherwise
 specified rules) with 2 Agoran Consent. While not the most serious bug,
@@ -228,15 +238,17 @@ Amend Rule 2493 ("Regulations") as follows:
 
   Replace the sentence beginning "By default" with the sentence
     By default, a person CAN, with 2 Agoran consent, enact, amend,
-    or repeal a regulation for which e is the Promulgator.""")
-            }
+    or repeal a regulation for which e is the Promulgator."""
+            )
+        }
 
-            proposal(8241) {
-                title("Secured switches (v2.0)")
-                ai(3.0)
-                author(Falsifian)
+        proposal(8241) {
+            title("Secured switches (v2.0)")
+            ai(3.0)
+            author(Falsifian)
 
-                text("""
+            text(
+                """
 [Comment: define what it means for switches to be "secured", then use
 that definition. This works with default power thresholds since it isn't
 R2162 that designates the changes as secured, the Rule that defines the
@@ -284,15 +296,17 @@ Amend Rule 478 as follows:
   Delete the text "Changes to publicity are secured.".
 
   Replace the text "Publicity is a forum switch" with the text
-  "Publicity is a secured forum switch.".""")
-            }
+  "Publicity is a secured forum switch."."""
+            )
+        }
 
-            proposal(8242) {
-                title("Let the dead rest")
-                ai(3.0)
-                author(Falsifian)
+        proposal(8242) {
+            title("Let the dead rest")
+            ai(3.0)
+            author(Falsifian)
 
-                text("""
+            text(
+                """
 If Hālian is a zombie, then deregister em.
 [Comment: eir resale value was 0 before R. Lee deregistered, so e was
 due to be deregistered.]
@@ -301,71 +315,71 @@ Append the following sentence to the end of the first paragraph of
 Rule 2532 (Zombies):
 
   When a zombie's master ceases to be a player, the value of the zombie's
-  master switch is set to Agora.""")
-            }
-
+  master switch is set to Agora."""
+            )
         }
 
-        voting {
-            votes(JasonCobb) {
-                FOR on 8235
-                FOR on 8236
-                FOR on 8237
-                FOR on 8238
-                FOR on 8239
-                FOR on 8240
-                FOR on 8241
-                FOR on 8242
-            }
+    }
 
-            votes(twg) {
-                FOR on all
-            }
+    voting {
+        votes(JasonCobb) {
+            FOR on 8235
+            FOR on 8236
+            FOR on 8237
+            FOR on 8238
+            FOR on 8239
+            FOR on 8240
+            FOR on 8241
+            FOR on 8242
+        }
 
-            votes(JacobArduino) {
-                endorse(twg) on all
-            }
+        votes(twg) {
+            FOR on all
+        }
 
-            votes(Falsifian) {
-                PRESENT on 8235
-                PRESENT on 8236
-                AGAINST on 8237
-                endorse(twg) on 8238
-                PRESENT on 8239
-                endorse(JasonCobb) on 8240
-                endorse(JasonCobb) on 8241
-                FOR on 8242
-            }
+        votes(JacobArduino) {
+            endorse(twg) on all
+        }
 
-            votes(omd) {
-                FOR on 8235
-                FOR on 8236
-                PRESENT on 8237
-                FOR on 8238
-                FOR on 8239
-                FOR on 8240
-                // NO VOTE on 8241
-                FOR on 8242
-            }
+        votes(Falsifian) {
+            PRESENT on 8235
+            PRESENT on 8236
+            AGAINST on 8237
+            endorse(twg) on 8238
+            PRESENT on 8239
+            endorse(JasonCobb) on 8240
+            endorse(JasonCobb) on 8241
+            FOR on 8242
+        }
 
-            votes(G) {
-                PRESENT on all
-            }
+        votes(omd) {
+            FOR on 8235
+            FOR on 8236
+            PRESENT on 8237
+            FOR on 8238
+            FOR on 8239
+            FOR on 8240
+            // NO VOTE on 8241
+            FOR on 8242
+        }
 
-            votes(Telnaior) {
-                PRESENT on all
-            }
+        votes(G) {
+            PRESENT on all
+        }
 
-            votes(Murphy) {
-                PRESENT on 8235
-                AGAINST on 8236
-                PRESENT on 8237
-                FOR on 8238
-                AGAINST on 8239
-                PRESENT on 8240
-                PRESENT on 8241
-                PRESENT on 8242
-            }
+        votes(Telnaior) {
+            PRESENT on all
+        }
+
+        votes(Murphy) {
+            PRESENT on 8235
+            AGAINST on 8236
+            PRESENT on 8237
+            FOR on 8238
+            AGAINST on 8239
+            PRESENT on 8240
+            PRESENT on 8241
+            PRESENT on 8242
         }
     }
 }

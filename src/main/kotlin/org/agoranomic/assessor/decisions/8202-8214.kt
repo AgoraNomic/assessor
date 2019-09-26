@@ -5,28 +5,27 @@ import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
-fun `assessment 8202 to 8214`(): AssessmentData {
-    return assessment {
-        name("8202-8214")
-        quorum(7)
+fun `assessment 8202 to 8214`() = assessment {
+    name("8202-8214")
+    quorum(7)
 
-        strengths {
-            default(3)
+    strengths {
+        default(3)
 
-            G strength 4 comment PM
-            Corona strength 1 comment BLOTS
-            twg strength 2 comment BLOTS
-        }
+        G strength 4 comment PM
+        Corona strength 1 comment BLOTS
+        twg strength 2 comment BLOTS
+    }
 
-        proposals {
-            proposal(8202) {
-                title("Police Power")
-                ai(1.7)
-                author(Falsifian)
-                coauthors(JasonCobb)
+    proposals {
+        proposal(8202) {
+            title("Police Power")
+            ai(1.7)
+            author(Falsifian)
+            coauthors(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 In Rule 2557, replace the first paragraph with:
 
   When the rules authorize an investigator to impose the Cold Hand
@@ -47,16 +46,16 @@ to understand why, I noticed that the 2018-04-07 SLR lists two Rule
 which is titled "Sentencing Guidelines". The next SLR I could find is
 published much later, 2018-10-14, and has R2557 in or close to its
 current form. I don't know exactly what happened there.]"""
-                )
-            }
+            )
+        }
 
-            proposal(8203) {
-                title("Fixing Summary Judgement")
-                ai(2.0)
-                author(JasonCobb)
+        proposal(8203) {
+            title("Fixing Summary Judgement")
+            ai(2.0)
+            author(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2531 ("Referee Accountability") as follows:
 
   After list item (1) insert the following phrase: "Any attempt to
@@ -64,42 +63,42 @@ Amend Rule 2531 ("Referee Accountability") as follows:
   is INEFFECTIVE if:"
 
   Renumber list items (2) - (8) to be items (1) - (7) in the new list."""
-                )
-            }
+            )
+        }
 
-            proposal(8204) {
-                title("SMH @ Herald")
-                ai(1.0)
-                author(RLee)
+        proposal(8204) {
+            title("SMH @ Herald")
+            ai(1.0)
+            author(RLee)
 
-                text(
-                    """
+            text(
+                """
 1. Halve (rounding towards 0) the Karma of every Unregistered person.
 
 2. Set the Karma of Agora such that the sum of all Karma switch
 instance values in the game is equal to 0."""
-                )
-            }
+            )
+        }
 
-            proposal(8205) {
-                title("Timing proposal w/ no effect")
-                ai(1.7)
-                author(RLee)
+        proposal(8205) {
+            title("Timing proposal w/ no effect")
+            ai(1.7)
+            author(RLee)
 
-                text(
-                    """
+            text(
+                """
 R. Lee pledges to timely transfer half of the money e gains from  the
 adoption of this proposal to the last person to vote FOR this proposal."""
-                )
-            }
+            )
+        }
 
-            proposal(8206) {
-                title("Rule 2472 Simplification")
-                ai(2.0)
-                author(JasonCobb)
+        proposal(8206) {
+            title("Rule 2472 Simplification")
+            ai(2.0)
+            author(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 [Comment: use "with Notice" instead of writing it out.]
 
 Replace the last paragraph of Rule 2472 ("Office Incompatibilities")
@@ -108,30 +107,30 @@ with the following paragraph:
   If a player is Overpowered, any player CAN, with Notice, Demand
   Resignation from em. When this occurs, each office that the
   Overpowered player holds becomes vacant."""
-                )
-            }
+            )
+        }
 
-            proposal(8207) {
-                title("no power is all powerful")
-                ai(1.0)
-                author(G)
+        proposal(8207) {
+            title("no power is all powerful")
+            ai(1.0)
+            author(G)
 
-                text(
-                    """
+            text(
+                """
 Create the following Rule, "Supreme Power", Power=4:
 
   G. CAN make arbitrary changes to the gamestate by announcement."""
-                )
-            }
+            )
+        }
 
-            proposal(8208) {
-                title("Regulated actions reform (v2)")
-                ai(3.0)
-                author(JasonCobb)
-                coauthors(Aris, omd, G, Falsifian)
+        proposal(8208) {
+            title("Regulated actions reform (v2)")
+            ai(3.0)
+            author(JasonCobb)
+            coauthors(Aris, omd, G, Falsifian)
 
-                text(
-                    """
+            text(
+                """
 [Comment: see proto thread for changes and rationales.]
 
 
@@ -178,17 +177,17 @@ Amend Rule 2125 ("Regulated Actions") to read:
 Retitle Rule 2125 to "Binding Entities".
 
 Set the power of Rule 2125 to 3.1."""
-                )
-            }
+            )
+        }
 
-            proposal(8209) {
-                title("AFK Reform Act v1.1")
-                ai(2.0)
-                author(DMargaux)
-                coauthors(G, JasonCobb)
+        proposal(8209) {
+            title("AFK Reform Act v1.1")
+            ai(2.0)
+            author(DMargaux)
+            coauthors(G, JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Amend rule 2532 as follows:
 
 Add this sentence:
@@ -202,28 +201,28 @@ Immediately following this sentence:
 
   "A zombie's master CAN flip that zombie's master switch to Agora
   by announcement.""""
-                )
-            }
+            )
+        }
 
-            proposal(8210) {
-                title("Single-party Contracts")
-                ai(2.5)
-                author(JasonCobb)
+        proposal(8210) {
+            title("Single-party Contracts")
+            ai(2.5)
+            author(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 1742 ("Contracts") by replacing the text "Any group of two or
 more" with the text "Any group of one or more"."""
-                )
-            }
+            )
+        }
 
-            proposal(8211) {
-                title("Law School")
-                ai(3.0)
-                author(G)
+        proposal(8211) {
+            title("Law School")
+            ai(3.0)
+            author(G)
 
-                text(
-                    """
+            text(
+                """
 In R1367, Insert the following line between the line starting
 "- Associate" and the line starting "- Bachelor":
     - Juris Doctor of Nomic                  (J.N.)
@@ -235,27 +234,27 @@ In R1367, Insert the following line between the line starting
 
 If Falsifian has not been awarded a degree, Award Falsifian the degree
 of J.N."""
-                )
-            }
+            )
+        }
 
-            proposal(8212) {
-                title("Rule Recreation Reversal")
-                ai(3.0)
-                author(JasonCobb)
+        proposal(8212) {
+            title("Rule Recreation Reversal")
+            ai(3.0)
+            author(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Repeal Rule 2517."""
-                )
-            }
+            )
+        }
 
-            proposal(8213) {
-                title("Space Fixes")
-                ai(1.0)
-                author(nch)
+        proposal(8213) {
+            title("Space Fixes")
+            ai(1.0)
+            author(nch)
 
-                text(
-                    """
+            text(
+                """
 Amend rule 2591 "Spaceships" by changing:
 
   * Armour (an integer switch limited to values less than or equal to
@@ -272,200 +271,199 @@ and by appending the following to the end of the rule:
   announcement, create a spaceship in eir possession.
 
 Flip every spaceships' Armour switch to 10."""
-                )
-            }
+            )
+        }
 
-            proposal(8214) {
-                title("Space Isn't Linear")
-                ai(1.0)
-                author(nch)
+        proposal(8214) {
+            title("Space Isn't Linear")
+            ai(1.0)
+            author(nch)
 
-                text(
-                    """
+            text(
+                """
 Amend rule 2588 "Sectors" by appending, after the final sentence, the
 following:
 
   If a sector exists with an ID equivalent to the current month of
   the year, and a sector exists with an ID equivalent to the current day
   of the month then those sectors are adjacent."""
-                )
-            }
+            )
+        }
+    }
+
+    voting {
+        votes(Aris) {
+            FOR on 8202
+            PRESENT on 8203
+            FOR on 8204
+            AGAINST on 8205
+            FOR on 8206
+            AGAINST on 8207
+            AGAINST on 8208
+            AGAINST on 8209
+            FOR on 8210
+            FOR on 8211
+            FOR on 8212
+            FOR on 8213
+            FOR on 8214
         }
 
-        voting {
-            votes(Aris) {
-                FOR on 8202
-                PRESENT on 8203
-                FOR on 8204
-                AGAINST on 8205
-                FOR on 8206
-                AGAINST on 8207
-                AGAINST on 8208
-                AGAINST on 8209
-                FOR on 8210
-                FOR on 8211
-                FOR on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(nch) {
+            FOR on 8202
+            AGAINST on 8203
+            PRESENT on 8204
+            AGAINST on 8205 comment conditional("somebody voted FOR after nch")
+            FOR on 8206
+            AGAINST on 8207 comment conditional("G. did not pledge to give nch a black ribbon")
+            PRESENT on 8208
+            FOR on 8209
+            AGAINST on 8210
+            FOR on 8211
+            FOR on 8212
+            FOR on 8213
+            FOR on 8214
+        }
 
-            votes(nch) {
-                FOR on 8202
-                AGAINST on 8203
-                PRESENT on 8204
-                AGAINST on 8205 comment conditional("somebody voted FOR after nch")
-                FOR on 8206
-                AGAINST on 8207 comment conditional("G. did not pledge to give nch a black ribbon")
-                PRESENT on 8208
-                FOR on 8209
-                AGAINST on 8210
-                FOR on 8211
-                FOR on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(JasonCobb) {
+            FOR on 8202
+            FOR on 8203
+            FOR on 8204
+            AGAINST on 8205
+            FOR on 8206
+            AGAINST on 8207
+            FOR on 8208
+            AGAINST on 8209
+            endorse(G) on 8210
+            FOR on 8211
+            FOR on 8212
+            FOR on 8213
+            FOR on 8214
+        }
 
-            votes(JasonCobb) {
-                FOR on 8202
-                FOR on 8203
-                FOR on 8204
-                AGAINST on 8205
-                FOR on 8206
-                AGAINST on 8207
-                FOR on 8208
-                AGAINST on 8209
-                endorse(G) on 8210
-                FOR on 8211
-                FOR on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(Trigon) {
+            FOR on 8202
+            PRESENT on 8203
+            FOR on 8204
+            PRESENT on 8205
+            FOR on 8206
+            AGAINST on 8207 comment conditional("G. did not transfer 766 Coins to Trigon")
+            FOR on 8208
+            AGAINST on 8209
+            FOR on 8210
+            FOR on 8211
+            PRESENT on 8212
+            FOR on 8213
+            FOR on 8214
+        }
 
-            votes(Trigon) {
-                FOR on 8202
-                PRESENT on 8203
-                FOR on 8204
-                PRESENT on 8205
-                FOR on 8206
-                AGAINST on 8207 comment conditional("G. did not transfer 766 Coins to Trigon")
-                FOR on 8208
-                AGAINST on 8209
-                FOR on 8210
-                FOR on 8211
-                PRESENT on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(DMargaux) {
+            FOR on 8202
+            FOR on 8203
+            FOR on 8204
+            FOR on 8205
+            AGAINST on 8206
+            // NO VOTE on 8207
+            PRESENT on 8208
+            FOR on 8209
+            FOR on 8210
+            FOR on 8211
+            PRESENT on 8212
+            FOR on 8213
+            FOR on 8214
+        }
 
-            votes(DMargaux) {
-                FOR on 8202
-                FOR on 8203
-                FOR on 8204
-                FOR on 8205
-                AGAINST on 8206
-                // NO VOTE on 8207
-                PRESENT on 8208
-                FOR on 8209
-                FOR on 8210
-                FOR on 8211
-                PRESENT on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(RLee) {
+            FOR on 8202
+            FOR on 8203
+            FOR on 8204
+            FOR on 8205
+            PRESENT on 8206
+            PRESENT on 8207
+            AGAINST on 8208
+            FOR on 8209
+            AGAINST on 8210
+            FOR on 8211
+            FOR on 8212
+            FOR on 8213
+            FOR on 8214
+        }
 
-            votes(RLee) {
-                FOR on 8202
-                FOR on 8203
-                FOR on 8204
-                FOR on 8205
-                PRESENT on 8206
-                PRESENT on 8207
-                AGAINST on 8208
-                FOR on 8209
-                AGAINST on 8210
-                FOR on 8211
-                FOR on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(Halian) {
+            endorse(RLee) on all
+        }
 
-            votes(Halian) {
-                endorse(RLee) on all
-            }
+        votes(L) {
+            endorse(DMargaux) on all
+        }
 
-            votes(L) {
-                endorse(DMargaux) on all
-            }
+        votes(Murphy) {
+            FOR on 8202
+            FOR on 8203
+            FOR on 8204
+            AGAINST on 8205
+            FOR on 8206
+            AGAINST on 8207
+            FOR on 8208
+            AGAINST on 8209
+            FOR on 8210
+            PRESENT on 8211
+            AGAINST on 8212
+            FOR on 8213
+            FOR on 8214
+        }
 
-            votes(Murphy) {
-                FOR on 8202
-                FOR on 8203
-                FOR on 8204
-                AGAINST on 8205
-                FOR on 8206
-                AGAINST on 8207
-                FOR on 8208
-                AGAINST on 8209
-                FOR on 8210
-                PRESENT on 8211
-                AGAINST on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(twg) {
+            endorse(JasonCobb) on 8202
+            endorse(JasonCobb) on 8203
+            endorse(RLee) on 8204
+            AGAINST on 8205 comment conditional("not last ballot cast to evaluate to FOR")
+            endorse(DMargaux) on 8206
+            AGAINST on 8207
+            endorse(JasonCobb) on 8208
+            AGAINST on 8209
+            AGAINST on 8210
+            endorse(G) on 8211
+            endorse(JasonCobb) on 8212
+            endorse(nch) on 8213
+            endorse(nch) on 8214
+        }
 
-            votes(twg) {
-                endorse(JasonCobb) on 8202
-                endorse(JasonCobb) on 8203
-                endorse(RLee) on 8204
-                AGAINST on 8205 comment conditional("not last ballot cast to evaluate to FOR")
-                endorse(DMargaux) on 8206
-                AGAINST on 8207
-                endorse(JasonCobb) on 8208
-                AGAINST on 8209
-                AGAINST on 8210
-                endorse(G) on 8211
-                endorse(JasonCobb) on 8212
-                endorse(nch) on 8213
-                endorse(nch) on 8214
-            }
+        votes(JacobArduino) {
+            endorse(twg) on all
+        }
 
-            votes(JacobArduino) {
-                endorse(twg) on all
-            }
+        votes(G) {
+            FOR on 8202
+            FOR on 8203
+            FOR on 8204
+            FOR on 8205 comment conditional("\"X=X\" is true")
+            FOR on 8206
+            FOR on 8207
+            PRESENT on 8208
+            AGAINST on 8209
+            AGAINST on 8210
+            FOR on 8211
+            FOR on 8212
+            PRESENT on 8213
+            FOR on 8214
+        }
 
-            votes(G) {
-                FOR on 8202
-                FOR on 8203
-                FOR on 8204
-                FOR on 8205 comment conditional("\"X=X\" is true")
-                FOR on 8206
-                FOR on 8207
-                PRESENT on 8208
-                AGAINST on 8209
-                AGAINST on 8210
-                FOR on 8211
-                FOR on 8212
-                PRESENT on 8213
-                FOR on 8214
-            }
+        Telnaior matches G
 
-            Telnaior matches G
-
-            votes(Falsifian) {
-                FOR on 8202
-                AGAINST on 8203
-                AGAINST on 8204
-                endorse(G) on 8205
-                FOR on 8206
-                AGAINST on 8207 /* if exists */
-                FOR on 8208
-                AGAINST on 8209
-                AGAINST on 8210
-                FOR on 8211
-                FOR on 8212
-                FOR on 8213
-                FOR on 8214
-            }
+        votes(Falsifian) {
+            FOR on 8202
+            AGAINST on 8203
+            AGAINST on 8204
+            endorse(G) on 8205
+            FOR on 8206
+            AGAINST on 8207 /* if exists */
+            FOR on 8208
+            AGAINST on 8209
+            AGAINST on 8210
+            FOR on 8211
+            FOR on 8212
+            FOR on 8213
+            FOR on 8214
         }
     }
 }

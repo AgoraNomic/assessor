@@ -5,39 +5,41 @@ import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
-fun `assessment 8188A to 8195A`(): AssessmentData {
-    return assessment {
-        name("8188A-8195A")
-        quorum(7)
+fun `assessment 8188A to 8195A`() = assessment {
+    name("8188A-8195A")
+    quorum(7)
 
-        strengths {
-            default(3)
+    strengths {
+        default(3)
 
-            G strength 4 comment PM
-            Corona strength 1 comment BLOTS
-            twg strength 2 comment BLOTS
-        }
+        G strength 4 comment PM
+        Corona strength 1 comment BLOTS
+        twg strength 2 comment BLOTS
+    }
 
-        proposals {
-            proposal(8188) {
-                title("Blanket Denial")
-                ai(3.0)
-                author(G)
+    proposals {
+        proposal(8188) {
+            title("Blanket Denial")
+            ai(3.0)
+            author(G)
 
-                text("""
+            text(
+                """
 Amend Rule 2201 (Self-Ratification) by replacing:
   do one of the following in a timely fashion:
 with
   do one of the following in a timely fashion, in an announcement
-  that clearly cites the claim of error:""")
-            }
+  that clearly cites the claim of error:"""
+            )
+        }
 
-            proposal(8189) {
-                title("Rule 2479 Cleanup (v1.2)")
-                ai(1.7)
-                author(JasonCobb)
+        proposal(8189) {
+            title("Rule 2479 Cleanup (v1.2)")
+            ai(1.7)
+            author(JasonCobb)
 
-                text("""
+            text(
+                """
 Amend Rule 2479 ("Official Justice") as follows:
 
 Replace the text
@@ -54,16 +56,18 @@ with the text
 >  impose Summary Judgment on a player. When e does so, e levies a fine of
 >  up to 2 Blots on em. If e does not specify the number of Blots in the fine,
 >  the attempt to impose Summary Judgment is INEFFECTIVE. Summary Judgement is
->  imposed on the Referee's own initiative, and not in response to any official proceeding.""")
-            }
+>  imposed on the Referee's own initiative, and not in response to any official proceeding."""
+            )
+        }
 
-            proposal(8190) {
-                title("Report Rewards")
-                ai(2.0)
-                author(G)
-                coauthors(DMargaux)
+        proposal(8190) {
+            title("Report Rewards")
+            ai(2.0)
+            author(G)
+            coauthors(DMargaux)
 
-                text("""
+            text(
+                """
 Amend Rule 1006 (Offices) by prepending the following text to the 1st
 paragraph:
   An Office is a position described as an Office by the Rules.
@@ -77,25 +81,29 @@ with:
   * Publishing an office's weekly or monthly report, provided that
     publication was the first report published for that office in
     the relevant time period (week or month respectively) to fulfill
-    an official weekly or monthly duty: 5 coins.""")
-            }
+    an official weekly or monthly duty: 5 coins."""
+            )
+        }
 
-            proposal(8191) {
-                title("Spaceships")
-                ai(1.1)
-                author(RLee)
+        proposal(8191) {
+            title("Spaceships")
+            ai(1.1)
+            author(RLee)
 
-                text("""
+            text(
+                """
 Create a spaceship in the possession of each player without a
-spaceship""")
-            }
+spaceship"""
+            )
+        }
 
-            proposal(8192) {
-                title("auctions have fees")
-                ai(1.0)
-                author(G)
+        proposal(8192) {
+            title("auctions have fees")
+            ai(1.0)
+            author(G)
 
-                text("""
+            text(
+                """
 [The payment rule for auctions just says that if you happen to have an
 auction debt, if you pay Agora under any circumstances, it triggers
 stuff.  This means, if someone happens to have two auction debts, they
@@ -115,16 +123,18 @@ with:
 under R2579, which didn't exist when the auction rules were written.
 R2579 then takes care of the various CANs and method details.  The
 transfer of the lots is then a consequence of "satisfying eir auction
-debt"].""")
-            }
+debt"]."""
+            )
+        }
 
-            proposal(8195) {
-                title("Timeline Control Ordnance v2")
-                ai(3.0)
-                author(Aris)
-                coauthors(omd, JasonCobb)
+        proposal(8195) {
+            title("Timeline Control Ordnance v2")
+            ai(3.0)
+            author(Aris)
+            coauthors(omd, JasonCobb)
 
-                text("""
+            text(
+                """
 Enact a new power 3.1 Rule, entitled "Timelines", with the following text:
 
   A timeline is a temporal sequence of events and states.
@@ -169,109 +179,109 @@ to read
   initiated, not taking into account any events or retroactive modifications
   since that time.
 
-  The valid judgements for an inquiry case are as follows:"""")
-            }
+  The valid judgements for an inquiry case are as follows:""""
+            )
+        }
+    }
+
+    voting {
+        votes(Aris) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            FOR on 8195
         }
 
-        voting {
-            votes(Aris) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                FOR on 8195
-            }
+        votes(nch) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            AGAINST on 8195
+        }
 
-            votes(nch) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                AGAINST on 8195
-            }
+        votes(JasonCobb) {
+            PRESENT on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            FOR on 8195
+        }
 
-            votes(JasonCobb) {
-                PRESENT on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                FOR on 8195
-            }
+        votes(Trigon) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            PRESENT on 8195
+        }
 
-            votes(Trigon) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                PRESENT on 8195
-            }
+        votes(DMargaux) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            FOR on 8195
+        }
 
-            votes(DMargaux) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                FOR on 8195
-            }
+        votes(RLee) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            PRESENT on 8195
+        }
 
-            votes(RLee) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                PRESENT on 8195
-            }
+        votes(Halian) {
+            endorse(RLee) on all
+        }
 
-            votes(Halian) {
-                endorse(RLee) on all
-            }
+        votes(L) {
+            endorse(DMargaux) on all
+        }
 
-            votes(L) {
-                endorse(DMargaux) on all
-            }
+        votes(Murphy) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            FOR on 8195
+        }
 
-            votes(Murphy) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                FOR on 8195
-            }
+        votes(twg) {
+            endorse(author) on all
+        }
 
-            votes(twg) {
-                endorse(author) on all
-            }
+        votes(JacobArduino) {
+            endorse(twg) on all
+        }
 
-            votes(JacobArduino) {
-                endorse(twg) on all
-            }
+        votes(G) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            AGAINST on 8195
+        }
 
-            votes(G) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                AGAINST on 8195
-            }
+        Telnaior matches G
 
-            Telnaior matches G
-
-            votes(Falsifian) {
-                FOR on 8188
-                FOR on 8189
-                FOR on 8190
-                FOR on 8191
-                FOR on 8192
-                AGAINST on 8195
-            }
+        votes(Falsifian) {
+            FOR on 8188
+            FOR on 8189
+            FOR on 8190
+            FOR on 8191
+            FOR on 8192
+            AGAINST on 8195
         }
     }
 }
