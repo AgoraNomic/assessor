@@ -7,6 +7,11 @@ fun `assessment 8250`() = assessment {
     name("8250")
     quorum(9)
 
+    strengths {
+        default(3)
+        G strength 4 comment PM
+    }
+
     proposals {
         proposal(8250) {
             title("Finger bending")
