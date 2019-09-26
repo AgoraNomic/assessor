@@ -1,5 +1,7 @@
 package org.agoranomic.assessor.decisions
 
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -44,6 +46,12 @@ with this text:
 [Limiting resolution is more important than limiting initiation, as
 offices may change hands during the process.]"""
             )
+        }
+    }
+
+    voting {
+        votes(Trigon) {
+            FOR on 8250
         }
     }
 }
