@@ -53,5 +53,13 @@ offices may change hands during the process.]"""
         votes(Trigon) {
             FOR on 8250
         }
+
+        votes(twg) {
+            FOR on 8250
+        }
+
+        votes(JacobArduino) {
+            FOR on 8250
+        }
     }
 }
