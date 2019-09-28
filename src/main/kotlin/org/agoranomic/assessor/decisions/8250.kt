@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
@@ -60,6 +61,14 @@ offices may change hands during the process.]"""
 
         votes(JacobArduino) {
             FOR on 8250
+        }
+
+        votes(Falsifian) {
+            AGAINST on 8250
+        }
+
+        votes(ATMunn) {
+            endorse(Falsifian) on 8250
         }
     }
 }
