@@ -69,5 +69,13 @@ offices may change hands during the process.]"""
         votes(ATMunn) {
             endorse(Falsifian) on 8250
         }
+
+        votes(JasonCobb) {
+            FOR on 8250
+        }
+
+        votes(Bernie) {
+            endorse(JasonCobb) on 8250
+        }
     }
 }
