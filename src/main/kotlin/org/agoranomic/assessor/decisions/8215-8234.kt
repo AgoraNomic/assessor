@@ -5,19 +5,18 @@ import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
-fun `assessment 8215 to 8234`(): AssessmentData {
-    return assessment {
-        name("8215-8234")
-        quorum(9)
+fun `assessment 8215 to 8234`() = assessment {
+    name("8215-8234")
+    quorum(9)
 
-        proposals {
-            proposal(8215) {
-                title("recusal simplification")
-                ai(1.7)
-                author(G)
+    proposals {
+        proposal(8215) {
+            title("recusal simplification")
+            ai(1.7)
+            author(G)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 591 (Delivering Judgements) by deleting the following text:
   If e does not, the Arbitor CAN remove em from being the judge of that
   case by announcement, and SHALL do so in a timely fashion after the time
@@ -52,27 +51,27 @@ being assigned 4+ days, let us know why, before getting another case",
 and only governed by a SHOULD.  It's as much about helping the Arbitor
 figure out if the recused are still interested in judging.
 ]"""
-                )
-            }
+            )
+        }
 
-            proposal(8216) {
-                title("NO MORE APATHY")
-                ai(1.0)
-                author(RLee)
+        proposal(8216) {
+            title("NO MORE APATHY")
+            ai(1.0)
+            author(RLee)
 
-                text(
-                    """
+            text(
+                """
 Repeal rule 2465 "Victory By Apathy""""
-                )
-            }
+            )
+        }
 
-            proposal(8217) {
-                title("penance as a service")
-                ai(2.0)
-                author(G)
+        proposal(8217) {
+            title("penance as a service")
+            ai(2.0)
+            author(G)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2555 (Blots) by replacing:
   If a player has neither gained blots nor expunged any blots from
   emself in the current Agoran week, e CAN expunge 1 blot from
@@ -85,16 +84,16 @@ with:
   penitent, by announcement.
 
 [Inspired because I wanted to help out Kenyon]."""
-                )
-            }
+            )
+        }
 
-            proposal(8218) {
-                title("No, you didn't publish that")
-                ai(3.0)
-                author(JasonCobb)
+        proposal(8218) {
+            title("No, you didn't publish that")
+            ai(3.0)
+            author(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 478 ("Fora") by replacing the text
 
   A person "publishes" or "announces" something by sending a public
@@ -104,17 +103,17 @@ with the text
 
   A person "publishes" or "announces" something by sending a public
   message whose body contains that thing."""
-                )
-            }
+            )
+        }
 
-            proposal(8221) {
-                title("Usage de-capitalization")
-                ai(3.0)
-                author(JasonCobb)
-                coauthors(Aris)
+        proposal(8221) {
+            title("Usage de-capitalization")
+            ai(3.0)
+            author(JasonCobb)
+            coauthors(Aris)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2574 by replacing all instances of the text "with Notice"
 with the text "with notice".
 
@@ -183,16 +182,16 @@ text "with 2 Agoran consent".
 
 Amend Rule 2566 by replacing the text "with 2 Agoran Consent" with the
 text "with 2 Agoran consent"."""
-                )
-            }
+            )
+        }
 
-            proposal(8222) {
-                title("Fixing Summary Judgement (v2)")
-                ai(2.0)
-                author(JasonCobb)
+        proposal(8222) {
+            title("Fixing Summary Judgement (v2)")
+            ai(2.0)
+            author(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 If Proposal 8203 has never taken effect, this proposal applies the
 effects specified by Proposal 8203.
 
@@ -214,16 +213,16 @@ Amend Rule 2531 as follows:
     period had expired more than 14 days prior to the Pointed
     Finger, if the fine is imposed based on an investigation of such
     Finger;"""
-                )
-            }
+            )
+        }
 
-            proposal(8223) {
-                title("No secret contracts")
-                ai(2.5)
-                author(RLee)
+        proposal(8223) {
+            title("No secret contracts")
+            ai(2.5)
+            author(RLee)
 
-                text(
-                    """
+            text(
+                """
 Destroy each contract the full text of which has not been posted in
 public. If this destroyed Agora, put it back again the same as it was.
 Nobody will be able to tell the difference.
@@ -231,29 +230,29 @@ Nobody will be able to tell the difference.
 Amend the rule "Contracts" by changing "Such an agreement is known as a
 contract." to "When the full text of such an agreement is posted in public,
 it is known as a contract""""
-                )
-            }
+            )
+        }
 
-            proposal(8224) {
-                title("Remove Inactive Sods!")
-                ai(3.0)
-                author(RLee)
+        proposal(8224) {
+            title("Remove Inactive Sods!")
+            ai(3.0)
+            author(RLee)
 
-                text(
-                    """
+            text(
+                """
 Deregister each player who has not posted to a public forum in 30
 days."""
-                )
-            }
+            )
+        }
 
-            proposal(8227) {
-                title("Fresh start v2")
-                ai(3.1)
-                author(Falsifian)
-                coauthors(G)
+        proposal(8227) {
+            title("Fresh start v2")
+            ai(3.1)
+            author(Falsifian)
+            coauthors(G)
 
-                text(
-                    """
+            text(
+                """
 If nch has publicly consented to abide by the rules in clear reference
 to this proposal, and not withdrawn consent, then
 Register nch and grant em 3 blots.
@@ -262,17 +261,17 @@ Register nch and grant em 3 blots.
 uses blots, with the intention to prevent victory, as a more
 appropriate penalty. I expect em to expunge all three approximately by
 the time e would otherwise be able to register again.]"""
-                )
-            }
+            )
+        }
 
-            proposal(8228) {
-                title("Active Officers")
-                ai(3.0)
-                author(G)
-                coauthors(JasonCobb)
+        proposal(8228) {
+            title("Active Officers")
+            ai(3.0)
+            author(G)
+            coauthors(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2160 (Deputisation) by replacing:
   A player (the deputy)
 with:
@@ -285,16 +284,16 @@ paragraph:
 after the paragraph beginning:
   A player is Overpowered if e holds two offices which are
   incompatible with each other."""
-                )
-            }
+            )
+        }
 
-            proposal(8229) {
-                title("freeing up space")
-                ai(1.0)
-                author(G)
+        proposal(8229) {
+            title("freeing up space")
+            ai(1.0)
+            author(G)
 
-                text(
-                    """
+            text(
+                """
 [The universe is imploding!  Can any pro-spaaace heroes rush to the
 rescue and propose fixes in time to convince players to keep it???]
 
@@ -306,16 +305,16 @@ Repeal the following rules in this order:
   Rule 2592 (Spaceship Energy)
   Rule 2593 (Space Battles)
   Rule 2594 (Fame)"""
-                )
-            }
+            )
+        }
 
-            proposal(8230) {
-                title("Close the wormhole")
-                ai(1.0)
-                author(Murphy)
+        proposal(8230) {
+            title("Close the wormhole")
+            ai(1.0)
+            author(Murphy)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2591 (Spaceships) by replacing this text:
 
   Spaceships are a class of fixed asset,
@@ -325,17 +324,17 @@ with this text:
   Spaceships are a class of indestructible fixed asset,
 
 Set each player's Fame to 0."""
-                )
-            }
+            )
+        }
 
-            proposal(8231) {
-                title("Three-dimensional space v1.1")
-                ai(1.0)
-                author(Murphy)
-                coauthors(Aris)
+        proposal(8231) {
+            title("Three-dimensional space v1.1")
+            ai(1.0)
+            author(Murphy)
+            coauthors(Aris)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2588 (Sectors) to read:
 
   Sectors are entities. Each Sector has an ID number, which is an
@@ -381,17 +380,17 @@ Move spaceships to Sectors as follows, based on their owners:
 (+1, +1, -1) Telnaior
 (+1, +1,  0) any other non-zombies
 (+1, +1, +1) any other zombies"""
-                )
-            }
+            )
+        }
 
-            proposal(8232) {
-                title("Increased transparency v1.1")
-                ai(3.0)
-                author(Murphy)
-                coauthors(JasonCobb, twg)
+        proposal(8232) {
+            title("Increased transparency v1.1")
+            ai(3.0)
+            author(Murphy)
+            coauthors(JasonCobb, twg)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2438 (Ribbons) by replacing the sections for the relevant
 types of ribbons with the following sections:
 
@@ -407,16 +406,16 @@ types of ribbons with the following sections:
   the number of other types of Ribbon that that person qualifies
   for, earns, and/or was awarded within the previous 7 days is at
   least 5."""
-                )
-            }
+            )
+        }
 
-            proposal(8233) {
-                title("Duties")
-                ai(3.0)
-                author(Murphy)
+        proposal(8233) {
+            title("Duties")
+            ai(3.0)
+            author(Murphy)
 
-                text(
-                    """
+            text(
+                """
 Amend Rule 2152 (Mother, May I?) by appending this text:
 
   9. DUTY: The person with the duty CAN perform the described
@@ -545,130 +544,129 @@ with this text:
 
   At the beginning of each Quarter, the Herald has a DUTY to
   perform the following tasks in order:"""
-                )
-            }
+            )
+        }
 
-            proposal(8234) {
-                title("auto-balance")
-                ai(1.0)
-                author(G)
-                coauthors(JasonCobb)
+        proposal(8234) {
+            title("auto-balance")
+            ai(1.0)
+            author(G)
+            coauthors(JasonCobb)
 
-                text(
-                    """
+            text(
+                """
 Repeal Rule 2511 (Karmic Balance).
 
 Append the following paragraph to Rule 2510 (Such is Karma):
   At the beginning of each quarter, the Karma of every Unregistered
   person is halved (rounding towards 0), then the Karma of Agora is
   set such that the sum of all Karma values in the game equals 0."""
-                )
-            }
+            )
+        }
+    }
+
+    strengths {
+        default(3)
+        G strength 4 comment PM
+        Corona strength 1 comment BLOTS
+        twg strength 2 comment BLOTS
+    }
+
+    voting {
+        votes(Falsifian) {
+            endorse(G) on 8215
+            AGAINST on 8216
+            endorse(G) on 8217
+            endorse(JasonCobb) on 8218
+            PRESENT on 8221
+            endorse(JasonCobb) on 8222
+            AGAINST on 8223
+            PRESENT on 8224
+            AGAINST on 8227
+            endorse(G) on 8228
+            AGAINST on 8229
+            FOR on 8230 comment NO_VETO
+            AGAINST on 8231
+            endorse(Murphy) on 8232
+            AGAINST on 8233
+            FOR on 8234 comment NO_VETO
         }
 
-        strengths {
-            default(3)
-            G strength 4 comment PM
-            Corona strength 1 comment BLOTS
-            twg strength 2 comment BLOTS
+        votes(Murphy) {
+            FOR on 8215
+            AGAINST on 8216
+            FOR on 8217
+            FOR on 8218
+            PRESENT on 8221
+            PRESENT on 8222
+            PRESENT on 8223
+            AGAINST on 8224
+            FOR on 8227
+            AGAINST on 8228
+            AGAINST on 8229
+            FOR on 8230
+            FOR on 8231
+            FOR on 8232
+            FOR on 8233
+            endorse(G /* Herald */) on 8234
         }
 
-        voting {
-            votes(Falsifian) {
-                endorse(G) on 8215
-                AGAINST on 8216
-                endorse(G) on 8217
-                endorse(JasonCobb) on 8218
-                PRESENT on 8221
-                endorse(JasonCobb) on 8222
-                AGAINST on 8223
-                PRESENT on 8224
-                AGAINST on 8227
-                endorse(G) on 8228
-                AGAINST on 8229
-                FOR on 8230 comment NO_VETO
-                AGAINST on 8231
-                endorse(Murphy) on 8232
-                AGAINST on 8233
-                FOR on 8234 comment NO_VETO
-            }
-
-            votes(Murphy) {
-                FOR on 8215
-                AGAINST on 8216
-                FOR on 8217
-                FOR on 8218
-                PRESENT on 8221
-                PRESENT on 8222
-                PRESENT on 8223
-                AGAINST on 8224
-                FOR on 8227
-                AGAINST on 8228
-                AGAINST on 8229
-                FOR on 8230
-                FOR on 8231
-                FOR on 8232
-                FOR on 8233
-                endorse(G /* Herald */) on 8234
-            }
-
-            votes(DMargaux) {
-                endorse(G) on 8215 comment "Final non-conditional ballot"
-                endorse(G) on 8216 comment "Final non-conditional ballot"
-                endorse(G) on 8217 comment "Final non-conditional ballot"
-                endorse(G) on 8218 comment "Final non-conditional ballot"
-                endorse(G) on 8221 comment "Final non-conditional ballot"
-                endorse(G) on 8222 comment "Final non-conditional ballot"
-                endorse(G) on 8223 comment "Final non-conditional ballot"
-                endorse(G) on 8224 comment "Final non-conditional ballot"
-                endorse(Falsifian) on 8227 comment "Final non-conditional ballot"
-                endorse(G) on 8228 comment "Final non-conditional ballot"
-                endorse(Telnaior) on 8229 comment "Final non-conditional ballot"
-                endorse(G) on 8230 comment "Final non-conditional ballot"
-                endorse(G) on 8231 comment "Final non-conditional ballot"
-                endorse(G) on 8232 comment "Final non-conditional ballot"
-                endorse(G) on 8234 comment "Final non-conditional ballot"
-            }
-
-            votes(JasonCobb) {
-                FOR on 8215
-                AGAINST on 8216
-                PRESENT on 8217
-                FOR on 8218
-                FOR on 8221
-                FOR on 8222
-                AGAINST on 8223
-                AGAINST on 8224
-                endorse(G) on 8227
-                FOR on 8228
-                AGAINST on 8229
-                AGAINST on 8230
-                AGAINST on 8231
-                FOR on 8232
-                AGAINST on 8233
-                FOR on 8234
-            }
-
-            votes(G) {
-                FOR on 8215
-                AGAINST on 8216
-                FOR on 8217
-                FOR on 8218
-                FOR on 8221
-                FOR on 8222
-                AGAINST on 8223
-                AGAINST on 8224
-                AGAINST on 8227
-                FOR on 8228
-                FOR on 8229
-                PRESENT on 8230
-                PRESENT on 8231
-                FOR on 8232
-                AGAINST on 8233
-                FOR on 8234
-            }
-
-            Telnaior matches G
+        votes(DMargaux) {
+            endorse(G) on 8215 comment "Final non-conditional ballot"
+            endorse(G) on 8216 comment "Final non-conditional ballot"
+            endorse(G) on 8217 comment "Final non-conditional ballot"
+            endorse(G) on 8218 comment "Final non-conditional ballot"
+            endorse(G) on 8221 comment "Final non-conditional ballot"
+            endorse(G) on 8222 comment "Final non-conditional ballot"
+            endorse(G) on 8223 comment "Final non-conditional ballot"
+            endorse(G) on 8224 comment "Final non-conditional ballot"
+            endorse(Falsifian) on 8227 comment "Final non-conditional ballot"
+            endorse(G) on 8228 comment "Final non-conditional ballot"
+            endorse(Telnaior) on 8229 comment "Final non-conditional ballot"
+            endorse(G) on 8230 comment "Final non-conditional ballot"
+            endorse(G) on 8231 comment "Final non-conditional ballot"
+            endorse(G) on 8232 comment "Final non-conditional ballot"
+            endorse(G) on 8234 comment "Final non-conditional ballot"
         }
+
+        votes(JasonCobb) {
+            FOR on 8215
+            AGAINST on 8216
+            PRESENT on 8217
+            FOR on 8218
+            FOR on 8221
+            FOR on 8222
+            AGAINST on 8223
+            AGAINST on 8224
+            endorse(G) on 8227
+            FOR on 8228
+            AGAINST on 8229
+            AGAINST on 8230
+            AGAINST on 8231
+            FOR on 8232
+            AGAINST on 8233
+            FOR on 8234
+        }
+
+        votes(G) {
+            FOR on 8215
+            AGAINST on 8216
+            FOR on 8217
+            FOR on 8218
+            FOR on 8221
+            FOR on 8222
+            AGAINST on 8223
+            AGAINST on 8224
+            AGAINST on 8227
+            FOR on 8228
+            FOR on 8229
+            PRESENT on 8230
+            PRESENT on 8231
+            FOR on 8232
+            AGAINST on 8233
+            FOR on 8234
+        }
+
+        Telnaior matches G
     }
 }
