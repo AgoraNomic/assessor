@@ -77,5 +77,13 @@ offices may change hands during the process.]"""
         votes(Bernie) {
             endorse(JasonCobb) on 8250
         }
+        
+        votes(G) {
+            PRESENT on 8250
+        }
+
+        votes(Rance) {
+            PRESENT on 8250
+        }
     }
 }
