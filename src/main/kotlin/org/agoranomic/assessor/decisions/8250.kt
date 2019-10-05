@@ -82,10 +82,6 @@ offices may change hands during the process.]"""
             PRESENT on 8250
         }
 
-        votes(Rance) {
-            PRESENT on 8250
-        }
-
         votes(BaronVV) {
             PRESENT on 8250
         }
