@@ -54,5 +54,13 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
             FOR on 8251
             FOR on 8252
         }
+
+        votes(twg) {
+            endorse(author) on all
+        }
+
+        votes(JacobArduino) {
+            endorse(twg) on all
+        }
     }
 }
