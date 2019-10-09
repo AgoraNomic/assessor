@@ -76,5 +76,10 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
         votes(ATMunn) {
             endorse(Falsifian) on all
         }
+
+        votes(Gaelan) {
+            endorse(G) on 8251
+            endorse(JasonCobb) on 8252
+        }
     }
 }
