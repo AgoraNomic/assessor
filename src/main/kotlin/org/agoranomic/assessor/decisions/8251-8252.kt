@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.PRESENT
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -65,6 +66,15 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
 
         votes(Bernie) {
             endorse(JasonCobb) on all
+        }
+
+        votes(Falsifian) {
+            FOR on 8251
+            PRESENT on 8252
+        }
+
+        votes(ATMunn) {
+            endorse(Falsifian) on all
         }
     }
 }
