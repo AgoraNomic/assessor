@@ -62,5 +62,9 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
         votes(JacobArduino) {
             endorse(twg) on all
         }
+
+        votes(Bernie) {
+            endorse(JasonCobb) on all
+        }
     }
 }
