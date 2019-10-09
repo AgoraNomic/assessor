@@ -7,6 +7,11 @@ fun `assessment 8251 to 8252`() = assessment {
     name("8251-8252")
     quorum(6)
 
+    strengths {
+        default(3)
+        G strength 4 comment PM
+    }
+
     proposals {
         proposal(8251) {
             title("Ruleset definition")
