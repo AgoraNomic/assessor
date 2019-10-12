@@ -81,5 +81,10 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
             endorse(G) on 8251
             endorse(JasonCobb) on 8252
         }
+
+        votes(Murphy) {
+            FOR on 8251
+            FOR on 8252
+        }
     }
 }
