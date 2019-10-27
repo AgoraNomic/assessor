@@ -70,7 +70,7 @@ fun main(args: Array<String>) {
         return
     }
 
-    val assessments = findAnnotatedAssessmentMethods()
+    val assessments = findAssessments()
     val assessmentsByName = assessments.associateBy { it.name }
 
     val cliConfig = try {
@@ -105,7 +105,7 @@ fun main(args: Array<String>) {
     destination.output(stringAssessments)
 }
 
-private fun findAnnotatedAssessmentMethods(): List<AssessmentData> {
+private fun findAssessments(): List<AssessmentData> {
     val packageName = "org.agoranomic.assessor.decisions"
     val annotationName = UseAssessment::class.jvmName
 
