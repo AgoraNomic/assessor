@@ -71,6 +71,7 @@ fun main(args: Array<String>) {
     }
 
     val assessments = findAnnotatedAssessmentMethods()
+    val assessmentsByName = assessments.associateBy { it.name }
 
     val cliConfig = try {
         parseCli(args)
@@ -84,15 +85,15 @@ fun main(args: Array<String>) {
 
     val toAssess: List<Pair<String, AssessmentData>> = run {
         when (val neededAssessments = cliConfig.neededAssessments) {
-            is AllAssessments -> assessments.toList()
+            is AllAssessments -> assessmentsByName.toList()
 
             is SingleAssessment -> {
                 val name = neededAssessments.name
 
-                if (assessments.containsKey(name)) {
-                    return@run listOf(name to assessments.getOrFail(name))
+                if (assessmentsByName.containsKey(name)) {
+                    return@run listOf(name to assessmentsByName.getOrFail(name))
                 } else {
-                    println("No such assessment \"$name\": valid options are \"all\" and ${assessments.keys}.")
+                    println("No such assessment \"$name\": valid options are \"all\" and ${assessmentsByName.keys}.")
                     return@main
                 }
             }
@@ -104,7 +105,7 @@ fun main(args: Array<String>) {
     destination.output(stringAssessments)
 }
 
-private fun findAnnotatedAssessmentMethods(): Map<String, AssessmentData> {
+private fun findAnnotatedAssessmentMethods(): List<AssessmentData> {
     val packageName = "org.agoranomic.assessor.decisions"
     val annotationName = UseAssessment::class.jvmName
 
@@ -126,5 +127,5 @@ private fun findAnnotatedAssessmentMethods(): Map<String, AssessmentData> {
         }
     }
 
-    return rawAssessments.associateBy { it.name }
+    return rawAssessments
 }
