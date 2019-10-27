@@ -2,10 +2,10 @@ package org.agoranomic.assessor.decisions
 
 import io.github.classgraph.ClassGraph
 import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.ReportConfig
+import org.agoranomic.assessor.lib.getOrFail
 import org.agoranomic.assessor.lib.report
 import org.agoranomic.assessor.lib.resolve
-import org.apache.commons.cli.*
+import java.lang.Exception
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
@@ -17,218 +17,91 @@ import kotlin.reflect.jvm.kotlinFunction
 @Retention(AnnotationRetention.RUNTIME)
 annotation class UseAssessment
 
-private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
-
-private const val VOTE_COMMENTS_YES = "vote-comments"
-private const val VOTE_COMMENTS_NO = "no-vote-comments"
-private const val BALLOTS_LINE_YES = "ballots-line"
-private const val BALLOTS_LINE_NO = "no-ballots-line"
-private const val VOTE_KIND_COUNTS_YES = "vote-counts"
-private const val VOTE_KIND_COUNTS_NO = "no-vote-counts"
-private const val DEST_STDOUT = "stdout"
-private const val DEST_FILE = "file"
-private const val DEST_DIR = "dir"
-private const val FORM_LONG = "long"
-private const val FORM_SHORT = "short"
-private const val FORM_OFFICIAL = "official"
-
-private enum class Form(val reportConfig: ReportConfig) {
-    LONG(
-        ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
-    ),
-    SHORT(
-        ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
-    ),
-    OFFICIAL(
-        ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
-    ),
-    ;
-
+private fun StdoutDestination.output(assesments: List<Pair<String, String>>) {
+    for ((name, assessment) in assesments) {
+        println(assessment)
+        println()
+    }
 }
 
-private val DEFAULT_FORM = Form.LONG
+private fun NamedFileDestination.output(assesments: List<Pair<String, String>>) {
+    Files.writeString(Path.of(file), assesments.map { it.second }.joinToString("\n"), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+}
+
+private fun UnnamedFileDestination.output(assessments: List<Pair<String, String>>) {
+    for ((name, assessment) in assessments) {
+        val path = Path.of(name + ".txt")
+
+        Files.writeString(path, assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+    }
+}
+
+private fun NamedDirDestination.output(assesments: List<Pair<String, String>>) {
+    val dirPath = Path.of(dir)!!
+
+    Files.createDirectories(dirPath)
+
+    for ((name, assessment) in assesments) {
+        val filePath = dirPath.resolve(name + ".txt")
+
+        Files.writeString(filePath, assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+    }
+}
+
+private fun UnnamedDirDestination.output(assesments: List<Pair<String, String>>) {
+    NamedDirDestination("out").output(assesments)
+}
+
+private fun OutputDestination.output(assessments: List<Pair<String, String>>) {
+    return when (this) {
+        is StdoutDestination -> output(assessments)
+        is NamedFileDestination -> output(assessments)
+        is UnnamedFileDestination -> output(assessments)
+        is NamedDirDestination -> output(assessments)
+        is UnnamedDirDestination -> output(assessments)
+    }
+}
+
+private val DEFAULT_DESTINATION = StdoutDestination
 
 fun main(args: Array<String>) {
-    val assessments = findAnnotatedAssessmentMethods()
-
-    val options = Options()
-
-    val optDestStdout = Option.builder().longOpt(DEST_STDOUT).desc("Print resolutions to the standard output").build()
-    val optDestFile =
-        Option.builder().longOpt(DEST_FILE).desc("Print resolutions to the provided file").argName("file").hasArg()
-            .argName("file").optionalArg(
-                true
-            ).type<String>().build()
-    val optDestDir =
-        Option.builder().longOpt(DEST_DIR).desc("Print resolutions to files in the provided directory").hasArg()
-            .argName("directory").optionalArg(
-                true
-            ).type<String>().build()
-
-    val optGroupDest = OptionGroup().let {
-        it.addOption(optDestStdout)
-        it.addOption(optDestFile)
-        it.addOption(optDestDir)
-
-        it
-    }
-
-    options.addOptionGroup(optGroupDest)
-
-    val optVoteCommentsYes = Option.builder().longOpt(VOTE_COMMENTS_YES).desc("Print vote comments").build()
-    val optVoteCommentsNo = Option.builder().longOpt(VOTE_COMMENTS_NO).desc("Don't print vote comments").build()
-    val optGroupVoteComments = OptionGroup().let {
-        it.addOption(optVoteCommentsYes)
-        it.addOption(optVoteCommentsNo)
-
-        it
-    }
-
-    options.addOptionGroup(optGroupVoteComments)
-
-    val optBallotsLineYes = Option.builder().longOpt(BALLOTS_LINE_YES).desc("Print BALLOTS line").build()
-    val optBallotsLineNo = Option.builder().longOpt(BALLOTS_LINE_NO).desc("Don't print BALLOTS line").build()
-    val optGroupBallotsLint = OptionGroup().let {
-        it.addOption(optBallotsLineYes)
-        it.addOption(optBallotsLineNo)
-
-        it
-    }
-
-    options.addOptionGroup(optGroupBallotsLint)
-
-    val optSubVoteCountYes = Option.builder().longOpt(VOTE_KIND_COUNTS_YES).desc("Print vote counts").build()
-    val optSubVoteCountNo = Option.builder().longOpt(VOTE_KIND_COUNTS_NO).desc("Don't print vote counts").build()
-    val optGroupSubVoteCount = OptionGroup().let {
-        it.addOption(optSubVoteCountYes)
-        it.addOption(optSubVoteCountNo)
-
-        it
-    }
-
-    options.addOptionGroup(optGroupSubVoteCount)
-
-    val optFormLong = Option.builder().longOpt(FORM_LONG).desc("Generally longer form").build()
-    val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
-    val optFormOfficial = Option.builder().longOpt(FORM_OFFICIAL).desc("Official report form").build()
-    val optGroupForm = OptionGroup().let {
-        it.addOption(optFormLong)
-        it.addOption(optFormShort)
-        it.addOption(optFormOfficial)
-
-        it
-    }
-
-    options.addOptionGroup(optGroupForm)
-
     if (args.isEmpty()) {
-        HelpFormatter().let {
-            it.optionComparator = null
-            it.printHelp("java -jar assessor.jar", options, true)
-        }
-
+        println(helpString())
         return
     }
 
-    val commandLine: CommandLine = run {
-        try {
-            return@run DefaultParser().parse(options, args)
-        } catch (e: AlreadySelectedException) {
-            println("Specified conflicting options: \"${e.optionGroup.selected!!}\" and \"${e.option.longOpt}\"")
-        }
+    val assessments = findAnnotatedAssessmentMethods()
 
-        return@main
+    val cliConfig = try {
+        parseCli(args)
+    } catch (e: Exception) {
+        println(e.message)
+        return
     }
 
-    fun provided(option: Option) = commandLine.options.contains(option)
-    fun value(option: Option) = commandLine.options.find { it == option }!!.value ?: null
-
-    val form = run {
-        var value = DEFAULT_FORM
-        if (provided(optFormLong)) value = Form.LONG
-        if (provided(optFormShort)) value = Form.SHORT
-        if (provided(optFormOfficial)) value = Form.OFFICIAL
-        return@run value
-    }
-
-    var config = form.reportConfig
-
-    if (provided(optVoteCommentsYes)) config = config.copy(voteComments = true)
-    if (provided(optVoteCommentsNo)) config = config.copy(voteComments = false)
-
-    if (provided(optBallotsLineYes)) config = config.copy(totalBallotCount = true)
-    if (provided(optBallotsLineNo)) config = config.copy(totalBallotCount = false)
-
-    if (provided(optSubVoteCountYes)) config = config.copy(voteKindBallotCount = true)
-    if (provided(optSubVoteCountNo)) config = config.copy(voteKindBallotCount = false)
+    val config = cliConfig.reportConfig
+    val destination = cliConfig.destination ?: DEFAULT_DESTINATION
 
     val toAssess: List<Pair<String, AssessmentData>> = run {
-        val argList = commandLine.argList
+        when (val neededAssessments = cliConfig.neededAssessments) {
+            is AllAssessments -> assessments.toList()
 
-        if (argList.size != 1) {
-            println("Must specify a single assessment (or \"all\") to assess.")
-            return@main
-        }
+            is SingleAssessment -> {
+                val name = neededAssessments.name
 
-        val arg = argList[0]!!
-
-        if (arg.equals("all", ignoreCase = true)) {
-            return@run assessments.toList()
-        } else {
-            val assessment = assessments[arg]
-
-            if (assessment == null) {
-                println("No such assessment \"$arg\": valid options are \"all\" and ${assessments.keys}.")
-                return@main
+                if (assessments.containsKey(name)) {
+                    return@run listOf(name to assessments.getOrFail(name))
+                } else {
+                    println("No such assessment \"$name\": valid options are \"all\" and ${assessments.keys}.")
+                    return@main
+                }
             }
-
-            return@run listOf(arg to assessment)
         }
     }
 
     val stringAssessments = toAssess.map { it.first to report(resolve(it.second), config) }
 
-    if (provided(optDestStdout) || optGroupDest.selected == null) {
-        for ((name, assessment) in stringAssessments) {
-            println(assessment)
-            println()
-        }
-    } else if (provided(optDestFile)) {
-        val fileName = value(optDestFile)
-        if (fileName != null) {
-            Files.newBufferedWriter(Path.of(fileName), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
-                .use { writer ->
-                    for ((name, assessment) in stringAssessments) {
-                        writer.write(assessment)
-                        writer.newLine()
-                    }
-                }
-        } else {
-            for ((name, assessment) in stringAssessments) {
-                Files.newBufferedWriter(
-                    Path.of(name + ".txt"),
-                    StandardOpenOption.CREATE,
-                    StandardOpenOption.TRUNCATE_EXISTING
-                ).use { writer ->
-                    writer.write(assessment)
-                }
-            }
-        }
-    } else if (provided(optDestDir)) {
-        val dirName = value(optDestDir) ?: "out"
-        val dirPath = Path.of(dirName)!!
-
-        Files.createDirectories(dirPath)
-
-        for ((name, assessment) in stringAssessments) {
-            val filePath = dirPath.resolve(name + ".txt")
-
-            Files.newBufferedWriter(filePath, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
-                .use { writer ->
-                    writer.write(assessment)
-                }
-        }
-    }
+    destination.output(stringAssessments)
 }
 
 private fun findAnnotatedAssessmentMethods(): Map<String, AssessmentData> {
