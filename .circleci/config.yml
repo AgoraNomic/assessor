@@ -56,14 +56,15 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-build-{{ .Revision }}
+            - v1-build-{{ .Branch }}-{{ .Revision }}
+            - v1-build-{{ .Branch }}-
             - v1-build-
       - run: gradle build
       - save_cache:
           paths:
             - ~/.gradle
             - build
-          key: v1-build-{{ .Revision }}
+          key: v1-build-{{ .Branch }}-{{ .Revision }}
 
   fatJar:
     <<: *jvm_default
@@ -91,14 +92,15 @@ jobs:
 
       - restore_cache:
           keys:
-            - v1-build-{{ .Revision }}
+            - v1-build-{{ .Branch }}-{{ .Revision }}
+            - v1-build-{{ .Branch }}-
             - v1-build-
       - run: gradle build
       - save_cache:
           paths:
             - ~/.gradle
             - build
-          key: v1-build-{{ .Revision }}
+          key: v1-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Build fat jar
