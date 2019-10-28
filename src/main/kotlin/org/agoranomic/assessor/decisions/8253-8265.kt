@@ -1,5 +1,7 @@
 package org.agoranomic.assessor.decisions
 
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -314,6 +316,20 @@ Enact a new Rule of Power 3.0 with the text:
     }
 
     voting {
-
+        votes(Aris) {
+            FOR on 8253
+            FOR on 8254
+            FOR on 8255
+            AGAINST on 8256
+            FOR on 8257
+            FOR on 8258
+            AGAINST on 8259
+            AGAINST on 8260
+            PRESENT on 8261
+            AGAINST on 8262
+            FOR on 8263
+            AGAINST on 8264
+            FOR on 8265
+        }
     }
 }
