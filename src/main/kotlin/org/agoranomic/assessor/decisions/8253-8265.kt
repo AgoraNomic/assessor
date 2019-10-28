@@ -371,5 +371,21 @@ Enact a new Rule of Power 3.0 with the text:
         votes(Rance) {
             PRESENT on 8265
         }
+
+        votes(JasonCobb) {
+            FOR on 8253
+            FOR on 8254
+            FOR on 8255
+            AGAINST on 8256
+            FOR on 8257
+            FOR on 8258
+            AGAINST on 8259
+            FOR on 8260
+            FOR on 8261
+            FOR on 8262
+            FOR on 8263
+            AGAINST on 8264
+            FOR on 8265
+        }
     }
 }
