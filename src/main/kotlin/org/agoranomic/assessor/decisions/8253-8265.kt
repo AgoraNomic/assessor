@@ -331,5 +331,21 @@ Enact a new Rule of Power 3.0 with the text:
             AGAINST on 8264
             FOR on 8265
         }
+
+        votes(nch) {
+            FOR on 8253
+            endorse(G) on 8254
+            PRESENT on 8255
+            AGAINST on 8256
+            FOR on 8257
+            FOR on 8258
+            AGAINST on 8259
+            FOR on 8260
+            FOR on 8261
+            FOR on 8262
+            FOR on 8263
+            PRESENT on 8264
+            FOR on 8265 // Only proposal not listed in message
+        }
     }
 }
