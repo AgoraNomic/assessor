@@ -150,7 +150,7 @@ class _AssessmentReceiver {
             }
 
             fun adoption_index(value: Double) =
-                adoption_index(BigDecimal((value * 10).toInt()).setScale(1) / BigDecimal.TEN)
+                adoption_index(BigDecimal(((value * 10) + 0.5).toInt()).setScale(1) / BigDecimal.TEN)
 
             fun adoption_index(value: Int) = adoption_index(value.toDouble())
 
