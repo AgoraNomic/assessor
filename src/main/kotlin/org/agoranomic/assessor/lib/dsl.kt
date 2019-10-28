@@ -44,10 +44,6 @@ data class MultiProposalVoteMap(private val map: Map<ProposalNumber, SinglePropo
 
     operator fun get(proposal: ProposalNumber) =
         map[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
-
-    fun forEach(block: (ProposalNumber, SingleProposalVoteMap) -> Unit) {
-        map.forEach(block)
-    }
 }
 
 @DslMarker
