@@ -365,11 +365,11 @@ Enact a new Rule of Power 3.0 with the text:
         }
 
         votes(G) {
-            AGAINST on 8265
+            PRESENT on 8265
         }
 
         votes(Rance) {
-            AGAINST on 8265
+            PRESENT on 8265
         }
     }
 }
