@@ -347,5 +347,21 @@ Enact a new Rule of Power 3.0 with the text:
             PRESENT on 8264
             FOR on 8265 // Only proposal not listed in message
         }
+
+        votes(Gaelan) {
+            FOR on 8253
+            FOR on 8254
+            FOR on 8255
+            AGAINST on 8256
+            // TODO: conditional vote on 8257: if 8259 would be ADOPTED, AGAINST; otherwise, FOR
+            FOR on 8258
+            // TODO: conditional vote on 8259: ENDORSE ADoP, except FOR if e doesn't vote / doesn't exist
+            AGAINST on 8260
+            FOR on 8261
+            AGAINST on 8262
+            FOR on 8263
+            AGAINST on 8264
+            FOR on 8265
+        }
     }
 }
