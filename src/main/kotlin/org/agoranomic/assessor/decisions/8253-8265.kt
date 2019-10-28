@@ -389,6 +389,18 @@ Enact a new Rule of Power 3.0 with the text:
         }
 
         votes(omd) {
+            FOR on 8253
+            FOR on 8254
+            PRESENT on 8255
+            PRESENT on 8256
+            AGAINST on 8257
+            FOR on 8258
+            AGAINST on 8259
+            AGAINST on 8260
+            AGAINST on 8261
+            AGAINST on 8262
+            AGAINST on 8263
+            FOR on 8264
             FOR on 8265
         }
     }
