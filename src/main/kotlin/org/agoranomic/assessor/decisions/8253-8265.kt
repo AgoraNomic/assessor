@@ -387,5 +387,9 @@ Enact a new Rule of Power 3.0 with the text:
             AGAINST on 8264
             FOR on 8265
         }
+
+        votes(omd) {
+            FOR on 8265
+        }
     }
 }
