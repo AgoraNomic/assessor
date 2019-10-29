@@ -423,5 +423,9 @@ Enact a new Rule of Power 3.0 with the text:
         votes(ATMunn) {
             endorse(Falsifian) on all
         }
+
+        votes(Bernie) {
+            endorse(JasonCobb) on all
+        }
     }
 }
