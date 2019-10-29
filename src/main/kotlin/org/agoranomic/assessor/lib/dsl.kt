@@ -271,9 +271,9 @@ class _AssessmentReceiver {
 
             fun endorse(player: Player) = _HalfEndorsement(player)
 
-            class _Author
+            object _Author
 
-            public val author = _Author()
+            public val author = _Author
 
             object _AuthorEndorsement
 
