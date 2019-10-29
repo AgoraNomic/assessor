@@ -26,10 +26,16 @@ fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, v
     votes.forEach { player, vote ->
         val strength = votingStrengthMap[player]
 
-        when (vote.kind) {
-            VoteKind.FOR -> strengthFor += strength.value
-            VoteKind.AGAINST -> strengthAgainst += strength.value
-            VoteKind.PRESENT -> { /* do nothing */ }
+        val _ensureExhaustive_ = when (vote) {
+            is SimpleVote -> {
+                when (vote.kind) {
+                    VoteKind.FOR -> strengthFor += strength.value
+                    VoteKind.AGAINST -> strengthAgainst += strength.value
+                    VoteKind.PRESENT -> { /* do nothing */ }
+                }
+            }
+
+            is InextricableVote -> { /* do nothing */ }
         }
     }
 
@@ -54,7 +60,20 @@ data class ProposalResolutionMap(val assessmentName: String, val proposals: Set<
     }
 }
 
-fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
+private fun inextricableToPresent(singleProposalVoteMap: SingleProposalVoteMap): SingleProposalVoteMap {
+    return SingleProposalVoteMap(singleProposalVoteMap.map.mapValues { (_, vote) -> if (vote is InextricableVote) SimpleVote(VoteKind.PRESENT, vote.comment) else vote })
+}
+
+private fun inextricableToPresent(multiProposalVoteMap: MultiProposalVoteMap): MultiProposalVoteMap {
+    return multiProposalVoteMap.copy(map = multiProposalVoteMap.map.mapValues { (_, votes) -> inextricableToPresent(votes) })
+}
+
+private fun inextricableToPresent(assessmentData: AssessmentData): AssessmentData {
+    return assessmentData.copy(votes = inextricableToPresent(assessmentData.votes))
+}
+
+fun resolve(rawAsessmentData: AssessmentData): ProposalResolutionMap {
+    val assessmentData = inextricableToPresent(rawAsessmentData)
     val map = mutableMapOf<ProposalNumber, ResolutionData>()
 
     assessmentData.proposals.forEach { proposal ->

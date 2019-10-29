@@ -7,7 +7,20 @@ typealias VotingStrengthValue = Int
 data class VotingStrength(val value: VotingStrengthValue, val comment: String? = null)
 
 enum class VoteKind { PRESENT, AGAINST, FOR }
-data class Vote(val kind: VoteKind, val comment: String?)
+
+sealed class Vote {
+    abstract val comment: String?
+
+    abstract fun copyWithComment(newComment: String?): Vote
+}
+
+data class InextricableVote(override val comment: String?) : Vote() {
+    override fun copyWithComment(newComment: String?) = copy(comment = newComment)
+}
+
+data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
+    override fun copyWithComment(newComment: String?) = copy(comment = newComment)
+}
 
 class VotingStrengthMap(
     val defaultStrength: VotingStrengthValue,
@@ -31,15 +44,13 @@ data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
     }
 
     fun filterVoteKind(value: VoteKind): Set<Player> {
-        return map.filterValues { it.kind == value }.keys
+        return map.filter { (_, v) -> v is SimpleVote }.filterValues { (it as SimpleVote).kind == value }.keys
     }
 }
 
 data class Endorsement(val endorsee: Player, var comment: String?)
 
-data class SinglePlayerVoteMap(val votes: Map<ProposalNumber, Vote>, val endorsements: Map<ProposalNumber, Endorsement>)
-
-data class MultiProposalVoteMap(private val map: Map<ProposalNumber, SingleProposalVoteMap>) {
+data class MultiProposalVoteMap(val map: Map<ProposalNumber, SingleProposalVoteMap>) {
     val proposals = map.keys
 
     operator fun get(proposal: ProposalNumber) =
@@ -57,6 +68,9 @@ data class AssessmentData(
     val proposals: Set<Proposal>,
     val votes: MultiProposalVoteMap
 )
+
+private typealias ResolveFunc = (Proposal, Player) -> Vote?
+private typealias VoteFunc = (Proposal, ResolveFunc) -> Vote
 
 @AssessmentDSL
 class _AssessmentReceiver {
@@ -195,86 +209,93 @@ class _AssessmentReceiver {
 
     @AssessmentDSL
     class _VotingReciever(private val m_proposals: List<Proposal>) {
-        private val m_proposalNumbers = m_proposals.map { it.number }
-        private val m_directVotes = mutableMapOf<Player, Map<ProposalNumber, Vote>>()
-        private val m_endorsements = mutableMapOf<Player, Map<ProposalNumber, Endorsement>>()
         private val m_totalEndorsements = mutableMapOf<Player, Player>()
+        private val m_votes = mutableMapOf<Player, Map<ProposalNumber, _PendingVote>>()
+
+        data class _PendingVote(val voteFunc: VoteFunc, val comment: String?) {
+            fun compile(proposal: Proposal, resolve: ResolveFunc): Vote {
+                val vote = voteFunc(proposal, resolve)
+
+                if (comment != null) {
+                    if (vote.comment != null) {
+                        return vote.copyWithComment(vote.comment + ": " + comment)
+                    }
+
+                    return vote.copyWithComment(comment)
+                }
+
+                return vote
+            }
+        }
 
         @AssessmentDSL
         class _VotesReceiver(private val m_proposals: List<Proposal>, private val player: Player) {
-            private val m_proposalNumbers = m_proposals.map { it.number }
-            private val m_map = mutableMapOf<ProposalNumber, _MutableVote>()
-            private val m_endorsements = mutableMapOf<ProposalNumber, _MutableEndorsement>()
+            private val m_votes = mutableMapOf<ProposalNumber, _MutableVote>()
 
             public object _All
+
             public val all = _All
 
-            data class _MutableVote(val value: VoteKind, var comment: String? = null) {
-                fun compile() = Vote(value, comment)
+            data class _MutableVote(val vote: VoteFunc, var comment: String? = null) {
+                fun compile() = _PendingVote(vote, comment)
             }
 
             data class _MutableEndorsement(val endorsee: Player, var comment: String? = null) {
                 fun compile() = Endorsement(endorsee, comment)
             }
 
-            infix fun VoteKind.on(proposal: ProposalNumber): _MutableVote {
-                checkProposal(proposal)
+            data class _HalfFunctionVote(val func: VoteFunc)
 
-                val vote = _MutableVote(this)
-                m_map[proposal] = vote
+            private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
+                require(m_proposals.map { it.number }.contains(proposal)) { "No such proposal $proposal" }
+                require(!m_votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
+
+                m_votes[proposal] = vote
                 return vote
             }
 
-            infix fun VoteKind.on(all: _All): _MutableVote {
-                val vote = _MutableVote(this)
+            fun function(vote: VoteFunc) = _HalfFunctionVote(vote)
 
-                for (proposal in m_proposalNumbers) {
-                    checkProposal(proposal)
-                    m_map[proposal] = vote
-                }
+            infix fun _HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
 
-                return vote
+            infix fun _HalfFunctionVote.on(all: _All) {
+                m_proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
             }
+
+            private fun function(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
+
+            infix fun VoteKind.on(proposal: ProposalNumber) = function(this) on proposal
+            infix fun VoteKind.on(all: _All) = function(this) on all
 
             data class _HalfEndorsement(val endorsee: Player)
-            object _AuthorEndorsement
+
+            fun endorse(player: Player) = _HalfEndorsement(player)
 
             class _Author
+
             public val author = _Author()
 
-            fun endorse(player: Player): _HalfEndorsement {
-                return _HalfEndorsement(player)
-            }
+            object _AuthorEndorsement
 
             fun endorse(author: _Author) = _AuthorEndorsement
 
-            private fun checkProposal(proposal: ProposalNumber) {
-                require(m_proposalNumbers.contains(proposal)) { "No such proposal $proposal" }
-                require(!m_map.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
-                require(!m_endorsements.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
-            }
-
-            infix fun _HalfEndorsement.on(proposal: ProposalNumber): _MutableEndorsement {
-                checkProposal(proposal)
-
-                val mutableEndorsement = _MutableEndorsement(this.endorsee)
-                m_endorsements[proposal] = mutableEndorsement
-                return mutableEndorsement
-            }
-
-            infix fun _HalfEndorsement.on(all: _All) {
-                for (proposal in m_proposalNumbers) {
-                    this on proposal
+            private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, resolve ->
+                when (val endorseeVote = resolve(prop, endorsee)) {
+                    null -> InextricableVote(comment = "Endorsement of non-voter ${endorsee.name}")
+                    is SimpleVote, is InextricableVote -> endorseeVote.copyWithComment("Endorsement of ${endorsee.name}")
                 }
             }
 
-            infix fun _AuthorEndorsement.on(proposal: ProposalNumber) = endorse(m_proposals.lookupOrFail(proposal).author) on proposal
+            private fun endorsementVote(endorsee: Player) = function(endorsementFunc(endorsee))
 
-            infix fun _AuthorEndorsement.on(all: _All) {
-                for (proposal in m_proposalNumbers) {
-                    this on proposal
-                }
-            }
+            infix fun _HalfEndorsement.on(proposal: ProposalNumber) = endorsementVote(endorsee) on proposal
+            infix fun _HalfEndorsement.on(all: _All) = endorsementVote(endorsee) on all
+
+            private fun authorEndorsementFunc(): VoteFunc = { prop, resolve -> endorsementFunc(prop.author)(prop, resolve) }
+            private fun authorEndorsementVote() = function(authorEndorsementFunc())
+
+            infix fun _AuthorEndorsement.on(proposal: ProposalNumber) = authorEndorsementVote() on proposal
+            infix fun _AuthorEndorsement.on(all: _All) = authorEndorsementVote() on all
 
             infix fun _MutableEndorsement.comment(str: String) {
                 this.comment = str
@@ -284,10 +305,8 @@ class _AssessmentReceiver {
                 this.comment = value
             }
 
-            fun compile(): SinglePlayerVoteMap {
-                return SinglePlayerVoteMap(m_map.mapValues {
-                    (_, value) -> value.compile()
-                }, m_endorsements.mapValues { (_, value) -> value.compile() })
+            fun compile(): Map<ProposalNumber, _PendingVote> {
+                return m_votes.mapValues { (k, v) -> v.compile() }
             }
         }
 
@@ -295,66 +314,42 @@ class _AssessmentReceiver {
             m_totalEndorsements[this] = other
         }
 
-        fun votes(player: Player, block: _VotesReceiver.()->Unit) {
-            require(!(m_directVotes.containsKey(player) || m_endorsements.containsKey(player))) { "Votes already specified for player ${player.name}" }
+        fun votes(player: Player, block: _VotesReceiver.() -> Unit) {
+            require(!(m_votes.containsKey(player) || m_totalEndorsements.containsKey(player))) { "Votes already specified for player ${player.name}" }
 
             val receiver = _VotesReceiver(m_proposals, player)
             receiver.block()
             val result = receiver.compile()
-            m_directVotes[player] = result.votes
-            m_endorsements[player] = result.endorsements
+
+            m_votes[player] = result
         }
 
 
-        private fun resolveVote(proposal: ProposalNumber, player: Player, vararg playersSeen: Player): Vote? {
-            require(!playersSeen.contains(player)) { "Endorsement loop" }
+        private fun resolveVote(proposal: Proposal, player: Player, vararg playersSeen: Player): Vote? {
+            if (playersSeen.contains(player)) return InextricableVote(comment = null)
 
-            val directVote = m_directVotes[player]?.get(proposal)
-            val hasDirectVote = directVote != null
+            val newPlayersSeen = (playersSeen.toList() + player).toTypedArray()
+            val nextResolve: ResolveFunc = { nextProp, nextPlayer -> resolveVote(nextProp, nextPlayer, *newPlayersSeen) }
 
-            val endorsement = m_endorsements[player]?.get(proposal)
-            val hasEndorsement = endorsement != null
+            if (m_totalEndorsements.containsKey(player)) return nextResolve(proposal, m_totalEndorsements.getOrFail(player))
 
-            val totalEndorsement = m_totalEndorsements[player]
-            val hasTotalEndorsement = totalEndorsement != null
+            if (m_votes.containsKey(player)) {
+                val playerVotes = m_votes.getOrFail(player)
 
-            val voteCount = listOf(hasDirectVote, hasEndorsement, hasTotalEndorsement).count { it == true }
-            if (voteCount == 0) return null
-
-            require(voteCount == 1) { "More than one vote cast on $proposal by ${player.name}" }
-
-            if (hasDirectVote) {
-                directVote!!
-
-                return directVote
+                if (playerVotes.containsKey(proposal.number)) {
+                    return playerVotes.getOrFail(proposal.number).compile(proposal, nextResolve)
+                }
             }
 
-            if (hasEndorsement) {
-                endorsement!!
-
-                val endorseeVote = resolveVote(proposal, endorsement.endorsee, *((playersSeen.toList() + player).toTypedArray()))
-                val endorseeName = endorsement.endorsee.name
-                val endorseeComment = endorsement.comment
-
-                if (endorseeVote == null) return Vote(VoteKind.PRESENT, "Endorsement of non-voter $endorseeName")
-                else return endorseeVote.copy(comment = "Endorsement of $endorseeName" + (if (endorseeComment != null) ": " + endorseeComment else ""))
-            }
-
-            if (hasTotalEndorsement) {
-                totalEndorsement!!
-
-                return resolveVote(proposal, totalEndorsement, *((playersSeen.toList() + player).toTypedArray()))
-            }
-
-            throw IllegalStateException("Unimplemented vote type")
+            return null
         }
 
         fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
             val allProposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
 
-            val allPlayers = (m_directVotes.keys + m_endorsements.keys + m_totalEndorsements.keys).distinct()
+            val allPlayers = (m_votes.keys + m_totalEndorsements.keys).distinct()
 
-            for (proposal in m_proposalNumbers) {
+            for (proposal in m_proposals) {
                 val proposalVotes = mutableMapOf<Player, Vote>()
 
                 for (player in allPlayers) {
@@ -362,7 +357,7 @@ class _AssessmentReceiver {
                     if (vote != null) proposalVotes[player] = vote
                 }
 
-                allProposalVotes[proposal] = SingleProposalVoteMap(proposalVotes)
+                allProposalVotes[proposal.number] = SingleProposalVoteMap(proposalVotes)
             }
 
             return allProposalVotes
