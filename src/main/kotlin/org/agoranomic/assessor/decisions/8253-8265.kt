@@ -403,5 +403,25 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8264
             FOR on 8265
         }
+
+        votes(Falsifian) {
+            FOR on 8253
+            FOR on 8254
+            FOR on 8255
+            PRESENT on 8256
+            FOR on 8257
+            FOR on 8258
+            // TODO: conditional vote on 8259: AGAINST IF VETO ELSE PRESENT
+            PRESENT on 8260
+            PRESENT on 8261
+            PRESENT on 8262
+            PRESENT on 8263
+            // TODO: conditional vote on 8264: AGAINST IF VETO ELSE PRESENT
+            AGAINST on 8265
+        }
+
+        votes(ATMunn) {
+            endorse(Falsifian) on all
+        }
     }
 }
