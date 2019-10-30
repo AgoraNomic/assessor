@@ -383,9 +383,9 @@ class _AssessmentReceiver {
     }
 
     fun compile(): AssessmentData {
+        val name = m_name ?: error("Must specify name")
         val quorum = m_quorum ?: error("Must specify quorum")
         val votingStrengths = m_votingStrengths ?: error("Must specify voting strengths")
-        val proposalVotes = m_proposalVotes
 
         for (proposalNumber in m_proposalVotes.keys) {
             if (m_proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal " + proposalNumber)
@@ -396,7 +396,7 @@ class _AssessmentReceiver {
         }
 
         return AssessmentData(
-            m_name ?: error("Must specify name"),
+            name,
             quorum,
             votingStrengths,
             m_proposals.toSet(),
