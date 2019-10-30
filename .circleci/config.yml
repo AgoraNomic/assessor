@@ -142,7 +142,7 @@ jobs:
             touch $INDEX_FILE
 
             echo "Reports: ${REPORTS[*]}"
-            echo "Assessor's Archive:" >> $INDEX_FILE
+            echo "# Assessor's Archive" >> $INDEX_FILE
             echo "" >> $INDEX_FILE
             echo "[Latest Assessment]($(basename "${REPORTS[0]}"))" >> $INDEX_FILE
             echo "" >> $INDEX_FILE
