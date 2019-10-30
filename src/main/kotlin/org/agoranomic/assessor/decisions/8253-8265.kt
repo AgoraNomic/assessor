@@ -427,5 +427,21 @@ Enact a new Rule of Power 3.0 with the text:
         votes(Bernie) {
             endorse(JasonCobb) on all
         }
+
+        votes(twg) {
+            endorse(Murphy) on 8253
+            endorse(JasonCobb) on 8254
+            endorse(JasonCobb) on 8255
+            endorse(Murphy) on 8256
+            endorse(Murphy) on 8257
+            endorse(JasonCobb) on 8258
+            endorse(Gaelan) on 8259
+            endorse(G) on 8260
+            endorse(G) on 8261
+            endorse(G) on 8262
+            endorse(nch) on 8263
+            AGAINST on 8264
+            FOR on 8265
+        }
     }
 }
