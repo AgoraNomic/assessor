@@ -185,8 +185,11 @@ jobs:
           fingerprints:
             - "1b:a0:f8:4f:da:a0:be:ce:6c:08:ca:a1:d9:73:0d:ad"
       - run:
+          name: Copy reports to gh-pages dir
+          command: cp -R workspace/reports/* generation/gh-pages
+      - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] CI Updates" --dist workspace/reports
+          command: gh-pages --dotfiles --message "[skip ci] CI Updates" --dist generation/gh-pages
 
 workflows:
   version: 2
