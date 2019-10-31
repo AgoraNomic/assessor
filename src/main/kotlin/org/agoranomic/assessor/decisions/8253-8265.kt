@@ -321,9 +321,9 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             AGAINST on 8256
-            FOR on 8257
+            PRESENT on 8257
             FOR on 8258
-            AGAINST on 8259
+            PRESENT on 8259
             AGAINST on 8260
             PRESENT on 8261
             AGAINST on 8262
