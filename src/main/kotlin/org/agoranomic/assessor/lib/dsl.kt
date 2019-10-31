@@ -240,10 +240,6 @@ class _AssessmentReceiver {
                 fun compile() = _PendingVote(vote, comment)
             }
 
-            data class _MutableEndorsement(val endorsee: Player, var comment: String? = null) {
-                fun compile() = Endorsement(endorsee, comment)
-            }
-
             data class _HalfFunctionVote(val func: VoteFunc)
 
             private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
@@ -284,10 +280,6 @@ class _AssessmentReceiver {
 
             fun endorse(player: Player) = endorsementVote(player)
             fun endorse(author: _Author) = authorEndorsementVote()
-
-            infix fun _MutableEndorsement.comment(str: String) {
-                this.comment = str
-            }
 
             infix fun _MutableVote.comment(value: String) {
                 this.comment = value
