@@ -4,6 +4,7 @@ import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.VoteKind.PRESENT
 import org.agoranomic.assessor.lib.assessment
+import org.agoranomic.assessor.lib.endorse
 
 @UseAssessment
 fun `assessment 8248 to 8249`() = assessment {

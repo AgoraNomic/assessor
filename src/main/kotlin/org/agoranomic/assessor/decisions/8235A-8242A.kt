@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
+import org.agoranomic.assessor.lib.endorse
 
 @UseAssessment
 fun `assessment 8235A to 8242A`() = assessment {
