@@ -69,8 +69,8 @@ data class AssessmentData(
     val votes: MultiProposalVoteMap
 )
 
-private typealias ResolveFunc = (Proposal, Player) -> Vote?
-private typealias VoteFunc = (Proposal, ResolveFunc) -> Vote
+typealias ResolveFunc = (Proposal, Player) -> Vote?
+typealias VoteFunc = (Proposal, ResolveFunc) -> Vote
 
 @AssessmentDSL
 class _AssessmentReceiver {
