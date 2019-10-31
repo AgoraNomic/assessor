@@ -240,8 +240,6 @@ class _AssessmentReceiver {
                 fun compile() = _PendingVote(vote, comment)
             }
 
-            data class _HalfFunctionVote(val func: VoteFunc)
-
             private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
                 require(m_proposals.map { it.number }.contains(proposal)) { "No such proposal $proposal" }
                 require(!m_votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
@@ -250,11 +248,9 @@ class _AssessmentReceiver {
                 return vote
             }
 
-            fun function(vote: VoteFunc) = _HalfFunctionVote(vote)
+            infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
 
-            infix fun _HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
-
-            infix fun _HalfFunctionVote.on(all: _All) {
+            infix fun HalfFunctionVote.on(all: _All) {
                 m_proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
             }
 
