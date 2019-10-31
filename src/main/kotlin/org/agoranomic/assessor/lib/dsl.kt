@@ -267,18 +267,6 @@ class _AssessmentReceiver {
             infix fun VoteKind.on(proposal: ProposalNumber) = function(this) on proposal
             infix fun VoteKind.on(all: _All) = function(this) on all
 
-            data class _HalfEndorsement(val endorsee: Player)
-
-            fun endorse(player: Player) = _HalfEndorsement(player)
-
-            object _Author
-
-            public val author = _Author
-
-            object _AuthorEndorsement
-
-            fun endorse(author: _Author) = _AuthorEndorsement
-
             private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, resolve ->
                 when (val endorseeVote = resolve(prop, endorsee)) {
                     null -> InextricableVote(comment = "Endorsement of non-voter ${endorsee.name}")
@@ -288,14 +276,14 @@ class _AssessmentReceiver {
 
             private fun endorsementVote(endorsee: Player) = function(endorsementFunc(endorsee))
 
-            infix fun _HalfEndorsement.on(proposal: ProposalNumber) = endorsementVote(endorsee) on proposal
-            infix fun _HalfEndorsement.on(all: _All) = endorsementVote(endorsee) on all
-
             private fun authorEndorsementFunc(): VoteFunc = { prop, resolve -> endorsementFunc(prop.author)(prop, resolve) }
             private fun authorEndorsementVote() = function(authorEndorsementFunc())
 
-            infix fun _AuthorEndorsement.on(proposal: ProposalNumber) = authorEndorsementVote() on proposal
-            infix fun _AuthorEndorsement.on(all: _All) = authorEndorsementVote() on all
+            object _Author
+            public val author = _Author
+
+            fun endorse(player: Player) = endorsementVote(player)
+            fun endorse(author: _Author) = authorEndorsementVote()
 
             infix fun _MutableEndorsement.comment(str: String) {
                 this.comment = str
