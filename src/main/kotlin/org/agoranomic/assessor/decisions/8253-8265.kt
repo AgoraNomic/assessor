@@ -409,9 +409,9 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             PRESENT on 8256
-            FOR on 8257
+            AGAINST on 8257
             FOR on 8258
-            // TODO: conditional vote on 8259: AGAINST IF VETO ELSE PRESENT
+            // TODO: conditional vote on 8259: AGAINST IF VETO, AGAINST IF 8257 ALREADY ADOPTED, ELSE FOR
             PRESENT on 8260
             PRESENT on 8261
             PRESENT on 8262
