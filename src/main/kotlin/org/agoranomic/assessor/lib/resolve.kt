@@ -1,6 +1,5 @@
 package org.agoranomic.assessor.lib
 
-import kotlinx.serialization.Serializable
 import java.math.BigDecimal
 
 enum class ProposalResult {
@@ -12,7 +11,6 @@ enum class ProposalResult {
     constructor(readableName: String) { this.readableName = readableName }
 }
 
-@Serializable
 data class ResolutionData(val result: ProposalResult, val strengthFor: VotingStrengthValue, val strengthAgainst: VotingStrengthValue, val votes: SingleProposalVoteMap)
 
 operator fun BigDecimal.times(other: Int) = this * other.toBigDecimal()
@@ -52,7 +50,6 @@ fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, v
     )
 }
 
-@Serializable
 data class ProposalResolutionMap(val assessmentName: String, val proposals: Set<Proposal>, private val map: Map<ProposalNumber, ResolutionData>, val quorum: Int, val votingStrengths: VotingStrengthMap) {
     operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 

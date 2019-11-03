@@ -125,13 +125,6 @@ fun StringBuilder.emitWithDelimiter(string: String) {
 
 data class ReportConfig(val voteComments: Boolean = true, val totalBallotCount: Boolean = true, val voteKindBallotCount: Boolean = true)
 
-val voteModule = SerializersModule {
-    polymorphic(Vote::class) {
-        InextricableVote::class with InextricableVote.serializer()
-        SimpleVote::class with SimpleVote.serializer()
-    }
-}
-
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
@@ -169,6 +162,8 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
 }
 
 fun jsonReport(resolutionMap: ProposalResolutionMap): String {
-    val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true), context = voteModule)
-    return json.stringify(ProposalResolutionMap.serializer(), resolutionMap)
+    val out = json(resolutionMap)
+    val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
+
+    return json.stringify(JsonObject.serializer(), out)
 }
