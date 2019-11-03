@@ -11,7 +11,31 @@ enum class ProposalResult {
     constructor(readableName: String) { this.readableName = readableName }
 }
 
-data class ResolutionData(val result: ProposalResult, val strengthFor: VotingStrengthValue, val strengthAgainst: VotingStrengthValue, val votes: SingleProposalVoteMap)
+data class SimplifiedSingleProposalVoteMap(val map: Map<Player, SimpleVote>) {
+    val voters = map.keys
+    val voteCount = voters.size
+
+    operator fun get(p: Player) = map[p] ?: throw IllegalArgumentException("Player is not a voter")
+
+    fun forEach(f: (Player, SimpleVote) -> Unit) {
+        map.forEach(f)
+    }
+
+    fun filterVoteKind(kind: VoteKind): Set<Player> {
+        return map.filterValues { vote -> vote.kind == kind }.keys
+    }
+}
+
+data class ResolutionData(val result: ProposalResult, val strengthFor: VotingStrengthValue, val strengthAgainst: VotingStrengthValue, val votes: SimplifiedSingleProposalVoteMap)
+
+fun simplifyVotes(votes: SingleProposalVoteMap): SimplifiedSingleProposalVoteMap {
+    return SimplifiedSingleProposalVoteMap(votes.map.mapValues { (_, vote) ->
+        when(vote) {
+            is SimpleVote -> vote
+            is InextricableVote -> SimpleVote(VoteKind.PRESENT, vote.comment)
+        }
+    })
+}
 
 operator fun BigDecimal.times(other: Int) = this * other.toBigDecimal()
 operator fun Int.times(other: BigDecimal) = other * this
@@ -19,34 +43,30 @@ operator fun Int.times(other: BigDecimal) = other * this
 operator fun BigDecimal.compareTo(other: Int) = this.compareTo(other.toBigDecimal())
 operator fun Int.compareTo(other: BigDecimal) = (this.toBigDecimal()).compareTo(other)
 
-fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, votes: SingleProposalVoteMap): ResolutionData {
+fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, rawVotes: SingleProposalVoteMap): ResolutionData {
+    val simplifiedVotes = simplifyVotes(rawVotes)
+
     var strengthFor: VotingStrengthValue = 0
     var strengthAgainst: VotingStrengthValue = 0
 
-    votes.forEach { player, vote ->
+    simplifiedVotes.forEach { player, vote ->
         val strength = votingStrengthMap[player]
 
-        val _ensureExhaustive_ = when (vote) {
-            is SimpleVote -> {
-                when (vote.kind) {
-                    VoteKind.FOR -> strengthFor += strength.value
-                    VoteKind.AGAINST -> strengthAgainst += strength.value
-                    VoteKind.PRESENT -> { /* do nothing */ }
-                }
-            }
-
-            is InextricableVote -> { /* do nothing */ }
+        val _ensureExhaustive_ = when (vote.kind) {
+            VoteKind.FOR -> strengthFor += strength.value
+            VoteKind.AGAINST -> strengthAgainst += strength.value
+            VoteKind.PRESENT -> { /* do nothing */ }
         }
     }
 
-    if (votes.voters.size < quorum) return ResolutionData(ProposalResult.FAILED_QUORUM, strengthFor, strengthAgainst, votes)
+    if (simplifiedVotes.voters.size < quorum) return ResolutionData(ProposalResult.FAILED_QUORUM, strengthFor, strengthAgainst, simplifiedVotes)
 
     // Resolution as specified in R955
     return ResolutionData(
         if (strengthFor >= (ai * strengthAgainst) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
         strengthFor,
         strengthAgainst,
-        votes
+        simplifiedVotes
     )
 }
 
@@ -60,20 +80,7 @@ data class ProposalResolutionMap(val assessmentName: String, val proposals: Set<
     }
 }
 
-private fun inextricableToPresent(singleProposalVoteMap: SingleProposalVoteMap): SingleProposalVoteMap {
-    return SingleProposalVoteMap(singleProposalVoteMap.map.mapValues { (_, vote) -> if (vote is InextricableVote) SimpleVote(VoteKind.PRESENT, vote.comment) else vote })
-}
-
-private fun inextricableToPresent(multiProposalVoteMap: MultiProposalVoteMap): MultiProposalVoteMap {
-    return multiProposalVoteMap.copy(map = multiProposalVoteMap.map.mapValues { (_, votes) -> inextricableToPresent(votes) })
-}
-
-private fun inextricableToPresent(assessmentData: AssessmentData): AssessmentData {
-    return assessmentData.copy(votes = inextricableToPresent(assessmentData.votes))
-}
-
-fun resolve(rawAsessmentData: AssessmentData): ProposalResolutionMap {
-    val assessmentData = inextricableToPresent(rawAsessmentData)
+fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     val map = mutableMapOf<ProposalNumber, ResolutionData>()
 
     assessmentData.proposals.forEach { proposal ->

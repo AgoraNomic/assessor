@@ -46,17 +46,14 @@ fun json(votingStrengths: VotingStrengthMap) = json {
 
 fun json(propsalResult: ProposalResult) = json(propsalResult.name)
 
-fun json(vote: Vote) = json {
-    "value" to when(vote) {
-        is SimpleVote -> vote.kind.name
-        is InextricableVote -> "INEXTRICABLE"
-    }
+fun json(vote: SimpleVote) = json {
+    "value" to vote.kind.name
 
     val comment = vote.comment
     if (comment != null) "comment" to json(comment)
 }
 
-fun json(voteMap: SingleProposalVoteMap) = jsonArray {
+fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
     for (player in voteMap.voters) {
         +json {
             "voter" to json(player)

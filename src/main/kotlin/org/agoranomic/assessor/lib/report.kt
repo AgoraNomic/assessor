@@ -29,7 +29,7 @@ fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number} (\"${proposal.title}\")")
 }
 
-fun StringBuilder.emitProposalVotes(voteMap: SingleProposalVoteMap, voteKindVoteCounts: Boolean) {
+fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, voteKindVoteCounts: Boolean) {
     fun emitVoteKind(voteKind: VoteKind) {
         val matchingVotes = voteMap.filterVoteKind(voteKind)
 
