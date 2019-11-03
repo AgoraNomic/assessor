@@ -1,21 +1,13 @@
-package org.agoranomic.assessor.decisions
+package org.agoranomic.assessor.cli
 
-import io.github.classgraph.ClassGraph
+import org.agoranomic.assessor.lib.findAssessments
 import org.agoranomic.assessor.lib.AssessmentData
 import org.agoranomic.assessor.lib.getOrFail
-import org.agoranomic.assessor.lib.report
 import org.agoranomic.assessor.lib.resolve
 import java.lang.Exception
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
-import kotlin.reflect.KFunction
-import kotlin.reflect.jvm.jvmName
-import kotlin.reflect.jvm.kotlinFunction
-
-@Target(AnnotationTarget.FUNCTION)
-@Retention(AnnotationRetention.RUNTIME)
-annotation class UseAssessment
 
 private fun StdoutDestination.output(assesments: List<Pair<String, String>>) {
     for ((name, assessment) in assesments) {
@@ -103,29 +95,4 @@ fun main(args: Array<String>) {
     val stringAssessments = toAssess.map { it.first to formatter.format(resolve(it.second)) }
 
     destination.output(stringAssessments)
-}
-
-private fun findAssessments(): List<AssessmentData> {
-    val packageName = "org.agoranomic.assessor.decisions"
-    val annotationName = UseAssessment::class.jvmName
-
-    val classGraph = ClassGraph().enableAllInfo().whitelistPackages(packageName)
-
-    val rawAssessments = mutableListOf<AssessmentData>()
-
-    classGraph.scan().use { result ->
-        result!!
-
-        val classInfoList = result.getClassesWithMethodAnnotation(annotationName)!!
-
-        for (classInfo in classInfoList) {
-            for (methodInfo in classInfo.methodInfo) {
-                if (methodInfo.hasAnnotation(annotationName)) {
-                    rawAssessments += (methodInfo.loadClassAndGetMethod().kotlinFunction as KFunction<AssessmentData>).call()
-                }
-            }
-        }
-    }
-
-    return rawAssessments
 }

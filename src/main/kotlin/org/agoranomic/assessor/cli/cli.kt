@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.decisions
+package org.agoranomic.assessor.cli
 
 import org.agoranomic.assessor.lib.ReportConfig
 import org.apache.commons.cli.*
@@ -22,7 +22,8 @@ private val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = t
 private val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
 private val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
 
-public val DEFAULT_FORMATTER = HumanReadableFormatter(CONFIG_LONG)
+public val DEFAULT_FORMATTER =
+    HumanReadableFormatter(CONFIG_LONG)
 
 private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
@@ -143,7 +144,9 @@ private fun readNeededAssessment(commandLine: CommandLine): NeededAssessments {
     if (argList.size != 1) throw BadAssessmentException()
 
     val assessmentString = argList.first()
-    return if (assessmentString.equals("all", ignoreCase = true)) AllAssessments else SingleAssessment(assessmentString)
+    return if (assessmentString.equals("all", ignoreCase = true)) AllAssessments else SingleAssessment(
+        assessmentString
+    )
 }
 
 private fun withOverrides(commandLine: CommandLine, baseConfig: ReportConfig): ReportConfig {
@@ -163,9 +166,15 @@ private fun withOverrides(commandLine: CommandLine, baseConfig: ReportConfig): R
 
 private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
     return when {
-        commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_LONG))
-        commandLine.hasOption(FORM_OFFICIAL) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_OFFICIAL))
-        commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_SHORT))
+        commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(
+            withOverrides(commandLine, CONFIG_LONG)
+        )
+        commandLine.hasOption(FORM_OFFICIAL) -> HumanReadableFormatter(
+            withOverrides(commandLine, CONFIG_OFFICIAL)
+        )
+        commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(
+            withOverrides(commandLine, CONFIG_SHORT)
+        )
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
         else -> null
     }
@@ -214,7 +223,11 @@ private fun readVoteCountsConfig(commandLine: CommandLine): VoteCountsConfig? {
 }
 
 private fun readParsedCli(commandLine: CommandLine): ParsedCli {
-    return ParsedCli(readNeededAssessment(commandLine), readFormatter(commandLine), readDestination(commandLine))
+    return ParsedCli(
+        readNeededAssessment(commandLine),
+        readFormatter(commandLine),
+        readDestination(commandLine)
+    )
 }
 
 private fun rawParseCli(args: Iterable<String>): ParsedCli {
@@ -233,7 +246,11 @@ data class CliConfig(val formatter: AssessmentFormatter?, val neededAssessments:
 
 fun parseCli(args: Iterable<String>): CliConfig {
     val parsedCli = rawParseCli(args)
-    return CliConfig(parsedCli.formatter, parsedCli.neededAssessments, parsedCli.destination)
+    return CliConfig(
+        parsedCli.formatter,
+        parsedCli.neededAssessments,
+        parsedCli.destination
+    )
 }
 
 fun parseCli(args: Array<String>) = parseCli(args.toList())

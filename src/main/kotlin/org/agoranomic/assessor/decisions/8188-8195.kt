@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.decisions
 
-import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment

@@ -31,7 +31,7 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Agora Assessor',
                 'Implementation-Version': version,
-                'Main-Class': 'org.agoranomic.assessor.decisions.RunnerKt'
+                'Main-Class': 'org.agoranomic.assessor.cli.RunnerKt'
     }
     archiveFileName = "assessor.jar"
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }

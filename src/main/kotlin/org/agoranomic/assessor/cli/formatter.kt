@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.decisions
+package org.agoranomic.assessor.cli
 
 import org.agoranomic.assessor.lib.*
 
