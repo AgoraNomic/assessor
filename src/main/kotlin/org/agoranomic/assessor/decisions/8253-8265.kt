@@ -365,12 +365,22 @@ Enact a new Rule of Power 3.0 with the text:
         }
 
         votes(G) {
-            PRESENT on 8265
+            FOR on 8253
+            FOR on 8254
+            FOR on 8255
+            AGAINST on 8256
+            // TODO: conditional vote on 8257: FOR IF CORRECT PROPOSAL, ELSE AGAINST
+            FOR on 8258
+            AGAINST on 8259
+            AGAINST on 8260
+            FOR on 8261
+            FOR on 8262
+            AGAINST on 8263
+            AGAINST on 8264
+            AGAINST on 8265
         }
 
-        votes(Rance) {
-            PRESENT on 8265
-        }
+        Rance matches G
 
         votes(JasonCobb) {
             FOR on 8253
