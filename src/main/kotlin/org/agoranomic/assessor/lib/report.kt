@@ -123,7 +123,7 @@ fun StringBuilder.emitWithDelimiter(string: String) {
     emitLine("=".repeat(string.length))
 }
 
-data class ReportConfig(val json: Boolean = false, val voteComments: Boolean = true, val totalBallotCount: Boolean = true, val voteKindBallotCount: Boolean = true)
+data class ReportConfig(val voteComments: Boolean = true, val totalBallotCount: Boolean = true, val voteKindBallotCount: Boolean = true)
 
 val voteModule = SerializersModule {
     polymorphic(Vote::class) {
@@ -134,11 +134,6 @@ val voteModule = SerializersModule {
 
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
-
-    if (config.json){
-        val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true), context = voteModule)
-        return json.stringify(ProposalResolutionMap.serializer(), resolutionMap)
-    }
 
     val output = StringBuilder()
 
@@ -171,4 +166,9 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
     }
 
     return output.toString()
+}
+
+fun jsonReport(resolutionMap: ProposalResolutionMap): String {
+    val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true), context = voteModule)
+    return json.stringify(ProposalResolutionMap.serializer(), resolutionMap)
 }

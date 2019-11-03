@@ -80,7 +80,7 @@ fun main(args: Array<String>) {
         return
     }
 
-    val config = cliConfig.reportConfig
+    val formatter = cliConfig.formatter ?: DEFAULT_FORMATTER
     val destination = cliConfig.destination ?: DEFAULT_DESTINATION
 
     val toAssess: List<Pair<String, AssessmentData>> = run {
@@ -100,7 +100,7 @@ fun main(args: Array<String>) {
         }
     }
 
-    val stringAssessments = toAssess.map { it.first to report(resolve(it.second), config) }
+    val stringAssessments = toAssess.map { it.first to formatter.format(resolve(it.second)) }
 
     destination.output(stringAssessments)
 }

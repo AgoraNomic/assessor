@@ -18,22 +18,11 @@ private const val FORM_SHORT = "short"
 private const val FORM_OFFICIAL = "official"
 private const val FORM_JSON = "json"
 
-private enum class Form(val reportConfig: ReportConfig) {
-    LONG(
-        ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
-    ),
-    SHORT(
-        ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
-    ),
-    OFFICIAL(
-        ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
-    ),
-    JSON(
-        ReportConfig(json = true) // TODO: This doesn't mean anything here.
-    )
-    ;
+private val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
+private val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
+private val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
 
-}
+public val DEFAULT_FORMATTER = HumanReadableFormatter(CONFIG_LONG)
 
 private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
@@ -138,7 +127,7 @@ data class NamedFileDestination(val file: String) : OutputDestination()
 object UnnamedDirDestination : OutputDestination()
 data class NamedDirDestination(val dir: String) : OutputDestination()
 
-private data class ParsedCli(val neededAssessments: NeededAssessments, val form: Form?, val destination: OutputDestination?, val comments: CommentsConfig?, val ballotsLine: BallotsLineConfig?, val voteCounts: VoteCountsConfig?)
+private data class ParsedCli(val neededAssessments: NeededAssessments, val formatter: AssessmentFormatter?, val destination: OutputDestination?)
 
 open class CliParseException : Exception {
     constructor() : super()
@@ -157,12 +146,27 @@ private fun readNeededAssessment(commandLine: CommandLine): NeededAssessments {
     return if (assessmentString.equals("all", ignoreCase = true)) AllAssessments else SingleAssessment(assessmentString)
 }
 
-private fun readForm(commandLine: CommandLine): Form? {
+private fun withOverrides(commandLine: CommandLine, baseConfig: ReportConfig): ReportConfig {
+    var config = baseConfig
+
+    val comments = readCommentsConfig(commandLine)
+    if (comments != null) config = config.copyWith(comments)
+
+    val ballotsLine = readBallotsLineConfig(commandLine)
+    if (ballotsLine != null) config = config.copyWith(ballotsLine)
+
+    val voteCounts = readVoteCountsConfig(commandLine)
+    if (voteCounts != null) config = config.copyWith(voteCounts)
+
+    return config
+}
+
+private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
     return when {
-        commandLine.hasOption(FORM_LONG) -> Form.LONG
-        commandLine.hasOption(FORM_OFFICIAL) -> Form.OFFICIAL
-        commandLine.hasOption(FORM_SHORT) -> Form.SHORT
-        commandLine.hasOption(FORM_JSON) -> Form.JSON
+        commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_LONG))
+        commandLine.hasOption(FORM_OFFICIAL) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_OFFICIAL))
+        commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_SHORT))
+        commandLine.hasOption(FORM_JSON) -> JsonFormatter
         else -> null
     }
 }
@@ -210,7 +214,7 @@ private fun readVoteCountsConfig(commandLine: CommandLine): VoteCountsConfig? {
 }
 
 private fun readParsedCli(commandLine: CommandLine): ParsedCli {
-    return ParsedCli(readNeededAssessment(commandLine), readForm(commandLine), readDestination(commandLine), readCommentsConfig(commandLine), readBallotsLineConfig(commandLine), readVoteCountsConfig(commandLine))
+    return ParsedCli(readNeededAssessment(commandLine), readFormatter(commandLine), readDestination(commandLine))
 }
 
 private fun rawParseCli(args: Iterable<String>): ParsedCli {
@@ -225,24 +229,11 @@ private fun rawParseCli(args: Iterable<String>): ParsedCli {
     return readParsedCli(parseResult)
 }
 
-private val DEFAULT_FORM = Form.LONG
-
-private fun ParsedCli.reportConfig(): ReportConfig {
-    val form = form ?: DEFAULT_FORM
-    var config = form.reportConfig
-
-    if (comments != null) config = config.copyWith(comments)
-    if (ballotsLine != null) config = config.copyWith(ballotsLine)
-    if (voteCounts != null) config = config.copyWith(voteCounts)
-
-    return config
-}
-
-data class CliConfig(val reportConfig: ReportConfig, val neededAssessments: NeededAssessments, val destination: OutputDestination?)
+data class CliConfig(val formatter: AssessmentFormatter?, val neededAssessments: NeededAssessments, val destination: OutputDestination?)
 
 fun parseCli(args: Iterable<String>): CliConfig {
     val parsedCli = rawParseCli(args)
-    return CliConfig(parsedCli.reportConfig(), parsedCli.neededAssessments, parsedCli.destination)
+    return CliConfig(parsedCli.formatter, parsedCli.neededAssessments, parsedCli.destination)
 }
 
 fun parseCli(args: Array<String>) = parseCli(args.toList())
