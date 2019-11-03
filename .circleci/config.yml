@@ -128,7 +128,9 @@ jobs:
           at: workspace
       - run:
           name: Build reports
-          command: java -jar workspace/assessor.jar all --long --dir workspace/reports
+          command: |
+            java -jar workspace/assessor.jar all --long --dir workspace/reports
+            java -jar workspace/assessor.jar all --json --dir workspace/reports/json
       - run:
           name: Generate index.md
           command: |

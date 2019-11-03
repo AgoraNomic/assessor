@@ -1,5 +1,9 @@
 package org.agoranomic.assessor.lib
 
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+import kotlinx.serialization.modules.SerializersModule
+
 fun StringBuilder.emitLine() {
     this.append('\n')
 }
@@ -155,4 +159,11 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
     }
 
     return output.toString()
+}
+
+fun jsonReport(resolutionMap: ProposalResolutionMap): String {
+    val out = json(resolutionMap)
+    val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
+
+    return json.stringify(JsonObject.serializer(), out)
 }
