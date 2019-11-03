@@ -254,10 +254,10 @@ class _AssessmentReceiver {
                 m_proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
             }
 
-            private fun function(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
+            private fun simpleVoteFunction(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
 
-            infix fun VoteKind.on(proposal: ProposalNumber) = function(this) on proposal
-            infix fun VoteKind.on(all: _All) = function(this) on all
+            infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
+            infix fun VoteKind.on(all: _All) = simpleVoteFunction(this) on all
 
             infix fun _MutableVote.comment(value: String) {
                 this.comment = value
