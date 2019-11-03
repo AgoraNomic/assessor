@@ -341,7 +341,7 @@ Enact a new Rule of Power 3.0 with the text:
             PRESENT on 8261
             PRESENT on 8262
             PRESENT on 8263
-            // TODO: conditional vote on 8264: AGAINST IF VETO ELSE PRESENT
+            PRESENT on 8264 comment NO_VETO
             AGAINST on 8265
         }
 
