@@ -108,47 +108,6 @@ Amend Rule 2423 (First Among Equals) by appending this text:
             )
         }
 
-        proposal(8256) {
-            title("The Fat Director")
-            ai(2.0)
-            author(Murphy)
-            coauthors(Gaelan, G)
-
-            text(
-                """
-Amend Rule 2193 (The Registrar) by removing this text:
-
-  The Registrar is also responsible for tracking any switches,
-  defined in a rule, that would otherwise lack an officer to track
-  them, unless the switch is defined as untracked.
-
-Amend Rule 2423 (First Among Equals) by removing this text:
-
-  The Prime Minister is responsible for tracking any switches
-  defined by the rules, not defined as untracked, and not defined
-  as tracked by another officer.
-
-Create a rule titled "The Fat Director" with Power 2 and this text:
-
-  The Fat Director is an imposed office.
-
-  A loose switch is a switch defined by the rules, not defined as
-  untracked, and not defined as tracked by an officer other than the
-  Fat Director. The Fat Director is responsible for tracking any
-  loose switches.
-
-  When a proposal creates a loose switch or causes a switch to
-  become loose, the Fat Director is set to the author of that
-  proposal. If the Fat Director is vacant and any loose switches
-  exist, then the Registrar CAN set the Fat Director to any player
-  by announcement. Any player CAN become the Fat Director by
-  announcement.
-
-[Would have called it "Fat Controllor", but that would be too close
-to "Comptrollor", and I didn't want to merge it with that either.]"""
-            )
-        }
-
         proposal(8258) {
             title("Elections Fix")
             ai(2.0)
@@ -321,7 +280,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             AGAINST on 8256
-            PRESENT on 8257
             FOR on 8258
             PRESENT on 8259
             AGAINST on 8260
@@ -337,7 +295,6 @@ Enact a new Rule of Power 3.0 with the text:
             endorse(G) on 8254
             PRESENT on 8255
             AGAINST on 8256
-            FOR on 8257
             FOR on 8258
             AGAINST on 8259
             FOR on 8260
@@ -353,7 +310,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             AGAINST on 8256
-            // TODO: conditional vote on 8257: if 8259 would be ADOPTED, AGAINST; otherwise, FOR
             FOR on 8258
             // TODO: conditional vote on 8259: ENDORSE ADoP, except FOR if e doesn't vote / doesn't exist
             AGAINST on 8260
@@ -369,7 +325,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             AGAINST on 8256
-            // TODO: conditional vote on 8257: FOR IF CORRECT PROPOSAL, ELSE AGAINST
             FOR on 8258
             AGAINST on 8259
             AGAINST on 8260
@@ -387,7 +342,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             AGAINST on 8256
-            FOR on 8257
             FOR on 8258
             AGAINST on 8259
             FOR on 8260
@@ -403,7 +357,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             PRESENT on 8255
             PRESENT on 8256
-            AGAINST on 8257
             FOR on 8258
             AGAINST on 8259
             AGAINST on 8260
@@ -419,7 +372,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             PRESENT on 8256
-            AGAINST on 8257
             FOR on 8258
             // TODO: conditional vote on 8259: AGAINST IF VETO, AGAINST IF 8257 ALREADY ADOPTED, ELSE FOR
             PRESENT on 8260
@@ -443,7 +395,6 @@ Enact a new Rule of Power 3.0 with the text:
             endorse(JasonCobb) on 8254
             endorse(JasonCobb) on 8255
             endorse(Murphy) on 8256
-            endorse(Murphy) on 8257
             endorse(JasonCobb) on 8258
             endorse(Gaelan) on 8259
             endorse(G) on 8260
@@ -459,7 +410,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8254
             FOR on 8255
             AGAINST on 8256
-            AGAINST on 8257
             FOR on 8258
             FOR on 8259
             AGAINST on 8260
