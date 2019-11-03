@@ -2,6 +2,9 @@ package org.agoranomic.assessor.cli
 
 import org.agoranomic.assessor.lib.ReportConfig
 import org.apache.commons.cli.*
+import java.io.CharArrayWriter
+import java.io.PrintStream
+import java.io.PrintWriter
 import java.lang.Exception
 
 private const val VOTE_COMMENTS_YES = "vote-comments"
@@ -255,8 +258,13 @@ fun parseCli(args: Iterable<String>): CliConfig {
 
 fun parseCli(args: Array<String>) = parseCli(args.toList())
 
-fun helpString() {
+fun helpString(): String {
     val formatter = HelpFormatter()
     formatter.optionComparator = null
-    formatter.printHelp("java -jar assessor.jar", cliOptions(), true)
+
+    val writer = CharArrayWriter()
+    formatter.printHelp(PrintWriter(writer), formatter.width, "java -jar assessor.jar", null, cliOptions(), formatter.leftPadding, formatter.descPadding, null, true)
+
+    writer.flush()
+    return writer.toString()
 }
