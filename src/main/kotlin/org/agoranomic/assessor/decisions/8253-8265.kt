@@ -121,36 +121,6 @@ office"."""
             )
         }
 
-        proposal(8259) {
-            title("Clean up your own mess, without making a bigger one")
-            ai(1.0)
-            author(Gaelan)
-            coauthors(JasonCobb)
-
-            text(
-                """
-Remove the following paragraph from Rule 2139 “The Registrar”: {
-  The Registrar is also responsible for tracking any switches,
-  defined in a rule, that would otherwise lack an officer to track
-  them, unless the switch is defined as untracked.
-}
-
-Create a power-1 rule titled “Switch Responsibility” with the following text: {
-  For each switch which would otherwise lack an officer to track it, and is
-  not defined as untracked, there exists an imposed office named
-  “Tracker of [switch name]” that is responsible for tracking that switch.
-}
-
-[1006/44 states:
-     When a proposal takes effect and creates a new office, if the
-     proposal does not specify otherwise, the author of that proposal
-     becomes the holder of the office.
-
-I think this works, but we might need to clarify the meaning of
-“creates a new office” to be sure.]"""
-            )
-        }
-
         proposal(8260) {
             title("The Low Zombie")
             ai(1.0)
@@ -281,7 +251,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8255
             AGAINST on 8256
             FOR on 8258
-            PRESENT on 8259
             AGAINST on 8260
             PRESENT on 8261
             AGAINST on 8262
@@ -296,7 +265,6 @@ Enact a new Rule of Power 3.0 with the text:
             PRESENT on 8255
             AGAINST on 8256
             FOR on 8258
-            AGAINST on 8259
             FOR on 8260
             FOR on 8261
             FOR on 8262
@@ -311,7 +279,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8255
             AGAINST on 8256
             FOR on 8258
-            // TODO: conditional vote on 8259: ENDORSE ADoP, except FOR if e doesn't vote / doesn't exist
             AGAINST on 8260
             FOR on 8261
             AGAINST on 8262
@@ -326,7 +293,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8255
             AGAINST on 8256
             FOR on 8258
-            AGAINST on 8259
             AGAINST on 8260
             FOR on 8261
             FOR on 8262
@@ -343,7 +309,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8255
             AGAINST on 8256
             FOR on 8258
-            AGAINST on 8259
             FOR on 8260
             FOR on 8261
             FOR on 8262
@@ -358,7 +323,6 @@ Enact a new Rule of Power 3.0 with the text:
             PRESENT on 8255
             PRESENT on 8256
             FOR on 8258
-            AGAINST on 8259
             AGAINST on 8260
             AGAINST on 8261
             AGAINST on 8262
@@ -373,7 +337,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8255
             PRESENT on 8256
             FOR on 8258
-            // TODO: conditional vote on 8259: AGAINST IF VETO, AGAINST IF 8257 ALREADY ADOPTED, ELSE FOR
             PRESENT on 8260
             PRESENT on 8261
             PRESENT on 8262
@@ -396,7 +359,6 @@ Enact a new Rule of Power 3.0 with the text:
             endorse(JasonCobb) on 8255
             endorse(Murphy) on 8256
             endorse(JasonCobb) on 8258
-            endorse(Gaelan) on 8259
             endorse(G) on 8260
             endorse(G) on 8261
             endorse(G) on 8262
@@ -411,7 +373,6 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8255
             AGAINST on 8256
             FOR on 8258
-            FOR on 8259
             AGAINST on 8260
             FOR on 8261
             FOR on 8262
