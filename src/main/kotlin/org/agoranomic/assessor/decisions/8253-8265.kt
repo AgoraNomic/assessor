@@ -453,5 +453,21 @@ Enact a new Rule of Power 3.0 with the text:
             AGAINST on 8264
             FOR on 8265
         }
+
+        votes(pikhq) {
+            FOR on 8253
+            FOR on 8254
+            FOR on 8255
+            AGAINST on 8256
+            AGAINST on 8257
+            FOR on 8258
+            FOR on 8259
+            AGAINST on 8260
+            FOR on 8261
+            FOR on 8262
+            AGAINST on 8263
+            FOR on 8264
+            AGAINST on 8265
+        }
     }
 }
