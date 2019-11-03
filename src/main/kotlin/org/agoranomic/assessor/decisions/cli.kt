@@ -16,6 +16,7 @@ private const val DEST_DIR = "dir"
 private const val FORM_LONG = "long"
 private const val FORM_SHORT = "short"
 private const val FORM_OFFICIAL = "official"
+private const val FORM_JSON = "json"
 
 private enum class Form(val reportConfig: ReportConfig) {
     LONG(
@@ -27,6 +28,9 @@ private enum class Form(val reportConfig: ReportConfig) {
     OFFICIAL(
         ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
     ),
+    JSON(
+        ReportConfig(json = true) // TODO: This doesn't mean anything here.
+    )
     ;
 
 }
@@ -92,10 +96,12 @@ private fun formOptionGroup(): OptionGroup {
     val optFormLong = Option.builder().longOpt(FORM_LONG).desc("Generally longer form").build()
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
     val optFormOfficial = Option.builder().longOpt(FORM_OFFICIAL).desc("Official report form").build()
+    val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
     val optGroupForm = OptionGroup().also {
         it.addOption(optFormLong)
         it.addOption(optFormShort)
         it.addOption(optFormOfficial)
+        it.addOption(optFormJson)
     }
 
     return optGroupForm
@@ -156,6 +162,7 @@ private fun readForm(commandLine: CommandLine): Form? {
         commandLine.hasOption(FORM_LONG) -> Form.LONG
         commandLine.hasOption(FORM_OFFICIAL) -> Form.OFFICIAL
         commandLine.hasOption(FORM_SHORT) -> Form.SHORT
+        commandLine.hasOption(FORM_JSON) -> Form.JSON
         else -> null
     }
 }

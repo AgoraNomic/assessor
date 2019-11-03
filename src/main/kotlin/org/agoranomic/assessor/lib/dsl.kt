@@ -1,27 +1,34 @@
 package org.agoranomic.assessor.lib
 
+import kotlinx.serialization.*
 import java.math.BigDecimal
 
 typealias VotingStrengthValue = Int
 
+@Serializable
 data class VotingStrength(val value: VotingStrengthValue, val comment: String? = null)
 
 enum class VoteKind { PRESENT, AGAINST, FOR }
 
+@Serializable
+@Polymorphic
 sealed class Vote {
     abstract val comment: String?
 
     abstract fun copyWithComment(newComment: String?): Vote
 }
 
+@Serializable
 data class InextricableVote(override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
 }
 
+@Serializable
 data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
 }
 
+@Serializable
 class VotingStrengthMap(
     val defaultStrength: VotingStrengthValue,
     private val strengthMap: Map<Player, VotingStrength>
@@ -33,6 +40,7 @@ class VotingStrengthMap(
     )
 }
 
+@Serializable
 data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
     val voters = map.keys
     val voteCount = voters.size
