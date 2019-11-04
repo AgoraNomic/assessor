@@ -49,8 +49,6 @@ data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
     }
 }
 
-data class Endorsement(val endorsee: Player, var comment: String?)
-
 data class MultiProposalVoteMap(val map: Map<ProposalNumber, SingleProposalVoteMap>) {
     val proposals = map.keys
 
