@@ -4,15 +4,14 @@ import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
 class _VotingReciever(private val proposals: List<Proposal>) {
-    private val totalEndorsements = mutableMapOf<Player, Player>()
     private val votes = mutableMapOf<Player, Map<ProposalNumber, PendingVote>>()
 
-    infix fun Player.matches(other: Player) {
-        totalEndorsements[this] = other
+    infix fun Player.matches(other: Player) = votes(this) {
+        function { proposal, resolve -> resolve(proposal, other) } on all
     }
 
     fun votes(player: Player, block: _VotesReceiver.() -> Unit) {
-        require(!(votes.containsKey(player) || totalEndorsements.containsKey(player))) { "Votes already specified for player ${player.name}" }
+        require(!votes.containsKey(player)) { "Votes already specified for player ${player.name}" }
 
         val receiver = _VotesReceiver(proposals, player)
         receiver.block()
@@ -28,8 +27,6 @@ class _VotingReciever(private val proposals: List<Proposal>) {
         val newPlayersSeen = (playersSeen.toList() + player).toTypedArray()
         val nextResolve: ResolveFunc = { nextProp, nextPlayer -> resolveVote(nextProp, nextPlayer, *newPlayersSeen) }
 
-        if (totalEndorsements.containsKey(player)) return nextResolve(proposal, totalEndorsements.getOrFail(player))
-
         if (votes.containsKey(player)) {
             val playerVotes = votes.getOrFail(player)
 
@@ -44,14 +41,14 @@ class _VotingReciever(private val proposals: List<Proposal>) {
     fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
         val allProposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
 
-        val allPlayers = (votes.keys + totalEndorsements.keys).distinct()
+        val voters = votes.keys
 
         for (proposal in proposals) {
             val proposalVotes = mutableMapOf<Player, Vote>()
 
-            for (player in allPlayers) {
-                val vote = resolveVote(proposal, player)
-                if (vote != null) proposalVotes[player] = vote
+            for (voter in voters) {
+                val vote = resolveVote(proposal, voter)
+                if (vote != null) proposalVotes[voter] = vote
             }
 
             allProposalVotes[proposal.number] = SingleProposalVoteMap(proposalVotes)
