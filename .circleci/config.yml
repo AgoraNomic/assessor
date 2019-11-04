@@ -25,35 +25,35 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - v1-source-{{ .Branch }}-{{ .Revision }}
-            - v1-source-{{ .Branch }}-
-            - v1-source-
+            - v2-source-{{ .Branch }}-{{ .Revision }}
+            - v2-source-{{ .Branch }}-
+            - v2-source-
       - checkout
       - save_cache:
-          key: v1-source-{{ .Branch }}-{{ .Revision }}
+          key: v2-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-
+            - v2-dependencies-{{ checksum "build.gradle" }}
+            - v2-dependencies-
       - run: gradle dependencies
       - save_cache:
           paths:
             - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+          key: v2-dependencies-{{ checksum "build.gradle" }}
 
       - restore_cache:
           keys:
-            - v1-build-{{ .Branch }}-{{ .Revision }}
-            - v1-build-{{ .Branch }}-
-            - v1-build-
+            - v2-build-{{ .Branch }}-{{ .Revision }}
+            - v2-build-{{ .Branch }}-
+            - v2-build-
       - run: gradle build
       - save_cache:
           paths:
             - ~/.gradle
             - build
-          key: v1-build-{{ .Branch }}-{{ .Revision }}
+          key: v2-build-{{ .Branch }}-{{ .Revision }}
 
   fatJar:
     <<: *jvm_default
@@ -61,35 +61,35 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - v1-source-{{ .Branch }}-{{ .Revision }}
-            - v1-source-{{ .Branch }}-
-            - v1-source-
+            - v2-source-{{ .Branch }}-{{ .Revision }}
+            - v2-source-{{ .Branch }}-
+            - v2-source-
       - checkout
       - save_cache:
-          key: v1-source-{{ .Branch }}-{{ .Revision }}
+          key: v2-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-
+            - v2-dependencies-{{ checksum "build.gradle" }}
+            - v2-dependencies-
       - run: gradle dependencies
       - save_cache:
           paths:
             - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+          key: v2-dependencies-{{ checksum "build.gradle" }}
 
       - restore_cache:
           keys:
-            - v1-build-{{ .Branch }}-{{ .Revision }}
-            - v1-build-{{ .Branch }}-
-            - v1-build-
+            - v2-build-{{ .Branch }}-{{ .Revision }}
+            - v2-build-{{ .Branch }}-
+            - v2-build-
       - run: gradle build
       - save_cache:
           paths:
             - ~/.gradle
             - build
-          key: v1-build-{{ .Branch }}-{{ .Revision }}
+          key: v2-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Build fat jar
@@ -105,12 +105,12 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - v1-source-{{ .Branch }}-{{ .Revision }}
-            - v1-source-{{ .Branch }}-
-            - v1-source-
+            - v2-source-{{ .Branch }}-{{ .Revision }}
+            - v2-source-{{ .Branch }}-
+            - v2-source-
       - checkout
       - save_cache:
-          key: v1-source-{{ .Branch }}-{{ .Revision }}
+          key: v2-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - attach_workspace:
@@ -156,12 +156,12 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - v1-source-{{ .Branch }}-{{ .Revision }}
-            - v1-source-{{ .Branch }}-
-            - v1-source-
+            - v2-source-{{ .Branch }}-{{ .Revision }}
+            - v2-source-{{ .Branch }}-
+            - v2-source-
       - checkout
       - save_cache:
-          key: v1-source-{{ .Branch }}-{{ .Revision }}
+          key: v2-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - attach_workspace:
