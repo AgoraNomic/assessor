@@ -1,7 +1,6 @@
 package org.agoranomic.assessor.lib
 
-import org.agoranomic.assessor.lib.dsl_detail.*
-import java.math.BigDecimal
+import org.agoranomic.assessor.lib.dsl_detail._AssessmentReceiver
 
 @DslMarker
 @Target(AnnotationTarget.CLASS)

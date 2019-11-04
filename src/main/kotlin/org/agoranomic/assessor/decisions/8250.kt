@@ -1,7 +1,8 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.UseAssessment
-import org.agoranomic.assessor.lib.VoteKind.*
+import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.PRESENT
 import org.agoranomic.assessor.lib.assessment
 import org.agoranomic.assessor.lib.endorse
 
@@ -78,7 +79,7 @@ offices may change hands during the process.]"""
         votes(Bernie) {
             endorse(JasonCobb) on 8250
         }
-        
+
         votes(G) {
             PRESENT on 8250
         }

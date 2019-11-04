@@ -3,9 +3,7 @@ package org.agoranomic.assessor.cli
 import org.agoranomic.assessor.lib.ReportConfig
 import org.apache.commons.cli.*
 import java.io.CharArrayWriter
-import java.io.PrintStream
 import java.io.PrintWriter
-import java.lang.Exception
 
 private const val VOTE_COMMENTS_YES = "vote-comments"
 private const val VOTE_COMMENTS_NO = "no-vote-comments"
@@ -25,7 +23,7 @@ private val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = t
 private val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
 private val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
 
-public val DEFAULT_FORMATTER =
+val DEFAULT_FORMATTER =
     HumanReadableFormatter(CONFIG_LONG)
 
 private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
@@ -131,7 +129,11 @@ data class NamedFileDestination(val file: String) : OutputDestination()
 object UnnamedDirDestination : OutputDestination()
 data class NamedDirDestination(val dir: String) : OutputDestination()
 
-private data class ParsedCli(val neededAssessments: NeededAssessments, val formatter: AssessmentFormatter?, val destination: OutputDestination?)
+private data class ParsedCli(
+    val neededAssessments: NeededAssessments,
+    val formatter: AssessmentFormatter?,
+    val destination: OutputDestination?
+)
 
 open class CliParseException : Exception {
     constructor() : super()
@@ -245,7 +247,11 @@ private fun rawParseCli(args: Iterable<String>): ParsedCli {
     return readParsedCli(parseResult)
 }
 
-data class CliConfig(val formatter: AssessmentFormatter?, val neededAssessments: NeededAssessments, val destination: OutputDestination?)
+data class CliConfig(
+    val formatter: AssessmentFormatter?,
+    val neededAssessments: NeededAssessments,
+    val destination: OutputDestination?
+)
 
 fun parseCli(args: Iterable<String>): CliConfig {
     val parsedCli = rawParseCli(args)
@@ -263,7 +269,17 @@ fun helpString(): String {
     formatter.optionComparator = null
 
     val writer = CharArrayWriter()
-    formatter.printHelp(PrintWriter(writer), formatter.width, "java -jar assessor.jar", null, cliOptions(), formatter.leftPadding, formatter.descPadding, null, true)
+    formatter.printHelp(
+        PrintWriter(writer),
+        formatter.width,
+        "java -jar assessor.jar",
+        null,
+        cliOptions(),
+        formatter.leftPadding,
+        formatter.descPadding,
+        null,
+        true
+    )
 
     writer.flush()
     return writer.toString()

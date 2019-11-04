@@ -1,8 +1,8 @@
 package org.agoranomic.assessor.lib
 
-import kotlinx.serialization.*
-import kotlinx.serialization.json.*
-import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
+import kotlinx.serialization.json.JsonObject
 
 fun StringBuilder.emitLine() {
     this.append('\n')
@@ -123,7 +123,11 @@ fun StringBuilder.emitWithDelimiter(string: String) {
     emitLine("=".repeat(string.length))
 }
 
-data class ReportConfig(val voteComments: Boolean = true, val totalBallotCount: Boolean = true, val voteKindBallotCount: Boolean = true)
+data class ReportConfig(
+    val voteComments: Boolean = true,
+    val totalBallotCount: Boolean = true,
+    val voteKindBallotCount: Boolean = true
+)
 
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }

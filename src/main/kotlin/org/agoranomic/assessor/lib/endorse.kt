@@ -13,7 +13,8 @@ private fun authorEndorsementFunc(): VoteFunc = { prop, resolve -> endorsementFu
 private fun authorEndorsementVote() = function(authorEndorsementFunc())
 
 object _Author
-public val author = _Author
+
+val author = _Author
 
 fun endorse(player: Player) = endorsementVote(player)
 fun endorse(author: _Author) = authorEndorsementVote()

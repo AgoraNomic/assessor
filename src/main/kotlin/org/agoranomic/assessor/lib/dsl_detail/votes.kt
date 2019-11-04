@@ -6,9 +6,9 @@ import org.agoranomic.assessor.lib.*
 class _VotesReceiver(private val proposals: List<Proposal>, private val player: Player) {
     private val votes = mutableMapOf<ProposalNumber, _MutableVote>()
 
-    public object _All
+    object _All
 
-    public val all = _All
+    val all = _All
 
     data class _MutableVote(val vote: VoteFunc, var comment: String? = null) {
         fun compile() = PendingVote(vote, comment)

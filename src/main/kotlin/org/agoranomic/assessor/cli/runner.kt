@@ -1,10 +1,9 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.findAssessments
 import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.findAssessments
 import org.agoranomic.assessor.lib.getOrFail
 import org.agoranomic.assessor.lib.resolve
-import java.lang.Exception
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
@@ -17,7 +16,12 @@ private fun StdoutDestination.output(assesments: List<Pair<String, String>>) {
 }
 
 private fun NamedFileDestination.output(assesments: List<Pair<String, String>>) {
-    Files.writeString(Path.of(file), assesments.map { it.second }.joinToString("\n"), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+    Files.writeString(
+        Path.of(file),
+        assesments.map { it.second }.joinToString("\n"),
+        StandardOpenOption.CREATE,
+        StandardOpenOption.TRUNCATE_EXISTING
+    )
 }
 
 private fun UnnamedFileDestination.output(assessments: List<Pair<String, String>>) {
