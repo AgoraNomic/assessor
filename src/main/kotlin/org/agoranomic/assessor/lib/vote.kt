@@ -39,4 +39,4 @@ data class MultiProposalVoteMap(val map: Map<ProposalNumber, SingleProposalVoteM
 }
 
 typealias ResolveFunc = (Proposal, Player) -> Vote?
-typealias VoteFunc = (Proposal, ResolveFunc) -> Vote
+typealias VoteFunc = (Proposal, ResolveFunc) -> Vote?
