@@ -1,15 +1,4 @@
 aliases:
-  checkout_with_cache: &checkout_with_cache
-    - restore_cache:
-        keys:
-          - source-v1-{{ .Branch }}-{{ .Revision }}
-          - source-v1-{{ .Branch }}-
-          - source-v1-
-    - checkout
-    - save_cache:
-        key: source-v1-{{ .Branch }}-{{ .Revision }}
-        paths: ".git"
-
   jvm_docker: &jvm_docker
     docker:
       - image: circleci/openjdk:11.0.2-jdk
