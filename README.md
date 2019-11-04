@@ -97,5 +97,3 @@ The above block returns an expression of unspecified type. The only guarantee is
 
 ### Naming
 Names beginning with an underscore followed by an uppercase letter in the base package are reserved and should not be used.
-
-Private member variables in receiver types are prefixed with `m_`.

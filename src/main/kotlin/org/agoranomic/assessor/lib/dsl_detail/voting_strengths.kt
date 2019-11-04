@@ -4,8 +4,8 @@ import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
 class _VotingStrengthReceiver {
-    private var m_defaultStrength: VotingStrengthValue? = null
-    private var m_customStrengths = mutableMapOf<Player, _MutableVotingStrength>()
+    private var defaultStrength: VotingStrengthValue? = null
+    private var customStrengths = mutableMapOf<Player, _MutableVotingStrength>()
 
     data class _MutableVotingStrength(val value: VotingStrengthValue, var comment: String? = null)
 
@@ -14,7 +14,7 @@ class _VotingStrengthReceiver {
             _MutableVotingStrength(
                 votingStrength
             )
-        m_customStrengths[this] = strength
+        customStrengths[this] = strength
         return strength
     }
 
@@ -23,13 +23,13 @@ class _VotingStrengthReceiver {
     }
 
     fun default(strength: VotingStrengthValue) {
-        this.m_defaultStrength = strength
+        this.defaultStrength = strength
     }
 
     fun compile(): VotingStrengthMap {
         return VotingStrengthMap(
-            m_defaultStrength ?: error("Must specify default voting strength"),
-            m_customStrengths.mapValues { (_, strength) -> VotingStrength(strength.value, strength.comment) }
+            defaultStrength ?: error("Must specify default voting strength"),
+            customStrengths.mapValues { (_, strength) -> VotingStrength(strength.value, strength.comment) }
         )
     }
 }

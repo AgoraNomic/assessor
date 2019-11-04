@@ -3,8 +3,8 @@ package org.agoranomic.assessor.lib.dsl_detail
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class _VotesReceiver(private val m_proposals: List<Proposal>, private val player: Player) {
-    private val m_votes = mutableMapOf<ProposalNumber, _MutableVote>()
+class _VotesReceiver(private val proposals: List<Proposal>, private val player: Player) {
+    private val votes = mutableMapOf<ProposalNumber, _MutableVote>()
 
     public object _All
 
@@ -15,17 +15,17 @@ class _VotesReceiver(private val m_proposals: List<Proposal>, private val player
     }
 
     private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
-        require(m_proposals.map { it.number }.contains(proposal)) { "No such proposal $proposal" }
-        require(!m_votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
+        require(proposals.map { it.number }.contains(proposal)) { "No such proposal $proposal" }
+        require(!votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
 
-        m_votes[proposal] = vote
+        votes[proposal] = vote
         return vote
     }
 
     infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
 
     infix fun HalfFunctionVote.on(all: _All) {
-        m_proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
+        proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
     }
 
     private fun simpleVoteFunction(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
@@ -38,6 +38,6 @@ class _VotesReceiver(private val m_proposals: List<Proposal>, private val player
     }
 
     fun compile(): Map<ProposalNumber, PendingVote> {
-        return m_votes.mapValues { (k, v) -> v.compile() }
+        return votes.mapValues { (k, v) -> v.compile() }
     }
 }

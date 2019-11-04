@@ -6,7 +6,7 @@ import org.agoranomic.assessor.lib.ProposalNumber
 
 @AssessmentDSL
 class _ProposalsReceiver {
-    private val m_proposals = mutableListOf<Proposal>()
+    private val proposals = mutableListOf<Proposal>()
 
     fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit) {
         val receiver = _ProposalReceiver(number)
@@ -15,12 +15,12 @@ class _ProposalsReceiver {
     }
 
     fun using(proposal: Proposal) {
-        m_proposals += proposal
+        proposals += proposal
     }
 
     fun using(proposals: Collection<Proposal>) {
         proposals.forEach(::using)
     }
 
-    fun compile(): List<Proposal> = m_proposals
+    fun compile(): List<Proposal> = proposals
 }
