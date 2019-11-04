@@ -24,32 +24,38 @@ jobs:
 
     steps:
       - restore_cache:
+          name: Restore git cache
           keys:
             - v3-source-{{ .Branch }}-{{ .Revision }}
             - v3-source-{{ .Branch }}-
             - v3-source-
       - checkout
       - save_cache:
+          name: Save git cache
           key: v3-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - restore_cache:
+          name: Restore dependency cache
           keys:
             - v3-dependencies-{{ checksum "build.gradle" }}
             - v3-dependencies-
       - run: gradle dependencies
       - save_cache:
+          name: Save dependency cache
           paths:
             - ~/.gradle
           key: v3-dependencies-{{ checksum "build.gradle" }}
 
       - restore_cache:
+          name: Restore build cache
           keys:
             - v3-build-{{ .Branch }}-{{ .Revision }}
             - v3-build-{{ .Branch }}-
             - v3-build-
       - run: gradle build
       - save_cache:
+          name: Save build cache
           paths:
             - .gradle
             - build
@@ -60,32 +66,38 @@ jobs:
 
     steps:
       - restore_cache:
+          name: Restore git cache
           keys:
             - v3-source-{{ .Branch }}-{{ .Revision }}
             - v3-source-{{ .Branch }}-
             - v3-source-
       - checkout
       - save_cache:
+          name: Save git cache
           key: v3-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - restore_cache:
+          name: Restore dependency cache
           keys:
             - v3-dependencies-{{ checksum "build.gradle" }}
             - v3-dependencies-
       - run: gradle dependencies
       - save_cache:
+          name: Save dependency cache
           paths:
             - ~/.gradle
           key: v3-dependencies-{{ checksum "build.gradle" }}
 
       - restore_cache:
+          name: Restore build cache
           keys:
             - v3-build-{{ .Branch }}-{{ .Revision }}
             - v3-build-{{ .Branch }}-
             - v3-build-
       - run: gradle build
       - save_cache:
+          name: Save build cache
           paths:
             - .gradle
             - build
@@ -104,12 +116,14 @@ jobs:
 
     steps:
       - restore_cache:
+          name: Restore git cache
           keys:
             - v3-source-{{ .Branch }}-{{ .Revision }}
             - v3-source-{{ .Branch }}-
             - v3-source-
       - checkout
       - save_cache:
+          name: Save git cache
           key: v3-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
@@ -155,12 +169,14 @@ jobs:
       - image: node:8.10.0
     steps:
       - restore_cache:
+          name: Restore git cache
           keys:
             - v3-source-{{ .Branch }}-{{ .Revision }}
             - v3-source-{{ .Branch }}-
             - v3-source-
       - checkout
       - save_cache:
+          name: Save git cache
           key: v3-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
