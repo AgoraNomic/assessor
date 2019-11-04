@@ -37,12 +37,6 @@ fun simplifyVotes(votes: SingleProposalVoteMap): SimplifiedSingleProposalVoteMap
     })
 }
 
-operator fun BigDecimal.times(other: Int) = this * other.toBigDecimal()
-operator fun Int.times(other: BigDecimal) = other * this
-
-operator fun BigDecimal.compareTo(other: Int) = this.compareTo(other.toBigDecimal())
-operator fun Int.compareTo(other: BigDecimal) = (this.toBigDecimal()).compareTo(other)
-
 fun resolve(quorum: Int, votingStrengthMap: VotingStrengthMap, ai: ProposalAI, rawVotes: SingleProposalVoteMap): ResolutionData {
     val simplifiedVotes = simplifyVotes(rawVotes)
 
