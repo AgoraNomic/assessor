@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.lib
 
+import org.agoranomic.assessor.lib.dsl_detail.PendingVote
 import org.agoranomic.assessor.lib.dsl_detail._ProposalReceiver
 import org.agoranomic.assessor.lib.dsl_detail._ProposalsReceiver
 import org.agoranomic.assessor.lib.dsl_detail._VotingStrengthReceiver
@@ -100,23 +101,7 @@ class _AssessmentReceiver {
     @AssessmentDSL
     class _VotingReciever(private val m_proposals: List<Proposal>) {
         private val m_totalEndorsements = mutableMapOf<Player, Player>()
-        private val m_votes = mutableMapOf<Player, Map<ProposalNumber, _PendingVote>>()
-
-        data class _PendingVote(val voteFunc: VoteFunc, val comment: String?) {
-            fun compile(proposal: Proposal, resolve: ResolveFunc): Vote {
-                val vote = voteFunc(proposal, resolve)
-
-                if (comment != null) {
-                    if (vote.comment != null) {
-                        return vote.copyWithComment(vote.comment + ": " + comment)
-                    }
-
-                    return vote.copyWithComment(comment)
-                }
-
-                return vote
-            }
-        }
+        private val m_votes = mutableMapOf<Player, Map<ProposalNumber, PendingVote>>()
 
         @AssessmentDSL
         class _VotesReceiver(private val m_proposals: List<Proposal>, private val player: Player) {
@@ -127,7 +112,7 @@ class _AssessmentReceiver {
             public val all = _All
 
             data class _MutableVote(val vote: VoteFunc, var comment: String? = null) {
-                fun compile() = _PendingVote(vote, comment)
+                fun compile() = PendingVote(vote, comment)
             }
 
             private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
@@ -153,7 +138,7 @@ class _AssessmentReceiver {
                 this.comment = value
             }
 
-            fun compile(): Map<ProposalNumber, _PendingVote> {
+            fun compile(): Map<ProposalNumber, PendingVote> {
                 return m_votes.mapValues { (k, v) -> v.compile() }
             }
         }
