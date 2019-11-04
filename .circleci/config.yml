@@ -136,7 +136,7 @@ jobs:
           command: |
             REPORTS_DIR=workspace/reports
             shopt -s nullglob
-            REPORTS=($REPORTS_DIR/*)
+            REPORTS=($REPORTS_DIR/*.txt)
             IFS=$'\n'
             REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
 
