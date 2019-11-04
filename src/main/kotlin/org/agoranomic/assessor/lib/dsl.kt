@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.lib
 
 import org.agoranomic.assessor.lib.dsl_detail._ProposalReceiver
+import org.agoranomic.assessor.lib.dsl_detail._ProposalsReceiver
 import java.math.BigDecimal
 
 typealias VotingStrengthValue = Int
@@ -119,27 +120,6 @@ class _AssessmentReceiver {
         val receiver = _VotingStrengthReceiver()
         receiver.block()
         m_votingStrengths = receiver.compile()
-    }
-
-    @AssessmentDSL
-    class _ProposalsReceiver {
-        private val m_proposals = mutableListOf<Proposal>()
-
-        fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit) {
-            val receiver = _ProposalReceiver(number)
-            receiver.block()
-            using(receiver.compile())
-        }
-
-        fun using(proposal: Proposal) {
-            m_proposals += proposal
-        }
-
-        fun using(proposals: Collection<Proposal>) {
-            proposals.forEach(::using)
-        }
-
-        fun compile(): List<Proposal> = m_proposals
     }
 
     fun proposals(block: _ProposalsReceiver.() -> Unit) {
