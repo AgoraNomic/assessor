@@ -30,7 +30,7 @@ dependencies {
 task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Agora Assessor',
-                'Implementation-Version': version,
+                'Implementation-Version': project.version,
                 'Main-Class': 'org.agoranomic.assessor.cli.RunnerKt'
     }
     archiveFileName = "assessor.jar"
