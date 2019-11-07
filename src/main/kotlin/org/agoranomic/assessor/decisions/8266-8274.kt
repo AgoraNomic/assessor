@@ -315,5 +315,13 @@ with this text:
             PRESENT on 8273
             AGAINST on 8274
         }
+
+        votes(CuddleBeam) {
+            AGAINST on 8271
+
+            for (p in listOf(8266, 8267, 8268, 8269, 8270, 8272, 8273, 8274)) {
+                FOR on p
+            }
+        }
     }
 }
