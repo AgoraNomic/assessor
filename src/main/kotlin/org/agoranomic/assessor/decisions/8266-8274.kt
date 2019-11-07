@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
+import org.agoranomic.assessor.lib.endorse
 
 @UseAssessment
 fun `assessment 8266 to 8274`() = assessment {
@@ -322,6 +323,10 @@ with this text:
             for (p in listOf(8266, 8267, 8268, 8269, 8270, 8272, 8273, 8274)) {
                 FOR on p
             }
+        }
+
+        votes(Bernie) {
+            endorse(JasonCobb) on all
         }
     }
 }
