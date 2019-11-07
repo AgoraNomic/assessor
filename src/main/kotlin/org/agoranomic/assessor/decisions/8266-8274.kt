@@ -328,5 +328,21 @@ with this text:
         votes(Bernie) {
             endorse(JasonCobb) on all
         }
+
+        votes(Falsifian) {
+            // TODO: resolve conditional vote on 8266: AGAINST IF VETO ELSE FOR
+            FOR on 8267
+            FOR on 8268
+            PRESENT on 8269
+            PRESENT on 8270
+            FOR on 8271
+            AGAINST on 8272
+            // TODO: resolve conditional vote on 8273: AGAINST IF VETO ELSE FOR
+            // TODO: resolve conditional vote on 8274: AGAINST IF VETO ELSE FOR
+        }
+
+        votes(ATMunn) {
+            endorse(Falsifian) on all
+        }
     }
 }
