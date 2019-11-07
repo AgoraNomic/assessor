@@ -303,5 +303,17 @@ with this text:
             FOR on 8273
             PRESENT on 8274
         }
+
+        votes(JasonCobb) {
+            FOR on 8266
+            FOR on 8267
+            FOR on 8268
+            FOR on 8269
+            FOR on 8270
+            FOR on 8271
+            PRESENT on 8272
+            PRESENT on 8273
+            AGAINST on 8274
+        }
     }
 }
