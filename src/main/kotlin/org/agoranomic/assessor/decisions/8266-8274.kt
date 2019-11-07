@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.UseAssessment
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -291,5 +292,16 @@ with this text:
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8266
+            FOR on 8267
+            FOR on 8268
+            FOR on 8269
+            FOR on 8270
+            FOR on 8271
+            AGAINST on 8272
+            FOR on 8273
+            PRESENT on 8274
+        }
     }
 }
