@@ -4,18 +4,13 @@ import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
 
 @AssessmentDSL
-class _ProposalReceiver {
-    private val number: ProposalNumber
+class _ProposalReceiver(private val number: ProposalNumber) {
     private var title: String? = null
     private var text: String? = null
     private var votes: SingleProposalVoteMap? = null
     private var ai: ProposalAI? = null
     private var author: Player? = null
     private var coauthors: List<Player>? = null
-
-    constructor(number: ProposalNumber) {
-        this.number = number
-    }
 
     fun title(str: String) {
         require(title == null) { "Title specified twice" }

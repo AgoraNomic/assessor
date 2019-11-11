@@ -48,11 +48,11 @@ class _AssessmentReceiver {
         val votingStrengths = votingStrengths ?: error("Must specify voting strengths")
 
         for (proposalNumber in proposalVotes.keys) {
-            if (proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal " + proposalNumber)
+            if (proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal $proposalNumber")
         }
 
         for (proposal in proposals.map { it.number }) {
-            if (!(proposalVotes.containsKey(proposal))) error("Votes not specified for proposal " + proposal)
+            if (!(proposalVotes.containsKey(proposal))) error("Votes not specified for proposal $proposal")
         }
 
         return AssessmentData(

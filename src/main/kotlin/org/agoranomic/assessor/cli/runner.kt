@@ -26,7 +26,7 @@ private fun NamedFileDestination.output(assesments: List<Pair<String, String>>) 
 
 private fun UnnamedFileDestination.output(assessments: List<Pair<String, String>>) {
     for ((name, assessment) in assessments) {
-        val path = Path.of(name + ".txt")
+        val path = Path.of("$name.txt")
 
         Files.writeString(path, assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
     }
@@ -38,7 +38,7 @@ private fun NamedDirDestination.output(assesments: List<Pair<String, String>>) {
     Files.createDirectories(dirPath)
 
     for ((name, assessment) in assesments) {
-        val filePath = dirPath.resolve(name + ".txt")
+        val filePath = dirPath.resolve("$name.txt")
 
         Files.writeString(filePath, assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
     }
