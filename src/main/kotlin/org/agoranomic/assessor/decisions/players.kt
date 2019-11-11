@@ -20,6 +20,7 @@ val L = Player("L")
 val Murphy = Player("Murphy")
 val nch = Player("nch")
 val o = Player("o")
+val Oerjan = Player("Oerjan") // Not a player, just a watcher
 val omd = Player("omd")
 val pikhq = Player("pikhq")
 val PSS = Player("Publius Scribonius Scholasticus")
