@@ -302,7 +302,7 @@ with this text:
             FOR on 8271
             AGAINST on 8272
             FOR on 8273
-            PRESENT on 8274
+            AGAINST on 8274
         }
 
         votes(JasonCobb) {
