@@ -58,7 +58,7 @@ class _ProposalReceiver {
             title ?: error("Must specify proposal title"),
             author ?: error("Must specify author"),
             coauthors ?: emptyList(),
-            text ?: error("Must specify proposal text")
+            text?.trim() ?: error("Must specify proposal text")
         )
     }
 }
