@@ -344,5 +344,19 @@ with this text:
         votes(ATMunn) {
             endorse(Falsifian) on all
         }
+
+        votes(G) {
+            FOR on 8266
+            FOR on 8267
+            FOR on 8268
+            endorse(Aris) on 8269
+            FOR on 8270
+            FOR on 8271
+            FOR on 8272
+            AGAINST on 8273
+            AGAINST on 8274
+        }
+
+        Rance matches G
     }
 }
