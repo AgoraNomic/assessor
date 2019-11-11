@@ -1,0 +1,650 @@
+{
+    "name": "8266-8274",
+    "proposals": [
+        {
+            "number": 8266,
+            "ai": 1.0,
+            "title": "Glitter",
+            "author": "nch",
+            "coauthors": [
+            ],
+            "text": "\nEnact a Power-1 rule titled \"Glitter\" with the following text {\n\n  If a player has earned a ribbon in the past 7 days but already owned it e CAN\n  once (until e earns another ribbon), by announcement, earn N+1 coins where\n  N is the number of current players that do not own the same ribbon.\n\n}"
+        },
+        {
+            "number": 8267,
+            "ai": 3.0,
+            "title": "Emerald Ribbons",
+            "author": "Jason Cobb",
+            "coauthors": [
+            ],
+            "text": "\nAmend Rule 2438 (\"Ribbons\") by appending the following paragraph:\n\n  Emerald (E): When a person wins an election, e earns an Emerald Ribbon.\n\n\n[There's already a ribbon for deputisation, so why shouldn't there be\none for the other way to acquire an office? Also, this is an incentive\nto initiate and become candidates in elections.]"
+        },
+        {
+            "number": 8268,
+            "ai": 3.0,
+            "title": "Deputisation fix",
+            "author": "Jason Cobb",
+            "coauthors": [
+            ],
+            "text": "\nAmend Rule 2160 (\"Deputisation\") by replacing the text \"acting on eir\nown behalf\" with the text \"acting as emself\".\n\n[Per CFJ 2637, taking actions within a public message is not acting on\nthe behalf of oneself, so it may currently be impossible to deputise\nwithout some shenanigans. \"Acting as emself\" appears to be the standard\nway of phrasing this requirement.]"
+        },
+        {
+            "number": 8269,
+            "ai": 3.0,
+            "title": "Clean up distribution mechanisms",
+            "author": "omd",
+            "coauthors": [
+            ],
+            "text": "\nAmend Rule 1607 (Distribution) by replacing;\n\n  The Promotor CAN distribute a proposal which is in the Proposal\n  Pool at any time, by announcement.\n\nwith:\n\n  The Promotor CAN distribute a proposal which is in the Proposal\n  Pool at any time.\n\n[The \"by announcement\" is redundant with Rule 107's 'notice publication'\nmethod, and IIRC there was a judgement that the two rules actually provide two\nseparate mechanisms for distributing proposals.]"
+        },
+        {
+            "number": 8270,
+            "ai": 3.0,
+            "title": "Self-ratifying statements",
+            "author": "omd",
+            "coauthors": [
+            ],
+            "text": "\n[Create a mechanism for a public message to be defined as self-ratifying a\nstatement that's not in the message.\n\nCurrently, Rule 2034 does this in a strange implicit way, by saying that the\nmessage \"constitutes self-ratifying claims that\" such-and-such.  I'd call it\ndubious, but according to CFJ 3618 as recorded in a FLR annotation (I can't\nfind the original judgement), it does work, even if the message in question\n*explicitly disclaims* the such-and-such.  Still, it's better to organize\nthings in a way that avoids counterfactual assumptions.\n\nConvert two rules to use the new mechanism: Rule 2034, and Rule 107, which\npreviously vaguely mentioned an error being \"correctly identified within one\nweek\".  The new wording also requires clarity, as I also proposed separately\n(if both proposal pass, this overwrites the wording from the other).]\n\nAmend Rule 1551 (Ratification) by replacing:\n\n  When a public document is ratified\n\nwith:\n\n  When a document or statement (hereafter \"document\") is ratified\n\nand by replacing:\n\n  Ratifying a public document is secured with power threshold 3.\n\nwith:\n\n  Ratification is secured with power threshold 3.\n\nand by removing:\n\n  A public document is part (possibly all) of a public message.\n\n[moved to R2202]\n\nAmend Rule 2202 (Ratification Without Objection) by prepending the paragraph:\n\n  A public document is part (possibly all) of a public message.\n\nAmend Rule 2201 (Self-Ratification) by replacing:\n\n  A public document defined by the rules as self-ratifying is\n  ratified when it is continuously undoubted for one week.\n\n  A doubt is an explicit public challenge via one of the following\n  methods, identifying a document and explaining the scope and\n  nature of a perceived error in it:\n\nwith:\n\n  When a public document is continuously undoubted for one week\n  after publication:\n\n  - If the rules define it as self-ratifying, it is ratified.\n\n  - If the rules define it as a self-ratifying attestation to a\n    given statement, the statement is ratified.\n\n    This clause is inapplicable if the statement to be ratified\n    cannot be reasonably ascertained from the ruleset and the\n    contents of the message.\n\n  A doubt is an explicit public challenge via one of the following\n  methods, identifying a document and explaining the scope and\n  nature of a perceived error in it (or in a statement it attests\n  to):\n\nAmend Rule 107 (Initiating Agoran Decisions) by replacing the second\nsentence with:\n\n  To be valid, the notice must clearly specify the following\n  information:\n\nand by appending the paragraph:\n\n  A public notice purporting to initiate an Agoran decision is a\n  self-ratifying attestation of the notice's validity.\n\nAmend Rule 2034 (Vote Protection and Cutoff for Challenges) by replacing:\n\n  A public message purporting to resolve an Agoran decision\n  constitutes self-ratifying claims that\nwith:\n\n  A public message purporting to resolve an Agoran decision\n  is a self-ratifying attestation that"
+        },
+        {
+            "number": 8271,
+            "ai": 3.0,
+            "title": "Doctorate expectations",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "\n[Puts in a time requirement for Doctorates, also fixes bug]\n\n\nChange the Power of Rule 1367 (Degrees) to 2.\n[I've wondered for a while why we need this at 3!]\n\n\nAmend Rule 1367 (Degrees) by replacing its last paragraph with:\n  A specified degree CAN be awarded by any player other than the\n  awardee, with 2 Agoran consent.  It SHOULD only be awarded for the\n  publication of an original thesis of scholarly worth (including\n  responses to peer-review), published with explicit intent to qualify\n  for a degree. Any degree with D.N. as part of its abbreviation\n  SHOULD take into account the awardee's academic history and participation\n  in Agora over time. The Herald SHOULD coordinate the peer-review process\n  and the awarding of degrees."
+        },
+        {
+            "number": 8272,
+            "ai": 2.0,
+            "title": "The Fat Director",
+            "author": "Murphy",
+            "coauthors": [
+                "Gaelan",
+                "G."
+            ],
+            "text": "\nAmend Rule 2193 (The Registrar) by removing this text:\n\n  The Registrar is also responsible for tracking any switches,\n  defined in a rule, that would otherwise lack an officer to track\n  them, unless the switch is defined as untracked.\n\nAmend Rule 2423 (First Among Equals) by removing this text:\n\n  The Prime Minister is responsible for tracking any switches\n  defined by the rules, not defined as untracked, and not defined\n  as tracked by another officer.\n\nCreate a rule titled \"The Fat Director\" with Power 2 and this text:\n\n  The Fat Director is an imposed office.\n\n  A loose switch is a switch defined by the rules, not defined as\n  untracked, and not defined as tracked by an officer other than the\n  Fat Director. The Fat Director is responsible for tracking any\n  loose switches.\n\n  When a proposal creates a loose switch or causes a switch to\n  become loose, the Fat Director is set to the author of that\n  proposal. If the Fat Director is vacant and any loose switches\n  exist, then the Registrar CAN set the Fat Director to any player\n  by announcement. Any player CAN become the Fat Director by\n  announcement.\n\n[Would have called it \"Fat Controllor\", but that would be too close\nto \"Comptrollor\", and I didn't want to merge it with that either.]"
+        },
+        {
+            "number": 8273,
+            "ai": 1.0,
+            "title": "Clean up your own mess, without making a bigger one",
+            "author": "Gaelan",
+            "coauthors": [
+                "Jason Cobb"
+            ],
+            "text": "\nRemove the following paragraph from Rule 2139 “The Registrar”: {\n  The Registrar is also responsible for tracking any switches,\n  defined in a rule, that would otherwise lack an officer to track\n  them, unless the switch is defined as untracked.\n}\n\nCreate a power-1 rule titled “Switch Responsibility” with the following text: {\n  For each type of switch which would otherwise lack an officer to track it,\n  and is not defined as untracked, there exists an imposed office named\n  “Tracker of [switch name]” that is responsible for tracking that switch.\n}\n\n[1006/44 states:\n    When a proposal takes effect and creates a new office, if the\n    proposal does not specify otherwise, the author of that proposal\n    becomes the holder of the office.\n\nI think this works, but we might need to clarify the meaning of\n“creates a new office” to be sure.]"
+        },
+        {
+            "number": 8274,
+            "ai": 1.0,
+            "title": "Interested proposals",
+            "author": "Murphy",
+            "coauthors": [
+                "Oerjan"
+            ],
+            "text": "\nCreate a rule titled \"Interested Proposals\" with this text:\n\n  Interest is an untracked proposal switch with values\n  \"disinterested\" (default) and \"interested\". The author of a\n  proposal in the Proposal Pool CAN flip its Interest to Interested\n  by paying a fee of 5 coins, or by announcement if e most recently\n  registered less than 3 months ago.\n\nAmend Rule 2496 (Rewards) by replacing this text:\n  * Being the author of an adopted proposal:\nwith this text:\n  * Being the author of an adopted interested proposal:"
+        }
+    ],
+    "quorum": 8,
+    "strengths": {
+        "default": 3,
+        "players": [
+            {
+                "player": "G.",
+                "strength": {
+                    "value": 4,
+                    "comment": "PM"
+                }
+            }
+        ]
+    },
+    "resolutions": [
+        {
+            "proposal": 8266,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 25,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Conditional resolved: no Notice of Veto was published"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8267,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 25,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8268,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 25,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8269,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 19,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "PRESENT",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Aris"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Aris"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8270,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 19,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "PRESENT",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8271,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 22,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8272,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 10,
+                "strength_against": 9,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "PRESENT",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "AGAINST",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8273,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 7,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "PRESENT",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Conditional resolved: no Notice of Veto was published"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8274,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 16,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Jason Cobb",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Bernie",
+                        "vote": {
+                            "value": "AGAINST",
+                            "comment": "Endorsement of Jason Cobb"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Conditional resolved: no Notice of Veto was published"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Falsifian"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
