@@ -122,17 +122,10 @@ sealed class NeededAssessments
 object AllAssessments : NeededAssessments()
 data class SingleAssessment(val name: String) : NeededAssessments()
 
-sealed class OutputDestination
-object StdoutDestination : OutputDestination()
-object UnnamedFileDestination : OutputDestination()
-data class NamedFileDestination(val file: String) : OutputDestination()
-object UnnamedDirDestination : OutputDestination()
-data class NamedDirDestination(val dir: String) : OutputDestination()
-
 private data class ParsedCli(
     val neededAssessments: NeededAssessments,
     val formatter: AssessmentFormatter?,
-    val destination: OutputDestination?
+    val destination: AssessmentDestination?
 )
 
 open class CliParseException : Exception {
@@ -185,7 +178,7 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
     }
 }
 
-private fun readDestination(commandLine: CommandLine): OutputDestination? {
+private fun readDestination(commandLine: CommandLine): AssessmentDestination? {
     return when {
         commandLine.hasOption(DEST_STDOUT) -> StdoutDestination
 
@@ -250,7 +243,7 @@ private fun rawParseCli(args: Iterable<String>): ParsedCli {
 data class CliConfig(
     val formatter: AssessmentFormatter?,
     val neededAssessments: NeededAssessments,
-    val destination: OutputDestination?
+    val destination: AssessmentDestination?
 )
 
 fun parseCli(args: Iterable<String>): CliConfig {
