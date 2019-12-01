@@ -80,5 +80,10 @@ Decision for an election after a week passes.]""")
         votes(ATMunn) {
             endorse(Falsifian) on all
         }
+
+        votes(G) {
+            FOR on 8275
+            FOR on 8276
+        }
     }
 }
