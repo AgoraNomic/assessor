@@ -6,6 +6,7 @@ import org.agoranomic.assessor.lib.getOrFail
 import org.agoranomic.assessor.lib.resolve
 
 private val DEFAULT_DESTINATION = StdoutDestination
+private val DEFAULT_FORMATTER = HumanReadableFormatter(CONFIG_LONG)
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) {

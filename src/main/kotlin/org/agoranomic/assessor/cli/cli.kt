@@ -19,12 +19,9 @@ private const val FORM_SHORT = "short"
 private const val FORM_OFFICIAL = "official"
 private const val FORM_JSON = "json"
 
-private val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
-private val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
-private val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
-
-val DEFAULT_FORMATTER =
-    HumanReadableFormatter(CONFIG_LONG)
+val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
+val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
+val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
 
 private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
