@@ -114,10 +114,6 @@ data class ProposalResolutionMap(
     operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
-
-    fun forEach(block: (ProposalNumber, ResolutionData) -> Unit) {
-        map.forEach(block)
-    }
 }
 
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {

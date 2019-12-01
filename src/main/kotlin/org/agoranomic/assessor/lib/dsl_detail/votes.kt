@@ -5,8 +5,8 @@ import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class _VotesReceiver(private val proposals: ImmutableList<Proposal>, private val player: Player) {
-    constructor(proposals: List<Proposal>, player: Player) : this(proposals.toImmutableList(), player)
+class _VotesReceiver(private val proposals: ImmutableList<Proposal>) {
+    constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
 
     private val votes = mutableMapOf<ProposalNumber, _MutableVote>()
 

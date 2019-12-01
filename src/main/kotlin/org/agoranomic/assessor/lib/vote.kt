@@ -26,14 +26,6 @@ data class SingleProposalVoteMap(val map: ImmutableMap<Player, Vote>) {
     val voteCount = voters.size
 
     operator fun get(player: Player) = map[player] ?: throw IllegalArgumentException("Player is not a voter")
-
-    fun forEach(block: (Player, Vote) -> Unit) {
-        map.forEach(block)
-    }
-
-    fun filterVoteKind(value: VoteKind): Set<Player> {
-        return map.filter { (_, v) -> v is SimpleVote }.filterValues { (it as SimpleVote).kind == value }.keys
-    }
 }
 
 data class MultiProposalVoteMap(val map: Map<ProposalNumber, SingleProposalVoteMap>) {
