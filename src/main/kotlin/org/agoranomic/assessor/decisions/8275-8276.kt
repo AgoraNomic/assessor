@@ -1,7 +1,9 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.UseAssessment
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
+import org.agoranomic.assessor.lib.endorse
 
 @UseAssessment
 fun `assessment 8275 to 8276`() = assessment {
@@ -61,5 +63,13 @@ Decision for an election after a week passes.]""")
     }
 
     voting {
+        votes(JasonCobb) {
+            FOR on 8275
+            FOR on 8276
+        }
+
+        votes(Bernie) {
+            endorse(JasonCobb) on all
+        }
     }
 }
