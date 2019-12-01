@@ -26,7 +26,7 @@ fun StringBuilder.emitQuorum(quorum: Int) {
 }
 
 fun StringBuilder.emitProposalHeader(proposal: Proposal) {
-    emitLine("PROPOSAL ${proposal.number} (\"${proposal.title}\")")
+    emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
 }
 
 fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, voteKindVoteCounts: Boolean) {
