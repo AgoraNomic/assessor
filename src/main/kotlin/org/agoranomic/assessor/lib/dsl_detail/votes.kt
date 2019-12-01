@@ -5,13 +5,12 @@ import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class _VotesReceiver(private val proposals: ImmutableList<Proposal>) {
-    constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
+class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
+    constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
     private val votes = mutableMapOf<ProposalNumber, _MutableVote>()
 
     object _All
-
     val all = _All
 
     object _Others
@@ -22,22 +21,24 @@ class _VotesReceiver(private val proposals: ImmutableList<Proposal>) {
     }
 
     private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
-        require(proposals.map { it.number }.contains(proposal)) { "No such proposal $proposal" }
+        require(proposals.contains(proposal)) { "No such proposal $proposal" }
         require(!votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
 
         votes[proposal] = vote
         return vote
     }
 
+    private fun addVote(proposal: ProposalNumber, vote: HalfFunctionVote) = addVote(proposal, _MutableVote(vote.func))
+
     infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
 
     infix fun HalfFunctionVote.on(all: _All) {
-        proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
+        proposals.forEach { addVote(it, this) }
     }
 
     infix fun HalfFunctionVote.on(others: _Others) {
-        for (proposal in proposals.map { it.number }) {
-            if (!votes.containsKey(proposal)) addVote(proposal, _MutableVote(this.func))
+        for (proposal in proposals.map { it }) {
+            if (!votes.containsKey(proposal)) addVote(proposal, this)
         }
     }
 

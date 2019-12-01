@@ -17,7 +17,7 @@ class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
     fun votes(player: Player, block: _VotesReceiver.() -> Unit) {
         require(!votes.containsKey(player)) { "Votes already specified for player ${player.name}" }
 
-        val receiver = _VotesReceiver(proposals)
+        val receiver = _VotesReceiver(proposals.map { it.number })
         receiver.block()
         val result = receiver.compile()
 
