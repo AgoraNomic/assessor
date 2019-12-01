@@ -3,7 +3,7 @@ package org.agoranomic.assessor.lib
 private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, resolve ->
     when (val endorseeVote = resolve(prop, endorsee)) {
         null -> InextricableVote(comment = "Endorsement of non-voter ${endorsee.name}")
-        is SimpleVote, is InextricableVote -> endorseeVote.copyWithComment("Endorsement of ${endorsee.name}")
+        else -> endorseeVote.copyWithComment("Endorsement of ${endorsee.name}")
     }
 }
 
