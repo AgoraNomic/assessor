@@ -71,5 +71,14 @@ Decision for an election after a week passes.]""")
         votes(Bernie) {
             endorse(JasonCobb) on all
         }
+
+        votes(Falsifian) {
+            endorse(JasonCobb) on 8275
+            endorse(JasonCobb) on 8276
+        }
+
+        votes(ATMunn) {
+            endorse(Falsifian) on all
+        }
     }
 }
