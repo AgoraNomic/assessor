@@ -68,6 +68,11 @@ Decision for an election after a week passes.]""")
             FOR on 8276
         }
 
+        votes(twg) {
+            endorse(JasonCobb) on 8275
+            endorse(JasonCobb) on 8276
+        }
+
         votes(Bernie) {
             endorse(JasonCobb) on all
         }
