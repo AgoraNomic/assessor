@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.lib.dsl_detail
 
+import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.AssessmentDSL
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
@@ -22,5 +23,5 @@ class _ProposalsReceiver {
         proposals.forEach(::using)
     }
 
-    fun compile(): List<Proposal> = proposals
+    fun compile(): List<Proposal> = proposals.toImmutableList()
 }

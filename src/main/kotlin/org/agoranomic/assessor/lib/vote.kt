@@ -1,5 +1,8 @@
 package org.agoranomic.assessor.lib
 
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.toImmutableMap
+
 enum class VoteKind { PRESENT, AGAINST, FOR }
 
 sealed class Vote {
@@ -16,7 +19,9 @@ data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote(
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
 }
 
-data class SingleProposalVoteMap(val map: Map<Player, Vote>) {
+data class SingleProposalVoteMap(val map: ImmutableMap<Player, Vote>) {
+    constructor(map: Map<Player, Vote>) : this(map.toImmutableMap())
+
     val voters = map.keys
     val voteCount = voters.size
 

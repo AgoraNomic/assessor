@@ -1,9 +1,13 @@
 package org.agoranomic.assessor.lib.dsl_detail
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class _VotingReciever(private val proposals: List<Proposal>) {
+class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
+    constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
+
     private val votes = mutableMapOf<Player, Map<ProposalNumber, PendingVote>>()
 
     infix fun Player.matches(other: Player) = votes(this) {

@@ -1,5 +1,10 @@
 package org.agoranomic.assessor.lib
 
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.ImmutableSet
+import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.collections.immutable.toImmutableSet
+
 enum class ProposalResult {
     FAILED_QUORUM("FAILED QUORUM"), REJECTED, ADOPTED;
 
@@ -14,7 +19,9 @@ enum class ProposalResult {
     }
 }
 
-data class SimplifiedSingleProposalVoteMap(val map: Map<Player, SimpleVote>) {
+data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Player, SimpleVote>) {
+    constructor(map: Map<Player, SimpleVote>) : this(map.toImmutableMap())
+
     val voters = map.keys
     val voteCount = voters.size
 
@@ -85,11 +92,25 @@ fun resolve(
 
 data class ProposalResolutionMap(
     val assessmentName: String,
-    val proposals: Set<Proposal>,
-    private val map: Map<ProposalNumber, ResolutionData>,
+    val proposals: ImmutableSet<Proposal>,
+    private val map: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: Int,
     val votingStrengths: VotingStrengthMap
 ) {
+    constructor(
+        assessmentName: String,
+        proposals: Set<Proposal>,
+        map: Map<ProposalNumber, ResolutionData>,
+        quorum: Int,
+        votingStrengths: VotingStrengthMap
+    ) : this(
+        assessmentName,
+        proposals.toImmutableSet(),
+        map.toImmutableMap(),
+        quorum,
+        votingStrengths
+    )
+
     operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
