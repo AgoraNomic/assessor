@@ -44,12 +44,7 @@ data class ResolutionData(
 )
 
 fun simplifyVotes(votes: SingleProposalVoteMap): SimplifiedSingleProposalVoteMap {
-    return SimplifiedSingleProposalVoteMap(votes.map.mapValues { (_, vote) ->
-        when (vote) {
-            is SimpleVote -> vote
-            is InextricableVote -> SimpleVote(VoteKind.PRESENT, vote.comment)
-        }
-    })
+    return SimplifiedSingleProposalVoteMap(votes.map.mapValues { (_, vote) -> vote.simplify() })
 }
 
 fun resolve(

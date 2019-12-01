@@ -7,16 +7,19 @@ enum class VoteKind { PRESENT, AGAINST, FOR }
 
 sealed class Vote {
     abstract val comment: String?
-
     abstract fun copyWithComment(newComment: String?): Vote
+
+    abstract fun simplify(): SimpleVote
 }
 
 data class InextricableVote(override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
+    override fun simplify(): SimpleVote = SimpleVote(VoteKind.PRESENT, comment = "Inextricable: $comment")
 }
 
 data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
+    override fun simplify(): SimpleVote = this
 }
 
 data class SingleProposalVoteMap(val map: ImmutableMap<Player, Vote>) {
