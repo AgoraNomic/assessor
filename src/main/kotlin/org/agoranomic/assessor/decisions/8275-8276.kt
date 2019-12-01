@@ -8,6 +8,11 @@ fun `assessment 8275 to 8276`() = assessment {
     name("8275-8276")
     quorum(5)
 
+    strengths {
+        default(3)
+        G strength 4 comment PM
+    }
+
     proposals {
         proposal(8275) {
             title("\"By announcement\" clarification")
