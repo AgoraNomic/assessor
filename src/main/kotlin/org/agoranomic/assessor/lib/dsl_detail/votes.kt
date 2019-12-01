@@ -14,6 +14,9 @@ class _VotesReceiver(private val proposals: ImmutableList<Proposal>) {
 
     val all = _All
 
+    object _Others
+    val others = _Others
+
     data class _MutableVote(val vote: VoteFunc, var comment: String? = null) {
         fun compile() = PendingVote(vote, comment)
     }
@@ -32,10 +35,17 @@ class _VotesReceiver(private val proposals: ImmutableList<Proposal>) {
         proposals.forEach { addVote(it.number, _MutableVote(this.func)) }
     }
 
+    infix fun HalfFunctionVote.on(others: _Others) {
+        for (proposal in proposals.map { it.number }) {
+            if (!votes.containsKey(proposal)) addVote(proposal, _MutableVote(this.func))
+        }
+    }
+
     private fun simpleVoteFunction(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
 
     infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
     infix fun VoteKind.on(all: _All) = simpleVoteFunction(this) on all
+    infix fun VoteKind.on(others: _Others) = simpleVoteFunction(this) on others
 
     infix fun _MutableVote.comment(value: String) {
         this.comment = value

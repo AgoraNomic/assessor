@@ -319,10 +319,7 @@ with this text:
 
         votes(CuddleBeam) {
             AGAINST on 8271
-
-            for (p in listOf(8266, 8267, 8268, 8269, 8270, 8272, 8273, 8274)) {
-                FOR on p
-            }
+            FOR on others
         }
 
         votes(Bernie) {
