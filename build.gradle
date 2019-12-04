@@ -41,6 +41,10 @@ task fatJar(type: Jar) {
 
 compileKotlin {
     kotlinOptions.jvmTarget = "11"
+
+    kotlinOptions {
+        freeCompilerArgs = ["-Xinline-classes"]
+    }
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "11"
