@@ -29,7 +29,9 @@ fun json(list: List<Proposal>) = json(list.map { json(it) })
 @JvmName("jsonOfProposals")
 fun json(iterable: Iterable<Proposal>) = json(iterable.toList())
 
-fun json(votingStrength: VotingStrength) = json {
+fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
+
+fun json(votingStrength: VotingStrengthWithComment) = json {
     "value" to json(votingStrength.value)
     if (votingStrength.comment != null) "comment" to json(votingStrength.comment)
 }

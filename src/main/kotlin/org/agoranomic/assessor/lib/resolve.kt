@@ -38,8 +38,8 @@ data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Player, SimpleV
 
 data class ResolutionData(
     val result: ProposalResult,
-    val strengthFor: VotingStrengthValue,
-    val strengthAgainst: VotingStrengthValue,
+    val strengthFor: VotingStrength,
+    val strengthAgainst: VotingStrength,
     val votes: SimplifiedSingleProposalVoteMap
 )
 
@@ -55,8 +55,8 @@ fun resolve(
 ): ResolutionData {
     val simplifiedVotes = simplifyVotes(rawVotes)
 
-    var strengthFor: VotingStrengthValue = 0
-    var strengthAgainst: VotingStrengthValue = 0
+    var strengthFor = VotingStrength.zero()
+    var strengthAgainst = VotingStrength.zero()
 
     simplifiedVotes.forEach { player, vote ->
         val strength = votingStrengthMap[player]
@@ -78,7 +78,7 @@ fun resolve(
 
     // Resolution as specified in R955
     return ResolutionData(
-        if (strengthFor >= (ai * strengthAgainst) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
+        if (strengthFor.raw >= (ai * strengthAgainst.raw) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
         strengthFor,
         strengthAgainst,
         simplifiedVotes
