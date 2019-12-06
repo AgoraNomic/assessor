@@ -25,7 +25,17 @@ dependencies {
     implementation 'io.github.classgraph:classgraph:4.8.46'
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0"
 
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit5:$kotlin_version"
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.5.2'
+}
+
+test {
+    useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
 task fatJar(type: Jar) {
