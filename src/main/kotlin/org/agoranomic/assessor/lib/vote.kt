@@ -31,7 +31,9 @@ data class SingleProposalVoteMap(val map: ImmutableMap<Player, Vote>) {
     operator fun get(player: Player) = map[player] ?: throw IllegalArgumentException("Player is not a voter")
 }
 
-data class MultiProposalVoteMap(val map: Map<ProposalNumber, SingleProposalVoteMap>) {
+data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProposalVoteMap>) {
+    constructor(map: Map<ProposalNumber, SingleProposalVoteMap>) : this(map.toImmutableMap())
+
     val proposals = map.keys
 
     operator fun get(proposal: ProposalNumber) =
