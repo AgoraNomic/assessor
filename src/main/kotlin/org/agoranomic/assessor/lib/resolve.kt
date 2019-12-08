@@ -43,8 +43,8 @@ data class ResolutionData(
     val votes: SimplifiedSingleProposalVoteMap
 )
 
-fun simplifyVotes(votes: SingleProposalVoteMap): SimplifiedSingleProposalVoteMap {
-    return SimplifiedSingleProposalVoteMap(votes.map.mapValues { (_, vote) -> vote.simplify() })
+fun SingleProposalVoteMap.simplified(): SimplifiedSingleProposalVoteMap {
+    return SimplifiedSingleProposalVoteMap(map.mapValues { (_, vote) -> vote.simplified() })
 }
 
 fun resolve(
@@ -53,7 +53,7 @@ fun resolve(
     ai: ProposalAI,
     rawVotes: SingleProposalVoteMap
 ): ResolutionData {
-    val simplifiedVotes = simplifyVotes(rawVotes)
+    val simplifiedVotes = rawVotes.simplified()
 
     var strengthFor = VotingStrength.zero()
     var strengthAgainst = VotingStrength.zero()

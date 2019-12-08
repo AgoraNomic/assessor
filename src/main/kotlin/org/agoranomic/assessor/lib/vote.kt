@@ -9,17 +9,17 @@ sealed class Vote {
     abstract val comment: String?
     abstract fun copyWithComment(newComment: String?): Vote
 
-    abstract fun simplify(): SimpleVote
+    abstract fun simplified(): SimpleVote
 }
 
 data class InextricableVote(override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
-    override fun simplify(): SimpleVote = SimpleVote(VoteKind.PRESENT, comment = "Inextricable: $comment")
+    override fun simplified(): SimpleVote = SimpleVote(VoteKind.PRESENT, comment = "Inextricable: $comment")
 }
 
 data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
-    override fun simplify(): SimpleVote = this
+    override fun simplified(): SimpleVote = this
 }
 
 data class SingleProposalVoteMap(val map: ImmutableMap<Player, Vote>) {
