@@ -40,5 +40,5 @@ data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProp
         map[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
 }
 
-typealias ResolveFunc = (Proposal, Player) -> Vote?
-typealias VoteFunc = (Proposal, ResolveFunc) -> Vote?
+typealias ResolveFunc = (proposal: Proposal, voter: Player) -> Vote?
+typealias VoteFunc = (proposal: Proposal, resolve: ResolveFunc) -> Vote?
