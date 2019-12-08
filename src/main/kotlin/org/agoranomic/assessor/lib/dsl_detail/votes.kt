@@ -42,7 +42,9 @@ class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
         }
     }
 
-    private fun simpleVoteFunction(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
+    fun function(func: VoteFunc) = functionVote(func)
+
+    private fun simpleVoteFunction(vote: VoteKind) = functionVote { _, _ -> SimpleVote(vote, comment = null) }
 
     infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
     infix fun VoteKind.on(all: _All) = simpleVoteFunction(this) on all

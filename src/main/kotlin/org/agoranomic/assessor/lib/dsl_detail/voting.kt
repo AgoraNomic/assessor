@@ -11,7 +11,7 @@ class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
     private val votes = mutableMapOf<Player, Map<ProposalNumber, PendingVote>>()
 
     infix fun Player.matches(other: Player) = votes(this) {
-        function { proposal, resolve -> resolve(proposal, other) } on all
+        functionVote { proposal, resolve -> resolve(proposal, other) } on all
     }
 
     fun votes(player: Player, block: _VotesReceiver.() -> Unit) {
