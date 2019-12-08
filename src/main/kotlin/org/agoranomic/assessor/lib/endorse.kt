@@ -1,10 +1,14 @@
 package org.agoranomic.assessor.lib
 
-private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, resolve ->
-    when (val endorseeVote = resolve(prop, endorsee)) {
+fun makeEndorsementFor(endorsee: Player, endorseeVote: Vote?): Vote {
+    return when (endorseeVote) {
         null -> InextricableVote(comment = "Endorsement of non-voter ${endorsee.name}")
         else -> endorseeVote.copyWithComment("Endorsement of ${endorsee.name}")
     }
+}
+
+private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, resolve ->
+    makeEndorsementFor(endorsee, resolve(prop, endorsee))
 }
 
 private fun endorsementVote(endorsee: Player) = function(endorsementFunc(endorsee))
