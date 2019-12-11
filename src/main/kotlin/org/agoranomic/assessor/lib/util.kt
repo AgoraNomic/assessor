@@ -11,8 +11,17 @@ fun <K, V> Map<K, V>.getOrFail(key: K): V {
     error("Missing expected key in map: $key")
 }
 
-operator fun BigDecimal.times(other: Int) = this * other.toBigDecimal()
-operator fun Int.times(other: BigDecimal) = other * this
+operator fun BigDecimal.plus(other: Int) = this.plus(other.toBigDecimal())
+operator fun Int.plus(other: BigDecimal) = (this.toBigDecimal()).plus(other)
+
+operator fun BigDecimal.minus(other: Int) = this.minus(other.toBigDecimal())
+operator fun Int.minus(other: BigDecimal) = (this.toBigDecimal()).minus(other)
+
+operator fun BigDecimal.times(other: Int) = this.times(other.toBigDecimal())
+operator fun Int.times(other: BigDecimal) = (this.toBigDecimal()).times(other)
+
+operator fun BigDecimal.div(other: Int) = this.div(other.toBigDecimal())
+operator fun Int.div(other: BigDecimal) = (this.toBigDecimal()).div(other)
 
 operator fun BigDecimal.compareTo(other: Int) = this.compareTo(other.toBigDecimal())
 operator fun Int.compareTo(other: BigDecimal) = (this.toBigDecimal()).compareTo(other)
