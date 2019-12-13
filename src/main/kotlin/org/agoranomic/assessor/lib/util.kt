@@ -43,3 +43,18 @@ operator fun Int.rem(other: BigInteger) = (this.toBigInteger()).rem(other)
 
 operator fun BigInteger.compareTo(other: Int) = this.compareTo(other.toBigInteger())
 operator fun Int.compareTo(other: BigInteger) = (this.toBigInteger()).compareTo(other)
+
+operator fun BigInteger.plus(other: BigDecimal) = this.toBigDecimal().plus(other)
+operator fun BigDecimal.plus(other: BigInteger) = this.plus(other.toBigDecimal())
+
+operator fun BigInteger.minus(other: BigDecimal) = this.toBigDecimal().minus(other)
+operator fun BigDecimal.minus(other: BigInteger) = this.minus(other.toBigDecimal())
+
+operator fun BigInteger.times(other: BigDecimal) = this.toBigDecimal().times(other)
+operator fun BigDecimal.times(other: BigInteger) = this.times(other.toBigDecimal())
+
+operator fun BigInteger.div(other: BigDecimal) = this.toBigDecimal().div(other)
+operator fun BigDecimal.div(other: BigInteger) = this.div(other.toBigDecimal())
+
+operator fun BigInteger.compareTo(other: BigDecimal) = this.toBigDecimal().compareTo(other)
+operator fun BigDecimal.compareTo(other: BigInteger) = this.compareTo(other.toBigDecimal())
