@@ -3,11 +3,20 @@ package org.agoranomic.assessor.lib
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import java.math.BigDecimal
+import java.math.BigInteger
 
 data class Player(val name: String)
 
-typealias ProposalNumber = Int
-typealias ProposalAI = BigDecimal
+typealias RawProposalNumber = BigInteger
+
+inline class ProposalNumber(val raw: RawProposalNumber) {
+    constructor(raw: Int) : this(raw.toBigInteger())
+    constructor(raw: Long) : this(raw.toBigInteger())
+}
+
+typealias RawProposalAI = BigDecimal
+
+inline class ProposalAI(val raw: RawProposalAI)
 
 data class Proposal(
     val number: ProposalNumber,

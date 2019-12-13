@@ -31,6 +31,8 @@ class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
     private fun addVote(proposal: ProposalNumber, vote: HalfFunctionVote) = addVote(proposal, _MutableVote(vote.func))
 
     infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
+    infix fun HalfFunctionVote.on(number: RawProposalNumber) = this on ProposalNumber(number)
+    infix fun HalfFunctionVote.on(number: Int) = this on number.toBigInteger()
 
     infix fun HalfFunctionVote.on(all: _All) {
         proposals.forEach { addVote(it, this) }
@@ -47,6 +49,8 @@ class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
     private fun simpleVoteFunction(vote: VoteKind) = functionVote { _, _ -> SimpleVote(vote, comment = null) }
 
     infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
+    infix fun VoteKind.on(proposal: RawProposalNumber) = this on ProposalNumber(proposal)
+    infix fun VoteKind.on(proposal: Int) = this on proposal.toBigInteger()
     infix fun VoteKind.on(all: _All) = simpleVoteFunction(this) on all
     infix fun VoteKind.on(others: _Others) = simpleVoteFunction(this) on others
 

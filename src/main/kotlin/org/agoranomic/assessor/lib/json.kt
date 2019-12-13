@@ -14,6 +14,9 @@ fun json(list: List<Player>) = json(list.map { json(it) })
 @JvmName("jsonOfPlayers")
 fun json(iterable: Iterable<Player>) = json(iterable.toList())
 
+fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
+fun json(proposalAI: ProposalAI) = json(proposalAI.raw)
+
 fun json(proposal: Proposal) = json {
     "number" to json(proposal.number)
     "ai" to json(proposal.ai)

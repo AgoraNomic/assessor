@@ -92,7 +92,7 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
         emitLine("//////////////////////////////////////////////////////////////////////")
     }
 
-    val sortedProposals = proposals.sortedBy { it.number }
+    val sortedProposals = proposals.sortedBy { it.number.raw }
 
     if (sortedProposals.isNotEmpty()) {
         emitLine("The full text of each ADOPTED proposal is included below:")
@@ -130,7 +130,7 @@ data class ReportConfig(
 )
 
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
-    val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
+    val sortedProposals = resolutionMap.proposals.sortedBy { it.number.raw }
 
     val output = StringBuilder()
 

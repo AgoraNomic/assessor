@@ -78,7 +78,7 @@ fun resolve(
 
     // Resolution as specified in R955
     return ResolutionData(
-        if (strengthFor.raw >= (ai * strengthAgainst.raw) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
+        if (strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
         strengthFor,
         strengthAgainst,
         simplifiedVotes

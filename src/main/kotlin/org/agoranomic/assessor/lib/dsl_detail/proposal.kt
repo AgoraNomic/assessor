@@ -36,12 +36,15 @@ class _ProposalReceiver(private val number: ProposalNumber) {
         ai = value
     }
 
+    fun adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
+
     fun adoption_index(value: Double) =
         adoption_index(BigDecimal(((value * 10) + 0.5).toInt()).setScale(1) / BigDecimal.TEN)
 
     fun adoption_index(value: Int) = adoption_index(value.toDouble())
 
     fun ai(value: ProposalAI) = adoption_index(value)
+    fun ai(value: BigDecimal) = adoption_index(value)
     fun ai(value: Double) = adoption_index(value)
     fun ai(value: Int) = adoption_index(value)
 
