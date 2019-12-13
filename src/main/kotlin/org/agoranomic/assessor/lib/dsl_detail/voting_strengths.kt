@@ -19,6 +19,7 @@ class _VotingStrengthReceiver {
     }
 
     infix fun Player.strength(votingStrength: RawVotingStrength) = this.strength(VotingStrength(votingStrength))
+    infix fun Player.strength(votingStrength: Int) = this.strength(VotingStrength(votingStrength))
 
     infix fun _MutableVotingStrength.comment(value: String) {
         this.comment = value
@@ -29,6 +30,7 @@ class _VotingStrengthReceiver {
     }
 
     fun default(strength: RawVotingStrength) = default(VotingStrength(strength))
+    fun default(strength: Int) = default(VotingStrength(strength))
 
     fun compile(): VotingStrengthMap {
         return VotingStrengthMap(
