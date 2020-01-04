@@ -14,7 +14,7 @@ sealed class Vote {
 
 data class InextricableVote(override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
-    override fun simplified(): SimpleVote = SimpleVote(VoteKind.PRESENT, comment = "Inextricable: $comment")
+    override fun simplified(): SimpleVote = SimpleVote(VoteKind.PRESENT, comment = if (comment != null) "Inextricable: $comment" else "Inextricable")
 }
 
 data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
