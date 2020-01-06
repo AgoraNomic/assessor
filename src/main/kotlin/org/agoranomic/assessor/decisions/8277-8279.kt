@@ -158,5 +158,16 @@ a public message.
             AGAINST on 8278
             FOR on 8279
         }
+
+        votes(G) {
+            FOR on 8277
+            FOR on 8278
+            AGAINST on 8279
+        }
+
+        votes(Rance) {
+            FOR on 8278
+            AGAINST on 8279
+        }
     }
 }
