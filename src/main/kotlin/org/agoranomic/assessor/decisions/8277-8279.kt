@@ -2,8 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -168,6 +167,12 @@ a public message.
         votes(Rance) {
             FOR on 8278
             AGAINST on 8279
+        }
+
+        votes(Gaelan) {
+            FOR on 8277
+            PRESENT on 8278
+            PRESENT on 8279
         }
     }
 }
