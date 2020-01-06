@@ -1,6 +1,8 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.UseAssessment
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
 @UseAssessment
@@ -144,5 +146,10 @@ a public message.
     }
 
     voting {
+        votes(Murphy) {
+            FOR on 8277
+            FOR on 8278
+            // TODO: resolve conditional vote on 8279: AGAINST IF 8278 ADOPTED ELSE FOR
+        }
     }
 }
