@@ -174,5 +174,11 @@ a public message.
             PRESENT on 8278
             PRESENT on 8279
         }
+
+        votes(Falsifian) {
+            // TODO: resolve conditional vote on 8277: AGAINST IF VETO ELSE FOR
+            AGAINST on 8278
+            AGAINST on 8279
+        }
     }
 }
