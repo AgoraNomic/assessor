@@ -40,13 +40,19 @@ data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProp
         map[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
 }
 
+data class LookupProposal(val func: (ProposalNumber) -> Proposal) {
+    operator fun invoke(number: ProposalNumber) = func(number)
+    operator fun invoke(number: Int) = this(ProposalNumber(number))
+}
+
 interface VoteContext {
+    val lookupProposal: LookupProposal
     fun resolve(proposal: Proposal, voter: Player): Vote?
 }
 
 typealias ResolveFunc = (proposal: Proposal, voter: Player) -> Vote?
 
-data class StandardVoteContext(val resolveFunc: ResolveFunc) : VoteContext {
+data class StandardVoteContext(val resolveFunc: ResolveFunc, override val lookupProposal: LookupProposal) : VoteContext {
     override fun resolve(proposal: Proposal, voter: Player): Vote? = resolveFunc(proposal, voter)
 }
 

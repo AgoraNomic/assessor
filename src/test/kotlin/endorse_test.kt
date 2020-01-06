@@ -54,7 +54,7 @@ class `endorse tests` {
             endorseeVote
         }
 
-        val resolved = endorsement.func(proposal, StandardVoteContext(resolveFunc = resolveFunc))
+        val resolved = endorsement.func(proposal, StandardVoteContext(resolveFunc = resolveFunc, lookupProposal = alwaysFailingLookupProposal))
 
         // Assert that resolve is called
         assertTrue(called)

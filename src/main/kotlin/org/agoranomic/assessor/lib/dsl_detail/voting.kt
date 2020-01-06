@@ -31,11 +31,13 @@ class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
         val newPlayersSeen = (playersSeen.toList() + player).toTypedArray()
         val nextResolve: ResolveFunc = { nextProp, nextPlayer -> resolveVote(nextProp, nextPlayer, *newPlayersSeen) }
 
+        val lookupProposal = LookupProposal { this.proposals.lookupOrFail(it) }
+
         if (votes.containsKey(player)) {
             val playerVotes = votes.getOrFail(player)
 
             if (playerVotes.containsKey(proposal.number)) {
-                return playerVotes.getOrFail(proposal.number).compile(proposal, StandardVoteContext(resolveFunc = nextResolve))
+                return playerVotes.getOrFail(proposal.number).compile(proposal, StandardVoteContext(resolveFunc = nextResolve, lookupProposal = lookupProposal))
             }
         }
 
