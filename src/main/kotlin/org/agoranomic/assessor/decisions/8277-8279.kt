@@ -180,5 +180,11 @@ a public message.
             AGAINST on 8278
             AGAINST on 8279
         }
+
+        votes(JasonCobb) {
+            FOR on 8277
+            AGAINST on 8278
+            PRESENT on 8279
+        }
     }
 }
