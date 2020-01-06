@@ -26,7 +26,7 @@ fun StringBuilder.emitQuorum(quorum: Int) {
 }
 
 fun StringBuilder.emitProposalHeader(proposal: Proposal) {
-    emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
+    emitLine("PROPOSAL ${proposal.number.raw} (${proposal.title})")
 }
 
 fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, voteKindVoteCounts: Boolean) {
@@ -44,7 +44,7 @@ fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, vo
 }
 
 fun StringBuilder.emitSingleVotingStrength(player: Player, strength: VotingStrengthWithComment) {
-    emitString("${player.name} has voting strength ${strength.value}")
+    emitString("${player.name} has voting strength ${strength.value.raw}")
 
     if (strength.comment != null) {
         emitString(" (${strength.comment})")
@@ -58,17 +58,17 @@ fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthMap) {
     val sortedPlayers = votingStrengthMap.specialPlayers.sortedBy { it.name }
 
     if (sortedPlayers.isNotEmpty()) {
-        emitLine("Voting strengths (${votingStrengthMap.defaultStrength} unless otherwise noted):")
+        emitLine("Voting strengths (${votingStrengthMap.defaultStrength.raw} unless otherwise noted):")
         for (player in sortedPlayers) {
             emitSingleVotingStrength(player, votingStrengthMap[player])
         }
     } else {
-        emitLine("All players have voting strength ${votingStrengthMap.defaultStrength}.")
+        emitLine("All players have voting strength ${votingStrengthMap.defaultStrength.raw}.")
     }
 }
 
 fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
-    emitLine("AI (F/A): ${resolutionData.strengthFor}/${resolutionData.strengthAgainst} (AI=$ai)")
+    emitLine("AI (F/A): ${resolutionData.strengthFor.raw}/${resolutionData.strengthAgainst.raw} (AI=${ai.raw})")
 }
 
 fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
@@ -100,9 +100,9 @@ fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
 
         for (proposal in sortedProposals) {
             emitSeparator()
-            emitLine("ID: ${proposal.number}")
+            emitLine("ID: ${proposal.number.raw}")
             emitLine("Title: ${proposal.title}")
-            emitLine("Adoption index: ${proposal.ai}")
+            emitLine("Adoption index: ${proposal.ai.raw}")
             emitLine("Author: ${proposal.author.name}")
             emitLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
             emitLine()
