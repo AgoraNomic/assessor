@@ -5,16 +5,16 @@ I hereby resolve the Agoran decisions to adopt the below proposals.
 
 The quorum for all below decisions was 5.
 
-Voting strengths (3 unless otherwise noted):
-G. has voting strength 4 (PM)
+Voting strengths (VotingStrength(raw=3) unless otherwise noted):
+G. has voting strength VotingStrength(raw=4) (PM)
 
 
-PROPOSAL 8235 (Unified fine creation syntax)
+PROPOSAL ProposalNumber(raw=8235) (Unified fine creation syntax)
 FOR (5): Aris, Bernie, Jason Cobb, Trigon, o
 AGAINST (0): 
 PRESENT (8): ATMunn, Falsifian, G., Gaelan, Jacob Arduino, Murphy, Rance, twg
 BALLOTS: 13
-AI (F/A): 15/0 (AI=3.0)
+AI (F/A): VotingStrength(raw=15)/VotingStrength(raw=0) (AI=ProposalAI(raw=3.0))
 OUTCOME: ADOPTED
 [
 ATMunn: Endorsement of Falsifian
@@ -25,12 +25,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8236 (Definition de-capitalization)
+PROPOSAL ProposalNumber(raw=8236) (Definition de-capitalization)
 FOR (5): Aris, Bernie, Jason Cobb, Trigon, o
 AGAINST (0): 
 PRESENT (8): ATMunn, Falsifian, G., Gaelan, Jacob Arduino, Murphy, Rance, twg
 BALLOTS: 13
-AI (F/A): 15/0 (AI=3.0)
+AI (F/A): VotingStrength(raw=15)/VotingStrength(raw=0) (AI=ProposalAI(raw=3.0))
 OUTCOME: ADOPTED
 [
 ATMunn: Endorsement of Falsifian
@@ -41,12 +41,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8237 (Repairing Defeated Spaceships v3)
+PROPOSAL ProposalNumber(raw=8237) (Repairing Defeated Spaceships v3)
 FOR (0): 
 AGAINST (13): ATMunn, Aris, Bernie, Falsifian, G., Gaelan, Jacob Arduino, Jason Cobb, Murphy, Rance, Trigon, o, twg
 PRESENT (0): 
 BALLOTS: 13
-AI (F/A): 0/40 (AI=3.0)
+AI (F/A): VotingStrength(raw=0)/VotingStrength(raw=40) (AI=ProposalAI(raw=3.0))
 OUTCOME: REJECTED
 [
 ATMunn: Endorsement of Falsifian
@@ -57,12 +57,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8238 (Cancelling Proposals (arr. for violin))
+PROPOSAL ProposalNumber(raw=8238) (Cancelling Proposals (arr. for violin))
 FOR (6): Gaelan, Jacob Arduino, Murphy, Trigon, o, twg
 AGAINST (7): ATMunn, Aris, Bernie, Falsifian, G., Jason Cobb, Rance
 PRESENT (0): 
 BALLOTS: 13
-AI (F/A): 18/22 (AI=3.0)
+AI (F/A): VotingStrength(raw=18)/VotingStrength(raw=22) (AI=ProposalAI(raw=3.0))
 OUTCOME: REJECTED
 [
 ATMunn: Endorsement of Falsifian
@@ -74,12 +74,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8239 (The Editor (v2.0.1))
+PROPOSAL ProposalNumber(raw=8239) (The Editor (v2.0.1))
 FOR (4): Bernie, Jason Cobb, Trigon, o
 AGAINST (3): Aris, G., Rance
 PRESENT (6): ATMunn, Falsifian, Gaelan, Jacob Arduino, Murphy, twg
 BALLOTS: 13
-AI (F/A): 12/10 (AI=1.0)
+AI (F/A): VotingStrength(raw=12)/VotingStrength(raw=10) (AI=ProposalAI(raw=1.0))
 OUTCOME: ADOPTED
 [
 ATMunn: Endorsement of Falsifian
@@ -90,12 +90,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8240 (Regulation clarification)
+PROPOSAL ProposalNumber(raw=8240) (Regulation clarification)
 FOR (13): ATMunn, Aris, Bernie, Falsifian, G., Gaelan, Jacob Arduino, Jason Cobb, Murphy, Rance, Trigon, o, twg
 AGAINST (0): 
 PRESENT (0): 
 BALLOTS: 13
-AI (F/A): 40/0 (AI=3.0)
+AI (F/A): VotingStrength(raw=40)/VotingStrength(raw=0) (AI=ProposalAI(raw=3.0))
 OUTCOME: ADOPTED
 [
 ATMunn: Endorsement of Falsifian
@@ -109,12 +109,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8241 (Secured switches (v2.0))
+PROPOSAL ProposalNumber(raw=8241) (Secured switches (v2.0))
 FOR (11): ATMunn, Aris, Bernie, Falsifian, Gaelan, Jacob Arduino, Jason Cobb, Murphy, Trigon, o, twg
 AGAINST (0): 
 PRESENT (2): G., Rance
 BALLOTS: 13
-AI (F/A): 33/0 (AI=3.0)
+AI (F/A): VotingStrength(raw=33)/VotingStrength(raw=0) (AI=ProposalAI(raw=3.0))
 OUTCOME: ADOPTED
 [
 ATMunn: Endorsement of Falsifian
@@ -126,12 +126,12 @@ o: Endorsement of Trigon
 twg: Endorsement of Murphy
 ]
 
-PROPOSAL 8242 (Let the dead rest)
+PROPOSAL ProposalNumber(raw=8242) (Let the dead rest)
 FOR (9): ATMunn, Aris, Falsifian, Gaelan, Jacob Arduino, Murphy, Trigon, o, twg
 AGAINST (2): G., Rance
 PRESENT (2): Bernie, Jason Cobb
 BALLOTS: 13
-AI (F/A): 27/7 (AI=3.0)
+AI (F/A): VotingStrength(raw=27)/VotingStrength(raw=7) (AI=ProposalAI(raw=3.0))
 OUTCOME: ADOPTED
 [
 ATMunn: Endorsement of Falsifian
@@ -146,9 +146,9 @@ twg: Endorsement of Murphy
 The full text of each ADOPTED proposal is included below:
 
 //////////////////////////////////////////////////////////////////////
-ID: 8235
+ID: ProposalNumber(raw=8235)
 Title: Unified fine creation syntax
-Adoption index: 3.0
+Adoption index: ProposalAI(raw=3.0)
 Author: Jason Cobb
 Co-authors: 
 
@@ -171,9 +171,9 @@ fine of up to 2 blots on em" with the text "levying a fine of (a value
 not exceeding 2) on em".
 
 //////////////////////////////////////////////////////////////////////
-ID: 8236
+ID: ProposalNumber(raw=8236)
 Title: Definition de-capitalization
-Adoption index: 3.0
+Adoption index: ProposalAI(raw=3.0)
 Author: Jason Cobb
 Co-authors: Aris
 
@@ -237,9 +237,9 @@ Amend the only list in Rule 2124 ("Agoran Satisfaction") to read:
   the number of Objectors to the intent.
 
 //////////////////////////////////////////////////////////////////////
-ID: 8239
+ID: ProposalNumber(raw=8239)
 Title: The Editor (v2.0.1)
-Adoption index: 1.0
+Adoption index: ProposalAI(raw=1.0)
 Author: Jason Cobb
 Co-authors: G., Aris, Trigon
 
@@ -275,9 +275,9 @@ Enact a new Rule with power 1, title "The Editor", and text as follows:
   Editorial Guideline is the Class 1 Crime of Editorial Hypocrisy.
 
 //////////////////////////////////////////////////////////////////////
-ID: 8240
+ID: ProposalNumber(raw=8240)
 Title: Regulation clarification
-Adoption index: 3.0
+Adoption index: ProposalAI(raw=3.0)
 Author: Jason Cobb
 Co-authors: 
 
@@ -294,9 +294,9 @@ Amend Rule 2493 ("Regulations") as follows:
     or repeal a regulation for which e is the Promulgator.
 
 //////////////////////////////////////////////////////////////////////
-ID: 8241
+ID: ProposalNumber(raw=8241)
 Title: Secured switches (v2.0)
-Adoption index: 3.0
+Adoption index: ProposalAI(raw=3.0)
 Author: Jason Cobb
 Co-authors: Falsifian
 
@@ -351,9 +351,9 @@ Amend Rule 478 as follows:
   "Publicity is a secured forum switch.".
 
 //////////////////////////////////////////////////////////////////////
-ID: 8242
+ID: ProposalNumber(raw=8242)
 Title: Let the dead rest
-Adoption index: 3.0
+Adoption index: ProposalAI(raw=3.0)
 Author: Falsifian
 Co-authors: 
 
