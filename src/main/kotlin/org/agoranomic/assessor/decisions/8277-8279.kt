@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.assessment
 
@@ -150,6 +151,12 @@ a public message.
             FOR on 8277
             FOR on 8278
             // TODO: resolve conditional vote on 8279: AGAINST IF 8278 ADOPTED ELSE FOR
+        }
+
+        votes(Aris) {
+            FOR on 8277
+            AGAINST on 8278
+            FOR on 8279
         }
     }
 }
