@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 class `HalfFunctionVote tests` {
     @Test
     fun `function returns HalfFunctionVote with same function`() {
-        val nullVoteFunc: VoteFunc = { proposal, resolve -> null }
+        val nullVoteFunc: VoteFunc = { proposal, context -> null }
 
         assertEquals(functionVote(nullVoteFunc).func, nullVoteFunc)
     }

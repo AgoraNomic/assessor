@@ -7,13 +7,13 @@ fun makeEndorsementFor(endorsee: Player, endorseeVote: Vote?): Vote {
     }
 }
 
-private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, resolve ->
-    makeEndorsementFor(endorsee, resolve(prop, endorsee))
+private fun endorsementFunc(endorsee: Player): VoteFunc = { prop, context ->
+    makeEndorsementFor(endorsee, context.resolve(prop, endorsee))
 }
 
 private fun endorsementVote(endorsee: Player) = functionVote(endorsementFunc(endorsee))
 
-private fun authorEndorsementFunc(): VoteFunc = { prop, resolve -> endorsementFunc(prop.author)(prop, resolve) }
+private fun authorEndorsementFunc(): VoteFunc = { prop, context -> endorsementFunc(prop.author)(prop, context) }
 private fun authorEndorsementVote() = functionVote(authorEndorsementFunc())
 
 object _Author

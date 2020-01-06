@@ -40,5 +40,14 @@ data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProp
         map[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
 }
 
+interface VoteContext {
+    fun resolve(proposal: Proposal, voter: Player): Vote?
+}
+
 typealias ResolveFunc = (proposal: Proposal, voter: Player) -> Vote?
-typealias VoteFunc = (proposal: Proposal, resolve: ResolveFunc) -> Vote?
+
+data class StandardVoteContext(val resolveFunc: ResolveFunc) : VoteContext {
+    override fun resolve(proposal: Proposal, voter: Player): Vote? = resolveFunc(proposal, voter)
+}
+
+typealias VoteFunc = (proposal: Proposal, context: VoteContext) -> Vote?

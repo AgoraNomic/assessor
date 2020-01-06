@@ -44,7 +44,7 @@ class `endorse tests` {
     private fun doTestEndorse(endorsement: HalfFunctionVote, proposal: Proposal, expectedEndorsee: Player, endorseeVote: Vote) {
         var called = false
 
-        val resolved = endorsement.func(proposal) { resolveProp, resolvePlayer ->
+        val resolveFunc: ResolveFunc = { resolveProp, resolvePlayer ->
             // Resolve should only be called with known proposal and endorsee
             assertEquals(resolveProp, proposal)
             assertEquals(resolvePlayer, expectedEndorsee)
@@ -53,6 +53,8 @@ class `endorse tests` {
 
             endorseeVote
         }
+
+        val resolved = endorsement.func(proposal, StandardVoteContext(resolveFunc = resolveFunc))
 
         // Assert that resolve is called
         assertTrue(called)

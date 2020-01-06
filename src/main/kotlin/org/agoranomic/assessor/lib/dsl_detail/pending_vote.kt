@@ -1,13 +1,10 @@
 package org.agoranomic.assessor.lib.dsl_detail
 
-import org.agoranomic.assessor.lib.Proposal
-import org.agoranomic.assessor.lib.ResolveFunc
-import org.agoranomic.assessor.lib.Vote
-import org.agoranomic.assessor.lib.VoteFunc
+import org.agoranomic.assessor.lib.*
 
 data class PendingVote(val voteFunc: VoteFunc, val comment: String?) {
-    fun compile(proposal: Proposal, resolve: ResolveFunc): Vote? {
-        val vote = voteFunc(proposal, resolve) ?: return null
+    fun compile(proposal: Proposal, context: VoteContext): Vote? {
+        val vote = voteFunc(proposal, context) ?: return null
 
         if (comment != null) {
             if (vote.comment != null) {
