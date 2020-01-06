@@ -149,7 +149,7 @@ a public message.
         votes(Murphy) {
             FOR on 8277
             FOR on 8278
-            // TODO: resolve conditional vote on 8279: AGAINST IF 8278 ADOPTED ELSE FOR
+            FOR on 8279 comment conditional("Proposal 8278 does not have sufficient votes to be adopted")
         }
 
         votes(Aris) {
@@ -176,7 +176,7 @@ a public message.
         }
 
         votes(Falsifian) {
-            // TODO: resolve conditional vote on 8277: AGAINST IF VETO ELSE FOR
+            FOR on 8277 comment NO_VETO
             AGAINST on 8278
             AGAINST on 8279
         }
