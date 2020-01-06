@@ -26,40 +26,40 @@ jobs:
       - restore_cache:
           name: Restore git cache
           keys:
-            - v4-source-{{ .Branch }}-{{ .Revision }}
-            - v4-source-{{ .Branch }}-
-            - v4-source-
+            - v5-source-{{ .Branch }}-{{ .Revision }}
+            - v5-source-{{ .Branch }}-
+            - v5-source-
       - checkout
       - save_cache:
           name: Save git cache
-          key: v4-source-{{ .Branch }}-{{ .Revision }}
+          key: v5-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - restore_cache:
           name: Restore dependency cache
           keys:
-            - v4-dependencies-{{ checksum "build.gradle" }}
-            - v4-dependencies-
+            - v5-dependencies-{{ checksum "build.gradle" }}
+            - v5-dependencies-
       - run: gradle dependencies
       - save_cache:
           name: Save dependency cache
           paths:
             - ~/.gradle
-          key: v4-dependencies-{{ checksum "build.gradle" }}
+          key: v5-dependencies-{{ checksum "build.gradle" }}
 
       - restore_cache:
           name: Restore build cache
           keys:
-            - v4-build-{{ .Branch }}-{{ .Revision }}
-            - v4-build-{{ .Branch }}-
-            - v4-build-
+            - v5-build-{{ .Branch }}-{{ .Revision }}
+            - v5-build-{{ .Branch }}-
+            - v5-build-
       - run: gradle build
       - save_cache:
           name: Save build cache
           paths:
             - .gradle
             - build
-          key: v4-build-{{ .Branch }}-{{ .Revision }}
+          key: v5-build-{{ .Branch }}-{{ .Revision }}
 
   fatJar:
     <<: *jvm_default
@@ -68,40 +68,40 @@ jobs:
       - restore_cache:
           name: Restore git cache
           keys:
-            - v4-source-{{ .Branch }}-{{ .Revision }}
-            - v4-source-{{ .Branch }}-
-            - v4-source-
+            - v5-source-{{ .Branch }}-{{ .Revision }}
+            - v5-source-{{ .Branch }}-
+            - v5-source-
       - checkout
       - save_cache:
           name: Save git cache
-          key: v4-source-{{ .Branch }}-{{ .Revision }}
+          key: v5-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - restore_cache:
           name: Restore dependency cache
           keys:
-            - v4-dependencies-{{ checksum "build.gradle" }}
-            - v4-dependencies-
+            - v5-dependencies-{{ checksum "build.gradle" }}
+            - v5-dependencies-
       - run: gradle dependencies
       - save_cache:
           name: Save dependency cache
           paths:
             - ~/.gradle
-          key: v4-dependencies-{{ checksum "build.gradle" }}
+          key: v5-dependencies-{{ checksum "build.gradle" }}
 
       - restore_cache:
           name: Restore build cache
           keys:
-            - v4-build-{{ .Branch }}-{{ .Revision }}
-            - v4-build-{{ .Branch }}-
-            - v4-build-
+            - v5-build-{{ .Branch }}-{{ .Revision }}
+            - v5-build-{{ .Branch }}-
+            - v5-build-
       - run: gradle build
       - save_cache:
           name: Save build cache
           paths:
             - .gradle
             - build
-          key: v4-build-{{ .Branch }}-{{ .Revision }}
+          key: v5-build-{{ .Branch }}-{{ .Revision }}
 
       - run:
           name: Build fat jar
@@ -118,13 +118,13 @@ jobs:
       - restore_cache:
           name: Restore git cache
           keys:
-            - v4-source-{{ .Branch }}-{{ .Revision }}
-            - v4-source-{{ .Branch }}-
-            - v4-source-
+            - v5-source-{{ .Branch }}-{{ .Revision }}
+            - v5-source-{{ .Branch }}-
+            - v5-source-
       - checkout
       - save_cache:
           name: Save git cache
-          key: v4-source-{{ .Branch }}-{{ .Revision }}
+          key: v5-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - attach_workspace:
@@ -171,13 +171,13 @@ jobs:
       - restore_cache:
           name: Restore git cache
           keys:
-            - v4-source-{{ .Branch }}-{{ .Revision }}
-            - v4-source-{{ .Branch }}-
-            - v4-source-
+            - v5-source-{{ .Branch }}-{{ .Revision }}
+            - v5-source-{{ .Branch }}-
+            - v5-source-
       - checkout
       - save_cache:
           name: Save git cache
-          key: v4-source-{{ .Branch }}-{{ .Revision }}
+          key: v5-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
 
       - attach_workspace:
