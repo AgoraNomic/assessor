@@ -3,9 +3,9 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.VoteKind.PRESENT
-import org.agoranomic.assessor.lib.assessment
-import org.agoranomic.assessor.lib.author
-import org.agoranomic.assessor.lib.endorse
+import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.votes.author
+import org.agoranomic.assessor.dsl.votes.endorse
 
 @UseAssessment
 fun `assessment 8251 to 8252`() = assessment {

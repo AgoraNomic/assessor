@@ -1,3 +1,6 @@
+import org.agoranomic.assessor.dsl.votes.author
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.makeEndorsementFor
 import test_objects.*
 import org.agoranomic.assessor.lib.*
 import org.junit.jupiter.api.Test

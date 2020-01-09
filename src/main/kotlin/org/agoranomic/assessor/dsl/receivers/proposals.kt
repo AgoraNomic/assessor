@@ -1,7 +1,7 @@
-package org.agoranomic.assessor.lib.dsl_detail
+package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.toImmutableList
-import org.agoranomic.assessor.lib.AssessmentDSL
+import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.RawProposalNumber

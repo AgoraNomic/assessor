@@ -1,4 +1,6 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.dsl.votes
+
+import org.agoranomic.assessor.lib.*
 
 fun makeEndorsementFor(endorsee: Player, endorseeVote: Vote?): Vote {
     return when (endorseeVote) {

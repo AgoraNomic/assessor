@@ -1,5 +1,6 @@
-package org.agoranomic.assessor.lib.dsl_detail
+package org.agoranomic.assessor.dsl.receivers
 
+import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL

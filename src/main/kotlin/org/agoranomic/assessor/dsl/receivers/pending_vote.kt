@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.lib.dsl_detail
+package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.Vote

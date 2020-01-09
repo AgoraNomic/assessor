@@ -111,6 +111,28 @@ data class ProposalResolutionMap(
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
 }
 
+data class AssessmentData(
+    val name: String,
+    val quorum: Int,
+    val votingStrengths: VotingStrengthMap,
+    val proposals: ImmutableSet<Proposal>,
+    val votes: MultiProposalVoteMap
+) {
+    constructor(
+        name: String,
+        quorum: Int,
+        votingStrengths: VotingStrengthMap,
+        proposals: Set<Proposal>,
+        votes: MultiProposalVoteMap
+    ) : this(
+        name,
+        quorum,
+        votingStrengths,
+        proposals.toImmutableSet(),
+        votes
+    )
+}
+
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     val map = mutableMapOf<ProposalNumber, ResolutionData>()
 
