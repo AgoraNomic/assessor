@@ -16,7 +16,11 @@ class _ProposalsReceiver {
         using(receiver.compile())
     }
 
-    fun proposal(number: RawProposalNumber, block: _ProposalReceiver.() -> Unit) = proposal(ProposalNumber(number), block)
+    fun proposal(number: RawProposalNumber, block: _ProposalReceiver.() -> Unit) = proposal(
+        ProposalNumber(number),
+        block
+    )
+
     fun proposal(number: Int, block: _ProposalReceiver.() -> Unit) = proposal(number.toBigInteger(), block)
 
     fun using(proposal: Proposal) {

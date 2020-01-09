@@ -14,7 +14,10 @@ sealed class Vote {
 
 data class InextricableVote(override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
-    override fun simplified(): SimpleVote = SimpleVote(VoteKind.PRESENT, comment = if (comment != null) "Inextricable: $comment" else "Inextricable")
+    override fun simplified(): SimpleVote = SimpleVote(
+        VoteKind.PRESENT,
+        comment = if (comment != null) "Inextricable: $comment" else "Inextricable"
+    )
 }
 
 data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
@@ -52,7 +55,10 @@ interface VoteContext {
 
 typealias ResolveFunc = (proposal: Proposal, voter: Player) -> Vote?
 
-data class StandardVoteContext(val resolveFunc: ResolveFunc, override val lookupProposal: LookupProposal) : VoteContext {
+data class StandardVoteContext(
+    val resolveFunc: ResolveFunc,
+    override val lookupProposal: LookupProposal
+) : VoteContext {
     override fun resolve(proposal: Proposal, voter: Player): Vote? = resolveFunc(proposal, voter)
 }
 

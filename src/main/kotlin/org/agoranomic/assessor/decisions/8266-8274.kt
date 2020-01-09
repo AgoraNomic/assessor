@@ -21,14 +21,16 @@ fun `assessment 8266 to 8274`() = assessment {
             ai(1.0)
             author(nch)
 
-            text("""
+            text(
+                """
 Enact a Power-1 rule titled "Glitter" with the following text {
 
   If a player has earned a ribbon in the past 7 days but already owned it e CAN
   once (until e earns another ribbon), by announcement, earn N+1 coins where
   N is the number of current players that do not own the same ribbon.
 
-}""")
+}"""
+            )
         }
 
         proposal(8267) {
@@ -36,7 +38,8 @@ Enact a Power-1 rule titled "Glitter" with the following text {
             ai(3.0)
             author(JasonCobb)
 
-            text("""
+            text(
+                """
 Amend Rule 2438 ("Ribbons") by appending the following paragraph:
 
   Emerald (E): When a person wins an election, e earns an Emerald Ribbon.
@@ -44,7 +47,8 @@ Amend Rule 2438 ("Ribbons") by appending the following paragraph:
 
 [There's already a ribbon for deputisation, so why shouldn't there be
 one for the other way to acquire an office? Also, this is an incentive
-to initiate and become candidates in elections.]""")
+to initiate and become candidates in elections.]"""
+            )
         }
 
         proposal(8268) {
@@ -52,14 +56,16 @@ to initiate and become candidates in elections.]""")
             ai(3.0)
             author(JasonCobb)
 
-            text("""
+            text(
+                """
 Amend Rule 2160 ("Deputisation") by replacing the text "acting on eir
 own behalf" with the text "acting as emself".
 
 [Per CFJ 2637, taking actions within a public message is not acting on
 the behalf of oneself, so it may currently be impossible to deputise
 without some shenanigans. "Acting as emself" appears to be the standard
-way of phrasing this requirement.]""")
+way of phrasing this requirement.]"""
+            )
         }
 
         proposal(8269) {
@@ -67,7 +73,8 @@ way of phrasing this requirement.]""")
             ai(3.0)
             author(omd)
 
-            text("""
+            text(
+                """
 Amend Rule 1607 (Distribution) by replacing;
 
   The Promotor CAN distribute a proposal which is in the Proposal
@@ -80,7 +87,8 @@ with:
 
 [The "by announcement" is redundant with Rule 107's 'notice publication'
 method, and IIRC there was a judgement that the two rules actually provide two
-separate mechanisms for distributing proposals.]""")
+separate mechanisms for distributing proposals.]"""
+            )
         }
 
         proposal(8270) {
@@ -88,7 +96,8 @@ separate mechanisms for distributing proposals.]""")
             ai(3.0)
             author(omd)
 
-            text("""
+            text(
+                """
 [Create a mechanism for a public message to be defined as self-ratifying a
 statement that's not in the message.
 
@@ -176,7 +185,8 @@ Amend Rule 2034 (Vote Protection and Cutoff for Challenges) by replacing:
 with:
 
   A public message purporting to resolve an Agoran decision
-  is a self-ratifying attestation that""")
+  is a self-ratifying attestation that"""
+            )
         }
 
         proposal(8271) {
@@ -184,7 +194,8 @@ with:
             ai(3.0)
             author(G)
 
-            text("""
+            text(
+                """
 [Puts in a time requirement for Doctorates, also fixes bug]
 
 
@@ -200,7 +211,8 @@ Amend Rule 1367 (Degrees) by replacing its last paragraph with:
   for a degree. Any degree with D.N. as part of its abbreviation
   SHOULD take into account the awardee's academic history and participation
   in Agora over time. The Herald SHOULD coordinate the peer-review process
-  and the awarding of degrees.""")
+  and the awarding of degrees."""
+            )
         }
 
         proposal(8272) {
@@ -209,7 +221,8 @@ Amend Rule 1367 (Degrees) by replacing its last paragraph with:
             author(Murphy)
             coauthors(Gaelan, G)
 
-            text("""
+            text(
+                """
 Amend Rule 2193 (The Registrar) by removing this text:
 
   The Registrar is also responsible for tracking any switches,
@@ -239,7 +252,8 @@ Create a rule titled "The Fat Director" with Power 2 and this text:
   announcement.
 
 [Would have called it "Fat Controllor", but that would be too close
-to "Comptrollor", and I didn't want to merge it with that either.]""")
+to "Comptrollor", and I didn't want to merge it with that either.]"""
+            )
         }
 
         proposal(8273) {
@@ -248,7 +262,8 @@ to "Comptrollor", and I didn't want to merge it with that either.]""")
             author(Gaelan)
             coauthors(JasonCobb)
 
-            text("""
+            text(
+                """
 Remove the following paragraph from Rule 2139 “The Registrar”: {
   The Registrar is also responsible for tracking any switches,
   defined in a rule, that would otherwise lack an officer to track
@@ -267,7 +282,8 @@ Create a power-1 rule titled “Switch Responsibility” with the following text
     becomes the holder of the office.
 
 I think this works, but we might need to clarify the meaning of
-“creates a new office” to be sure.]""")
+“creates a new office” to be sure.]"""
+            )
         }
 
         proposal(8274) {
@@ -276,7 +292,8 @@ I think this works, but we might need to clarify the meaning of
             author(Murphy)
             coauthors(Oerjan)
 
-            text("""
+            text(
+                """
 Create a rule titled "Interested Proposals" with this text:
 
   Interest is an untracked proposal switch with values
@@ -288,7 +305,8 @@ Create a rule titled "Interested Proposals" with this text:
 Amend Rule 2496 (Rewards) by replacing this text:
   * Being the author of an adopted proposal:
 with this text:
-  * Being the author of an adopted interested proposal:""")
+  * Being the author of an adopted interested proposal:"""
+            )
         }
     }
 

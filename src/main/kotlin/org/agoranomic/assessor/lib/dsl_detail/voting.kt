@@ -37,7 +37,10 @@ class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
             val playerVotes = votes.getOrFail(player)
 
             if (playerVotes.containsKey(proposal.number)) {
-                return playerVotes.getOrFail(proposal.number).compile(proposal, StandardVoteContext(resolveFunc = nextResolve, lookupProposal = lookupProposal))
+                return playerVotes.getOrFail(proposal.number).compile(
+                    proposal,
+                    StandardVoteContext(resolveFunc = nextResolve, lookupProposal = lookupProposal)
+                )
             }
         }
 

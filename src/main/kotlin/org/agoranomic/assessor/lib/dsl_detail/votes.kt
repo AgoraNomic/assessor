@@ -11,9 +11,11 @@ class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
     private val votes = mutableMapOf<ProposalNumber, _MutableVote>()
 
     object _All
+
     val all = _All
 
     object _Others
+
     val others = _Others
 
     data class _MutableVote(val vote: VoteFunc, var comment: String? = null) {

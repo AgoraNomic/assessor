@@ -21,7 +21,8 @@ fun `assessment 8275 to 8276`() = assessment {
             ai(3.0)
             author(JasonCobb)
 
-            text("""
+            text(
+                """
 Amend Rule 478 ("Fora") by replacing the text
 
   Where the rules define an action that CAN be performed "by
@@ -32,7 +33,8 @@ with the text
 
   Where the rules define an action that a person CAN perform "by
   announcement", that person performs that action by unambiguously and
-  clearly specifying the action and announcing that e performs it.""")
+  clearly specifying the action and announcing that e performs it."""
+            )
         }
 
         proposal(8276) {
@@ -40,7 +42,8 @@ with the text
             ai(2.0)
             author(JasonCobb)
 
-            text("""
+            text(
+                """
 Amend Rule 2154 ("Election Procedure") by replacing the text "declare em
 the winner of the election by announcement" with the text "by
 announcement declare em the winner of the election, thereby causing em
@@ -58,7 +61,8 @@ with the text "After the nomination period ends, the ADoP CAN and, in a
 timely fashion, SHALL".
 
 [Ensures that the ADoP doesn't lose the ability to initiate an Agoran
-Decision for an election after a week passes.]""")
+Decision for an election after a week passes.]"""
+            )
         }
     }
 
