@@ -274,5 +274,15 @@ Repeal Rule 2597, "Line-item Veto"."""
             AGAINST on 8285
             FOR on 8286
         }
+
+        votes(Aris) {
+            AGAINST on 8280
+            // TODO: resolve conditional vote on 8281: AGAINST IF VOTE ELSE FOR
+            // TODO: resolve conditional vote on 8282: AGAINST IF VOTE ELSE PRESENT
+            FOR on 8283
+            AGAINST on 8284
+            AGAINST on 8285
+            // TODO: resolve conditional vote on 8286: AGAINST IF VOTE ELSE FOR
+        }
     }
 }
