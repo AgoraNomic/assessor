@@ -267,7 +267,7 @@ Repeal Rule 2597, "Line-item Veto"."""
 
         votes(Falsifian) {
             AGAINST on 8280
-            // TODO: resolve conditional vote on 8281: AGAINST IF VETO ELSE PRESENT
+            PRESENT on 8281 comment NO_VETO
             AGAINST on 8282
             FOR on 8283
             AGAINST on 8284
@@ -277,12 +277,12 @@ Repeal Rule 2597, "Line-item Veto"."""
 
         votes(Aris) {
             AGAINST on 8280
-            // TODO: resolve conditional vote on 8281: AGAINST IF VOTE ELSE FOR
-            // TODO: resolve conditional vote on 8282: AGAINST IF VOTE ELSE PRESENT
+            FOR on 8281 comment NO_VETO
+            PRESENT on 8282 comment NO_VETO
             FOR on 8283
             AGAINST on 8284
             AGAINST on 8285
-            // TODO: resolve conditional vote on 8286: AGAINST IF VOTE ELSE FOR
+            FOR on 8286 comment NO_VETO
         }
 
         votes(G) {
