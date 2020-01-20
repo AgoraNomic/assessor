@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.lib.Player
 
+val Alexis = Player("Alexis")
 val Aris = Player("Aris")
 val ATMunn = Player("ATMunn")
 val Bernie = Player("Bernie")
