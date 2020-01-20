@@ -254,5 +254,15 @@ Repeal Rule 2597, "Line-item Veto"."""
             endorse(Alexis) on 8285
             endorse(Aris) on 8286
         }
+
+        votes(JasonCobb) {
+            AGAINST on 8280
+            FOR on 8281
+            AGAINST on 8282
+            AGAINST on 8283
+            FOR on 8284
+            AGAINST on 8285
+            PRESENT on 8286
+        }
     }
 }
