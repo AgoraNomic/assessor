@@ -241,7 +241,7 @@ Repeal Rule 2597, "Line-item Veto"."""
             PRESENT on 8282
             FOR on 8283
             PRESENT on 8284
-            FOR on 8285
+            AGAINST on 8285
             AGAINST on 8286
         }
 
