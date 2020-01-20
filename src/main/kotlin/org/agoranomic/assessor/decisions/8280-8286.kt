@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.lib.UseAssessment
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8280 to 8286`() = assessment {
@@ -233,5 +234,14 @@ Repeal Rule 2597, "Line-item Veto"."""
     }
 
     voting {
+        votes(Gaelan) {
+            PRESENT on 8280
+            FOR on 8281
+            PRESENT on 8282
+            FOR on 8283
+            PRESENT on 8284
+            FOR on 8285
+            AGAINST on 8286
+        }
     }
 }
