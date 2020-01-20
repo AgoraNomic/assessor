@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.*
 
@@ -242,6 +243,16 @@ Repeal Rule 2597, "Line-item Veto"."""
             PRESENT on 8284
             FOR on 8285
             AGAINST on 8286
+        }
+
+        votes(twg) {
+            PRESENT on 8280
+            AGAINST on 8281
+            PRESENT on 8282
+            endorse(Alexis) on 8283
+            AGAINST on 8284
+            endorse(Alexis) on 8285
+            endorse(Aris) on 8286
         }
     }
 }
