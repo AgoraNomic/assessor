@@ -268,7 +268,7 @@ Repeal Rule 2597, "Line-item Veto"."""
         votes(Falsifian) {
             AGAINST on 8280
             // TODO: resolve conditional vote on 8281: AGAINST IF VETO ELSE PRESENT
-            PRESENT on 8282
+            AGAINST on 8282
             FOR on 8283
             AGAINST on 8284
             AGAINST on 8285
