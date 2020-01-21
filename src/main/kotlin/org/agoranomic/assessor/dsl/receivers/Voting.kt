@@ -1,10 +1,12 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal_set.get
+import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDSL
 interface VotingReceiver {
@@ -13,8 +15,8 @@ interface VotingReceiver {
 }
 
 @AssessmentDSL
-class VotingReceiverImpl(private val proposals: ImmutableList<Proposal>) : VotingReceiver {
-    constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
+class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingReceiver {
+    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
     private val votes = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
 
