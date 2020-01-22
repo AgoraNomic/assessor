@@ -2,6 +2,7 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
+import org.agoranomic.assessor.lib.proposal_set.ProposalDataMismatchException
 import java.math.BigDecimal
 import java.math.BigInteger
 
@@ -30,6 +31,15 @@ data class Proposal(
     val coauthors: Persons,
     val text: String
 )
+
+fun checkMismatch(original: Proposal, next: Proposal) {
+    require(original.number == next.number)
+
+    if (original != next) throw ProposalDataMismatchException(
+        next = next,
+        original = original
+    )
+}
 
 fun Iterable<Proposal>.lookupOrFail(number: ProposalNumber): Proposal {
     return this.find { it.number == number } ?: error("No proposal with number $number")

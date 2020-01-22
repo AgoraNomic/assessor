@@ -3,6 +3,7 @@ package org.agoranomic.assessor.lib.proposal_set
 import kotlinx.collections.immutable.ImmutableSet
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.checkMismatch
 
 data class NoSuchProposalException(
     val number: ProposalNumber
@@ -60,11 +61,7 @@ fun ProposalSet.checkMismatch(nextProposal: Proposal) {
     val originalProposal = getOpt(nextProposal.number) ?: return
 
     check(originalProposal.number == nextProposal.number)
-
-    if (originalProposal != nextProposal) throw ProposalDataMismatchException(
-        next = nextProposal,
-        original = originalProposal
-    )
+    checkMismatch(originalProposal, nextProposal)
 }
 
 fun ProposalSet.checkMismatches(proposals: Iterable<Proposal>) = proposals.forEach(::checkMismatch)

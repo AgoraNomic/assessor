@@ -5,6 +5,7 @@ import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableSet
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.checkMismatch
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {
