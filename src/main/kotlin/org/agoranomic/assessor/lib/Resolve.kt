@@ -1,9 +1,10 @@
 package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableMap
-import kotlinx.collections.immutable.toImmutableSet
+import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 enum class ProposalResult {
     FAILED_QUORUM("FAILED QUORUM"), REJECTED, ADOPTED;
@@ -87,20 +88,20 @@ fun resolve(
 
 data class ProposalResolutionMap(
     val assessmentName: String,
-    val proposals: ImmutableSet<Proposal>,
+    val proposals: ImmutableProposalSet,
     private val map: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: Int,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>
 ) {
     constructor(
         assessmentName: String,
-        proposals: Set<Proposal>,
+        proposals: ProposalSet,
         map: Map<ProposalNumber, ResolutionData>,
         quorum: Int,
         votingStrengths: Map<ProposalNumber, VotingStrengthMap>
     ) : this(
         assessmentName,
-        proposals.toImmutableSet(),
+        proposals.toImmutableProposalSet(),
         map.toImmutableMap(),
         quorum,
         votingStrengths.toImmutableMap()
@@ -120,20 +121,20 @@ data class AssessmentData(
     val name: String,
     val quorum: Int,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>,
-    val proposals: ImmutableSet<Proposal>,
+    val proposals: ImmutableProposalSet,
     val votes: MultiProposalVoteMap
 ) {
     constructor(
         name: String,
         quorum: Int,
         votingStrengths: Map<ProposalNumber, VotingStrengthMap>,
-        proposals: Set<Proposal>,
+        proposals: ProposalSet,
         votes: MultiProposalVoteMap
     ) : this(
         name,
         quorum,
         votingStrengths.toImmutableMap(),
-        proposals.toImmutableSet(),
+        proposals.toImmutableProposalSet(),
         votes
     )
 

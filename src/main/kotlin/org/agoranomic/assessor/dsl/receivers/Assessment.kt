@@ -7,6 +7,7 @@ import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.proposal_set.toProposalSet
 
 @AssessmentDSL
 interface AssessmentReceiver {
@@ -77,7 +78,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
             name,
             quorum,
             votingStrengths,
-            proposals.toSet(),
+            proposals.toProposalSet(),
             MultiProposalVoteMap(proposalVotes)
         )
     }
