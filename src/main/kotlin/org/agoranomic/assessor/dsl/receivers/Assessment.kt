@@ -37,7 +37,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     }
 
     override fun voting(block: VotingReceiver.() -> Unit) {
-        val receiver = VotingReceiverImpl(proposals.get())
+        val receiver = VotingReceiverImpl(proposals.get().toProposalSet())
         receiver.block()
         proposalVotes.set(receiver.compile().toImmutableMap())
     }
