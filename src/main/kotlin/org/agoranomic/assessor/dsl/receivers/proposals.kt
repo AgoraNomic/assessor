@@ -27,7 +27,7 @@ class _ProposalsReceiver {
         proposals += proposal
     }
 
-    fun using(proposals: Collection<Proposal>) {
+    fun using(proposals: Iterable<Proposal>) {
         proposals.forEach(::using)
     }
 

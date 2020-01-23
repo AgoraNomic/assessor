@@ -87,7 +87,7 @@ fun StringBuilder.emitVoteComments(resolutionData: ResolutionData) {
     }
 }
 
-fun StringBuilder.emitProposalText(proposals: Collection<Proposal>) {
+fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     fun emitSeparator() {
         emitLine("//////////////////////////////////////////////////////////////////////")
     }
