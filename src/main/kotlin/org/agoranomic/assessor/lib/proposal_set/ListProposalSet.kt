@@ -35,15 +35,13 @@ class MutableListProposalSet : AbstractMutableProposalSet {
     }
 
     companion object {
-        fun fromListUnchecked(list: List<Proposal>): MutableListProposalSet {
+        private fun fromListUnchecked(list: List<Proposal>): MutableListProposalSet {
             return MutableListProposalSet(initialList = list)
         }
 
         fun fromList(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
 
-        fun empty() = fromListUnchecked(
-            emptyList()
-        )
+        fun empty() = fromListUnchecked(emptyList())
     }
 
     override fun addUnchecked(toAdd: Proposal) {
