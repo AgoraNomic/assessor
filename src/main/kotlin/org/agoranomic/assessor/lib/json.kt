@@ -9,10 +9,7 @@ fun json(list: List<JsonElement>) = JsonArray(list)
 fun json(player: Player) = json(player.name)
 
 @JvmName("jsonOfPlayers")
-fun json(list: List<Player>) = json(list.map { json(it) })
-
-@JvmName("jsonOfPlayers")
-fun json(iterable: Iterable<Player>) = json(iterable.toList())
+fun json(iterable: Iterable<Player>) = json(iterable.map { json(it) })
 
 fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
 fun json(proposalAI: ProposalAI) = json(proposalAI.raw)
@@ -27,10 +24,7 @@ fun json(proposal: Proposal) = json {
 }
 
 @JvmName("jsonOfProposals")
-fun json(list: List<Proposal>) = json(list.map { json(it) })
-
-@JvmName("jsonOfProposals")
-fun json(iterable: Iterable<Proposal>) = json(iterable.toList())
+fun json(iterable: Iterable<Proposal>) = json(iterable.map { json(it) })
 
 fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
 
