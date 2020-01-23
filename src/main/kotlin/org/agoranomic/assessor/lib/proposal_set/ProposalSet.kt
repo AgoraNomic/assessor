@@ -103,19 +103,19 @@ data class DuplicateProposalNumberException(
  * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
  * [number][Proposal.number]
  */
-fun List<Proposal>.toProposalSet(): ProposalSet = ImmutableListProposalSet.fromList(this)
+fun Iterable<Proposal>.toProposalSet(): ProposalSet = ImmutableListProposalSet.from(this)
 
 /**
  * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
  * [number][Proposal.number]
  */
-fun List<Proposal>.toImmutableProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.fromList(this)
+fun Iterable<Proposal>.toImmutableProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.from(this)
 
 /**
  * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
  * [number][Proposal.number]
  */
-fun List<Proposal>.toMutableProposalSet(): MutableProposalSet = MutableListProposalSet.fromList(this)
+fun Iterable<Proposal>.toMutableProposalSet(): MutableProposalSet = MutableListProposalSet.from(this)
 
 /**
  * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same

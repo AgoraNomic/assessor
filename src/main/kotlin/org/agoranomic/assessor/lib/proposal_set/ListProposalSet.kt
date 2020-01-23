@@ -11,7 +11,8 @@ class ImmutableListProposalSet private constructor(private val list: ImmutableLi
             return ImmutableListProposalSet(list.toImmutableList())
         }
 
-        fun fromList(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
+        fun from(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
+        fun from(iterable: Iterable<Proposal>) = from(iterable.toList())
 
         fun empty() = fromListUnchecked(emptyList())
     }
@@ -39,7 +40,8 @@ class MutableListProposalSet : AbstractMutableProposalSet {
             return MutableListProposalSet(initialList = list)
         }
 
-        fun fromList(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
+        fun from(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
+        fun from(iterable: Iterable<Proposal>) = from(iterable.toList())
 
         fun empty() = fromListUnchecked(emptyList())
     }
