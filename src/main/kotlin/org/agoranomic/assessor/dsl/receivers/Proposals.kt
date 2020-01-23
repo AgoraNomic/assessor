@@ -1,9 +1,12 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal_set.emptyMutableProposalSet
+import org.agoranomic.assessor.lib.proposal_set.plusAssign
+import org.agoranomic.assessor.lib.proposal_set.toProposalSet
 
 @AssessmentDSL
 interface ProposalsReceiver {
@@ -19,9 +22,15 @@ interface ProposalsReceiver {
 
 @AssessmentDSL
 class ProposalsReceiverImpl : ProposalsReceiver {
-    private val proposals = mutableListOf<Proposal>()
+    private val proposals = emptyMutableProposalSet()
+
+    private fun requireUnusuedNumber(number: ProposalNumber) {
+        require(!proposals.contains(number)) { "Use of duplicate proposal number: $number." }
+    }
 
     override fun proposal(number: ProposalNumber, block: ProposalReceiver.() -> Unit) {
+        requireUnusuedNumber(number)
+
         val receiver = ProposalReceiverImpl(number)
         receiver.block()
         using(receiver.compile())
@@ -35,5 +44,5 @@ class ProposalsReceiverImpl : ProposalsReceiver {
         proposals.forEach(::using)
     }
 
-    fun compile(): List<Proposal> = proposals.toImmutableList()
+    fun compile(): ProposalSet = proposals.toProposalSet()
 }
