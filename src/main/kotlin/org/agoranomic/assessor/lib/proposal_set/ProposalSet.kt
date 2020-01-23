@@ -96,6 +96,21 @@ fun MutableProposalSet.addAll(toAdd: Iterable<Proposal>) {
     toAdd.forEach { add(it) }
 }
 
+fun MutableProposalSet.remove(toRemove: Proposal) {
+    checkMismatch(toRemove)
+    remove(toRemove.number)
+}
+
+@JvmName("removeAllNumbers")
+fun MutableProposalSet.removeAll(toRemove: Iterable<ProposalNumber>) {
+    toRemove.forEach { remove(it) }
+}
+
+@JvmName("removeAll")
+fun MutableProposalSet.removeAll(toRemove: Iterable<Proposal>) {
+    toRemove.forEach { remove(it) }
+}
+
 fun emptyProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.empty()
 fun emptyMutableProposalSet(): MutableProposalSet = MutableListProposalSet.empty()
 
