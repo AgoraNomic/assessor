@@ -1,13 +1,14 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.lib.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDSL
 interface AssessmentReceiver {
@@ -21,7 +22,7 @@ interface AssessmentReceiver {
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
     private val votingStrengthsBlock = DslValue<(VotingStrengthReceiver.() -> Unit)>()
-    private val proposals = DslValue<ImmutableList<Proposal>>()
+    private val proposals = DslValue<ImmutableProposalSet>()
     private val proposalVotes = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
     private val quorum = DslValue<Int>()
     private val name = DslValue<String>()
@@ -33,11 +34,11 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     override fun proposals(block: ProposalsReceiver.() -> Unit) {
         val receiver = ProposalsReceiverImpl()
         receiver.block()
-        proposals.set(receiver.compile().toImmutableList())
+        proposals.set(receiver.compile().toImmutableProposalSet())
     }
 
     override fun voting(block: VotingReceiver.() -> Unit) {
-        val receiver = VotingReceiverImpl(proposals.get().toProposalSet())
+        val receiver = VotingReceiverImpl(proposals.get())
         receiver.block()
         proposalVotes.set(receiver.compile().toImmutableMap())
     }
@@ -78,7 +79,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
             name,
             quorum,
             votingStrengths,
-            proposals.toProposalSet(),
+            proposals,
             MultiProposalVoteMap(proposalVotes)
         )
     }
