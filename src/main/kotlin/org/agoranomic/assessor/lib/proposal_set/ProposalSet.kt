@@ -92,6 +92,10 @@ interface MutableProposalSet : ProposalSet, MutableIterable<Proposal> {
     fun remove(toRemove: ProposalNumber)
 }
 
+fun MutableProposalSet.addAll(toAdd: Iterable<Proposal>) {
+    toAdd.forEach { add(it) }
+}
+
 fun emptyProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.empty()
 fun emptyMutableProposalSet(): MutableProposalSet = MutableListProposalSet.empty()
 
