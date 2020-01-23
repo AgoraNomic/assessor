@@ -103,7 +103,13 @@ data class DuplicateProposalNumberException(
  * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
  * [number][Proposal.number]
  */
-fun List<Proposal>.toProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.fromList(this)
+fun List<Proposal>.toProposalSet(): ProposalSet = ImmutableListProposalSet.fromList(this)
+
+/**
+ * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
+ * [number][Proposal.number]
+ */
+fun List<Proposal>.toImmutableProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.fromList(this)
 
 /**
  * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
@@ -126,7 +132,7 @@ fun mutableProposalSetOf(vararg proposals: Proposal) = proposals.toList().toMuta
 /**
  * Returns a [ImmutableProposalSet] that contains the same proposals as this [ProposalSet].
  */
-fun ProposalSet.immutableCopy(): ImmutableProposalSet = this.toList().toProposalSet()
+fun ProposalSet.immutableCopy(): ImmutableProposalSet = this.toList().toImmutableProposalSet()
 
 /**
  * Returns a [MutableProposalSet] that contains the same proposals as this [ProposalSet].
