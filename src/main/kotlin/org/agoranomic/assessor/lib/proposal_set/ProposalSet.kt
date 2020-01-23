@@ -50,7 +50,7 @@ interface ProposalSet : Iterable<Proposal> {
     fun isEmpty(): Boolean = size != 0
 
     /**
-     * Returns a [Set] of the [numbers][Proposal.number] of the proposals that this [ProposalSet] contains.
+     * Returns an [ImmutableSet] of the [numbers][Proposal.number] of the proposals that this [ProposalSet] contains.
      */
     fun numbers(): ImmutableSet<ProposalNumber>
 }
@@ -85,7 +85,7 @@ interface MutableProposalSet : ProposalSet, MutableIterable<Proposal> {
     fun add(toAdd: Proposal)
 
     /**
-     * Removes a proposal. Has no effect if an equivalent [Proposal] is already in this [ProposalSet].
+     * Removes a proposal.
      *
      * @param toRemove the proposal to remove
      */
@@ -124,7 +124,7 @@ fun proposalSetOf(vararg proposals: Proposal) = proposals.toList().toProposalSet
 fun mutableProposalSetOf(vararg proposals: Proposal) = proposals.toList().toMutableProposalSet()
 
 /**
- * Returns a [MutableProposalSet] that contains the same proposals as this [ProposalSet].
+ * Returns a [ImmutableProposalSet] that contains the same proposals as this [ProposalSet].
  */
 fun ProposalSet.immutableCopy(): ImmutableProposalSet = this.toList().toProposalSet()
 
