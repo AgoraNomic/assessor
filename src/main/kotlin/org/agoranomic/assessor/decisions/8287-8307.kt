@@ -8,6 +8,11 @@ fun `assessment 8287 to 8307`() = assessment {
     name("8287-8307")
     quorum(5)
 
+    strengths {
+        default(3)
+        Alexis strength 4 comment PM
+    }
+
     proposals {
         proposal(8287) {
             title("Blot Stabilisation")
