@@ -779,5 +779,29 @@ Flip the Citizenship of the following player to Unregistered:
             PRESENT on 8306
             AGAINST on 8307
         }
+
+        votes(Alexis) {
+            PRESENT on 8287
+            FOR on 8288
+            FOR on 8289
+            FOR on 8290
+            FOR on 8291
+            // TODO resolve conditional vote on 8292: ENDORSE the first of omd, G., Falsifian who has a vote on this proposal.
+            AGAINST on 8293
+            AGAINST on 8294
+            // TODO resolve conditional vote on 8295: FOR if 8304 ADOPTED or if inextricable, AGAINST otherwise
+            FOR on 8296
+            FOR on 8297
+            AGAINST on 8298
+            endorse(G) on 8299
+            AGAINST on 8300
+            FOR on 8301
+            FOR on 8302
+            PRESENT on 8303
+            FOR on 8304
+            FOR on 8305
+            AGAINST on 8306
+            endorse(DMargaux) on 8307
+        }
     }
 }
