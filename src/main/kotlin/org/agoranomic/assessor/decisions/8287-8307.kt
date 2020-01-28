@@ -718,9 +718,18 @@ Flip the Citizenship of the following player to Unregistered:
     voting {
         votes(G) {
             AGAINST on 8287
+            // TODO resolve conditional votes on 8288: endorse Treasuror
             AGAINST on 8289
             AGAINST on 8290
             AGAINST on 8293
+            AGAINST on 8294
+            FOR on 8296
+            FOR on 8297
+            AGAINST on 8298
+            AGAINST on 8299
+            AGAINST on 8300
+            AGAINST on 8301
+            PRESENT on 8302
             FOR on 8305
             AGAINST on 8306
             AGAINST on 8307
