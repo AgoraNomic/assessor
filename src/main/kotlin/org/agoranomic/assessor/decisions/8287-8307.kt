@@ -827,5 +827,33 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8306
             AGAINST on 8307
         }
+
+        votes(JasonCobb) {
+            AGAINST on 8287
+            FOR on 8288
+            AGAINST on 8289
+            FOR on 8290
+            FOR on 8291
+            PRESENT on 8292
+            FOR on 8293
+            AGAINST on 8294
+            FOR on 8295
+            PRESENT on 8296
+            FOR on 8297
+            FOR on 8298
+            FOR on 8299
+            FOR on 8300
+            FOR on 8301
+            FOR on 8302
+            FOR on 8303
+            FOR on 8304
+            PRESENT on 8305
+            AGAINST on 8306
+            AGAINST on 8307
+        }
+
+        votes(Rance) {
+            endorse(JasonCobb) on all
+        }
     }
 }
