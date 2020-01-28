@@ -803,5 +803,29 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8306
             endorse(DMargaux) on 8307
         }
+
+        votes(Falsifian) {
+            PRESENT on 8287
+            // TODO resolve conditional vote on 8288: endorse(omd) unless veto
+            // TODO resolve conditional vote on 8289: PRESENT unless veto
+            endorse(G) on 8290
+            endorse(twg) on 8291
+            endorse(twg) on 8292
+            PRESENT on 8293
+            AGAINST on 8294
+            // TODO resolve conditional vote on 8295: AGAINST if any of Assessor, Arbitor, ADoP, Herald vote AGAINST, otherwise endorse(twg)
+            AGAINST on 8296
+            endorse(Aris) on 8297
+            endorse(Aris) on 8298
+            AGAINST on 8299
+            endorse(Aris) on 8300
+            // TODO resolve conditional vote on 8295: Endorse the current Rulekeepor, or AGAINST if there is no Rulekeepor, e voted PRESENT, or e does not have a current vote in this decision.
+            endorse(Aris) on 8302
+            endorse(Aris) on 8303
+            endorse(twg) on 8304
+            endorse(Alexis) on 8305
+            AGAINST on 8306
+            AGAINST on 8307
+        }
     }
 }
