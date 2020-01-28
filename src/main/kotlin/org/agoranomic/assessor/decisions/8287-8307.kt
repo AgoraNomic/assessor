@@ -769,7 +769,7 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8296
             FOR on 8297
             FOR on 8298
-            PRESENT on 8299
+            AGAINST on 8299
             FOR on 8300
             FOR on 8301
             FOR on 8302
