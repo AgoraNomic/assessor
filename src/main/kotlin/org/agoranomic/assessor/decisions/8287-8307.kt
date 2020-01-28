@@ -755,5 +755,29 @@ Flip the Citizenship of the following player to Unregistered:
         votes(Bernie) {
             endorse(twg) on all
         }
+
+        votes(Aris) {
+            PRESENT on 8287
+            FOR on 8288
+            AGAINST on 8289
+            FOR on 8290
+            FOR on 8291
+            FOR on 8292
+            FOR on 8293
+            AGAINST on 8294
+            FOR on 8295
+            FOR on 8296
+            FOR on 8297
+            FOR on 8298
+            PRESENT on 8299
+            FOR on 8300
+            FOR on 8301
+            FOR on 8302
+            FOR on 8303
+            FOR on 8304
+            AGAINST on 8305
+            PRESENT on 8306
+            AGAINST on 8307
+        }
     }
 }
