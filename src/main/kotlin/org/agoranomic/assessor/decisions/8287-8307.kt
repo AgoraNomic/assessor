@@ -855,5 +855,29 @@ Flip the Citizenship of the following player to Unregistered:
         votes(Rance) {
             endorse(JasonCobb) on all
         }
+
+        votes(Gaelan) {
+            PRESENT on 8287
+            // TODO resolve conditional votes on 8288: ENDORSE Treasuror
+            AGAINST on 8289
+            FOR on 8290
+            FOR on 8291
+            PRESENT on 8292
+            // TODO resolve conditional votes on 8293: ENDORSE Arbitor
+            AGAINST on 8294
+            FOR on 8295
+            FOR on 8296
+            FOR on 8297
+            AGAINST on 8298
+            AGAINST on 8299
+            AGAINST on 8300
+            FOR on 8301
+            FOR on 8302
+            PRESENT on 8303
+            FOR on 8304
+            // TODO resolve conditional votes on 8305: AGAINST if G. AGAINST, else PRESENT
+            AGAINST on 8306
+            AGAINST on 8307
+        }
     }
 }
