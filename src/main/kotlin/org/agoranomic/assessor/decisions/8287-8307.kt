@@ -840,9 +840,9 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8295
             PRESENT on 8296
             FOR on 8297
-            FOR on 8298
-            FOR on 8299
-            FOR on 8300
+            endorse(Aris) on 8298
+            endorse(Aris) on 8299
+            endorse(Aris) on 8300
             FOR on 8301
             FOR on 8302
             FOR on 8303
