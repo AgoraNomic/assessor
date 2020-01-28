@@ -879,5 +879,29 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8306
             AGAINST on 8307
         }
+
+        votes(omd) {
+            FOR on 8287
+            FOR on 8288
+            PRESENT on 8289
+            FOR on 8290
+            PRESENT on 8291
+            FOR on 8292
+            AGAINST on 8293
+            AGAINST on 8294
+            AGAINST on 8295
+            FOR on 8296
+            FOR on 8297
+            AGAINST on 8298
+            PRESENT on 8299
+            AGAINST on 8300
+            // TODO resolve conditional votes on 8301: endorse Rulekeepor
+            PRESENT on 8302
+            PRESENT on 8303
+            AGAINST on 8304
+            FOR on 8305
+            endorse(DMargaux) on 8306
+            endorse(Gaelan) on 8307
+        }
     }
 }
