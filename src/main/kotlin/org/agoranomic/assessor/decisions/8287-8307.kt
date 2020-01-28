@@ -1,10 +1,10 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8287 to 8307`() = assessment {
@@ -727,5 +727,33 @@ Flip the Citizenship of the following player to Unregistered:
         }
 
         o matches G
+
+        votes(twg) {
+            FOR on 8287
+            endorse(omd) on 8288
+            AGAINST on 8289
+            endorse(G) on 8290
+            FOR on 8291
+            FOR on 8292
+            FOR on 8293
+            PRESENT on 8294
+            FOR on 8295
+            PRESENT on 8296
+            endorse(Aris) on 8297
+            FOR on 8298
+            AGAINST on 8299
+            endorse(Aris) on 8300
+            endorse(JasonCobb) on 8301
+            endorse(Aris) on 8302
+            PRESENT on 8303
+            FOR on 8304
+            endorse(Alexis) on 8305
+            AGAINST on 8306
+            AGAINST on 8307
+        }
+
+        votes(Bernie) {
+            endorse(twg) on all
+        }
     }
 }
