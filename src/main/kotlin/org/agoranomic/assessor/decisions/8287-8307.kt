@@ -718,7 +718,7 @@ Flip the Citizenship of the following player to Unregistered:
     voting {
         votes(G) {
             AGAINST on 8287
-            // TODO resolve conditional votes on 8288: endorse Treasuror
+            endorse(twg) on 8288 comment "twg is Treasuror"
             AGAINST on 8289
             AGAINST on 8290
             AGAINST on 8293
@@ -795,10 +795,10 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8289
             FOR on 8290
             FOR on 8291
-            // TODO resolve conditional vote on 8292: ENDORSE the first of omd, G., Falsifian who has a vote on this proposal.
+            endorse(Falsifian) on 8292 comment "Falsifian was first of (omd, G., Falsifian) to vote on this proposal"
             AGAINST on 8293
             AGAINST on 8294
-            // TODO resolve conditional vote on 8295: FOR if 8304 ADOPTED or if inextricable, AGAINST otherwise
+            FOR on 8295 comment conditional("8304 is going to be resolved as ADOPTED")
             FOR on 8296
             FOR on 8297
             AGAINST on 8298
@@ -815,20 +815,20 @@ Flip the Citizenship of the following player to Unregistered:
 
         votes(Falsifian) {
             PRESENT on 8287
-            // TODO resolve conditional vote on 8288: endorse(omd) unless veto
-            // TODO resolve conditional vote on 8289: PRESENT unless veto
+            endorse(omd) on 8288 comment NO_VETO
+            PRESENT on 8289 comment NO_VETO
             endorse(G) on 8290
             endorse(twg) on 8291
             endorse(twg) on 8292
             PRESENT on 8293
             AGAINST on 8294
-            // TODO resolve conditional vote on 8295: AGAINST if any of Assessor, Arbitor, ADoP, Herald vote AGAINST, otherwise endorse(twg)
+            endorse(twg) on 8295 comment conditional("None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST")
             AGAINST on 8296
             endorse(Aris) on 8297
             endorse(Aris) on 8298
             AGAINST on 8299
             endorse(Aris) on 8300
-            // TODO resolve conditional vote on 8295: Endorse the current Rulekeepor, or AGAINST if there is no Rulekeepor, e voted PRESENT, or e does not have a current vote in this decision.
+            endorse(JasonCobb) on 8301 comment "Jason Cobb is the Rulekeepor"
             endorse(Aris) on 8302
             endorse(Aris) on 8303
             endorse(twg) on 8304
@@ -867,12 +867,12 @@ Flip the Citizenship of the following player to Unregistered:
 
         votes(Gaelan) {
             PRESENT on 8287
-            // TODO resolve conditional votes on 8288: ENDORSE Treasuror
+            endorse(twg) on 8288 comment "twg is the Treasuror"
             AGAINST on 8289
             FOR on 8290
             FOR on 8291
             PRESENT on 8292
-            // TODO resolve conditional votes on 8293: ENDORSE Arbitor
+            endorse(G) on 8293 comment "G. is the Arbitor"
             AGAINST on 8294
             FOR on 8295
             FOR on 8296
@@ -884,7 +884,7 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8302
             PRESENT on 8303
             FOR on 8304
-            // TODO resolve conditional votes on 8305: AGAINST if G. AGAINST, else PRESENT
+            PRESENT on 8305 comment conditional("G. not AGAINST")
             AGAINST on 8306
             AGAINST on 8307
         }
@@ -904,7 +904,7 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8298
             PRESENT on 8299
             AGAINST on 8300
-            // TODO resolve conditional votes on 8301: endorse Rulekeepor
+            endorse(JasonCobb) on 8301 comment "Jason Cobb is the Rulekeepor"
             PRESENT on 8302
             PRESENT on 8303
             AGAINST on 8304
