@@ -21,7 +21,7 @@ fun `assessment 8248 to 8249`() = assessment {
         proposal(8248) {
             title("Publishing definition")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
             coauthors(Aris)
 
             text(
@@ -60,13 +60,13 @@ allowed.]"""
     }
 
     voting {
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8248
             FOR on 8249
         }
 
         votes(Bernie) {
-            endorse(JasonCobb) on all
+            endorse(Jason) on all
         }
 
         votes(Trigon) {
@@ -92,7 +92,7 @@ allowed.]"""
         }
 
         votes(Falsifian) {
-            endorse(JasonCobb) on 8248
+            endorse(Jason) on 8248
             FOR on 8249 comment conditional("No veto, twg not AGAINST")
         }
 

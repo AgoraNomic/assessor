@@ -22,7 +22,7 @@ fun `assessment 8196 to 8201`() = assessment {
     proposals {
         proposal(8196) {
             title("Perfecting pledges (v1.2)")
-            author(JasonCobb)
+            author(Jason)
             coauthors(Falsifian)
             ai(1.7)
             text(
@@ -65,14 +65,14 @@ Amend the first paragraph of Rule 2450 ("Pledges") to read:
         proposal(8198) {
             title("Be gone, foul demon!")
             ai(1)
-            author(JasonCobb)
+            author(Jason)
             text("""Repeal Rule 2596 ("The Ritual").""")
         }
 
         proposal(8199) {
             title("Fixing instant runoff")
             ai(3)
-            author(JasonCobb)
+            author(Jason)
             text(
                 """ 
  Amend item 3 of the only list of Rule 2528 ("Voting Methods") to read:
@@ -138,7 +138,7 @@ the following list, to read in full:
             FOR on 8201
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             AGAINST on 8196
             FOR on 8198
             AGAINST on 8199
@@ -171,9 +171,9 @@ the following list, to read in full:
         }
 
         votes(twg) {
-            endorse(JasonCobb) on 8196
-            endorse(JasonCobb) on 8198
-            endorse(JasonCobb) on 8199
+            endorse(Jason) on 8196
+            endorse(Jason) on 8198
+            endorse(Jason) on 8199
             endorse(G) on 8200
             endorse(Aris) on 8201
         }

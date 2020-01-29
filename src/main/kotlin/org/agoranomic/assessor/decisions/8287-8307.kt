@@ -94,7 +94,7 @@ with:
             title("Interesting Chambers v3.1")
             ai(3.0)
             author(Bernie)
-            coauthors(Trigon, Aris, Gaelan, G, JasonCobb, twg)
+            coauthors(Trigon, Aris, Gaelan, G, Jason, twg)
 
             text(
                 """
@@ -422,7 +422,7 @@ and renumbering the list accordingly."""
             title("Administrative Adjudication v3")
             ai(2.0)
             author(Aris)
-            coauthors(Gaelan, twg, G, JasonCobb, Alexis)
+            coauthors(Gaelan, twg, G, Jason, Alexis)
 
             text(
                 """
@@ -510,7 +510,7 @@ Create the following power 3.0 rule entitled "Patches":
             title("Consolidated Regulatory Recordkeeping v2")
             ai(3.0)
             author(Aris)
-            coauthors(JasonCobb)
+            coauthors(Jason)
 
             text(
                 """
@@ -560,7 +560,7 @@ applied to regulations and memoranda, for instance.]"""
             title("Contract Patency v3")
             ai(3.0)
             author(Aris)
-            coauthors(Gaelan, JasonCobb, Falsifian)
+            coauthors(Gaelan, Jason, Falsifian)
 
             text(
                 """
@@ -650,7 +650,7 @@ Make Gaelan the Notary."""
             title("Rewards Reform Act - v1.1 Patch")
             ai(2.0)
             author(Bernie)
-            coauthors(twg, JasonCobb)
+            coauthors(twg, Jason)
 
             text(
                 """
@@ -752,7 +752,7 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8298
             AGAINST on 8299
             endorse(Aris) on 8300
-            endorse(JasonCobb) on 8301
+            endorse(Jason) on 8301
             endorse(Aris) on 8302
             PRESENT on 8303
             FOR on 8304
@@ -828,7 +828,7 @@ Flip the Citizenship of the following player to Unregistered:
             endorse(Aris) on 8298
             AGAINST on 8299
             endorse(Aris) on 8300
-            endorse(JasonCobb) on 8301 comment "Jason Cobb is the Rulekeepor"
+            endorse(Jason) on 8301 comment "Jason is the Rulekeepor"
             endorse(Aris) on 8302
             endorse(Aris) on 8303
             endorse(twg) on 8304
@@ -837,7 +837,7 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8307
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             AGAINST on 8287
             FOR on 8288
             AGAINST on 8289
@@ -862,7 +862,7 @@ Flip the Citizenship of the following player to Unregistered:
         }
 
         votes(Rance) {
-            endorse(JasonCobb) on all
+            endorse(Jason) on all
         }
 
         votes(Gaelan) {
@@ -904,7 +904,7 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8298
             PRESENT on 8299
             AGAINST on 8300
-            endorse(JasonCobb) on 8301 comment "Jason Cobb is the Rulekeepor"
+            endorse(Jason) on 8301 comment "Jason is the Rulekeepor"
             PRESENT on 8302
             PRESENT on 8303
             AGAINST on 8304

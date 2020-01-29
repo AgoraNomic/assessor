@@ -97,7 +97,7 @@ with:
         proposal(8218) {
             title("No, you didn't publish that")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -116,7 +116,7 @@ with the text
         proposal(8221) {
             title("Usage de-capitalization")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
             coauthors(Aris)
 
             text(
@@ -195,7 +195,7 @@ text "with 2 Agoran consent"."""
         proposal(8222) {
             title("Fixing Summary Judgement (v2)")
             ai(2.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -275,7 +275,7 @@ the time e would otherwise be able to register again.]"""
             title("Active Officers")
             ai(3.0)
             author(G)
-            coauthors(JasonCobb)
+            coauthors(Jason)
 
             text(
                 """
@@ -394,7 +394,7 @@ Move spaceships to Sectors as follows, based on their owners:
             title("Increased transparency v1.1")
             ai(3.0)
             author(Murphy)
-            coauthors(JasonCobb, twg)
+            coauthors(Jason, twg)
 
             text(
                 """
@@ -558,7 +558,7 @@ with this text:
             title("auto-balance")
             ai(1.0)
             author(G)
-            coauthors(JasonCobb)
+            coauthors(Jason)
 
             text(
                 """
@@ -577,9 +577,9 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             endorse(G) on 8215
             AGAINST on 8216
             endorse(G) on 8217
-            endorse(JasonCobb) on 8218
+            endorse(Jason) on 8218
             PRESENT on 8221
-            endorse(JasonCobb) on 8222
+            endorse(Jason) on 8222
             AGAINST on 8223
             PRESENT on 8224
             AGAINST on 8227
@@ -598,7 +598,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             endorse(G) on 8217
             AGAINST on 8218
             FOR on 8221
-            endorse(JasonCobb) on 8222
+            endorse(Jason) on 8222
             AGAINST on 8223
             AGAINST on 8224
             AGAINST on 8227
@@ -611,7 +611,7 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             FOR on 8234 comment NO_VETO
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8215
             AGAINST on 8216
             PRESENT on 8217
@@ -634,9 +634,9 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             endorse(G) on 8215
             AGAINST on 8216
             endorse(G) on 8217
-            endorse(JasonCobb) on 8218
+            endorse(Jason) on 8218
             PRESENT on 8221
-            endorse(JasonCobb) on 8222
+            endorse(Jason) on 8222
             AGAINST on 8223
             AGAINST on 8224
             AGAINST on 8227

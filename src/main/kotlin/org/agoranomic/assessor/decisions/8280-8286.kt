@@ -19,7 +19,7 @@ fun `assessment 8280 to 8286`() = assessment {
             title("Resolve the troubles v1.1")
             ai(3.0)
             author(Murphy)
-            coauthors(JasonCobb)
+            coauthors(Jason)
 
             text(
                 """
@@ -255,7 +255,7 @@ Repeal Rule 2597, "Line-item Veto"."""
             endorse(Aris) on 8286
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             AGAINST on 8280
             FOR on 8281
             AGAINST on 8282
@@ -300,7 +300,7 @@ Repeal Rule 2597, "Line-item Veto"."""
         }
 
         votes(Rance) {
-            endorse(JasonCobb) on all
+            endorse(Jason) on all
         }
 
         votes(Alexis) {

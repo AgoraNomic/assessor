@@ -38,7 +38,7 @@ with
         proposal(8189) {
             title("Rule 2479 Cleanup (v1.2)")
             ai(1.7)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -133,7 +133,7 @@ debt"]."""
             title("Timeline Control Ordnance v2")
             ai(3.0)
             author(Aris)
-            coauthors(omd, JasonCobb)
+            coauthors(omd, Jason)
 
             text(
                 """
@@ -205,7 +205,7 @@ to read
             AGAINST on 8195
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             PRESENT on 8188
             FOR on 8189
             FOR on 8190

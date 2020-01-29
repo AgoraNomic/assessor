@@ -180,7 +180,7 @@ a public message.
             AGAINST on 8279
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8277
             AGAINST on 8278
             PRESENT on 8279

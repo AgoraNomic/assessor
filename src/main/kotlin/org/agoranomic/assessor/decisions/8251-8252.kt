@@ -41,7 +41,7 @@ definition anyway, but may be useful to have it there]."""
         proposal(8252) {
             title("Blasphemy")
             ai(1.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -53,7 +53,7 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
     }
 
     voting {
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8251
             FOR on 8252
         }
@@ -67,7 +67,7 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
         }
 
         votes(Bernie) {
-            endorse(JasonCobb) on all
+            endorse(Jason) on all
         }
 
         votes(Falsifian) {
@@ -81,7 +81,7 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
 
         votes(Gaelan) {
             endorse(G) on 8251
-            endorse(JasonCobb) on 8252
+            endorse(Jason) on 8252
         }
 
         votes(Murphy) {

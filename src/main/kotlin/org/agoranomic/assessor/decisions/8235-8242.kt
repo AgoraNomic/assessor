@@ -22,7 +22,7 @@ fun `assessment 8235 to 8242`() = assessment {
         proposal(8235) {
             title("Unified fine creation syntax")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -48,7 +48,7 @@ not exceeding 2) on em"."""
         proposal(8236) {
             title("Definition de-capitalization")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
             coauthors(Aris)
 
             text(
@@ -116,8 +116,8 @@ Amend the only list in Rule 2124 ("Agoran Satisfaction") to read:
         proposal(8237) {
             title("Repairing Defeated Spaceships v3")
             ai(3.0)
-            author(JasonCobb)
-            coauthors(twg, JasonCobb)
+            author(Jason)
+            coauthors(twg, Jason)
 
             text(
                 """
@@ -186,7 +186,7 @@ item to the unnumbered list in between the two previously existing items:
         proposal(8239) {
             title("The Editor (v2.0.1)")
             ai(1.0)
-            author(JasonCobb)
+            author(Jason)
             coauthors(G, Aris, Trigon)
 
             text(
@@ -226,7 +226,7 @@ Enact a new Rule with power 1, title "The Editor", and text as follows:
         proposal(8240) {
             title("Regulation clarification")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -323,7 +323,7 @@ Rule 2532 (Zombies):
     }
 
     voting {
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8235
             FOR on 8236
             FOR on 8237
@@ -348,8 +348,8 @@ Rule 2532 (Zombies):
             AGAINST on 8237
             endorse(twg) on 8238
             PRESENT on 8239
-            endorse(JasonCobb) on 8240
-            endorse(JasonCobb) on 8241
+            endorse(Jason) on 8240
+            endorse(Jason) on 8241
             FOR on 8242
         }
 

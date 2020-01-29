@@ -36,7 +36,7 @@ Enact a Power-1 rule titled "Glitter" with the following text {
         proposal(8267) {
             title("Emerald Ribbons")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -54,7 +54,7 @@ to initiate and become candidates in elections.]"""
         proposal(8268) {
             title("Deputisation fix")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -260,7 +260,7 @@ to "Comptrollor", and I didn't want to merge it with that either.]"""
             title("Clean up your own mess, without making a bigger one")
             ai(1.0)
             author(Gaelan)
-            coauthors(JasonCobb)
+            coauthors(Jason)
 
             text(
                 """
@@ -323,7 +323,7 @@ with this text:
             AGAINST on 8274
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8266
             FOR on 8267
             FOR on 8268
@@ -341,7 +341,7 @@ with this text:
         }
 
         votes(Bernie) {
-            endorse(JasonCobb) on all
+            endorse(Jason) on all
         }
 
         votes(Falsifian) {

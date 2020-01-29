@@ -34,7 +34,7 @@ with
 
         proposal(8189) {
             title("Rule 2479 Cleanup (v1.2)")
-            author(JasonCobb)
+            author(Jason)
             ai(1.7)
             text(
                 """
@@ -133,7 +133,7 @@ debt"].
         proposal(8195) {
             title("Timeline Control Ordnance v2")
             author(Aris)
-            coauthors(omd, JasonCobb)
+            coauthors(omd, Jason)
             ai(3.0)
             text(
                 """
@@ -156,7 +156,7 @@ spaceship
 
         Telnaior matches G
 
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8188
             FOR on 8189
             FOR on 8190

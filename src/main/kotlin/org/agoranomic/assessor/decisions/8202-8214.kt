@@ -23,7 +23,7 @@ fun `assessment 8202 to 8214`() = assessment {
             title("Police Power")
             ai(1.7)
             author(Falsifian)
-            coauthors(JasonCobb)
+            coauthors(Jason)
 
             text(
                 """
@@ -53,7 +53,7 @@ current form. I don't know exactly what happened there.]"""
         proposal(8203) {
             title("Fixing Summary Judgement")
             ai(2.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -96,7 +96,7 @@ adoption of this proposal to the last person to vote FOR this proposal."""
         proposal(8206) {
             title("Rule 2472 Simplification")
             ai(2.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -127,7 +127,7 @@ Create the following Rule, "Supreme Power", Power=4:
         proposal(8208) {
             title("Regulated actions reform (v2)")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
             coauthors(Aris, omd, G, Falsifian)
 
             text(
@@ -185,7 +185,7 @@ Set the power of Rule 2125 to 3.1."""
             title("AFK Reform Act v1.1")
             ai(2.0)
             author(DMargaux)
-            coauthors(G, JasonCobb)
+            coauthors(G, Jason)
 
             text(
                 """
@@ -208,7 +208,7 @@ Immediately following this sentence:
         proposal(8210) {
             title("Single-party Contracts")
             ai(2.5)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -241,7 +241,7 @@ of J.N."""
         proposal(8212) {
             title("Rule Recreation Reversal")
             ai(3.0)
-            author(JasonCobb)
+            author(Jason)
 
             text(
                 """
@@ -325,7 +325,7 @@ following:
             FOR on 8214
         }
 
-        votes(JasonCobb) {
+        votes(Jason) {
             FOR on 8202
             FOR on 8203
             FOR on 8204
@@ -414,17 +414,17 @@ following:
         }
 
         votes(twg) {
-            endorse(JasonCobb) on 8202
-            endorse(JasonCobb) on 8203
+            endorse(Jason) on 8202
+            endorse(Jason) on 8203
             endorse(RLee) on 8204
             AGAINST on 8205 comment conditional("not last ballot cast to evaluate to FOR")
             endorse(DMargaux) on 8206
             AGAINST on 8207
-            endorse(JasonCobb) on 8208
+            endorse(Jason) on 8208
             AGAINST on 8209
             AGAINST on 8210
             endorse(G) on 8211
-            endorse(JasonCobb) on 8212
+            endorse(Jason) on 8212
             endorse(nch) on 8213
             endorse(nch) on 8214
         }
