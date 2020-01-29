@@ -25,13 +25,13 @@ data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote(
     override fun simplified(): SimpleVote = this
 }
 
-data class SingleProposalVoteMap(val map: ImmutableMap<Player, Vote>) {
-    constructor(map: Map<Player, Vote>) : this(map.toImmutableMap())
+data class SingleProposalVoteMap(val map: ImmutableMap<Person, Vote>) {
+    constructor(map: Map<Person, Vote>) : this(map.toImmutableMap())
 
     val voters = map.keys
     val voteCount = voters.size
 
-    operator fun get(player: Player) = map[player] ?: throw IllegalArgumentException("Player is not a voter")
+    operator fun get(person: Person) = map[person] ?: throw IllegalArgumentException("Player is not a voter")
 }
 
 data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProposalVoteMap>) {
@@ -50,16 +50,16 @@ data class LookupProposal(val func: (ProposalNumber) -> Proposal) {
 
 interface VoteContext {
     val lookupProposal: LookupProposal
-    fun resolve(proposal: Proposal, voter: Player): Vote?
+    fun resolve(proposal: Proposal, voter: Person): Vote?
 }
 
-typealias ResolveFunc = (proposal: Proposal, voter: Player) -> Vote?
+typealias ResolveFunc = (proposal: Proposal, voter: Person) -> Vote?
 
 data class StandardVoteContext(
     val resolveFunc: ResolveFunc,
     override val lookupProposal: LookupProposal
 ) : VoteContext {
-    override fun resolve(proposal: Proposal, voter: Player): Vote? = resolveFunc(proposal, voter)
+    override fun resolve(proposal: Proposal, voter: Person): Vote? = resolveFunc(proposal, voter)
 }
 
 typealias VoteFunc = (proposal: Proposal, context: VoteContext) -> Vote?

@@ -43,8 +43,8 @@ fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, vo
     emitVoteKind(VoteKind.PRESENT)
 }
 
-fun StringBuilder.emitSingleVotingStrength(player: Player, strength: VotingStrengthWithComment) {
-    emitString("${player.name} has voting strength ${strength.value.raw}")
+fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStrengthWithComment) {
+    emitString("${person.name} has voting strength ${strength.value.raw}")
 
     if (strength.comment != null) {
         emitString(" (${strength.comment})")

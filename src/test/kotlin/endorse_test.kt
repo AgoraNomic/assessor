@@ -44,7 +44,7 @@ class `endorse tests` {
         }
     }
 
-    private fun doTestEndorse(endorsement: HalfFunctionVote, proposal: Proposal, expectedEndorsee: Player, endorseeVote: Vote) {
+    private fun doTestEndorse(endorsement: HalfFunctionVote, proposal: Proposal, expectedEndorsee: Person, endorseeVote: Vote) {
         var called = false
 
         val resolveFunc: ResolveFunc = { resolveProp, resolvePlayer ->

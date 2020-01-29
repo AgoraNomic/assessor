@@ -6,10 +6,10 @@ fun json(number: Number) = JsonLiteral(number)
 fun json(string: String) = JsonLiteral(string)
 fun json(list: List<JsonElement>) = JsonArray(list)
 
-fun json(player: Player) = json(player.name)
+fun json(person: Person) = json(person.name)
 
 @JvmName("jsonOfPlayers")
-fun json(iterable: Iterable<Player>) = json(iterable.map { json(it) })
+fun json(iterable: Iterable<Person>) = json(iterable.map { json(it) })
 
 fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
 fun json(proposalAI: ProposalAI) = json(proposalAI.raw)

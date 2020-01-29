@@ -6,11 +6,11 @@ import org.agoranomic.assessor.lib.*
 @AssessmentDSL
 class _VotingStrengthReceiver {
     private var defaultStrength: VotingStrength? = null
-    private var customStrengths = mutableMapOf<Player, _MutableVotingStrength>()
+    private var customStrengths = mutableMapOf<Person, _MutableVotingStrength>()
 
     data class _MutableVotingStrength(val value: VotingStrength, var comment: String? = null)
 
-    infix fun Player.strength(votingStrength: VotingStrength): _MutableVotingStrength {
+    infix fun Person.strength(votingStrength: VotingStrength): _MutableVotingStrength {
         val strength =
             _MutableVotingStrength(
                 votingStrength
@@ -19,8 +19,8 @@ class _VotingStrengthReceiver {
         return strength
     }
 
-    infix fun Player.strength(votingStrength: RawVotingStrength) = this.strength(VotingStrength(votingStrength))
-    infix fun Player.strength(votingStrength: Int) = this.strength(VotingStrength(votingStrength))
+    infix fun Person.strength(votingStrength: RawVotingStrength) = this.strength(VotingStrength(votingStrength))
+    infix fun Person.strength(votingStrength: Int) = this.strength(VotingStrength(votingStrength))
 
     infix fun _MutableVotingStrength.comment(value: String) {
         this.comment = value

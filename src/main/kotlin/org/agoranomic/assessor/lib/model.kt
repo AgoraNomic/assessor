@@ -5,7 +5,7 @@ import kotlinx.collections.immutable.toImmutableList
 import java.math.BigDecimal
 import java.math.BigInteger
 
-data class Player(val name: String)
+data class Person(val name: String)
 
 typealias RawProposalNumber = BigInteger
 
@@ -22,16 +22,16 @@ data class Proposal(
     val number: ProposalNumber,
     val ai: ProposalAI,
     val title: String,
-    val author: Player,
-    val coauthors: ImmutableList<Player>,
+    val author: Person,
+    val coauthors: ImmutableList<Person>,
     val text: String
 ) {
     constructor(
         number: ProposalNumber,
         ai: ProposalAI,
         title: String,
-        author: Player,
-        coauthors: List<Player>,
+        author: Person,
+        coauthors: List<Person>,
         text: String
     ) : this(
         number,

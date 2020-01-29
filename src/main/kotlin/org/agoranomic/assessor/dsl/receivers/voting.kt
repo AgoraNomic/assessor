@@ -9,33 +9,33 @@ import org.agoranomic.assessor.lib.*
 class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
     constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
 
-    private val votes = mutableMapOf<Player, Map<ProposalNumber, PendingVote>>()
+    private val votes = mutableMapOf<Person, Map<ProposalNumber, PendingVote>>()
 
-    infix fun Player.matches(other: Player) = votes(this) {
+    infix fun Person.matches(other: Person) = votes(this) {
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
-    fun votes(player: Player, block: _VotesReceiver.() -> Unit) {
-        require(!votes.containsKey(player)) { "Votes already specified for player ${player.name}" }
+    fun votes(person: Person, block: _VotesReceiver.() -> Unit) {
+        require(!votes.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
         val receiver = _VotesReceiver(proposals.map { it.number })
         receiver.block()
         val result = receiver.compile()
 
-        votes[player] = result
+        votes[person] = result
     }
 
 
-    private fun resolveVote(proposal: Proposal, player: Player, vararg playersSeen: Player): Vote? {
-        if (playersSeen.contains(player)) return InextricableVote(comment = null)
+    private fun resolveVote(proposal: Proposal, person: Person, vararg playersSeen: Person): Vote? {
+        if (playersSeen.contains(person)) return InextricableVote(comment = null)
 
-        val newPlayersSeen = (playersSeen.toList() + player).toTypedArray()
+        val newPlayersSeen = (playersSeen.toList() + person).toTypedArray()
         val nextResolve: ResolveFunc = { nextProp, nextPlayer -> resolveVote(nextProp, nextPlayer, *newPlayersSeen) }
 
         val lookupProposal = LookupProposal { this.proposals.lookupOrFail(it) }
 
-        if (votes.containsKey(player)) {
-            val playerVotes = votes.getOrFail(player)
+        if (votes.containsKey(person)) {
+            val playerVotes = votes.getOrFail(person)
 
             if (playerVotes.containsKey(proposal.number)) {
                 return playerVotes.getOrFail(proposal.number).compile(
@@ -54,7 +54,7 @@ class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
         val voters = votes.keys
 
         for (proposal in proposals) {
-            val proposalVotes = mutableMapOf<Player, Vote>()
+            val proposalVotes = mutableMapOf<Person, Vote>()
 
             for (voter in voters) {
                 val vote = resolveVote(proposal, voter)

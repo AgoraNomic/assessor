@@ -5,8 +5,8 @@ import org.agoranomic.assessor.lib.*
 fun testProposalNumber(num: TestNumber): ProposalNumber = ProposalNumber(num)
 fun testProposalAI(num: TestNumber): ProposalAI = ProposalAI(((num % 100) / 10).toBigDecimal())
 fun testProposalTitle(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Title")
-fun testProposalAuthor(num: TestNumber): Player = testPlayer(subReqNum(num), type = "Proposal Author")
-fun testProposalCoauthor(num: TestNumber): Player = testPlayer(subReqNum(num), type = "Proposal Coauthor")
+fun testProposalAuthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Author")
+fun testProposalCoauthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Coauthor")
 fun testProposalCoauthors(num: TestNumber) = testList(subReqNum(num)) { testProposalCoauthor(it) }
 fun testProposalText(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Text")
 

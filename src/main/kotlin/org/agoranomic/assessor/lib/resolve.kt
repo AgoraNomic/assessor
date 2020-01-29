@@ -19,19 +19,19 @@ enum class ProposalResult {
     }
 }
 
-data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Player, SimpleVote>) {
-    constructor(map: Map<Player, SimpleVote>) : this(map.toImmutableMap())
+data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Person, SimpleVote>) {
+    constructor(map: Map<Person, SimpleVote>) : this(map.toImmutableMap())
 
     val voters = map.keys
     val voteCount = voters.size
 
-    operator fun get(p: Player) = map[p] ?: throw IllegalArgumentException("Player is not a voter")
+    operator fun get(p: Person) = map[p] ?: throw IllegalArgumentException("Player is not a voter")
 
-    fun forEach(f: (Player, SimpleVote) -> Unit) {
+    fun forEach(f: (Person, SimpleVote) -> Unit) {
         map.forEach(f)
     }
 
-    fun filterVoteKind(kind: VoteKind): Set<Player> {
+    fun filterVoteKind(kind: VoteKind): Set<Person> {
         return map.filterValues { vote -> vote.kind == kind }.keys
     }
 }

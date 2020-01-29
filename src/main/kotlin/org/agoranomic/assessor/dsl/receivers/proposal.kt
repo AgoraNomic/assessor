@@ -9,8 +9,8 @@ class _ProposalReceiver(private val number: ProposalNumber) {
     private var title: String? = null
     private var text: String? = null
     private var ai: ProposalAI? = null
-    private var author: Player? = null
-    private var coauthors: List<Player>? = null
+    private var author: Person? = null
+    private var coauthors: List<Person>? = null
 
     fun title(str: String) {
         require(title == null) { "Title specified twice" }
@@ -22,14 +22,14 @@ class _ProposalReceiver(private val number: ProposalNumber) {
         text = str
     }
 
-    fun author(value: Player) {
+    fun author(value: Person) {
         require(author == null) { "Author specified twice" }
         author = value
     }
 
-    fun coauthors(vararg players: Player) {
+    fun coauthors(vararg people: Person) {
         require(coauthors == null) { "Coauthors specified twice" }
-        coauthors = players.toList()
+        coauthors = people.toList()
     }
 
     fun adoption_index(value: ProposalAI) {

@@ -27,11 +27,11 @@ data class VotingStrengthWithComment(val value: VotingStrength, val comment: Str
 
 class VotingStrengthMap(
     val defaultStrength: VotingStrength,
-    private val strengthMap: ImmutableMap<Player, VotingStrengthWithComment>
+    private val strengthMap: ImmutableMap<Person, VotingStrengthWithComment>
 ) {
     constructor(
         defaultStrength: VotingStrength,
-        strengthMap: Map<Player, VotingStrengthWithComment>
+        strengthMap: Map<Person, VotingStrengthWithComment>
     ) : this(
         defaultStrength,
         strengthMap.toImmutableMap()
@@ -39,7 +39,7 @@ class VotingStrengthMap(
 
     val specialPlayers = strengthMap.keys
 
-    operator fun get(player: Player) = strengthMap[player] ?: VotingStrengthWithComment(
+    operator fun get(person: Person) = strengthMap[person] ?: VotingStrengthWithComment(
         defaultStrength
     )
 }
