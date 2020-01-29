@@ -720,7 +720,7 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8287
             endorse(twg) on 8288 comment "twg is Treasuror"
             AGAINST on 8289
-            AGAINST on 8290
+            FOR on 8290
             AGAINST on 8293
             AGAINST on 8294
             FOR on 8296
