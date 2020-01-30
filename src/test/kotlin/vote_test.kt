@@ -71,7 +71,7 @@ class `VotingStrengthMap tests`() {
     @Test
     fun `specialPlayers empty for empty map`() {
         val emptyMap = VotingStrengthMap(firstTestVotingStrength(), emptyMap())
-        assertEquals(emptyMap.specialPlayers, emptySet<Person>())
+        assertEquals(emptyMap.specialPeople, emptySet<Person>())
     }
 
     @Test
@@ -87,7 +87,7 @@ class `VotingStrengthMap tests`() {
             )
         )
 
-        assertEquals(map.specialPlayers.toSet(), setOf(firstPlayer, secondPlayer))
+        assertEquals(map.specialPeople.toSet(), setOf(firstPlayer, secondPlayer))
     }
 }
 

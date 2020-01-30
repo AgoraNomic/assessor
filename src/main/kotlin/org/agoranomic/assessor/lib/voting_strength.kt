@@ -37,7 +37,7 @@ class VotingStrengthMap(
         strengthMap.toImmutableMap()
     )
 
-    val specialPlayers = strengthMap.keys
+    val specialPeople = strengthMap.keys
 
     operator fun get(person: Person) = strengthMap[person] ?: VotingStrengthWithComment(
         defaultStrength

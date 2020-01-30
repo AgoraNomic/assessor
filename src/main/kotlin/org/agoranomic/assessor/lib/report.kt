@@ -55,7 +55,7 @@ fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStren
 
 
 fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthMap) {
-    val sortedPlayers = votingStrengthMap.specialPlayers.sortedBy { it.name }
+    val sortedPlayers = votingStrengthMap.specialPeople.sortedBy { it.name }
 
     if (sortedPlayers.isNotEmpty()) {
         emitLine("Voting strengths (${votingStrengthMap.defaultStrength.raw} unless otherwise noted):")

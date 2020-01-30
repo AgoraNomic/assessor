@@ -35,7 +35,7 @@ fun json(votingStrength: VotingStrengthWithComment) = json {
 
 fun json(votingStrengths: VotingStrengthMap) = json {
     "default" to json(votingStrengths.defaultStrength)
-    "players" to json(votingStrengths.specialPlayers.map {
+    "players" to json(votingStrengths.specialPeople.map {
         json {
             "player" to json(it)
             "strength" to json(votingStrengths[it])
