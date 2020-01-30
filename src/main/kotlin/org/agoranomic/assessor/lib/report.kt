@@ -29,12 +29,32 @@ fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number.raw} (${proposal.title})")
 }
 
-fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, voteKindVoteCounts: Boolean) {
+private val strengthFootnoteMarkerMap = mapOf(
+    0 to "~",
+    1 to "!",
+    2 to "@",
+    3 to "#",
+    4 to "$",
+    5 to "%",
+    6 to "^",
+    7 to "&",
+    8 to "*",
+    9 to "+",
+    10 to "=",
+    11 to "/",
+    12 to "?",
+    13 to "<",
+    14 to ">"
+)
+
+fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, strengthMap: VotingStrengthMap, voteKindVoteCounts: Boolean) {
+    val actualFootnotes = strengthFootnoteMarkerMap.mapKeys { (k, _) -> VotingStrength(k) }.filterKeys { it != strengthMap.defaultStrength }
+
     fun emitVoteKind(voteKind: VoteKind) {
         val matchingVotes = voteMap.filterVoteKind(voteKind)
 
         emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
-        emitString(matchingVotes.map { it.name }.sorted().joinToString(", "))
+        emitString(matchingVotes.sortedBy { it.name }.map { "${it.name}${actualFootnotes[strengthMap[it].value] ?: ""}" }.joinToString(", "))
         emitLine()
     }
 
@@ -118,6 +138,21 @@ fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     }
 }
 
+fun StringBuilder.emitStrengthFootnotes(strengthMap: Iterable<VotingStrengthMap>) {
+    val specialVotingStrengths = strengthMap.flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }.toSet()
+
+    if (specialVotingStrengths.isNotEmpty()) {
+        val footnotes = specialVotingStrengths.sorted().map {
+            val intValue = it.toInt()
+            intValue to strengthFootnoteMarkerMap[intValue]!!
+        }.map { (value, symbol) -> "$symbol: player has voting strength $value" }.joinToString(separator = "\n")
+
+        emitWithDelimiter("Voting Strengths")
+        emitString(footnotes)
+        emitLine()
+    }
+}
+
 fun StringBuilder.emitWithDelimiter(string: String) {
     emitLine(string)
     emitLine("=".repeat(string.length))
@@ -147,13 +182,15 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
             val resolution = resolutionMap[proposal.number]
 
             emitProposalHeader(proposal)
-            emitProposalVotes(resolution.votes, config.voteKindBallotCount)
+            emitProposalVotes(resolution.votes, resolutionMap.votingStrengthsFor(proposal.number), config.voteKindBallotCount)
             if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
             emitProposalAI(resolution, proposal.ai)
             emitProposalOutcome(resolution)
             if (config.voteComments) emitVoteComments(resolution)
             emitLine()
         }
+
+        emitStrengthFootnotes(resolutionMap.votingStrengths.values)
 
         emitLine()
 
