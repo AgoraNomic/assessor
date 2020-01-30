@@ -29,7 +29,9 @@ data class VotingStrengthWithComment(val value: VotingStrength, val comment: Str
 interface VotingStrengthMap {
     val defaultStrength: VotingStrength
     val specialPeople: ImmutableSet<Person>
-    operator fun get(person: Person): VotingStrengthWithComment
+
+    fun getOpt(person: Person): VotingStrengthWithComment?
+    operator fun get(person: Person): VotingStrengthWithComment = getOpt(person) ?: VotingStrengthWithComment(defaultStrength)
 }
 
 class SimpleVotingStrengthMap(
@@ -46,7 +48,5 @@ class SimpleVotingStrengthMap(
 
     override val specialPeople: ImmutableSet<Person> get() = strengthMap.keys
 
-    override operator fun get(person: Person) = strengthMap[person] ?: VotingStrengthWithComment(
-        defaultStrength
-    )
+    override fun getOpt(person: Person) = strengthMap[person]
 }
