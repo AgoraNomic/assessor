@@ -42,7 +42,7 @@ class `VotingStrength tests`() {
     }
 }
 
-class `VotingStrengthMap tests`() {
+class `SimpleVotingStrengthMap tests`() {
     @Test
     fun `returns provided value for special player`() {
         val specialPlayer = firstTestPlayer()
@@ -50,7 +50,7 @@ class `VotingStrengthMap tests`() {
         val default = firstTestVotingStrength()
         val override = firstTestVotingStrengthWithComment()
 
-        val map = VotingStrengthMap(default, mapOf(specialPlayer to override))
+        val map = SimpleVotingStrengthMap(default, mapOf(specialPlayer to override))
 
         assertEquals(map[specialPlayer], override)
     }
@@ -63,14 +63,14 @@ class `VotingStrengthMap tests`() {
         val default = firstTestVotingStrength()
         val override = firstTestVotingStrengthWithComment()
 
-        val map = VotingStrengthMap(default, mapOf(special to override))
+        val map = SimpleVotingStrengthMap(default, mapOf(special to override))
 
         assertEquals(map[nonspecial], VotingStrengthWithComment(default, comment = null))
     }
 
     @Test
     fun `specialPlayers empty for empty map`() {
-        val emptyMap = VotingStrengthMap(firstTestVotingStrength(), emptyMap())
+        val emptyMap = SimpleVotingStrengthMap(firstTestVotingStrength(), emptyMap())
         assertEquals(emptyMap.specialPeople, emptySet<Person>())
     }
 
@@ -79,7 +79,7 @@ class `VotingStrengthMap tests`() {
         val firstPlayer = firstTestPlayer()
         val secondPlayer = secondTestPlayer()
 
-        val map = VotingStrengthMap(
+        val map = SimpleVotingStrengthMap(
             firstTestVotingStrength(),
             mapOf(
                 firstPlayer to firstTestVotingStrengthWithComment(),

@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableMap
 import java.math.BigInteger
 
@@ -25,10 +26,16 @@ operator fun Int.times(other: VotingStrength) = this.toBigInteger() * other
 
 data class VotingStrengthWithComment(val value: VotingStrength, val comment: String? = null)
 
-class VotingStrengthMap(
-    val defaultStrength: VotingStrength,
+interface VotingStrengthMap {
+    val defaultStrength: VotingStrength
+    val specialPeople: ImmutableSet<Person>
+    operator fun get(person: Person): VotingStrengthWithComment
+}
+
+class SimpleVotingStrengthMap(
+    override val defaultStrength: VotingStrength,
     private val strengthMap: ImmutableMap<Person, VotingStrengthWithComment>
-) {
+) : VotingStrengthMap {
     constructor(
         defaultStrength: VotingStrength,
         strengthMap: Map<Person, VotingStrengthWithComment>
@@ -37,9 +44,9 @@ class VotingStrengthMap(
         strengthMap.toImmutableMap()
     )
 
-    val specialPeople get() = strengthMap.keys
+    override val specialPeople: ImmutableSet<Person> get() = strengthMap.keys
 
-    operator fun get(person: Person) = strengthMap[person] ?: VotingStrengthWithComment(
+    override operator fun get(person: Person) = strengthMap[person] ?: VotingStrengthWithComment(
         defaultStrength
     )
 }

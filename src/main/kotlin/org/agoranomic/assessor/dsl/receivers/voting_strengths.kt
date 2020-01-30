@@ -34,7 +34,7 @@ class _VotingStrengthReceiver {
     fun default(strength: Int) = default(VotingStrength(strength))
 
     fun compile(): VotingStrengthMap {
-        return VotingStrengthMap(
+        return SimpleVotingStrengthMap(
             defaultStrength ?: error("Must specify default voting strength"),
             customStrengths.mapValues { (_, strength) -> VotingStrengthWithComment(strength.value, strength.comment) }
         )
