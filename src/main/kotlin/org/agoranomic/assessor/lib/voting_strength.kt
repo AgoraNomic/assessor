@@ -3,6 +3,7 @@ package org.agoranomic.assessor.lib
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.collections.immutable.toImmutableSet
 import java.math.BigInteger
 
 typealias RawVotingStrength = BigInteger
@@ -49,4 +50,22 @@ class SimpleVotingStrengthMap(
     override val specialPeople: ImmutableSet<Person> get() = strengthMap.keys
 
     override fun getOpt(person: Person) = strengthMap[person]
+}
+
+class OverrideVotingStrengthMap(
+    val overriden: VotingStrengthMap,
+    private val overrideMap: ImmutableMap<Person, VotingStrengthWithComment>
+) : VotingStrengthMap {
+    constructor(
+        overriden: VotingStrengthMap,
+        overrideMap: Map<Person, VotingStrengthWithComment>
+    ) : this(
+        overriden,
+        overrideMap.toImmutableMap()
+    )
+
+    override val defaultStrength: VotingStrength get() = overriden.defaultStrength
+    override val specialPeople: ImmutableSet<Person> get() = (overriden.specialPeople + overrideMap.keys).toImmutableSet()
+
+    override fun getOpt(person: Person): VotingStrengthWithComment? = overrideMap[person] ?: overriden.getOpt(person)
 }
