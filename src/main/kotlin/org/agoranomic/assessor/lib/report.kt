@@ -4,28 +4,28 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
 
-fun StringBuilder.emitLine() {
+private fun StringBuilder.emitLine() {
     this.append('\n')
 }
 
-fun StringBuilder.emitString(string: String) {
+private fun StringBuilder.emitString(string: String) {
     this.append(string)
 }
 
-fun StringBuilder.emitLine(string: String) {
+private fun StringBuilder.emitLine(string: String) {
     emitString(string)
     emitLine()
 }
 
-fun StringBuilder.emitHeader() {
+private fun StringBuilder.emitHeader() {
     emitLine("I hereby resolve the Agoran decisions to adopt the below proposals.")
 }
 
-fun StringBuilder.emitQuorum(quorum: Int) {
+private fun StringBuilder.emitQuorum(quorum: Int) {
     emitLine("The quorum for all below decisions was $quorum.")
 }
 
-fun StringBuilder.emitProposalHeader(proposal: Proposal) {
+private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number.raw} (${proposal.title})")
 }
 
@@ -47,7 +47,7 @@ private val strengthFootnoteMarkerMap = mapOf(
     14 to ">"
 )
 
-fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, strengthMap: VotingStrengthMap, voteKindVoteCounts: Boolean) {
+private fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, strengthMap: VotingStrengthMap, voteKindVoteCounts: Boolean) {
     val actualFootnotes = strengthFootnoteMarkerMap.mapKeys { (k, _) -> VotingStrength(k) }.filterKeys { it != strengthMap.defaultStrength }
 
     fun emitVoteKind(voteKind: VoteKind) {
@@ -63,7 +63,7 @@ fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, st
     emitVoteKind(VoteKind.PRESENT)
 }
 
-fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStrengthWithComment) {
+private fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStrengthWithComment) {
     emitString("${person.name} has voting strength ${strength.value.raw}")
 
     if (strength.comment != null) {
@@ -74,7 +74,7 @@ fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStren
 }
 
 
-fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthMap) {
+private fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthMap) {
     val sortedPlayers = votingStrengthMap.specialPeople.sortedBy { it.name }
 
     if (sortedPlayers.isNotEmpty()) {
@@ -87,15 +87,15 @@ fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthMap) {
     }
 }
 
-fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
+private fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
     emitLine("AI (F/A): ${resolutionData.strengthFor.raw}/${resolutionData.strengthAgainst.raw} (AI=${ai.raw})")
 }
 
-fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
+private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
     emitLine("OUTCOME: ${resolutionData.result.readableName}")
 }
 
-fun StringBuilder.emitVoteComments(resolutionData: ResolutionData) {
+private fun StringBuilder.emitVoteComments(resolutionData: ResolutionData) {
     val filteredEntires = resolutionData.votes.map.filterValues { it.comment != null }.entries.sortedBy { it.key.name }
 
     if (filteredEntires.isNotEmpty()) {
@@ -107,7 +107,7 @@ fun StringBuilder.emitVoteComments(resolutionData: ResolutionData) {
     }
 }
 
-fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
+private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     fun emitSeparator() {
         emitLine("//////////////////////////////////////////////////////////////////////")
     }
@@ -138,7 +138,7 @@ fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     }
 }
 
-fun StringBuilder.emitStrengthFootnotes(strengthMap: Iterable<VotingStrengthMap>) {
+private fun StringBuilder.emitStrengthFootnotes(strengthMap: Iterable<VotingStrengthMap>) {
     val specialVotingStrengths = strengthMap.flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }.toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {
@@ -153,7 +153,7 @@ fun StringBuilder.emitStrengthFootnotes(strengthMap: Iterable<VotingStrengthMap>
     }
 }
 
-fun StringBuilder.emitWithDelimiter(string: String) {
+private fun StringBuilder.emitWithDelimiter(string: String) {
     emitLine(string)
     emitLine("=".repeat(string.length))
 }
