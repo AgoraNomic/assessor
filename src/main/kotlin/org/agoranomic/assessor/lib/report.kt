@@ -141,8 +141,6 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
         emitLine()
         emitQuorum(resolutionMap.quorum)
         emitLine()
-        emitVotingStrengths(resolutionMap.votingStrengths)
-        emitLine()
         emitLine()
 
         for (proposal in sortedProposals) {

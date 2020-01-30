@@ -90,47 +90,58 @@ data class ProposalResolutionMap(
     val proposals: ImmutableSet<Proposal>,
     private val map: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: Int,
-    val votingStrengths: VotingStrengthMap
+    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>
 ) {
     constructor(
         assessmentName: String,
         proposals: Set<Proposal>,
         map: Map<ProposalNumber, ResolutionData>,
         quorum: Int,
-        votingStrengths: VotingStrengthMap
+        votingStrengths: Map<ProposalNumber, VotingStrengthMap>
     ) : this(
         assessmentName,
         proposals.toImmutableSet(),
         map.toImmutableMap(),
         quorum,
-        votingStrengths
+        votingStrengths.toImmutableMap()
     )
+
+    init {
+        require(proposals.map { it.number }.toSet() == votingStrengths.keys.toSet())
+    }
 
     operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
+    fun votingStrengthsFor(proposal: ProposalNumber) = votingStrengths[proposal]!!
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
 }
 
 data class AssessmentData(
     val name: String,
     val quorum: Int,
-    val votingStrengths: VotingStrengthMap,
+    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>,
     val proposals: ImmutableSet<Proposal>,
     val votes: MultiProposalVoteMap
 ) {
     constructor(
         name: String,
         quorum: Int,
-        votingStrengths: VotingStrengthMap,
+        votingStrengths: Map<ProposalNumber, VotingStrengthMap>,
         proposals: Set<Proposal>,
         votes: MultiProposalVoteMap
     ) : this(
         name,
         quorum,
-        votingStrengths,
+        votingStrengths.toImmutableMap(),
         proposals.toImmutableSet(),
         votes
     )
+
+    init {
+        require(votingStrengths.keys.toSet() == proposals.map { it.number }.toSet())
+    }
+
+    fun votingStrengthsOf(proposal: ProposalNumber) = votingStrengths[proposal]!!
 }
 
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
@@ -139,7 +150,7 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     assessmentData.proposals.forEach { proposal ->
         map += proposal.number to resolve(
             assessmentData.quorum,
-            assessmentData.votingStrengths,
+            assessmentData.votingStrengthsOf(proposal.number),
             proposal.ai,
             assessmentData.votes[proposal.number]
         )

@@ -72,7 +72,6 @@ fun json(resolutionMap: ProposalResolutionMap) = json {
     "name" to json(resolutionMap.assessmentName)
     "proposals" to json(resolutionMap.proposals)
     "quorum" to json(resolutionMap.quorum)
-    "strengths" to json(resolutionMap.votingStrengths)
     "resolutions" to json(resolutionMap.proposals.map { proposal ->
         val proposalNumber = proposal.number
         val resolution = resolutionMap[proposalNumber]
@@ -80,6 +79,7 @@ fun json(resolutionMap: ProposalResolutionMap) = json {
         json {
             "proposal" to json(proposalNumber)
             "resolution" to json(resolution)
+            "strengths" to json(resolutionMap.votingStrengthsFor(proposalNumber))
         }
     })
 }
