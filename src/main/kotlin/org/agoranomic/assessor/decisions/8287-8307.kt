@@ -2,8 +2,8 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.UseAssessment
-import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
@@ -13,7 +13,24 @@ fun `assessment 8287 to 8307`() = assessment {
 
     strengths {
         default(3)
-        Alexis strength 4 comment PM
+
+        // 8290 comes after 8291 because of a CoE
+        val after8291 = ((8292..8307).toList() + 8290).map { ProposalNumber(it) }
+        val before8291 = proposals.map { it.number } - after8291
+
+        for (prop in before8291) {
+            proposal(prop) {
+                // Alexis was PM and thus had a bonus for all proposals
+                Alexis strength 4
+            }
+        }
+
+        for (prop in after8291) {
+            proposal(prop) {
+                // After 8291, the PM only gets a bonus for proposals with ministries, and the speaker gets a bonus for all
+                G strength 4
+            }
+        }
     }
 
     proposals {
