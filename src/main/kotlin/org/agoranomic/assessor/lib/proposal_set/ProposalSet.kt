@@ -5,10 +5,17 @@ import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.checkMismatch
 
+/**
+ * Thrown when by a [ProposalSet] when a proposal is requested but does not exist.
+ */
 data class NoSuchProposalException(
     val number: ProposalNumber
 ) : Exception("Request for unknown proposal by number: ${number.raw}")
 
+/**
+ * Thrown when a [ProposalSet] is passed a [Proposal] when it contains a [Proposal] with the same
+ * [number][Proposal.number] but with differing other data.
+ */
 data class ProposalDataMismatchException(
     val next: Proposal,
     val original: Proposal
