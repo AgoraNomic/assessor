@@ -35,6 +35,14 @@ operator fun ProposalSet.minus(other: Proposal): ProposalSet {
 }
 
 /**
+ * Equivalent to converting the list containing the [Proposals][Proposal] in this, excluding those in `other`, into a
+ * [ProposalSet].
+ */
+operator fun ProposalSet.minus(other: ProposalSet): ProposalSet {
+    return (this.toList() - other.toList()).toProposalSet()
+}
+
+/**
  * Equivalent to calling `add(other)`.
  */
 operator fun MutableProposalSet.plusAssign(other: Proposal) {
