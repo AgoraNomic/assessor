@@ -99,28 +99,54 @@ interface MutableProposalSet : ProposalSet, MutableIterable<Proposal> {
     fun remove(toRemove: ProposalNumber)
 }
 
+/**
+ * Equivalent to calling [MutableProposalSet.add] for each of the members.
+ */
 fun MutableProposalSet.addAll(toAdd: Iterable<Proposal>) {
     toAdd.forEach { add(it) }
 }
 
+/**
+ * Checks for a data mismatch, then calls `remove(toRemove.number)`.
+ * @throws ProposalDataMismatchException if this [ProposalSet] contains a [Proposal] with the same
+ * [number][Proposal.number] but different data.
+ */
 fun MutableProposalSet.remove(toRemove: Proposal) {
     checkMismatch(toRemove)
     remove(toRemove.number)
 }
 
+/**
+ * Equivalent to calling [MutableProposalSet.remove] for each of the members.
+ */
 @JvmName("removeAllNumbers")
 fun MutableProposalSet.removeAll(toRemove: Iterable<ProposalNumber>) {
     toRemove.forEach { remove(it) }
 }
 
+/**
+ * Equivalent to calling [MutableProposalSet.remove] for each of the members.
+ * @throws ProposalDataMismatchException if this [ProposalSet] contains a [Proposal] with the same
+ * [number][Proposal.number] but different data.
+ */
 @JvmName("removeAll")
 fun MutableProposalSet.removeAll(toRemove: Iterable<Proposal>) {
     toRemove.forEach { remove(it) }
 }
 
+/**
+ * Returns an empty [ImmutableProposalSet].
+ */
 fun emptyProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.empty()
+
+/**
+ * Returns an empty [MutableProposalSet].
+ */
 fun emptyMutableProposalSet(): MutableProposalSet = MutableListProposalSet.empty()
 
+/**
+ * Thrown when a container contains multiple [proposals][Proposal] with the same [number][Proposal.number].
+ */
 data class DuplicateProposalNumberException(
     val number: ProposalNumber
 ) : Exception("Duplicate proposal number: ${number.raw}")
