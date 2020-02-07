@@ -15,10 +15,12 @@ class ProposalStrengthReceiver(val globalStrengths: ImmutableMap<Person, VotingS
         strengthMap[this] = VotingStrength(value)
     }
 
-    infix fun Person.add(value: Int) {
+    infix fun Person.add(value: VotingStrength) {
         if (!strengthMap.containsKey(this)) strengthMap[this] = globalStrengths.getOrFail(this)
-        strengthMap[this] = strengthMap.getOrFail(this) + VotingStrength(value)
+        strengthMap[this] = strengthMap.getOrFail(this) + value
     }
+
+    infix fun Person.add(value: Int) = this add VotingStrength(value)
 
     fun compile(): Map<Person, VotingStrengthWithComment> {
         return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }
