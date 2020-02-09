@@ -562,7 +562,7 @@ least one proposal).]"""
         }
 
         votes(omd) {
-            AGAINST on 8308
+            FOR on 8308
             AGAINST on 8309
             PRESENT on 8310
             FOR on 8311
