@@ -138,7 +138,11 @@ private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     }
 }
 
-private fun StringBuilder.emitStrengthFootnotes(strengthMap: Iterable<VotingStrengthMap>) {
+private fun StringBuilder.emitStrengthFootnotes(strengthMap: Collection<VotingStrengthMap>) {
+    check(strengthMap.isNotEmpty())
+    check(strengthMap.map { it.defaultStrength }.distinct().size == 1)
+
+    val defaultStrength = strengthMap.first().defaultStrength
     val specialVotingStrengths = strengthMap.flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }.toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {
@@ -148,6 +152,7 @@ private fun StringBuilder.emitStrengthFootnotes(strengthMap: Iterable<VotingStre
         }.map { (value, symbol) -> "$symbol: player has voting strength $value" }.joinToString(separator = "\n")
 
         emitWithDelimiter("Voting Strengths")
+        emitLine("Strength is ${defaultStrength.raw} unless otherwise noted.")
         emitString(footnotes)
         emitLine()
     }
