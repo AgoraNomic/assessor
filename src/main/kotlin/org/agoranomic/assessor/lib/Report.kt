@@ -181,7 +181,9 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
         emitLine()
         emitQuorum(resolutionMap.quorum)
         emitLine()
+        emitStrengthFootnotes(resolutionMap.votingStrengths.values)
         emitLine()
+        emitWithDelimiter("PROPOSALS")
 
         for (proposal in sortedProposals) {
             val resolution = resolutionMap[proposal.number]
@@ -194,10 +196,6 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
             if (config.voteComments) emitVoteComments(resolution)
             emitLine()
         }
-
-        emitStrengthFootnotes(resolutionMap.votingStrengths.values)
-
-        emitLine()
 
         emitProposalText(resolutionMap.filterResult(ProposalResult.ADOPTED).keys.map { it.lookupIn(sortedProposals) })
     }
