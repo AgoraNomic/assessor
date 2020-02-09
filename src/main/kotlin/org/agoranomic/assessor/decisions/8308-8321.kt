@@ -632,5 +632,9 @@ least one proposal).]"""
             FOR on 8320
             FOR on 8321
         }
+
+        votes(Rance) {
+            endorse(Jason) on all
+        }
     }
 }
