@@ -577,5 +577,22 @@ least one proposal).]"""
             FOR on 8320
             FOR on 8321
         }
+
+        votes(Falsifian) {
+            FOR on 8308
+            AGAINST on 8309
+            AGAINST on 8310
+            // TODO resolve conditional votes on 8311: AGAINST IF VETO ELSE endorse twg
+            AGAINST on 8312
+            AGAINST on 8313
+            // TODO resolve conditional votes on 8314: AGAINST IF VETO ELSE FOR
+            AGAINST on 8315
+            AGAINST on 8316
+            AGAINST on 8317
+            // TODO resolve conditional votes on 8318: AGAINST IF VETO ELSE endorse Aris
+            endorse(Aris) on 8319
+            endorse(Aris) on 8320
+            endorse(Aris) on 8321
+        }
     }
 }
