@@ -636,5 +636,22 @@ least one proposal).]"""
         votes(Rance) {
             endorse(Jason) on all
         }
+
+        votes(Alexis) {
+            AGAINST on 8308
+            AGAINST on 8309
+            AGAINST on 8310
+            endorse(omd) on 8311
+            endorse(Falsifian) on 8312
+            FOR on 8313
+            FOR on 8314
+            FOR on 8315
+            FOR on 8316
+            FOR on 8317
+            AGAINST on 8318
+            FOR on 8319
+            FOR on 8320
+            AGAINST on 8321
+        }
     }
 }
