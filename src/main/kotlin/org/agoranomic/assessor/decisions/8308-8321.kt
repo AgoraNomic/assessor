@@ -615,5 +615,22 @@ least one proposal).]"""
         votes(Bernie) {
             endorse(twg) on all
         }
+
+        votes(Jason) {
+            FOR on 8308
+            AGAINST on 8309
+            AGAINST on 8310
+            FOR on 8311
+            AGAINST on 8312
+            PRESENT on 8313
+            FOR on 8314
+            AGAINST on 8315
+            AGAINST on 8316
+            AGAINST on 8317
+            FOR on 8318
+            FOR on 8319
+            FOR on 8320
+            FOR on 8321
+        }
     }
 }
