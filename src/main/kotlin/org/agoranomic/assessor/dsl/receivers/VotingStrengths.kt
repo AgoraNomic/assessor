@@ -8,6 +8,8 @@ import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
 class ProposalStrengthReceiver(val globalStrengths: ImmutableMap<Person, VotingStrength>) {
+    constructor(globalStrengths: Map<Person, VotingStrength>) : this(globalStrengths.toImmutableMap())
+
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
     infix fun Person.strength(value: Int) {
@@ -33,13 +35,12 @@ class _VotingStrengthReceiver(val proposals: ImmutableList<Proposal>) {
     private var globalStrengths = mutableMapOf<Person, _MutableVotingStrength>()
     private var overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
 
-    data class _MutableVotingStrength(val value: VotingStrength, var comment: String? = null)
+    data class _MutableVotingStrength(val value: VotingStrength, var comment: String? = null) {
+        fun compile() = VotingStrengthWithComment(value, comment)
+    }
 
     infix fun Person.strength(votingStrength: VotingStrength): _MutableVotingStrength {
-        val strength =
-            _MutableVotingStrength(
-                votingStrength
-            )
+        val strength = _MutableVotingStrength(votingStrength)
         globalStrengths[this] = strength
         return strength
     }
@@ -67,26 +68,19 @@ class _VotingStrengthReceiver(val proposals: ImmutableList<Proposal>) {
 
     fun compile(): Map<ProposalNumber, VotingStrengthMap> {
         val defaultStrength = defaultStrength ?: error("Must specify default voting strength")
-        val globalStrengths = globalStrengths.mapValues { (_, strength) -> VotingStrengthWithComment(strength.value, strength.comment) }
+        val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
-        val proposalMaps = mutableMapOf<ProposalNumber, VotingStrengthMap>()
-
-        for (proposal in proposals.map { it.number }) {
-            val proposalStrengthReceiver = ProposalStrengthReceiver(globalStrengths.mapValues { (_, v) -> v.value }.toImmutableMap())
+        return proposals.map { it.number }.associateWith { proposal ->
+            val proposalStrengthReceiver = ProposalStrengthReceiver(globalStrengths.mapValues { (_, v) -> v.value })
             val block = overrideStrengthBlocks[proposal]
 
-            val resultMap = if (block != null) {
+            if (block != null) {
                 proposalStrengthReceiver.block()
                 OverrideVotingStrengthMap(globalStrengthMap, proposalStrengthReceiver.compile())
             } else {
                 globalStrengthMap
             }
-
-            check(!proposalMaps.containsKey(proposal))
-            proposalMaps[proposal] = resultMap
         }
-
-        return proposalMaps
     }
 }
