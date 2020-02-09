@@ -653,5 +653,12 @@ least one proposal).]"""
             FOR on 8320
             AGAINST on 8321
         }
+
+        votes(G) {
+            AGAINST on 8316
+            AGAINST on 8317
+        }
+
+        o matches G
     }
 }
