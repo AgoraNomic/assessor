@@ -38,6 +38,8 @@ class _VotingStrengthReceiver(val proposals: ImmutableList<Proposal>) {
     }
 
     infix fun Person.strength(votingStrength: VotingStrength): _MutableVotingStrength {
+        require(!globalStrengths.containsKey(this)) { "Voting strength specified twice for player ${this.name}" }
+
         val strength = _MutableVotingStrength(votingStrength)
         globalStrengths[this] = strength
         return strength
