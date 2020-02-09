@@ -543,5 +543,22 @@ least one proposal).]"""
             FOR on 8320
             FOR on 8321
         }
+
+        votes(Gaelan) {
+            FOR on 8308
+            AGAINST on 8309
+            FOR on 8310
+            FOR on 8311
+            AGAINST on 8312
+            FOR on 8313
+            FOR on 8314
+            endorse(Alexis) on 8315
+            FOR on 8316
+            FOR on 8317
+            FOR on 8318
+            FOR on 8319
+            FOR on 8320
+            FOR on 8321
+        }
     }
 }
