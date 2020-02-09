@@ -4,7 +4,10 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.v0Ministries
 import org.agoranomic.assessor.dsl.ministries.V0Office.*
 import org.agoranomic.assessor.dsl.ministries.V0Ministry.*
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.UseAssessment
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8308 to 8321`() = assessment {
@@ -524,5 +527,21 @@ least one proposal).]"""
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8308
+            AGAINST on 8309
+            PRESENT on 8310
+            FOR on 8311
+            AGAINST on 8312
+            AGAINST on 8313
+            FOR on 8314
+            endorse(offices[Assessor]!!) on 8315
+            PRESENT on 8316
+            AGAINST on 8317
+            FOR on 8318
+            FOR on 8319
+            FOR on 8320
+            FOR on 8321
+        }
     }
 }
