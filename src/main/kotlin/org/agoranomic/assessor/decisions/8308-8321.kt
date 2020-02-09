@@ -1,12 +1,49 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.ministries.v0Ministries
+import org.agoranomic.assessor.dsl.ministries.V0Office.*
+import org.agoranomic.assessor.dsl.ministries.V0Ministry.*
 import org.agoranomic.assessor.lib.UseAssessment
 
 @UseAssessment
 fun `assessment 8308 to 8321`() = assessment {
     name("8308-8321")
     quorum(5)
+
+    val offices = mapOf(
+        ADoP to Murphy,
+        Arbitor to G,
+        Assessor to Jason,
+        Comptrollor to null,
+        Distributor to omd,
+        Herald to Alexis,
+        Notary to Gaelan,
+        PrimeMinister to Alexis,
+        Promotor to Aris,
+        Referee to twg,
+        Registrar to Falsifian,
+        Rulekeepor to Jason,
+        Speaker to Falsifian,
+        Treasuror to twg,
+        Tailor to twg
+    )
+
+    strengths {
+        default(3)
+        Falsifian strength 4 comment SPEAKER
+
+        v0Ministries(offices) {
+            8311 chamber Economy
+            8312 chamber Efficiency
+            8314 chamber Economy
+            8317 chamber Economy
+            8318 chamber Efficiency
+            8319 chamber Legislation
+            8320 chamber Legislation
+            8321 chamber Legislation
+        }
+    }
 
     proposals {
         proposal(8308) {
@@ -484,5 +521,8 @@ with a 2/3, so this is just confusing (and has lead to confusion on at
 least one proposal).]"""
             )
         }
+    }
+
+    voting {
     }
 }
