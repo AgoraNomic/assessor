@@ -582,14 +582,14 @@ least one proposal).]"""
             FOR on 8308
             AGAINST on 8309
             AGAINST on 8310
-            // TODO resolve conditional votes on 8311: AGAINST IF VETO ELSE endorse twg
+            endorse(twg) on 8311 comment NO_VETO
             AGAINST on 8312
             endorse(Alexis) on 8313
-            // TODO resolve conditional votes on 8314: AGAINST IF VETO ELSE FOR
+            FOR on 8314 comment NO_VETO
             AGAINST on 8315
             AGAINST on 8316
             AGAINST on 8317
-            // TODO resolve conditional votes on 8318: AGAINST IF VETO ELSE endorse Aris
+            endorse(Aris) on 8318 comment NO_VETO
             endorse(Aris) on 8319
             endorse(Aris) on 8320
             endorse(Aris) on 8321
@@ -603,7 +603,7 @@ least one proposal).]"""
             AGAINST on 8312
             AGAINST on 8313
             endorse(Aris) on 8314
-            // TODO resolve conditional vote on 8315: If a proposal has been submitted (since I cast this vote) that would amend Rule 2034 (Vote Protection and Cutoff for Challenges) by reintroducing the text "it had the number of voters indicated", then Endorse Alexis; otherwise AGAINST
+            AGAINST on 8315 comment conditional("No such proposal was submitted")
             AGAINST on 8316
             endorse(Alexis) on 8317
             endorse(Aris) on 8318
