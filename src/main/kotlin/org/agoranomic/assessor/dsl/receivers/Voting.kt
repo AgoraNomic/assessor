@@ -49,21 +49,16 @@ class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
     }
 
     fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
-        val allProposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
-
         val voters = votes.keys
 
-        for (proposal in proposals) {
-            val proposalVotes = mutableMapOf<Person, Vote>()
+        return proposals.associateWith { proposal ->
+            val proposalVotes =
+                voters
+                    .associateWith { voter -> resolveVote(proposal, voter) }
+                    .filterValues { vote -> vote != null }
+                    .mapValues { (_, vote) -> vote!! }
 
-            for (voter in voters) {
-                val vote = resolveVote(proposal, voter)
-                if (vote != null) proposalVotes[voter] = vote
-            }
-
-            allProposalVotes[proposal.number] = SingleProposalVoteMap(proposalVotes)
-        }
-
-        return allProposalVotes
+            SingleProposalVoteMap(proposalVotes)
+        }.mapKeys { (proposal, _) -> proposal.number }
     }
 }
