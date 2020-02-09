@@ -11,6 +11,18 @@ fun <K, V> Map<K, V>.getOrFail(key: K): V {
     error("Missing expected key in map: $key")
 }
 
+inline fun <reified E : Enum<E>> Collection<E>.isExhaustive(): Boolean {
+    val collection = this
+    return enumValues<E>().all { enumValue -> collection.contains(enumValue) }
+}
+
+inline fun <reified E : Enum<E>> Collection<E>.requireExhaustive() {
+    val collection = this
+    for (value in enumValues<E>()) {
+        require(collection.contains(value)) { "Collection was required to be exhaustive, but did not contain $value" }
+    }
+}
+
 operator fun BigDecimal.plus(other: Int) = this.plus(other.toBigDecimal())
 operator fun Int.plus(other: BigDecimal) = (this.toBigDecimal()).plus(other)
 
