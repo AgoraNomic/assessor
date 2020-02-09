@@ -584,7 +584,7 @@ least one proposal).]"""
             AGAINST on 8310
             // TODO resolve conditional votes on 8311: AGAINST IF VETO ELSE endorse twg
             AGAINST on 8312
-            AGAINST on 8313
+            endorse(Alexis) on 8313
             // TODO resolve conditional votes on 8314: AGAINST IF VETO ELSE FOR
             AGAINST on 8315
             AGAINST on 8316
