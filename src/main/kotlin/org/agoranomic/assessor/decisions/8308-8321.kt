@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.v0Ministries
 import org.agoranomic.assessor.dsl.ministries.V0Office.*
 import org.agoranomic.assessor.dsl.ministries.V0Ministry.*
+import org.agoranomic.assessor.dsl.ministries.v1Ministries
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind
@@ -42,6 +43,9 @@ fun `assessment 8308 to 8321`() = assessment {
             8314 chamber Economy
             8317 chamber Economy
             8318 chamber Efficiency
+        }
+
+        v1Ministries(offices) {
             8319 chamber Legislation
             8320 chamber Legislation
             8321 chamber Legislation
