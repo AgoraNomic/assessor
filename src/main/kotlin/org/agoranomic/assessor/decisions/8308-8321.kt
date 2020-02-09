@@ -594,5 +594,26 @@ least one proposal).]"""
             endorse(Aris) on 8320
             endorse(Aris) on 8321
         }
+
+        votes(twg) {
+            endorse(Falsifian) on 8308
+            AGAINST on 8309
+            PRESENT on 8310
+            FOR on 8311
+            AGAINST on 8312
+            AGAINST on 8313
+            endorse(Aris) on 8314
+            // TODO resolve conditional vote on 8315: If a proposal has been submitted (since I cast this vote) that would amend Rule 2034 (Vote Protection and Cutoff for Challenges) by reintroducing the text "it had the number of voters indicated", then Endorse Alexis; otherwise AGAINST
+            AGAINST on 8316
+            endorse(Alexis) on 8317
+            endorse(Aris) on 8318
+            endorse(Aris) on 8319
+            endorse(Aris) on 8320
+            endorse(Aris) on 8321
+        }
+
+        votes(Bernie) {
+            endorse(twg) on all
+        }
     }
 }
