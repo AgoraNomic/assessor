@@ -144,7 +144,12 @@ fun emptyMutableProposalSet(): MutableProposalSet = MutableListProposalSet.empty
  * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
  * [number][Proposal.number] but otherwise different data.
  */
-fun Iterable<Proposal>.toImmutableProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.from(this)
+fun Iterable<Proposal>.toImmutableProposalSet(): ImmutableProposalSet {
+    // Returning this is not observably different from returning a copy, since this is immutable.
+    if (this is ImmutableProposalSet) return this
+
+    return ImmutableListProposalSet.from(this)
+}
 
 /**
  * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
