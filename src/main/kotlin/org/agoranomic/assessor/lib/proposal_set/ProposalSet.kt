@@ -145,13 +145,6 @@ fun emptyProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.empty()
 fun emptyMutableProposalSet(): MutableProposalSet = MutableListProposalSet.empty()
 
 /**
- * Thrown when a container contains multiple [proposals][Proposal] with the same [number][Proposal.number].
- */
-data class DuplicateProposalNumberException(
-    val number: ProposalNumber
-) : Exception("Duplicate proposal number: ${number.raw}")
-
-/**
  * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
  * [number][Proposal.number] but otherwise different data.
  */
