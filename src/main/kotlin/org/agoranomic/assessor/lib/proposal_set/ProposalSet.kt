@@ -54,7 +54,7 @@ interface ProposalSet : Iterable<Proposal> {
     /**
      * Returns whether or not this [ProposalSet] is empty.
      */
-    fun isEmpty(): Boolean = size != 0
+    fun isEmpty(): Boolean = size == 0
 
     /**
      * Returns an [ImmutableSet] of the [numbers][Proposal.number] of the proposals that this [ProposalSet] contains.
