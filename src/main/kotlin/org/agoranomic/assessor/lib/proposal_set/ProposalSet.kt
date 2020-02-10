@@ -52,16 +52,12 @@ interface ProposalSet : Iterable<Proposal> {
     val size: Int
 
     /**
-     * Returns whether or not this [ProposalSet] is empty.
-     */
-    fun isEmpty(): Boolean = size == 0
-
-    /**
      * Returns an [ImmutableSet] of the [numbers][Proposal.number] of the proposals that this [ProposalSet] contains.
      */
     fun numbers(): ImmutableSet<ProposalNumber>
 }
 
+fun ProposalSet.isEmpty(): Boolean = size == 0
 fun ProposalSet.isNotEmpty() = !isEmpty()
 
 fun ProposalSet.checkMismatch(nextProposal: Proposal) {
