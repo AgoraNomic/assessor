@@ -152,31 +152,31 @@ data class DuplicateProposalNumberException(
 ) : Exception("Duplicate proposal number: ${number.raw}")
 
 /**
- * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
- * [number][Proposal.number]
+ * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
+ * [number][Proposal.number] but otherwise different data.
  */
 fun Iterable<Proposal>.toProposalSet(): ProposalSet = ImmutableListProposalSet.from(this)
 
 /**
- * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
- * [number][Proposal.number]
+ * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
+ * [number][Proposal.number] but otherwise different data.
  */
 fun Iterable<Proposal>.toImmutableProposalSet(): ImmutableProposalSet = ImmutableListProposalSet.from(this)
 
 /**
- * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
- * [number][Proposal.number]
+ * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
+ * [number][Proposal.number] but otherwise different data.
  */
 fun Iterable<Proposal>.toMutableProposalSet(): MutableProposalSet = MutableListProposalSet.from(this)
 
 /**
- * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
- * [number][Proposal.number]
+ * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in [proposals] that have the same
+ * [number][Proposal.number] but otherwise different data.
  */
 fun proposalSetOf(vararg proposals: Proposal) = proposals.toList().toProposalSet()
 
 /**
- * @throws DuplicateProposalNumberException if there are two [Proposals][Proposal] in [proposals] that have the same
- * [number][Proposal.number]
+ * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in [proposals] that have the same
+ * [number][Proposal.number] but otherwise different data.
  */
 fun mutableProposalSetOf(vararg proposals: Proposal) = proposals.toList().toMutableProposalSet()

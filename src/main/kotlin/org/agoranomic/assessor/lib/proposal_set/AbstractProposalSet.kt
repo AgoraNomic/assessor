@@ -9,15 +9,25 @@ import org.agoranomic.assessor.lib.checkMismatch
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {
+        /**
+         * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in `this` that have the same
+         * [number][Proposal.number] but otherwise different data.
+         */
         @JvmStatic
         protected fun checkInitialList(list: List<Proposal>) {
-            val allNumbers = list.map { it.number }
-            val noRepeatNumbers = list.map { it.number }.distinct().filter { searchNum ->
-                list.count { it.number == searchNum } == 1
-            }
+            val distinctList = list.distinctBy { it.number }
 
-            if (noRepeatNumbers != allNumbers) {
-                throw DuplicateProposalNumberException((allNumbers - noRepeatNumbers).first())
+            if (distinctList != list) {
+                val differingList = list - distinctList
+                check(differingList.isNotEmpty())
+
+                val firstDiffering = differingList.first()
+                val otherWithSameNumber = list.first { it.number == firstDiffering.number && it != firstDiffering }
+
+                throw ProposalDataMismatchException(
+                    next = firstDiffering,
+                    original = otherWithSameNumber
+                )
             }
         }
     }
