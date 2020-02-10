@@ -13,19 +13,6 @@ data class NoSuchProposalException(
 ) : Exception("Request for unknown proposal by number: ${number.raw}")
 
 /**
- * Thrown when a [ProposalSet] is passed a [Proposal] when it contains a [Proposal] with the same
- * [number][Proposal.number] but with differing other data.
- */
-data class ProposalDataMismatchException(
-    val next: Proposal,
-    val original: Proposal
-) : Exception("Proposals with same number but different data found: $next and $original") {
-    init {
-        require(next.number == original.number)
-    }
-}
-
-/**
  * A set of [Proposals][Proposal]. Contains only one [Proposal] by each [ProposalNumber]. Two
  * [ProposalSets][ProposalSet] are equal if they contain the same proposals.
  */

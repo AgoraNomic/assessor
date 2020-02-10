@@ -1,3 +1,4 @@
+import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.proposal_set.*
 import test_objects.*
