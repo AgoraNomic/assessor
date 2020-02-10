@@ -180,13 +180,3 @@ fun proposalSetOf(vararg proposals: Proposal) = proposals.toList().toProposalSet
  * [number][Proposal.number]
  */
 fun mutableProposalSetOf(vararg proposals: Proposal) = proposals.toList().toMutableProposalSet()
-
-/**
- * Returns a [ImmutableProposalSet] that contains the same proposals as this [ProposalSet].
- */
-fun ProposalSet.immutableCopy(): ImmutableProposalSet = this.toList().toImmutableProposalSet()
-
-/**
- * Returns a [MutableProposalSet] that contains the same proposals as this [ProposalSet].
- */
-fun ProposalSet.mutableCopy(): MutableProposalSet = this.toList().toMutableProposalSet()
