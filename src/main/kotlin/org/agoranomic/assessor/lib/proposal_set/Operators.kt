@@ -3,22 +3,6 @@ package org.agoranomic.assessor.lib.proposal_set
 import org.agoranomic.assessor.lib.Proposal
 
 /**
- * Equivalent to converting the list containing the [Proposals][Proposal] in this, along with `other` into a
- * [ProposalSet].
- */
-operator fun ProposalSet.plus(other: Proposal): ProposalSet {
-    return (this.toList() + other).toProposalSet()
-}
-
-/**
- * Equivalent to converting the list containing the [Proposals][Proposal] in `other`, along with `this` into a
- * [ProposalSet].
- */
-operator fun Proposal.plus(other: ProposalSet): ProposalSet {
-    return other + this
-}
-
-/**
  * Equivalent to converting the list containing the [Proposals][Proposal] in this, along with those in `other` into a
  * [ProposalSet].
  */
@@ -27,20 +11,31 @@ operator fun ProposalSet.plus(other: ProposalSet): ProposalSet {
 }
 
 /**
- * Equivalent to converting the list containing the [Proposals][Proposal] in this, excluding `other`, into a
- * [ProposalSet].
+ * Equivalent to `this + proposalSetOf(other)`.
+ * @see [ProposalSet.plus]
  */
-operator fun ProposalSet.minus(other: Proposal): ProposalSet {
-    return (this.toList() - other).toProposalSet()
+operator fun ProposalSet.plus(other: Proposal) = this + proposalSetOf(other)
+
+/**
+ * Equivalent to `proposalSetOf(this) + other`.
+ * @see [ProposalSet.plus]
+ */
+operator fun Proposal.plus(other: ProposalSet) = proposalSetOf(this) + other
+
+/**
+ * Equivalent to creating a (mutable) copy of this [ProposalSet], then calling `removeAll(other)`, and returning that
+ * copy.
+ */
+operator fun ProposalSet.minus(other: ProposalSet): ProposalSet {
+    val copy = this.toMutableProposalSet()
+    copy.removeAll(other)
+    return copy
 }
 
 /**
- * Equivalent to converting the list containing the [Proposals][Proposal] in this, excluding those in `other`, into a
- * [ProposalSet].
+ * Equivalent to `this - proposalSetOf(other)`.
  */
-operator fun ProposalSet.minus(other: ProposalSet): ProposalSet {
-    return (this.toList() - other.toList()).toProposalSet()
-}
+operator fun ProposalSet.minus(other: Proposal) = this - proposalSetOf(other)
 
 /**
  * Equivalent to calling `add(other)`.
