@@ -2,6 +2,7 @@ package org.agoranomic.assessor.lib.proposal_set
 
 import kotlinx.collections.immutable.ImmutableSet
 import org.agoranomic.assessor.lib.Proposal
+import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.checkMismatch
 
