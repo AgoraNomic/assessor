@@ -8,7 +8,7 @@ import org.agoranomic.assessor.lib.*
 interface AssessmentReceiver {
     fun strengths(block: VotingStrengthReceiver.() -> Unit)
     fun proposals(block: ProposalsReceiver.() -> Unit)
-    fun voting(block: _VotingReciever.() -> Unit)
+    fun voting(block: VotingReceiver.() -> Unit)
     fun quorum(value: Int)
     fun name(value: String)
 }
@@ -32,8 +32,8 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         proposals += receiver.compile()
     }
 
-    override fun voting(block: _VotingReciever.() -> Unit) {
-        val receiver = _VotingReciever(proposals)
+    override fun voting(block: VotingReceiver.() -> Unit) {
+        val receiver = VotingReceiverImpl(proposals)
         receiver.block()
         proposalVotes.putAll(receiver.compile())
     }

@@ -6,16 +6,22 @@ import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class _VotingReciever(private val proposals: ImmutableList<Proposal>) {
+interface VotingReceiver {
+    infix fun Person.matches(other: Person)
+    fun votes(person: Person, block: _VotesReceiver.() -> Unit)
+}
+
+@AssessmentDSL
+class VotingReceiverImpl(private val proposals: ImmutableList<Proposal>) : VotingReceiver {
     constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
 
     private val votes = mutableMapOf<Person, Map<ProposalNumber, PendingVote>>()
 
-    infix fun Person.matches(other: Person) = votes(this) {
+    override infix fun Person.matches(other: Person) = votes(this) {
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
-    fun votes(person: Person, block: _VotesReceiver.() -> Unit) {
+    override fun votes(person: Person, block: _VotesReceiver.() -> Unit) {
         require(!votes.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
         val receiver = _VotesReceiver(proposals.map { it.number })
