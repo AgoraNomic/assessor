@@ -57,6 +57,11 @@ class DslValueMap<K, V> {
     }
 
     /**
+     * Returns whether or not a value has been set for [key].
+     */
+    fun containsKey(key: K): Boolean = map.containsKey(key)
+
+    /**
      * Gets the value for [key], or [default] if it has not been set. Does not fail.
      */
     fun getOrElse(key: K, default: V): V {
