@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.ministries
 
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.receivers.ProposalStrengthReceiver
-import org.agoranomic.assessor.dsl.receivers._VotingStrengthReceiver
+import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
@@ -76,7 +76,7 @@ public inline fun <reified Office : Enum<Office>, Ministry> ProposalStrengthRece
     proposalMinistryImpl(personMinistries, ministryBonus, chamber)
 }
 
-inline fun <reified Office : Enum<Office>, Ministry> _VotingStrengthReceiver.ministries(
+inline fun <reified Office : Enum<Office>, Ministry> VotingStrengthReceiver.ministries(
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,

@@ -1,8 +1,6 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.*
 
@@ -27,44 +25,55 @@ class ProposalStrengthReceiver(val globalStrengths: VotingStrengthMap) {
     }
 }
 
+interface VotingStrengthCommentable {
+    infix fun comment(comment: String)
+}
+
 @AssessmentDSL
-class _VotingStrengthReceiver(val proposals: ImmutableList<Proposal>) {
+interface VotingStrengthReceiver {
+    val proposals: List<Proposal>
+
+    infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable
+    infix fun Person.strength(votingStrength: Int) = strength(VotingStrength(votingStrength))
+
+    fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit)
+    fun default(strength: VotingStrength)
+    fun default(strength: Int) = default(VotingStrength(strength))
+}
+
+@AssessmentDSL
+class VotingStrengthReceiverImpl(override val proposals: ImmutableList<Proposal>) : VotingStrengthReceiver {
     private var defaultStrength: VotingStrength? = null
-    private var globalStrengths = mutableMapOf<Person, _MutableVotingStrength>()
+    private var globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
     private var overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
 
-    data class _MutableVotingStrength(val value: VotingStrength, var comment: String? = null) {
+    private data class MutableVotingStrength(
+        val value: VotingStrength,
+        var comment: String? = null
+    ) : VotingStrengthCommentable {
+        override fun comment(comment: String) {
+            this.comment = comment
+        }
+
         fun compile() = VotingStrengthWithComment(value, comment)
     }
 
-    infix fun Person.strength(votingStrength: VotingStrength): _MutableVotingStrength {
+    override infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable {
         require(!globalStrengths.containsKey(this)) { "Voting strength specified twice for player ${this.name}" }
 
-        val strength = _MutableVotingStrength(votingStrength)
+        val strength = MutableVotingStrength(votingStrength)
         globalStrengths[this] = strength
         return strength
     }
 
-    infix fun Person.strength(votingStrength: RawVotingStrength) = this.strength(VotingStrength(votingStrength))
-    infix fun Person.strength(votingStrength: Int) = this.strength(VotingStrength(votingStrength))
-
-    infix fun _MutableVotingStrength.comment(value: String) {
-        this.comment = value
-    }
-
-    fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit) {
+    override fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit) {
         require(!overrideStrengthBlocks.containsKey(number))
         overrideStrengthBlocks[number] = block
     }
 
-    fun proposal(number: Int, block: ProposalStrengthReceiver.() -> Unit) = proposal(ProposalNumber(number), block)
-
-    fun default(strength: VotingStrength) {
+    override fun default(strength: VotingStrength) {
         this.defaultStrength = strength
     }
-
-    fun default(strength: RawVotingStrength) = default(VotingStrength(strength))
-    fun default(strength: Int) = default(VotingStrength(strength))
 
     fun compile(): Map<ProposalNumber, VotingStrengthMap> {
         val defaultStrength = defaultStrength ?: error("Must specify default voting strength")

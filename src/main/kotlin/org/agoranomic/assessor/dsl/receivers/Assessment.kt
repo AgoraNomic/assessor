@@ -6,7 +6,7 @@ import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
 interface AssessmentReceiver {
-    fun strengths(block: _VotingStrengthReceiver.() -> Unit)
+    fun strengths(block: VotingStrengthReceiver.() -> Unit)
     fun proposals(block: _ProposalsReceiver.() -> Unit)
     fun voting(block: _VotingReciever.() -> Unit)
     fun quorum(value: Int)
@@ -15,13 +15,13 @@ interface AssessmentReceiver {
 
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
-    private var votingStrengthsBlock: (_VotingStrengthReceiver.() -> Unit)? = null
+    private var votingStrengthsBlock: (VotingStrengthReceiver.() -> Unit)? = null
     private val proposals = mutableListOf<Proposal>()
     private var proposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
     private var quorum: Int? = null
     private var name: String? = null
 
-    override fun strengths(block: _VotingStrengthReceiver.() -> Unit) {
+    override fun strengths(block: VotingStrengthReceiver.() -> Unit) {
         require(votingStrengthsBlock == null) { "Voting strengths specified twice" }
         votingStrengthsBlock = block
     }
@@ -53,7 +53,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     private fun compileVotingStrengths(): Map<ProposalNumber, VotingStrengthMap> {
         val votingStrengthsBlock = votingStrengthsBlock ?: error("Must specify voting strengths")
 
-        val receiver = _VotingStrengthReceiver(proposals.toImmutableList())
+        val receiver = VotingStrengthReceiverImpl(proposals.toImmutableList())
         receiver.votingStrengthsBlock()
         return receiver.compile()
     }
