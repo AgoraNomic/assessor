@@ -5,37 +5,46 @@ import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class _AssessmentReceiver {
+interface AssessmentReceiver {
+    fun strengths(block: _VotingStrengthReceiver.() -> Unit)
+    fun proposals(block: _ProposalsReceiver.() -> Unit)
+    fun voting(block: _VotingReciever.() -> Unit)
+    fun quorum(value: Int)
+    fun name(value: String)
+}
+
+@AssessmentDSL
+class AssessmentReceiverImpl : AssessmentReceiver {
     private var votingStrengthsBlock: (_VotingStrengthReceiver.() -> Unit)? = null
     private val proposals = mutableListOf<Proposal>()
     private var proposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
     private var quorum: Int? = null
     private var name: String? = null
 
-    fun strengths(block: _VotingStrengthReceiver.() -> Unit) {
+    override fun strengths(block: _VotingStrengthReceiver.() -> Unit) {
         require(votingStrengthsBlock == null) { "Voting strengths specified twice" }
         votingStrengthsBlock = block
     }
 
-    fun proposals(block: _ProposalsReceiver.() -> Unit) {
+    override fun proposals(block: _ProposalsReceiver.() -> Unit) {
         val receiver = _ProposalsReceiver()
         receiver.block()
         proposals += receiver.compile()
     }
 
-    fun voting(block: _VotingReciever.() -> Unit) {
+    override fun voting(block: _VotingReciever.() -> Unit) {
         val receiver = _VotingReciever(proposals)
         receiver.block()
         proposalVotes.putAll(receiver.compile())
     }
 
-    fun quorum(value: Int) {
+    override fun quorum(value: Int) {
         require(quorum == null) { "Quorum specified twice" }
 
         quorum = value
     }
 
-    fun name(value: String) {
+    override fun name(value: String) {
         require(name == null) { "Name specified twice" }
 
         name = value
