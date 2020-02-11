@@ -8,7 +8,7 @@ import org.agoranomic.assessor.lib.*
 @AssessmentDSL
 interface VotingReceiver {
     infix fun Person.matches(other: Person)
-    fun votes(person: Person, block: _VotesReceiver.() -> Unit)
+    fun votes(person: Person, block: VotesReceiver.() -> Unit)
 }
 
 @AssessmentDSL
@@ -21,10 +21,10 @@ class VotingReceiverImpl(private val proposals: ImmutableList<Proposal>) : Votin
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
-    override fun votes(person: Person, block: _VotesReceiver.() -> Unit) {
+    override fun votes(person: Person, block: VotesReceiver.() -> Unit) {
         require(!votes.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
-        val receiver = _VotesReceiver(proposals.map { it.number })
+        val receiver = VotesReceiverImpl(proposals.map { it.number })
         receiver.block()
         val result = receiver.compile()
 

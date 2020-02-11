@@ -5,25 +5,48 @@ import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.*
 
+interface VoteCommentable {
+    infix fun comment(comment: String)
+}
+
 @AssessmentDSL
-class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
+interface VotesReceiver {
+    object All
+    val all: All get() = All
+
+    object Others
+    val others: Others get() = Others
+
+    infix fun HalfFunctionVote.on(proposal: ProposalNumber): VoteCommentable
+    infix fun HalfFunctionVote.on(number: Int) = on(ProposalNumber(number))
+
+    infix fun HalfFunctionVote.on(all: All)
+    infix fun HalfFunctionVote.on(others: Others)
+
+    infix fun VoteKind.on(proposal: ProposalNumber): VoteCommentable
+    infix fun VoteKind.on(proposal: Int) = on(ProposalNumber(proposal))
+
+    infix fun VoteKind.on(all: All)
+    infix fun VoteKind.on(others: Others)
+
+    fun function(func: VoteFunc): HalfFunctionVote
+}
+
+@AssessmentDSL
+class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
-    private val votes = mutableMapOf<ProposalNumber, _MutableVote>()
+    private val votes = mutableMapOf<ProposalNumber, MutableVote>()
 
-    object _All
+    private data class MutableVote(val vote: VoteFunc, var comment: String? = null) : VoteCommentable {
+        override fun comment(comment: String) {
+            this.comment = comment
+        }
 
-    val all = _All
-
-    object _Others
-
-    val others = _Others
-
-    data class _MutableVote(val vote: VoteFunc, var comment: String? = null) {
         fun compile() = PendingVote(vote, comment)
     }
 
-    private fun addVote(proposal: ProposalNumber, vote: _MutableVote): _MutableVote {
+    private fun addVote(proposal: ProposalNumber, vote: MutableVote): VoteCommentable {
         require(proposals.contains(proposal)) { "No such proposal $proposal" }
         require(!votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
 
@@ -31,35 +54,28 @@ class _VotesReceiver(private val proposals: ImmutableList<ProposalNumber>) {
         return vote
     }
 
-    private fun addVote(proposal: ProposalNumber, vote: HalfFunctionVote) = addVote(proposal, _MutableVote(vote.func))
+    private fun addVote(proposal: ProposalNumber, vote: HalfFunctionVote) = addVote(proposal, MutableVote(vote.func))
 
-    infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, _MutableVote(this.func))
-    infix fun HalfFunctionVote.on(number: RawProposalNumber) = this on ProposalNumber(number)
-    infix fun HalfFunctionVote.on(number: Int) = this on number.toBigInteger()
+    override infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this.func))
 
-    infix fun HalfFunctionVote.on(all: _All) {
+    override infix fun HalfFunctionVote.on(all: VotesReceiver.All) {
         proposals.forEach { addVote(it, this) }
     }
 
-    infix fun HalfFunctionVote.on(others: _Others) {
+    override infix fun HalfFunctionVote.on(others: VotesReceiver.Others) {
         for (proposal in proposals.map { it }) {
             if (!votes.containsKey(proposal)) addVote(proposal, this)
         }
     }
 
-    fun function(func: VoteFunc) = functionVote(func)
+    override fun function(func: VoteFunc) = functionVote(func)
 
     private fun simpleVoteFunction(vote: VoteKind) = functionVote { _, _ -> SimpleVote(vote, comment = null) }
 
-    infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
-    infix fun VoteKind.on(proposal: RawProposalNumber) = this on ProposalNumber(proposal)
-    infix fun VoteKind.on(proposal: Int) = this on proposal.toBigInteger()
-    infix fun VoteKind.on(all: _All) = simpleVoteFunction(this) on all
-    infix fun VoteKind.on(others: _Others) = simpleVoteFunction(this) on others
+    override infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
 
-    infix fun _MutableVote.comment(value: String) {
-        this.comment = value
-    }
+    override infix fun VoteKind.on(all: VotesReceiver.All) = simpleVoteFunction(this) on all
+    override infix fun VoteKind.on(others: VotesReceiver.Others) = simpleVoteFunction(this) on others
 
     fun compile(): Map<ProposalNumber, PendingVote> {
         return votes.mapValues { (k, v) -> v.compile() }
