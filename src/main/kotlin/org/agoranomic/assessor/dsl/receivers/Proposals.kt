@@ -4,12 +4,11 @@ import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.RawProposalNumber
 
 @AssessmentDSL
 interface ProposalsReceiver {
-    fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit)
-    fun proposal(number: Int, block: _ProposalReceiver.() -> Unit) = proposal(ProposalNumber(number), block)
+    fun proposal(number: ProposalNumber, block: ProposalReceiver.() -> Unit)
+    fun proposal(number: Int, block: ProposalReceiver.() -> Unit) = proposal(ProposalNumber(number), block)
 
     fun using(proposal: Proposal)
 
@@ -22,8 +21,8 @@ interface ProposalsReceiver {
 class ProposalsReceiverImpl : ProposalsReceiver {
     private val proposals = mutableListOf<Proposal>()
 
-    override fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit) {
-        val receiver = _ProposalReceiver(number)
+    override fun proposal(number: ProposalNumber, block: ProposalReceiver.() -> Unit) {
+        val receiver = ProposalReceiverImpl(number)
         receiver.block()
         using(receiver.compile())
     }
