@@ -7,27 +7,32 @@ import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.RawProposalNumber
 
 @AssessmentDSL
-class _ProposalsReceiver {
+interface ProposalsReceiver {
+    fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit)
+    fun proposal(number: Int, block: _ProposalReceiver.() -> Unit) = proposal(ProposalNumber(number), block)
+
+    fun using(proposal: Proposal)
+
+    fun using(proposals: Iterable<Proposal>) {
+        for (proposal in proposals) using(proposal)
+    }
+}
+
+@AssessmentDSL
+class ProposalsReceiverImpl : ProposalsReceiver {
     private val proposals = mutableListOf<Proposal>()
 
-    fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit) {
+    override fun proposal(number: ProposalNumber, block: _ProposalReceiver.() -> Unit) {
         val receiver = _ProposalReceiver(number)
         receiver.block()
         using(receiver.compile())
     }
 
-    fun proposal(number: RawProposalNumber, block: _ProposalReceiver.() -> Unit) = proposal(
-        ProposalNumber(number),
-        block
-    )
-
-    fun proposal(number: Int, block: _ProposalReceiver.() -> Unit) = proposal(number.toBigInteger(), block)
-
-    fun using(proposal: Proposal) {
+    override fun using(proposal: Proposal) {
         proposals += proposal
     }
 
-    fun using(proposals: Iterable<Proposal>) {
+    override fun using(proposals: Iterable<Proposal>) {
         proposals.forEach(::using)
     }
 

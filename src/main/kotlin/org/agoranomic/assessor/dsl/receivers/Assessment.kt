@@ -7,7 +7,7 @@ import org.agoranomic.assessor.lib.*
 @AssessmentDSL
 interface AssessmentReceiver {
     fun strengths(block: VotingStrengthReceiver.() -> Unit)
-    fun proposals(block: _ProposalsReceiver.() -> Unit)
+    fun proposals(block: ProposalsReceiver.() -> Unit)
     fun voting(block: _VotingReciever.() -> Unit)
     fun quorum(value: Int)
     fun name(value: String)
@@ -26,8 +26,8 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         votingStrengthsBlock = block
     }
 
-    override fun proposals(block: _ProposalsReceiver.() -> Unit) {
-        val receiver = _ProposalsReceiver()
+    override fun proposals(block: ProposalsReceiver.() -> Unit) {
+        val receiver = ProposalsReceiverImpl()
         receiver.block()
         proposals += receiver.compile()
     }
