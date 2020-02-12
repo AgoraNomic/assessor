@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
@@ -15,7 +16,7 @@ interface VotingReceiver {
 class VotingReceiverImpl(private val proposals: ImmutableList<Proposal>) : VotingReceiver {
     constructor(proposals: List<Proposal>) : this(proposals.toImmutableList())
 
-    private val votes = mutableMapOf<Person, Map<ProposalNumber, PendingVote>>()
+    private val votes = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
 
     override infix fun Person.matches(other: Person) = votes(this) {
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
@@ -41,7 +42,7 @@ class VotingReceiverImpl(private val proposals: ImmutableList<Proposal>) : Votin
         val lookupProposal = LookupProposal { this.proposals.lookupOrFail(it) }
 
         if (votes.containsKey(person)) {
-            val playerVotes = votes.getOrFail(person)
+            val playerVotes = votes[person]
 
             if (playerVotes.containsKey(proposal.number)) {
                 return playerVotes.getOrFail(proposal.number).compile(
@@ -55,6 +56,7 @@ class VotingReceiverImpl(private val proposals: ImmutableList<Proposal>) : Votin
     }
 
     fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
+        val votes = votes.compile()
         val voters = votes.keys
 
         return proposals.associateWith { proposal ->

@@ -1,7 +1,11 @@
 package org.agoranomic.assessor.dsl.receivers
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
@@ -15,43 +19,39 @@ interface AssessmentReceiver {
 
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
-    private var votingStrengthsBlock: (VotingStrengthReceiver.() -> Unit)? = null
-    private val proposals = mutableListOf<Proposal>()
-    private var proposalVotes = mutableMapOf<ProposalNumber, SingleProposalVoteMap>()
-    private var quorum: Int? = null
-    private var name: String? = null
+    private val votingStrengthsBlock = DslValue<(VotingStrengthReceiver.() -> Unit)>()
+    private val proposals = DslValue<ImmutableList<Proposal>>()
+    private val proposalVotes = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
+    private val quorum = DslValue<Int>()
+    private val name = DslValue<String>()
 
     override fun strengths(block: VotingStrengthReceiver.() -> Unit) {
-        require(votingStrengthsBlock == null) { "Voting strengths specified twice" }
-        votingStrengthsBlock = block
+        votingStrengthsBlock.set(block)
     }
 
     override fun proposals(block: ProposalsReceiver.() -> Unit) {
         val receiver = ProposalsReceiverImpl()
         receiver.block()
-        proposals += receiver.compile()
+        proposals.set(receiver.compile().toImmutableList())
     }
 
     override fun voting(block: VotingReceiver.() -> Unit) {
-        val receiver = VotingReceiverImpl(proposals)
+        val receiver = VotingReceiverImpl(proposals.get())
         receiver.block()
-        proposalVotes.putAll(receiver.compile())
+        proposalVotes.set(receiver.compile().toImmutableMap())
     }
 
     override fun quorum(value: Int) {
-        require(quorum == null) { "Quorum specified twice" }
-
-        quorum = value
+        quorum.set(value)
     }
 
     override fun name(value: String) {
-        require(name == null) { "Name specified twice" }
-
-        name = value
+        name.set(value)
     }
 
     private fun compileVotingStrengths(): Map<ProposalNumber, VotingStrengthMap> {
-        val votingStrengthsBlock = votingStrengthsBlock ?: error("Must specify voting strengths")
+        val proposals = proposals.get()
+        val votingStrengthsBlock = votingStrengthsBlock.get()
 
         val receiver = VotingStrengthReceiverImpl(proposals.toImmutableList())
         receiver.votingStrengthsBlock()
@@ -59,8 +59,10 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     }
 
     fun compile(): AssessmentData {
-        val name = name ?: error("Must specify name")
-        val quorum = quorum ?: error("Must specify quorum")
+        val name = name.get()
+        val quorum = quorum.get()
+        val proposals = proposals.get()
+        val proposalVotes = proposalVotes.get()
         val votingStrengths = compileVotingStrengths()
 
         for (proposalNumber in proposalVotes.keys) {
