@@ -2,6 +2,8 @@ package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.ImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslValue
+import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
@@ -43,9 +45,9 @@ interface VotingStrengthReceiver {
 
 @AssessmentDSL
 class VotingStrengthReceiverImpl(override val proposals: ImmutableList<Proposal>) : VotingStrengthReceiver {
-    private var defaultStrength: VotingStrength? = null
-    private var globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
-    private var overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
+    private var defaultStrength = DslValue<VotingStrength>()
+    private var globalStrengths = DslValueMap<Person, MutableVotingStrength>()
+    private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
 
     private data class MutableVotingStrength(
         val value: VotingStrength,
@@ -72,17 +74,17 @@ class VotingStrengthReceiverImpl(override val proposals: ImmutableList<Proposal>
     }
 
     override fun default(strength: VotingStrength) {
-        this.defaultStrength = strength
+        defaultStrength.set(strength)
     }
 
     fun compile(): Map<ProposalNumber, VotingStrengthMap> {
-        val defaultStrength = defaultStrength ?: error("Must specify default voting strength")
-        val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
+        val defaultStrength = defaultStrength.get()
+        val globalStrengths = globalStrengths.compile().mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
             val proposalStrengthReceiver = ProposalStrengthReceiver(globalStrengthMap)
-            val block = overrideStrengthBlocks[proposal]
+            val block = overrideStrengthBlocks.getOrNull(proposal)
 
             if (block != null) {
                 proposalStrengthReceiver.block()
