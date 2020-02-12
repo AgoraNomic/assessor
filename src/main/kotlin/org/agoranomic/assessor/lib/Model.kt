@@ -52,7 +52,3 @@ fun checkMismatch(original: Proposal, next: Proposal) {
         original = original
     )
 }
-
-fun Iterable<Proposal>.lookupOrFail(number: ProposalNumber): Proposal {
-    return this.find { it.number == number } ?: error("No proposal with number $number")
-}

@@ -197,7 +197,8 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
             emitLine()
         }
 
-        emitProposalText(resolutionMap.filterResult(ProposalResult.ADOPTED).keys.map { sortedProposals.lookupOrFail(it) })
+        val adoptedProposals = resolutionMap.filterResult(ProposalResult.ADOPTED).keys
+        emitProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) })
     }
 
     return output.toString()
