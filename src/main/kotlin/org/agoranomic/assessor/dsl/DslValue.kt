@@ -32,6 +32,13 @@ class DslValue<T> {
     fun getOrElse(default: T): T {
         return if (isInitialized) currentValue as T else default
     }
+
+    /**
+     * Gets the value, or null if the value has not been set. Does not fail.
+     */
+    fun getOrNull(): T? {
+        return if (isInitialized) currentValue as T else null
+    }
 }
 
 /**
