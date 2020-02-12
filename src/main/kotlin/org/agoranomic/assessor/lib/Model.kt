@@ -7,6 +7,10 @@ import java.math.BigInteger
 
 data class Person(val name: String)
 
+data class Persons(private val list: ImmutableList<Person>) : Iterable<Person> by list {
+    constructor(list: List<Person>) : this(list.toImmutableList())
+}
+
 typealias RawProposalNumber = BigInteger
 
 inline class ProposalNumber(val raw: RawProposalNumber) {
@@ -23,25 +27,9 @@ data class Proposal(
     val ai: ProposalAI,
     val title: String,
     val author: Person,
-    val coauthors: ImmutableList<Person>,
+    val coauthors: Persons,
     val text: String
-) {
-    constructor(
-        number: ProposalNumber,
-        ai: ProposalAI,
-        title: String,
-        author: Person,
-        coauthors: List<Person>,
-        text: String
-    ) : this(
-        number,
-        ai,
-        title,
-        author,
-        coauthors.toImmutableList(),
-        text
-    )
-}
+)
 
 fun Iterable<Proposal>.lookupOrFail(number: ProposalNumber): Proposal {
     return this.find { it.number == number } ?: error("No proposal with number $number")
