@@ -197,7 +197,7 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
             emitLine()
         }
 
-        emitProposalText(resolutionMap.filterResult(ProposalResult.ADOPTED).keys.map { it.lookupIn(sortedProposals) })
+        emitProposalText(resolutionMap.filterResult(ProposalResult.ADOPTED).keys.map { sortedProposals.lookupOrFail(it) })
     }
 
     return output.toString()
