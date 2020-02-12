@@ -40,7 +40,7 @@ class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingRe
         val newPlayersSeen = (playersSeen.toList() + person).toTypedArray()
         val nextResolve: ResolveFunc = { nextProp, nextPlayer -> resolveVote(nextProp, nextPlayer, *newPlayersSeen) }
 
-        val lookupProposal = LookupProposal { this.proposals.lookupOrFail(it) }
+        val lookupProposal = LookupProposal { this.proposals[it] }
 
         if (votes.containsKey(person)) {
             val playerVotes = votes[person]
