@@ -7,20 +7,27 @@ import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 
 @AssessmentDSL
-class ProposalStrengthReceiver(val globalStrengths: VotingStrengthMap) {
+interface ProposalStrengthReceiver {
+    infix fun Person.strength(value: VotingStrength)
+    infix fun Person.strength(value: Int) = strength(VotingStrength(value))
+
+    infix fun Person.add(value: VotingStrength)
+    infix fun Person.add(value: Int) = add(VotingStrength(value))
+}
+
+@AssessmentDSL
+class ProposalStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
-    infix fun Person.strength(value: Int) {
+    override infix fun Person.strength(value: VotingStrength) {
         require(!strengthMap.containsKey(this)) { "Cannot set strength when it has already been set" }
-        strengthMap[this] = VotingStrength(value)
+        strengthMap[this] = value
     }
 
-    infix fun Person.add(value: VotingStrength) {
+    override infix fun Person.add(value: VotingStrength) {
         if (!strengthMap.containsKey(this)) strengthMap[this] = globalStrengths[this].value
         strengthMap[this] = strengthMap.getOrFail(this) + value
     }
-
-    infix fun Person.add(value: Int) = this add VotingStrength(value)
 
     fun compile(): Map<Person, VotingStrengthWithComment> {
         return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }
@@ -83,7 +90,7 @@ class VotingStrengthReceiverImpl(override val proposals: ImmutableList<Proposal>
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
-            val proposalStrengthReceiver = ProposalStrengthReceiver(globalStrengthMap)
+            val proposalStrengthReceiver = ProposalStrengthReceiverImpl(globalStrengthMap)
             val block = overrideStrengthBlocks.getOrNull(proposal)
 
             if (block != null) {
