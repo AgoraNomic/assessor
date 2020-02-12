@@ -77,14 +77,14 @@ class DslValueMap<K, V> {
     }
 
     /**
-     * Gets the value for [key], or null if it has not been set. Does not fail
+     * Gets the value for [key], or null if it has not been set. Does not fail.
      */
     fun getOrNull(key: K): V? {
         return map[key]?.get()
     }
 
     /**
-     * Compiles all set keys and values into a [Map].]
+     * Compiles all set keys and values into a [Map].
      */
     fun compile(): Map<K, V> {
         return map.mapValues { (_, v) -> v.get() }
