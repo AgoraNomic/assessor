@@ -28,15 +28,26 @@ private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!
 private fun destinationOptionGroup(): OptionGroup {
     val optDestStdout = Option.builder().longOpt(DEST_STDOUT).desc("Print resolutions to the standard output").build()
     val optDestFile =
-        Option.builder().longOpt(DEST_FILE).desc("Print resolutions to the provided file").argName("file").hasArg()
-            .argName("file").optionalArg(
-                true
-            ).type<String>().build()
+        Option
+            .builder()
+            .longOpt(DEST_FILE)
+            .desc("Print resolutions to the provided file")
+            .argName("file")
+            .hasArg()
+            .argName("file")
+            .optionalArg(true)
+            .type<String>()
+            .build()
     val optDestDir =
-        Option.builder().longOpt(DEST_DIR).desc("Print resolutions to files in the provided directory").hasArg()
-            .argName("directory").optionalArg(
-                true
-            ).type<String>().build()
+        Option
+            .builder()
+            .longOpt(DEST_DIR)
+            .desc("Print resolutions to files in the provided directory")
+            .hasArg()
+            .argName("directory")
+            .optionalArg(true)
+            .type<String>()
+            .build()
 
     val optGroupDest = OptionGroup().also {
         it.addOption(optDestStdout)
@@ -164,13 +175,17 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
         commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(
             withOverrides(commandLine, CONFIG_LONG)
         )
+
         commandLine.hasOption(FORM_OFFICIAL) -> HumanReadableFormatter(
             withOverrides(commandLine, CONFIG_OFFICIAL)
         )
+
         commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(
             withOverrides(commandLine, CONFIG_SHORT)
         )
+
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
+
         else -> null
     }
 }
