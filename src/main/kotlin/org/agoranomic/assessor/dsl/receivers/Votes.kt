@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 
 interface VoteCommentable {
@@ -36,7 +37,7 @@ interface VotesReceiver {
 class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
-    private val votes = mutableMapOf<ProposalNumber, MutableVote>()
+    private val votes = DslValueMap<ProposalNumber, MutableVote>()
 
     private data class MutableVote(val vote: VoteFunc, var comment: String? = null) : VoteCommentable {
         override fun comment(comment: String) {
@@ -48,7 +49,6 @@ class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : 
 
     private fun addVote(proposal: ProposalNumber, vote: MutableVote): VoteCommentable {
         require(proposals.contains(proposal)) { "No such proposal $proposal" }
-        require(!votes.containsKey(proposal)) { "Vote already specified for proposal $proposal" }
 
         votes[proposal] = vote
         return vote
@@ -78,6 +78,6 @@ class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : 
     override infix fun VoteKind.on(others: VotesReceiver.Others) = simpleVoteFunction(this) on others
 
     fun compile(): Map<ProposalNumber, PendingVote> {
-        return votes.mapValues { (k, v) -> v.compile() }
+        return votes.compile().mapValues { (k, v) -> v.compile() }
     }
 }
