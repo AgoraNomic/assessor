@@ -16,7 +16,7 @@ fun `assessment 8287 to 8307`() = assessment {
 
         // 8290 comes after 8291 because of a CoE
         val after8291 = ((8292..8307).toList() + 8290).map { ProposalNumber(it) }
-        val before8291 = proposals.map { it.number } - after8291
+        val before8291 = allProposals.map { it.number } - after8291
 
         for (prop in before8291) {
             proposal(prop) {
