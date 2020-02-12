@@ -32,7 +32,7 @@ class ProposalReceiverImpl(private val number: ProposalNumber) : ProposalReceive
     private val text = DslValue<String>()
     private val ai = DslValue<ProposalAI>()
     private val author = DslValue<Person>()
-    private var coauthors = DslValue<ImmutableList<Person>>()
+    private var coauthors = DslValue<Persons>()
 
     override fun title(str: String) {
         title.set(str)
@@ -47,7 +47,7 @@ class ProposalReceiverImpl(private val number: ProposalNumber) : ProposalReceive
     }
 
     override fun coauthors(vararg people: Person) {
-        coauthors.set(people.toList().toImmutableList())
+        coauthors.set(Persons(people.toList()))
     }
 
     override fun adoption_index(value: ProposalAI) {
@@ -61,7 +61,7 @@ class ProposalReceiverImpl(private val number: ProposalNumber) : ProposalReceive
         val ai = ai.get()
         val title = title.get()
         val author = author.get()
-        val coauthors = coauthors.getOrElse(persistentListOf())
+        val coauthors = coauthors.getOrElse(Persons(emptyList()))
         val text = text.get()
 
         return Proposal(
