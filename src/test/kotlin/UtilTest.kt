@@ -1,6 +1,4 @@
-import org.agoranomic.assessor.lib.getOrFail
-import org.agoranomic.assessor.lib.times
-import org.agoranomic.assessor.lib.compareTo
+import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
 import kotlin.test.*
 
@@ -21,6 +19,43 @@ class `getOrFail tests` {
     fun `throws on missing value`() {
         val map = mapOf(1 to "hi", 2 to "bye")
         assertFails { map.getOrFail(3) }
+    }
+}
+
+class `Exhaustive Enum tests` {
+    private enum class TestEnum {
+        First, Second
+    }
+
+    @Test
+    fun `isExhaustive correctly returns false`() {
+        assertFalse(listOf<TestEnum>().isExhaustive())
+        assertFalse(listOf(TestEnum.First).isExhaustive())
+        assertFalse(listOf(TestEnum.First, TestEnum.First).isExhaustive())
+        assertFalse(listOf(TestEnum.Second).isExhaustive())
+    }
+
+    @Test
+    fun `isExhaustive correctly returns true`() {
+        assertTrue(listOf(TestEnum.First, TestEnum.Second).isExhaustive())
+        assertTrue(listOf(TestEnum.Second, TestEnum.First).isExhaustive())
+        assertTrue(listOf(TestEnum.Second, TestEnum.First, TestEnum.Second).isExhaustive())
+    }
+
+    @Test
+    fun `requireExhaustive correctly succeeds`() {
+        // Tests will fail if call throws
+        listOf(TestEnum.First, TestEnum.Second).requireExhaustive()
+        listOf(TestEnum.Second, TestEnum.First).requireExhaustive()
+        listOf(TestEnum.Second, TestEnum.First, TestEnum.Second).requireExhaustive()
+    }
+
+    @Test
+    fun `requireExhaustive correctly fails`() {
+        assertFailsWith<IllegalArgumentException> { listOf<TestEnum>().requireExhaustive() }
+        assertFailsWith<IllegalArgumentException> { listOf(TestEnum.First).requireExhaustive() }
+        assertFailsWith<IllegalArgumentException> { listOf(TestEnum.First, TestEnum.First).requireExhaustive() }
+        assertFailsWith<IllegalArgumentException> { listOf(TestEnum.Second).requireExhaustive() }
     }
 }
 
