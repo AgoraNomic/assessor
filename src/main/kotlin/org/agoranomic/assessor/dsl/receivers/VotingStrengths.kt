@@ -40,7 +40,7 @@ interface VotingStrengthCommentable {
 
 @AssessmentDSL
 interface VotingStrengthReceiver {
-    val proposals: List<Proposal>
+    val allProposals: List<Proposal>
 
     infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable
     infix fun Person.strength(votingStrength: Int) = strength(VotingStrength(votingStrength))
@@ -51,7 +51,9 @@ interface VotingStrengthReceiver {
 }
 
 @AssessmentDSL
-class VotingStrengthReceiverImpl(override val proposals: ImmutableList<Proposal>) : VotingStrengthReceiver {
+class VotingStrengthReceiverImpl(private val proposals: ImmutableList<Proposal>) : VotingStrengthReceiver {
+    override val allProposals get() = proposals
+
     private var defaultStrength = DslValue<VotingStrength>()
     private var globalStrengths = DslValueMap<Person, MutableVotingStrength>()
     private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
