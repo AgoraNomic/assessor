@@ -18,7 +18,7 @@ fun `assessment 8235 to 8242`() = assessment {
         twg strength 2 comment BLOTS
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8235) {
             title("Unified fine creation syntax")
             ai(3.0)

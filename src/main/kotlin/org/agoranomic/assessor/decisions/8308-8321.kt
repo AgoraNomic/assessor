@@ -52,7 +52,7 @@ fun `assessment 8308 to 8321`() = assessment {
         }
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8308) {
             title("Imposing order on the order")
             ai(3.0)

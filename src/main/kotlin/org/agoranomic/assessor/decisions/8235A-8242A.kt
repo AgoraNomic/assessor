@@ -16,7 +16,7 @@ fun `assessment 8235A to 8242A`() = assessment {
         G strength 4 comment PM
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8235) {
             title("Unified fine creation syntax")
             ai(3.0)

@@ -19,7 +19,7 @@ fun `assessment 8196 to 8201`() = assessment {
         PSS strength 2 comment BLOTS
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8196) {
             title("Perfecting pledges (v1.2)")
             author(Jason)

@@ -33,7 +33,7 @@ fun `assessment 8287 to 8307`() = assessment {
         }
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8287) {
             title("Blot Stabilisation")
             ai(2.0)

@@ -28,8 +28,24 @@ data class Proposal(
     val title: String,
     val author: Person,
     val coauthors: Persons,
-    val text: String
+    val text: String,
+    val classAndChamber: ProposalClassAndChamber
 )
+
+enum class ProposalChamber {
+    Justice,
+    Efficiency,
+    Legislation,
+    Participation,
+    Economy,
+    ;
+}
+
+sealed class ProposalClassAndChamber {
+    object Classless : ProposalClassAndChamber()
+    object DemocraticClass : ProposalClassAndChamber()
+    data class OrdinaryClass(val chamber: ProposalChamber) : ProposalClassAndChamber()
+}
 
 /**
  * Thrown when a [ProposalSet] is passed a [Proposal] when it contains a [Proposal] with the same

@@ -14,7 +14,7 @@ fun `assessment 8280 to 8286`() = assessment {
         default(3)
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8280) {
             title("Resolve the troubles v1.1")
             ai(3.0)

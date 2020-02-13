@@ -16,7 +16,7 @@ fun `assessment 8243 to 8247`() = assessment {
         Corona strength 1 comment BLOTS
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8243) {
             title("Self-ratifying regulations")
             ai(3.0)

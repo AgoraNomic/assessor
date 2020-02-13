@@ -16,7 +16,7 @@ fun `assessment 8215A-8234A`() = assessment {
         Corona strength 1 comment BLOTS
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8215) {
             title("recusal simplification")
             ai(1.7)
