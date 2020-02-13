@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.receivers.ProposalStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 @AssessmentDSL
 class ProposalChamberReceiver<Ministry> {
@@ -49,10 +50,10 @@ inline fun <reified Office : Enum<Office>, Ministry> compilePersonMinistries(
     _uncheckedCompilePersonMinistries(officeMap, officeMinistries)
 }
 
-public fun <Ministry> ProposalStrengthReceiver.proposalMinistryImpl(
+public fun ProposalStrengthReceiver.proposalMinistryImpl(
     personMinistries: Map<Person, List<Ministry>>,
     ministryBonus: VotingStrength,
-    chamber: Ministry?
+    chamber: ProposalChamber
 ) {
     // There are no bonuses for a proposal w/o a chamber
     if (chamber == null) return
@@ -66,34 +67,39 @@ public fun <Ministry> ProposalStrengthReceiver.proposalMinistryImpl(
     }
 }
 
-public inline fun <reified Office : Enum<Office>, Ministry> ProposalStrengthReceiver.proposalMinistries(
+public inline fun <reified Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,
-    chamber: Ministry?
+    chamber: ProposalChamber
 ) {
     val personMinistries = compilePersonMinistries(officeMap, officeMinistries)
     proposalMinistryImpl(personMinistries, ministryBonus, chamber)
 }
 
-inline fun <reified Office : Enum<Office>, Ministry> VotingStrengthReceiver.ministries(
+inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,
-    chamberBlock: ProposalChamberReceiver<Ministry>.() -> Unit
+    proposals: ProposalSet
 ) {
-    val receiver = ProposalChamberReceiver<Ministry>()
-    receiver.chamberBlock()
-    val proposalChambers = receiver.compile()
+    for (currentProposal in proposals) {
+        val currentProposalClassAndChamber = currentProposal.classAndChamber
 
-    for ((currentProposal, currentProposalChamber) in proposalChambers) {
-        proposal(currentProposal) {
-            proposalMinistries(
-                officeMap,
-                officeMinistries,
-                ministryBonus,
-                currentProposalChamber
-            )
+        val _ensureExhaustive_ = when (currentProposalClassAndChamber) {
+            is ProposalClassAndChamber.Classless -> {}
+            is ProposalClassAndChamber.DemocraticClass -> {}
+
+            is ProposalClassAndChamber.OrdinaryClass -> {
+                proposal(currentProposal.number) {
+                    proposalMinistries(
+                        officeMap,
+                        officeMinistries,
+                        ministryBonus,
+                        currentProposalClassAndChamber.chamber
+                    )
+                }
+            }
         }
     }
 }

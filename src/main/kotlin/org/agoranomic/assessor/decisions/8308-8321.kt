@@ -3,13 +3,14 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.v0Ministries
 import org.agoranomic.assessor.dsl.ministries.V0Office.*
-import org.agoranomic.assessor.dsl.ministries.V0Ministry.*
 import org.agoranomic.assessor.dsl.ministries.v1Ministries
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.ProposalChamber
+import org.agoranomic.assessor.lib.ProposalChamber.*
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
+import org.agoranomic.assessor.lib.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.compareTo
 
 @UseAssessment
 fun `assessment 8308 to 8321`() = assessment {
@@ -38,19 +39,8 @@ fun `assessment 8308 to 8321`() = assessment {
         default(3)
         Falsifian strength 4 comment SPEAKER
 
-        v0Ministries(offices) {
-            8311 chamber Economy
-            8312 chamber Efficiency
-            8314 chamber Economy
-            8317 chamber Economy
-            8318 chamber Efficiency
-        }
-
-        v1Ministries(offices) {
-            8319 chamber Legislation
-            8320 chamber Legislation
-            8321 chamber Legislation
-        }
+        v0Ministries(offices, allProposals.filter { it.number.raw <= 8318 }.toProposalSet())
+        v1Ministries(offices, allProposals.filter { it.number.raw >= 8319 }.toProposalSet())
     }
 
     proposals(v1) {
@@ -148,7 +138,7 @@ only kept it for non-interim holders (also per Alexis's suggestion).
             title("Rewards Patch & Equitable Remedy")
             ai(1.0)
             author(twg)
-            chamber(ProposalChamber.Economy)
+            chamber(Economy)
 
             text(
                 """
@@ -183,7 +173,7 @@ Lost and Found Department.
             title("On Possibility")
             ai(1.0)
             author(Alexis)
-            chamber(ProposalChamber.Efficiency)
+            chamber(Efficiency)
 
             text(
                 """
@@ -243,7 +233,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             title("Finite Gifting")
             ai(1.0)
             author(Aris)
-            chamber(ProposalChamber.Economy)
+            chamber(Economy)
 
             text(
                 """
@@ -414,7 +404,7 @@ Enact a new power-2 rule entitled "Zombie Voting" reading as follows:
             title("Zombie trade")
             ai(1.0)
             author(Aris)
-            chamber(ProposalChamber.Economy)
+            chamber(Economy)
 
             text(
                 """
@@ -481,7 +471,7 @@ Create a new power-2 Rule entitled "Zombie Trusts":
             title("Notorial Economy")
             ai(1.0)
             author(Aris)
-            chamber(ProposalChamber.Efficiency)
+            chamber(Efficiency)
 
             text(
                 """
@@ -493,7 +483,7 @@ If the Notary's Interest is the empty set, change it to [Economy]."""
             title("Sergeant-at-Arms")
             ai(2.0)
             author(Aris)
-            chamber(ProposalChamber.Legislation)
+            chamber(Legislation)
 
             text(
                 """
@@ -517,7 +507,7 @@ dictatorship. The others are secured out of an abundance of caution.]"""
             title("Promotorial Assignment")
             ai(2.0)
             author(Aris)
-            chamber(ProposalChamber.Legislation)
+            chamber(Legislation)
 
             text(
                 """
@@ -532,7 +522,7 @@ of the last paragraph."""
             title("Untying Quorum")
             ai(2.0)
             author(Aris)
-            chamber(ProposalChamber.Legislation)
+            chamber(Legislation)
 
             text(
                 """
