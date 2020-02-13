@@ -15,7 +15,7 @@ fun `assessment 8266 to 8274`() = assessment {
         G strength 4 comment PM
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8266) {
             title("Glitter")
             ai(1.0)

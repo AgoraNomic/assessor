@@ -18,7 +18,7 @@ fun `assessment 8202 to 8214`() = assessment {
         twg strength 2 comment BLOTS
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8202) {
             title("Police Power")
             ai(1.7)

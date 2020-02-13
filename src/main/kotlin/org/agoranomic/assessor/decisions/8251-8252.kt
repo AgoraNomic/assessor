@@ -17,7 +17,7 @@ fun `assessment 8251 to 8252`() = assessment {
         G strength 4 comment PM
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8251) {
             title("Ruleset definition")
             ai(3.0)

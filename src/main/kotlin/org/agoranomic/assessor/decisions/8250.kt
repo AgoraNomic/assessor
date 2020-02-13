@@ -16,7 +16,7 @@ fun `assessment 8250`() = assessment {
         G strength 4 comment PM
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8250) {
             title("Finger bending")
             ai(1.7)

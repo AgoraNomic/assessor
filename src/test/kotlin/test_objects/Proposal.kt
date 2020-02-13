@@ -9,6 +9,7 @@ fun testProposalAuthor(num: TestNumber): Person = testPlayer(subReqNum(num), typ
 fun testProposalCoauthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Coauthor")
 fun testProposalCoauthors(num: TestNumber) = Persons(testList(subReqNum(num)) { testProposalCoauthor(it) })
 fun testProposalText(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Text")
+fun testProposalChamber(num: TestNumber): ProposalClassAndChamber = ProposalClassAndChamber.Classless
 
 fun testProposal(num: TestNumber): Proposal = Proposal(
     testProposalNumber(subReqNum(num)),
@@ -16,7 +17,8 @@ fun testProposal(num: TestNumber): Proposal = Proposal(
     testProposalTitle(subReqNum(num)),
     testProposalAuthor(subReqNum(num)),
     testProposalCoauthors(subReqNum(num)),
-    testProposalText(subReqNum(num))
+    testProposalText(subReqNum(num)),
+    testProposalChamber(subReqNum(num))
 )
 
 fun firstTestProposalNumber() = testProposalNumber(TEST_ZERO)

@@ -19,7 +19,7 @@ fun `assessment 8188A to 8195A`() = assessment {
         twg strength 2 comment BLOTS
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8188) {
             title("Blanket Denial")
             ai(3.0)

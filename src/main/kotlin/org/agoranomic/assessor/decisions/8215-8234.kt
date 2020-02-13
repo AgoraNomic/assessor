@@ -10,7 +10,7 @@ fun `assessment 8215 to 8234`() = assessment {
     name("8215-8234")
     quorum(9)
 
-    proposals {
+    proposals(v0) {
         proposal(8215) {
             title("recusal simplification")
             ai(1.7)

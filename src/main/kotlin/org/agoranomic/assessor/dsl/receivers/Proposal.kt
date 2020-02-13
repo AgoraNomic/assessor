@@ -1,15 +1,12 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
 
 @AssessmentDSL
-interface ProposalReceiver {
+interface ProposalCommonReceiver {
     fun title(str: String)
     fun text(str: String)
     fun author(value: Person)
@@ -27,12 +24,23 @@ interface ProposalReceiver {
 }
 
 @AssessmentDSL
-class ProposalReceiverImpl(private val number: ProposalNumber) : ProposalReceiver {
+interface ProposalReceiverV0 : ProposalCommonReceiver
+
+@AssessmentDSL
+interface ProposalReceiverV1 : ProposalCommonReceiver {
+    fun classless()
+    fun democratic()
+    fun chamber(chamber: ProposalChamber)
+}
+
+@AssessmentDSL
+class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
     private val title = DslValue<String>()
     private val text = DslValue<String>()
     private val ai = DslValue<ProposalAI>()
     private val author = DslValue<Person>()
     private var coauthors = DslValue<Persons>()
+    private val classAndChamber = DslValue<ProposalClassAndChamber>()
 
     override fun title(str: String) {
         title.set(str)
@@ -57,6 +65,18 @@ class ProposalReceiverImpl(private val number: ProposalNumber) : ProposalReceive
     override fun adoption_index(value: Double) =
         adoption_index(BigDecimal(((value * 10) + 0.5).toInt()).setScale(1) / BigDecimal.TEN)
 
+    override fun classless() {
+        classAndChamber.set(ProposalClassAndChamber.Classless)
+    }
+
+    override fun democratic() {
+        classAndChamber.set(ProposalClassAndChamber.DemocraticClass)
+    }
+
+    override fun chamber(chamber: ProposalChamber) {
+        classAndChamber.set(ProposalClassAndChamber.OrdinaryClass(chamber = chamber))
+    }
+
     fun compile(): Proposal {
         val ai = ai.get()
         val title = title.get()
@@ -70,7 +90,21 @@ class ProposalReceiverImpl(private val number: ProposalNumber) : ProposalReceive
             title,
             author,
             coauthors,
-            text.trim()
+            text.trim(),
+            classAndChamber.get()
         )
     }
+}
+
+// Old proposals are exactly the same as new proposals without a class.
+@AssessmentDSL
+class ProposalReceiverImplV0(
+    number: ProposalNumber,
+    val v1Impl: ProposalReceiverImplV1 = ProposalReceiverImplV1(number)
+) : ProposalReceiverV0, ProposalCommonReceiver by v1Impl {
+    init {
+        v1Impl.classless()
+    }
+
+    fun compile(): Proposal = v1Impl.compile()
 }

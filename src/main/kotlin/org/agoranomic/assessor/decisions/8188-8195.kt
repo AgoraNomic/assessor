@@ -16,7 +16,7 @@ fun `assessment 8188 to 8195`() = assessment {
         G strength 4 comment PM
     }
 
-    proposals {
+    proposals(v0) {
         proposal(8188) {
             title("Blanket Denial")
             author(G)
