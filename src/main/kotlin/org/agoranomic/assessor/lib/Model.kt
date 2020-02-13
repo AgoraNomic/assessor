@@ -32,7 +32,7 @@ data class Proposal(
     val classAndChamber: ProposalClassAndChamber
 )
 
-enum class ProposalChamber {
+enum class Ministry {
     Justice,
     Efficiency,
     Legislation,
@@ -40,6 +40,8 @@ enum class ProposalChamber {
     Economy,
     ;
 }
+
+typealias ProposalChamber = Ministry
 
 sealed class ProposalClassAndChamber {
     object Classless : ProposalClassAndChamber()
