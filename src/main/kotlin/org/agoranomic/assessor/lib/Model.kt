@@ -32,12 +32,12 @@ data class Proposal(
     val classAndChamber: ProposalClassAndChamber
 )
 
-enum class Ministry {
-    Justice,
-    Efficiency,
-    Legislation,
-    Participation,
-    Economy,
+enum class Ministry(val readableName: String) {
+    Justice("Justice"),
+    Efficiency("Efficiency"),
+    Legislation("Legislation"),
+    Participation("Participation"),
+    Economy("Economy"),
     ;
 }
 

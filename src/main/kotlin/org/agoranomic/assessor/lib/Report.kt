@@ -27,6 +27,16 @@ private fun StringBuilder.emitQuorum(quorum: Int) {
 
 private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number.raw} (${proposal.title})")
+
+    val proposalClassAndChamber = proposal.classAndChamber
+    val _ensureExhaustive_ = when (proposalClassAndChamber) {
+        is ProposalClassAndChamber.Classless -> {}
+        is ProposalClassAndChamber.DemocraticClass -> emitLine("CLASS: DEMOCRATIC")
+        is ProposalClassAndChamber.OrdinaryClass -> {
+            emitLine("CLASS: ORDINARY")
+            emitLine("CHAMBER: ${proposalClassAndChamber.chamber.readableName.toUpperCase()}")
+        }
+    }
 }
 
 private val strengthFootnoteMarkerMap = mapOf(
