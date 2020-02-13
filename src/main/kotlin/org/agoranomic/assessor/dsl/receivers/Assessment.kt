@@ -69,7 +69,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         val proposals = proposals.get()
         val votingStrengthsBlock = votingStrengthsBlock.get()
 
-        val receiver = VotingStrengthReceiverImpl(proposals.toImmutableList())
+        val receiver = VotingStrengthReceiverImpl(proposals)
         receiver.votingStrengthsBlock()
         return receiver.compile()
     }
