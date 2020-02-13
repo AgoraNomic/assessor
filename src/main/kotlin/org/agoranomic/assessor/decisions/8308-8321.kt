@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.ministries.V0Office.*
 import org.agoranomic.assessor.dsl.ministries.V0Ministry.*
 import org.agoranomic.assessor.dsl.ministries.v1Ministries
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.ProposalChamber
 import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
@@ -52,11 +53,12 @@ fun `assessment 8308 to 8321`() = assessment {
         }
     }
 
-    proposals(v0) {
+    proposals(v1) {
         proposal(8308) {
             title("Imposing order on the order")
             ai(3.0)
             author(Falsifian)
+            classless()
 
             text(
                 """
@@ -73,6 +75,7 @@ list it is, put it at the end of the list."""
             title("A Degree of Inefficiency")
             ai(3.0)
             author(Alexis)
+            democratic()
 
             text(
                 """
@@ -87,6 +90,7 @@ paragraph."""
             ai(3.0)
             author(Jason)
             coauthors(Alexis)
+            classless()
 
             text(
                 """
@@ -144,6 +148,7 @@ only kept it for non-interim holders (also per Alexis's suggestion).
             title("Rewards Patch & Equitable Remedy")
             ai(1.0)
             author(twg)
+            chamber(ProposalChamber.Economy)
 
             text(
                 """
@@ -178,6 +183,7 @@ Lost and Found Department.
             title("On Possibility")
             ai(1.0)
             author(Alexis)
+            chamber(ProposalChamber.Efficiency)
 
             text(
                 """
@@ -210,6 +216,7 @@ Enact a new power-1 rule entitled "Default Mechanisms" reading as follows:
             ai(3.0)
             author(Alexis)
             coauthors(G)
+            democratic()
 
             text(
                 """
@@ -236,6 +243,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             title("Finite Gifting")
             ai(1.0)
             author(Aris)
+            chamber(ProposalChamber.Economy)
 
             text(
                 """
@@ -255,6 +263,7 @@ to read
             title("Clearer Resolutions")
             ai(3.0)
             author(Alexis)
+            democratic()
 
             text(
                 """
@@ -333,6 +342,7 @@ Amend Rule 2034 (Vote Protection and Cutoff for Challenges) to read:
             title("Zombie voting package")
             ai(3.0)
             author(Alexis)
+            democratic()
 
             text(
                 """
@@ -404,6 +414,7 @@ Enact a new power-2 rule entitled "Zombie Voting" reading as follows:
             title("Zombie trade")
             ai(1.0)
             author(Aris)
+            chamber(ProposalChamber.Economy)
 
             text(
                 """
@@ -470,6 +481,7 @@ Create a new power-2 Rule entitled "Zombie Trusts":
             title("Notorial Economy")
             ai(1.0)
             author(Aris)
+            chamber(ProposalChamber.Efficiency)
 
             text(
                 """
@@ -481,6 +493,7 @@ If the Notary's Interest is the empty set, change it to [Economy]."""
             title("Sergeant-at-Arms")
             ai(2.0)
             author(Aris)
+            chamber(ProposalChamber.Legislation)
 
             text(
                 """
@@ -504,6 +517,7 @@ dictatorship. The others are secured out of an abundance of caution.]"""
             title("Promotorial Assignment")
             ai(2.0)
             author(Aris)
+            chamber(ProposalChamber.Legislation)
 
             text(
                 """
@@ -518,6 +532,7 @@ of the last paragraph."""
             title("Untying Quorum")
             ai(2.0)
             author(Aris)
+            chamber(ProposalChamber.Legislation)
 
             text(
                 """
