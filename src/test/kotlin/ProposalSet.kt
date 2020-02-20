@@ -149,4 +149,22 @@ class `ProposalSet tests` {
 
         assertEquals(containedProp, proposalSet[containedProp.number])
     }
+
+    @Test
+    fun `contains(ProposalNumber) returns false when no proposal`() {
+        val containedProp = firstTestProposal()
+        val proposalSet = proposalSetOf(containedProp)
+
+        val otherProposal = secondTestProposal()
+
+        assertFalse(proposalSet.contains(otherProposal.number))
+    }
+
+    @Test
+    fun `contains(ProposalNumber) returns true when contained`() {
+        val containedProp = firstTestProposal()
+        val proposalSet = proposalSetOf(containedProp)
+
+        assertTrue(proposalSet.contains(containedProp.number))
+    }
 }
