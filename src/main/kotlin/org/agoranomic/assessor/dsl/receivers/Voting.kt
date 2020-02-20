@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal_set.get
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDSL

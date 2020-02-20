@@ -24,12 +24,6 @@ interface ProposalSet : Iterable<Proposal> {
     fun getOpt(number: ProposalNumber): Proposal?
 
     /**
-     * Returns a [Proposal] if this [ProposalSet] contains a [Proposal] with the provided [number]
-     * @throws NoSuchProposalException if this [ProposalSet] does not contain a [Proposal] with the provided [number]
-     */
-    operator fun get(number: ProposalNumber): Proposal = getOpt(number) ?: throw NoSuchProposalException(number)
-
-    /**
      * Returns `true` if this [ProposalSet] contains a [Proposal] with the provided [number], or `false` otherwise.
      */
     fun contains(number: ProposalNumber): Boolean = getOpt(number) != null
@@ -44,6 +38,12 @@ interface ProposalSet : Iterable<Proposal> {
      */
     fun numbers(): ImmutableSet<ProposalNumber>
 }
+
+/**
+ * Returns a [Proposal] if this [ProposalSet] contains a [Proposal] with the provided [number]
+ * @throws NoSuchProposalException if this [ProposalSet] does not contain a [Proposal] with the provided [number]
+ */
+operator fun ProposalSet.get(number: ProposalNumber): Proposal = getOpt(number) ?: throw NoSuchProposalException(number)
 
 fun ProposalSet.isEmpty(): Boolean = size == 0
 fun ProposalSet.isNotEmpty() = !isEmpty()
