@@ -63,8 +63,30 @@ class `ProposalSet tests` {
         val secondProp = secondTestProposal()
         val thirdProp = thirdTestProposal()
 
+        fun assertEqualAndHashCode(first: ProposalSet, second: ProposalSet) {
+            assertTrue(first == second)
+            assertTrue(first.hashCode() == second.hashCode())
+        }
+
         // Different order is intentional
-        assertTrue(proposalSetOf(firstProp, secondProp, thirdProp) == proposalSetOf(thirdProp, secondProp, firstProp))
-        assertTrue(mutableProposalSetOf(firstProp, secondProp, thirdProp) == mutableProposalSetOf(thirdProp, secondProp, firstProp))
+        assertEqualAndHashCode(
+            proposalSetOf(firstProp, secondProp, thirdProp),
+            proposalSetOf(thirdProp, secondProp, firstProp)
+        )
+
+        assertEqualAndHashCode(
+            mutableProposalSetOf(firstProp, secondProp, thirdProp),
+            mutableProposalSetOf(thirdProp, secondProp, firstProp)
+        )
+
+        assertEqualAndHashCode(
+            proposalSetOf(firstProp, secondProp, thirdProp),
+            mutableProposalSetOf(thirdProp, secondProp, firstProp)
+        )
+
+        assertEqualAndHashCode(
+            mutableProposalSetOf(firstProp, secondProp, thirdProp),
+            proposalSetOf(thirdProp, secondProp, firstProp)
+        )
     }
 }
