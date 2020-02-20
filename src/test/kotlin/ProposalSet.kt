@@ -1,12 +1,27 @@
+import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.proposal_set.*
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.MethodSource
 import test_objects.*
 import kotlin.test.*
 
+private typealias CreateProposalSetFunc = (proposals: Array<out Proposal>) -> ProposalSet
+
 class `ProposalSet tests` {
-    @Test
-    fun `proposalSetOf throws on duplicate numbers`() {
+    private operator fun CreateProposalSetFunc.invoke(vararg proposals: Proposal) = this(proposals)
+
+    companion object {
+        @JvmStatic
+        private fun createProposalSetFuncs(): List<CreateProposalSetFunc> {
+            return listOf(::proposalSetOf, ::mutableProposalSetOf)
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `proposalSetOf throws on duplicate numbers`(createProposalSet: CreateProposalSetFunc) {
         val duplicateNumber = ProposalNumber(12) // Arbitrarily picked
 
         val firstDuplicateProposal = firstTestProposal().copy(number = duplicateNumber)
@@ -14,16 +29,14 @@ class `ProposalSet tests` {
         val nonduplicateProposal = thirdTestProposal()
 
         assertFailsWith<ProposalDataMismatchException> {
-            proposalSetOf(firstDuplicateProposal, secondDuplicateProposal, nonduplicateProposal)
-        }
-
-        assertFailsWith<ProposalDataMismatchException> {
-            mutableProposalSetOf(firstDuplicateProposal, secondDuplicateProposal, nonduplicateProposal)
+            createProposalSet(firstDuplicateProposal, secondDuplicateProposal, nonduplicateProposal)
         }
     }
 
     @Test
     fun `two proposalSetOf calls are equal`() {
+        val createProposalSetFuncs = createProposalSetFuncs()
+
         val firstProp = firstTestProposal()
         val secondProp = secondTestProposal()
         val thirdProp = thirdTestProposal()
@@ -33,72 +46,58 @@ class `ProposalSet tests` {
             assertTrue(first.hashCode() == second.hashCode())
         }
 
-        // Different order is intentional
-        assertEqualAndHashCode(
-            proposalSetOf(firstProp, secondProp, thirdProp),
-            proposalSetOf(thirdProp, secondProp, firstProp)
-        )
-
-        assertEqualAndHashCode(
-            mutableProposalSetOf(firstProp, secondProp, thirdProp),
-            mutableProposalSetOf(thirdProp, secondProp, firstProp)
-        )
-
-        assertEqualAndHashCode(
-            proposalSetOf(firstProp, secondProp, thirdProp),
-            mutableProposalSetOf(thirdProp, secondProp, firstProp)
-        )
-
-        assertEqualAndHashCode(
-            mutableProposalSetOf(firstProp, secondProp, thirdProp),
-            proposalSetOf(thirdProp, secondProp, firstProp)
-        )
+        for (firstCreateProposalSet in createProposalSetFuncs) {
+            for (secondCreateProposalSet in createProposalSetFuncs) {
+                // Different order is intentional
+                assertEqualAndHashCode(
+                    firstCreateProposalSet(firstProp, secondProp, thirdProp),
+                    secondCreateProposalSet(thirdProp, secondProp, firstProp)
+                )
+            }
+        }
     }
 
     @Test
     fun `two different proposalSetOf calls are not equal`() {
+        val createProposalSetFuncs = createProposalSetFuncs()
+
         val firstProp = firstTestProposal()
         val secondProp = secondTestProposal()
         val thirdProp = thirdTestProposal()
 
-        assertFalse(
-            proposalSetOf(firstProp, secondProp) == proposalSetOf(secondProp, thirdProp)
-        )
-
-        assertFalse(
-            proposalSetOf(firstProp, secondProp) == mutableProposalSetOf(secondProp, thirdProp)
-        )
-
-        assertFalse(
-            mutableProposalSetOf(firstProp, secondProp) == proposalSetOf(secondProp, thirdProp)
-        )
-
-        assertFalse(
-            mutableProposalSetOf(firstProp, secondProp) == mutableProposalSetOf(secondProp, thirdProp)
-        )
+        for (firstCreateProposalSet in createProposalSetFuncs) {
+            for (secondCreateProposalSet in createProposalSetFuncs) {
+                assertFalse(
+                    firstCreateProposalSet(firstProp, secondProp) == secondCreateProposalSet(secondProp, thirdProp)
+                )
+            }
+        }
     }
 
-    @Test
-    fun `getOpt returns null when no proposal`() {
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `getOpt returns null when no proposal`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
-        val proposalSet = proposalSetOf(containedProp)
+        val proposalSet = createProposalSet(containedProp)
 
         val otherProp = secondTestProposal()
         assertNull(proposalSet.getOpt(otherProp.number))
     }
 
-    @Test
-    fun `getOpt returns proposal when contained`() {
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `getOpt returns proposal when contained`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
-        val proposalSet = proposalSetOf(containedProp)
+        val proposalSet = createProposalSet(containedProp)
 
         assertEquals(containedProp, proposalSet.getOpt(containedProp.number))
     }
 
-    @Test
-    fun `get fails when no proposal`() {
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `get fails when no proposal`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
-        val proposalSet = proposalSetOf(containedProp)
+        val proposalSet = createProposalSet(containedProp)
 
         val otherProposal = secondTestProposal()
 
@@ -107,28 +106,31 @@ class `ProposalSet tests` {
         }
     }
 
-    @Test
-    fun `get returns proposal when contained`() {
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `get returns proposal when contained`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
-        val proposalSet = proposalSetOf(containedProp)
+        val proposalSet = createProposalSet(containedProp)
 
         assertEquals(containedProp, proposalSet[containedProp.number])
     }
 
-    @Test
-    fun `contains(ProposalNumber) returns false when no proposal`() {
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `contains(ProposalNumber) returns false when no proposal`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
-        val proposalSet = proposalSetOf(containedProp)
+        val proposalSet = createProposalSet(containedProp)
 
         val otherProposal = secondTestProposal()
 
         assertFalse(proposalSet.contains(otherProposal.number))
     }
 
-    @Test
-    fun `contains(ProposalNumber) returns true when contained`() {
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `contains(ProposalNumber) returns true when contained`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
-        val proposalSet = proposalSetOf(containedProp)
+        val proposalSet = createProposalSet(containedProp)
 
         assertTrue(proposalSet.contains(containedProp.number))
     }
