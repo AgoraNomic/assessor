@@ -112,4 +112,41 @@ class `ProposalSet tests` {
             mutableProposalSetOf(firstProp, secondProp) == mutableProposalSetOf(secondProp, thirdProp)
         )
     }
+
+    @Test
+    fun `getOpt returns null when no proposal`() {
+        val containedProp = firstTestProposal()
+        val proposalSet = proposalSetOf(containedProp)
+
+        val otherProp = secondTestProposal()
+        assertNull(proposalSet.getOpt(otherProp.number))
+    }
+
+    @Test
+    fun `getOpt returns proposal when contained`() {
+        val containedProp = firstTestProposal()
+        val proposalSet = proposalSetOf(containedProp)
+
+        assertEquals(containedProp, proposalSet.getOpt(containedProp.number))
+    }
+
+    @Test
+    fun `get fails when no proposal`() {
+        val containedProp = firstTestProposal()
+        val proposalSet = proposalSetOf(containedProp)
+
+        val otherProposal = secondTestProposal()
+
+        assertFailsWith<NoSuchProposalException> {
+            proposalSet[otherProposal.number]
+        }
+    }
+
+    @Test
+    fun `get returns proposal when contained`() {
+        val containedProp = firstTestProposal()
+        val proposalSet = proposalSetOf(containedProp)
+
+        assertEquals(containedProp, proposalSet[containedProp.number])
+    }
 }
