@@ -134,4 +134,17 @@ class `ProposalSet tests` {
 
         assertTrue(proposalSet.contains(containedProp.number))
     }
+
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `size works`(createProposalSet: CreateProposalSetFunc) {
+        val firstProposal = firstTestProposal()
+        val secondProposal = secondTestProposal()
+        val thirdProposal = thirdTestProposal()
+
+        assertEquals(0, createProposalSet().size)
+        assertEquals(1, createProposalSet(firstProposal).size)
+        assertEquals(2, createProposalSet(firstProposal, secondProposal).size)
+        assertEquals(3, createProposalSet(firstProposal, secondProposal, thirdProposal).size)
+    }
 }
