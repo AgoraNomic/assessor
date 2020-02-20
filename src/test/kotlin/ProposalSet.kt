@@ -89,4 +89,27 @@ class `ProposalSet tests` {
             proposalSetOf(thirdProp, secondProp, firstProp)
         )
     }
+
+    @Test
+    fun `two different proposalSetOf calls are not equal`() {
+        val firstProp = firstTestProposal()
+        val secondProp = secondTestProposal()
+        val thirdProp = thirdTestProposal()
+
+        assertFalse(
+            proposalSetOf(firstProp, secondProp) == proposalSetOf(secondProp, thirdProp)
+        )
+
+        assertFalse(
+            proposalSetOf(firstProp, secondProp) == mutableProposalSetOf(secondProp, thirdProp)
+        )
+
+        assertFalse(
+            mutableProposalSetOf(firstProp, secondProp) == proposalSetOf(secondProp, thirdProp)
+        )
+
+        assertFalse(
+            mutableProposalSetOf(firstProp, secondProp) == mutableProposalSetOf(secondProp, thirdProp)
+        )
+    }
 }
