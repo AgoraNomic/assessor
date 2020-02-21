@@ -147,4 +147,32 @@ class `ProposalSet tests` {
         assertEquals(2, createProposalSet(firstProposal, secondProposal).size)
         assertEquals(3, createProposalSet(firstProposal, secondProposal, thirdProposal).size)
     }
+
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
+    fun `numbers works`(createProposalSet: CreateProposalSetFunc) {
+        val firstProposal = firstTestProposal()
+        val secondProposal = secondTestProposal()
+        val thirdProposal = thirdTestProposal()
+
+        assertEquals(
+            setOf<ProposalNumber>(),
+            createProposalSet().numbers()
+        )
+
+        assertEquals(
+            setOf(firstProposal.number),
+            createProposalSet(firstProposal).numbers()
+        )
+
+        assertEquals(
+            setOf(firstProposal.number, secondProposal.number),
+            createProposalSet(firstProposal, secondProposal).numbers()
+        )
+
+        assertEquals(
+            setOf(firstProposal.number, secondProposal.number, thirdProposal.number),
+            createProposalSet(firstProposal, secondProposal, thirdProposal).numbers()
+        )
+    }
 }
