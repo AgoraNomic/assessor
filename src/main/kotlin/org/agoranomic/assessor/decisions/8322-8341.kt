@@ -549,5 +549,28 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             endorse(Alexis) on 8340
             AGAINST on 8341
         }
+
+        votes(Warrigal) {
+            PRESENT on 8322
+            PRESENT on 8323
+            FOR on 8324
+            PRESENT on 8325
+            FOR on 8326
+            FOR on 8327
+            FOR on 8328
+            AGAINST on 8329
+            FOR on 8330
+            FOR on 8331
+            FOR on 8332
+            FOR on 8333
+            FOR on 8334
+            FOR on 8335
+            FOR on 8336
+            FOR on 8337
+            FOR on 8338
+            // TODO: resolve conditional vote on 8339: AGAINST if 8339 to be adopted, FOR otherwise
+            FOR on 8340
+            AGAINST on 8341
+        }
     }
 }
