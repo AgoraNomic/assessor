@@ -60,7 +60,7 @@ class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : 
     override val allProposals get() = proposals
 
     private var defaultStrength = DslValue<VotingStrength>()
-    private var globalStrengths = DslValueMap<Person, MutableVotingStrength>()
+    private var globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
     private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
 
     private data class MutableVotingStrength(
@@ -93,7 +93,7 @@ class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : 
 
     fun compile(): Map<ProposalNumber, VotingStrengthMap> {
         val defaultStrength = defaultStrength.get()
-        val globalStrengths = globalStrengths.compile().mapValues { (_, strength) -> strength.compile() }
+        val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
