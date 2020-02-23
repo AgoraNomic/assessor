@@ -570,7 +570,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             FOR on 8338
             // TODO: resolve conditional vote on 8339: AGAINST if 8339 to be adopted, FOR otherwise
             FOR on 8340
-            AGAINST on 8341
+            PRESENT on 8341
         }
     }
 }
