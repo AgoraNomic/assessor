@@ -1,6 +1,5 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.ImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
@@ -48,6 +47,9 @@ interface VotingStrengthReceiver {
     infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable
     infix fun Person.strength(votingStrength: Int) = strength(VotingStrength(votingStrength))
 
+    infix fun Person.add(votingStrength: VotingStrength)
+    infix fun Person.add(votingStrength: Int) = add(VotingStrength(votingStrength))
+
     fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit)
     fun default(strength: VotingStrength)
     fun default(strength: Int) = default(VotingStrength(strength))
@@ -74,12 +76,21 @@ class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : 
         fun compile() = VotingStrengthWithComment(value, comment)
     }
 
+    private fun setDefaultIfAbsent(person: Person) {
+        if (!globalStrengths.containsKey(person)) globalStrengths[person] = MutableVotingStrength(defaultStrength.get())
+    }
+
     override infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable {
         require(!globalStrengths.containsKey(this)) { "Voting strength specified twice for player ${this.name}" }
 
         val strength = MutableVotingStrength(votingStrength)
         globalStrengths[this] = strength
         return strength
+    }
+
+    override fun Person.add(addAmount: VotingStrength) {
+        setDefaultIfAbsent(this)
+        globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + addAmount)
     }
 
     override fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit) {
