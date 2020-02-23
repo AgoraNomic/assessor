@@ -501,5 +501,28 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             FOR on 8340
             FOR on 8341
         }
+
+        votes(sukil) {
+            PRESENT on 8322
+            PRESENT on 8323
+            PRESENT on 8324
+            PRESENT on 8325
+            FOR on 8326
+            AGAINST on 8327
+            AGAINST on 8328
+            FOR on 8329
+            PRESENT on 8330
+            PRESENT on 8331
+            FOR on 8332
+            PRESENT on 8333
+            FOR on 8334
+            FOR on 8335
+            FOR on 8336
+            PRESENT on 8337
+            AGAINST on 8338
+            AGAINST on 8339
+            PRESENT on 8340
+            AGAINST on 8341
+        }
     }
 }
