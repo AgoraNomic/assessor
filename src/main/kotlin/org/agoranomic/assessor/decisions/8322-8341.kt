@@ -7,6 +7,9 @@ import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.UseAssessment
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
 fun `assessment 8322 to 8341`() = assessment {
@@ -431,5 +434,27 @@ Amend Rule 2124 (Agoran Satisfaction) by:
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8322
+            FOR on 8323
+            FOR on 8324
+            FOR on 8325
+            FOR on 8326
+            FOR on 8327
+            FOR on 8328
+            AGAINST on 8329
+            FOR on 8330
+            FOR on 8331
+            AGAINST on 8332
+            AGAINST on 8333
+            AGAINST on 8334
+            AGAINST on 8335
+            FOR on 8336
+            FOR on 8337
+            FOR on 8338
+            AGAINST on 8339
+            FOR on 8340
+            AGAINST on 8341
+        }
     }
 }
