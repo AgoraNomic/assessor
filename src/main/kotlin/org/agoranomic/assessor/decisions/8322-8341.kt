@@ -626,5 +626,18 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             // TODO: resolve conditional vote on 8340: endorse(Alexis) unless veto
             endorse(Alexis) on 8341
         }
+
+        votes(G) {
+            AGAINST on 8323
+            AGAINST on 8325
+            AGAINST on 8326
+            AGAINST on 8327
+            AGAINST on 8328
+            AGAINST on 8329
+            AGAINST on 8334
+            AGAINST on 8340
+        }
+
+        o matches G
     }
 }
