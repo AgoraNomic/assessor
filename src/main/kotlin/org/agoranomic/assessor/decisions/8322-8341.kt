@@ -628,7 +628,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
         }
 
         votes(G) {
-            AGAINST on 8323
+            FOR on 8323
             AGAINST on 8325
             AGAINST on 8326
             AGAINST on 8327
