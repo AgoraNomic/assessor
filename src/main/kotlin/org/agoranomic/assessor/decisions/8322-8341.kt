@@ -20,7 +20,7 @@ fun `assessment 8322 to 8341`() = assessment {
         Comptrollor to Murphy,
         Distributor to omd,
         Herald to Alexis,
-        Notary to Gaelan,
+        Notary to null,
         PrimeMinister to twg,
         Promotor to Aris,
         Referee to twg,
