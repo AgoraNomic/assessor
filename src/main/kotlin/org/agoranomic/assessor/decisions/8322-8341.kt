@@ -1,15 +1,11 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.OfficeV1
-import org.agoranomic.assessor.dsl.ministries.OfficeV1.*
+import org.agoranomic.assessor.dsl.ministries.OfficeV0.*
 import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
-import org.agoranomic.assessor.lib.SimpleVote
 import org.agoranomic.assessor.lib.UseAssessment
-import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
@@ -529,15 +525,15 @@ Amend Rule 2124 (Agoran Satisfaction) by:
 
         votes(twg) {
             endorse(Falsifian) on 8322
-            // TODO: resolve conditional vote on 8323: AGAINST if Jason AGAINST, else PRESENT
+            PRESENT on 8323 comment conditional("Jason did not vote AGAINST")
             endorse(Falsifian) on 8324
-            // TODO: resolve conditional vote on 8325: AGAINST if Falsifian AGAINST, else PRESENT
+            PRESENT on 8325 comment conditional("Falsifian did not vote AGAINST")
             endorse(Falsifian) on 8326
             endorse(Falsifian) on 8327
             endorse(Falsifian) on 8328
             endorse(Alexis) on 8329
             endorse(G) on 8330
-            // TODO: resolve conditional vote on 8331: AGAINST if Warrigal AGAINST, else PRESENT
+            PRESENT on 8331 comment conditional("Warrigal did not vote AGAINST")
             AGAINST on 8332
             AGAINST on 8333
             AGAINST on 8334
@@ -545,7 +541,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             endorse(Jason) on 8336
             AGAINST on 8337
             endorse(Murphy) on 8338
-            // TODO: resolve conditional vote on 8339: AGAINST if Murphy AGAINST, else PRESENT
+            PRESENT on 8339 comment conditional("Murphy did not vote AGAINST")
             endorse(Alexis) on 8340
             AGAINST on 8341
         }
@@ -572,7 +568,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             FOR on 8336
             FOR on 8337
             FOR on 8338
-            // TODO: resolve conditional vote on 8339: AGAINST if 8339 to be adopted, FOR otherwise
+            AGAINST on 8339 comment "Proposal 8338 has sufficient votes to be adopted"
             FOR on 8340
             PRESENT on 8341
         }
@@ -610,20 +606,20 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             FOR on 8324
             FOR on 8325
             FOR on 8326
-            // TODO: resolve conditional vote on 8327: FOR unless veto
+            FOR on 8327 comment NO_VETO
             FOR on 8328
-            // TODO: resolve conditional vote on 8329: PRESENT unless veto
+            PRESENT on 8329 comment NO_VETO
             FOR on 8330
             FOR on 8331
-            // TODO: resolve conditional vote on 8332: PRESENT unless veto
-            // TODO: resolve conditional vote on 8333: endorse(twg) unless veto
+            PRESENT on 8332 comment NO_VETO
+            endorse(twg) on 8333 comment NO_VETO
             AGAINST on 8334
             PRESENT on 8335
             endorse(Jason) on 8336
             AGAINST on 8337
             FOR on 8338
             AGAINST on 8339
-            // TODO: resolve conditional vote on 8340: endorse(Alexis) unless veto
+            endorse(Alexis) on 8340 comment NO_VETO
             endorse(Alexis) on 8341
         }
 
