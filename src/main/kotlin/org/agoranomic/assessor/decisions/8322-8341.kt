@@ -550,6 +550,10 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             AGAINST on 8341
         }
 
+        votes(Bernie) {
+            endorse(twg) on all
+        }
+
         votes(Warrigal) {
             PRESENT on 8322
             PRESENT on 8323
