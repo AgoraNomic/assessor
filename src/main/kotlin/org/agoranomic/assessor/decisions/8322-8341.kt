@@ -572,5 +572,32 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             FOR on 8340
             PRESENT on 8341
         }
+
+        votes(Jason) {
+            FOR on 8322
+            FOR on 8323
+            FOR on 8324
+            AGAINST on 8325
+            FOR on 8326
+            PRESENT on 8327
+            PRESENT on 8328
+            FOR on 8329
+            FOR on 8330
+            FOR on 8331
+            AGAINST on 8332
+            AGAINST on 8333
+            AGAINST on 8334
+            AGAINST on 8335
+            FOR on 8336
+            PRESENT on 8337
+            FOR on 8338
+            AGAINST on 8339
+            PRESENT on 8340
+            PRESENT on 8341
+        }
+
+        votes(Rance) {
+            endorse(Jason) on all
+        }
     }
 }
