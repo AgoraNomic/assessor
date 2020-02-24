@@ -603,5 +603,28 @@ Amend Rule 2124 (Agoran Satisfaction) by:
         votes(Rance) {
             endorse(Jason) on all
         }
+
+        votes(Falsifian) {
+            FOR on 8322
+            endorse(Jason) on 8323
+            FOR on 8324
+            FOR on 8325
+            FOR on 8326
+            // TODO: resolve conditional vote on 8327: FOR unless veto
+            FOR on 8328
+            // TODO: resolve conditional vote on 8329: PRESENT unless veto
+            FOR on 8330
+            FOR on 8331
+            // TODO: resolve conditional vote on 8332: PRESENT unless veto
+            // TODO: resolve conditional vote on 8333: endorse(twg) unless veto
+            AGAINST on 8334
+            PRESENT on 8335
+            endorse(Jason) on 8336
+            AGAINST on 8337
+            FOR on 8338
+            AGAINST on 8339
+            // TODO: resolve conditional vote on 8340: endorse(Alexis) unless veto
+            endorse(Alexis) on 8341
+        }
     }
 }
