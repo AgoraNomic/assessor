@@ -48,6 +48,10 @@ fun SingleProposalVoteMap.simplified(): SimplifiedSingleProposalVoteMap {
     return SimplifiedSingleProposalVoteMap(map.mapValues { (_, vote) -> vote.simplified() })
 }
 
+private fun isAIAdopted(ai: ProposalAI, strengthFor: VotingStrength, strengthAgainst: VotingStrength): Boolean {
+    return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
+}
+
 fun resolve(
     quorum: Int,
     votingStrengthMap: VotingStrengthMap,
@@ -70,19 +74,27 @@ fun resolve(
         }
     }
 
-    if (simplifiedVotes.voters.size < quorum) return ResolutionData(
-        ProposalResult.FAILED_QUORUM,
-        strengthFor,
-        strengthAgainst,
-        simplifiedVotes
+    if (simplifiedVotes.voters.size < quorum) {
+        return ResolutionData(
+            ProposalResult.FAILED_QUORUM,
+            strengthFor,
+            strengthAgainst,
+            simplifiedVotes
+        )
+    }
+
+    val isAdopted = isAIAdopted(
+        ai = ai,
+        strengthFor = strengthFor,
+        strengthAgainst = strengthAgainst
     )
 
     // Resolution as specified in R955
     return ResolutionData(
-        if (strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)) ProposalResult.ADOPTED else ProposalResult.REJECTED,
-        strengthFor,
-        strengthAgainst,
-        simplifiedVotes
+        result = if (isAdopted) ProposalResult.ADOPTED else ProposalResult.REJECTED,
+        strengthFor = strengthFor,
+        strengthAgainst = strengthAgainst,
+        votes = simplifiedVotes
     )
 }
 
@@ -146,16 +158,14 @@ data class AssessmentData(
 }
 
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
-    val map = mutableMapOf<ProposalNumber, ResolutionData>()
-
-    assessmentData.proposals.forEach { proposal ->
-        map += proposal.number to resolve(
+    val map = assessmentData.proposals.associateWith { proposal ->
+        resolve(
             assessmentData.quorum,
             assessmentData.votingStrengthsOf(proposal.number),
             proposal.ai,
             assessmentData.votes[proposal.number]
         )
-    }
+    }.mapKeys { (proposal, _) -> proposal.number }
 
     return ProposalResolutionMap(
         assessmentData.name,
