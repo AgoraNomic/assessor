@@ -13,15 +13,16 @@ interface ProposalCommonReceiver {
     fun coauthors(vararg people: Person)
 
     fun adoption_index(value: ProposalAI)
-    fun adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
     fun adoption_index(value: Double)
-    fun adoption_index(value: Int) = adoption_index(value.toDouble())
-
-    fun ai(value: ProposalAI) = adoption_index(value)
-    fun ai(value: BigDecimal) = adoption_index(value)
-    fun ai(value: Double) = adoption_index(value)
-    fun ai(value: Int) = adoption_index(value)
 }
+
+fun ProposalCommonReceiver.adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
+fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toDouble())
+
+fun ProposalCommonReceiver.ai(value: ProposalAI) = adoption_index(value)
+fun ProposalCommonReceiver.ai(value: BigDecimal) = adoption_index(value)
+fun ProposalCommonReceiver.ai(value: Double) = adoption_index(value)
+fun ProposalCommonReceiver.ai(value: Int) = adoption_index(value)
 
 @AssessmentDSL
 interface ProposalReceiverV0 : ProposalCommonReceiver

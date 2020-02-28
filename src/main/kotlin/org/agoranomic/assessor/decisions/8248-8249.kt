@@ -4,6 +4,7 @@ import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.VoteKind.PRESENT
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.votes.endorse
 
 @UseAssessment
