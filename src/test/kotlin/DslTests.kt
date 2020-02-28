@@ -57,4 +57,31 @@ class `Proposal DSL V0 tests` {
             assertEquals(expectedTitle, proposal.title)
         }
     }
+
+    @Nested
+    inner class `text tests` {
+        private fun ProposalReceiverV0.setupForText() = commonSetup(specifyText = false)
+
+        @Test
+        fun `fails when text not specified`() {
+            assertFails {
+                compile {
+                    setupForText()
+                    // Don't set text
+                }
+            }
+        }
+
+        @Test
+        fun `returns correct text`() {
+            val expectedText = "I'm a proposal text!"
+
+            val proposal = compile {
+                setupForText()
+                text(expectedText)
+            }
+
+            assertEquals(expectedText, proposal.text)
+        }
+    }
 }
