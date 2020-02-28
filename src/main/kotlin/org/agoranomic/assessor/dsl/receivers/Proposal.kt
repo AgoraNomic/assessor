@@ -17,7 +17,7 @@ interface ProposalCommonReceiver {
 }
 
 fun ProposalCommonReceiver.adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
-fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toDouble())
+fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toBigDecimal())
 
 fun ProposalCommonReceiver.ai(value: ProposalAI) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: BigDecimal) = adoption_index(value)
