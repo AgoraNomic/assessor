@@ -22,6 +22,15 @@ fun firstTestString(type: String) = testString(TEST_ZERO, type)
 
 fun <T> testList(num: TestNumber, map: (TestNumber) -> T): List<T> = List(4) { index -> map(num + index) }
 
+fun <T> testSet(num: TestNumber, map: (TestNumber) -> T): Set<T> {
+    val list = testList(num, map)
+    val set = list.toSet()
+
+    check(list.size == set.size)
+
+    return set
+}
+
 fun <K, V> testMap(num: TestNumber, generator: (TestNumber) -> Pair<K, V>) = testList(num, generator).toMap()
 
 inline fun <reified E : Enum<E>> testValueOf(num: TestNumber): E {
