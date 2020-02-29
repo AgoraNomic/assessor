@@ -7,7 +7,7 @@ fun testProposalAI(num: TestNumber): ProposalAI = ProposalAI(((num % 100) / 10).
 fun testProposalTitle(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Title")
 fun testProposalAuthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Author")
 fun testProposalCoauthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Coauthor")
-fun testProposalCoauthors(num: TestNumber) = Persons(testList(subReqNum(num)) { testProposalCoauthor(it) })
+fun testProposalCoauthors(num: TestNumber) = Persons(testSet(subReqNum(num)) { testProposalCoauthor(it) })
 fun testProposalText(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Text")
 fun testProposalChamber(num: TestNumber): ProposalClassAndChamber = ProposalClassAndChamber.Classless
 

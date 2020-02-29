@@ -56,7 +56,7 @@ class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalRecei
     }
 
     override fun coauthors(vararg people: Person) {
-        coauthors.set(Persons(people.toList()))
+        coauthors.set(Persons(people.toSet()))
     }
 
     override fun adoption_index(value: ProposalAI) {
@@ -82,7 +82,7 @@ class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalRecei
         val ai = ai.get()
         val title = title.get()
         val author = author.get()
-        val coauthors = coauthors.getOrElse(Persons(emptyList()))
+        val coauthors = coauthors.getOrElse(Persons(emptySet()))
         val text = text.get()
 
         return Proposal(
