@@ -1,5 +1,9 @@
 package org.agoranomic.assessor.cli
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import org.agoranomic.assessor.lib.AssessmentData
 import org.agoranomic.assessor.lib.ReportConfig
 import org.apache.commons.cli.*
 import java.io.CharArrayWriter
@@ -126,9 +130,38 @@ private fun ReportConfig.copyWith(config: CommentsConfig) = this.copy(voteCommen
 private fun ReportConfig.copyWith(config: BallotsLineConfig) = this.copy(totalBallotCount = config.value)
 private fun ReportConfig.copyWith(config: VoteCountsConfig) = this.copy(voteComments = config.value)
 
-sealed class NeededAssessments
-object AllAssessments : NeededAssessments()
-data class SingleAssessment(val name: String) : NeededAssessments()
+class InvalidAssessmentNameException(val name: String) : Exception("Invalid exception name: $name")
+
+sealed class NeededAssessments {
+    /**
+     * Returns a list of assessments that should be output.
+     *
+     * @throws InvalidAssessmentNameException if an assessment name is given that does not exist within [availableAssessments]
+     */
+    abstract fun selectFrom(availableAssessments: List<AssessmentData>): ImmutableList<AssessmentData>
+}
+
+object AllAssessments : NeededAssessments() {
+    /**
+     * Returns all available assessments.
+     */
+    override fun selectFrom(availableAssessments: List<AssessmentData>) = availableAssessments.toImmutableList()
+}
+
+data class SingleAssessment(val name: String) : NeededAssessments() {
+    /**
+     * Returns the (sole) assessment whose name is [name]. Throws [InvalidAssessmentNameException] if that one does
+     * not exist.
+     */
+    override fun selectFrom(availableAssessments: List<AssessmentData>): ImmutableList<AssessmentData> {
+        val assessmentsByName = availableAssessments.associateBy { it.name }
+        val selectedAssessment = assessmentsByName[name]
+
+        if (selectedAssessment != null) return persistentListOf(selectedAssessment)
+
+        throw InvalidAssessmentNameException(name)
+    }
+}
 
 private data class ParsedCli(
     val neededAssessments: NeededAssessments,

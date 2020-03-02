@@ -1,8 +1,6 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.AssessmentData
 import org.agoranomic.assessor.lib.findAssessments
-import org.agoranomic.assessor.lib.getOrFail
 import org.agoranomic.assessor.lib.resolve
 
 private val DEFAULT_DESTINATION = StdoutDestination
@@ -14,8 +12,7 @@ fun main(args: Array<String>) {
         return
     }
 
-    val assessments = findAssessments()
-    val assessmentsByName = assessments.associateBy { it.name }
+    val allAssessments = findAssessments()
 
     val cliConfig = try {
         parseCli(args)
@@ -26,25 +23,18 @@ fun main(args: Array<String>) {
 
     val formatter = cliConfig.formatter ?: DEFAULT_FORMATTER
     val destination = cliConfig.destination ?: DEFAULT_DESTINATION
+    val neededAssessments = cliConfig.neededAssessments
 
-    val toAssess: List<Pair<String, AssessmentData>> = run {
-        when (val neededAssessments = cliConfig.neededAssessments) {
-            is AllAssessments -> assessmentsByName.toList()
+    val toAssess = try {
+        neededAssessments.selectFrom(allAssessments)
+    } catch (exception: InvalidAssessmentNameException) {
+        val allAssessmentNames = allAssessments.map { it.name }.sorted()
 
-            is SingleAssessment -> {
-                val name = neededAssessments.name
-
-                if (assessmentsByName.containsKey(name)) {
-                    return@run listOf(name to assessmentsByName.getOrFail(name))
-                } else {
-                    println("No such assessment \"$name\": valid options are \"all\" and ${assessmentsByName.keys}.")
-                    return@main
-                }
-            }
-        }
+        println("No such assessment \"${exception.name}\": valid options are \"all\" and $allAssessmentNames")
+        return
     }
 
-    val stringAssessments = toAssess.map { it.first to formatter.format(resolve(it.second)) }
+    val stringAssessments = toAssess.map { it.name to formatter.format(resolve(it)) }
 
     destination.outputAssessments(stringAssessments)
 }
