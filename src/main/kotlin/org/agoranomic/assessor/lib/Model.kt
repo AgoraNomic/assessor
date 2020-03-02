@@ -1,19 +1,7 @@
 package org.agoranomic.assessor.lib
 
-import kotlinx.collections.immutable.ImmutableSet
-import kotlinx.collections.immutable.toImmutableSet
 import java.math.BigDecimal
 import java.math.BigInteger
-
-data class Person(val name: String)
-
-data class Persons(val data: ImmutableSet<Person>) : Collection<Person> by data {
-    constructor(data: Set<Person>) : this(data.toImmutableSet())
-
-    companion object {
-        fun empty() = Persons(emptySet())
-    }
-}
 
 typealias RawProposalNumber = BigInteger
 
