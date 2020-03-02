@@ -6,7 +6,6 @@ import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
-import org.agoranomic.assessor.lib.UseAssessment
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment

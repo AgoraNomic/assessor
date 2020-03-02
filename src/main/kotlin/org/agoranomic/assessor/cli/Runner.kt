@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.findAssessments
+import org.agoranomic.assessor.decisions.findAssessments
 import org.agoranomic.assessor.lib.resolve
 
 private val DEFAULT_DESTINATION = StdoutDestination

@@ -1,6 +1,7 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.decisions
 
 import io.github.classgraph.ClassGraph
+import org.agoranomic.assessor.lib.AssessmentData
 import kotlin.reflect.KFunction
 import kotlin.reflect.jvm.jvmName
 import kotlin.reflect.jvm.kotlinFunction
