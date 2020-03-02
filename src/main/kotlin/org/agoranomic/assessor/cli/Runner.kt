@@ -34,7 +34,12 @@ fun main(args: Array<String>) {
         return
     }
 
-    val stringAssessments = toAssess.map { it.name to formatter.format(resolve(it)) }
+    val stringAssessments = toAssess.map {
+        AssessmentPendingOutput(
+            name = it.name,
+            assessmentText = formatter.format(resolve(it))
+        )
+    }
 
     destination.outputAssessments(stringAssessments)
 }
