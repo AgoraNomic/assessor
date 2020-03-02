@@ -9,6 +9,10 @@ data class Person(val name: String)
 
 data class Persons(val data: ImmutableSet<Person>) : Iterable<Person> by data {
     constructor(data: Set<Person>) : this(data.toImmutableSet())
+
+    companion object {
+        fun empty() = Persons(emptySet())
+    }
 }
 
 typealias RawProposalNumber = BigInteger
