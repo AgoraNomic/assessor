@@ -7,8 +7,8 @@ import java.math.BigInteger
 
 data class Person(val name: String)
 
-data class Persons(private val set: ImmutableSet<Person>) : Iterable<Person> by set {
-    constructor(set: Set<Person>) : this(set.toImmutableSet())
+data class Persons(val data: ImmutableSet<Person>) : Iterable<Person> by data {
+    constructor(data: Set<Person>) : this(data.toImmutableSet())
 }
 
 typealias RawProposalNumber = BigInteger
