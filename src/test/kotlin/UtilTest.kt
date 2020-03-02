@@ -59,6 +59,32 @@ class `Exhaustive Enum tests` {
     }
 }
 
+class `allAreDistinct tests` {
+    @Test
+    fun `allAreDistinct returns true for set with all distinct`() {
+        val list = listOf(1, 2, 3, 4)
+        assertTrue(list.allAreDistinct())
+    }
+
+    @Test
+    fun `allAreDistinct returns false for set with not all distinct`() {
+        val list = listOf(1, 1, 2, 3)
+        assertFalse(list.allAreDistinct())
+    }
+
+    @Test
+    fun `allAreDistinctBy returns true for set with all selected keys distinct`() {
+        val list = listOf("Alice", "Bob", "Charlie")
+        assertTrue(list.allAreDistinctBy { it[0] })
+    }
+
+    @Test
+    fun `allAreDistinctBy returns false for set with not all selected keys distinct`() {
+        val list = listOf("Alice", "Adam", "Bob", "Charlie")
+        assertFalse(list.allAreDistinctBy { it[0] })
+    }
+}
+
 class `BigDecimal util tests` {
     @Test
     fun `multiplication works`() {

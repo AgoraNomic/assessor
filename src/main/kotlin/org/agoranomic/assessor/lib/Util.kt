@@ -23,6 +23,18 @@ inline fun <reified E : Enum<E>> Collection<E>.requireExhaustive() {
     }
 }
 
+fun <T> Collection<T>.allAreDistinct(): Boolean {
+    val list = this.toList()
+    val distinctList = list.distinct()
+
+    // If all are distinct, then list and distinctList have the same size, since no elements will have been removed.
+    return list.size == distinctList.size
+}
+
+fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
+    return this.map(selector).allAreDistinct()
+}
+
 operator fun BigDecimal.plus(other: Int) = this.plus(other.toBigDecimal())
 operator fun Int.plus(other: BigDecimal) = (this.toBigDecimal()).plus(other)
 
