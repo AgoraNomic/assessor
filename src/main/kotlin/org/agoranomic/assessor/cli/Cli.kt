@@ -27,6 +27,20 @@ val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = true, vot
 val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
 val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
 
+open class CliException : Exception {
+    constructor() : super()
+    constructor(message: String) : super(message)
+    constructor(cause: Exception) : super(cause)
+    constructor(message: String, cause: Exception) : super(message, cause)
+}
+
+open class CliParseException : CliException {
+    constructor() : super()
+    constructor(message: String) : super(message)
+    constructor(cause: Exception) : super(cause)
+    constructor(message: String, cause: Exception) : super(message, cause)
+}
+
 private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
 private fun destinationOptionGroup(): OptionGroup {
@@ -130,7 +144,7 @@ private fun ReportConfig.copyWith(config: CommentsConfig) = this.copy(voteCommen
 private fun ReportConfig.copyWith(config: BallotsLineConfig) = this.copy(totalBallotCount = config.value)
 private fun ReportConfig.copyWith(config: VoteCountsConfig) = this.copy(voteComments = config.value)
 
-class InvalidAssessmentNameException(val name: String) : Exception("Invalid exception name: $name")
+class InvalidAssessmentNameException(val name: String) : CliException("Invalid exception name: $name")
 
 sealed class NeededAssessments {
     /**
@@ -169,18 +183,14 @@ private data class ParsedCli(
     val destination: AssessmentDestination?
 )
 
-open class CliParseException : Exception {
-    constructor() : super()
-    constructor(message: String) : super(message)
-    constructor(cause: Exception) : super(cause)
-    constructor(message: String, cause: Exception) : super(message, cause)
-}
-
-class BadAssessmentException : CliParseException("Must specify a single assessment (or \"all\")")
+class AssessmentNotSpecifiedException : CliParseException("Must specify a single assessment (or \"all\") - none were specified")
+class MultipleAssessmentsSpecifiedException : CliParseException("Must specify a single assessment (or \"all\") - multiple were specified")
 
 private fun readNeededAssessment(commandLine: CommandLine): NeededAssessments {
     val argList = commandLine.argList as List<String>
-    if (argList.size != 1) throw BadAssessmentException()
+
+    if (argList.size < 1) throw AssessmentNotSpecifiedException()
+    if (argList.size > 1) throw MultipleAssessmentsSpecifiedException()
 
     val assessmentString = argList.first()
     return if (assessmentString.equals("all", ignoreCase = true)) AllAssessments else SingleAssessment(

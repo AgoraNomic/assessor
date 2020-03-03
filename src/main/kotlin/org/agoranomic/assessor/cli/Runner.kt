@@ -16,7 +16,7 @@ fun main(args: Array<String>) {
 
     val cliConfig = try {
         parseCli(args)
-    } catch (e: Exception) {
+    } catch (e: CliParseException) {
         println(e.message)
         return
     }
