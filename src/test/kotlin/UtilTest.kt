@@ -87,6 +87,24 @@ class `allAreDistinct tests` {
 
 class `BigDecimal util tests` {
     @Test
+    fun `addition works`() {
+        val bd = BigDecimal.valueOf(5)!!
+        val i = 2
+
+        assertEquals(bd + i, BigDecimal.valueOf(7))
+        assertEquals(i + bd, BigDecimal.valueOf(7))
+    }
+
+    @Test
+    fun `subtraction works`() {
+        val bd = BigDecimal.valueOf(5)!!
+        val i = 2
+
+        assertEquals(bd - i, BigDecimal.valueOf(3))
+        assertEquals(i - bd, BigDecimal.valueOf(-3))
+    }
+
+    @Test
     fun `multiplication works`() {
         val bd = BigDecimal.valueOf(5)!!
         val i = 2
