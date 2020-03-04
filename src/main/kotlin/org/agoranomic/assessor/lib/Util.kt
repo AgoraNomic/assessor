@@ -46,8 +46,18 @@ fun <T> Collection<T>.allAreDistinct(): Boolean {
     return list.size == distinctList.size
 }
 
+fun <T> Collection<T>.requireAllAreDistinct() {
+    require(allAreDistinct()) {
+        "All elements were required to be distinct, but found duplicate elements: ${repeatingElements()}"
+    }
+}
+
 fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
     return this.map(selector).allAreDistinct()
+}
+
+fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) {
+    this.map(selector).requireAllAreDistinct()
 }
 
 operator fun BigDecimal.plus(other: Int) = this.plus(other.toBigDecimal())

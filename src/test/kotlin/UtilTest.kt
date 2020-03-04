@@ -83,6 +83,34 @@ class `allAreDistinct tests` {
         val list = listOf("Alice", "Adam", "Bob", "Charlie")
         assertFalse(list.allAreDistinctBy { it[0] })
     }
+
+    @Test
+    fun `requireAllAreDistinct does not throw for list with all distinct`() {
+        val list = listOf(1, 2, 3)
+
+        // Test fails if this throws
+        list.requireAllAreDistinct()
+    }
+
+    @Test
+    fun `requireAllAreDistinct throws for list with not all distinct`() {
+        val list = listOf(1, 1, 2, 3)
+        assertFails { list.requireAllAreDistinct() }
+    }
+
+    @Test
+    fun `requireAllAreDistinctBy does not throw for list with all selected keys distinct`() {
+        val list = listOf("Alice", "Bob", "Charlie")
+
+        // Test fails if this throws
+        list.requireAllAreDistinctBy { it[0] }
+    }
+
+    @Test
+    fun `requireAllAreDistinctBy does throws for list with not all selected keys distinct`() {
+        val list = listOf("Alice", "Adam", "Bob", "Charlie")
+        assertFails { list.requireAllAreDistinctBy { it[0] } }
+    }
 }
 
 class `repeatingElements tests` {
