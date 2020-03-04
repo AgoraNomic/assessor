@@ -52,13 +52,9 @@ fun <T> Collection<T>.requireAllAreDistinct() {
     }
 }
 
-fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
-    return this.map(selector).allAreDistinct()
-}
+fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K) = map(selector).allAreDistinct()
 
-fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) {
-    this.map(selector).requireAllAreDistinct()
-}
+fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) = map(selector).requireAllAreDistinct()
 
 operator fun BigDecimal.plus(other: Int) = this.plus(other.toBigDecimal())
 operator fun Int.plus(other: BigDecimal) = (this.toBigDecimal()).plus(other)
