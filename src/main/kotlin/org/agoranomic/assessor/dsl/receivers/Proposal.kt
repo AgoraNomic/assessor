@@ -10,11 +10,13 @@ interface ProposalCommonReceiver {
     fun title(str: String)
     fun text(str: String)
     fun author(value: Person)
-    fun coauthors(vararg people: Person)
+    fun coauthors(persons: Persons)
 
     fun adoption_index(value: ProposalAI)
     fun adoption_index(value: Double)
 }
+
+fun ProposalCommonReceiver.coauthors(vararg people: Person) = coauthors(Persons.checkingDistinct(people.toList()))
 
 fun ProposalCommonReceiver.adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
 fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toBigDecimal())
@@ -55,8 +57,8 @@ class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalRecei
         author.set(value)
     }
 
-    override fun coauthors(vararg people: Person) {
-        coauthors.set(Persons(people.toSet()))
+    override fun coauthors(persons: Persons) {
+        coauthors.set(persons)
     }
 
     override fun adoption_index(value: ProposalAI) {

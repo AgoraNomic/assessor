@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV0.*
 import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind.*
