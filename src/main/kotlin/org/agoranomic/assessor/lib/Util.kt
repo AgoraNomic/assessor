@@ -23,6 +23,21 @@ inline fun <reified E : Enum<E>> Collection<E>.requireExhaustive() {
     }
 }
 
+fun <T> Collection<T>.repeatingElements(): Set<T> {
+    val alreadySeen = mutableSetOf<T>()
+    val duplicates = mutableSetOf<T>()
+
+    for (element in this) {
+        if (alreadySeen.contains(element)) {
+            duplicates += element
+        } else {
+            alreadySeen += element
+        }
+    }
+
+    return duplicates
+}
+
 fun <T> Collection<T>.allAreDistinct(): Boolean {
     val list = this.toList()
     val distinctList = list.distinct()
