@@ -46,6 +46,19 @@ class `Proposal DSL V0 tests` {
         }
 
         @Test
+        fun `fails when title specified twice`() {
+            val titleToSet = "A title"
+
+            assertFails {
+                compile {
+                    setupForTitle()
+                    title(titleToSet)
+                    title(titleToSet)
+                }
+            }
+        }
+
+        @Test
         fun `returns correct title`() {
             val expectedTitle = "I'm a title!"
 
@@ -68,6 +81,19 @@ class `Proposal DSL V0 tests` {
                 compile {
                     setupForText()
                     // Don't set text
+                }
+            }
+        }
+
+        @Test
+        fun `fails when text specified twice`() {
+            val textToSet = "Some text"
+
+            assertFails {
+                compile {
+                    setupForText()
+                    text(textToSet)
+                    text(textToSet)
                 }
             }
         }
