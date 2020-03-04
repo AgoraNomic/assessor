@@ -6,13 +6,13 @@ class `getOrFail tests` {
     @Test
     fun `returns correct non-null value`() {
         val map = mapOf(1 to "hi", 2 to "bye")
-        assertEquals(map.getOrFail(1), "hi")
+        assertEquals("hi", map.getOrFail(1))
     }
 
     @Test
     fun `returns correct null value`() {
         val map = mapOf(1 to "hi", 2 to null)
-        assertEquals(map.getOrFail(2), null)
+        assertNull(map.getOrFail(2))
     }
 
     @Test
@@ -91,8 +91,8 @@ class `BigDecimal util tests` {
         val bd = BigDecimal.valueOf(5)!!
         val i = 2
 
-        assertEquals(bd + i, BigDecimal.valueOf(7))
-        assertEquals(i + bd, BigDecimal.valueOf(7))
+        assertEquals(BigDecimal.valueOf(7), bd + i)
+        assertEquals(BigDecimal.valueOf(7), i + bd)
     }
 
     @Test
@@ -100,8 +100,8 @@ class `BigDecimal util tests` {
         val bd = BigDecimal.valueOf(5)!!
         val i = 2
 
-        assertEquals(bd - i, BigDecimal.valueOf(3))
-        assertEquals(i - bd, BigDecimal.valueOf(-3))
+        assertEquals(BigDecimal.valueOf(3), bd - i)
+        assertEquals(BigDecimal.valueOf(-3), i - bd)
     }
 
     @Test
@@ -109,8 +109,8 @@ class `BigDecimal util tests` {
         val bd = BigDecimal.valueOf(5)!!
         val i = 2
 
-        assertEquals(bd * i, BigDecimal.TEN)
-        assertEquals(i * bd, BigDecimal.TEN)
+        assertEquals(BigDecimal.TEN, bd * i)
+        assertEquals(BigDecimal.TEN, i * bd)
     }
 
     @Test
