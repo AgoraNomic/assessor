@@ -74,8 +74,5 @@ operator fun BigDecimal.minus(other: BigInteger) = this.minus(other.toBigDecimal
 operator fun BigInteger.times(other: BigDecimal) = this.toBigDecimal().times(other)
 operator fun BigDecimal.times(other: BigInteger) = this.times(other.toBigDecimal())
 
-operator fun BigInteger.div(other: BigDecimal) = this.toBigDecimal().div(other)
-operator fun BigDecimal.div(other: BigInteger) = this.div(other.toBigDecimal())
-
 operator fun BigInteger.compareTo(other: BigDecimal) = this.toBigDecimal().compareTo(other)
 operator fun BigDecimal.compareTo(other: BigInteger) = this.compareTo(other.toBigDecimal())
