@@ -9,7 +9,31 @@ fun testProposalAuthor(num: TestNumber): Person = testPlayer(subReqNum(num), typ
 fun testProposalCoauthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Coauthor")
 fun testProposalCoauthors(num: TestNumber) = Persons(testSet(subReqNum(num)) { testProposalCoauthor(it) })
 fun testProposalText(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Text")
-fun testProposalChamber(num: TestNumber): ProposalClassAndChamber = ProposalClassAndChamber.Classless
+
+private enum class ProposalClassAndChamberResult {
+    Classless {
+        override fun makeWith(num: TestNumber): ProposalClassAndChamber {
+            return ProposalClassAndChamber.Classless
+        }
+    },
+    Democratic {
+        override fun makeWith(num: TestNumber): ProposalClassAndChamber {
+            return ProposalClassAndChamber.DemocraticClass
+        }
+    },
+    Ordinary {
+        override fun makeWith(num: TestNumber): ProposalClassAndChamber {
+            return ProposalClassAndChamber.OrdinaryClass(testValueOf<ProposalChamber>(num))
+        }
+    },
+    ;
+
+    abstract fun makeWith(num: TestNumber): ProposalClassAndChamber
+}
+
+fun testProposalChamber(num: TestNumber): ProposalClassAndChamber {
+    return testValueOf<ProposalClassAndChamberResult>(num).makeWith(num)
+}
 
 fun testProposal(num: TestNumber): Proposal = Proposal(
     testProposalNumber(subReqNum(num)),
