@@ -10,5 +10,10 @@ data class Persons(val data: ImmutableSet<Person>) : Collection<Person> by data 
 
     companion object {
         fun empty() = Persons(emptySet())
+
+        fun checkingDistinct(collection: Collection<Person>): Persons {
+            require(collection.allAreDistinct())
+            return Persons(collection.toSet())
+        }
     }
 }
