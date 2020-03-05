@@ -177,12 +177,6 @@ data class SingleAssessment(val name: String) : NeededAssessments() {
     }
 }
 
-private data class ParsedCli(
-    val neededAssessments: NeededAssessments,
-    val formatter: AssessmentFormatter?,
-    val destination: AssessmentDestination?
-)
-
 class AssessmentNotSpecifiedException : CliParseException("Must specify a single assessment (or \"all\") - none were specified")
 class MultipleAssessmentsSpecifiedException : CliParseException("Must specify a single assessment (or \"all\") - multiple were specified")
 
@@ -275,15 +269,15 @@ private fun readVoteCountsConfig(commandLine: CommandLine): VoteCountsConfig? {
     }
 }
 
-private fun readParsedCli(commandLine: CommandLine): ParsedCli {
-    return ParsedCli(
-        readNeededAssessment(commandLine),
-        readFormatter(commandLine),
-        readDestination(commandLine)
+private fun readCliConfig(commandLine: CommandLine): CliConfig {
+    return CliConfig(
+        formatter = readFormatter(commandLine),
+        neededAssessments = readNeededAssessment(commandLine),
+        destination = readDestination(commandLine)
     )
 }
 
-private fun rawParseCli(args: Iterable<String>): ParsedCli {
+private fun rawParseCli(args: Iterable<String>): CliConfig {
     val argsArray = args.toList().toTypedArray()
 
     val parseResult = try {
@@ -292,7 +286,7 @@ private fun rawParseCli(args: Iterable<String>): ParsedCli {
         throw CliParseException(e)
     }
 
-    return readParsedCli(parseResult)
+    return readCliConfig(parseResult)
 }
 
 data class CliConfig(
