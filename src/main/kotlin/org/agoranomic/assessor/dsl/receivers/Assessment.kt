@@ -14,7 +14,7 @@ import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 interface AssessmentReceiver {
     fun strengths(block: VotingStrengthReceiver.() -> Unit)
     fun voting(block: VotingReceiver.() -> Unit)
-    fun quorum(value: Int)
+    fun quorum(value: AssessmentQuorum)
     fun name(value: String)
 
     object Version0
@@ -27,12 +27,14 @@ interface AssessmentReceiver {
     fun proposals(v1: Version1, block: ProposalsReceiverV1.() -> Unit)
 }
 
+fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
+
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
     private val votingStrengthsBlock = DslValue<(VotingStrengthReceiver.() -> Unit)>()
     private val proposals = DslValue<ImmutableProposalSet>()
     private val proposalVotes = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
-    private val quorum = DslValue<Int>()
+    private val quorum = DslValue<AssessmentQuorum>()
     private val name = DslValue<String>()
 
     override fun strengths(block: VotingStrengthReceiver.() -> Unit) {
@@ -57,7 +59,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         proposalVotes.set(receiver.compile().toImmutableMap())
     }
 
-    override fun quorum(value: Int) {
+    override fun quorum(value: AssessmentQuorum) {
         quorum.set(value)
     }
 

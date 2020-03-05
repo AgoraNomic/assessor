@@ -21,8 +21,8 @@ private fun StringBuilder.emitHeader() {
     emitLine("I hereby resolve the Agoran decisions to adopt the below proposals.")
 }
 
-private fun StringBuilder.emitQuorum(quorum: Int) {
-    emitLine("The quorum for all below decisions was $quorum.")
+private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
+    emitLine("The quorum for all below decisions was ${quorum.raw}.")
 }
 
 private fun StringBuilder.emitProposalHeader(proposal: Proposal) {

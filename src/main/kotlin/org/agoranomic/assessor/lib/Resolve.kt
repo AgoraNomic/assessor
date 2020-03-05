@@ -5,6 +5,7 @@ import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
+import java.math.BigInteger
 
 enum class ProposalResult {
     FAILED_QUORUM("FAILED QUORUM"), REJECTED, ADOPTED;
@@ -52,8 +53,14 @@ private fun isAIAdopted(ai: ProposalAI, strengthFor: VotingStrength, strengthAga
     return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
 }
 
+typealias RawProposalQuorum = BigInteger
+
+inline class ProposalQuorum(val raw: RawProposalQuorum) {
+    constructor(raw: Int) : this(raw.toBigInteger())
+}
+
 fun resolve(
-    quorum: Int,
+    quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthMap,
     ai: ProposalAI,
     rawVotes: SingleProposalVoteMap
@@ -74,7 +81,7 @@ fun resolve(
         }
     }
 
-    if (simplifiedVotes.voters.size < quorum) {
+    if (simplifiedVotes.voters.size < quorum.raw) {
         return ResolutionData(
             ProposalResult.FAILED_QUORUM,
             strengthFor,
@@ -102,14 +109,14 @@ data class ProposalResolutionMap(
     val assessmentName: String,
     val proposals: ImmutableProposalSet,
     private val map: ImmutableMap<ProposalNumber, ResolutionData>,
-    val quorum: Int,
+    val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>
 ) {
     constructor(
         assessmentName: String,
         proposals: ProposalSet,
         map: Map<ProposalNumber, ResolutionData>,
-        quorum: Int,
+        quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthMap>
     ) : this(
         assessmentName,
@@ -129,16 +136,22 @@ data class ProposalResolutionMap(
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
 }
 
+typealias RawAssessmentQuorum = RawProposalQuorum
+
+inline class AssessmentQuorum(val raw: RawAssessmentQuorum) {
+    constructor(raw: Int) : this(raw.toBigInteger())
+}
+
 data class AssessmentData(
     val name: String,
-    val quorum: Int,
+    val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>,
     val proposals: ImmutableProposalSet,
     val votes: MultiProposalVoteMap
 ) {
     constructor(
         name: String,
-        quorum: Int,
+        quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthMap>,
         proposals: ProposalSet,
         votes: MultiProposalVoteMap
@@ -160,7 +173,7 @@ data class AssessmentData(
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     val map = assessmentData.proposals.associateWith { proposal ->
         resolve(
-            assessmentData.quorum,
+            ProposalQuorum(assessmentData.quorum.raw),
             assessmentData.votingStrengthsOf(proposal.number),
             proposal.ai,
             assessmentData.votes[proposal.number]

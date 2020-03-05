@@ -30,6 +30,9 @@ fun json(proposal: Proposal) = json {
 @JvmName("jsonOfProposals")
 fun json(iterable: Iterable<Proposal>) = json(iterable.map { json(it) })
 
+fun json(quorum: ProposalQuorum) = json(quorum.raw)
+fun json(quorum: AssessmentQuorum) = json(quorum.raw)
+
 fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
 
 fun json(votingStrength: VotingStrengthWithComment) = json {
