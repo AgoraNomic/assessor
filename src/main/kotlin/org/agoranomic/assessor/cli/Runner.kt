@@ -34,12 +34,12 @@ fun main(args: Array<String>) {
         return
     }
 
-    val stringAssessments = toAssess.map {
+    val pendingAssessments = toAssess.map {
         AssessmentPendingOutput(
             name = it.name,
             assessmentText = formatter.format(resolve(it))
         )
     }
 
-    destination.outputAssessments(stringAssessments)
+    destination.outputAssessments(pendingAssessments)
 }
