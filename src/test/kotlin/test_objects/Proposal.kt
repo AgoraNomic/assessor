@@ -45,9 +45,9 @@ fun testProposal(num: TestNumber): Proposal = Proposal(
     testProposalChamber(subReqNum(num))
 )
 
-fun firstTestProposalNumber() = testProposalNumber(TEST_ZERO)
-fun secondTestProposalNumber() = testProposalNumber(TEST_ONE)
+fun firstTestProposalNumber() = testFirst(::testProposalNumber)
+fun secondTestProposalNumber() = testSecond(::testProposalNumber)
 
-fun firstTestProposal() = testProposal(TEST_ZERO)
-fun secondTestProposal() = testProposal(TEST_ONE)
-fun thirdTestProposal() = testProposal(TEST_TWO)
+fun firstTestProposal() = testFirst(::testProposal)
+fun secondTestProposal() = testSecond(::testProposal)
+fun thirdTestProposal() = testThird(::testProposal)

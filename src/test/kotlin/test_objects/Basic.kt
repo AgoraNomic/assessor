@@ -14,6 +14,10 @@ val TEST_ZERO = testNumber(0)
 val TEST_ONE = testNumber(1)
 val TEST_TWO = testNumber(2)
 
+inline fun <R> testFirst(create: (TestNumber) -> R) = create(TEST_ZERO)
+inline fun <R> testSecond(create: (TestNumber) -> R) = create(TEST_ONE)
+inline fun <R> testThird(create: (TestNumber) -> R) = create(TEST_TWO)
+
 fun subReqNum(num: TestNumber): TestNumber = INTERNAL_REQ_BASE + INTERNAL_REQ_FACTOR * (num + 1)
 
 fun testString(num: TestNumber, type: String) = "Test $type #$num"

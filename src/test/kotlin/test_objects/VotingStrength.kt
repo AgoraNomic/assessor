@@ -4,8 +4,8 @@ import org.agoranomic.assessor.lib.VotingStrength
 import org.agoranomic.assessor.lib.VotingStrengthWithComment
 
 fun testVotingStrength(num: TestNumber) = VotingStrength(num)
-fun firstTestVotingStrength() = testVotingStrength(TEST_ZERO)
-fun secondTestVotingStrength() = testVotingStrength(TEST_ONE)
+fun firstTestVotingStrength() = testFirst(::testVotingStrength)
+fun secondTestVotingStrength() = testSecond(::testVotingStrength)
 
 fun testVotingStrengthWithCommentNonNullComment(num: TestNumber) = VotingStrengthWithComment(
     testVotingStrength(subReqNum(num)),
@@ -19,5 +19,5 @@ fun testVotingStrengthWithCommentNullComment(num: TestNumber) = VotingStrengthWi
 
 fun testVotingStrengthWithComment(num: TestNumber) = testVotingStrengthWithCommentNonNullComment(num)
 
-fun firstTestVotingStrengthWithComment() = testVotingStrengthWithComment(TEST_ZERO)
-fun secondTestVotingStrengthWithComment() = testVotingStrengthWithComment(TEST_ONE)
+fun firstTestVotingStrengthWithComment() = testFirst(::testVotingStrengthWithComment)
+fun secondTestVotingStrengthWithComment() = testSecond(::testVotingStrengthWithComment)

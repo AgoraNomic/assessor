@@ -16,8 +16,8 @@ fun testInextricableVoteNullCommen(num: TestNumber) = InextricableVote(null)
 fun testInextricableVote(num: TestNumber) = testInextricableVoteNonNullComment(num)
 
 fun testVote(num: TestNumber): Vote = testSimpleVote(num)
-fun firstTestVote() = testVote(TEST_ZERO)
-fun secondTestVote() = testVote(TEST_ONE)
+fun firstTestVote() = testFirst(::testVote)
+fun secondTestVote() = testSecond(::testVote)
 
 private fun simpleVoteKindsWithComment(comment: String?) = VoteKind.values().map { SimpleVote(it, comment) }
 
