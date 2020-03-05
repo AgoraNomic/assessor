@@ -1,8 +1,12 @@
 package org.agoranomic.assessor.lib
 
 import kotlinx.serialization.json.*
+import java.math.BigDecimal
+import java.math.BigInteger
 
-fun json(number: Number) = JsonLiteral(number)
+fun json(int: Int) = JsonLiteral(int)
+fun json(bigInteger: BigInteger) = JsonLiteral(bigInteger)
+fun json(bigDecimal: BigDecimal) = JsonLiteral(bigDecimal.toString()) // Avoid floating point insanity
 fun json(string: String) = JsonLiteral(string)
 fun json(list: List<JsonElement>) = JsonArray(list)
 
