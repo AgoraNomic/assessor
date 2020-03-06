@@ -27,9 +27,17 @@ class DslValue<T> {
     }
 
     /**
-     * Gets the value, or a default if the value has not been set. Does not fail.
+     * Gets the value, or a default if the value has not been set. The default is not nullable. Does not fail.
      */
     fun getOrElse(default: T): T {
+        return getOrElse(default as T?) as T
+    }
+
+    /**
+     * Gets the value, or a default if the value has not been set. The default is nullable. Does not fail.
+     */
+    @JvmName("getOrElseNullable")
+    fun getOrElse(default: T?): T? {
         return if (isInitialized) currentValue as T else default
     }
 
@@ -69,9 +77,17 @@ class DslValueMap<K, V> {
     fun containsKey(key: K): Boolean = map.containsKey(key)
 
     /**
-     * Gets the value for [key], or [default] if it has not been set. Does not fail.
+     * Gets the value for [key], or [default] if it has not been set. The default is not nullable. Does not fail.
      */
     fun getOrElse(key: K, default: V): V {
+        return getOrElse(key, default as V?) as V
+    }
+
+    /**
+     * Gets the value for [key], or [default] if it has not been set. The default is nullable. Does not fail.
+     */
+    @JvmName("getOrElseNullable")
+    fun getOrElse(key: K, default: V?): V? {
         val dslValue = map[key] ?: return default
         return dslValue.getOrElse(default)
     }
