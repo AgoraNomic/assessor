@@ -11,7 +11,7 @@ class `DslValue tests` {
         @Test
         fun `get fails`() {
             val dslValue = DslValue<String>()
-            assertFails { dslValue.get() }
+            assertFailsWith<IllegalStateException> { dslValue.get() }
         }
 
         @Test
@@ -64,7 +64,7 @@ class `DslValue tests` {
 
             dslValue.set(value)
 
-            assertFails { dslValue.set(value) }
+            assertFailsWith<IllegalStateException> { dslValue.set(value) }
         }
 
         @Test
@@ -131,7 +131,7 @@ class `DslValueMap tests` {
         fun `get fails`() {
             val map = emptyTestMap()
 
-            assertFails { map[testKey] }
+            assertFailsWith<IllegalStateException> { map[testKey] }
         }
 
         @Test
@@ -169,7 +169,7 @@ class `DslValueMap tests` {
         fun `set fails`() {
             val map = filledTestMap()
 
-            assertFails { map[testKey] = testValue }
+            assertFailsWith<IllegalStateException> { map[testKey] = testValue }
         }
 
         @Test

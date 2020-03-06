@@ -11,6 +11,8 @@ class DslValue<T> {
 
     /**
      * Sets the value. Fails if the value has already been set.
+     *
+     * @throws IllegalStateException if the value has already been set.
      */
     fun set(value: T) {
         check(!isInitialized)
@@ -20,6 +22,8 @@ class DslValue<T> {
 
     /**
      * Gets the value. Fails if the value has not been set.
+     *
+     * @throws IllegalStateException if the value has not been set.
      */
     fun get(): T {
         check(isInitialized)
@@ -55,6 +59,8 @@ class DslValueMap<K, V> {
 
     /**
      * Sets the value for [key]. Fails if the value has already been set for [key].
+     *
+     * @throws IllegalStateException if the value has already been set for [key].
      */
     operator fun set(key: K, value: V) {
         val dslValue = map.computeIfAbsent(key) { DslValue() }
@@ -63,6 +69,8 @@ class DslValueMap<K, V> {
 
     /**
      * Gets the value for [key]. Fails if the value has not already been set for [key].
+     *
+     * @throws IllegalStateException if the value has not already been set for [key].
      */
     operator fun get(key: K): V {
         val dslValue = map.getOrFail(key)
