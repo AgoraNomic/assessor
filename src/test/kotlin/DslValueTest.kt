@@ -3,6 +3,7 @@ import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.dsl.getOrNull
 import org.agoranomic.assessor.lib.asNullable
 import org.junit.jupiter.api.Nested
+import test_util.assertSucceeds
 import kotlin.test.*
 
 class `DslValue tests` {
@@ -18,8 +19,9 @@ class `DslValue tests` {
         fun `set does not fail`() {
             val dslValue = DslValue<String>()
 
-            // Test fails if this throws
-            dslValue.set("I'm a string")
+            assertSucceeds {
+                dslValue.set("I'm a string")
+            }
         }
 
         @Test
@@ -123,8 +125,9 @@ class `DslValueMap tests` {
         fun `set works`() {
             val map = emptyTestMap()
 
-            // Should not fail
-            map[testKey] = testValue
+            assertSucceeds {
+                map[testKey] = testValue
+            }
         }
 
         @Test

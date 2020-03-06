@@ -1,4 +1,5 @@
 import org.agoranomic.assessor.lib.*
+import test_util.assertSucceeds
 import java.math.BigDecimal
 import kotlin.test.*
 
@@ -44,10 +45,17 @@ class `Exhaustive Enum tests` {
 
     @Test
     fun `requireExhaustive correctly succeeds`() {
-        // Tests will fail if call throws
-        listOf(TestEnum.First, TestEnum.Second).requireExhaustive()
-        listOf(TestEnum.Second, TestEnum.First).requireExhaustive()
-        listOf(TestEnum.Second, TestEnum.First, TestEnum.Second).requireExhaustive()
+        assertSucceeds {
+            listOf(TestEnum.First, TestEnum.Second).requireExhaustive()
+        }
+
+        assertSucceeds {
+            listOf(TestEnum.Second, TestEnum.First).requireExhaustive()
+        }
+
+        assertSucceeds {
+            listOf(TestEnum.Second, TestEnum.First, TestEnum.Second).requireExhaustive()
+        }
     }
 
     @Test
@@ -88,8 +96,9 @@ class `allAreDistinct tests` {
     fun `requireAllAreDistinct does not throw for list with all distinct`() {
         val list = listOf(1, 2, 3)
 
-        // Test fails if this throws
-        list.requireAllAreDistinct()
+        assertSucceeds {
+            list.requireAllAreDistinct()
+        }
     }
 
     @Test
@@ -102,8 +111,9 @@ class `allAreDistinct tests` {
     fun `requireAllAreDistinctBy does not throw for list with all selected keys distinct`() {
         val list = listOf("Alice", "Bob", "Charlie")
 
-        // Test fails if this throws
-        list.requireAllAreDistinctBy { it[0] }
+        assertSucceeds {
+            list.requireAllAreDistinctBy { it[0] }
+        }
     }
 
     @Test
