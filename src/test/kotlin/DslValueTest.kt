@@ -1,5 +1,6 @@
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
+import org.agoranomic.assessor.dsl.getOrNull
 import org.agoranomic.assessor.lib.asNullable
 import org.junit.jupiter.api.Nested
 import kotlin.test.*

@@ -40,14 +40,12 @@ class DslValue<T> {
     fun getOrElse(default: T?): T? {
         return if (isInitialized) currentValue as T else default
     }
-
-    /**
-     * Gets the value, or null if the value has not been set. Does not fail.
-     */
-    fun getOrNull(): T? {
-        return if (isInitialized) currentValue as T else null
-    }
 }
+
+/**
+ * Gets the value, or null if the value has not been set. Does not fail.
+ */
+fun <T> DslValue<T>.getOrNull(): T? = getOrElse(null)
 
 /**
  * A map that contains values that may only be set exactly once per key.
@@ -93,16 +91,14 @@ class DslValueMap<K, V> {
     }
 
     /**
-     * Gets the value for [key], or null if it has not been set. Does not fail.
-     */
-    fun getOrNull(key: K): V? {
-        return map[key]?.get()
-    }
-
-    /**
      * Compiles all set keys and values into a [Map].
      */
     fun compile(): Map<K, V> {
         return map.mapValues { (_, v) -> v.get() }
     }
 }
+
+/**
+ * Gets the value for [key], or null if it has not been set. Does not fail.
+ */
+fun <K, V> DslValueMap<K, V>.getOrNull(key: K) = getOrElse(key, null)

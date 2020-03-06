@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
+import org.agoranomic.assessor.dsl.getOrNull
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
