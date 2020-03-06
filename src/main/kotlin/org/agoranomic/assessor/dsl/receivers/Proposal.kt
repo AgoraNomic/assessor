@@ -37,7 +37,7 @@ interface ProposalReceiverV1 : ProposalCommonReceiver {
 }
 
 @AssessmentDSL
-class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
+private class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
     private val title = DslValue<String>()
     private val text = DslValue<String>()
     private val ai = DslValue<ProposalAI>()
@@ -99,9 +99,13 @@ class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalRecei
     }
 }
 
+fun buildProposalV1(number: ProposalNumber, block: ProposalReceiverV1.() -> Unit): Proposal {
+    return ProposalReceiverImplV1(number).also(block).compile()
+}
+
 // Old proposals are exactly the same as new proposals without a class.
 @AssessmentDSL
-class ProposalReceiverImplV0(
+private class ProposalReceiverImplV0(
     number: ProposalNumber,
     val v1Impl: ProposalReceiverImplV1 = ProposalReceiverImplV1(number)
 ) : ProposalReceiverV0, ProposalCommonReceiver by v1Impl {
@@ -110,4 +114,8 @@ class ProposalReceiverImplV0(
     }
 
     fun compile(): Proposal = v1Impl.compile()
+}
+
+fun buildProposalV0(number: ProposalNumber, block: ProposalReceiverV0.() -> Unit): Proposal {
+    return ProposalReceiverImplV0(number).also(block).compile()
 }

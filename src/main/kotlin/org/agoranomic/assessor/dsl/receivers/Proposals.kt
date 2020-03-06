@@ -48,9 +48,7 @@ private class ProposalsReceiverImplV0(
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV0, ProposalsReceiverCommon by commonImpl {
     override fun proposal(number: ProposalNumber, block: ProposalReceiverV0.() -> Unit) {
-        val receiver = ProposalReceiverImplV0(number)
-        receiver.block()
-        using(receiver.compile())
+        using(buildProposalV0(number, block))
     }
 
     fun compile() = commonImpl.compile()
@@ -65,9 +63,7 @@ private class ProposalsReceiverImplV1(
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV1, ProposalsReceiverCommon by commonImpl {
     override fun proposal(number: ProposalNumber, block: ProposalReceiverV1.() -> Unit) {
-        val receiver = ProposalReceiverImplV1(number)
-        receiver.block()
-        using(receiver.compile())
+        using(buildProposalV1(number, block))
     }
 
     fun compile() = commonImpl.compile()
