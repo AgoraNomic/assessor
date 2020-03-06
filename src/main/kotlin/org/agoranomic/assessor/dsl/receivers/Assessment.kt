@@ -42,15 +42,11 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     }
 
     override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0.() -> Unit) {
-        val receiver = ProposalsReceiverImplV0()
-        receiver.block()
-        proposals.set(receiver.compile().toImmutableProposalSet())
+        proposals.set(buildProposalsV0(block))
     }
 
     override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1.() -> Unit) {
-        val receiver = ProposalsReceiverImplV1()
-        receiver.block()
-        proposals.set(receiver.compile().toImmutableProposalSet())
+        proposals.set(buildProposalsV1(block))
     }
 
     override fun voting(block: VotingReceiver.() -> Unit) {

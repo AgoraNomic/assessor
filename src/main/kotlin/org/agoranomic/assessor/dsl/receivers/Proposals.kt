@@ -3,10 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.emptyMutableProposalSet
-import org.agoranomic.assessor.lib.proposal_set.plusAssign
-import org.agoranomic.assessor.lib.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.proposal_set.*
 
 @AssessmentDSL
 interface ProposalsReceiverCommon {
@@ -47,7 +44,7 @@ class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
 }
 
 @AssessmentDSL
-class ProposalsReceiverImplV0(
+private class ProposalsReceiverImplV0(
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV0, ProposalsReceiverCommon by commonImpl {
     override fun proposal(number: ProposalNumber, block: ProposalReceiverV0.() -> Unit) {
@@ -59,8 +56,12 @@ class ProposalsReceiverImplV0(
     fun compile() = commonImpl.compile()
 }
 
+fun buildProposalsV0(block: ProposalsReceiverV0.() -> Unit): ImmutableProposalSet {
+    return ProposalsReceiverImplV0().also(block).compile().toImmutableProposalSet()
+}
+
 @AssessmentDSL
-class ProposalsReceiverImplV1(
+private class ProposalsReceiverImplV1(
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV1, ProposalsReceiverCommon by commonImpl {
     override fun proposal(number: ProposalNumber, block: ProposalReceiverV1.() -> Unit) {
@@ -70,4 +71,8 @@ class ProposalsReceiverImplV1(
     }
 
     fun compile() = commonImpl.compile()
+}
+
+fun buildProposalsV1(block: ProposalsReceiverV1.() -> Unit): ImmutableProposalSet {
+    return ProposalsReceiverImplV1().also(block).compile().toImmutableProposalSet()
 }
