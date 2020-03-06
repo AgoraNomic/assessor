@@ -56,6 +56,8 @@ fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K) = map(selector).al
 
 fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) = map(selector).requireAllAreDistinct()
 
+fun <T> T.asNullable(): T? = this
+
 operator fun BigDecimal.plus(other: Int) = this.plus(other.toBigDecimal())
 operator fun Int.plus(other: BigDecimal) = (this.toBigDecimal()).plus(other)
 
