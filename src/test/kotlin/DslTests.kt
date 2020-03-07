@@ -110,4 +110,44 @@ class `Proposal DSL V0 tests` {
             assertEquals(expectedText, proposal.text)
         }
     }
+
+    @Nested
+    inner class `author tests` {
+        private fun ProposalReceiverV0.setupForAuthor() = commonSetup(specifyAuthor = false)
+
+        @Test
+        fun `fails when author not specified`() {
+            assertFails {
+                compile {
+                    setupForAuthor()
+                    // Don't set author
+                }
+            }
+        }
+
+        @Test
+        fun `fails when author specified twice`() {
+            val authorToSet = firstTestProposalAuthor()
+
+            assertFails {
+                compile {
+                    setupForAuthor()
+                    author(authorToSet)
+                    author(authorToSet)
+                }
+            }
+        }
+
+        @Test
+        fun `returns expected author`() {
+            val expectedAuthor = firstTestProposalAuthor()
+
+            val proposal = compile {
+                setupForAuthor()
+                author(expectedAuthor)
+            }
+
+            assertEquals(expectedAuthor, proposal.author)
+        }
+    }
 }
