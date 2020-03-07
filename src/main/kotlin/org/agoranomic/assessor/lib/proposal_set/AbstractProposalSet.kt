@@ -5,6 +5,7 @@ import kotlinx.collections.immutable.toImmutableSet
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.ProposalNumbers
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {
@@ -31,8 +32,8 @@ abstract class AbstractProposalSet : ProposalSet {
         }
     }
 
-    override fun numbers(): ImmutableSet<ProposalNumber> {
-        return map { it.number }.toImmutableSet()
+    override fun numbers(): ProposalNumbers {
+        return ProposalNumbers.checkingDistinct(map { it.number })
     }
 
     final override fun equals(other: Any?): Boolean {

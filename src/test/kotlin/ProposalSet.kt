@@ -1,6 +1,7 @@
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.ProposalNumbers
 import org.agoranomic.assessor.lib.proposal_set.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
@@ -156,22 +157,22 @@ class `ProposalSet tests` {
         val thirdProposal = thirdTestProposal()
 
         assertEquals(
-            setOf<ProposalNumber>(),
+            ProposalNumbers.empty(),
             createProposalSet().numbers()
         )
 
         assertEquals(
-            setOf(firstProposal.number),
+            ProposalNumbers.of(firstProposal.number),
             createProposalSet(firstProposal).numbers()
         )
 
         assertEquals(
-            setOf(firstProposal.number, secondProposal.number),
+            ProposalNumbers.of(firstProposal.number, secondProposal.number),
             createProposalSet(firstProposal, secondProposal).numbers()
         )
 
         assertEquals(
-            setOf(firstProposal.number, secondProposal.number, thirdProposal.number),
+            ProposalNumbers.of(firstProposal.number, secondProposal.number, thirdProposal.number),
             createProposalSet(firstProposal, secondProposal, thirdProposal).numbers()
         )
     }

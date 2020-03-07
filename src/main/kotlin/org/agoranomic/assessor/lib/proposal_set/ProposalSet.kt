@@ -1,10 +1,7 @@
 package org.agoranomic.assessor.lib.proposal_set
 
 import kotlinx.collections.immutable.ImmutableSet
-import org.agoranomic.assessor.lib.Proposal
-import org.agoranomic.assessor.lib.ProposalDataMismatchException
-import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.checkMismatch
+import org.agoranomic.assessor.lib.*
 
 /**
  * Thrown when by a [ProposalSet] when a proposal is requested but does not exist.
@@ -36,7 +33,7 @@ interface ProposalSet : Iterable<Proposal> {
     /**
      * Returns an [ImmutableSet] of the [numbers][Proposal.number] of the proposals that this [ProposalSet] contains.
      */
-    fun numbers(): ImmutableSet<ProposalNumber>
+    fun numbers(): ProposalNumbers
 }
 
 /**
