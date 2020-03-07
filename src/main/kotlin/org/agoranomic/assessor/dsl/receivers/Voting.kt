@@ -27,11 +27,7 @@ class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingRe
     override fun votes(person: Person, block: VotesReceiver.() -> Unit) {
         require(!votes.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
-        val receiver = VotesReceiverImpl(proposals.map { it.number })
-        receiver.block()
-        val result = receiver.compile()
-
-        votes[person] = result
+        votes[person] = buildVotes(proposals.map { it.number }, block)
     }
 
 

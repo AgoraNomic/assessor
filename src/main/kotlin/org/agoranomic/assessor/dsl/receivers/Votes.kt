@@ -34,7 +34,7 @@ interface VotesReceiver {
 }
 
 @AssessmentDSL
-class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
+private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
     private val votes = DslValueMap<ProposalNumber, MutableVote>()
@@ -80,4 +80,8 @@ class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : 
     fun compile(): Map<ProposalNumber, PendingVote> {
         return votes.compile().mapValues { (k, v) -> v.compile() }
     }
+}
+
+fun buildVotes(proposals: List<ProposalNumber>, block: VotesReceiver.() -> Unit): Map<ProposalNumber, PendingVote> {
+    return VotesReceiverImpl(proposals).also(block).compile()
 }
