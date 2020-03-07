@@ -168,6 +168,24 @@ private fun StringBuilder.emitStrengthFootnotes(strengthMap: Collection<VotingSt
     }
 }
 
+private fun StringBuilder.emitProposalResolutions(config: ReportConfig, resolutionMap: ProposalResolutionMap) {
+    val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
+
+    emitWithDelimiter("PROPOSALS")
+
+    for (proposal in sortedProposals) {
+        val resolution = resolutionMap[proposal.number]
+
+        emitProposalHeader(proposal)
+        emitProposalVotes(resolution.votes, resolutionMap.votingStrengthsFor(proposal.number), config.voteKindBallotCount)
+        if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
+        emitProposalAI(resolution, proposal.ai)
+        emitProposalOutcome(resolution)
+        if (config.voteComments) emitVoteComments(resolution)
+        emitLine()
+    }
+}
+
 private fun StringBuilder.emitWithDelimiter(string: String) {
     emitLine(string)
     emitLine("=".repeat(string.length))
@@ -193,19 +211,7 @@ fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportCo
         emitLine()
         emitStrengthFootnotes(resolutionMap.votingStrengths.values)
         emitLine()
-        emitWithDelimiter("PROPOSALS")
-
-        for (proposal in sortedProposals) {
-            val resolution = resolutionMap[proposal.number]
-
-            emitProposalHeader(proposal)
-            emitProposalVotes(resolution.votes, resolutionMap.votingStrengthsFor(proposal.number), config.voteKindBallotCount)
-            if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
-            emitProposalAI(resolution, proposal.ai)
-            emitProposalOutcome(resolution)
-            if (config.voteComments) emitVoteComments(resolution)
-            emitLine()
-        }
+        emitProposalResolutions(config, resolutionMap)
 
         val adoptedProposals = resolutionMap.filterResult(ProposalResult.ADOPTED).keys
         emitProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) })
