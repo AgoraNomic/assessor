@@ -1,5 +1,5 @@
 import org.agoranomic.assessor.dsl.receivers.*
-import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.junit.jupiter.api.Nested
@@ -148,6 +148,57 @@ class `Proposal DSL V0 tests` {
             }
 
             assertEquals(expectedAuthor, proposal.author)
+        }
+    }
+
+    @Nested
+    inner class `coauthors tests` {
+        private fun ProposalReceiverV0.setupForCoauthors() = commonSetup(specifyCoauthors = false)
+
+        @Test
+        fun `has empty coauthors when none specified`() {
+            val proposal = compile {
+                setupForCoauthors()
+            }
+
+            assertEquals(Persons.empty(), proposal.coauthors)
+        }
+
+        @Test
+        fun `fails when coauthors specified twice`() {
+            val coauthorsToSet = firstTestProposalCoauthors()
+
+            assertFails {
+                compile {
+                    setupForCoauthors()
+                    coauthors(coauthorsToSet)
+                    coauthors(coauthorsToSet)
+                }
+            }
+        }
+
+        @Test
+        fun `returns expected coauthors when using Persons argument`() {
+            val coauthorsToSet = firstTestProposalCoauthors()
+
+            val proposal = compile {
+                setupForCoauthors()
+                coauthors(coauthorsToSet)
+            }
+
+            assertEquals(coauthorsToSet, proposal.coauthors)
+        }
+
+        @Test
+        fun `returns expected coauthors when using varargs`() {
+            val coauthorsToSet = firstTestProposalCoauthors().toTypedArray()
+
+            val proposal = compile {
+                setupForCoauthors()
+                coauthors(*coauthorsToSet)
+            }
+
+            assertEquals(Persons.checkingDistinct(coauthorsToSet.toList()), proposal.coauthors)
         }
     }
 }
