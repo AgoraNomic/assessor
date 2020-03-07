@@ -18,7 +18,7 @@ interface ProposalStrengthReceiver {
 typealias ProposalStrengthReceiverInit = DslInit<ProposalStrengthReceiver>
 
 @AssessmentDSL
-class ProposalStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalStrengthReceiver {
+private class ProposalStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
     override infix fun Person.strength(value: VotingStrength) {
@@ -34,6 +34,10 @@ class ProposalStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : Pro
     fun compile(): Map<Person, VotingStrengthWithComment> {
         return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }
     }
+}
+
+fun buildProposalStrength(globalStrengths: VotingStrengthMap, block: ProposalStrengthReceiverInit): Map<Person, VotingStrengthWithComment> {
+    return ProposalStrengthReceiverImpl(globalStrengths).also(block).compile()
 }
 
 interface VotingStrengthCommentable {
@@ -58,7 +62,7 @@ interface VotingStrengthReceiver {
 typealias VotingStrengthReceiverInit = DslInit<VotingStrengthReceiver>
 
 @AssessmentDSL
-class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : VotingStrengthReceiver {
+private class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : VotingStrengthReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
     override val allProposals get() = proposals
@@ -110,15 +114,17 @@ class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : 
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
-            val proposalStrengthReceiver = ProposalStrengthReceiverImpl(globalStrengthMap)
             val block = overrideStrengthBlocks.getOrNull(proposal)
 
             if (block != null) {
-                proposalStrengthReceiver.block()
-                OverrideVotingStrengthMap(globalStrengthMap, proposalStrengthReceiver.compile())
+                OverrideVotingStrengthMap(globalStrengthMap, buildProposalStrength(globalStrengthMap, block))
             } else {
                 globalStrengthMap
             }
         }
     }
+}
+
+fun buildVotingStrength(proposals: ProposalSet, block: VotingStrengthReceiverInit): Map<ProposalNumber, VotingStrengthMap> {
+    return VotingStrengthReceiverImpl(proposals).also(block).compile()
 }

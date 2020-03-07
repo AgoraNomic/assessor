@@ -60,21 +60,13 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         name.set(value)
     }
 
-    private fun compileVotingStrengths(): Map<ProposalNumber, VotingStrengthMap> {
-        val proposals = proposals.get()
-        val votingStrengthsBlock = votingStrengthsBlock.get()
-
-        val receiver = VotingStrengthReceiverImpl(proposals)
-        receiver.votingStrengthsBlock()
-        return receiver.compile()
-    }
-
     fun compile(): AssessmentData {
         val name = name.get()
         val quorum = quorum.get()
         val proposals = proposals.get()
         val proposalVotes = proposalVotes.get()
-        val votingStrengths = compileVotingStrengths()
+        val votingStrengthsBlock = votingStrengthsBlock.get()
+        val votingStrengths = buildVotingStrength(proposals, votingStrengthsBlock)
 
         for (proposalNumber in proposalVotes.keys) {
             if (proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal $proposalNumber")
