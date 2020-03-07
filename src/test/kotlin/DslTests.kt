@@ -2,8 +2,8 @@ import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
-import test_objects.firstTestProposalNumber
 import org.junit.jupiter.api.Nested
+import test_objects.*
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
 import kotlin.test.Test
@@ -17,11 +17,11 @@ class `Proposal DSL V0 tests` {
             specifyCoauthors: Boolean = true,
             specifyAI: Boolean = true
         ) {
-            if (specifyTitle) title("Some title")
-            if (specifyText) text("Some text")
-            if (specifyAuthor) author(Person("Some author"))
-            if (specifyCoauthors) coauthors(Person("First coauthor"), Person("second coauthor"))
-            if (specifyAI) ai(1)
+            if (specifyTitle) title(firstTestProposalTitle())
+            if (specifyText) text(firstTestProposalText())
+            if (specifyAuthor) author(firstTestProposalAuthor())
+            if (specifyCoauthors) coauthors(firstTestProposalCoauthors())
+            if (specifyAI) ai(firstTestProposalAI())
         }
 
         private fun compile(
@@ -47,7 +47,7 @@ class `Proposal DSL V0 tests` {
 
         @Test
         fun `fails when title specified twice`() {
-            val titleToSet = "A title"
+            val titleToSet = firstTestProposalTitle()
 
             assertFails {
                 compile {
@@ -60,7 +60,7 @@ class `Proposal DSL V0 tests` {
 
         @Test
         fun `returns correct title`() {
-            val expectedTitle = "I'm a title!"
+            val expectedTitle = firstTestProposalTitle()
 
             val proposal = compile {
                 setupForTitle()
@@ -87,7 +87,7 @@ class `Proposal DSL V0 tests` {
 
         @Test
         fun `fails when text specified twice`() {
-            val textToSet = "Some text"
+            val textToSet = firstTestProposalText()
 
             assertFails {
                 compile {
@@ -100,7 +100,7 @@ class `Proposal DSL V0 tests` {
 
         @Test
         fun `returns correct text`() {
-            val expectedText = "I'm a proposal text!"
+            val expectedText = firstTestProposalText()
 
             val proposal = compile {
                 setupForText()
