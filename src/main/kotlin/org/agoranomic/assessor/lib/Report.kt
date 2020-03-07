@@ -180,7 +180,7 @@ data class ReportConfig(
 )
 
 fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
-    val sortedProposals = resolutionMap.proposals.sortedBy { it.number.raw }
+    val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     val output = StringBuilder()
 

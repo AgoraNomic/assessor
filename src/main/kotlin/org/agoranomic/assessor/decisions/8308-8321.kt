@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.compareTo
@@ -40,8 +41,8 @@ fun `assessment 8308 to 8321`() = assessment {
         default(3)
         Falsifian strength 4 comment SPEAKER
 
-        ministriesV0(offices, allProposals.filter { it.number.raw <= 8318 }.toProposalSet())
-        ministriesV1(offices, allProposals.filter { it.number.raw >= 8319 }.toProposalSet())
+        ministriesV0(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())
+        ministriesV1(offices, allProposals.filter { it.number >= ProposalNumber(8319) }.toProposalSet())
     }
 
     proposals(v1) {

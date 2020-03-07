@@ -5,9 +5,13 @@ import java.math.BigInteger
 
 typealias RawProposalNumber = BigInteger
 
-inline class ProposalNumber(val raw: RawProposalNumber) {
+inline class ProposalNumber(val raw: RawProposalNumber) : Comparable<ProposalNumber> {
     constructor(raw: Int) : this(raw.toBigInteger())
     constructor(raw: Long) : this(raw.toBigInteger())
+
+    override fun compareTo(other: ProposalNumber): Int {
+        return (this.raw).compareTo(other.raw)
+    }
 }
 
 typealias RawProposalAI = BigDecimal
