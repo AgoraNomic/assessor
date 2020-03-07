@@ -50,9 +50,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     }
 
     override fun voting(block: VotingReceiver.() -> Unit) {
-        val receiver = VotingReceiverImpl(proposals.get())
-        receiver.block()
-        proposalVotes.set(receiver.compile().toImmutableMap())
+        proposalVotes.set(buildVoting(proposals.get(), block))
     }
 
     override fun quorum(value: AssessmentQuorum) {

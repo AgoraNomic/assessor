@@ -1,5 +1,7 @@
 package org.agoranomic.assessor.dsl.receivers
 
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
@@ -15,7 +17,7 @@ interface VotingReceiver {
 }
 
 @AssessmentDSL
-class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingReceiver {
+private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
     private val votes = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
@@ -67,4 +69,8 @@ class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingRe
             SingleProposalVoteMap(proposalVotes)
         }.mapKeys { (proposal, _) -> proposal.number }
     }
+}
+
+fun buildVoting(proposals: ProposalSet, block: VotingReceiver.() -> Unit): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
+    return VotingReceiverImpl(proposals).also(block).compile().toImmutableMap()
 }
