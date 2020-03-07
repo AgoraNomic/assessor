@@ -13,5 +13,12 @@ data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<
             collection.requireAllAreDistinct()
             return ProposalNumbers(collection.toSet())
         }
+
+        // Kotlin doesn't let us explicitly use a vararg of an inline class, so we use a type parameter that is
+        // constrained to be derived from ProposalNumber. Since inline classes are final, it can only be deduced as
+        // ProposalNumber, which is what we want.
+        //
+        // Yes, this is hacky, but blame Kotlin.
+        fun <T : ProposalNumber> of(vararg numbers: T) = checkingDistinct(numbers.toList())
     }
 }
