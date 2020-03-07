@@ -1,19 +1,16 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
+import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDSL
 interface AssessmentReceiver {
-    fun strengths(block: VotingStrengthReceiver.() -> Unit)
-    fun voting(block: VotingReceiver.() -> Unit)
+    fun strengths(block: VotingStrengthReceiverInit)
+    fun voting(block: VotingReceiverInit)
     fun quorum(value: AssessmentQuorum)
     fun name(value: String)
 
@@ -23,33 +20,35 @@ interface AssessmentReceiver {
     object Version1
     val v1 get() = Version1
 
-    fun proposals(v0: Version0, block: ProposalsReceiverV0.() -> Unit)
-    fun proposals(v1: Version1, block: ProposalsReceiverV1.() -> Unit)
+    fun proposals(v0: Version0, block: ProposalsReceiverV0Init)
+    fun proposals(v1: Version1, block: ProposalsReceiverV1Init)
 }
+
+typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
 
 fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
-    private val votingStrengthsBlock = DslValue<(VotingStrengthReceiver.() -> Unit)>()
+    private val votingStrengthsBlock = DslValue<(VotingStrengthReceiverInit)>()
     private val proposals = DslValue<ImmutableProposalSet>()
     private val proposalVotes = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
     private val quorum = DslValue<AssessmentQuorum>()
     private val name = DslValue<String>()
 
-    override fun strengths(block: VotingStrengthReceiver.() -> Unit) {
+    override fun strengths(block: VotingStrengthReceiverInit) {
         votingStrengthsBlock.set(block)
     }
 
-    override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0.() -> Unit) {
+    override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0Init) {
         proposals.set(buildProposalsV0(block))
     }
 
-    override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1.() -> Unit) {
+    override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1Init) {
         proposals.set(buildProposalsV1(block))
     }
 
-    override fun voting(block: VotingReceiver.() -> Unit) {
+    override fun voting(block: VotingReceiverInit) {
         proposalVotes.set(buildVoting(proposals.get(), block))
     }
 

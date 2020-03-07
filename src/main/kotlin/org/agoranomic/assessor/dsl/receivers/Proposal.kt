@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
@@ -29,12 +30,16 @@ fun ProposalCommonReceiver.ai(value: Int) = adoption_index(value)
 @AssessmentDSL
 interface ProposalReceiverV0 : ProposalCommonReceiver
 
+typealias ProposalReceiverV0Init = DslInit<ProposalReceiverV0>
+
 @AssessmentDSL
 interface ProposalReceiverV1 : ProposalCommonReceiver {
     fun classless()
     fun democratic()
     fun chamber(chamber: ProposalChamber)
 }
+
+typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 
 @AssessmentDSL
 private class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
@@ -99,7 +104,7 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
     }
 }
 
-fun buildProposalV1(number: ProposalNumber, block: ProposalReceiverV1.() -> Unit): Proposal {
+fun buildProposalV1(number: ProposalNumber, block: ProposalReceiverV1Init): Proposal {
     return ProposalReceiverImplV1(number).also(block).compile()
 }
 
@@ -116,6 +121,6 @@ private class ProposalReceiverImplV0(
     fun compile(): Proposal = v1Impl.compile()
 }
 
-fun buildProposalV0(number: ProposalNumber, block: ProposalReceiverV0.() -> Unit): Proposal {
+fun buildProposalV0(number: ProposalNumber, block: ProposalReceiverV0Init): Proposal {
     return ProposalReceiverImplV0(number).also(block).compile()
 }

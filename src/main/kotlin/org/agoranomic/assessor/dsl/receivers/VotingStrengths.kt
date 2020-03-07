@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import org.agoranomic.assessor.dsl.AssessmentDSL
-import org.agoranomic.assessor.dsl.DslValue
-import org.agoranomic.assessor.dsl.DslValueMap
-import org.agoranomic.assessor.dsl.getOrNull
+import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
@@ -17,6 +14,8 @@ interface ProposalStrengthReceiver {
     infix fun Person.add(value: VotingStrength)
     infix fun Person.add(value: Int) = add(VotingStrength(value))
 }
+
+typealias ProposalStrengthReceiverInit = DslInit<ProposalStrengthReceiver>
 
 @AssessmentDSL
 class ProposalStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalStrengthReceiver {
@@ -51,10 +50,12 @@ interface VotingStrengthReceiver {
     infix fun Person.add(votingStrength: VotingStrength)
     infix fun Person.add(votingStrength: Int) = add(VotingStrength(votingStrength))
 
-    fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit)
+    fun proposal(number: ProposalNumber, block: ProposalStrengthReceiverInit)
     fun default(strength: VotingStrength)
     fun default(strength: Int) = default(VotingStrength(strength))
 }
+
+typealias VotingStrengthReceiverInit = DslInit<VotingStrengthReceiver>
 
 @AssessmentDSL
 class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : VotingStrengthReceiver {
@@ -64,7 +65,7 @@ class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : 
 
     private var defaultStrength = DslValue<VotingStrength>()
     private var globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
-    private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalStrengthReceiver.() -> Unit>()
+    private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalStrengthReceiverInit>()
 
     private data class MutableVotingStrength(
         val value: VotingStrength,
@@ -94,7 +95,7 @@ class VotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : 
         globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + addAmount)
     }
 
-    override fun proposal(number: ProposalNumber, block: ProposalStrengthReceiver.() -> Unit) {
+    override fun proposal(number: ProposalNumber, block: ProposalStrengthReceiverInit) {
         require(!overrideStrengthBlocks.containsKey(number))
         overrideStrengthBlocks[number] = block
     }

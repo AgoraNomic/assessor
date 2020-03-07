@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.proposal_set.*
@@ -16,12 +17,15 @@ interface ProposalsReceiverCommon {
 
 @AssessmentDSL
 interface ProposalsReceiver<ProposalReceiver> : ProposalsReceiverCommon {
-    fun proposal(number: ProposalNumber, block: ProposalReceiver.() -> Unit)
-    fun proposal(number: Int, block: ProposalReceiver.() -> Unit) = proposal(ProposalNumber(number), block)
+    fun proposal(number: ProposalNumber, block: DslInit<ProposalReceiver>)
+    fun proposal(number: Int, block: DslInit<ProposalReceiver>) = proposal(ProposalNumber(number), block)
 }
 
 typealias ProposalsReceiverV0 = ProposalsReceiver<ProposalReceiverV0>
+typealias ProposalsReceiverV0Init = DslInit<ProposalsReceiverV0>
+
 typealias ProposalsReceiverV1 = ProposalsReceiver<ProposalReceiverV1>
+typealias ProposalsReceiverV1Init = DslInit<ProposalsReceiverV1>
 
 @AssessmentDSL
 class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
@@ -47,14 +51,14 @@ class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
 private class ProposalsReceiverImplV0(
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV0, ProposalsReceiverCommon by commonImpl {
-    override fun proposal(number: ProposalNumber, block: ProposalReceiverV0.() -> Unit) {
+    override fun proposal(number: ProposalNumber, block: ProposalReceiverV0Init) {
         using(buildProposalV0(number, block))
     }
 
     fun compile() = commonImpl.compile()
 }
 
-fun buildProposalsV0(block: ProposalsReceiverV0.() -> Unit): ImmutableProposalSet {
+fun buildProposalsV0(block: ProposalsReceiverV0Init): ImmutableProposalSet {
     return ProposalsReceiverImplV0().also(block).compile().toImmutableProposalSet()
 }
 
@@ -62,13 +66,13 @@ fun buildProposalsV0(block: ProposalsReceiverV0.() -> Unit): ImmutableProposalSe
 private class ProposalsReceiverImplV1(
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV1, ProposalsReceiverCommon by commonImpl {
-    override fun proposal(number: ProposalNumber, block: ProposalReceiverV1.() -> Unit) {
+    override fun proposal(number: ProposalNumber, block: ProposalReceiverV1Init) {
         using(buildProposalV1(number, block))
     }
 
     fun compile() = commonImpl.compile()
 }
 
-fun buildProposalsV1(block: ProposalsReceiverV1.() -> Unit): ImmutableProposalSet {
+fun buildProposalsV1(block: ProposalsReceiverV1Init): ImmutableProposalSet {
     return ProposalsReceiverImplV1().also(block).compile().toImmutableProposalSet()
 }

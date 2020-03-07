@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 
@@ -32,6 +33,8 @@ interface VotesReceiver {
 
     fun function(func: VoteFunc): HalfFunctionVote
 }
+
+typealias VotesReceiverInit = DslInit<VotesReceiver>
 
 @AssessmentDSL
 private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
@@ -82,6 +85,6 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
     }
 }
 
-fun buildVotes(proposals: List<ProposalNumber>, block: VotesReceiver.() -> Unit): Map<ProposalNumber, PendingVote> {
+fun buildVotes(proposals: List<ProposalNumber>, block: VotesReceiverInit): Map<ProposalNumber, PendingVote> {
     return VotesReceiverImpl(proposals).also(block).compile()
 }

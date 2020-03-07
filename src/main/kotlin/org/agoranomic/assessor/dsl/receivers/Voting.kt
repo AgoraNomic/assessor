@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
@@ -13,8 +14,10 @@ import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 @AssessmentDSL
 interface VotingReceiver {
     infix fun Person.matches(other: Person)
-    fun votes(person: Person, block: VotesReceiver.() -> Unit)
+    fun votes(person: Person, block: VotesReceiverInit)
 }
+
+typealias VotingReceiverInit = DslInit<VotingReceiver>
 
 @AssessmentDSL
 private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingReceiver {
@@ -26,7 +29,7 @@ private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : 
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
-    override fun votes(person: Person, block: VotesReceiver.() -> Unit) {
+    override fun votes(person: Person, block: VotesReceiverInit) {
         require(!votes.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
         votes[person] = buildVotes(proposals.map { it.number }, block)
@@ -71,6 +74,6 @@ private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : 
     }
 }
 
-fun buildVoting(proposals: ProposalSet, block: VotingReceiver.() -> Unit): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
+fun buildVoting(proposals: ProposalSet, block: VotingReceiverInit): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
     return VotingReceiverImpl(proposals).also(block).compile().toImmutableMap()
 }
