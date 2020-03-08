@@ -12,7 +12,7 @@ data class Persons(val data: ImmutableSet<Person>) : Collection<Person> by data 
         fun empty() = Persons(emptySet())
 
         fun checkingDistinct(collection: Collection<Person>): Persons {
-            require(collection.allAreDistinct())
+            collection.requireAllAreDistinct()
             return Persons(collection.toSet())
         }
     }
