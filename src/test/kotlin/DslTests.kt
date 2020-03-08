@@ -30,7 +30,6 @@ class `Proposal DSL V0 tests` {
         ): Proposal = buildProposalV0(number, init)
     }
 
-
     @Nested
     inner class `title tests` {
         private fun ProposalReceiverV0.setupForTitle() = commonSetup(specifyTitle = false)
