@@ -11,7 +11,7 @@ import kotlin.test.assertFails
 import kotlin.test.Test
 
 abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
-    protected fun ProposalReceiver.onlyCommonSetupForCommonTests(
+    protected fun ProposalReceiver.onlyCommonSetup(
         specifyTitle: Boolean = true,
         specifyText: Boolean = true,
         specifyAuthor: Boolean = true,
@@ -34,7 +34,7 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
         specifyCoauthors: Boolean = true,
         specifyAI: Boolean = true
     ) {
-        onlyCommonSetupForCommonTests(
+        onlyCommonSetup(
             specifyTitle = specifyTitle,
             specifyText = specifyText,
             specifyAuthor = specifyAuthor,
