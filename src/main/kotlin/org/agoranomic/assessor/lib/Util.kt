@@ -39,11 +39,14 @@ fun <T> Collection<T>.repeatingElements(): Set<T> {
 }
 
 fun <T> Collection<T>.allAreDistinct(): Boolean {
-    val list = this.toList()
-    val distinctList = list.distinct()
+    val alreadySeen = mutableSetOf<T>()
 
-    // If all are distinct, then list and distinctList have the same size, since no elements will have been removed.
-    return list.size == distinctList.size
+    for (item in this) {
+        if (alreadySeen.contains(item)) return false
+        alreadySeen += item
+    }
+
+    return true
 }
 
 fun <T> Collection<T>.requireAllAreDistinct() {
