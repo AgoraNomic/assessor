@@ -1,3 +1,4 @@
+import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.Proposal
@@ -9,31 +10,49 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFails
 import kotlin.test.Test
 
-class `Proposal DSL V0 tests` {
-    companion object {
-        private fun ProposalReceiverV0.commonSetup(
-            specifyTitle: Boolean = true,
-            specifyText: Boolean = true,
-            specifyAuthor: Boolean = true,
-            specifyCoauthors: Boolean = true,
-            specifyAI: Boolean = true
-        ) {
-            if (specifyTitle) title(firstTestProposalTitle())
-            if (specifyText) text(firstTestProposalText())
-            if (specifyAuthor) author(firstTestProposalAuthor())
-            if (specifyCoauthors) coauthors(firstTestProposalCoauthors())
-            if (specifyAI) ai(firstTestProposalAI())
-        }
-
-        private fun compile(
-            number: ProposalNumber = firstTestProposalNumber(),
-            init: ProposalReceiverV0Init
-        ): Proposal = buildProposalV0(number, init)
+abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
+    protected fun ProposalReceiver.onlyCommonSetupForCommonTests(
+        specifyTitle: Boolean = true,
+        specifyText: Boolean = true,
+        specifyAuthor: Boolean = true,
+        specifyCoauthors: Boolean = true,
+        specifyAI: Boolean = true
+    ) {
+        if (specifyTitle) title(firstTestProposalTitle())
+        if (specifyText) text(firstTestProposalText())
+        if (specifyAuthor) author(firstTestProposalAuthor())
+        if (specifyCoauthors) coauthors(firstTestProposalCoauthors())
+        if (specifyAI) ai(firstTestProposalAI())
     }
+
+    protected abstract fun ProposalReceiver.extendSetupForCommonTests()
+
+    private fun ProposalReceiver.setupForCommonTests(
+        specifyTitle: Boolean = true,
+        specifyText: Boolean = true,
+        specifyAuthor: Boolean = true,
+        specifyCoauthors: Boolean = true,
+        specifyAI: Boolean = true
+    ) {
+        onlyCommonSetupForCommonTests(
+            specifyTitle = specifyTitle,
+            specifyText = specifyText,
+            specifyAuthor = specifyAuthor,
+            specifyCoauthors = specifyCoauthors,
+            specifyAI = specifyAI
+        )
+
+        extendSetupForCommonTests()
+    }
+
+    protected abstract fun compile(
+        number: ProposalNumber = firstTestProposalNumber(),
+        init: DslInit<ProposalReceiver>
+    ): Proposal
 
     @Nested
     inner class `title tests` {
-        private fun ProposalReceiverV0.setupForTitle() = commonSetup(specifyTitle = false)
+        private fun ProposalReceiver.setupForTitle() = setupForCommonTests(specifyTitle = false)
 
         @Test
         fun `fails when title not specified`() {
@@ -73,7 +92,7 @@ class `Proposal DSL V0 tests` {
 
     @Nested
     inner class `text tests` {
-        private fun ProposalReceiverV0.setupForText() = commonSetup(specifyText = false)
+        private fun ProposalReceiver.setupForText() = setupForCommonTests(specifyText = false)
 
         @Test
         fun `fails when text not specified`() {
@@ -113,7 +132,7 @@ class `Proposal DSL V0 tests` {
 
     @Nested
     inner class `author tests` {
-        private fun ProposalReceiverV0.setupForAuthor() = commonSetup(specifyAuthor = false)
+        private fun ProposalReceiver.setupForAuthor() = setupForCommonTests(specifyAuthor = false)
 
         @Test
         fun `fails when author not specified`() {
@@ -153,7 +172,7 @@ class `Proposal DSL V0 tests` {
 
     @Nested
     inner class `coauthors tests` {
-        private fun ProposalReceiverV0.setupForCoauthors() = commonSetup(specifyCoauthors = false)
+        private fun ProposalReceiver.setupForCoauthors() = setupForCommonTests(specifyCoauthors = false)
 
         @Test
         fun `has empty coauthors when none specified`() {
@@ -204,7 +223,7 @@ class `Proposal DSL V0 tests` {
 
     @Nested
     inner class `AI tests` {
-        private fun ProposalReceiverV0.setupForAI() = commonSetup(specifyAI = false)
+        private fun ProposalReceiver.setupForAI() = setupForCommonTests(specifyAI = false)
 
         @Test
         fun `fails when AI not specified`() {
@@ -262,5 +281,15 @@ class `Proposal DSL V0 tests` {
                 }
             }
         }
+    }
+}
+
+class ProposalDslV0Test : ProposalDslTestBase<ProposalReceiverV0>() {
+    override fun ProposalReceiverV0.extendSetupForCommonTests() {
+        // Nothing else to do, since V0 dsl is the same as the common
+    }
+
+    override fun compile(number: ProposalNumber, init: ProposalReceiverV0Init): Proposal {
+        return buildProposalV0(number, init)
     }
 }
