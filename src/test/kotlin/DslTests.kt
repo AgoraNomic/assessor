@@ -201,4 +201,44 @@ class `Proposal DSL V0 tests` {
             assertEquals(Persons.checkingDistinct(coauthorsToSet.toList()), proposal.coauthors)
         }
     }
+
+    @Nested
+    inner class `AI tests` {
+        private fun ProposalReceiverV0.setupForAI() = commonSetup(specifyAI = false)
+
+        @Test
+        fun `fails when AI not specified`() {
+            assertFails {
+                compile {
+                    setupForAI()
+                    // Don't set AI
+                }
+            }
+        }
+
+        @Test
+        fun `fails when AI specified twice`() {
+            val aiToSet = firstTestProposalAI()
+
+            assertFails {
+                compile {
+                    setupForAI()
+                    ai(aiToSet)
+                    ai(aiToSet)
+                }
+            }
+        }
+
+        @Test
+        fun `returns expected AI`() {
+            val expectedAI = firstTestProposalAI()
+
+            val proposal = compile {
+                setupForAI()
+                ai(expectedAI)
+            }
+
+            assertEquals(expectedAI, proposal.ai)
+        }
+    }
 }
