@@ -60,6 +60,8 @@ jobs:
             - .gradle
             - build
           key: v5-build-{{ .Branch }}-{{ .Revision }}
+      - store_test_results:
+          path: build/test-results/test
 
   fatJar:
     <<: *jvm_default
