@@ -1,9 +1,6 @@
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
-import org.agoranomic.assessor.lib.Persons
-import org.agoranomic.assessor.lib.Proposal
-import org.agoranomic.assessor.lib.ProposalAI
-import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.*
 import org.junit.jupiter.api.Nested
 import test_objects.*
 import kotlin.test.assertEquals
@@ -291,5 +288,93 @@ class ProposalDslV0Test : ProposalDslTestBase<ProposalReceiverV0>() {
 
     override fun compile(number: ProposalNumber, init: ProposalReceiverV0Init): Proposal {
         return buildProposalV0(number, init)
+    }
+}
+
+class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
+    override fun ProposalReceiverV1.extendSetupForCommonTests() {
+        onlyV1SpecificSetup()
+    }
+
+    private fun ProposalReceiverV1.onlyV1SpecificSetup(
+        specifyClass: Boolean = true
+    ) {
+        if (specifyClass) classless()
+    }
+
+    private fun ProposalReceiverV1.setupForV1Tests(
+        specifyTitle: Boolean = true,
+        specifyText: Boolean = true,
+        specifyAuthor: Boolean = true,
+        specifyCoauthors: Boolean = true,
+        specifyAI: Boolean = true,
+        specifyClass: Boolean = true
+    ) {
+        onlyCommonSetup(
+            specifyTitle = specifyTitle,
+            specifyText = specifyText,
+            specifyAuthor = specifyAuthor,
+            specifyCoauthors = specifyCoauthors,
+            specifyAI = specifyAI
+        )
+
+        onlyV1SpecificSetup(
+            specifyClass = specifyClass
+        )
+    }
+
+    override fun compile(number: ProposalNumber, init: ProposalReceiverV1Init): Proposal {
+        return buildProposalV1(number, init)
+    }
+
+    @Nested
+    inner class `class and chamber tests` {
+        private fun ProposalReceiverV1.setupForClassAndChamber() {
+            setupForV1Tests(specifyClass = false)
+        }
+
+        @Test
+        fun `fails if no class or chamber specified`() {
+            assertFails {
+                compile {
+                    setupForClassAndChamber()
+                    // Don't set class and chamber
+                }
+            }
+        }
+
+        @Test
+        fun `fails if class and chamber specified twice`() {
+            assertFails {
+                compile {
+                    setupForClassAndChamber()
+                    classless()
+                    classless()
+                }
+            }
+        }
+
+        @Test
+        fun `returns expected class and chamber for classless`() {
+            val initToExpected = mapOf(
+                { it: ProposalReceiverV1 -> it.classless() }
+                        to ProposalClassAndChamber.Classless,
+                { it: ProposalReceiverV1 -> it.democratic() }
+                        to ProposalClassAndChamber.DemocraticClass,
+                { it: ProposalReceiverV1 -> it.chamber(ProposalChamber.Participation) }
+                        to ProposalClassAndChamber.OrdinaryClass(ProposalChamber.Participation),
+                { it: ProposalReceiverV1 -> it.chamber(ProposalChamber.Economy) }
+                        to ProposalClassAndChamber.OrdinaryClass(ProposalChamber.Economy)
+            )
+
+            for ((init, expectedClassAndChamber) in initToExpected) {
+                val proposal = compile {
+                    setupForClassAndChamber()
+                    init(this)
+                }
+
+                assertEquals(expectedClassAndChamber, proposal.classAndChamber)
+            }
+        }
     }
 }
