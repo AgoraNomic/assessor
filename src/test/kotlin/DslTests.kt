@@ -1,6 +1,7 @@
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.Proposal
+import org.agoranomic.assessor.lib.ProposalAI
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.junit.jupiter.api.Nested
 import test_objects.*
@@ -238,6 +239,28 @@ class `Proposal DSL V0 tests` {
             }
 
             assertEquals(expectedAI, proposal.ai)
+        }
+
+        @Test
+        fun `double to AI conversion works`() {
+            for (integerPart in (0..3).map { it.toString() }) {
+                for (decimalPart in (0..9).map { it.toString() }) {
+                    val aiString = "$integerPart.$decimalPart"
+
+                    // toDouble returns the nearest double value to the String value (I think?), which is the same as
+                    // what it would be represented as in a source code literal.
+                    val aiDouble = aiString.toDouble()
+
+                    val expectedAI = ProposalAI(aiString.toBigDecimal())
+
+                    val proposal = compile {
+                        setupForAI()
+                        ai(aiDouble)
+                    }
+
+                    assertEquals(expectedAI, proposal.ai)
+                }
+            }
         }
     }
 }
