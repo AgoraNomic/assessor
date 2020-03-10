@@ -12,7 +12,11 @@ fun testSimpleVoteNullComment(num: TestNumber) = SimpleVote(testVoteKind(subReqN
 fun testSimpleVote(num: TestNumber) = testSimpleVoteNonNullComment(num)
 
 fun testInextricableVoteNonNullComment(num: TestNumber) = InextricableVote(testString(subReqNum(num), "InextricableVote comment"))
-fun testInextricableVoteNullCommen(num: TestNumber) = InextricableVote(null)
+
+// num is maintained here for consistency with other test functions
+@Suppress("UNUSED_PARAMETER")
+fun testInextricableVoteNullComment(num: TestNumber) = InextricableVote(null)
+
 fun testInextricableVote(num: TestNumber) = testInextricableVoteNonNullComment(num)
 
 fun testVote(num: TestNumber): Vote = testSimpleVote(num)
