@@ -10,7 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8342 to 8348`() = assessment {
@@ -200,5 +200,17 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         votes(CuddleBeam) {
             FOR on all
         }
+
+        votes(G) {
+            AGAINST on 8342
+            AGAINST on 8343
+            PRESENT on 8344
+            FOR on 8345
+            FOR on 8346
+            FOR on 8347
+            AGAINST on 8348
+        }
+
+        o matches G
     }
 }
