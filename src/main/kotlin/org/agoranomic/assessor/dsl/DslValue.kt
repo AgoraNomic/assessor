@@ -47,7 +47,7 @@ class DslValue<T> {
      */
     @JvmName("getOrElseNullable")
     fun getOrElse(default: T?): T? {
-        return if (hasValue()) currentValue as T else default
+        return if (hasValue()) get() else default
     }
 }
 
