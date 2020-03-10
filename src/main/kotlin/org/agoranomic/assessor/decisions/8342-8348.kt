@@ -237,5 +237,19 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         votes(Rance) {
             endorse(Jason) on all
         }
+
+        votes(twg) {
+            // TODO resolve conditional vote on 8342: AGAINST if Gaelan votes AGAINST, else PRESENT
+            FOR on 8343
+            // TODO resolve conditional vote on 8344: AGAINST if Alexis votes AGAINST, else PRESENT
+            endorse(Jason) on 8345
+            endorse(Jason) on 8346
+            endorse(Jason) on 8347
+            // TODO resolve conditional vote on 8348: AGAINST if Gaelan votes AGAINST, else PRESENT
+        }
+
+        votes(Bernie) {
+            endorse(twg) on all
+        }
     }
 }
