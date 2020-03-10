@@ -212,5 +212,15 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         }
 
         o matches G
+
+        votes(sukil) {
+            FOR on 8342
+            AGAINST on 8343
+            PRESENT on 8344
+            FOR on 8345
+            FOR on 8346
+            FOR on 8347
+            FOR on 8348
+        }
     }
 }
