@@ -9,6 +9,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
 fun `assessment 8342 to 8348`() = assessment {
@@ -195,6 +197,8 @@ thing, that defeats the purpose of having a summary in the first place.]"""
     }
 
     voting {
-
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
