@@ -40,7 +40,7 @@ typealias VotesReceiverInit = DslInit<VotesReceiver>
 private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
-    private val votes = DslValueMap<ProposalNumber, MutableVote>()
+    private val voteMap = DslValueMap<ProposalNumber, MutableVote>()
 
     private data class MutableVote(val vote: VoteFunc, var comment: String? = null) : VoteCommentable {
         override fun comment(comment: String) {
@@ -53,7 +53,7 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
     private fun addVote(proposal: ProposalNumber, vote: MutableVote): VoteCommentable {
         require(proposals.contains(proposal)) { "No such proposal $proposal" }
 
-        votes[proposal] = vote
+        voteMap[proposal] = vote
         return vote
     }
 
@@ -67,7 +67,7 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
 
     override infix fun HalfFunctionVote.on(others: VotesReceiver.Others) {
         for (proposal in proposals.map { it }) {
-            if (!votes.containsKey(proposal)) addVote(proposal, this)
+            if (!voteMap.containsKey(proposal)) addVote(proposal, this)
         }
     }
 
@@ -81,7 +81,7 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
     override infix fun VoteKind.on(others: VotesReceiver.Others) = simpleVoteFunction(this) on others
 
     fun compile(): Map<ProposalNumber, PendingVote> {
-        return votes.compile().mapValues { (k, v) -> v.compile() }
+        return voteMap.compile().mapValues { (k, v) -> v.compile() }
     }
 }
 
