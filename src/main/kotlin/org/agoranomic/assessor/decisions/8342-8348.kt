@@ -251,5 +251,15 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         votes(Bernie) {
             endorse(twg) on all
         }
+
+        votes(Falsifian) {
+            endorse(G) on 8342
+            AGAINST on 8343
+            endorse(Alexis) on 8344
+            endorse(Jason) on 8345
+            endorse(Jason) on 8346
+            endorse(Jason) on 8347
+            // TODO resolve conditional vote on 8348: AGAINST if Gaelan votes AGAINST, else PRESENT
+        }
     }
 }
