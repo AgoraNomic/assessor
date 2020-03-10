@@ -43,54 +43,55 @@ typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 
 @AssessmentDSL
 private class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
-    private val title = DslValue<String>()
-    private val text = DslValue<String>()
-    private val ai = DslValue<ProposalAI>()
-    private val author = DslValue<Person>()
-    private var coauthors = DslValue<Persons>()
-    private val classAndChamber = DslValue<ProposalClassAndChamber>()
+    private val titleValue = DslValue<String>()
+    private val textValue = DslValue<String>()
+    private val aiValue = DslValue<ProposalAI>()
+    private val authorValue = DslValue<Person>()
+    private var coauthorsValue = DslValue<Persons>()
+    private val classAndChamberValue = DslValue<ProposalClassAndChamber>()
 
     override fun title(str: String) {
-        title.set(str)
+        titleValue.set(str)
     }
 
     override fun text(str: String) {
-        text.set(str)
+        textValue.set(str)
     }
 
     override fun author(value: Person) {
-        author.set(value)
+        authorValue.set(value)
     }
 
     override fun coauthors(persons: Persons) {
-        coauthors.set(persons)
+        coauthorsValue.set(persons)
     }
 
     override fun adoption_index(value: ProposalAI) {
-        ai.set(value)
+        aiValue.set(value)
     }
 
     override fun adoption_index(value: Double) =
         adoption_index(BigDecimal(((value * 10) + 0.5).toInt()).setScale(1) / BigDecimal.TEN)
 
     override fun classless() {
-        classAndChamber.set(ProposalClassAndChamber.Classless)
+        classAndChamberValue.set(ProposalClassAndChamber.Classless)
     }
 
     override fun democratic() {
-        classAndChamber.set(ProposalClassAndChamber.DemocraticClass)
+        classAndChamberValue.set(ProposalClassAndChamber.DemocraticClass)
     }
 
     override fun chamber(chamber: ProposalChamber) {
-        classAndChamber.set(ProposalClassAndChamber.OrdinaryClass(chamber = chamber))
+        classAndChamberValue.set(ProposalClassAndChamber.OrdinaryClass(chamber = chamber))
     }
 
     fun compile(): Proposal {
-        val ai = ai.get()
-        val title = title.get()
-        val author = author.get()
-        val coauthors = coauthors.getOrElse(Persons.empty())
-        val text = text.get()
+        val ai = aiValue.get()
+        val title = titleValue.get()
+        val author = authorValue.get()
+        val coauthors = coauthorsValue.getOrElse(Persons.empty())
+        val text = textValue.get()
+        val classAndChamber = classAndChamberValue.get()
 
         return Proposal(
             number,
@@ -99,7 +100,7 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
             author,
             coauthors,
             text.trim(),
-            classAndChamber.get()
+            classAndChamber
         )
     }
 }
