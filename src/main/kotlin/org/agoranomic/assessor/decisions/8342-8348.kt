@@ -33,6 +33,13 @@ fun `assessment 8342 to 8348`() = assessment {
         Treasuror to twg
     )
 
+    strengths {
+        default(3)
+        offices[Speaker]!! add 1
+
+        ministriesV1(offices, allProposals)
+    }
+
     proposals(v1) {
         proposal(8342) {
             title("Calls with Memoranda")
