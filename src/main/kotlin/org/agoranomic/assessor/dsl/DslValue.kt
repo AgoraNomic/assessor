@@ -48,7 +48,7 @@ fun <T> DslValue<T>.getOrElse(default: T?): T? {
  * Gets the value, or a default if the value has not been set. The default is not nullable. Does not fail.
  */
 fun <T> DslValue<T>.getOrElse(default: T): T {
-    return getOrElse(default as T?) as T
+    return if (hasValue()) get() else default
 }
 
 /**
