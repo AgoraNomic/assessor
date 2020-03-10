@@ -271,5 +271,15 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             FOR on 8347
             FOR on 8348
         }
+
+        votes(Alexis) {
+            endorse(offices[Arbitor]!!) on 8342
+            AGAINST on 8343
+            FOR on 8344
+            AGAINST on 8345
+            FOR on 8346
+            // TODO resolve conditional vote on 8347: endorse majority of G, Jason, Murphy (if it exists)
+            endorse(offices[Treasuror]!!) on 8348
+        }
     }
 }
