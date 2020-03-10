@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
+import org.agoranomic.assessor.dsl.getOrElse
 import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
 

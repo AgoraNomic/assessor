@@ -34,21 +34,21 @@ class DslValue<T> {
         check(hasValue())
         return currentValue as T
     }
+}
 
-    /**
-     * Gets the value, or a default if the value has not been set. The default is not nullable. Does not fail.
-     */
-    fun getOrElse(default: T): T {
-        return getOrElse(default as T?) as T
-    }
+/**
+ * Gets the value, or a default if the value has not been set. The default is nullable. Does not fail.
+ */
+@JvmName("getOrElseNullable")
+fun <T> DslValue<T>.getOrElse(default: T?): T? {
+    return if (hasValue()) get() else default
+}
 
-    /**
-     * Gets the value, or a default if the value has not been set. The default is nullable. Does not fail.
-     */
-    @JvmName("getOrElseNullable")
-    fun getOrElse(default: T?): T? {
-        return if (hasValue()) get() else default
-    }
+/**
+ * Gets the value, or a default if the value has not been set. The default is not nullable. Does not fail.
+ */
+fun <T> DslValue<T>.getOrElse(default: T): T {
+    return getOrElse(default as T?) as T
 }
 
 /**
