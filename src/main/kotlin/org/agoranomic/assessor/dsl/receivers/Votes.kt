@@ -81,7 +81,7 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
     override infix fun VoteKind.on(others: VotesReceiver.Others) = simpleVoteFunction(this) on others
 
     fun compile(): Map<ProposalNumber, PendingVote> {
-        return voteMap.compile().mapValues { (k, v) -> v.compile() }
+        return voteMap.compile().mapValues { (_, v) -> v.compile() }
     }
 }
 

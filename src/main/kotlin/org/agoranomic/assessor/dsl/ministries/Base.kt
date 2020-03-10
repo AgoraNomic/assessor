@@ -86,6 +86,9 @@ inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
     for (currentProposal in proposals) {
         val currentProposalClassAndChamber = currentProposal.classAndChamber
 
+        // This val exists to ensure that, should another ProposalClassAndChamber be added, the compiler will error
+        // here unless this is also updated.
+        @Suppress("UNUSED_VARIABLE", "LocalVariableName")
         val _ensureExhaustive_ = when (currentProposalClassAndChamber) {
             is ProposalClassAndChamber.Classless -> {}
             is ProposalClassAndChamber.DemocraticClass -> {}

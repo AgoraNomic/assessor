@@ -29,6 +29,10 @@ private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number.raw} (${proposal.title})")
 
     val proposalClassAndChamber = proposal.classAndChamber
+
+    // This val exists to ensure that, should another ProposalClassAndChamber type be added, the compiler will error
+    // here unless this is also updated.
+    @Suppress("UNUSED_VARIABLE", "LocalVariableName")
     val _ensureExhaustive_ = when (proposalClassAndChamber) {
         is ProposalClassAndChamber.Classless -> {}
         is ProposalClassAndChamber.DemocraticClass -> emitLine("CLASS: DEMOCRATIC")

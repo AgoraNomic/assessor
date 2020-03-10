@@ -73,6 +73,9 @@ fun resolve(
     simplifiedVotes.forEach { player, vote ->
         val strength = votingStrengthMap[player]
 
+        // This val exists to ensure that, should another VoteKind be added, the compiler will error here unless
+        // this is also updated.
+        @Suppress("UNUSED_VARIABLE", "LocalVariableName")
         val _ensureExhaustive_ = when (vote.kind) {
             VoteKind.FOR -> strengthFor += strength.value
             VoteKind.AGAINST -> strengthAgainst += strength.value
