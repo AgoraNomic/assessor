@@ -30,42 +30,42 @@ fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
-    private val votingStrengthsBlock = DslValue<(VotingStrengthReceiverInit)>()
-    private val proposals = DslValue<ImmutableProposalSet>()
-    private val proposalVotes = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
-    private val quorum = DslValue<AssessmentQuorum>()
-    private val name = DslValue<String>()
+    private val votingStrengthsBlockValue = DslValue<VotingStrengthReceiverInit>()
+    private val proposalsValue = DslValue<ImmutableProposalSet>()
+    private val proposalVotesValue = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
+    private val quorumValue = DslValue<AssessmentQuorum>()
+    private val nameValue = DslValue<String>()
 
     override fun strengths(block: VotingStrengthReceiverInit) {
-        votingStrengthsBlock.set(block)
+        votingStrengthsBlockValue.set(block)
     }
 
     override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0Init) {
-        proposals.set(buildProposalsV0(block))
+        proposalsValue.set(buildProposalsV0(block))
     }
 
     override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1Init) {
-        proposals.set(buildProposalsV1(block))
+        proposalsValue.set(buildProposalsV1(block))
     }
 
     override fun voting(block: VotingReceiverInit) {
-        proposalVotes.set(buildVoting(proposals.get(), block))
+        proposalVotesValue.set(buildVoting(proposalsValue.get(), block))
     }
 
     override fun quorum(value: AssessmentQuorum) {
-        quorum.set(value)
+        quorumValue.set(value)
     }
 
     override fun name(value: String) {
-        name.set(value)
+        nameValue.set(value)
     }
 
     fun compile(): AssessmentData {
-        val name = name.get()
-        val quorum = quorum.get()
-        val proposals = proposals.get()
-        val proposalVotes = proposalVotes.get()
-        val votingStrengthsBlock = votingStrengthsBlock.get()
+        val name = nameValue.get()
+        val quorum = quorumValue.get()
+        val proposals = proposalsValue.get()
+        val proposalVotes = proposalVotesValue.get()
+        val votingStrengthsBlock = votingStrengthsBlockValue.get()
         val votingStrengths = buildVotingStrength(proposals, votingStrengthsBlock)
 
         for (proposalNumber in proposalVotes.keys) {
