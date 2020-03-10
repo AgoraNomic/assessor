@@ -281,5 +281,15 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             // TODO resolve conditional vote on 8347: endorse majority of G, Jason, Murphy (if it exists)
             endorse(offices[Treasuror]!!) on 8348
         }
+
+        votes(Warrigal) {
+            PRESENT on 8342
+            AGAINST on 8343
+            PRESENT on 8344
+            FOR on 8345
+            FOR on 8346
+            PRESENT on 8347
+            FOR on 8348
+        }
     }
 }
