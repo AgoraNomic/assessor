@@ -19,6 +19,7 @@ data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<
         // ProposalNumber, which is what we want.
         //
         // Yes, this is hacky, but blame Kotlin.
+        @Suppress("FINAL_UPPER_BOUND")
         fun <T : ProposalNumber> of(vararg numbers: T) = checkingDistinct(numbers.toList())
     }
 }
