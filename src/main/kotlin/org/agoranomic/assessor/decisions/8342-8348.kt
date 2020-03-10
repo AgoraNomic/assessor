@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind
@@ -221,6 +222,20 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             FOR on 8346
             FOR on 8347
             FOR on 8348
+        }
+
+        votes(Jason) {
+            AGAINST on 8342
+            endorse(offices[Arbitor]!!) on 8343
+            PRESENT on 8344
+            FOR on 8345
+            FOR on 8346
+            FOR on 8347
+            FOR on 8348
+        }
+
+        votes(Rance) {
+            endorse(Jason) on all
         }
     }
 }
