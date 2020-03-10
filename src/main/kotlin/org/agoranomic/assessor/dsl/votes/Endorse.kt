@@ -23,4 +23,7 @@ object _Author
 val author = _Author
 
 fun endorse(person: Person) = endorsementVote(person)
+
+// author parameter exists for overloading, so it is kept
+@Suppress("UNUSED_PARAMETER")
 fun endorse(author: _Author) = authorEndorsementVote()
