@@ -239,13 +239,13 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         }
 
         votes(twg) {
-            // TODO resolve conditional vote on 8342: AGAINST if Gaelan votes AGAINST, else PRESENT
+            PRESENT on 8342 comment conditional("Gaelan did not vote AGAINST")
             FOR on 8343
-            // TODO resolve conditional vote on 8344: AGAINST if Alexis votes AGAINST, else PRESENT
+            PRESENT on 8344 comment conditional("Alexis did not vote AGAINST")
             endorse(Jason) on 8345
             endorse(Jason) on 8346
             endorse(Jason) on 8347
-            // TODO resolve conditional vote on 8348: AGAINST if Gaelan votes AGAINST, else PRESENT
+            PRESENT on 8348 comment conditional("Gaelan did not vote AGAINST")
         }
 
         votes(Bernie) {
@@ -259,7 +259,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             endorse(Jason) on 8345
             endorse(Jason) on 8346
             endorse(Jason) on 8347
-            // TODO resolve conditional vote on 8348: AGAINST if Gaelan votes AGAINST, else PRESENT
+            PRESENT on 8348 comment conditional("Gaelan did not vote AGAINST")
         }
 
         votes(Gaelan) {
@@ -278,7 +278,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             FOR on 8344
             AGAINST on 8345
             FOR on 8346
-            // TODO resolve conditional vote on 8347: endorse majority of G, Jason, Murphy (if it exists)
+            FOR on 8347 comment "G. and Jason both voted FOR, while Murphy did not vote, so the majority is FOR"
             endorse(offices[Treasuror]!!) on 8348
         }
 
