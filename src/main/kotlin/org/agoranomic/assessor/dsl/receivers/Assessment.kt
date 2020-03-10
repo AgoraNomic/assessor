@@ -1,6 +1,5 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.ImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslInit
@@ -31,8 +30,8 @@ fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
     private val votingStrengthsBlockValue = DslValue<VotingStrengthReceiverInit>()
-    private val proposalsValue = DslValue<ImmutableProposalSet>()
-    private val proposalVotesValue = DslValue<ImmutableMap<ProposalNumber, SingleProposalVoteMap>>()
+    private val proposalsBlockValue = DslValue<() -> ImmutableProposalSet>()
+    private val proposalVotesBlockValue = DslValue<VotingReceiverInit>()
     private val quorumValue = DslValue<AssessmentQuorum>()
     private val nameValue = DslValue<String>()
 
@@ -41,15 +40,17 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     }
 
     override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0Init) {
-        proposalsValue.set(buildProposalsV0(block))
+        @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
+        proposalsBlockValue.set({ buildProposalsV0(block) })
     }
 
     override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1Init) {
-        proposalsValue.set(buildProposalsV1(block))
+        @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
+        proposalsBlockValue.set({ buildProposalsV1(block) })
     }
 
     override fun voting(block: VotingReceiverInit) {
-        proposalVotesValue.set(buildVoting(proposalsValue.get(), block))
+        proposalVotesBlockValue.set(block)
     }
 
     override fun quorum(value: AssessmentQuorum) {
@@ -63,8 +64,13 @@ class AssessmentReceiverImpl : AssessmentReceiver {
     fun compile(): AssessmentData {
         val name = nameValue.get()
         val quorum = quorumValue.get()
-        val proposals = proposalsValue.get()
-        val proposalVotes = proposalVotesValue.get()
+
+        val proposalsBlock = proposalsBlockValue.get()
+        val proposals = proposalsBlock()
+
+        val proposalVotesBlock = proposalVotesBlockValue.get()
+        val proposalVotes = buildVoting(proposals, proposalVotesBlock)
+
         val votingStrengthsBlock = votingStrengthsBlockValue.get()
         val votingStrengths = buildVotingStrength(proposals, votingStrengthsBlock)
 
