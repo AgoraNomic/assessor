@@ -23,16 +23,16 @@ typealias VotingReceiverInit = DslInit<VotingReceiver>
 private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
-    private val votes = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
+    private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
 
     override infix fun Person.matches(other: Person) = votes(this) {
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
     override fun votes(person: Person, block: VotesReceiverInit) {
-        require(!votes.containsKey(person)) { "Votes already specified for player ${person.name}" }
+        require(!personVoteMap.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
-        votes[person] = buildVotes(proposals.map { it.number }, block)
+        personVoteMap[person] = buildVotes(proposals.map { it.number }, block)
     }
 
 
@@ -44,8 +44,8 @@ private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : 
 
         val lookupProposal = LookupProposal { this.proposals[it] }
 
-        if (votes.containsKey(person)) {
-            val playerVotes = votes[person]
+        if (personVoteMap.containsKey(person)) {
+            val playerVotes = personVoteMap[person]
 
             if (playerVotes.containsKey(proposal.number)) {
                 return playerVotes.getOrFail(proposal.number).compile(
@@ -59,8 +59,8 @@ private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : 
     }
 
     fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
-        val votes = votes.compile()
-        val voters = votes.keys
+        val personVotes = personVoteMap.compile()
+        val voters = personVotes.keys
 
         return proposals.associateWith { proposal ->
             val proposalVotes =
