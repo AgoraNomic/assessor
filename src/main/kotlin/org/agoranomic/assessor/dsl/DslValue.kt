@@ -10,12 +10,17 @@ class DslValue<T> {
     private var isInitialized: Boolean = false
 
     /**
+     * Returns `true` if the value has been set, and `false` otherwise.
+     */
+    fun hasValue(): Boolean = isInitialized
+
+    /**
      * Sets the value. Fails if the value has already been set.
      *
      * @throws IllegalStateException if the value has already been set.
      */
     fun set(value: T) {
-        check(!isInitialized)
+        check(!hasValue())
         currentValue = value
         isInitialized = true
     }
@@ -26,7 +31,7 @@ class DslValue<T> {
      * @throws IllegalStateException if the value has not been set.
      */
     fun get(): T {
-        check(isInitialized)
+        check(hasValue())
         return currentValue as T
     }
 
@@ -42,7 +47,7 @@ class DslValue<T> {
      */
     @JvmName("getOrElseNullable")
     fun getOrElse(default: T?): T? {
-        return if (isInitialized) currentValue as T else default
+        return if (hasValue()) currentValue as T else default
     }
 }
 

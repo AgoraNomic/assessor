@@ -45,6 +45,12 @@ class `DslValue tests` {
             val dslValue = DslValue<String>()
             assertNull(dslValue.getOrNull())
         }
+
+        @Test
+        fun `hasValue returns false`() {
+            val dslValue = DslValue<String>()
+            assertFalse(dslValue.hasValue())
+        }
     }
 
     @Nested
@@ -97,6 +103,16 @@ class `DslValue tests` {
             dslValue.set(value)
 
             assertSame(value, dslValue.getOrNull())
+        }
+
+        @Test
+        fun `hasValue returns false`() {
+            val dslValue = DslValue<String>()
+            val value = "I'm a string"
+
+            dslValue.set(value)
+
+            assertTrue(dslValue.hasValue())
         }
     }
 }
