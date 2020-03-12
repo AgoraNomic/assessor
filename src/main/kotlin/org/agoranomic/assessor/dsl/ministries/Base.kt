@@ -29,11 +29,6 @@ fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
     return personMinistries
 }
 
-inline fun <reified Office : Enum<Office>, Ministry> compilePersonMinistries(
-    officeMap: Map<Office, Person?>,
-    officeMinistries: Map<Office, List<Ministry>>
-) = compilePersonMinistries(Office::class, officeMap, officeMinistries)
-
 public fun ProposalStrengthReceiver.proposalMinistryImpl(
     personMinistries: Map<Person, List<Ministry>>,
     ministryBonus: VotingStrength,
