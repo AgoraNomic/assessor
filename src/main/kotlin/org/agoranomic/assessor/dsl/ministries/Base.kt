@@ -6,7 +6,7 @@ import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import kotlin.reflect.KClass
 
-private fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
+private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries(
     officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>
@@ -15,15 +15,11 @@ private fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
 
     val personMinistries = mutableMapOf<Person, MutableList<Ministry>>()
 
-    fun addOffice(person: Person?, office: Office) {
-        if (person == null) return
-
-        val personMap = personMinistries.computeIfAbsent(person) { mutableListOf() }
-        personMap += officeMinistries[office] ?: emptyList()
-    }
-
     for ((office, person) in officeMap) {
-        addOffice(person, office)
+        if (person != null) {
+            val personMap = personMinistries.computeIfAbsent(person) { mutableListOf() }
+            personMap += officeMinistries[office] ?: emptyList()
+        }
     }
 
     return personMinistries
@@ -50,7 +46,7 @@ private fun <Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
     ministryBonus: VotingStrength,
     chamber: ProposalChamber
 ) {
-    val personMinistries = compilePersonMinistries(officeClass, officeMap, officeMinistries)
+    val personMinistries = officeMinistriesToPersonMinistries(officeClass, officeMap, officeMinistries)
     proposalMinistryImpl(personMinistries, ministryBonus, chamber)
 }
 
