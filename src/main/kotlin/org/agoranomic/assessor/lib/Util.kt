@@ -5,6 +5,9 @@ import java.math.BigInteger
 
 fun <K, V> Map<K, V>.getOrFail(key: K): V {
     if (containsKey(key)) {
+        // Because the map contains the key, we know it has an object of type V as value, so the cast is unchecked, but
+        // it is always correct.
+        @Suppress("UNCHECKED_CAST")
         return get(key) as V
     }
 
