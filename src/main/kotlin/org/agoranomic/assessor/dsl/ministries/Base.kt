@@ -55,9 +55,6 @@ public fun ProposalStrengthReceiver.proposalMinistryImpl(
     ministryBonus: VotingStrength,
     chamber: ProposalChamber
 ) {
-    // There are no bonuses for a proposal w/o a chamber
-    if (chamber == null) return
-
     for ((person, currentPersonMinistries) in personMinistries) {
         for (personMinistry in currentPersonMinistries) {
             if (chamber == personMinistry) {
