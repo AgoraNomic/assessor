@@ -88,27 +88,26 @@ class DslValueMap<K, V> {
     fun containsKey(key: K): Boolean = map.containsKey(key)
 
     /**
-     * Gets the value for [key], or [default] if it has not been set. The default is not nullable. Does not fail.
-     */
-    fun getOrElse(key: K, default: V): V {
-        return getOrElse(key, default as V?) as V
-    }
-
-    /**
-     * Gets the value for [key], or [default] if it has not been set. The default is nullable. Does not fail.
-     */
-    @JvmName("getOrElseNullable")
-    fun getOrElse(key: K, default: V?): V? {
-        val dslValue = map[key] ?: return default
-        return dslValue.getOrElse(default)
-    }
-
-    /**
      * Compiles all set keys and values into a [Map].
      */
     fun compile(): Map<K, V> {
         return map.mapValues { (_, v) -> v.get() }
     }
+}
+
+/**
+ * Gets the value for [key], or [default] if it has not been set. The default is nullable. Does not fail.
+ */
+@JvmName("getOrElseNullable")
+fun <K, V> DslValueMap<K, V>.getOrElse(key: K, default: V?): V? {
+    return if (containsKey(key)) get(key) else default
+}
+
+/**
+ * Gets the value for [key], or [default] if it has not been set. The default is not nullable. Does not fail.
+ */
+fun <K, V> DslValueMap<K, V>.getOrElse(key: K, default: V): V {
+    return if (containsKey(key)) get(key) else default
 }
 
 /**
