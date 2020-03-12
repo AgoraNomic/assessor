@@ -152,12 +152,12 @@ private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     }
 }
 
-private fun StringBuilder.emitStrengthFootnotes(strengthMap: Collection<VotingStrengthMap>) {
-    check(strengthMap.isNotEmpty())
-    check(strengthMap.map { it.defaultStrength }.distinct().size == 1)
+private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthMap>) {
+    check(allStrengthMaps.isNotEmpty())
+    check(allStrengthMaps.map { it.defaultStrength }.distinct().size == 1)
 
-    val defaultStrength = strengthMap.first().defaultStrength
-    val specialVotingStrengths = strengthMap.flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }.toSet()
+    val defaultStrength = allStrengthMaps.first().defaultStrength
+    val specialVotingStrengths = allStrengthMaps.flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }.toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {
         val footnotes = specialVotingStrengths.sorted().map {
