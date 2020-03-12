@@ -6,7 +6,7 @@ import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import kotlin.reflect.KClass
 
-fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
+private fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
     officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>
@@ -29,7 +29,7 @@ fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
     return personMinistries
 }
 
-public fun ProposalStrengthReceiver.proposalMinistryImpl(
+private fun ProposalStrengthReceiver.proposalMinistryImpl(
     personMinistries: Map<Person, List<Ministry>>,
     ministryBonus: VotingStrength,
     chamber: ProposalChamber
@@ -43,7 +43,7 @@ public fun ProposalStrengthReceiver.proposalMinistryImpl(
     }
 }
 
-public fun <Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
+private fun <Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
     officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
