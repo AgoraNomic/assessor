@@ -65,15 +65,23 @@ public fun ProposalStrengthReceiver.proposalMinistryImpl(
     }
 }
 
-public inline fun <reified Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
+public fun <Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
+    officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,
     chamber: ProposalChamber
 ) {
-    val personMinistries = compilePersonMinistries(officeMap, officeMinistries)
+    val personMinistries = compilePersonMinistries(officeClass, officeMap, officeMinistries)
     proposalMinistryImpl(personMinistries, ministryBonus, chamber)
 }
+
+inline fun <reified Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
+    officeMap: Map<Office, Person?>,
+    officeMinistries: Map<Office, List<Ministry>>,
+    ministryBonus: VotingStrength,
+    chamber: ProposalChamber
+) = proposalMinistries(Office::class, officeMap, officeMinistries, ministryBonus, chamber)
 
 inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
     officeMap: Map<Office, Person?>,
