@@ -51,8 +51,8 @@ interface VotingStrengthReceiver {
     infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable
     infix fun Person.strength(votingStrength: Int) = strength(VotingStrength(votingStrength))
 
-    infix fun Person.add(votingStrength: VotingStrength)
-    infix fun Person.add(votingStrength: Int) = add(VotingStrength(votingStrength))
+    infix fun Person.add(amount: VotingStrength)
+    infix fun Person.add(amount: Int) = add(VotingStrength(amount))
 
     fun proposal(number: ProposalNumber, block: ProposalStrengthReceiverInit)
     fun default(strength: VotingStrength)
@@ -94,9 +94,9 @@ private class VotingStrengthReceiverImpl(private val proposals: ImmutableProposa
         return strength
     }
 
-    override fun Person.add(addAmount: VotingStrength) {
+    override fun Person.add(amount: VotingStrength) {
         setDefaultIfAbsent(this)
-        globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + addAmount)
+        globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + amount)
     }
 
     override fun proposal(number: ProposalNumber, block: ProposalStrengthReceiverInit) {
