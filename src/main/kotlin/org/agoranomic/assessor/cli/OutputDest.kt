@@ -15,7 +15,7 @@ sealed class AssessmentDestination {
 
 object StdoutDestination : AssessmentDestination() {
     override fun outputAssessments(assessments: List<AssessmentPendingOutput>) {
-        for ((name, assessment) in assessments) {
+        for ((_, assessment) in assessments) {
             println(assessment)
             println()
         }
