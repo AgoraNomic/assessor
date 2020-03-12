@@ -32,6 +32,10 @@ class DslValue<T> {
      */
     fun get(): T {
         check(hasValue())
+
+        // Because we know we have a value, we have an object of type T in currentValue, so the cast is unchecked,
+        // but it is guaranteed to be correct.
+        @Suppress("UNCHECKED_CAST")
         return currentValue as T
     }
 }
