@@ -2,6 +2,7 @@ package org.agoranomic.assessor.lib
 
 import java.math.BigDecimal
 import java.math.BigInteger
+import kotlin.reflect.KClass
 
 fun <K, V> Map<K, V>.getOrFail(key: K): V {
     if (containsKey(key)) {
@@ -14,17 +15,26 @@ fun <K, V> Map<K, V>.getOrFail(key: K): V {
     error("Missing expected key in map: $key")
 }
 
-inline fun <reified E : Enum<E>> Collection<E>.isExhaustive(): Boolean {
+fun <E : Enum<E>> Collection<E>.isExhaustive(enumClass: KClass<E>): Boolean {
+    val enumConstants = enumClass.java.enumConstants?.toList()?.requireNoNulls()
+    check(enumConstants != null)
+
     val collection = this
-    return enumValues<E>().all { enumValue -> collection.contains(enumValue) }
+    return collection.containsAll(enumConstants)
 }
 
-inline fun <reified E : Enum<E>> Collection<E>.requireExhaustive() {
-    val collection = this
-    for (value in enumValues<E>()) {
-        require(collection.contains(value)) { "Collection was required to be exhaustive, but did not contain $value" }
+inline fun <reified E : Enum<E>> Collection<E>.isExhaustive(): Boolean = isExhaustive(E::class)
+
+fun <E : Enum<E>> Collection<E>.requireExhaustive(enumClass: KClass<E>) {
+    val enumConstants = enumClass.java.enumConstants?.toList()?.requireNoNulls()
+    check(enumConstants != null)
+
+    for (value in enumConstants) {
+        require(this.contains(value)) { "Collection was required to be exhaustive, but did not contain $value" }
     }
 }
+
+inline fun <reified E : Enum<E>> Collection<E>.requireExhaustive() = requireExhaustive(E::class)
 
 fun <T> Collection<T>.repeatingElements(): Set<T> {
     val alreadySeen = mutableSetOf<T>()
