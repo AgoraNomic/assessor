@@ -27,8 +27,9 @@ fun findAssessments(): List<AssessmentData> {
             methodInfos
                 .filter { it.hasAnnotation(annotationName) }
                 .map { methodInfo -> methodInfo.loadClassAndGetMethod().kotlinFunction }
-                .map { it as KFunction<AssessmentData> }
+                .map { it as KFunction }
                 .map { it.call() }
+                .map { it as AssessmentData }
         }
     }
 }
