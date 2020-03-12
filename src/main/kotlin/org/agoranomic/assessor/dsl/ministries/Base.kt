@@ -54,13 +54,6 @@ public fun <Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
     proposalMinistryImpl(personMinistries, ministryBonus, chamber)
 }
 
-inline fun <reified Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
-    officeMap: Map<Office, Person?>,
-    officeMinistries: Map<Office, List<Ministry>>,
-    ministryBonus: VotingStrength,
-    chamber: ProposalChamber
-) = proposalMinistries(Office::class, officeMap, officeMinistries, ministryBonus, chamber)
-
 fun <Office : Enum<Office>> VotingStrengthReceiver.ministries(
     officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
