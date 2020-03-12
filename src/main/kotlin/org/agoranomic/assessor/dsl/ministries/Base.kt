@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ProposalStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import kotlin.reflect.KClass
 
 @AssessmentDSL
 class ProposalChamberReceiver<Ministry> {
@@ -22,10 +23,13 @@ class ProposalChamberReceiver<Ministry> {
     }
 }
 
-public fun <Office, Ministry> _uncheckedCompilePersonMinistries(
+fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
+    officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>
 ): Map<Person, List<Ministry>> {
+    officeMap.keys.requireExhaustive(officeClass)
+
     val personMinistries = mutableMapOf<Person, MutableList<Ministry>>()
 
     fun addOffice(person: Person?, office: Office) {
@@ -45,10 +49,7 @@ public fun <Office, Ministry> _uncheckedCompilePersonMinistries(
 inline fun <reified Office : Enum<Office>, Ministry> compilePersonMinistries(
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>
-) = run {
-    officeMap.keys.requireExhaustive()
-    _uncheckedCompilePersonMinistries(officeMap, officeMinistries)
-}
+) = compilePersonMinistries(Office::class, officeMap, officeMinistries)
 
 public fun ProposalStrengthReceiver.proposalMinistryImpl(
     personMinistries: Map<Person, List<Ministry>>,
