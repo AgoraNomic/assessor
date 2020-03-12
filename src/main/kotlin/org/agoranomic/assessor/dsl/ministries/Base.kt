@@ -61,7 +61,8 @@ inline fun <reified Office : Enum<Office>> ProposalStrengthReceiver.proposalMini
     chamber: ProposalChamber
 ) = proposalMinistries(Office::class, officeMap, officeMinistries, ministryBonus, chamber)
 
-inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
+fun <Office : Enum<Office>> VotingStrengthReceiver.ministries(
+    officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,
@@ -80,6 +81,7 @@ inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
             is ProposalClassAndChamber.OrdinaryClass -> {
                 proposal(currentProposal.number) {
                     proposalMinistries(
+                        officeClass,
                         officeMap,
                         officeMinistries,
                         ministryBonus,
@@ -90,3 +92,10 @@ inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
         }
     }
 }
+
+inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
+    officeMap: Map<Office, Person?>,
+    officeMinistries: Map<Office, List<Ministry>>,
+    ministryBonus: VotingStrength,
+    proposals: ProposalSet
+) = ministries(Office::class, officeMap, officeMinistries, ministryBonus, proposals)
