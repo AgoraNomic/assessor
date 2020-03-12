@@ -1,27 +1,10 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import org.agoranomic.assessor.dsl.AssessmentDSL
 import org.agoranomic.assessor.dsl.receivers.ProposalStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import kotlin.reflect.KClass
-
-@AssessmentDSL
-class ProposalChamberReceiver<Ministry> {
-    private val ministries = mutableMapOf<ProposalNumber, Ministry>()
-
-    infix fun ProposalNumber.chamber(ministry: Ministry) {
-        require(!ministries.containsKey(this)) { "Ministry specified twice for proposal ${this.raw}" }
-        ministries[this] = ministry
-    }
-
-    infix fun Int.chamber(ministry: Ministry) = ProposalNumber(this) chamber ministry
-
-    fun compile(): Map<ProposalNumber, Ministry> {
-        return ministries.toMap()
-    }
-}
 
 fun <Office : Enum<Office>, Ministry> compilePersonMinistries(
     officeClass: KClass<Office>,
