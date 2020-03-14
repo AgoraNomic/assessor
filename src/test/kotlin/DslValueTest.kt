@@ -26,7 +26,7 @@ class `DslValue tests` {
         }
 
         @Test
-        fun `getOrElse(non-null) returns default`() {
+        fun `getOrDefault(non-null) returns default`() {
             val dslValue = DslValue<String>()
             val default = "I'm a string"
 
@@ -34,7 +34,7 @@ class `DslValue tests` {
         }
 
         @Test
-        fun `getOrElse(nullable) returns default`() {
+        fun `getOrDefault(nullable) returns default`() {
             val dslValue = DslValue<String>()
             val default = "I'm a string".asNullable()
 
@@ -77,7 +77,7 @@ class `DslValue tests` {
         }
 
         @Test
-        fun `getOrElse(non-null) returns value`() {
+        fun `getOrDefault(non-null) returns value`() {
             val dslValue = DslValue<String>()
             val value = "First string"
 
@@ -87,7 +87,7 @@ class `DslValue tests` {
         }
 
         @Test
-        fun `getOrElse(nullable) returns value`() {
+        fun `getOrDefault(nullable) returns value`() {
             val dslValue = DslValue<String>()
             val value = "First string"
 
@@ -155,14 +155,14 @@ class `DslValueMap tests` {
         }
 
         @Test
-        fun `getOrElse(non-null) returns default`() {
+        fun `getOrDefault(non-null) returns default`() {
             val map = emptyTestMap()
 
             assertEquals(nonNullDefaultValue, map.getOrDefault(testKey, nonNullDefaultValue))
         }
 
         @Test
-        fun `getOrElse(nullable) returns default`() {
+        fun `getOrDefault(nullable) returns default`() {
             val map = emptyTestMap()
 
             assertEquals(nullableDefaultValue, map.getOrDefault(testKey, nullableDefaultValue))
@@ -207,7 +207,7 @@ class `DslValueMap tests` {
         }
 
         @Test
-        fun `getOrElse(non-null) returns expected value`() {
+        fun `getOrDefault(non-null) returns expected value`() {
             val map = filledTestMap()
 
             assertEquals(testValue, map.getOrDefault(testKey, nonNullDefaultValue))
