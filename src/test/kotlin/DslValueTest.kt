@@ -2,7 +2,6 @@ import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.dsl.getOrDefault
 import org.agoranomic.assessor.dsl.getOrNull
-import org.agoranomic.assessor.lib.util.asNullable
 import org.junit.jupiter.api.Nested
 import test_util.assertSucceeds
 import kotlin.test.*
@@ -26,17 +25,9 @@ class `DslValue tests` {
         }
 
         @Test
-        fun `getOrDefault(non-null) returns default`() {
+        fun `getOrDefault returns default`() {
             val dslValue = DslValue<String>()
             val default = "I'm a string"
-
-            assertSame(default, dslValue.getOrDefault(default))
-        }
-
-        @Test
-        fun `getOrDefault(nullable) returns default`() {
-            val dslValue = DslValue<String>()
-            val default = "I'm a string".asNullable()
 
             assertSame(default, dslValue.getOrDefault(default))
         }
@@ -77,23 +68,13 @@ class `DslValue tests` {
         }
 
         @Test
-        fun `getOrDefault(non-null) returns value`() {
+        fun `getOrDefault returns value`() {
             val dslValue = DslValue<String>()
             val value = "First string"
 
             dslValue.set(value)
 
             assertSame(value, dslValue.getOrDefault("I'm a default"))
-        }
-
-        @Test
-        fun `getOrDefault(nullable) returns value`() {
-            val dslValue = DslValue<String>()
-            val value = "First string"
-
-            dslValue.set(value)
-
-            assertSame(value, dslValue.getOrDefault("I'm a default".asNullable()))
         }
 
         @Test
@@ -125,8 +106,7 @@ class `DslValueMap tests` {
     private val testKey = KeyType("Key")
     private val testValue = ValueType("Value")
 
-    private val nonNullDefaultValue = ValueType("Default value")
-    private val nullableDefaultValue get() = nonNullDefaultValue.asNullable()
+    private val defaultValue = ValueType("Default value")
 
     private fun emptyTestMap(): DslValueMap<KeyType, ValueType> {
         return DslValueMap()
@@ -155,17 +135,10 @@ class `DslValueMap tests` {
         }
 
         @Test
-        fun `getOrDefault(non-null) returns default`() {
+        fun `getOrDefault returns default`() {
             val map = emptyTestMap()
 
-            assertEquals(nonNullDefaultValue, map.getOrDefault(testKey, nonNullDefaultValue))
-        }
-
-        @Test
-        fun `getOrDefault(nullable) returns default`() {
-            val map = emptyTestMap()
-
-            assertEquals(nullableDefaultValue, map.getOrDefault(testKey, nullableDefaultValue))
+            assertEquals(defaultValue, map.getOrDefault(testKey, defaultValue))
         }
 
         @Test
@@ -207,10 +180,10 @@ class `DslValueMap tests` {
         }
 
         @Test
-        fun `getOrDefault(non-null) returns expected value`() {
+        fun `getOrDefault returns expected value`() {
             val map = filledTestMap()
 
-            assertEquals(testValue, map.getOrDefault(testKey, nonNullDefaultValue))
+            assertEquals(testValue, map.getOrDefault(testKey, defaultValue))
         }
 
         @Test
