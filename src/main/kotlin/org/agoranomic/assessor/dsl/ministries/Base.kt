@@ -25,29 +25,20 @@ private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries
     return personMinistries
 }
 
-private fun ProposalStrengthReceiver.proposalMinistryImpl(
-    personMinistries: Map<Person, List<Ministry>>,
-    ministryBonus: VotingStrength,
-    chamber: ProposalChamber
-) {
-    for ((person, currentPersonMinistries) in personMinistries) {
-        for (personMinistry in currentPersonMinistries) {
-            if (chamber == personMinistry) {
-                person add ministryBonus
-            }
-        }
-    }
-}
-
-private fun <Office : Enum<Office>> ProposalStrengthReceiver.proposalMinistries(
+private fun <Office : Enum<Office>> ProposalStrengthReceiver.updateVotingStrengthsForProposal(
     officeClass: KClass<Office>,
-    officeMap: Map<Office, Person?>,
+    officeHolders: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,
-    chamber: ProposalChamber
+    proposalChamber: ProposalChamber
 ) {
-    val personMinistries = officeMinistriesToPersonMinistries(officeClass, officeMap, officeMinistries)
-    proposalMinistryImpl(personMinistries, ministryBonus, chamber)
+    val personMinistries = officeMinistriesToPersonMinistries(officeClass, officeHolders, officeMinistries)
+
+    for ((currentPerson, currentPersonMinistries) in personMinistries) {
+        repeat(currentPersonMinistries.count { it == proposalChamber }) { _ ->
+            currentPerson add ministryBonus
+        }
+    }
 }
 
 fun <Office : Enum<Office>> VotingStrengthReceiver.ministries(
@@ -69,7 +60,7 @@ fun <Office : Enum<Office>> VotingStrengthReceiver.ministries(
 
             is ProposalClassAndChamber.OrdinaryClass -> {
                 proposal(currentProposal.number) {
-                    proposalMinistries(
+                    updateVotingStrengthsForProposal(
                         officeClass,
                         officeMap,
                         officeMinistries,
