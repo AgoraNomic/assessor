@@ -41,22 +41,22 @@ class DslValue<T> {
 }
 
 /**
- * Gets the value, or a default if the value has not been set. The default is nullable. Does not fail.
+ * Gets the value, or [defaultValue] if the value has not been set. [defaultValue] is nullable.
  */
 @JvmName("getOrDefaultNullable")
-fun <T> DslValue<T>.getOrDefault(default: T?): T? {
-    return if (hasValue()) get() else default
+fun <T> DslValue<T>.getOrDefault(defaultValue: T?): T? {
+    return if (hasValue()) get() else defaultValue
 }
 
 /**
- * Gets the value, or a default if the value has not been set. The default is not nullable. Does not fail.
+ * Gets the value, or [defaultValue] if the value has not been set. [defaultValue] is not nullable.
  */
-fun <T> DslValue<T>.getOrDefault(default: T): T {
-    return if (hasValue()) get() else default
+fun <T> DslValue<T>.getOrDefault(defaultValue: T): T {
+    return if (hasValue()) get() else defaultValue
 }
 
 /**
- * Gets the value, or null if the value has not been set. Does not fail.
+ * Gets the value, or null if the value has not been set.
  */
 fun <T> DslValue<T>.getOrNull(): T? = getOrDefault(null)
 
@@ -100,21 +100,21 @@ class DslValueMap<K, V> {
 }
 
 /**
- * Gets the value for [key], or [default] if it has not been set. The default is nullable. Does not fail.
+ * Gets the value for [key], or [defaultValue] if it has not been set. [defaultValue] is nullable.
  */
 @JvmName("getOrDefaultNullable")
-fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, default: V?): V? {
-    return if (containsKey(key)) get(key) else default
+fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, defaultValue: V?): V? {
+    return if (containsKey(key)) get(key) else defaultValue
 }
 
 /**
- * Gets the value for [key], or [default] if it has not been set. The default is not nullable. Does not fail.
+ * Gets the value for [key], or [defaultValue] if it has not been set. [defaultValue] is not nullable.
  */
-fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, default: V): V {
-    return if (containsKey(key)) get(key) else default
+fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, defaultValue: V): V {
+    return if (containsKey(key)) get(key) else defaultValue
 }
 
 /**
- * Gets the value for [key], or null if it has not been set. Does not fail.
+ * Gets the value for [key], or null if it has not been set.
  */
 fun <K, V> DslValueMap<K, V>.getOrNull(key: K) = getOrDefault(key, null)
