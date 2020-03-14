@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import org.agoranomic.assessor.dsl.AssessmentDSL
-import org.agoranomic.assessor.dsl.DslInit
-import org.agoranomic.assessor.dsl.DslValue
-import org.agoranomic.assessor.dsl.getOrElse
+import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
 
@@ -90,7 +87,7 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
         val ai = aiValue.get()
         val title = titleValue.get()
         val author = authorValue.get()
-        val coauthors = coauthorsValue.getOrElse(Persons.empty())
+        val coauthors = coauthorsValue.getOrDefault(Persons.empty())
         val text = textValue.get()
         val classAndChamber = classAndChamberValue.get()
 

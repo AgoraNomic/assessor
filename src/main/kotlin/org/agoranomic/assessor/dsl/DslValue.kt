@@ -43,22 +43,22 @@ class DslValue<T> {
 /**
  * Gets the value, or a default if the value has not been set. The default is nullable. Does not fail.
  */
-@JvmName("getOrElseNullable")
-fun <T> DslValue<T>.getOrElse(default: T?): T? {
+@JvmName("getOrDefaultNullable")
+fun <T> DslValue<T>.getOrDefault(default: T?): T? {
     return if (hasValue()) get() else default
 }
 
 /**
  * Gets the value, or a default if the value has not been set. The default is not nullable. Does not fail.
  */
-fun <T> DslValue<T>.getOrElse(default: T): T {
+fun <T> DslValue<T>.getOrDefault(default: T): T {
     return if (hasValue()) get() else default
 }
 
 /**
  * Gets the value, or null if the value has not been set. Does not fail.
  */
-fun <T> DslValue<T>.getOrNull(): T? = getOrElse(null)
+fun <T> DslValue<T>.getOrNull(): T? = getOrDefault(null)
 
 /**
  * A map that contains values that may only be set exactly once per key.
@@ -102,19 +102,19 @@ class DslValueMap<K, V> {
 /**
  * Gets the value for [key], or [default] if it has not been set. The default is nullable. Does not fail.
  */
-@JvmName("getOrElseNullable")
-fun <K, V> DslValueMap<K, V>.getOrElse(key: K, default: V?): V? {
+@JvmName("getOrDefaultNullable")
+fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, default: V?): V? {
     return if (containsKey(key)) get(key) else default
 }
 
 /**
  * Gets the value for [key], or [default] if it has not been set. The default is not nullable. Does not fail.
  */
-fun <K, V> DslValueMap<K, V>.getOrElse(key: K, default: V): V {
+fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, default: V): V {
     return if (containsKey(key)) get(key) else default
 }
 
 /**
  * Gets the value for [key], or null if it has not been set. Does not fail.
  */
-fun <K, V> DslValueMap<K, V>.getOrNull(key: K) = getOrElse(key, null)
+fun <K, V> DslValueMap<K, V>.getOrNull(key: K) = getOrDefault(key, null)
