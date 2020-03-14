@@ -5,6 +5,7 @@ import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.util.getOrFail
 
 @AssessmentDSL
 interface ProposalStrengthReceiver {

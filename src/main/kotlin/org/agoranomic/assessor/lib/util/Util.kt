@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.util
 
 import java.math.BigDecimal
 import java.math.BigInteger

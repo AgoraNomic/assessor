@@ -1,4 +1,4 @@
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.util.*
 import test_util.assertSucceeds
 import java.math.BigDecimal
 import kotlin.test.*

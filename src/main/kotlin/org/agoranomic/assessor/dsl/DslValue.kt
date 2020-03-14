@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.dsl
 
-import org.agoranomic.assessor.lib.getOrFail
+import org.agoranomic.assessor.lib.util.getOrFail
 
 /**
  * Represents a value that must be set exactly once.

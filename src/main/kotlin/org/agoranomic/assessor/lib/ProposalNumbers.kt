@@ -2,6 +2,7 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
+import org.agoranomic.assessor.lib.util.requireAllAreDistinct
 
 data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<ProposalNumber> by data {
     constructor(data: Set<ProposalNumber>) : this(data.toImmutableSet())

@@ -1,6 +1,8 @@
 package test_objects
 
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.util.div
+import org.agoranomic.assessor.lib.util.rem
 
 fun testProposalNumber(num: TestNumber): ProposalNumber = ProposalNumber(num)
 fun firstTestProposalNumber() = testFirst(::testProposalNumber)

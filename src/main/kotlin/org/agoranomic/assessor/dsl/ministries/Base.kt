@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.receivers.ProposalStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.util.requireExhaustive
 import kotlin.reflect.KClass
 
 private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries(

@@ -5,6 +5,8 @@ import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.util.compareTo
+import org.agoranomic.assessor.lib.util.times
 import java.math.BigInteger
 
 enum class ProposalResult {

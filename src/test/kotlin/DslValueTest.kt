@@ -2,7 +2,7 @@ import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.dsl.getOrElse
 import org.agoranomic.assessor.dsl.getOrNull
-import org.agoranomic.assessor.lib.asNullable
+import org.agoranomic.assessor.lib.util.asNullable
 import org.junit.jupiter.api.Nested
 import test_util.assertSucceeds
 import kotlin.test.*

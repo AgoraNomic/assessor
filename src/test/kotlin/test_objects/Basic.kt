@@ -1,7 +1,8 @@
 package test_objects
 
 import java.math.BigInteger
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.util.plus
+import org.agoranomic.assessor.lib.util.rem
 
 typealias TestNumber = BigInteger
 
