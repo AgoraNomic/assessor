@@ -42,8 +42,14 @@ fun <T> Collection<T>.allAreDistinct(): Boolean {
  * @param T the element type of this [Collection]
  */
 fun <T> Collection<T>.requireAllAreDistinct() {
-    require(allAreDistinct()) {
-        "All elements were required to be distinct, but found duplicate elements: ${repeatingElements()}"
+    val alreadySeen = mutableSetOf<T>()
+
+    for (item in this) {
+        require(!alreadySeen.contains(item)) {
+            "Expected all elements to be distinct, but found repeating element: $item"
+        }
+
+        alreadySeen += item
     }
 }
 
@@ -55,7 +61,17 @@ fun <T> Collection<T>.requireAllAreDistinct() {
  * @param K the result type of [selector]
  * @param selector the function to map elements to keys
  */
-fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K) = map(selector).allAreDistinct()
+fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
+    val alreadySeen = mutableSetOf<K>()
+
+    for (item in this) {
+        val key = selector(item)
+        if (alreadySeen.contains(key)) return false
+        alreadySeen += key
+    }
+
+    return true
+}
 
 /**
  * Throws an [IllegalArgumentException] if this [Collection] has two elements such that results of [selector] are the
@@ -65,7 +81,19 @@ fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K) = map(selector).al
  * @param K the result type of [selector]
  * @param selector the function to map elements to keys
  */
-fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) = map(selector).requireAllAreDistinct()
+fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) {
+    val alreadySeen = mutableSetOf<K>()
+
+    for (item in this) {
+        val key = selector(item)
+
+        require(!alreadySeen.contains(key)) {
+            "Expected all elements to be distinct, but found repeating key: $key (from element $item)"
+        }
+
+        alreadySeen += key
+    }
+}
 
 /**
  * If this map contains the key [key], returns the value corresponding to [key], otherwise throws
