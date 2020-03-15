@@ -14,9 +14,11 @@ interface VoteCommentable {
 @AssessmentDsl
 interface PersonVotesReceiver {
     object All
+
     val all: All get() = All
 
     object Others
+
     val others: Others get() = Others
 
     infix fun HalfFunctionVote.on(proposal: ProposalNumber): VoteCommentable
@@ -85,6 +87,9 @@ private class PersonVotesReceiverImpl(private val proposals: ImmutableList<Propo
     }
 }
 
-fun buildPersonVotes(proposals: List<ProposalNumber>, block: PersonVotesReceiverInit): Map<ProposalNumber, PendingVote> {
+fun buildPersonVotes(
+    proposals: List<ProposalNumber>,
+    block: PersonVotesReceiverInit
+): Map<ProposalNumber, PendingVote> {
     return PersonVotesReceiverImpl(proposals).also(block).compile()
 }

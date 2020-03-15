@@ -7,11 +7,14 @@ import org.agoranomic.assessor.lib.VoteKind
 
 fun testVoteKind(num: TestNumber) = testValueOf<VoteKind>(num)
 
-fun testSimpleVoteNonNullComment(num: TestNumber) = SimpleVote(testVoteKind(subReqNum(num)), testString(num, "SimpleVote comment"))
+fun testSimpleVoteNonNullComment(num: TestNumber) =
+    SimpleVote(testVoteKind(subReqNum(num)), testString(num, "SimpleVote comment"))
+
 fun testSimpleVoteNullComment(num: TestNumber) = SimpleVote(testVoteKind(subReqNum(num)), null)
 fun testSimpleVote(num: TestNumber) = testSimpleVoteNonNullComment(num)
 
-fun testInextricableVoteNonNullComment(num: TestNumber) = InextricableVote(testString(subReqNum(num), "InextricableVote comment"))
+fun testInextricableVoteNonNullComment(num: TestNumber) =
+    InextricableVote(testString(subReqNum(num), "InextricableVote comment"))
 
 // num is maintained here for consistency with other test functions
 @Suppress("UNUSED_PARAMETER")

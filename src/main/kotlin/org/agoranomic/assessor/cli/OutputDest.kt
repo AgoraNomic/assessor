@@ -60,5 +60,6 @@ data class NamedDirDestination(val dir: String) : AssessmentDestination() {
 private val DEFAULT_DIR_DEST = NamedDirDestination("out")
 
 object UnnamedDirDestination : AssessmentDestination() {
-    override fun outputAssessments(assessments: List<AssessmentPendingOutput>) = DEFAULT_DIR_DEST.outputAssessments(assessments)
+    override fun outputAssessments(assessments: List<AssessmentPendingOutput>) =
+        DEFAULT_DIR_DEST.outputAssessments(assessments)
 }

@@ -34,7 +34,10 @@ private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     // here unless this is also updated.
     @Suppress("UNUSED_VARIABLE", "LocalVariableName")
     val _ensureExhaustive_ = when (proposalClassAndChamber) {
-        is ProposalClassAndChamber.Classless -> {}
+        is ProposalClassAndChamber.Classless -> {
+            /* do nothing */
+        }
+
         is ProposalClassAndChamber.DemocraticClass -> emitLine("CLASS: DEMOCRATIC")
         is ProposalClassAndChamber.OrdinaryClass -> {
             emitLine("CLASS: ORDINARY")
@@ -61,14 +64,23 @@ private val strengthFootnoteMarkerMap = mapOf(
     14 to ">"
 )
 
-private fun StringBuilder.emitProposalVotes(voteMap: SimplifiedSingleProposalVoteMap, strengthMap: VotingStrengthMap, voteKindVoteCounts: Boolean) {
-    val actualFootnotes = strengthFootnoteMarkerMap.mapKeys { (k, _) -> VotingStrength(k) }.filterKeys { it != strengthMap.defaultStrength }
+private fun StringBuilder.emitProposalVotes(
+    voteMap: SimplifiedSingleProposalVoteMap,
+    strengthMap: VotingStrengthMap,
+    voteKindVoteCounts: Boolean
+) {
+    val actualFootnotes =
+        strengthFootnoteMarkerMap
+            .mapKeys { (k, _) -> VotingStrength(k) }
+            .filterKeys { it != strengthMap.defaultStrength }
 
     fun emitVoteKind(voteKind: VoteKind) {
         val matchingVotes = voteMap.filterVoteKind(voteKind)
 
         emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
-        emitString(matchingVotes.sortedBy { it.name }.map { "${it.name}${actualFootnotes[strengthMap[it].value] ?: ""}" }.joinToString(", "))
+        emitString(matchingVotes.sortedBy { it.name }
+            .map { "${it.name}${actualFootnotes[strengthMap[it].value] ?: ""}" }
+            .joinToString(", "))
         emitLine()
     }
 
@@ -157,7 +169,11 @@ private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<Voti
     check(allStrengthMaps.map { it.defaultStrength }.distinct().size == 1)
 
     val defaultStrength = allStrengthMaps.first().defaultStrength
-    val specialVotingStrengths = allStrengthMaps.flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }.toSet()
+
+    val specialVotingStrengths =
+        allStrengthMaps
+            .flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }
+            .toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {
         val footnotes = specialVotingStrengths.sorted().map {
@@ -181,7 +197,13 @@ private fun StringBuilder.emitProposalResolutions(config: ReportConfig, resoluti
         val resolution = resolutionMap[proposal.number]
 
         emitProposalHeader(proposal)
-        emitProposalVotes(resolution.votes, resolutionMap.votingStrengthsFor(proposal.number), config.voteKindBallotCount)
+
+        emitProposalVotes(
+            resolution.votes,
+            resolutionMap.votingStrengthsFor(proposal.number),
+            config.voteKindBallotCount
+        )
+
         if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
         emitProposalAI(resolution, proposal.ai)
         emitProposalOutcome(resolution)

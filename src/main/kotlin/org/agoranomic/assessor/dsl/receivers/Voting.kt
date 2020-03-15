@@ -75,6 +75,9 @@ private class MultiPersonVotesReceiverImpl(private val proposals: ImmutablePropo
     }
 }
 
-fun buildMultiPersonVotes(proposals: ProposalSet, block: MultiPersonVotesReceiverInit): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
+fun buildMultiPersonVotes(
+    proposals: ProposalSet,
+    block: MultiPersonVotesReceiverInit
+): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
     return MultiPersonVotesReceiverImpl(proposals).also(block).compile().toImmutableMap()
 }

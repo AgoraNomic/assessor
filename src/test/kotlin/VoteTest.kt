@@ -5,7 +5,7 @@ import test_objects.*
 import java.math.BigInteger
 import kotlin.test.*
 
-class `VotingStrength tests`() {
+class `VotingStrength tests` {
     @Test
     fun `VotingStrength zero() works`() {
         assertEquals(VotingStrength.zero().raw, BigInteger.ZERO)
@@ -42,7 +42,7 @@ class `VotingStrength tests`() {
     }
 }
 
-class `SimpleVotingStrengthMap tests`() {
+class `SimpleVotingStrengthMap tests` {
     @Test
     fun `returns provided value for special player`() {
         val specialPlayer = firstTestPlayer()
@@ -91,7 +91,7 @@ class `SimpleVotingStrengthMap tests`() {
     }
 }
 
-class `SingleProposalVoteMap tests`() {
+class `SingleProposalVoteMap tests` {
     @Test
     fun `get returns specified vote for valid player`() {
         val player = firstTestPlayer()
@@ -126,7 +126,7 @@ class `SingleProposalVoteMap tests`() {
     }
 }
 
-class `MultiProposalVoteMap tests`() {
+class `MultiProposalVoteMap tests` {
     @Test
     fun `get returns correct value for valid proposal`() {
         val proposal = firstTestProposalNumber()
@@ -156,7 +156,8 @@ class `MultiProposalVoteMap tests`() {
         val proposalA = firstTestProposalNumber()
         val proposalB = secondTestProposalNumber()
 
-        val multiProposalMap = MultiProposalVoteMap(mapOf(proposalA to singleProposalMap, proposalB to singleProposalMap))
+        val multiProposalMap =
+            MultiProposalVoteMap(mapOf(proposalA to singleProposalMap, proposalB to singleProposalMap))
 
         assertEquals(multiProposalMap.proposals.toSet(), setOf(proposalA, proposalB))
     }

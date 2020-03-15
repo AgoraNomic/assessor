@@ -16,9 +16,11 @@ interface AssessmentReceiver {
     fun name(value: String)
 
     object Version0
+
     val v0 get() = Version0
 
     object Version1
+
     val v1 get() = Version1
 
     fun proposals(v0: Version0, block: ProposalsReceiverV0Init)

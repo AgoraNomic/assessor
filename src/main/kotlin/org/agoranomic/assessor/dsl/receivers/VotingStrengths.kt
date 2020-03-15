@@ -37,7 +37,10 @@ private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStre
     }
 }
 
-fun buildProposalVotingStrength(globalStrengths: VotingStrengthMap, block: ProposalVotingStrengthReceiverInit): Map<Person, VotingStrengthWithComment> {
+fun buildProposalVotingStrength(
+    globalStrengths: VotingStrengthMap,
+    block: ProposalVotingStrengthReceiverInit
+): Map<Person, VotingStrengthWithComment> {
     return ProposalVotingStrengthReceiverImpl(globalStrengths).also(block).compile()
 }
 
@@ -126,6 +129,9 @@ private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableP
     }
 }
 
-fun buildGlobalVotingStrength(proposals: ProposalSet, block: GlobalVotingStrengthReceiverInit): Map<ProposalNumber, VotingStrengthMap> {
+fun buildGlobalVotingStrength(
+    proposals: ProposalSet,
+    block: GlobalVotingStrengthReceiverInit
+): Map<ProposalNumber, VotingStrengthMap> {
     return GlobalVotingStrengthReceiverImpl(proposals).also(block).compile()
 }

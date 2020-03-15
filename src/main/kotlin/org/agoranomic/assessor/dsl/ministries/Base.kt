@@ -56,8 +56,13 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
         // here unless this is also updated.
         @Suppress("UNUSED_VARIABLE", "LocalVariableName")
         val _ensureExhaustive_ = when (currentProposalClassAndChamber) {
-            is ProposalClassAndChamber.Classless -> {}
-            is ProposalClassAndChamber.DemocraticClass -> {}
+            is ProposalClassAndChamber.Classless -> {
+                /* do nothing */
+            }
+
+            is ProposalClassAndChamber.DemocraticClass -> {
+                /* do nothing */
+            }
 
             is ProposalClassAndChamber.OrdinaryClass -> {
                 proposal(currentProposal.number) {

@@ -32,7 +32,9 @@ interface VotingStrengthMap {
     val specialPeople: ImmutableSet<Person>
 
     fun getOpt(person: Person): VotingStrengthWithComment?
-    operator fun get(person: Person): VotingStrengthWithComment = getOpt(person) ?: VotingStrengthWithComment(defaultStrength)
+
+    operator fun get(person: Person): VotingStrengthWithComment =
+        getOpt(person) ?: VotingStrengthWithComment(defaultStrength)
 }
 
 class SimpleVotingStrengthMap(
