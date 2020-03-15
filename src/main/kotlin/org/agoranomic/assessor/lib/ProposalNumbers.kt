@@ -11,13 +11,14 @@ data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<
         fun empty() = ProposalNumbers(emptySet())
 
         fun checkingDistinct(collection: Collection<ProposalNumber>) = ProposalNumbers(collection.toSetCheckingDistinct())
-
-        // Kotlin doesn't let us explicitly use a vararg of an inline class, so we use a type parameter that is
-        // constrained to be derived from ProposalNumber. Since inline classes are final, it can only be deduced as
-        // ProposalNumber, which is what we want.
-        //
-        // Yes, this is hacky, but blame Kotlin.
-        @Suppress("FINAL_UPPER_BOUND")
-        fun <T : ProposalNumber> of(vararg numbers: T) = checkingDistinct(numbers.toList())
     }
 }
+
+// Kotlin doesn't let us explicitly use a vararg of an inline class, so we use a type parameter that is
+// constrained to be derived from ProposalNumber. Since inline classes are final, it can only be deduced as
+// ProposalNumber, which is what we want.
+//
+// Yes, this is hacky, but blame Kotlin.
+@Suppress("FINAL_UPPER_BOUND")
+fun <_ProposalNumber : ProposalNumber> proposalNumbersOf(vararg numbers: _ProposalNumber) =
+    ProposalNumbers(numbers.toList().toSetCheckingDistinct())
