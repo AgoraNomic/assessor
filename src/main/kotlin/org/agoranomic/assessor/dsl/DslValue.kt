@@ -4,6 +4,8 @@ import org.agoranomic.assessor.lib.util.getOrFail
 
 /**
  * Represents a value that must be set exactly once.
+ *
+ * @param T the type of the value
  */
 class DslValue<T> {
     private var currentValue: T? = null
@@ -56,6 +58,9 @@ fun <T> DslValue<T>.getOrNull(): T? {
 
 /**
  * A map that contains values that may only be set exactly once per key.
+ *
+ * @param K the key type
+ * @param V the value type
  */
 class DslValueMap<K, V> {
     private val map = mutableMapOf<K, DslValue<V>>()
