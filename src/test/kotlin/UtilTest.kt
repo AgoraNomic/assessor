@@ -19,7 +19,7 @@ class `getOrFail tests` {
     @Test
     fun `throws on missing value`() {
         val map = mapOf(1 to "hi", 2 to "bye")
-        assertFails { map.getOrFail(3) }
+        assertFailsWith<IllegalStateException> { map.getOrFail(3) }
     }
 }
 
@@ -104,7 +104,7 @@ class `allAreDistinct tests` {
     @Test
     fun `requireAllAreDistinct throws for list with not all distinct`() {
         val list = listOf(1, 1, 2, 3)
-        assertFails { list.requireAllAreDistinct() }
+        assertFailsWith<IllegalArgumentException> { list.requireAllAreDistinct() }
     }
 
     @Test
@@ -119,7 +119,7 @@ class `allAreDistinct tests` {
     @Test
     fun `requireAllAreDistinctBy does throws for list with not all selected keys distinct`() {
         val list = listOf("Alice", "Adam", "Bob", "Charlie")
-        assertFails { list.requireAllAreDistinctBy { it[0] } }
+        assertFailsWith<IllegalArgumentException> { list.requireAllAreDistinctBy { it[0] } }
     }
 }
 
