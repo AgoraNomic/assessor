@@ -3,6 +3,7 @@ import org.agoranomic.assessor.lib.emptyProposalNumbers
 import org.agoranomic.assessor.lib.proposalNumbersOf
 import test_objects.firstTestProposalNumber
 import test_objects.secondTestProposalNumber
+import test_util.assertEqualsAndHashCode
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -29,14 +30,9 @@ class `ProposalNumbers tests` {
         val firstNumber = firstTestProposalNumber()
         val secondNumber = secondTestProposalNumber()
 
-        fun <T> assertEqualAndHashCode(first: T, second: T) {
-            assertTrue(first == second)
-            assertTrue(first.hashCode() == second.hashCode())
-        }
-
         val firstProposalNumbers = ProposalNumbers(setOf(firstNumber, secondNumber))
         val secondProposalNumbers = ProposalNumbers(setOf(firstNumber, secondNumber))
 
-        assertEqualAndHashCode(firstProposalNumbers, secondProposalNumbers)
+        assertEqualsAndHashCode(firstProposalNumbers, secondProposalNumbers)
     }
 }

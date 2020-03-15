@@ -3,6 +3,7 @@ import org.agoranomic.assessor.lib.proposal_set.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import test_objects.*
+import test_util.assertEqualsAndHashCode
 import kotlin.test.*
 
 private typealias CreateProposalSetFunc = (proposals: Array<out Proposal>) -> ProposalSet
@@ -39,15 +40,10 @@ class `ProposalSet tests` {
         val secondProp = secondTestProposal()
         val thirdProp = thirdTestProposal()
 
-        fun assertEqualAndHashCode(first: ProposalSet, second: ProposalSet) {
-            assertTrue(first == second)
-            assertTrue(first.hashCode() == second.hashCode())
-        }
-
         for (firstCreateProposalSet in createProposalSetFuncs) {
             for (secondCreateProposalSet in createProposalSetFuncs) {
                 // Different order is intentional
-                assertEqualAndHashCode(
+                assertEqualsAndHashCode(
                     firstCreateProposalSet(firstProp, secondProp, thirdProp),
                     secondCreateProposalSet(thirdProp, secondProp, firstProp)
                 )
