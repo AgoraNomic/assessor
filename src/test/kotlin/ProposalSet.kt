@@ -154,7 +154,7 @@ class `ProposalSet tests` {
         val thirdProposal = thirdTestProposal()
 
         assertEquals(
-            ProposalNumbers.empty(),
+            emptyProposalNumbers(),
             createProposalSet().numbers()
         )
 
