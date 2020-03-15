@@ -4,7 +4,7 @@ import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
 import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 
-data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<ProposalNumber> by data {
+data class ProposalNumbers(private val data: ImmutableSet<ProposalNumber>) : Collection<ProposalNumber> by data {
     constructor(data: Set<ProposalNumber>) : this(data.toImmutableSet())
 }
 
