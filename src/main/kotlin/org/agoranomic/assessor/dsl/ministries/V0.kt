@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
+import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.VotingStrength
@@ -71,7 +71,7 @@ val INTERESTS_MAP_V0 = mapOf(
 
 private val MINISTRIES_V0_BONUS = VotingStrength(2)
 
-fun VotingStrengthReceiver.ministriesV0(
+fun GlobalVotingStrengthReceiver.ministriesV0(
     officeMap: Map<OfficeV0, Person?>,
     proposals: ProposalSet
 ) = ministries(

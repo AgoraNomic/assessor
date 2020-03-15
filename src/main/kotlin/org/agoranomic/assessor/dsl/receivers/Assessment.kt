@@ -8,8 +8,8 @@ import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 
 @AssessmentDSL
 interface AssessmentReceiver {
-    fun strengths(block: VotingStrengthReceiverInit)
-    fun voting(block: VotingReceiverInit)
+    fun strengths(block: GlobalVotingStrengthReceiverInit)
+    fun voting(block: MultiPersonVotesReceiverInit)
     fun quorum(value: AssessmentQuorum)
     fun name(value: String)
 
@@ -29,13 +29,13 @@ fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 
 @AssessmentDSL
 class AssessmentReceiverImpl : AssessmentReceiver {
-    private val votingStrengthsBlockValue = DslValue<VotingStrengthReceiverInit>()
+    private val votingStrengthsBlockValue = DslValue<GlobalVotingStrengthReceiverInit>()
     private val proposalsBlockValue = DslValue<() -> ImmutableProposalSet>()
-    private val proposalVotesBlockValue = DslValue<VotingReceiverInit>()
+    private val proposalVotesBlockValue = DslValue<MultiPersonVotesReceiverInit>()
     private val quorumValue = DslValue<AssessmentQuorum>()
     private val nameValue = DslValue<String>()
 
-    override fun strengths(block: VotingStrengthReceiverInit) {
+    override fun strengths(block: GlobalVotingStrengthReceiverInit) {
         votingStrengthsBlockValue.set(block)
     }
 
@@ -49,7 +49,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         proposalsBlockValue.set({ buildProposalsV1(block) })
     }
 
-    override fun voting(block: VotingReceiverInit) {
+    override fun voting(block: MultiPersonVotesReceiverInit) {
         proposalVotesBlockValue.set(block)
     }
 
@@ -69,10 +69,10 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         val proposals = proposalsBlock()
 
         val proposalVotesBlock = proposalVotesBlockValue.get()
-        val proposalVotes = buildVoting(proposals, proposalVotesBlock)
+        val proposalVotes = buildMultiPersonVotes(proposals, proposalVotesBlock)
 
         val votingStrengthsBlock = votingStrengthsBlockValue.get()
-        val votingStrengths = buildVotingStrength(proposals, votingStrengthsBlock)
+        val votingStrengths = buildGlobalVotingStrength(proposals, votingStrengthsBlock)
 
         for (proposalNumber in proposalVotes.keys) {
             if (proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal $proposalNumber")

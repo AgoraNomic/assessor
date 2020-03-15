@@ -12,7 +12,7 @@ interface VoteCommentable {
 }
 
 @AssessmentDSL
-interface VotesReceiver {
+interface PersonVotesReceiver {
     object All
     val all: All get() = All
 
@@ -34,10 +34,10 @@ interface VotesReceiver {
     fun function(func: VoteFunc): HalfFunctionVote
 }
 
-typealias VotesReceiverInit = DslInit<VotesReceiver>
+typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
 
 @AssessmentDSL
-private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : VotesReceiver {
+private class PersonVotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : PersonVotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
     private val voteMap = DslValueMap<ProposalNumber, MutableVote>()
@@ -61,11 +61,11 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
 
     override infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this.func))
 
-    override infix fun HalfFunctionVote.on(all: VotesReceiver.All) {
+    override infix fun HalfFunctionVote.on(all: PersonVotesReceiver.All) {
         proposals.forEach { addVote(it, this) }
     }
 
-    override infix fun HalfFunctionVote.on(others: VotesReceiver.Others) {
+    override infix fun HalfFunctionVote.on(others: PersonVotesReceiver.Others) {
         for (proposal in proposals.map { it }) {
             if (!voteMap.containsKey(proposal)) addVote(proposal, this)
         }
@@ -77,14 +77,14 @@ private class VotesReceiverImpl(private val proposals: ImmutableList<ProposalNum
 
     override infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
 
-    override infix fun VoteKind.on(all: VotesReceiver.All) = simpleVoteFunction(this) on all
-    override infix fun VoteKind.on(others: VotesReceiver.Others) = simpleVoteFunction(this) on others
+    override infix fun VoteKind.on(all: PersonVotesReceiver.All) = simpleVoteFunction(this) on all
+    override infix fun VoteKind.on(others: PersonVotesReceiver.Others) = simpleVoteFunction(this) on others
 
     fun compile(): Map<ProposalNumber, PendingVote> {
         return voteMap.compile().mapValues { (_, v) -> v.compile() }
     }
 }
 
-fun buildVotes(proposals: List<ProposalNumber>, block: VotesReceiverInit): Map<ProposalNumber, PendingVote> {
-    return VotesReceiverImpl(proposals).also(block).compile()
+fun buildPersonVotes(proposals: List<ProposalNumber>, block: PersonVotesReceiverInit): Map<ProposalNumber, PendingVote> {
+    return PersonVotesReceiverImpl(proposals).also(block).compile()
 }

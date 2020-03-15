@@ -13,15 +13,15 @@ import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.util.getOrFail
 
 @AssessmentDSL
-interface VotingReceiver {
+interface MultiPersonVotesReceiver {
     infix fun Person.matches(other: Person)
-    fun votes(person: Person, block: VotesReceiverInit)
+    fun votes(person: Person, block: PersonVotesReceiverInit)
 }
 
-typealias VotingReceiverInit = DslInit<VotingReceiver>
+typealias MultiPersonVotesReceiverInit = DslInit<MultiPersonVotesReceiver>
 
 @AssessmentDSL
-private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : VotingReceiver {
+private class MultiPersonVotesReceiverImpl(private val proposals: ImmutableProposalSet) : MultiPersonVotesReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
     private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
@@ -30,10 +30,10 @@ private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : 
         functionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
-    override fun votes(person: Person, block: VotesReceiverInit) {
+    override fun votes(person: Person, block: PersonVotesReceiverInit) {
         require(!personVoteMap.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
-        personVoteMap[person] = buildVotes(proposals.map { it.number }, block)
+        personVoteMap[person] = buildPersonVotes(proposals.map { it.number }, block)
     }
 
 
@@ -75,6 +75,6 @@ private class VotingReceiverImpl(private val proposals: ImmutableProposalSet) : 
     }
 }
 
-fun buildVoting(proposals: ProposalSet, block: VotingReceiverInit): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
-    return VotingReceiverImpl(proposals).also(block).compile().toImmutableMap()
+fun buildMultiPersonVotes(proposals: ProposalSet, block: MultiPersonVotesReceiverInit): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
+    return MultiPersonVotesReceiverImpl(proposals).also(block).compile().toImmutableMap()
 }

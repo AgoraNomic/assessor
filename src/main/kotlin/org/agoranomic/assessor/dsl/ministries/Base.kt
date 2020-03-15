@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import org.agoranomic.assessor.dsl.receivers.ProposalStrengthReceiver
-import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
+import org.agoranomic.assessor.dsl.receivers.ProposalVotingStrengthReceiver
+import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.util.requireExhaustive
@@ -26,7 +26,7 @@ private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries
     return personMinistries
 }
 
-private fun <Office : Enum<Office>> ProposalStrengthReceiver.updateVotingStrengthsForProposal(
+private fun <Office : Enum<Office>> ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
     officeClass: KClass<Office>,
     officeHolders: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
@@ -42,7 +42,7 @@ private fun <Office : Enum<Office>> ProposalStrengthReceiver.updateVotingStrengt
     }
 }
 
-fun <Office : Enum<Office>> VotingStrengthReceiver.ministries(
+fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
     officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
@@ -74,7 +74,7 @@ fun <Office : Enum<Office>> VotingStrengthReceiver.ministries(
     }
 }
 
-inline fun <reified Office : Enum<Office>> VotingStrengthReceiver.ministries(
+inline fun <reified Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
     officeMap: Map<Office, Person?>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,

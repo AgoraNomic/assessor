@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.ministries
 
 import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
-import org.agoranomic.assessor.dsl.receivers.VotingStrengthReceiver
+import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.VotingStrength
@@ -17,7 +17,7 @@ val INTERESTS_MAP_V1: Map<OfficeV1, List<Ministry>> = INTERESTS_MAP_V0.toPersist
 
 private val MINISTRIES_V1_BONUS = VotingStrength(2)
 
-fun VotingStrengthReceiver.ministriesV1(
+fun GlobalVotingStrengthReceiver.ministriesV1(
     officeMap: Map<OfficeV0, Person?>,
     proposals: ProposalSet
 ) = ministries(
