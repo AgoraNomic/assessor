@@ -2,7 +2,7 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
-import org.agoranomic.assessor.lib.util.requireAllAreDistinct
+import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 
 data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<ProposalNumber> by data {
     constructor(data: Set<ProposalNumber>) : this(data.toImmutableSet())
@@ -10,10 +10,7 @@ data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<
     companion object {
         fun empty() = ProposalNumbers(emptySet())
 
-        fun checkingDistinct(collection: Collection<ProposalNumber>): ProposalNumbers {
-            collection.requireAllAreDistinct()
-            return ProposalNumbers(collection.toSet())
-        }
+        fun checkingDistinct(collection: Collection<ProposalNumber>) = ProposalNumbers(collection.toSetCheckingDistinct())
 
         // Kotlin doesn't let us explicitly use a vararg of an inline class, so we use a type parameter that is
         // constrained to be derived from ProposalNumber. Since inline classes are final, it can only be deduced as

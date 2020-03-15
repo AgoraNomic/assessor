@@ -54,6 +54,17 @@ fun <T> Collection<T>.requireAllAreDistinct() {
 }
 
 /**
+ * Returns a [Set] containing the same elements as this [Collection], if this [Collection] contains no repeating
+ * elements, otherwise throws [IllegalArgumentException].
+ */
+fun <T> Collection<T>.toSetCheckingDistinct(): Set<T> {
+    val set = toSet()
+    require(set.size == this.size) { "Expected collection to contain no distinct elements" }
+
+    return set
+}
+
+/**
  * Returns `true` if this [Collection] has no elements such that results of [selector] are the same, and `false`
  * otherwise.
  *

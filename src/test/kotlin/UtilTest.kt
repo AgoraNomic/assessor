@@ -102,6 +102,18 @@ class `allAreDistinct tests` {
     }
 
     @Test
+    fun `toSetCheckingDistinct returns set for list with all distinct`() {
+        val list = listOf(1, 2, 3)
+        assertEquals(setOf(1, 2, 3), list.toSet())
+    }
+
+    @Test
+    fun `toSetCheckingDistinct throws for list with not all distinct`() {
+        val list = listOf(1, 1, 2, 3)
+        assertFailsWith<IllegalArgumentException> { list.toSetCheckingDistinct() }
+    }
+
+    @Test
     fun `requireAllAreDistinctBy does not throw for list with all selected keys distinct`() {
         val list = listOf("Alice", "Bob", "Charlie")
 
