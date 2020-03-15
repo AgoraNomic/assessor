@@ -9,8 +9,6 @@ data class ProposalNumbers(val data: ImmutableSet<ProposalNumber>) : Collection<
 
     companion object {
         fun empty() = ProposalNumbers(emptySet())
-
-        fun checkingDistinct(collection: Collection<ProposalNumber>) = ProposalNumbers(collection.toSetCheckingDistinct())
     }
 }
 

@@ -6,6 +6,7 @@ import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.ProposalNumbers
+import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {
@@ -33,7 +34,8 @@ abstract class AbstractProposalSet : ProposalSet {
     }
 
     override fun numbers(): ProposalNumbers {
-        return ProposalNumbers.checkingDistinct(map { it.number })
+        val numbersSet = map { it.number }.toSetCheckingDistinct()
+        return ProposalNumbers(numbersSet)
     }
 
     final override fun equals(other: Any?): Boolean {
