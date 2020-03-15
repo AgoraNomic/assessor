@@ -6,7 +6,7 @@ import org.agoranomic.assessor.lib.AssessmentData
 
 @DslMarker
 @Target(AnnotationTarget.CLASS)
-annotation class AssessmentDSL
+annotation class AssessmentDsl
 
 fun assessment(block: AssessmentReceiverInit): AssessmentData {
     val receiver = AssessmentReceiverImpl()

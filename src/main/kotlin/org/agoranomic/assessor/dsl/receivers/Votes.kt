@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
-import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
@@ -11,7 +11,7 @@ interface VoteCommentable {
     infix fun comment(comment: String)
 }
 
-@AssessmentDSL
+@AssessmentDsl
 interface PersonVotesReceiver {
     object All
     val all: All get() = All
@@ -36,7 +36,7 @@ interface PersonVotesReceiver {
 
 typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
 
-@AssessmentDSL
+@AssessmentDsl
 private class PersonVotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : PersonVotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 

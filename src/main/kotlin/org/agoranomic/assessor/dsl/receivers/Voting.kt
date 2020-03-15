@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
-import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
@@ -12,7 +12,7 @@ import org.agoranomic.assessor.lib.proposal_set.get
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.util.getOrFail
 
-@AssessmentDSL
+@AssessmentDsl
 interface MultiPersonVotesReceiver {
     infix fun Person.matches(other: Person)
     fun votes(person: Person, block: PersonVotesReceiverInit)
@@ -20,7 +20,7 @@ interface MultiPersonVotesReceiver {
 
 typealias MultiPersonVotesReceiverInit = DslInit<MultiPersonVotesReceiver>
 
-@AssessmentDSL
+@AssessmentDsl
 private class MultiPersonVotesReceiverImpl(private val proposals: ImmutableProposalSet) : MultiPersonVotesReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 

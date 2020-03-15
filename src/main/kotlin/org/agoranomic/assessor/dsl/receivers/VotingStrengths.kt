@@ -7,7 +7,7 @@ import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.util.getOrFail
 
-@AssessmentDSL
+@AssessmentDsl
 interface ProposalVotingStrengthReceiver {
     infix fun Person.strength(value: VotingStrength)
     infix fun Person.strength(value: Int) = strength(VotingStrength(value))
@@ -18,7 +18,7 @@ interface ProposalVotingStrengthReceiver {
 
 typealias ProposalVotingStrengthReceiverInit = DslInit<ProposalVotingStrengthReceiver>
 
-@AssessmentDSL
+@AssessmentDsl
 private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
@@ -45,7 +45,7 @@ interface VotingStrengthCommentable {
     infix fun comment(comment: String)
 }
 
-@AssessmentDSL
+@AssessmentDsl
 interface GlobalVotingStrengthReceiver {
     val allProposals: ProposalSet
 
@@ -62,7 +62,7 @@ interface GlobalVotingStrengthReceiver {
 
 typealias GlobalVotingStrengthReceiverInit = DslInit<GlobalVotingStrengthReceiver>
 
-@AssessmentDSL
+@AssessmentDsl
 private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 

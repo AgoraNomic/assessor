@@ -1,12 +1,12 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import org.agoranomic.assessor.dsl.AssessmentDSL
+import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 
-@AssessmentDSL
+@AssessmentDsl
 interface AssessmentReceiver {
     fun strengths(block: GlobalVotingStrengthReceiverInit)
     fun voting(block: MultiPersonVotesReceiverInit)
@@ -27,7 +27,7 @@ typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
 
 fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 
-@AssessmentDSL
+@AssessmentDsl
 class AssessmentReceiverImpl : AssessmentReceiver {
     private val votingStrengthsBlockValue = DslValue<GlobalVotingStrengthReceiverInit>()
     private val proposalsBlockValue = DslValue<() -> ImmutableProposalSet>()

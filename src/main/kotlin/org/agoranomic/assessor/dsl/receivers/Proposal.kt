@@ -4,7 +4,7 @@ import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.lib.*
 import java.math.BigDecimal
 
-@AssessmentDSL
+@AssessmentDsl
 interface ProposalCommonReceiver {
     fun title(str: String)
     fun text(str: String)
@@ -25,12 +25,12 @@ fun ProposalCommonReceiver.ai(value: BigDecimal) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: Double) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: Int) = adoption_index(value)
 
-@AssessmentDSL
+@AssessmentDsl
 interface ProposalReceiverV0 : ProposalCommonReceiver
 
 typealias ProposalReceiverV0Init = DslInit<ProposalReceiverV0>
 
-@AssessmentDSL
+@AssessmentDsl
 interface ProposalReceiverV1 : ProposalCommonReceiver {
     fun classless()
     fun democratic()
@@ -39,7 +39,7 @@ interface ProposalReceiverV1 : ProposalCommonReceiver {
 
 typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 
-@AssessmentDSL
+@AssessmentDsl
 private class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
     private val titleValue = DslValue<String>()
     private val textValue = DslValue<String>()
@@ -108,7 +108,7 @@ fun buildProposalV1(number: ProposalNumber, block: ProposalReceiverV1Init): Prop
 }
 
 // Old proposals are exactly the same as new proposals without a class.
-@AssessmentDSL
+@AssessmentDsl
 private class ProposalReceiverImplV0(
     number: ProposalNumber,
     val v1Impl: ProposalReceiverImplV1 = ProposalReceiverImplV1(number)
