@@ -3,9 +3,9 @@ import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
 import org.junit.jupiter.api.Nested
 import test_objects.*
+import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
-import kotlin.test.Test
 
 abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     protected fun ProposalReceiver.onlyCommonSetup(

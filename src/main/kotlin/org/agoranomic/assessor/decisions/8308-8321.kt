@@ -1,8 +1,8 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.ministriesV0
 import org.agoranomic.assessor.dsl.ministries.OfficeV0.*
+import org.agoranomic.assessor.dsl.ministries.ministriesV0
 import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
@@ -12,7 +12,6 @@ import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.proposal_set.toProposalSet
-import org.agoranomic.assessor.lib.compareTo
 
 @UseAssessment
 fun `assessment 8308 to 8321`() = assessment {

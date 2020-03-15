@@ -1,11 +1,14 @@
 import org.agoranomic.assessor.dsl.votes.author
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.makeEndorsementFor
-import test_objects.*
 import org.agoranomic.assessor.lib.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
+import test_objects.ALL_VOTE_KIND_LIST
+import test_objects.alwaysFailingLookupProposal
+import test_objects.firstTestPlayer
+import test_objects.firstTestProposal
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 

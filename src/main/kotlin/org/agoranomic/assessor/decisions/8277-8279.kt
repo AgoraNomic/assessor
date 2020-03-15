@@ -1,10 +1,10 @@
 package org.agoranomic.assessor.decisions
 
-import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8277 to 8279`() = assessment {

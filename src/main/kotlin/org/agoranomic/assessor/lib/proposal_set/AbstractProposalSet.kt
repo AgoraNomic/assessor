@@ -1,10 +1,7 @@
 package org.agoranomic.assessor.lib.proposal_set
 
-import kotlinx.collections.immutable.ImmutableSet
-import kotlinx.collections.immutable.toImmutableSet
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
-import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.ProposalNumbers
 import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 

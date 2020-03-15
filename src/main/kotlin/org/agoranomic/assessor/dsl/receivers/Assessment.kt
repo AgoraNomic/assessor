@@ -1,9 +1,11 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDsl
-import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslInit
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.dsl.DslValue
+import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.AssessmentQuorum
+import org.agoranomic.assessor.lib.MultiProposalVoteMap
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 
 @AssessmentDsl

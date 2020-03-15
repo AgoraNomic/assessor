@@ -2,7 +2,9 @@ import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
-import test_objects.*
+import test_objects.firstTestProposal
+import test_objects.secondTestProposal
+import test_objects.thirdTestProposal
 import test_util.assertEqualsAndHashCode
 import kotlin.test.*
 

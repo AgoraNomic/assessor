@@ -1,7 +1,7 @@
-import test_objects.*
 import org.agoranomic.assessor.lib.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
+import test_objects.*
 import java.math.BigInteger
 import kotlin.test.*
 

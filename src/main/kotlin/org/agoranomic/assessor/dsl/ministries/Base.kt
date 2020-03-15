@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import org.agoranomic.assessor.dsl.receivers.ProposalVotingStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
+import org.agoranomic.assessor.dsl.receivers.ProposalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.util.requireExhaustive
