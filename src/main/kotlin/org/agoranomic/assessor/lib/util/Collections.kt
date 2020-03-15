@@ -71,17 +71,13 @@ fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) = map(selec
  * If this map contains the key [key], returns the value corresponding to [key], otherwise throws
  * an [IllegalStateException].
  *
+ * The value type of the receiver is non-nullable in order to avoid confusion about what to do in the case of a null
+ * value, which has caused some contention in the standard library.
+ *
  * @param K the key type of this [Map]
- * @param V the value type of this [Map]
+ * @param V the non-nullable value type of this [Map]
  * @param key the key for which the corresponding value is to be retrieved
  */
-fun <K, V> Map<K, V>.getOrFail(key: K): V {
-    if (containsKey(key)) {
-        // Because the map contains the key, we know it has an object of type V as value, so the cast is unchecked, but
-        // it is always correct.
-        @Suppress("UNCHECKED_CAST")
-        return get(key) as V
-    }
-
-    error("Missing expected key in map: $key")
+fun <K, V : Any> Map<K, V>.getOrFail(key: K): V {
+    return getOrElse(key) { error("Missing expected key in map: $key") }
 }

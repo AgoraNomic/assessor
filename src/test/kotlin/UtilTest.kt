@@ -5,15 +5,9 @@ import kotlin.test.*
 
 class `getOrFail tests` {
     @Test
-    fun `returns correct non-null value`() {
+    fun `returns correct value`() {
         val map = mapOf(1 to "hi", 2 to "bye")
         assertEquals("hi", map.getOrFail(1))
-    }
-
-    @Test
-    fun `returns correct null value`() {
-        val map = mapOf(1 to "hi", 2 to null)
-        assertNull(map.getOrFail(2))
     }
 
     @Test
