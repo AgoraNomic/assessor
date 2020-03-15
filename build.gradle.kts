@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.jetbrains.kotlin.jvm") version "1.3.50"
+    kotlin("jvm") version "1.3.50"
 }
 
 val kotlinVersion = "1.3.50"
@@ -14,15 +14,15 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+    implementation(kotlin("stdlib-jdk8", kotlinVersion))
+    implementation(kotlin("reflect", kotlinVersion))
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3")
     implementation("commons-cli:commons-cli:1.4")
     implementation("io.github.classgraph:classgraph:4.8.46")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.13.0")
 
-    testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:$kotlinVersion")
+    testImplementation(kotlin("test", kotlinVersion))
+    testImplementation(kotlin("test-junit5", kotlinVersion))
     testImplementation(group = "org.junit.jupiter", name = "junit-jupiter", version = "5.5.2")
 }
 
