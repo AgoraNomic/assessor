@@ -37,11 +37,10 @@ fun <T> Iterable<T>.allAreDistinct(): Boolean {
 }
 
 /**
- * Throws an [IllegalArgumentException] if this [Iterable] has any elements that appear more than once.
- *
- * @param T the element type of this [Iterable]
+ * Returns a [Set] containing the same elements as this [Collection], if this [Collection] contains no repeating
+ * elements, otherwise throws [IllegalArgumentException].
  */
-fun <T> Iterable<T>.requireAllAreDistinct() {
+fun <T> Iterable<T>.toSetCheckingDistinct(): Set<T> {
     val alreadySeen = mutableSetOf<T>()
 
     for (item in this) {
@@ -51,17 +50,18 @@ fun <T> Iterable<T>.requireAllAreDistinct() {
 
         alreadySeen += item
     }
+
+    return alreadySeen
 }
 
 /**
- * Returns a [Set] containing the same elements as this [Collection], if this [Collection] contains no repeating
- * elements, otherwise throws [IllegalArgumentException].
+ * Throws an [IllegalArgumentException] if this [Iterable] has any elements that appear more than once.
+ *
+ * @param T the element type of this [Iterable]
  */
-fun <T> Collection<T>.toSetCheckingDistinct(): Set<T> {
-    val set = toSet()
-    require(set.size == this.size) { "Expected collection to contain no distinct elements" }
-
-    return set
+fun <T> Iterable<T>.requireAllAreDistinct() {
+    // This will do the distinct checking for us, so we can just throw away the result
+    toSetCheckingDistinct()
 }
 
 /**
