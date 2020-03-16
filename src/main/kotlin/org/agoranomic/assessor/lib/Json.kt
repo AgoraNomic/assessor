@@ -4,21 +4,21 @@ import kotlinx.serialization.json.*
 import java.math.BigDecimal
 import java.math.BigInteger
 
-fun json(int: Int) = JsonLiteral(int)
-fun json(bigInteger: BigInteger) = JsonLiteral(bigInteger)
-fun json(bigDecimal: BigDecimal) = JsonLiteral(bigDecimal.toString()) // Avoid floating point insanity
-fun json(string: String) = JsonLiteral(string)
-fun json(list: List<JsonElement>) = JsonArray(list)
+private fun json(int: Int) = JsonLiteral(int)
+private fun json(bigInteger: BigInteger) = JsonLiteral(bigInteger)
+private fun json(bigDecimal: BigDecimal) = JsonLiteral(bigDecimal.toString()) // Avoid floating point insanity
+private fun json(string: String) = JsonLiteral(string)
+private fun json(list: List<JsonElement>) = JsonArray(list)
 
-fun json(person: Person) = json(person.name)
+private fun json(person: Person) = json(person.name)
 
 @JvmName("jsonOfPlayers")
-fun json(iterable: Iterable<Person>) = json(iterable.map { json(it) })
+private fun json(iterable: Iterable<Person>) = json(iterable.map { json(it) })
 
-fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
-fun json(proposalAI: ProposalAI) = json(proposalAI.raw)
+private fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
+private fun json(proposalAI: ProposalAI) = json(proposalAI.raw)
 
-fun json(proposal: Proposal) = json {
+private fun json(proposal: Proposal) = json {
     "number" to json(proposal.number)
     "ai" to json(proposal.ai)
     "title" to json(proposal.title)
@@ -28,19 +28,19 @@ fun json(proposal: Proposal) = json {
 }
 
 @JvmName("jsonOfProposals")
-fun json(iterable: Iterable<Proposal>) = json(iterable.map { json(it) })
+private fun json(iterable: Iterable<Proposal>) = json(iterable.map { json(it) })
 
-fun json(quorum: ProposalQuorum) = json(quorum.raw)
-fun json(quorum: AssessmentQuorum) = json(quorum.raw)
+private fun json(quorum: ProposalQuorum) = json(quorum.raw)
+private fun json(quorum: AssessmentQuorum) = json(quorum.raw)
 
-fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
+private fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
 
-fun json(votingStrength: VotingStrengthWithComment) = json {
+private fun json(votingStrength: VotingStrengthWithComment) = json {
     "value" to json(votingStrength.value)
     if (votingStrength.comment != null) "comment" to json(votingStrength.comment)
 }
 
-fun json(votingStrengths: VotingStrengthMap) = json {
+private fun json(votingStrengths: VotingStrengthMap) = json {
     "default" to json(votingStrengths.defaultStrength)
     "players" to json(votingStrengths.specialPeople.map {
         json {
@@ -50,16 +50,16 @@ fun json(votingStrengths: VotingStrengthMap) = json {
     })
 }
 
-fun json(propsalResult: ProposalResult) = json(propsalResult.name)
+private fun json(propsalResult: ProposalResult) = json(propsalResult.name)
 
-fun json(vote: SimpleVote) = json {
+private fun json(vote: SimpleVote) = json {
     "value" to vote.kind.name
 
     val comment = vote.comment
     if (comment != null) "comment" to json(comment)
 }
 
-fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
+private fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
     for (player in voteMap.voters) {
         +json {
             "voter" to json(player)
@@ -68,7 +68,7 @@ fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
     }
 }
 
-fun json(resolutionData: ResolutionData) = json {
+private fun json(resolutionData: ResolutionData) = json {
     "result" to json(resolutionData.result)
     "strength_for" to json(resolutionData.strengthFor)
     "strength_against" to json(resolutionData.strengthAgainst)
