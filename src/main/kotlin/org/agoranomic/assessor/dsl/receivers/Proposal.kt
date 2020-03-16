@@ -18,7 +18,7 @@ interface ProposalCommonReceiver {
     fun adoption_index(value: Double)
 }
 
-fun ProposalCommonReceiver.coauthors(vararg people: Person) = coauthors(Persons.checkingDistinct(people.toList()))
+fun ProposalCommonReceiver.coauthors(vararg people: Person) = coauthors(personsOf(*people))
 
 fun ProposalCommonReceiver.adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
 fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toBigDecimal())
