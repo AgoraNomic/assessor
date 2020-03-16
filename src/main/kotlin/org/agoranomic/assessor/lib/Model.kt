@@ -46,8 +46,10 @@ sealed class ProposalClassAndChamber {
 }
 
 /**
- * Thrown when a [ProposalSet] is passed a [Proposal] when it contains a [Proposal] with the same
- * [number][Proposal.number] but with differing other data.
+ * Indicates that two proposals with the same [number][Proposal.number] but otherwise different data were encountered
+ * in a place where that is prohibited.
+ * @param next the new proposal with the number, but different data from [original]
+ * @param original the first proposal to be encountered with the number
  */
 data class ProposalDataMismatchException(
     val next: Proposal,
