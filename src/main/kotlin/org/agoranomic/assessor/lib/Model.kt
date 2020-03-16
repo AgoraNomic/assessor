@@ -60,6 +60,13 @@ data class ProposalDataMismatchException(
     }
 }
 
+/**
+ * Throws [ProposalDataMismatchException] if [original] and [next] have the same number but otherwise different data.
+ *
+ * If a [ProposalDataMismatchException] `ex` is thrown, `ex.original === [original]` and `ex.next === [next]`.
+ *
+ * @throws IllegalArgumentException if `original.number != next.number`
+ */
 fun checkMismatch(original: Proposal, next: Proposal) {
     require(original.number == next.number)
 
