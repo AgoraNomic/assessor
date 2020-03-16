@@ -1,11 +1,11 @@
 package org.agoranomic.assessor.lib.util
 
 /**
- * Returns a [Set] containing all elements that appear more than once in this [Collection].
+ * Returns a [Set] containing all elements that appear more than once in this [Iterable].
  *
- * @param T the element type of this [Collection]
+ * @param T the element type of this [Iterable]
  */
-fun <T> Collection<T>.repeatingElements(): Set<T> {
+fun <T> Iterable<T>.repeatingElements(): Set<T> {
     val alreadySeen = mutableSetOf<T>()
     val duplicates = mutableSetOf<T>()
 
@@ -21,11 +21,11 @@ fun <T> Collection<T>.repeatingElements(): Set<T> {
 }
 
 /**
- * Returns `true` if this collection does not contain any repeating elements, and `false` otherwise.
+ * Returns `true` if this [Iterable] does not contain any repeating elements, and `false` otherwise.
  *
- * @param T the element type of this [Collection]
+ * @param T the element type of this [Iterable]
  */
-fun <T> Collection<T>.allAreDistinct(): Boolean {
+fun <T> Iterable<T>.allAreDistinct(): Boolean {
     val alreadySeen = mutableSetOf<T>()
 
     for (item in this) {
@@ -37,11 +37,11 @@ fun <T> Collection<T>.allAreDistinct(): Boolean {
 }
 
 /**
- * Throws an [IllegalArgumentException] if this [Collection] has any elements that appear more than once.
+ * Throws an [IllegalArgumentException] if this [Iterable] has any elements that appear more than once.
  *
- * @param T the element type of this [Collection]
+ * @param T the element type of this [Iterable]
  */
-fun <T> Collection<T>.requireAllAreDistinct() {
+fun <T> Iterable<T>.requireAllAreDistinct() {
     val alreadySeen = mutableSetOf<T>()
 
     for (item in this) {
@@ -65,14 +65,14 @@ fun <T> Collection<T>.toSetCheckingDistinct(): Set<T> {
 }
 
 /**
- * Returns `true` if this [Collection] has no elements such that results of [selector] are the same, and `false`
+ * Returns `true` if this [Iterable] has no elements such that results of [selector] are the same, and `false`
  * otherwise.
  *
- * @param T the element type of this [Collection]
+ * @param T the element type of this [Iterable]
  * @param K the result type of [selector]
  * @param selector the function to map elements to keys
  */
-fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
+fun <T, K> Iterable<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
     val alreadySeen = mutableSetOf<K>()
 
     for (item in this) {
@@ -85,14 +85,14 @@ fun <T, K> Collection<T>.allAreDistinctBy(selector: (T) -> K): Boolean {
 }
 
 /**
- * Throws an [IllegalArgumentException] if this [Collection] has two elements such that results of [selector] are the
+ * Throws an [IllegalArgumentException] if this [Iterable] has two elements such that results of [selector] are the
  * same.
  *
- * @param T the element type of this [Collection]
+ * @param T the element type of this [Iterable]
  * @param K the result type of [selector]
  * @param selector the function to map elements to keys
  */
-fun <T, K> Collection<T>.requireAllAreDistinctBy(selector: (T) -> K) {
+fun <T, K> Iterable<T>.requireAllAreDistinctBy(selector: (T) -> K) {
     val alreadySeen = mutableSetOf<K>()
 
     for (item in this) {
