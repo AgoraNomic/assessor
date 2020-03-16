@@ -11,8 +11,6 @@ data class Persons(val data: ImmutableSet<Person>) : Collection<Person> by data 
     constructor(data: Set<Person>) : this(data.toImmutableSet())
 
     companion object {
-        fun empty() = emptyPersons()
-
         fun checkingDistinct(collection: Collection<Person>): Persons {
             collection.requireAllAreDistinct()
             return Persons(collection.toSet())

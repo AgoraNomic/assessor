@@ -90,7 +90,7 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
         val ai = aiValue.get()
         val title = titleValue.get()
         val author = authorValue.get()
-        val coauthors = coauthorsValue.getOrDefault(Persons.empty())
+        val coauthors = coauthorsValue.getOrDefault(emptyPersons())
         val text = textValue.get()
         val classAndChamber = classAndChamberValue.get()
 

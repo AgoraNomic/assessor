@@ -177,7 +177,7 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
                 setupForCoauthors()
             }
 
-            assertEquals(Persons.empty(), proposal.coauthors)
+            assertEquals(emptyPersons(), proposal.coauthors)
         }
 
         @Test
