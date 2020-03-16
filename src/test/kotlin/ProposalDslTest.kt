@@ -289,6 +289,17 @@ class ProposalDslV0Test : ProposalDslTestBase<ProposalReceiverV0>() {
     override fun compile(number: ProposalNumber, init: ProposalReceiverV0Init): Proposal {
         return buildProposalV0(number, init)
     }
+
+    private fun fullProposal() = compile(firstTestProposalNumber()) {
+        onlyCommonSetup()
+        extendSetupForCommonTests()
+    }
+
+    @Test
+    fun `class and chamber is Classless`() {
+        val proposal = fullProposal()
+        assertEquals(ProposalClassAndChamber.Classless, proposal.classAndChamber)
+    }
 }
 
 class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
