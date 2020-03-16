@@ -104,7 +104,7 @@ class `allAreDistinct tests` {
     @Test
     fun `toSetCheckingDistinct returns set for list with all distinct`() {
         val list = listOf(1, 2, 3)
-        assertEquals(setOf(1, 2, 3), list.toSet())
+        assertEquals(setOf(1, 2, 3), list.toSetCheckingDistinct())
     }
 
     @Test
