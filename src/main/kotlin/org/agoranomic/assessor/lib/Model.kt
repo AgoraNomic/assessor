@@ -63,8 +63,7 @@ data class ProposalDataMismatchException(
 fun checkMismatch(original: Proposal, next: Proposal) {
     require(original.number == next.number)
 
-    if (original != next) throw ProposalDataMismatchException(
-        next = next,
-        original = original
-    )
+    if (original != next) {
+        throw ProposalDataMismatchException(next = next, original = original)
+    }
 }
