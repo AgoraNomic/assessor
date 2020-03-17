@@ -7,8 +7,13 @@ import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 /**
  * A [Collection] that contains a set of distinct ProposalNumbers.
  */
-data class ProposalNumbers(private val data: ImmutableSet<ProposalNumber>) : Collection<ProposalNumber> by data {
+data class ProposalNumbers(private val data: ImmutableSet<ProposalNumber>) {
     constructor(data: Set<ProposalNumber>) : this(data.toImmutableSet())
+
+    val size get() = data.size
+
+    fun isEmpty() = data.isEmpty()
+    fun isNotEmpty() = data.isNotEmpty()
 }
 
 /**

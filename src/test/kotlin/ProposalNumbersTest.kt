@@ -12,7 +12,7 @@ class `ProposalNumbers tests` {
     @Test
     fun `emptyProposalNumbers returns empty ProposalNumbers`() {
         assertTrue(emptyProposalNumbers().isEmpty())
-        assertEquals(emptySet(), emptyProposalNumbers().toSet())
+        assertEquals(emptyProposalNumbers(), emptyProposalNumbers())
     }
 
     @Test
@@ -22,7 +22,7 @@ class `ProposalNumbers tests` {
         val proposalNumbers = proposalNumbersOf(firstNumber, secondNumber)
 
         assertEquals(2, proposalNumbers.size)
-        assertEquals(setOf(firstNumber, secondNumber), proposalNumbers.toSet())
+        assertEquals(proposalNumbersOf(firstNumber, secondNumber), proposalNumbers)
     }
 
     @Test
