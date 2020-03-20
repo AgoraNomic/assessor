@@ -577,5 +577,16 @@ to read
             PRESENT on 8354
             PRESENT on 8355
         }
+
+        votes(PSS) {
+            // TODO resolve conditional vote on 8349: FOR if twg FOR and Assessor not AGAINST, otherwise AGAINST if Assessor AGAINST, otherwise PRESENT
+            FOR on 8350
+            FOR on 8351
+            FOR on 8352
+            AGAINST on 8353
+            FOR on 8354
+            FOR on 8355
+            AGAINST on 8356
+        }
     }
 }
