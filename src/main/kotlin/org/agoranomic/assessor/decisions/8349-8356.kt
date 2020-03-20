@@ -488,4 +488,7 @@ to read
             )
         }
     }
+
+    voting {
+    }
 }
