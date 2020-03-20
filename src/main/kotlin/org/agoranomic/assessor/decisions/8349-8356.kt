@@ -555,5 +555,16 @@ to read
             PRESENT on 8355
             PRESENT on 8356
         }
+
+        votes(Warrigal) {
+            FOR on 8349
+            FOR on 8350
+            FOR on 8351
+            FOR on 8352
+            FOR on 8353
+            AGAINST on 8354
+            FOR on 8355
+            FOR on 8356
+        }
     }
 }
