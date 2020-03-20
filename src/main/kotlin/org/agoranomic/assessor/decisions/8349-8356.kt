@@ -544,5 +544,16 @@ to read
         votes(Murphy) {
             FOR on all
         }
+
+        votes(sukil) {
+            FOR on 8349
+            FOR on 8350
+            FOR on 8351
+            PRESENT on 8352
+            FOR on 8353
+            PRESENT on 8354
+            PRESENT on 8355
+            PRESENT on 8356
+        }
     }
 }
