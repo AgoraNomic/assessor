@@ -9,6 +9,9 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.PRESENT
 
 @UseAssessment
 fun `assessment 8349 to 8356`() = assessment {
@@ -490,5 +493,15 @@ to read
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8349
+            FOR on 8350
+            FOR on 8351
+            FOR on 8352
+            PRESENT on 8353
+            PRESENT on 8354
+            PRESENT on 8355
+            FOR on 8356
+        }
     }
 }
