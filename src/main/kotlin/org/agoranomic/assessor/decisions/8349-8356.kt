@@ -95,13 +95,20 @@ Amend Rule 2551 (Auction End) by deleting "at will"."""
 
             text(
                 """
-Enact a new Rule of Power 1.0 entitled "Temporary CFJ Setup" with the
-following text:
+Amend Rule 2438 (Ribbons) by replacing this text:
 
-  Rules to the contrary notwithstanding, twg CANNOT publish a Notice
-  of Honour.
+  - Otherwise, if e has not been awarded that type of Ribbon or the
+    corresponding type of Glitter since e last earned or came to
+    qualify for that type of Ribbon, e CAN, by announcement, award
+    emself that type of Glitter.
 
-  twg CAN, by announcement, cause this Rule to repeal itself."""
+with this text:
+
+ - Otherwise, if e has not been awarded that type of Ribbon or
+   the corresponding type of Glitter since e last earned or came
+   to qualify for that type of Ribbon, and has not been so
+   awarded five or more times within the past 24 hours, e CAN, by
+   announcement, award emself that type of Glitter."""
             )
         }
 
