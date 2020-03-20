@@ -588,5 +588,9 @@ to read
             FOR on 8355
             AGAINST on 8356
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
