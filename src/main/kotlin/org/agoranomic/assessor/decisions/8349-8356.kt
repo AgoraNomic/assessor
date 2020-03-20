@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV1
 import org.agoranomic.assessor.dsl.ministries.OfficeV1.*
+import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -31,6 +32,13 @@ fun `assessment 8349 to 8356`() = assessment {
         Tailor to twg,
         Treasuror to twg
     )
+
+    strengths {
+        default(3)
+        offices[Speaker]!! add 1
+
+        ministriesV1(offices, allProposals)
+    }
 
     proposals(v1) {
         proposal(8349) {
