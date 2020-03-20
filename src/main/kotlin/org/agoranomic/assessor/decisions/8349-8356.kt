@@ -592,5 +592,9 @@ to read
         votes(G) {
             FOR on all
         }
+
+        votes(o) {
+            FOR on all
+        }
     }
 }
