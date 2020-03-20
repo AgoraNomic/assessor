@@ -540,5 +540,9 @@ to read
             FOR on 8355
             FOR on 8356
         }
+
+        votes(Murphy) {
+            FOR on all
+        }
     }
 }
