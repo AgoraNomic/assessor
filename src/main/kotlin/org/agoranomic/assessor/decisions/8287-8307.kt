@@ -38,7 +38,7 @@ fun `assessment 8287 to 8307`() = assessment {
     proposals(v0) {
         proposal(8287) {
             title("Blot Stabilisation")
-            ai(2.0)
+            ai("2.0")
             author(twg)
 
             text(
@@ -58,7 +58,7 @@ Amend Rule 2555, "Blots", by deleting the following paragraph:
 
         proposal(8288) {
             title("Glitteral")
-            ai(1.0)
+            ai("1.0")
             author(omd)
 
             text(
@@ -80,7 +80,7 @@ should be evaluated.]"""
 
         proposal(8289) {
             title("You're Banned from the Theater")
-            ai(1.0)
+            ai("1.0")
             author(Alexis)
 
             text(
@@ -91,7 +91,7 @@ Repeal Rule 2602 (Glitter)."""
 
         proposal(8290) {
             title("More Headroom")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -111,7 +111,7 @@ with:
 
         proposal(8291) {
             title("Interesting Chambers v3.1")
-            ai(3.0)
+            ai("3.0")
             author(Bernie)
             coauthors(Trigon, Aris, Gaelan, G, Jason, twg)
 
@@ -225,7 +225,7 @@ Set the Treasuror's Interest to [Economy, Economy].
 
         proposal(8292) {
             title("Self-Ratification Simplification Act")
-            ai(3.0)
+            ai("3.0")
             author(Bernie)
             coauthors(twg)
 
@@ -259,7 +259,7 @@ following:
 
         proposal(8293) {
             title("CFJ Bait")
-            ai(1.0)
+            ai("1.0")
             author(Bernie)
             coauthors(twg)
 
@@ -286,7 +286,7 @@ I vote PRESENT on each Agoran decision whose voting is ongoing."""
 
         proposal(8294) {
             title("Authorial Intent")
-            ai(3.0)
+            ai("3.0")
             author(Bernie)
             coauthors(twg)
 
@@ -302,7 +302,7 @@ intent," after "past judgements,"."""
 
         proposal(8295) {
             title("Rewards Reform Act")
-            ai(3.0)
+            ai("3.0")
             author(Bernie)
             coauthors(twg, Alexis)
 
@@ -389,7 +389,7 @@ Amend Rule 2602 ("Glitter") to read:
 
         proposal(8296) {
             title("Divergence")
-            ai(1.0)
+            ai("1.0")
             author(Aris)
             coauthors(G)
 
@@ -421,7 +421,7 @@ to read
 
         proposal(8297) {
             title("Imminent Failure")
-            ai(2.1)
+            ai("2.1")
             author(Aris)
 
             text(
@@ -439,7 +439,7 @@ and renumbering the list accordingly."""
 
         proposal(8298) {
             title("Administrative Adjudication v3")
-            ai(2.0)
+            ai("2.0")
             author(Aris)
             coauthors(Gaelan, twg, G, Jason, Alexis)
 
@@ -476,7 +476,7 @@ Treasuror - Assets
 
         proposal(8299) {
             title("The Reset Button v2")
-            ai(3.0)
+            ai("3.0")
             author(Aris)
             coauthors(G)
 
@@ -502,7 +502,7 @@ Create the following power 3.0 rule entitled "The Reset Button":
 
         proposal(8300) {
             title("Patches")
-            ai(3.0)
+            ai("3.0")
             author(Aris)
 
             text(
@@ -527,7 +527,7 @@ Create the following power 3.0 rule entitled "Patches":
 
         proposal(8301) {
             title("Consolidated Regulatory Recordkeeping v2")
-            ai(3.0)
+            ai("3.0")
             author(Aris)
             coauthors(Jason)
 
@@ -549,7 +549,7 @@ to read
 
         proposal(8302) {
             title("Generic Petitions")
-            ai(1.5)
+            ai("1.5")
             author(Aris)
 
             text(
@@ -577,7 +577,7 @@ applied to regulations and memoranda, for instance.]"""
 
         proposal(8303) {
             title("Contract Patency v3")
-            ai(3.0)
+            ai("3.0")
             author(Aris)
             coauthors(Gaelan, Jason, Falsifian)
 
@@ -667,7 +667,7 @@ Make Gaelan the Notary."""
 
         proposal(8304) {
             title("Rewards Reform Act - v1.1 Patch")
-            ai(2.0)
+            ai("2.0")
             author(Bernie)
             coauthors(twg, Jason)
 
@@ -695,7 +695,7 @@ Agoran week" with "in an officially timely fashion"."""
 
         proposal(8305) {
             title("Keeping Up With the Times")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
 
             text(
@@ -710,7 +710,7 @@ of Nomic" accordingly."""
 
         proposal(8306) {
             title("Deregistration")
-            ai(3.0)
+            ai("3.0")
             author(Gaelan)
 
             text(
@@ -723,7 +723,7 @@ Flip the Citizenship of the following players to Unregistered:
 
         proposal(8307) {
             title("Deregistration")
-            ai(3.0)
+            ai("3.0")
             author(DMargaux)
 
             text(

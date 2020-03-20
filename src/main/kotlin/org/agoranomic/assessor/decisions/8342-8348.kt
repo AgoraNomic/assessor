@@ -43,7 +43,7 @@ fun `assessment 8342 to 8348`() = assessment {
     proposals(v1) {
         proposal(8342) {
             title("Calls with Memoranda")
-            ai(2.0)
+            ai("2.0")
             author(Gaelan)
             coauthors(Aris, G, Alexis)
             chamber(Justice)
@@ -66,7 +66,7 @@ Create a new Power-2 rule titled “Administrative Opinions”: {
 
         proposal(8343) {
             title("Judicial Jocularity Act")
-            ai(1.7)
+            ai("1.7")
             author(twg)
             chamber(Justice)
 
@@ -83,7 +83,7 @@ Amend Rule 591, "Delivering Judgement", by replacing each occurrence of
 
         proposal(8344) {
             title("Unsubstantive interpretation")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
             democratic()
 
@@ -104,7 +104,7 @@ with
 
         proposal(8345) {
             title("Self-punishment")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
             chamber(Justice)
 
@@ -134,7 +134,7 @@ over their zombies.]"""
 
         proposal(8346) {
             title("De-secure Black Ribbons v2")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(ais523)
             democratic()
@@ -150,7 +150,7 @@ Ribbon. When this occurs, this Rule awards that person a Black Ribbon."."""
 
         proposal(8347) {
             title("R2141 power increase v2")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             democratic()
 
@@ -169,7 +169,7 @@ especially with its relatively high ID number.]"""
 
         proposal(8348) {
             title("Summaries Matter")
-            ai(3.1)
+            ai("3.1")
             author(Gaelan)
             democratic()
 

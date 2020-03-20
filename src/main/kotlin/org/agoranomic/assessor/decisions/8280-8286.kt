@@ -19,7 +19,7 @@ fun `assessment 8280 to 8286`() = assessment {
     proposals(v0) {
         proposal(8280) {
             title("Resolve the troubles v1.1")
-            ai(3.0)
+            ai("3.0")
             author(Murphy)
             coauthors(Jason)
 
@@ -108,7 +108,7 @@ BUS: PM Candidacy   Jason Cobb
 
         proposal(8281) {
             title("Nothing to see here, Rule 1030 v2")
-            ai(1.0)
+            ai("1.0")
             author(Gaelan)
 
             text(
@@ -130,7 +130,7 @@ following text: {
 
         proposal(8282) {
             title("Let's do this the hard way v1.1")
-            ai(1.0)
+            ai("1.0")
             author(Falsifian)
 
             text(
@@ -183,7 +183,7 @@ Destroy any CFJs created during The Troubles."""
 
         proposal(8283) {
             title("Ex Post Ribbon")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
 
             text(
@@ -198,7 +198,7 @@ a Red Ribbon.""""
 
         proposal(8284) {
             title("Line-Item Power")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
 
             text(
@@ -209,7 +209,7 @@ Change the power of Rule 2597 (Line-Item Veto) to 3."""
 
         proposal(8285) {
             title("Line-Item Roulette")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
 
             text(
@@ -226,7 +226,7 @@ any proposal has been vetoed." to the final paragraph."""
 
         proposal(8286) {
             title("I Forbid Vetos!")
-            ai(1.0)
+            ai("1.0")
             author(Aris)
 
             text(

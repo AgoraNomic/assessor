@@ -18,7 +18,7 @@ fun `assessment 8277 to 8279`() = assessment {
     proposals(v0) {
         proposal(8277) {
             title("Minor Giveaway")
-            ai(1.0)
+            ai("1.0")
             author(G)
 
             text(
@@ -30,7 +30,7 @@ are listed in the most recent Registrar's Weekly Report."""
 
         proposal(8278) {
             title("Resolve the troubles")
-            ai(3.0)
+            ai("3.0")
             author(Murphy)
 
             text(
@@ -129,7 +129,7 @@ BUS: PM Candidacy   Jason Cobb
 
         proposal(8279) {
             title("Equitable Detroubling")
-            ai(3.0)
+            ai("3.0")
             author(Aris)
             coauthors(Murphy)
 

@@ -23,7 +23,7 @@ fun `assessment 8202 to 8214`() = assessment {
     proposals(v0) {
         proposal(8202) {
             title("Police Power")
-            ai(1.7)
+            ai("1.7")
             author(Falsifian)
             coauthors(Jason)
 
@@ -54,7 +54,7 @@ current form. I don't know exactly what happened there.]"""
 
         proposal(8203) {
             title("Fixing Summary Judgement")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
 
             text(
@@ -71,7 +71,7 @@ Amend Rule 2531 ("Referee Accountability") as follows:
 
         proposal(8204) {
             title("SMH @ Herald")
-            ai(1.0)
+            ai("1.0")
             author(RLee)
 
             text(
@@ -85,7 +85,7 @@ instance values in the game is equal to 0."""
 
         proposal(8205) {
             title("Timing proposal w/ no effect")
-            ai(1.7)
+            ai("1.7")
             author(RLee)
 
             text(
@@ -97,7 +97,7 @@ adoption of this proposal to the last person to vote FOR this proposal."""
 
         proposal(8206) {
             title("Rule 2472 Simplification")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
 
             text(
@@ -115,7 +115,7 @@ with the following paragraph:
 
         proposal(8207) {
             title("no power is all powerful")
-            ai(1.0)
+            ai("1.0")
             author(G)
 
             text(
@@ -128,7 +128,7 @@ Create the following Rule, "Supreme Power", Power=4:
 
         proposal(8208) {
             title("Regulated actions reform (v2)")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(Aris, omd, G, Falsifian)
 
@@ -185,7 +185,7 @@ Set the power of Rule 2125 to 3.1."""
 
         proposal(8209) {
             title("AFK Reform Act v1.1")
-            ai(2.0)
+            ai("2.0")
             author(DMargaux)
             coauthors(G, Jason)
 
@@ -209,7 +209,7 @@ Immediately following this sentence:
 
         proposal(8210) {
             title("Single-party Contracts")
-            ai(2.5)
+            ai("2.5")
             author(Jason)
 
             text(
@@ -221,7 +221,7 @@ more" with the text "Any group of one or more"."""
 
         proposal(8211) {
             title("Law School")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -242,7 +242,7 @@ of J.N."""
 
         proposal(8212) {
             title("Rule Recreation Reversal")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -253,7 +253,7 @@ Repeal Rule 2517."""
 
         proposal(8213) {
             title("Space Fixes")
-            ai(1.0)
+            ai("1.0")
             author(nch)
 
             text(
@@ -279,7 +279,7 @@ Flip every spaceships' Armour switch to 10."""
 
         proposal(8214) {
             title("Space Isn't Linear")
-            ai(1.0)
+            ai("1.0")
             author(nch)
 
             text(

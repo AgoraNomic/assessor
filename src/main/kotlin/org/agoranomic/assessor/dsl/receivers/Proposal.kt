@@ -15,17 +15,17 @@ interface ProposalCommonReceiver {
     fun coauthors(persons: Persons)
 
     fun adoption_index(value: ProposalAI)
-    fun adoption_index(value: Double)
 }
 
 fun ProposalCommonReceiver.coauthors(vararg people: Person) = coauthors(personsOf(*people))
 
 fun ProposalCommonReceiver.adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
+fun ProposalCommonReceiver.adoption_index(value: String) = adoption_index(BigDecimal(value))
 fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toBigDecimal())
 
 fun ProposalCommonReceiver.ai(value: ProposalAI) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: BigDecimal) = adoption_index(value)
-fun ProposalCommonReceiver.ai(value: Double) = adoption_index(value)
+fun ProposalCommonReceiver.ai(value: String) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: Int) = adoption_index(value)
 
 @AssessmentDsl
@@ -70,9 +70,6 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
     override fun adoption_index(value: ProposalAI) {
         aiValue.set(value)
     }
-
-    override fun adoption_index(value: Double) =
-        adoption_index(BigDecimal(((value * 10) + 0.5).toInt()).setScale(1) / BigDecimal.TEN)
 
     override fun classless() {
         classAndChamberValue.set(ProposalClassAndChamber.Classless)

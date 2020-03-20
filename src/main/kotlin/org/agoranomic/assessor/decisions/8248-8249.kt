@@ -22,7 +22,7 @@ fun `assessment 8248 to 8249`() = assessment {
     proposals(v0) {
         proposal(8248) {
             title("Publishing definition")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(Aris)
 
@@ -42,7 +42,7 @@ with the text
 
         proposal(8249) {
             title("No Harm No Foul")
-            ai(1.0)
+            ai("1.0")
             author(JacobArduino)
             coauthors(twg)
 

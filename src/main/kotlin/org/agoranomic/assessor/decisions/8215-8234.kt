@@ -15,7 +15,7 @@ fun `assessment 8215 to 8234`() = assessment {
     proposals(v0) {
         proposal(8215) {
             title("recusal simplification")
-            ai(1.7)
+            ai("1.7")
             author(G)
 
             text(
@@ -59,7 +59,7 @@ figure out if the recused are still interested in judging.
 
         proposal(8216) {
             title("NO MORE APATHY")
-            ai(1.0)
+            ai("1.0")
             author(RLee)
 
             text(
@@ -70,7 +70,7 @@ Repeal rule 2465 "Victory By Apathy""""
 
         proposal(8217) {
             title("penance as a service")
-            ai(2.0)
+            ai("2.0")
             author(G)
 
             text(
@@ -92,7 +92,7 @@ with:
 
         proposal(8218) {
             title("No, you didn't publish that")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -111,7 +111,7 @@ with the text
 
         proposal(8221) {
             title("Usage de-capitalization")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(Aris)
 
@@ -190,7 +190,7 @@ text "with 2 Agoran consent"."""
 
         proposal(8222) {
             title("Fixing Summary Judgement (v2)")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
 
             text(
@@ -221,7 +221,7 @@ Amend Rule 2531 as follows:
 
         proposal(8223) {
             title("No secret contracts")
-            ai(2.5)
+            ai("2.5")
             author(RLee)
 
             text(
@@ -238,7 +238,7 @@ it is known as a contract""""
 
         proposal(8224) {
             title("Remove Inactive Sods!")
-            ai(3.0)
+            ai("3.0")
             author(RLee)
 
             text(
@@ -250,7 +250,7 @@ days."""
 
         proposal(8227) {
             title("Fresh start v2")
-            ai(3.1)
+            ai("3.1")
             author(Falsifian)
             coauthors(G)
 
@@ -269,7 +269,7 @@ the time e would otherwise be able to register again.]"""
 
         proposal(8228) {
             title("Active Officers")
-            ai(3.0)
+            ai("3.0")
             author(G)
             coauthors(Jason)
 
@@ -292,7 +292,7 @@ after the paragraph beginning:
 
         proposal(8229) {
             title("freeing up space")
-            ai(1.0)
+            ai("1.0")
             author(G)
 
             text(
@@ -313,7 +313,7 @@ Repeal the following rules in this order:
 
         proposal(8230) {
             title("Close the wormhole")
-            ai(1.0)
+            ai("1.0")
             author(Murphy)
 
             text(
@@ -332,7 +332,7 @@ Set each player's Fame to 0."""
 
         proposal(8231) {
             title("Three-dimensional space v1.1")
-            ai(1.0)
+            ai("1.0")
             author(Murphy)
             coauthors(Aris)
 
@@ -388,7 +388,7 @@ Move spaceships to Sectors as follows, based on their owners:
 
         proposal(8232) {
             title("Increased transparency v1.1")
-            ai(3.0)
+            ai("3.0")
             author(Murphy)
             coauthors(Jason, twg)
 
@@ -414,7 +414,7 @@ types of ribbons with the following sections:
 
         proposal(8233) {
             title("Duties")
-            ai(3.0)
+            ai("3.0")
             author(Murphy)
 
             text(
@@ -552,7 +552,7 @@ with this text:
 
         proposal(8234) {
             title("auto-balance")
-            ai(1.0)
+            ai("1.0")
             author(G)
             coauthors(Jason)
 

@@ -20,7 +20,7 @@ fun `assessment 8253 to 8265`() = assessment {
     proposals(v0) {
         proposal(8253) {
             title("Clarify salary")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             coauthors(G, Jason)
 
@@ -51,7 +51,7 @@ is left as an exercise for future proposal authors.]"""
 
         proposal(8254) {
             title("Anything is POSSIBLE")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -66,7 +66,7 @@ defines it.]"""
 
         proposal(8255) {
             title("Possibly-Indeterminate Switches")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -91,7 +91,7 @@ always-determinate system cuts off some use-cases.]"""
 
         proposal(8256) {
             title("Yes, Prime Minister")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             coauthors(Gaelan)
 
@@ -113,7 +113,7 @@ Amend Rule 2423 (First Among Equals) by appending this text:
 
         proposal(8258) {
             title("Elections Fix")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
 
             text(
@@ -126,7 +126,7 @@ office"."""
 
         proposal(8260) {
             title("The Low Zombie")
-            ai(1.0)
+            ai("1.0")
             author(G)
 
             text(
@@ -138,7 +138,7 @@ Create a Rule titled "Boo!" with the following text:
 
         proposal(8261) {
             title("The High Zombie")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -151,7 +151,7 @@ Create a Power=3 Rule titled "Boo!!" with the following text:
 
         proposal(8262) {
             title("trick candles")
-            ai(1.0)
+            ai("1.0")
             author(G)
 
             text(
@@ -165,7 +165,7 @@ Create a Rule entitled "Blink" with the following text:
 
         proposal(8263) {
             title("Persistent")
-            ai(3.0)
+            ai("3.0")
             author(nch)
 
             text(
@@ -181,7 +181,7 @@ I submit the following proposal, "Persistent", AI=3 {
 
         proposal(8264) {
             title("Encouraging Democracy Through Capitalism or Who Pays Subs Full Wages Anyway")
-            ai(1.0)
+            ai("1.0")
             author(nch)
 
             text(
@@ -210,7 +210,7 @@ and Cool and help spread the workload and reduce consolidation."""
 
         proposal(8265) {
             title("")
-            ai(3.0)
+            ai("3.0")
             author(twg)
             coauthors(Murphy, Aris, Jason)
 

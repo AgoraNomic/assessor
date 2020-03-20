@@ -20,7 +20,7 @@ fun `assessment 8266 to 8274`() = assessment {
     proposals(v0) {
         proposal(8266) {
             title("Glitter")
-            ai(1.0)
+            ai("1.0")
             author(nch)
 
             text(
@@ -37,7 +37,7 @@ Enact a Power-1 rule titled "Glitter" with the following text {
 
         proposal(8267) {
             title("Emerald Ribbons")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -55,7 +55,7 @@ to initiate and become candidates in elections.]"""
 
         proposal(8268) {
             title("Deputisation fix")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -72,7 +72,7 @@ way of phrasing this requirement.]"""
 
         proposal(8269) {
             title("Clean up distribution mechanisms")
-            ai(3.0)
+            ai("3.0")
             author(omd)
 
             text(
@@ -95,7 +95,7 @@ separate mechanisms for distributing proposals.]"""
 
         proposal(8270) {
             title("Self-ratifying statements")
-            ai(3.0)
+            ai("3.0")
             author(omd)
 
             text(
@@ -193,7 +193,7 @@ with:
 
         proposal(8271) {
             title("Doctorate expectations")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -219,7 +219,7 @@ Amend Rule 1367 (Degrees) by replacing its last paragraph with:
 
         proposal(8272) {
             title("The Fat Director")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             coauthors(Gaelan, G)
 
@@ -260,7 +260,7 @@ to "Comptrollor", and I didn't want to merge it with that either.]"""
 
         proposal(8273) {
             title("Clean up your own mess, without making a bigger one")
-            ai(1.0)
+            ai("1.0")
             author(Gaelan)
             coauthors(Jason)
 
@@ -290,7 +290,7 @@ I think this works, but we might need to clarify the meaning of
 
         proposal(8274) {
             title("Interested proposals")
-            ai(1.0)
+            ai("1.0")
             author(Murphy)
             coauthors(Oerjan)
 

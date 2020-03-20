@@ -43,7 +43,7 @@ fun `assessment 8322 to 8341`() = assessment {
     proposals(v1) {
         proposal(8322) {
             title("Unrepetition v1.1")
-            ai(3.0)
+            ai("3.0")
             author(Falsifian)
             coauthors(Alexis, twg)
             democratic()
@@ -66,7 +66,7 @@ but it's nice to have certainty about the state of the ruleset.]"""
 
         proposal(8323) {
             title("Secure Ribbons")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             democratic()
 
@@ -79,7 +79,7 @@ person switch" with the text "Ribbon Ownership is a secured person switch"."""
 
         proposal(8324) {
             title("Democratic unassignment")
-            ai(2.0)
+            ai("2.0")
             author(Falsifian)
             chamber(Legislation)
 
@@ -94,7 +94,7 @@ ordinary proposal in the Proposal Pool is unset"."""
 
         proposal(8325) {
             title("Inflation Vote")
-            ai(2.0)
+            ai("2.0")
             author(Falsifian)
             chamber(Economy)
 
@@ -138,7 +138,7 @@ in decimal with commas separating groups of three digits, as in
 
         proposal(8326) {
             title("Attempted cleanup")
-            ai(3.0)
+            ai("3.0")
             author(Falsifian)
             democratic()
 
@@ -150,7 +150,7 @@ Repeal Rule 2604 ("Nothing to see here, Rule 1030,") and Rule 2600 ("Boo!!")."""
 
         proposal(8327) {
             title("Blink test v1.2")
-            ai(1.0)
+            ai("1.0")
             author(Falsifian)
             chamber(Legislation)
 
@@ -167,7 +167,7 @@ Amend Rule 2601 to read in full:
 
         proposal(8328) {
             title("The Eternal Sprit")
-            ai(3.0)
+            ai("3.0")
             author(Falsifian)
             democratic()
 
@@ -180,7 +180,7 @@ person"."""
 
         proposal(8329) {
             title("RtRW Reschedule")
-            ai(1.0)
+            ai("1.0")
             author(Alexis)
             chamber(Participation)
 
@@ -198,7 +198,7 @@ Amend Rule 2327 (Read the Ruleset Week) by adding the following paragraph:
 
         proposal(8330) {
             title("No looting white ribbons")
-            ai(3.0)
+            ai("3.0")
             author(G)
             democratic()
 
@@ -220,7 +220,7 @@ with:
 
         proposal(8331) {
             title("Promissory cleanliness")
-            ai(1.7)
+            ai("1.7")
             author(Warrigal)
             chamber(Justice)
 
@@ -235,7 +235,7 @@ only if the pledge no longer serves any significant purpose."""
 
         proposal(8332) {
             title("Switch Responsibility Responsibility")
-            ai(1.0)
+            ai("1.0")
             author(Murphy)
             coauthors(Alexis)
             chamber(Efficiency)
@@ -252,7 +252,7 @@ Amend Rule 2603 (Switch Responsibility) by appending this text:
 
         proposal(8333) {
             title("Meaningful extra votes")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             coauthors(Alexis)
             chamber(Legislation)
@@ -271,7 +271,7 @@ than e would have" with "voting strength twice what e would have"."""
 
         proposal(8334) {
             title("Meaningless extra coins")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             coauthors(Alexis)
             chamber(Economy)
@@ -286,7 +286,7 @@ Amend Rule 2483 (Economics) by appending this text:
 
         proposal(8335) {
             title("Consistent ADoP duties")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             chamber(Efficiency)
 
@@ -313,7 +313,7 @@ the ADoP wasn't required to do them.]"""
 
         proposal(8336) {
             title("Define \"publicly\"")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             democratic()
 
@@ -328,7 +328,7 @@ is" the following sentence:
 
         proposal(8337) {
             title("Fix Auctions")
-            ai(1.0)
+            ai("1.0")
             author(Murphy)
             chamber(Economy)
 
@@ -349,7 +349,7 @@ with this text:
 
         proposal(8338) {
             title("Clarify quorum (option 1)")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             chamber(Legislation)
 
@@ -366,7 +366,7 @@ proposal" with "Agoran decision on whether to adopt a proposal"."""
 
         proposal(8339) {
             title("Clarify quorum (option 2)")
-            ai(2.0)
+            ai("2.0")
             author(Murphy)
             chamber(Legislation)
 
@@ -383,7 +383,7 @@ proposal" with "Agoran decision that adopted a proposal"."""
 
         proposal(8340) {
             title("The Paradox of Self-Appointment")
-            ai(1.0)
+            ai("1.0")
             author(Alexis)
             chamber(Participation)
 
@@ -405,7 +405,7 @@ sentences of the second paragraph to the first paragraph."""
 
         proposal(8341) {
             title("Support of the Person")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
             coauthors(G)
             democratic()

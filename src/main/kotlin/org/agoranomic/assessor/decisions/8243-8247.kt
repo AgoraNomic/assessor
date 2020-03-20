@@ -21,7 +21,7 @@ fun `assessment 8243 to 8247`() = assessment {
     proposals(v0) {
         proposal(8243) {
             title("Self-ratifying regulations")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -35,7 +35,7 @@ report is self-ratifying."."""
 
         proposal(8244) {
             title("Crime Cleanup")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -61,7 +61,7 @@ Amend Rule 2593 by replacing the text "Class-5 Crime" with the text
 
         proposal(8245) {
             title("Pool drain timing")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -88,7 +88,7 @@ I distribute" emails are less needed, and e can time stuff.]"""
 
         proposal(8246) {
             title("Tracking of Master")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
 
             text(
@@ -107,7 +107,7 @@ required by the last paragraph of Rule 2139.]"""
 
         proposal(8247) {
             title("Quorum Defailure")
-            ai(1.0)
+            ai("1.0")
             author(JacobArduino)
             coauthors(twg)
 

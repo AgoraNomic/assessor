@@ -47,7 +47,7 @@ fun `assessment 8308 to 8321`() = assessment {
     proposals(v1) {
         proposal(8308) {
             title("Imposing order on the order")
-            ai(3.0)
+            ai("3.0")
             author(Falsifian)
             classless()
 
@@ -64,7 +64,7 @@ list it is, put it at the end of the list."""
 
         proposal(8309) {
             title("A Degree of Inefficiency")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
             democratic()
 
@@ -78,7 +78,7 @@ paragraph."""
 
         proposal(8310) {
             title("Deputisation timeliness")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(Alexis)
             classless()
@@ -137,7 +137,7 @@ only kept it for non-interim holders (also per Alexis's suggestion).
 
         proposal(8311) {
             title("Rewards Patch & Equitable Remedy")
-            ai(1.0)
+            ai("1.0")
             author(twg)
             chamber(Economy)
 
@@ -172,7 +172,7 @@ Lost and Found Department.
 
         proposal(8312) {
             title("On Possibility")
-            ai(1.0)
+            ai("1.0")
             author(Alexis)
             chamber(Efficiency)
 
@@ -204,7 +204,7 @@ Enact a new power-1 rule entitled "Default Mechanisms" reading as follows:
 
         proposal(8313) {
             title("Support of the Person")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
             coauthors(G)
             democratic()
@@ -232,7 +232,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
 
         proposal(8314) {
             title("Finite Gifting")
-            ai(1.0)
+            ai("1.0")
             author(Aris)
             chamber(Economy)
 
@@ -252,7 +252,7 @@ to read
 
         proposal(8315) {
             title("Clearer Resolutions")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
             democratic()
 
@@ -331,7 +331,7 @@ Amend Rule 2034 (Vote Protection and Cutoff for Challenges) to read:
 
         proposal(8316) {
             title("Zombie voting package")
-            ai(3.0)
+            ai("3.0")
             author(Alexis)
             democratic()
 
@@ -403,7 +403,7 @@ Enact a new power-2 rule entitled "Zombie Voting" reading as follows:
 
         proposal(8317) {
             title("Zombie trade")
-            ai(1.0)
+            ai("1.0")
             author(Aris)
             chamber(Economy)
 
@@ -470,7 +470,7 @@ Create a new power-2 Rule entitled "Zombie Trusts":
 
         proposal(8318) {
             title("Notorial Economy")
-            ai(1.0)
+            ai("1.0")
             author(Aris)
             chamber(Efficiency)
 
@@ -482,7 +482,7 @@ If the Notary's Interest is the empty set, change it to [Economy]."""
 
         proposal(8319) {
             title("Sergeant-at-Arms")
-            ai(2.0)
+            ai("2.0")
             author(Aris)
             chamber(Legislation)
 
@@ -506,7 +506,7 @@ dictatorship. The others are secured out of an abundance of caution.]"""
 
         proposal(8320) {
             title("Promotorial Assignment")
-            ai(2.0)
+            ai("2.0")
             author(Aris)
             chamber(Legislation)
 
@@ -521,7 +521,7 @@ of the last paragraph."""
 
         proposal(8321) {
             title("Untying Quorum")
-            ai(2.0)
+            ai("2.0")
             author(Aris)
             chamber(Legislation)
 

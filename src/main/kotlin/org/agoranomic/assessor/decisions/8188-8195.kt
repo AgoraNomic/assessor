@@ -22,7 +22,7 @@ fun `assessment 8188 to 8195`() = assessment {
         proposal(8188) {
             title("Blanket Denial")
             author(G)
-            ai(3.0)
+            ai("3.0")
             text(
                 """
 Amend Rule 2201 (Self-Ratification) by replacing:
@@ -37,7 +37,7 @@ with
         proposal(8189) {
             title("Rule 2479 Cleanup (v1.2)")
             author(Jason)
-            ai(1.7)
+            ai("1.7")
             text(
                 """
 Amend Rule 2479 ("Official Justice") as follows:
@@ -65,7 +65,7 @@ with the text
             title("Report Rewards")
             author(G)
             coauthors(DMargaux)
-            ai(2.0)
+            ai("2.0")
             text(
                 """
 Amend Rule 1006 (Offices) by prepending the following text to the 1st
@@ -89,7 +89,7 @@ with:
         proposal(8191) {
             title("Spaceships")
             author(RLee)
-            ai(1.1)
+            ai("1.1")
             text(
                 """
 Create a spaceship in the possession of each player without a
@@ -101,7 +101,7 @@ spaceship
         proposal(8192) {
             title("auctions have fees")
             author(Falsifian)
-            ai(1.0)
+            ai("1.0")
             text(
                 """
 [The payment rule for auctions just says that if you happen to have an
@@ -136,7 +136,7 @@ debt"].
             title("Timeline Control Ordnance v2")
             author(Aris)
             coauthors(omd, Jason)
-            ai(3.0)
+            ai("3.0")
             text(
                 """
 Create a spaceship in the possession of each player without a

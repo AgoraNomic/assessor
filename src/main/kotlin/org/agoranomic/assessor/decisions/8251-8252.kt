@@ -21,7 +21,7 @@ fun `assessment 8251 to 8252`() = assessment {
     proposals(v0) {
         proposal(8251) {
             title("Ruleset definition")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -41,7 +41,7 @@ definition anyway, but may be useful to have it there]."""
 
         proposal(8252) {
             title("Blasphemy")
-            ai(1.0)
+            ai("1.0")
             author(Jason)
 
             text(

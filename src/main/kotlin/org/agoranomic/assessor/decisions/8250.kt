@@ -21,7 +21,7 @@ fun `assessment 8250`() = assessment {
     proposals(v0) {
         proposal(8250) {
             title("Finger bending")
-            ai(1.7)
+            ai("1.7")
             author(Murphy)
             coauthors(twg)
 

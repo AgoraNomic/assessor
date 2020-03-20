@@ -24,7 +24,7 @@ fun `assessment 8188A to 8195A`() = assessment {
     proposals(v0) {
         proposal(8188) {
             title("Blanket Denial")
-            ai(3.0)
+            ai("3.0")
             author(G)
 
             text(
@@ -39,7 +39,7 @@ with
 
         proposal(8189) {
             title("Rule 2479 Cleanup (v1.2)")
-            ai(1.7)
+            ai("1.7")
             author(Jason)
 
             text(
@@ -66,7 +66,7 @@ with the text
 
         proposal(8190) {
             title("Report Rewards")
-            ai(2.0)
+            ai("2.0")
             author(G)
             coauthors(DMargaux)
 
@@ -91,7 +91,7 @@ with:
 
         proposal(8191) {
             title("Spaceships")
-            ai(1.1)
+            ai("1.1")
             author(RLee)
 
             text(
@@ -103,7 +103,7 @@ spaceship"""
 
         proposal(8192) {
             title("auctions have fees")
-            ai(1.0)
+            ai("1.0")
             author(G)
 
             text(
@@ -133,7 +133,7 @@ debt"]."""
 
         proposal(8195) {
             title("Timeline Control Ordnance v2")
-            ai(3.0)
+            ai("3.0")
             author(Aris)
             coauthors(omd, Jason)
 

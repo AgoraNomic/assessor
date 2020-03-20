@@ -258,20 +258,16 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
         }
 
         @Test
-        fun `double to AI conversion works`() {
+        fun `string to AI conversion works`() {
             for (integerPart in (0..3).map { it.toString() }) {
                 for (decimalPart in (0..9).map { it.toString() }) {
                     val aiString = "$integerPart.$decimalPart"
-
-                    // toDouble returns the nearest double value to the String value (I think?), which is the same as
-                    // what it would be represented as in a source code literal.
-                    val aiDouble = aiString.toDouble()
 
                     val expectedAI = ProposalAI(aiString.toBigDecimal())
 
                     val proposal = compile {
                         setupForAI()
-                        ai(aiDouble)
+                        ai(aiString)
                     }
 
                     assertEquals(expectedAI, proposal.ai)

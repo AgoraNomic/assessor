@@ -23,7 +23,7 @@ fun `assessment 8235 to 8242`() = assessment {
     proposals(v0) {
         proposal(8235) {
             title("Unified fine creation syntax")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -49,7 +49,7 @@ not exceeding 2) on em"."""
 
         proposal(8236) {
             title("Definition de-capitalization")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(Aris)
 
@@ -117,7 +117,7 @@ Amend the only list in Rule 2124 ("Agoran Satisfaction") to read:
 
         proposal(8237) {
             title("Repairing Defeated Spaceships v3")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
             coauthors(twg, Jason)
 
@@ -146,7 +146,7 @@ increase"]"""
 
         proposal(8238) {
             title("Cancelling Proposals (arr. for violin)")
-            ai(3.0)
+            ai("3.0")
             author(JacobArduino)
             coauthors(twg, G)
 
@@ -187,7 +187,7 @@ item to the unnumbered list in between the two previously existing items:
 
         proposal(8239) {
             title("The Editor (v2.0.1)")
-            ai(1.0)
+            ai("1.0")
             author(Jason)
             coauthors(G, Aris, Trigon)
 
@@ -227,7 +227,7 @@ Enact a new Rule with power 1, title "The Editor", and text as follows:
 
         proposal(8240) {
             title("Regulation clarification")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -247,7 +247,7 @@ Amend Rule 2493 ("Regulations") as follows:
 
         proposal(8241) {
             title("Secured switches (v2.0)")
-            ai(3.0)
+            ai("3.0")
             author(Falsifian)
 
             text(
@@ -305,7 +305,7 @@ Amend Rule 478 as follows:
 
         proposal(8242) {
             title("Let the dead rest")
-            ai(3.0)
+            ai("3.0")
             author(Falsifian)
 
             text(

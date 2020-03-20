@@ -19,7 +19,7 @@ fun `assessment 8275 to 8276`() = assessment {
     proposals(v0) {
         proposal(8275) {
             title("\"By announcement\" clarification")
-            ai(3.0)
+            ai("3.0")
             author(Jason)
 
             text(
@@ -40,7 +40,7 @@ with the text
 
         proposal(8276) {
             title("Various Election Fixes v2")
-            ai(2.0)
+            ai("2.0")
             author(Jason)
 
             text(

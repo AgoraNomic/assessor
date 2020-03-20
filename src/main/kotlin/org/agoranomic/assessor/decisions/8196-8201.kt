@@ -26,7 +26,7 @@ fun `assessment 8196 to 8201`() = assessment {
             title("Perfecting pledges (v1.2)")
             author(Jason)
             coauthors(Falsifian)
-            ai(1.7)
+            ai("1.7")
             text(
                 """
 [Comment: This clarifies the wording to explicitly use both the time
@@ -54,7 +54,7 @@ Amend the first paragraph of Rule 2450 ("Pledges") to read:
         // Decision on 8197 was never initiated
 //            proposal(8197) {
 //                title("no power is all powerful")
-//                ai(1) // Proposal AI is none, decisions AI is 1
+//                ai("1") // Proposal AI is none, decisions AI is 1
 //                author(G)
 //                text(
 //                    """
@@ -66,14 +66,14 @@ Amend the first paragraph of Rule 2450 ("Pledges") to read:
 
         proposal(8198) {
             title("Be gone, foul demon!")
-            ai(1)
+            ai("1")
             author(Jason)
             text("""Repeal Rule 2596 ("The Ritual").""")
         }
 
         proposal(8199) {
             title("Fixing instant runoff")
-            ai(3)
+            ai("3")
             author(Jason)
             text(
                 """ 
@@ -87,7 +87,7 @@ Amend the first paragraph of Rule 2450 ("Pledges") to read:
 
         proposal(8200) {
             title("Sane AI Defaulting")
-            ai(3)
+            ai("3")
             author(Aris)
             text(
                 """
@@ -107,7 +107,7 @@ with:
 
         proposal(8201) {
             title("Just Make Them Write It Out")
-            ai(3)
+            ai("3")
             author(Aris)
             text(
                 """
