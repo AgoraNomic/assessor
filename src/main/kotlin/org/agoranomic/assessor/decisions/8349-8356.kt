@@ -569,7 +569,7 @@ to read
         }
 
         votes(Falsifian) {
-            // TODO resolve conditional vote on 8349: AGAINST if Arbitor AGAINST, otherwise AGAINST IF VETO, otherwise PRESENT
+            PRESENT on 8349 comment conditional("Arbitor not AGAINST, and no Notice of Veto was published")
             endorse(Alexis) on 8350
             endorse(Jason) on 8351
             endorse(G) on 8352
@@ -579,7 +579,7 @@ to read
         }
 
         votes(PSS) {
-            // TODO resolve conditional vote on 8349: FOR if twg FOR and Assessor not AGAINST, otherwise AGAINST if Assessor AGAINST, otherwise PRESENT
+            PRESENT on 8349 comment conditional("twg not FOR, but Assessor not AGAINST")
             FOR on 8350
             FOR on 8351
             FOR on 8352
