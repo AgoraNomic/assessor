@@ -529,5 +529,16 @@ to read
         votes(Bernie) {
             endorse(Jason) on all
         }
+
+        votes(Alexis) {
+            AGAINST on 8349
+            FOR on 8350
+            FOR on 8351
+            FOR on 8352
+            FOR on 8353
+            FOR on 8354
+            FOR on 8355
+            FOR on 8356
+        }
     }
 }
