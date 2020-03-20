@@ -10,6 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.SimpleVote
 import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
 
@@ -565,6 +566,16 @@ to read
             AGAINST on 8354
             FOR on 8355
             FOR on 8356
+        }
+
+        votes(Falsifian) {
+            // TODO resolve conditional vote on 8349: AGAINST if Arbitor AGAINST, otherwise AGAINST IF VETO, otherwise PRESENT
+            endorse(Alexis) on 8350
+            endorse(Jason) on 8351
+            endorse(G) on 8352
+            endorse(Murphy) on 8353
+            PRESENT on 8354
+            PRESENT on 8355
         }
     }
 }
