@@ -505,17 +505,6 @@ to read
             FOR on 8356
         }
 
-        votes(RLee) {
-            AGAINST on 8349
-            AGAINST on 8350
-            PRESENT on 8351
-            FOR on 8352
-            FOR on 8353
-            FOR on 8354
-            FOR on 8355
-            AGAINST on 8356
-        }
-
         votes(Jason) {
             FOR on 8349
             FOR on 8350
