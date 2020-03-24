@@ -22,6 +22,7 @@ private const val FORM_LONG = "long"
 private const val FORM_SHORT = "short"
 private const val FORM_OFFICIAL = "official"
 private const val FORM_JSON = "json"
+private const val FORM_REWARDS = "rewards"
 
 val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
 val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
@@ -114,11 +115,13 @@ private fun formOptionGroup(): OptionGroup {
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
     val optFormOfficial = Option.builder().longOpt(FORM_OFFICIAL).desc("Official report form").build()
     val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
+    val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
     val optGroupForm = OptionGroup().also {
         it.addOption(optFormLong)
         it.addOption(optFormShort)
         it.addOption(optFormOfficial)
         it.addOption(optFormJson)
+        it.addOption(optFormRewards)
     }
 
     return optGroupForm
@@ -222,6 +225,8 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
         )
 
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
+
+        commandLine.hasOption(FORM_REWARDS) -> RewardsFormatter
 
         else -> null
     }

@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.ProposalResolutionMap
-import org.agoranomic.assessor.lib.ReportConfig
-import org.agoranomic.assessor.lib.jsonReport
-import org.agoranomic.assessor.lib.report
+import org.agoranomic.assessor.lib.*
 
 interface AssessmentFormatter {
     fun format(assessment: ProposalResolutionMap): String
@@ -18,5 +15,11 @@ data class HumanReadableFormatter(val config: ReportConfig) : AssessmentFormatte
 object JsonFormatter : AssessmentFormatter {
     override fun format(assessment: ProposalResolutionMap): String {
         return jsonReport(assessment)
+    }
+}
+
+object RewardsFormatter : AssessmentFormatter {
+    override fun format(assessment: ProposalResolutionMap): String {
+        return rewardsReport(assessment)
     }
 }

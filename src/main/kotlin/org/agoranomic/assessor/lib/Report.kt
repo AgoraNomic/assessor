@@ -3,6 +3,10 @@ package org.agoranomic.assessor.lib
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
+import org.agoranomic.assessor.lib.util.ceil
+import org.agoranomic.assessor.lib.util.compareTo
+import org.agoranomic.assessor.lib.util.times
+import java.math.RoundingMode
 
 private fun StringBuilder.emitLine() {
     this.append('\n')
@@ -251,4 +255,33 @@ fun jsonReport(resolutionMap: ProposalResolutionMap): String {
     val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
 
     return json.stringify(JsonObject.serializer(), out)
+}
+
+fun rewardsReport(resolutionMap: ProposalResolutionMap): String {
+    val result =
+        resolutionMap
+            .adoptedProposals()
+            .map {
+                val number = it.number
+                val author = it.author
+                val ai = it.ai
+
+                val votes = resolutionMap[it.number].votes
+                val voteCountFor = votes.filterVoteKind(VoteKind.FOR).count()
+                val voteCountAgainst = votes.filterVoteKind(VoteKind.AGAINST).count()
+
+                val unroundedReward = (voteCountFor - voteCountAgainst) * ai.raw
+                val roundedReward = ceil(unroundedReward)
+
+                val coinAmountString =
+                    if (unroundedReward.compareTo(roundedReward) == 0)
+                        roundedReward.toString()
+                    else
+                        "$unroundedReward -> $roundedReward"
+
+                "For the adoption of Proposal ${number.raw}, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*${ai.raw}=$coinAmountString coins."
+            }
+            .joinToString("\n")
+
+    return result
 }
