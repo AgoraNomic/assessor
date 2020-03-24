@@ -59,10 +59,20 @@ private fun isAIAdopted(ai: ProposalAI, strengthFor: VotingStrength, strengthAga
     return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
 }
 
-typealias RawProposalQuorum = BigInteger
+typealias RawQuorum = BigInteger
+
+inline class Quorum(val raw: RawQuorum) {
+    constructor(raw: Int) : this(raw.toBigInteger())
+
+    override fun toString(): String = raw.toString()
+}
+
+operator fun Quorum.compareTo(other: Quorum) = (this.raw).compareTo(other.raw)
+
+typealias RawProposalQuorum = Quorum
 
 inline class ProposalQuorum(val raw: RawProposalQuorum) {
-    constructor(raw: Int) : this(raw.toBigInteger())
+    constructor(raw: Int) : this(Quorum(raw))
 
     override fun toString(): String = raw.toString()
 }
@@ -92,7 +102,7 @@ fun resolve(
         }
     }
 
-    if (simplifiedVotes.voters.size < quorum.raw) {
+    if (simplifiedVotes.voters.size < quorum.raw.raw) {
         return ResolutionData(
             ProposalResult.FAILED_QUORUM,
             strengthFor,
@@ -154,10 +164,10 @@ data class ProposalResolutionMap(
 
 fun ProposalResolutionMap.adoptedProposals() = proposalsWithResult(ProposalResult.ADOPTED)
 
-typealias RawAssessmentQuorum = RawProposalQuorum
+typealias RawAssessmentQuorum = Quorum
 
 inline class AssessmentQuorum(val raw: RawAssessmentQuorum) {
-    constructor(raw: Int) : this(raw.toBigInteger())
+    constructor(raw: Int) : this(Quorum(raw))
 
     override fun toString(): String = raw.toString()
 }
