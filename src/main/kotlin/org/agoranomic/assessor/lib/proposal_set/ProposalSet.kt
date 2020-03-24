@@ -152,10 +152,10 @@ fun Iterable<Proposal>.toProposalSet(): ProposalSet = toImmutableProposalSet()
  * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in [proposals] that have the same
  * [number][Proposal.number] but otherwise different data.
  */
-fun proposalSetOf(vararg proposals: Proposal) = proposals.toList().toProposalSet()
+fun proposalSetOf(vararg proposals: Proposal) = proposals.asList().toProposalSet()
 
 /**
  * @throws ProposalDataMismatchException if there are two [Proposals][Proposal] in [proposals] that have the same
  * [number][Proposal.number] but otherwise different data.
  */
-fun mutableProposalSetOf(vararg proposals: Proposal) = proposals.toList().toMutableProposalSet()
+fun mutableProposalSetOf(vararg proposals: Proposal) = proposals.asList().toMutableProposalSet()

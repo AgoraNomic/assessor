@@ -32,4 +32,4 @@ fun emptyProposalNumbers() = ProposalNumbers(emptySet())
 // Yes, this is hacky, but blame Kotlin.
 @Suppress("FINAL_UPPER_BOUND")
 fun <_ProposalNumber : ProposalNumber> proposalNumbersOf(vararg numbers: _ProposalNumber) =
-    ProposalNumbers(numbers.toList().toSetCheckingDistinct())
+    ProposalNumbers(numbers.asList().toSetCheckingDistinct())

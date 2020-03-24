@@ -20,4 +20,4 @@ fun emptyPersons() = Persons(emptySet())
  * Returns a [Persons] that contains the [Person]s in [persons]. Throws [IllegalArgumentException] if [persons] contains
  * any [Person] more than once.
  */
-fun personsOf(vararg persons: Person) = Persons(persons.toList().toSetCheckingDistinct())
+fun personsOf(vararg persons: Person) = Persons(persons.asList().toSetCheckingDistinct())

@@ -309,7 +309,7 @@ fun parseCli(args: Iterable<String>): CliConfig {
     )
 }
 
-fun parseCli(args: Array<String>) = parseCli(args.toList())
+fun parseCli(args: Array<String>) = parseCli(args.asList())
 
 fun helpString(): String {
     val formatter = HelpFormatter()

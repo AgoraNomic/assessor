@@ -24,7 +24,7 @@ fun <E : Enum<E>> enumValuesOf(enumClass: KClass<E>): Array<E> {
  * @param enumClass the reified [Class] of [E]
  */
 fun <E : Enum<E>> Collection<E>.isExhaustive(enumClass: KClass<E>): Boolean {
-    val enumConstants = enumValuesOf(enumClass).toList()
+    val enumConstants = enumValuesOf(enumClass).asList()
 
     val collection = this
     return collection.containsAll(enumConstants)
