@@ -6,7 +6,6 @@ import kotlinx.serialization.json.JsonObject
 import org.agoranomic.assessor.lib.util.ceil
 import org.agoranomic.assessor.lib.util.compareTo
 import org.agoranomic.assessor.lib.util.times
-import java.math.RoundingMode
 
 private fun StringBuilder.emitLine() {
     this.append('\n')
