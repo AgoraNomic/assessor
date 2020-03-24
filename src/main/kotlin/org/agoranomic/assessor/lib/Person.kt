@@ -2,7 +2,6 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
-import org.agoranomic.assessor.lib.util.requireAllAreDistinct
 import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 
 data class Person(val name: String)
@@ -21,3 +20,9 @@ fun emptyPersons() = Persons(emptySet())
  * any [Person] more than once.
  */
 fun personsOf(vararg persons: Person) = Persons(persons.asList().toSetCheckingDistinct())
+
+operator fun Persons.plus(other: Person) = Persons(data + other)
+operator fun Persons.minus(other: Person) = Persons(data - other)
+
+operator fun Persons.plus(other: Persons) = Persons(this.data + other.data)
+operator fun Persons.minus(other: Persons) = Persons(this.data - other.data)
