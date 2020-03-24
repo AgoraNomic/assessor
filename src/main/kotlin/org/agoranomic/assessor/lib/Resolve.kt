@@ -139,7 +139,6 @@ data class ProposalResolutionMap(
     operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
     fun votingStrengthsFor(proposal: ProposalNumber) = votingStrengths[proposal]!!
-    fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
 
     fun proposalsWithResult(result: ProposalResult) =
         proposals
