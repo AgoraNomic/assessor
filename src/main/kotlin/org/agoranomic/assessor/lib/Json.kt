@@ -81,7 +81,7 @@ fun json(resolutionMap: ProposalResolutionMap) = json {
     "quorum" to json(resolutionMap.quorum)
     "resolutions" to json(resolutionMap.proposals.map { proposal ->
         val proposalNumber = proposal.number
-        val resolution = resolutionMap[proposalNumber]
+        val resolution = resolutionMap.resolutionOf(proposalNumber)
 
         json {
             "proposal" to json(proposalNumber)

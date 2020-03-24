@@ -198,7 +198,7 @@ private fun StringBuilder.emitProposalResolutions(config: ReportConfig, resoluti
     emitWithDelimiter("PROPOSALS")
 
     for (proposal in sortedProposals) {
-        val resolution = resolutionMap[proposal.number]
+        val resolution = resolutionMap.resolutionOf(proposal.number)
 
         emitProposalHeader(proposal)
 
@@ -266,7 +266,7 @@ fun rewardsReport(resolutionMap: ProposalResolutionMap): String {
                 val author = it.author
                 val ai = it.ai
 
-                val votes = resolutionMap[it.number].votes
+                val votes = resolutionMap.resolutionOf(it.number).votes
                 val voteCountFor = votes.filterVoteKind(VoteKind.FOR).count()
                 val voteCountAgainst = votes.filterVoteKind(VoteKind.AGAINST).count()
 

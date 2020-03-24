@@ -136,13 +136,13 @@ data class ProposalResolutionMap(
         require(proposals.map { it.number }.toSet() == votingStrengths.keys.toSet())
     }
 
-    operator fun get(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
+    fun resolutionOf(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
     fun votingStrengthsFor(proposal: ProposalNumber) = votingStrengths[proposal]!!
 
     fun proposalsWithResult(result: ProposalResult) =
         proposals
-            .filter { this[it.number].result == result }
+            .filter { resolutionOf(it.number).result == result }
             .toProposalSet()
 
 }
