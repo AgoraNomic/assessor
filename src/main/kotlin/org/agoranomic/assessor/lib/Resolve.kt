@@ -63,6 +63,8 @@ typealias RawProposalQuorum = BigInteger
 
 inline class ProposalQuorum(val raw: RawProposalQuorum) {
     constructor(raw: Int) : this(raw.toBigInteger())
+
+    override fun toString(): String = raw.toString()
 }
 
 fun resolve(
@@ -156,6 +158,8 @@ typealias RawAssessmentQuorum = RawProposalQuorum
 
 inline class AssessmentQuorum(val raw: RawAssessmentQuorum) {
     constructor(raw: Int) : this(raw.toBigInteger())
+
+    override fun toString(): String = raw.toString()
 }
 
 data class AssessmentData(
