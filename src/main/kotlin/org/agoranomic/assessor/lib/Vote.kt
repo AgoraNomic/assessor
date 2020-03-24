@@ -2,6 +2,7 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.dsl.receivers.PendingVote
 
 enum class VoteKind { PRESENT, AGAINST, FOR }
 
@@ -41,6 +42,34 @@ data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProp
 
     operator fun get(proposal: ProposalNumber) =
         map[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
+}
+
+data class SinglePersonPendingVoteMap(val map: ImmutableMap<ProposalNumber, PendingVote>) {
+    constructor(map: Map<ProposalNumber, PendingVote>) : this(map.toImmutableMap())
+
+    val proposals get() = map.keys
+
+    fun voteFor(proposalNumber: ProposalNumber) =
+        map[proposalNumber] ?: throw IllegalArgumentException("No vote for proposal ${proposalNumber.raw}")
+
+    fun hasVoteFor(proposal: ProposalNumber) = proposals.contains(proposal)
+}
+
+data class MultiPersonPendingVoteMap(val map: ImmutableMap<Person, SinglePersonPendingVoteMap>) {
+    constructor(map: Map<Person, SinglePersonPendingVoteMap>) : this(map.toImmutableMap())
+
+    init {
+        require(map.isNotEmpty())
+    }
+
+    val voters get() = map.keys
+
+    fun proposalsWithVotes() = map.values.flatMap { it.proposals }.distinct()
+
+    fun votesFor(person: Person) =
+        map[person] ?: throw IllegalArgumentException("No votes for person ${person.name}")
+
+    fun hasVotesFor(person: Person) = voters.contains(person)
 }
 
 data class LookupProposal(val func: (ProposalNumber) -> Proposal) {

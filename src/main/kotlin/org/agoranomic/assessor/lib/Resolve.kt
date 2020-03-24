@@ -163,14 +163,14 @@ data class AssessmentData(
     val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>,
     val proposals: ImmutableProposalSet,
-    val votes: MultiProposalVoteMap
+    val votes: MultiPersonPendingVoteMap
 ) {
     constructor(
         name: String,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthMap>,
         proposals: ProposalSet,
-        votes: MultiProposalVoteMap
+        votes: MultiPersonPendingVoteMap
     ) : this(
         name,
         quorum,
@@ -187,12 +187,14 @@ data class AssessmentData(
 }
 
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
+    val resolvedVotes = resolveVotes(assessmentData.votes, assessmentData.proposals)
+
     val map = assessmentData.proposals.associateWith { proposal ->
         resolve(
             ProposalQuorum(assessmentData.quorum.raw),
             assessmentData.votingStrengthsOf(proposal.number),
             proposal.ai,
-            assessmentData.votes[proposal.number]
+            resolvedVotes[proposal.number]
         )
     }.mapKeys { (proposal, _) -> proposal.number }
 

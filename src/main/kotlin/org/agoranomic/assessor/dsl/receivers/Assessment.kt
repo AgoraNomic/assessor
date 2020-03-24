@@ -3,9 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
-import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.AssessmentQuorum
-import org.agoranomic.assessor.lib.MultiProposalVoteMap
+import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 
 @AssessmentDsl
@@ -73,17 +71,13 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         val proposals = proposalsBlock()
 
         val proposalVotesBlock = proposalVotesBlockValue.get()
-        val proposalVotes = buildMultiPersonVotes(proposals, proposalVotesBlock)
+        val pendingVoteMap = buildMultiPersonVotes(proposals, proposalVotesBlock)
 
         val votingStrengthsBlock = votingStrengthsBlockValue.get()
         val votingStrengths = buildGlobalVotingStrength(proposals, votingStrengthsBlock)
 
-        for (proposalNumber in proposalVotes.keys) {
+        for (proposalNumber in pendingVoteMap.proposalsWithVotes()) {
             if (proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal $proposalNumber")
-        }
-
-        for (proposal in proposals.map { it.number }) {
-            if (!(proposalVotes.containsKey(proposal))) error("Votes not specified for proposal $proposal")
         }
 
         return AssessmentData(
@@ -91,7 +85,7 @@ class AssessmentReceiverImpl : AssessmentReceiver {
             quorum,
             votingStrengths,
             proposals,
-            MultiProposalVoteMap(proposalVotes)
+            pendingVoteMap
         )
     }
 }

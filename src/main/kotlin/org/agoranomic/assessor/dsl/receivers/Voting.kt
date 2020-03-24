@@ -36,48 +36,15 @@ private class MultiPersonVotesReceiverImpl(private val proposals: ImmutablePropo
         personVoteMap[person] = buildPersonVotes(proposals.map { it.number }, block)
     }
 
-
-    private fun resolveVote(proposal: Proposal, person: Person, vararg playersSeen: Person): Vote? {
-        if (playersSeen.contains(person)) return InextricableVote(comment = null)
-
-        val newPlayersSeen = (playersSeen.toList() + person).toTypedArray()
-        val nextResolve: ResolveFunc = { nextProp, nextPlayer -> resolveVote(nextProp, nextPlayer, *newPlayersSeen) }
-
-        val lookupProposal = LookupProposal { this.proposals[it] }
-
-        if (personVoteMap.containsKey(person)) {
-            val playerVotes = personVoteMap[person]
-
-            if (playerVotes.containsKey(proposal.number)) {
-                return playerVotes.getOrFail(proposal.number).compile(
-                    proposal,
-                    StandardVoteContext(resolveFunc = nextResolve, lookupProposal = lookupProposal)
-                )
-            }
-        }
-
-        return null
-    }
-
-    fun compile(): Map<ProposalNumber, SingleProposalVoteMap> {
-        val personVotes = personVoteMap.compile()
-        val voters = personVotes.keys
-
-        return proposals.associateWith { proposal ->
-            val proposalVotes =
-                voters
-                    .associateWith { voter -> resolveVote(proposal, voter) }
-                    .filterValues { vote -> vote != null }
-                    .mapValues { (_, vote) -> vote!! }
-
-            SingleProposalVoteMap(proposalVotes)
-        }.mapKeys { (proposal, _) -> proposal.number }
+    fun compile(): MultiPersonPendingVoteMap {
+        val votes = personVoteMap.compile()
+        return MultiPersonPendingVoteMap(votes.mapValues { (_, value) -> SinglePersonPendingVoteMap(value) })
     }
 }
 
 fun buildMultiPersonVotes(
     proposals: ProposalSet,
     block: MultiPersonVotesReceiverInit
-): ImmutableMap<ProposalNumber, SingleProposalVoteMap> {
-    return MultiPersonVotesReceiverImpl(proposals).also(block).compile().toImmutableMap()
+): MultiPersonPendingVoteMap {
+    return MultiPersonVotesReceiverImpl(proposals).also(block).compile()
 }
