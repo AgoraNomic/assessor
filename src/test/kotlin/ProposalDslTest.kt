@@ -1,6 +1,7 @@
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 import org.junit.jupiter.api.Nested
 import test_objects.*
 import kotlin.test.Test
@@ -214,7 +215,7 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
                 coauthors(*coauthorsToSet)
             }
 
-            assertEquals(Persons.checkingDistinct(coauthorsToSet.toList()), proposal.coauthors)
+            assertEquals(Persons(coauthorsToSet.asIterable().toSetCheckingDistinct()), proposal.coauthors)
         }
     }
 
