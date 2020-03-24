@@ -78,7 +78,7 @@ private fun StringBuilder.emitProposalVotes(
             .filterKeys { it != strengthMap.defaultStrength }
 
     fun emitVoteKind(voteKind: VoteKind) {
-        val matchingVotes = voteMap.filterVoteKind(voteKind)
+        val matchingVotes = voteMap.personsWithVote(voteKind)
 
         emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
         emitString(matchingVotes.sortedBy { it.name }
@@ -266,8 +266,8 @@ fun rewardsReport(resolutionMap: ProposalResolutionMap): String {
                 val ai = it.ai
 
                 val votes = resolutionMap.resolutionOf(it.number).votes
-                val voteCountFor = votes.filterVoteKind(VoteKind.FOR).count()
-                val voteCountAgainst = votes.filterVoteKind(VoteKind.AGAINST).count()
+                val voteCountFor = votes.personsWithVote(VoteKind.FOR).count()
+                val voteCountAgainst = votes.personsWithVote(VoteKind.AGAINST).count()
 
                 val unroundedReward = (voteCountFor - voteCountAgainst) * ai.raw
                 val roundedReward = ceil(unroundedReward)

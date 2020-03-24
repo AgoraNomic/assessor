@@ -36,8 +36,8 @@ data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Person, SimpleV
         map.forEach(f)
     }
 
-    fun filterVoteKind(kind: VoteKind): Set<Person> {
-        return map.filterValues { vote -> vote.kind == kind }.keys
+    fun personsWithVote(kind: VoteKind): Persons {
+        return Persons(map.filterValues { vote -> vote.kind == kind }.keys)
     }
 }
 
