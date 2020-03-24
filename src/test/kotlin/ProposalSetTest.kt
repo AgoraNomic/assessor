@@ -77,7 +77,7 @@ class `ProposalSet tests` {
         val proposalSet = createProposalSet(containedProp)
 
         val otherProp = secondTestProposal()
-        assertNull(proposalSet.getOpt(otherProp.number))
+        assertNull(proposalSet.getOrNull(otherProp.number))
     }
 
     @ParameterizedTest
@@ -86,7 +86,7 @@ class `ProposalSet tests` {
         val containedProp = firstTestProposal()
         val proposalSet = createProposalSet(containedProp)
 
-        assertEquals(containedProp, proposalSet.getOpt(containedProp.number))
+        assertEquals(containedProp, proposalSet.getOrNull(containedProp.number))
     }
 
     @ParameterizedTest

@@ -18,12 +18,12 @@ interface ProposalSet : Iterable<Proposal> {
     /**
      * Returns a [Proposal] if this [ProposalSet] contains a [Proposal] with the provided [number], or `null` otherwise.
      */
-    fun getOpt(number: ProposalNumber): Proposal?
+    fun getOrNull(number: ProposalNumber): Proposal?
 
     /**
      * Returns `true` if this [ProposalSet] contains a [Proposal] with the provided [number], or `false` otherwise.
      */
-    fun contains(number: ProposalNumber): Boolean = getOpt(number) != null
+    fun contains(number: ProposalNumber): Boolean = getOrNull(number) != null
 
     /**
      * The number of [Proposals][Proposal] contained in this [ProposalSet].
@@ -40,13 +40,13 @@ interface ProposalSet : Iterable<Proposal> {
  * Returns a [Proposal] if this [ProposalSet] contains a [Proposal] with the provided [number]
  * @throws NoSuchProposalException if this [ProposalSet] does not contain a [Proposal] with the provided [number]
  */
-operator fun ProposalSet.get(number: ProposalNumber): Proposal = getOpt(number) ?: throw NoSuchProposalException(number)
+operator fun ProposalSet.get(number: ProposalNumber): Proposal = getOrNull(number) ?: throw NoSuchProposalException(number)
 
 fun ProposalSet.isEmpty(): Boolean = size == 0
 fun ProposalSet.isNotEmpty() = !isEmpty()
 
 fun ProposalSet.checkMismatch(nextProposal: Proposal) {
-    val originalProposal = getOpt(nextProposal.number) ?: return
+    val originalProposal = getOrNull(nextProposal.number) ?: return
 
     check(originalProposal.number == nextProposal.number)
     checkMismatch(originalProposal, nextProposal)

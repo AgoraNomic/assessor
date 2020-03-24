@@ -17,7 +17,7 @@ class ImmutableListProposalSet private constructor(private val list: ImmutableLi
         fun empty() = fromListUnchecked(emptyList())
     }
 
-    override fun getOpt(number: ProposalNumber): Proposal? {
+    override fun getOrNull(number: ProposalNumber): Proposal? {
         return list.find { it.number == number }
     }
 
@@ -50,7 +50,7 @@ class MutableListProposalSet : AbstractMutableProposalSet {
         list += toAdd
     }
 
-    override fun getOpt(number: ProposalNumber): Proposal? {
+    override fun getOrNull(number: ProposalNumber): Proposal? {
         return list.find { it.number == number }
     }
 
