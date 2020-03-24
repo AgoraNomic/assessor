@@ -117,7 +117,7 @@ private fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthM
 }
 
 private fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
-    emitLine("AI (F/A): ${resolutionData.strengthFor.raw}/${resolutionData.strengthAgainst.raw} (AI=${ai.raw})")
+    emitLine("AI (F/A): ${resolutionData.strengthFor.raw}/${resolutionData.strengthAgainst.raw} (AI=$ai)")
 }
 
 private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
@@ -151,7 +151,7 @@ private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
             emitSeparator()
             emitLine("ID: ${proposal.number.raw}")
             emitLine("Title: ${proposal.title}")
-            emitLine("Adoption index: ${proposal.ai.raw}")
+            emitLine("Adoption index: ${proposal.ai}")
             emitLine("Author: ${proposal.author.name}")
             emitLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
             emitLine()
@@ -278,7 +278,7 @@ fun rewardsReport(resolutionMap: ProposalResolutionMap): String {
                     else
                         "$unroundedReward -> $roundedReward"
 
-                "For the adoption of Proposal ${number.raw}, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*${ai.raw}=$coinAmountString coins."
+                "For the adoption of Proposal ${number.raw}, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*$ai=$coinAmountString coins."
             }
             .joinToString("\n")
 
