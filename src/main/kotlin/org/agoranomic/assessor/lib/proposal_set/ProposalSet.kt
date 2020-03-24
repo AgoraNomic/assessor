@@ -8,7 +8,7 @@ import org.agoranomic.assessor.lib.*
  */
 data class NoSuchProposalException(
     val number: ProposalNumber
-) : Exception("Request for unknown proposal by number: ${number.raw}")
+) : Exception("Request for unknown proposal by number: $number")
 
 /**
  * A set of [Proposals][Proposal]. Contains only one [Proposal] by each [ProposalNumber]. Two

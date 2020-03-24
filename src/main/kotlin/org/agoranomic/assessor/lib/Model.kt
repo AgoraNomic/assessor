@@ -12,6 +12,8 @@ inline class ProposalNumber(val raw: RawProposalNumber) : Comparable<ProposalNum
     override fun compareTo(other: ProposalNumber): Int {
         return (this.raw).compareTo(other.raw)
     }
+
+    override fun toString(): String = raw.toString()
 }
 
 typealias RawProposalAI = BigDecimal

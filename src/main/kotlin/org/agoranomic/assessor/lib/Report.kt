@@ -29,7 +29,7 @@ private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
 }
 
 private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
-    emitLine("PROPOSAL ${proposal.number.raw} (${proposal.title})")
+    emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
 
     val proposalClassAndChamber = proposal.classAndChamber
 
@@ -149,7 +149,7 @@ private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
 
         for (proposal in sortedProposals) {
             emitSeparator()
-            emitLine("ID: ${proposal.number.raw}")
+            emitLine("ID: ${proposal.number}")
             emitLine("Title: ${proposal.title}")
             emitLine("Adoption index: ${proposal.ai}")
             emitLine("Author: ${proposal.author.name}")

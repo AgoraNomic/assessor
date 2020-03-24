@@ -50,7 +50,7 @@ data class SinglePersonPendingVoteMap(val map: ImmutableMap<ProposalNumber, Pend
     val proposals get() = map.keys
 
     fun voteFor(proposalNumber: ProposalNumber) =
-        map[proposalNumber] ?: throw IllegalArgumentException("No vote for proposal ${proposalNumber.raw}")
+        map[proposalNumber] ?: throw IllegalArgumentException("No vote for proposal $proposalNumber")
 
     fun hasVoteFor(proposal: ProposalNumber) = proposals.contains(proposal)
 }
