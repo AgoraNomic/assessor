@@ -5,6 +5,7 @@ import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.util.compareTo
 import org.agoranomic.assessor.lib.util.times
 import java.math.BigInteger
@@ -139,7 +140,15 @@ data class ProposalResolutionMap(
 
     fun votingStrengthsFor(proposal: ProposalNumber) = votingStrengths[proposal]!!
     fun filterResult(result: ProposalResult) = map.filterValues { it.result == result }
+
+    fun proposalsWithResult(result: ProposalResult) =
+        proposals
+            .filter { this[it.number].result == result }
+            .toProposalSet()
+
 }
+
+fun ProposalResolutionMap.adoptedProposals() = proposalsWithResult(ProposalResult.ADOPTED)
 
 typealias RawAssessmentQuorum = RawProposalQuorum
 
