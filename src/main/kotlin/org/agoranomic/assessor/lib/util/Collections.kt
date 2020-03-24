@@ -21,22 +21,6 @@ fun <T> Iterable<T>.repeatingElements(): Set<T> {
 }
 
 /**
- * Returns `true` if this [Iterable] does not contain any repeating elements, and `false` otherwise.
- *
- * @param T the element type of this [Iterable]
- */
-fun <T> Iterable<T>.allAreDistinct(): Boolean {
-    val alreadySeen = mutableSetOf<T>()
-
-    for (item in this) {
-        if (alreadySeen.contains(item)) return false
-        alreadySeen += item
-    }
-
-    return true
-}
-
-/**
  * Returns a [Set] containing the same elements as this [Collection], if this [Collection] contains no repeating
  * elements, otherwise throws [IllegalArgumentException].
  */
@@ -52,6 +36,22 @@ fun <T> Iterable<T>.toSetCheckingDistinct(): Set<T> {
     }
 
     return alreadySeen
+}
+
+/**
+ * Returns `true` if this [Iterable] does not contain any repeating elements, and `false` otherwise.
+ *
+ * @param T the element type of this [Iterable]
+ */
+fun <T> Iterable<T>.allAreDistinct(): Boolean {
+    val alreadySeen = mutableSetOf<T>()
+
+    for (item in this) {
+        if (alreadySeen.contains(item)) return false
+        alreadySeen += item
+    }
+
+    return true
 }
 
 /**
