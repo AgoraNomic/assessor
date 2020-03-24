@@ -266,8 +266,8 @@ fun rewardsReport(resolutionMap: ProposalResolutionMap): String {
                 val ai = it.ai
 
                 val votes = resolutionMap.resolutionOf(it.number).votes
-                val voteCountFor = votes.personsWithVote(VoteKind.FOR).count()
-                val voteCountAgainst = votes.personsWithVote(VoteKind.AGAINST).count()
+                val voteCountFor = votes.votersFor().count()
+                val voteCountAgainst = votes.votersAgainst().count()
 
                 val unroundedReward = (voteCountFor - voteCountAgainst) * ai.raw
                 val roundedReward = ceil(unroundedReward)

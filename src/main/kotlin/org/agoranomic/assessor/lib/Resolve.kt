@@ -41,6 +41,9 @@ data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Person, SimpleV
     }
 }
 
+fun SimplifiedSingleProposalVoteMap.votersFor() = personsWithVote(VoteKind.FOR)
+fun SimplifiedSingleProposalVoteMap.votersAgainst() = personsWithVote(VoteKind.AGAINST)
+
 data class ResolutionData(
     val result: ProposalResult,
     val strengthFor: VotingStrength,
