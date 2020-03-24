@@ -93,7 +93,7 @@ private fun StringBuilder.emitProposalVotes(
 }
 
 private fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStrengthWithComment) {
-    emitString("${person.name} has voting strength ${strength.value.raw}")
+    emitString("${person.name} has voting strength ${strength.value}")
 
     if (strength.comment != null) {
         emitString(" (${strength.comment})")
@@ -107,17 +107,17 @@ private fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthM
     val sortedPlayers = votingStrengthMap.specialPeople.sortedBy { it.name }
 
     if (sortedPlayers.isNotEmpty()) {
-        emitLine("Voting strengths (${votingStrengthMap.defaultStrength.raw} unless otherwise noted):")
+        emitLine("Voting strengths (${votingStrengthMap.defaultStrength} unless otherwise noted):")
         for (player in sortedPlayers) {
             emitSingleVotingStrength(player, votingStrengthMap[player])
         }
     } else {
-        emitLine("All players have voting strength ${votingStrengthMap.defaultStrength.raw}.")
+        emitLine("All players have voting strength ${votingStrengthMap.defaultStrength}.")
     }
 }
 
 private fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
-    emitLine("AI (F/A): ${resolutionData.strengthFor.raw}/${resolutionData.strengthAgainst.raw} (AI=$ai)")
+    emitLine("AI (F/A): ${resolutionData.strengthFor}/${resolutionData.strengthAgainst} (AI=$ai)")
 }
 
 private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
@@ -185,7 +185,7 @@ private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<Voti
         }.map { (value, symbol) -> "$symbol: player has voting strength $value" }.joinToString(separator = "\n")
 
         emitWithDelimiter("Voting Strengths")
-        emitLine("Strength is ${defaultStrength.raw} unless otherwise noted.")
+        emitLine("Strength is ${defaultStrength} unless otherwise noted.")
         emitString(footnotes)
         emitLine()
     }

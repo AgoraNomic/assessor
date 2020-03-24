@@ -14,6 +14,8 @@ inline class VotingStrength(val raw: RawVotingStrength) {
     }
 
     constructor(raw: Int) : this(raw.toBigInteger())
+
+    override fun toString(): String = raw.toString()
 }
 
 operator fun VotingStrength.plus(other: VotingStrength) = VotingStrength(this.raw + other.raw)
