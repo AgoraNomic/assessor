@@ -27,7 +27,7 @@ enum class ProposalResult {
 data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person, SimpleVote>) {
     constructor(map: Map<Person, SimpleVote>) : this(map.toImmutableMap())
 
-    val voters get() = data.keys
+    val voters get() = Persons(data.keys)
     val voteCount get() = voters.size
 
     val size get() = voteCount
