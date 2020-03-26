@@ -129,20 +129,20 @@ fun resolve(
 data class ProposalResolutionMap(
     val assessmentName: String,
     val proposals: ImmutableProposalSet,
-    private val map: ImmutableMap<ProposalNumber, ResolutionData>,
+    private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>
 ) {
     constructor(
         assessmentName: String,
         proposals: ProposalSet,
-        map: Map<ProposalNumber, ResolutionData>,
+        resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthMap>
     ) : this(
         assessmentName,
         proposals.toImmutableProposalSet(),
-        map.toImmutableMap(),
+        resolutions.toImmutableMap(),
         quorum,
         votingStrengths.toImmutableMap()
     )
@@ -151,7 +151,8 @@ data class ProposalResolutionMap(
         require(proposals.map { it.number }.toSet() == votingStrengths.keys.toSet())
     }
 
-    fun resolutionOf(proposal: ProposalNumber) = map[proposal] ?: throw IllegalArgumentException("No data for proposal")
+    fun resolutionOf(proposal: ProposalNumber) =
+        resolutions[proposal] ?: throw IllegalArgumentException("No data for proposal")
 
     fun votingStrengthsFor(proposal: ProposalNumber) = votingStrengths[proposal]!!
 
