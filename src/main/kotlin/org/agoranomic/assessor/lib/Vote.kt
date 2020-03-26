@@ -59,19 +59,19 @@ data class SinglePersonPendingVoteMap(private val map: ImmutableMap<ProposalNumb
     fun hasVoteFor(proposal: ProposalNumber) = proposals.contains(proposal)
 }
 
-data class MultiPersonPendingVoteMap(val map: ImmutableMap<Person, SinglePersonPendingVoteMap>) {
+data class MultiPersonPendingVoteMap(private val data: ImmutableMap<Person, SinglePersonPendingVoteMap>) {
     constructor(map: Map<Person, SinglePersonPendingVoteMap>) : this(map.toImmutableMap())
 
     init {
-        require(map.isNotEmpty())
+        require(data.isNotEmpty())
     }
 
-    val voters get() = map.keys
+    val voters get() = data.keys
 
-    fun proposalsWithVotes() = map.values.flatMap { it.proposals }.distinct()
+    fun proposalsWithVotes() = data.values.flatMap { it.proposals }.distinct()
 
     fun votesFor(person: Person) =
-        map[person] ?: throw IllegalArgumentException("No votes for person ${person.name}")
+        data[person] ?: throw IllegalArgumentException("No votes for person ${person.name}")
 
     fun hasVotesFor(person: Person) = voters.contains(person)
 }
