@@ -39,13 +39,13 @@ data class SingleProposalVoteMap(private val data: ImmutableMap<Person, Vote>) {
     }
 }
 
-data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProposalVoteMap>) {
+data class MultiProposalVoteMap(private val data: ImmutableMap<ProposalNumber, SingleProposalVoteMap>) {
     constructor(map: Map<ProposalNumber, SingleProposalVoteMap>) : this(map.toImmutableMap())
 
-    val proposals = map.keys
+    val proposals = data.keys
 
     operator fun get(proposal: ProposalNumber) =
-        map[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
+        data[proposal] ?: throw IllegalArgumentException("No votes for proposal $proposal")
 }
 
 data class SinglePersonPendingVoteMap(val map: ImmutableMap<ProposalNumber, PendingVote>) {
