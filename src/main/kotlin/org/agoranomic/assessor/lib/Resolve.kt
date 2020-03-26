@@ -24,24 +24,28 @@ enum class ProposalResult {
     }
 }
 
-data class SimplifiedSingleProposalVoteMap(val map: ImmutableMap<Person, SimpleVote>) {
+data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person, SimpleVote>) {
     constructor(map: Map<Person, SimpleVote>) : this(map.toImmutableMap())
 
-    val voters = map.keys
+    val voters = data.keys
     val voteCount = voters.size
 
     val size get() = voteCount
     fun isEmpty() = size == 0
     fun isNotEmpty() = !isEmpty()
 
-    operator fun get(p: Person) = map[p] ?: throw IllegalArgumentException("Player is not a voter")
+    operator fun get(p: Person) = data[p] ?: throw IllegalArgumentException("Player is not a voter")
 
     fun forEach(f: (Person, SimpleVote) -> Unit) {
-        map.forEach(f)
+        data.forEach(f)
     }
 
     fun personsWithVote(kind: VoteKind): Persons {
-        return Persons(map.filterValues { vote -> vote.kind == kind }.keys)
+        return Persons(data.filterValues { vote -> vote.kind == kind }.keys)
+    }
+
+    fun votesWithComments(): SimplifiedSingleProposalVoteMap {
+        return SimplifiedSingleProposalVoteMap(data.filterValues { it.comment != null })
     }
 }
 

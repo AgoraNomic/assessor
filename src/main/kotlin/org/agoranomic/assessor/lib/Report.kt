@@ -125,11 +125,11 @@ private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
 }
 
 private fun StringBuilder.emitVoteComments(resolutionData: ResolutionData) {
-    val filteredEntires = resolutionData.votes.map.filterValues { it.comment != null }.entries.sortedBy { it.key.name }
+    val filteredEntires = resolutionData.votes.votesWithComments()
 
     if (filteredEntires.isNotEmpty()) {
         emitLine("[")
-        for ((player, vote) in filteredEntires) {
+        filteredEntires.forEach { player, vote ->
             emitLine("${player.name}: ${vote.comment}")
         }
         emitLine("]")
