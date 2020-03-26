@@ -76,7 +76,7 @@ data class MultiPersonPendingVoteMap(private val data: ImmutableMap<Person, Sing
     fun hasVotesFor(person: Person) = voters.contains(person)
 }
 
-data class LookupProposal(val func: (ProposalNumber) -> Proposal) {
+data class LookupProposal(private val func: (ProposalNumber) -> Proposal) {
     operator fun invoke(number: ProposalNumber) = func(number)
     operator fun invoke(number: Int) = this(ProposalNumber(number))
 }
