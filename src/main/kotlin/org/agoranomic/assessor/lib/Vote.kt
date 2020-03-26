@@ -26,13 +26,17 @@ data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote(
     override fun simplified(): SimpleVote = this
 }
 
-data class SingleProposalVoteMap(val map: ImmutableMap<Person, Vote>) {
+data class SingleProposalVoteMap(private val data: ImmutableMap<Person, Vote>) {
     constructor(map: Map<Person, Vote>) : this(map.toImmutableMap())
 
-    val voters = map.keys
+    val voters = data.keys
     val voteCount = voters.size
 
-    operator fun get(person: Person) = map[person] ?: throw IllegalArgumentException("Player is not a voter")
+    operator fun get(person: Person) = data[person] ?: throw IllegalArgumentException("Player is not a voter")
+
+    fun simplified(): SimplifiedSingleProposalVoteMap {
+        return SimplifiedSingleProposalVoteMap(data.mapValues { (_, vote) -> vote.simplified() })
+    }
 }
 
 data class MultiProposalVoteMap(val map: ImmutableMap<ProposalNumber, SingleProposalVoteMap>) {

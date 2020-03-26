@@ -51,10 +51,6 @@ data class ResolutionData(
     val votes: SimplifiedSingleProposalVoteMap
 )
 
-fun SingleProposalVoteMap.simplified(): SimplifiedSingleProposalVoteMap {
-    return SimplifiedSingleProposalVoteMap(map.mapValues { (_, vote) -> vote.simplified() })
-}
-
 private fun isAIAdopted(ai: ProposalAI, strengthFor: VotingStrength, strengthAgainst: VotingStrength): Boolean {
     return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
 }
