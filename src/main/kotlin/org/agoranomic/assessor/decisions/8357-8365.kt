@@ -1,6 +1,9 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.ministries.OfficeV2
+import org.agoranomic.assessor.dsl.ministries.OfficeV2.*
+import org.agoranomic.assessor.dsl.ministries.ministriesV2
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -11,6 +14,31 @@ import org.agoranomic.assessor.lib.Ministry.*
 fun `assessment 8357 to 8365`() = assessment {
     name("8357-8365")
     quorum(7)
+
+    val offices = mapOf(
+        ADoP to Murphy,
+        Arbitor to G,
+        Assessor to Jason,
+        Comptrollor to twg,
+        Distributor to omd,
+        Herald to Alexis,
+        Notary to Gaelan,
+        PrimeMinister to Aris,
+        Promotor to Aris,
+        Referee to twg,
+        Registrar to Falsifian,
+        Rulekeepor to Jason,
+        Speaker to twg,
+        Tailor to twg,
+        Treasuror to twg
+    )
+
+    strengths {
+        default(3)
+        offices[Speaker]!! add 1
+
+        ministriesV2(offices, allProposals)
+    }
 
     proposals(v1) {
         proposal(8357) {
