@@ -246,4 +246,7 @@ to read
             )
         }
     }
+
+    voting {
+    }
 }
