@@ -330,5 +330,14 @@ to read
         votes(Alexis) {
             FOR on all
         }
+
+        votes(G) {
+            AGAINST on 8359
+            FOR on others
+        }
+
+        votes(o) {
+            endorse(G) on all
+        }
     }
 }
