@@ -335,13 +335,13 @@ to read
         }
 
         votes(Falsifian) {
-            // TODO resolve conditional vote on 8357: endorse(G.) unless vteo
+            endorse(G) on 8357 comment NO_VETO
             endorse(offices[Referee]!!) on 8358
             AGAINST on 8359
             endorse(Alexis) on 8360
             endorse(Aris) on 8361
             PRESENT on 8362
-            // TODO resolve conditional vote on 8363: {Conditional: if no Treasuror report has been published in the past 7 days, or the current Treasuror's valid ballot is AGAINST, then AGAINST, otherwise PRESENT} unless veto.
+            AGAINST on 8363 comment conditional("No document purporting to be a Treasuror's report has been published in the past 7 days")
             endorse(Aris) on 8364
             endorse(Aris) on 8365
         }
