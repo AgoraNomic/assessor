@@ -339,5 +339,17 @@ to read
         votes(o) {
             endorse(G) on all
         }
+
+        votes(Falsifian) {
+            // TODO resolve conditional vote on 8357: endorse(G.) unless vteo
+            endorse(offices[Referee]!!) on 8358
+            AGAINST on 8359
+            endorse(Alexis) on 8360
+            endorse(Aris) on 8361
+            PRESENT on 8362
+            // TODO resolve conditional vote on 8363: endorse(Treasuror) unless veto
+            endorse(Aris) on 8364
+            endorse(Aris) on 8365
+        }
     }
 }
