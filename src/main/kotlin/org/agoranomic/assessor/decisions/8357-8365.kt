@@ -262,5 +262,17 @@ to read
             FOR on 8364
             FOR on 8365
         }
+
+        votes(PSS) {
+            FOR on 8357
+            FOR on 8358
+            FOR on 8359
+            FOR on 8360
+            FOR on 8361
+            FOR on 8362
+            AGAINST on 8363
+            FOR on 8364
+            FOR on 8365
+        }
     }
 }
