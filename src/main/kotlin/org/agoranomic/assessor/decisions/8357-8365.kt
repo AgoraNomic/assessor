@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.ministries.ministriesV2
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind
@@ -296,6 +297,22 @@ to read
             FOR on 8363
             FOR on 8364
             FOR on 8365
+        }
+
+        votes(Jason) {
+            FOR on 8357
+            FOR on 8358
+            AGAINST on 8359
+            FOR on 8360
+            FOR on 8361
+            FOR on 8362
+            FOR on 8363
+            FOR on 8364
+            FOR on 8365
+        }
+
+        votes(Rance) {
+            endorse(Jason) on all
         }
     }
 }
