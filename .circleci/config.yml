@@ -67,7 +67,7 @@ jobs:
       - store_test_results:
           path: build/test-results/test
 
-  fat-jar-generate:
+  fat_jar_generate:
     executor: jvm_default
     steps:
       - checkout_and_build
@@ -79,7 +79,7 @@ jobs:
           root: build/libs
           paths: assessor.jar
 
-  reports-generate:
+  reports_generate:
     executor: jvm_default
     steps:
       - checkout_cached
@@ -120,7 +120,7 @@ jobs:
           path: workspace/reports
           destination: reports
 
-  reports-deploy:
+  reports_deploy:
     docker:
       - image: node:8.10.0
     steps:
@@ -148,15 +148,15 @@ workflows:
   build_and_report:
     jobs:
       - build
-      - fat-jar-generate:
+      - fat_jar_generate:
           requires:
             - build
-      - reports-generate:
+      - reports_generate:
           requires:
-            - fat-jar-generate
-      - reports-deploy:
+            - fat_jar_generate
+      - reports_deploy:
           requires:
-            - reports-generate
+            - reports_generate
           filters:
             branches:
               only: master
