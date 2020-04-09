@@ -1,27 +1,15 @@
-aliases:
-  jvm_docker: &jvm_docker
+executors:
+  jvm_default:
     docker:
       - image: circleci/openjdk:11.0.2-jdk
-
-  jvm_options: &jvm_options
     environment:
-      # Customize the JVM maximum heap limit
-      JVM_OPTS: -Xmx3200m
       TERM: dumb
-
-  working_dir: &working_dir
     working_directory: ~/repo
-
-  jvm_default: &jvm_default
-    <<: *jvm_docker
-    <<: *jvm_options
-    <<: *working_dir
 
 version: 2.1
 jobs:
   build:
-    <<: *jvm_default
-
+    executor: jvm_default
     steps:
       - restore_cache:
           name: Restore git cache
@@ -64,8 +52,7 @@ jobs:
           path: build/test-results/test
 
   fatJar:
-    <<: *jvm_default
-
+    executor: jvm_default
     steps:
       - restore_cache:
           name: Restore git cache
@@ -114,8 +101,7 @@ jobs:
           paths: assessor.jar
 
   reports-generate:
-    <<: *jvm_default
-
+    executor: jvm_default
     steps:
       - restore_cache:
           name: Restore git cache
