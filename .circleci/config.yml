@@ -6,10 +6,9 @@ executors:
       TERM: dumb
     working_directory: ~/repo
 
-version: 2.1
-jobs:
-  build:
-    executor: jvm_default
+commands:
+  checkout_cached:
+    description: "Checkout the repo, using a cache for the .git directory"
     steps:
       - restore_cache:
           name: Restore git cache
@@ -22,7 +21,9 @@ jobs:
           name: Save git cache
           key: v5-source-{{ .Branch }}-{{ .Revision }}
           paths: ".git"
-
+  dependencies_cached:
+    description: "Download gradle dependencies, using a cache"
+    steps:
       - restore_cache:
           name: Restore dependency cache
           keys:
@@ -34,7 +35,9 @@ jobs:
           paths:
             - ~/.gradle
           key: v5-dependencies-{{ checksum "build.gradle.kts" }}
-
+  build_cached:
+    description: "Run the gradle build, using a cache"
+    steps:
       - restore_cache:
           name: Restore build cache
           keys:
@@ -48,49 +51,24 @@ jobs:
             - .gradle
             - build
           key: v5-build-{{ .Branch }}-{{ .Revision }}
+
+version: 2.1
+jobs:
+  build:
+    executor: jvm_default
+    steps:
+      - checkout_cached
+      - dependencies_cached
+      - build_cached
       - store_test_results:
           path: build/test-results/test
 
   fatJar:
     executor: jvm_default
     steps:
-      - restore_cache:
-          name: Restore git cache
-          keys:
-            - v5-source-{{ .Branch }}-{{ .Revision }}
-            - v5-source-{{ .Branch }}-
-            - v5-source-
-      - checkout
-      - save_cache:
-          name: Save git cache
-          key: v5-source-{{ .Branch }}-{{ .Revision }}
-          paths: ".git"
-
-      - restore_cache:
-          name: Restore dependency cache
-          keys:
-            - v5-dependencies-{{ checksum "build.gradle.kts" }}
-            - v5-dependencies-
-      - run: gradle dependencies
-      - save_cache:
-          name: Save dependency cache
-          paths:
-            - ~/.gradle
-          key: v5-dependencies-{{ checksum "build.gradle.kts" }}
-
-      - restore_cache:
-          name: Restore build cache
-          keys:
-            - v5-build-{{ .Branch }}-{{ .Revision }}
-            - v5-build-{{ .Branch }}-
-            - v5-build-
-      - run: gradle build
-      - save_cache:
-          name: Save build cache
-          paths:
-            - .gradle
-            - build
-          key: v5-build-{{ .Branch }}-{{ .Revision }}
+      - checkout_cached
+      - dependencies_cached
+      - build_cached
 
       - run:
           name: Build fat jar
@@ -103,18 +81,7 @@ jobs:
   reports-generate:
     executor: jvm_default
     steps:
-      - restore_cache:
-          name: Restore git cache
-          keys:
-            - v5-source-{{ .Branch }}-{{ .Revision }}
-            - v5-source-{{ .Branch }}-
-            - v5-source-
-      - checkout
-      - save_cache:
-          name: Save git cache
-          key: v5-source-{{ .Branch }}-{{ .Revision }}
-          paths: ".git"
-
+      - checkout_cached
       - attach_workspace:
           at: workspace
       - run:
@@ -156,18 +123,7 @@ jobs:
     docker:
       - image: node:8.10.0
     steps:
-      - restore_cache:
-          name: Restore git cache
-          keys:
-            - v5-source-{{ .Branch }}-{{ .Revision }}
-            - v5-source-{{ .Branch }}-
-            - v5-source-
-      - checkout
-      - save_cache:
-          name: Save git cache
-          key: v5-source-{{ .Branch }}-{{ .Revision }}
-          paths: ".git"
-
+      - checkout_cached
       - attach_workspace:
           at: workspace
       - run:
