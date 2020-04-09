@@ -96,7 +96,7 @@ jobs:
             shopt -s nullglob
             REPORTS=($REPORTS_DIR/*.txt)
             IFS=$'\n'
-            REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
+            REPORTS=($(sort -n -r -t $'-' -k 1 \<<<"${REPORTS[*]}"))
 
             INDEX_FILE=$REPORTS_DIR/index.md
             touch $INDEX_FILE
