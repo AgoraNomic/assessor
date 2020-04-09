@@ -67,7 +67,7 @@ jobs:
       - store_test_results:
           path: build/test-results/test
 
-  fatJar:
+  fat-jar-generate:
     executor: jvm_default
     steps:
       - checkout_and_build
@@ -148,12 +148,12 @@ workflows:
   build_and_report:
     jobs:
       - build
-      - fatJar:
+      - fat-jar-generate:
           requires:
             - build
       - reports-generate:
           requires:
-            - fatJar
+            - fat-jar-generate
       - reports-deploy:
           requires:
             - reports-generate
