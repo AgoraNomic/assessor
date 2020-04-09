@@ -51,25 +51,26 @@ commands:
             - .gradle
             - build
           key: v5-build-{{ .Branch }}-{{ .Revision }}
+  checkout_and_build:
+    description: "Checkout the repository, then build it"
+    steps:
+      - checkout_cached
+      - dependencies_cached
+      - build_cached
 
 version: 2.1
 jobs:
   build:
     executor: jvm_default
     steps:
-      - checkout_cached
-      - dependencies_cached
-      - build_cached
+      - checkout_and_build
       - store_test_results:
           path: build/test-results/test
 
   fatJar:
     executor: jvm_default
     steps:
-      - checkout_cached
-      - dependencies_cached
-      - build_cached
-
+      - checkout_and_build
       - run:
           name: Build fat jar
           command: gradle fatJar
