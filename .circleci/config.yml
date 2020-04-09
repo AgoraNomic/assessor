@@ -165,6 +165,7 @@ workflows:
       - reports_generate:
           requires:
             - fat_jar_generate
+            - test
       - reports_deploy:
           requires:
             - reports_generate
