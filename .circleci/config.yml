@@ -44,7 +44,7 @@ commands:
             - v5-build-{{ .Branch }}-{{ .Revision }}
             - v5-build-{{ .Branch }}-
             - v5-build-
-      - run: gradle build
+      - run: gradle assemble
       - save_cache:
           name: Save build cache
           paths:
@@ -64,6 +64,14 @@ jobs:
     executor: jvm_default
     steps:
       - checkout_and_build
+
+  test:
+    executor: jvm_default
+    steps:
+      - checkout_and_build
+      - run:
+          name: Run the tests
+          command: gradle test
       - store_test_results:
           path: build/test-results/test
 
@@ -148,6 +156,9 @@ workflows:
   build_and_report:
     jobs:
       - build
+      - test:
+          requires:
+            - build
       - fat_jar_generate:
           requires:
             - build
