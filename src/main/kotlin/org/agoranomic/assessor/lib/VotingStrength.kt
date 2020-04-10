@@ -30,11 +30,28 @@ operator fun Int.times(other: VotingStrength) = this.toBigInteger() * other
 data class VotingStrengthWithComment(val value: VotingStrength, val comment: String? = null)
 
 interface VotingStrengthMap {
+    /**
+     * The strength to be used for [Person]s who are not in [specialPeople].
+     */
     val defaultStrength: VotingStrength
+
+    /**
+     * The [Person]s who are have been given an overridden voting strength (as opposed to being left with the default).
+     * This voting strength may happen to be equivalent to [defaultStrength], as long as it has been indicated in some
+     * way to be different from the default.
+     */
     val specialPeople: ImmutableSet<Person>
 
+    /**
+     * If [person] is in [specialPeople], returns the (possibly-commented) voting strength of [person]. Otherwise,
+     * returns `null`.
+     */
     fun getOrNull(person: Person): VotingStrengthWithComment?
 
+    /**
+     * If [person] is in [specialPeople], returns `getOrNull(person)`, otherwise returns
+     * `VotingStrengthWithComment(defaultStrength)`.
+     */
     operator fun get(person: Person): VotingStrengthWithComment =
         getOrNull(person) ?: VotingStrengthWithComment(defaultStrength)
 }
