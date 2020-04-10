@@ -4,7 +4,7 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.ReportConfig
+import org.agoranomic.assessor.lib.ReadableReportConfig
 import org.apache.commons.cli.*
 import java.io.CharArrayWriter
 import java.io.PrintWriter
@@ -24,9 +24,9 @@ private const val FORM_OFFICIAL = "official"
 private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
 
-val CONFIG_LONG = ReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
-val CONFIG_SHORT = ReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
-val CONFIG_OFFICIAL = ReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
+val CONFIG_LONG = ReadableReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
+val CONFIG_SHORT = ReadableReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
+val CONFIG_OFFICIAL = ReadableReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
 
 open class CliException : Exception {
     constructor() : super()
@@ -143,9 +143,9 @@ private enum class CommentsConfig(val value: Boolean) { ENABLED(true), DISABLED(
 private enum class BallotsLineConfig(val value: Boolean) { ENABLED(true), DISABLED(false) }
 private enum class VoteCountsConfig(val value: Boolean) { ENABLED(true), DISABLED(false) }
 
-private fun ReportConfig.copyWith(config: CommentsConfig) = this.copy(voteComments = config.value)
-private fun ReportConfig.copyWith(config: BallotsLineConfig) = this.copy(totalBallotCount = config.value)
-private fun ReportConfig.copyWith(config: VoteCountsConfig) = this.copy(voteComments = config.value)
+private fun ReadableReportConfig.copyWith(config: CommentsConfig) = this.copy(voteComments = config.value)
+private fun ReadableReportConfig.copyWith(config: BallotsLineConfig) = this.copy(totalBallotCount = config.value)
+private fun ReadableReportConfig.copyWith(config: VoteCountsConfig) = this.copy(voteComments = config.value)
 
 class InvalidAssessmentNameException(val name: String) : CliException("Invalid exception name: $name")
 
@@ -195,7 +195,7 @@ private fun readNeededAssessment(commandLine: CommandLine): NeededAssessments {
     )
 }
 
-private fun withOverrides(commandLine: CommandLine, baseConfig: ReportConfig): ReportConfig {
+private fun withOverrides(commandLine: CommandLine, baseConfig: ReadableReportConfig): ReadableReportConfig {
     var config = baseConfig
 
     val comments = readCommentsConfig(commandLine)

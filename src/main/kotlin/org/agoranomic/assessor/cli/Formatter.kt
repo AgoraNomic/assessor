@@ -6,9 +6,9 @@ interface AssessmentFormatter {
     fun format(assessment: ProposalResolutionMap): String
 }
 
-data class HumanReadableFormatter(val config: ReportConfig) : AssessmentFormatter {
+data class HumanReadableFormatter(val config: ReadableReportConfig) : AssessmentFormatter {
     override fun format(assessment: ProposalResolutionMap): String {
-        return report(assessment, config)
+        return readableReport(assessment, config)
     }
 }
 

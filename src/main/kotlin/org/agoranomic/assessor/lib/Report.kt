@@ -3,9 +3,6 @@ package org.agoranomic.assessor.lib
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
-import org.agoranomic.assessor.lib.util.ceil
-import org.agoranomic.assessor.lib.util.compareTo
-import org.agoranomic.assessor.lib.util.times
 
 private fun StringBuilder.emitLine() {
     this.append('\n')
@@ -209,7 +206,7 @@ private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<Voti
     }
 }
 
-private fun StringBuilder.emitProposalResolutions(config: ReportConfig, resolutionMap: ProposalResolutionMap) {
+private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, resolutionMap: ProposalResolutionMap) {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     emitWithDelimiter("PROPOSALS")
@@ -238,13 +235,13 @@ private fun StringBuilder.emitWithDelimiter(string: String) {
     emitLine("=".repeat(string.length))
 }
 
-data class ReportConfig(
+data class ReadableReportConfig(
     val voteComments: Boolean = true,
     val totalBallotCount: Boolean = true,
     val voteKindBallotCount: Boolean = true
 )
 
-fun report(resolutionMap: ProposalResolutionMap, config: ReportConfig = ReportConfig()): String {
+fun readableReport(resolutionMap: ProposalResolutionMap, config: ReadableReportConfig = ReadableReportConfig()): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     val output = StringBuilder()
