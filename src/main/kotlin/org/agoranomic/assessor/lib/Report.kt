@@ -273,32 +273,3 @@ fun jsonReport(resolutionMap: ProposalResolutionMap): String {
 
     return json.stringify(JsonObject.serializer(), out)
 }
-
-fun rewardsReport(resolutionMap: ProposalResolutionMap): String {
-    val result =
-        resolutionMap
-            .adoptedProposals()
-            .map {
-                val number = it.number
-                val author = it.author
-                val ai = it.ai
-
-                val votes = resolutionMap.resolutionOf(it.number).votes
-                val voteCountFor = votes.votersFor().count()
-                val voteCountAgainst = votes.votersAgainst().count()
-
-                val unroundedReward = (voteCountFor - voteCountAgainst) * ai.raw
-                val roundedReward = ceil(unroundedReward)
-
-                val coinAmountString =
-                    if (unroundedReward.compareTo(roundedReward) == 0)
-                        roundedReward.toString()
-                    else
-                        "$unroundedReward -> $roundedReward"
-
-                "For the adoption of Proposal ${number.raw}, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*$ai=$coinAmountString coins."
-            }
-            .joinToString("\n")
-
-    return result
-}

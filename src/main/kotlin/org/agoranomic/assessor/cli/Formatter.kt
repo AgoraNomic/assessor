@@ -20,6 +20,6 @@ object JsonFormatter : AssessmentFormatter {
 
 object RewardsFormatter : AssessmentFormatter {
     override fun format(assessment: ProposalResolutionMap): String {
-        return rewardsReport(assessment)
+        return rewardsReport(calculateRewards(assessment))
     }
 }
