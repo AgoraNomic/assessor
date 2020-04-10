@@ -33,10 +33,6 @@ data class SinglePersonPendingVoteMap(private val map: ImmutableMap<ProposalNumb
 data class MultiPersonPendingVoteMap(private val data: ImmutableMap<Person, SinglePersonPendingVoteMap>) {
     constructor(map: Map<Person, SinglePersonPendingVoteMap>) : this(map.toImmutableMap())
 
-    init {
-        require(data.isNotEmpty())
-    }
-
     val voters get() = data.keys
 
     fun proposalsWithVotes() = data.values.flatMap { it.proposals }.distinct()
