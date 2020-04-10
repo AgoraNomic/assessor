@@ -28,24 +28,35 @@ private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
     emitLine("The quorum for all below decisions was ${quorum.raw}.")
 }
 
-private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
-    emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
+private fun StringBuilder.emitProposalV0Header(data: ProposalDataV0) {}
 
-    val proposalClassAndChamber = proposal.classAndChamber
-
+private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
     // This val exists to ensure that, should another ProposalClassAndChamber type be added, the compiler will error
     // here unless this is also updated.
     @Suppress("UNUSED_VARIABLE", "LocalVariableName")
-    val _ensureExhaustive_ = when (proposalClassAndChamber) {
+    val _ensureExhaustive_ = when (val classAndChamber = data.classAndChamber) {
         is ProposalClassAndChamber.Classless -> {
             /* do nothing */
         }
 
-        is ProposalClassAndChamber.DemocraticClass -> emitLine("CLASS: DEMOCRATIC")
+        is ProposalClassAndChamber.DemocraticClass -> {
+            emitLine("CLASS: DEMOCRATIC")
+        }
+
         is ProposalClassAndChamber.OrdinaryClass -> {
             emitLine("CLASS: ORDINARY")
-            emitLine("CHAMBER: ${proposalClassAndChamber.chamber.readableName.toUpperCase()}")
+            emitLine("CHAMBER: ${classAndChamber.chamber.readableName.toUpperCase()}")
         }
+    }
+}
+
+private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
+    emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
+
+    @Suppress("UNUSED_VARIABLE", "LocalVariableName")
+    val _ensureExhaustive_ = when (val versionedData = proposal.versionedData) {
+        is ProposalDataV0 -> emitProposalV0Header(versionedData)
+        is ProposalDataV1 -> emitProposalV1Header(versionedData)
     }
 }
 

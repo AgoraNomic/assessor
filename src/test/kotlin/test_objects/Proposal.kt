@@ -60,14 +60,22 @@ fun testProposalChamber(num: TestNumber): ProposalClassAndChamber {
 fun firstTestProposalChamber() = testFirst(::testProposalChamber)
 fun secondTestProposalChamber() = testSecond(::testProposalChamber)
 
-fun testProposal(num: TestNumber): Proposal = Proposal(
-    testProposalNumber(subReqNum(num)),
-    testProposalAI(subReqNum(num)),
-    testProposalTitle(subReqNum(num)),
-    testProposalAuthor(subReqNum(num)),
-    testProposalCoauthors(subReqNum(num)),
-    testProposalText(subReqNum(num)),
+fun testProposalCommonData(num: TestNumber) = ProposalCommonData(
+    number = testProposalNumber(subReqNum(num)),
+    ai = testProposalAI(subReqNum(num)),
+    title = testProposalTitle(subReqNum(num)),
+    author = testProposalAuthor(subReqNum(num)),
+    coauthors = testProposalCoauthors(subReqNum(num)),
+    text = testProposalText(subReqNum(num))
+)
+
+fun testProposalVersionedData(num: TestNumber) = ProposalDataV1(
     testProposalChamber(subReqNum(num))
+)
+
+fun testProposal(num: TestNumber): Proposal = Proposal(
+    testProposalCommonData(subReqNum(num)),
+    testProposalVersionedData(subReqNum(num))
 )
 
 fun firstTestProposal() = testFirst(::testProposal)

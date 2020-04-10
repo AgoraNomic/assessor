@@ -6,6 +6,7 @@ import test_objects.firstTestProposal
 import test_objects.secondTestProposal
 import test_objects.thirdTestProposal
 import test_util.assertEqualsAndHashCode
+import test_util.copyWithNumber
 import kotlin.test.*
 
 private typealias CreateProposalSetFunc = (proposals: Array<out Proposal>) -> ProposalSet
@@ -25,8 +26,8 @@ class `ProposalSet tests` {
     fun `proposalSetOf throws on duplicate numbers`(createProposalSet: CreateProposalSetFunc) {
         val duplicateNumber = ProposalNumber(12) // Arbitrarily picked
 
-        val firstDuplicateProposal = firstTestProposal().copy(number = duplicateNumber)
-        val secondDuplicateProposal = secondTestProposal().copy(number = duplicateNumber)
+        val firstDuplicateProposal = firstTestProposal().copyWithNumber(duplicateNumber)
+        val secondDuplicateProposal = secondTestProposal().copyWithNumber(duplicateNumber)
         val nonduplicateProposal = thirdTestProposal()
 
         assertFailsWith<ProposalDataMismatchException> {

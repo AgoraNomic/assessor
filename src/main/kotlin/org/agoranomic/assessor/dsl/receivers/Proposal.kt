@@ -43,13 +43,12 @@ interface ProposalReceiverV1 : ProposalCommonReceiver {
 typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 
 @AssessmentDsl
-private class ProposalReceiverImplV1(private val number: ProposalNumber) : ProposalReceiverV1 {
+private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
     private val titleValue = DslValue<String>()
     private val textValue = DslValue<String>()
     private val aiValue = DslValue<ProposalAI>()
     private val authorValue = DslValue<Person>()
     private var coauthorsValue = DslValue<Persons>()
-    private val classAndChamberValue = DslValue<ProposalClassAndChamber>()
 
     override fun title(str: String) {
         titleValue.set(str)
@@ -71,6 +70,48 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
         aiValue.set(value)
     }
 
+    fun compile(): ProposalCommonData {
+        val ai = aiValue.get()
+        val title = titleValue.get()
+        val author = authorValue.get()
+        val coauthors = coauthorsValue.getOrDefault(emptyPersons())
+        val text = textValue.get()
+
+        return ProposalCommonData(
+            number,
+            ai,
+            title,
+            author,
+            coauthors,
+            text.trim()
+        )
+    }
+}
+
+@AssessmentDsl
+private class ProposalReceiverImplV0(
+    number: ProposalNumber,
+    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number)
+) : ProposalReceiverV0, ProposalCommonReceiver by commonImpl {
+    fun compile(): Proposal {
+        return Proposal(
+            commonImpl.compile(),
+            ProposalDataV0
+        )
+    }
+}
+
+fun buildProposalV0(number: ProposalNumber, block: ProposalReceiverV0Init): Proposal {
+    return ProposalReceiverImplV0(number).also(block).compile()
+}
+
+@AssessmentDsl
+private class ProposalReceiverImplV1(
+    number: ProposalNumber,
+    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number)
+) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl {
+    private val classAndChamberValue = DslValue<ProposalClassAndChamber>()
+
     override fun classless() {
         classAndChamberValue.set(ProposalClassAndChamber.Classless)
     }
@@ -84,42 +125,15 @@ private class ProposalReceiverImplV1(private val number: ProposalNumber) : Propo
     }
 
     fun compile(): Proposal {
-        val ai = aiValue.get()
-        val title = titleValue.get()
-        val author = authorValue.get()
-        val coauthors = coauthorsValue.getOrDefault(emptyPersons())
-        val text = textValue.get()
         val classAndChamber = classAndChamberValue.get()
 
         return Proposal(
-            number,
-            ai,
-            title,
-            author,
-            coauthors,
-            text.trim(),
-            classAndChamber
+            commonImpl.compile(),
+            ProposalDataV1(classAndChamber)
         )
     }
 }
 
 fun buildProposalV1(number: ProposalNumber, block: ProposalReceiverV1Init): Proposal {
     return ProposalReceiverImplV1(number).also(block).compile()
-}
-
-// Old proposals are exactly the same as new proposals without a class.
-@AssessmentDsl
-private class ProposalReceiverImplV0(
-    number: ProposalNumber,
-    val v1Impl: ProposalReceiverImplV1 = ProposalReceiverImplV1(number)
-) : ProposalReceiverV0, ProposalCommonReceiver by v1Impl {
-    init {
-        v1Impl.classless()
-    }
-
-    fun compile(): Proposal = v1Impl.compile()
-}
-
-fun buildProposalV0(number: ProposalNumber, block: ProposalReceiverV0Init): Proposal {
-    return ProposalReceiverImplV0(number).also(block).compile()
 }

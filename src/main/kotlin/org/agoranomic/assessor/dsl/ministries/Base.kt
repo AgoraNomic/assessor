@@ -42,6 +42,48 @@ private fun <Office : Enum<Office>> ProposalVotingStrengthReceiver.updateVotingS
     }
 }
 
+private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
+    /* do nothing */
+}
+
+private fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministriesProposalV1(
+    officeClass: KClass<Office>,
+    officeMap: Map<Office, Person?>,
+    officeMinistries: Map<Office, List<Ministry>>,
+    ministryBonus: VotingStrength,
+    proposal: Proposal
+) {
+    val versionedData = proposal.versionedData
+    check(versionedData is ProposalDataV1)
+
+    val currentProposalClassAndChamber = versionedData.classAndChamber
+
+    // This val exists to ensure that, should another ProposalClassAndChamber be added, the compiler will error
+    // here unless this is also updated.
+    @Suppress("UNUSED_VARIABLE", "LocalVariableName")
+    val _ensureExhaustive_ = when (currentProposalClassAndChamber) {
+        is ProposalClassAndChamber.Classless -> {
+            /* do nothing */
+        }
+
+        is ProposalClassAndChamber.DemocraticClass -> {
+            /* do nothing */
+        }
+
+        is ProposalClassAndChamber.OrdinaryClass -> {
+            proposal(proposal.number) {
+                updateVotingStrengthsForProposal(
+                    officeClass,
+                    officeMap,
+                    officeMinistries,
+                    ministryBonus,
+                    currentProposalClassAndChamber.chamber
+                )
+            }
+        }
+    }
+}
+
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
     officeClass: KClass<Office>,
     officeMap: Map<Office, Person?>,
@@ -50,31 +92,16 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
     proposals: ProposalSet
 ) {
     for (currentProposal in proposals) {
-        val currentProposalClassAndChamber = currentProposal.classAndChamber
+        when (currentProposal.versionedData) {
+            is ProposalDataV0 -> ministriesProposalV0()
 
-        // This val exists to ensure that, should another ProposalClassAndChamber be added, the compiler will error
-        // here unless this is also updated.
-        @Suppress("UNUSED_VARIABLE", "LocalVariableName")
-        val _ensureExhaustive_ = when (currentProposalClassAndChamber) {
-            is ProposalClassAndChamber.Classless -> {
-                /* do nothing */
-            }
-
-            is ProposalClassAndChamber.DemocraticClass -> {
-                /* do nothing */
-            }
-
-            is ProposalClassAndChamber.OrdinaryClass -> {
-                proposal(currentProposal.number) {
-                    updateVotingStrengthsForProposal(
-                        officeClass,
-                        officeMap,
-                        officeMinistries,
-                        ministryBonus,
-                        currentProposalClassAndChamber.chamber
-                    )
-                }
-            }
+            is ProposalDataV1 -> ministriesProposalV1(
+                officeClass = officeClass,
+                officeMap = officeMap,
+                officeMinistries = officeMinistries,
+                ministryBonus = ministryBonus,
+                proposal = currentProposal
+            )
         }
     }
 }

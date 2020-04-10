@@ -3,10 +3,12 @@ import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
 import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.TestFactory
 import test_objects.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
+import kotlin.test.assertTrue
 
 abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     protected fun ProposalReceiver.onlyCommonSetup(
@@ -293,9 +295,9 @@ class ProposalDslV0Test : ProposalDslTestBase<ProposalReceiverV0>() {
     }
 
     @Test
-    fun `class and chamber is Classless`() {
+    fun `versionedData is version 0`() {
         val proposal = fullProposal()
-        assertEquals(ProposalClassAndChamber.Classless, proposal.classAndChamber)
+        assertTrue(proposal.versionedData is ProposalDataV0)
     }
 }
 
@@ -363,7 +365,7 @@ class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
         }
 
         @Test
-        fun `returns expected class and chamber for classless`() {
+        fun `returns expected versioned data`() {
             val initToExpected = mapOf(
                 { it: ProposalReceiverV1 -> it.classless() }
                         to ProposalClassAndChamber.Classless,
@@ -381,7 +383,10 @@ class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
                     init(this)
                 }
 
-                assertEquals(expectedClassAndChamber, proposal.classAndChamber)
+                val versionedData = proposal.versionedData
+
+                assertTrue(versionedData is ProposalDataV1)
+                assertEquals(expectedClassAndChamber, versionedData.classAndChamber)
             }
         }
     }

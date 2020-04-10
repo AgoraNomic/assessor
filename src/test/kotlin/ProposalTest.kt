@@ -3,6 +3,7 @@ import org.agoranomic.assessor.lib.checkMismatch
 import test_objects.firstTestProposal
 import test_objects.secondTestProposal
 import test_util.assertSucceeds
+import test_util.copyWithNumber
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertSame
@@ -37,7 +38,7 @@ class `checkMismatch tests` {
     @Test
     fun `checkMismatch throws IllegalArgumentException if numbers are same and data is different`() {
         val originalProposal = firstTestProposal()
-        val nextProposal = secondTestProposal().copy(number = originalProposal.number)
+        val nextProposal = secondTestProposal().copyWithNumber(originalProposal.number)
 
         check(originalProposal.number == nextProposal.number)
         check(originalProposal != nextProposal)

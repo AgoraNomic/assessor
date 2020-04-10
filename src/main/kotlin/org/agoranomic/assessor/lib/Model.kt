@@ -22,15 +22,51 @@ inline class ProposalAI(val raw: RawProposalAI) {
     override fun toString(): String = raw.toString()
 }
 
-data class Proposal(
+data class ProposalCommonData(
     val number: ProposalNumber,
     val ai: ProposalAI,
     val title: String,
     val author: Person,
     val coauthors: Persons,
-    val text: String,
-    val classAndChamber: ProposalClassAndChamber
+    val text: String
 )
+
+sealed class ProposalVersionedData
+
+object ProposalDataV0 : ProposalVersionedData()
+data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : ProposalVersionedData()
+
+data class Proposal(
+    val commonData: ProposalCommonData,
+    val versionedData: ProposalVersionedData
+) {
+    val number get() = commonData.number
+    val ai get() = commonData.ai
+    val title get() = commonData.title
+    val author get() = commonData.author
+    val coauthors get() = commonData.coauthors
+    val text get() = commonData.text
+
+    constructor(
+        number: ProposalNumber,
+        ai: ProposalAI,
+        title: String,
+        author: Person,
+        coauthors: Persons,
+        text: String,
+        versionedData: ProposalVersionedData
+    ) : this(
+        ProposalCommonData(
+            number = number,
+            ai = ai,
+            title = title,
+            author = author,
+            coauthors = coauthors,
+            text = text
+        ),
+        versionedData
+    )
+}
 
 enum class Ministry(val readableName: String) {
     Justice("Justice"),
