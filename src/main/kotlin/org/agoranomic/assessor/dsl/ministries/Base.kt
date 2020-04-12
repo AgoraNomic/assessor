@@ -26,15 +26,11 @@ private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries
     return personMinistries
 }
 
-private fun <Office : Enum<Office>> ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
-    officeClass: KClass<Office>,
-    officeHolders: Map<Office, Person?>,
-    officeMinistries: Map<Office, List<Ministry>>,
+private fun ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
+    personMinistries: Map<Person, List<Ministry>>,
     ministryBonus: VotingStrength,
     proposalChamber: ProposalChamber
 ) {
-    val personMinistries = officeMinistriesToPersonMinistries(officeClass, officeHolders, officeMinistries)
-
     for ((currentPerson, currentPersonMinistries) in personMinistries) {
         repeat(currentPersonMinistries.count { it == proposalChamber }) { _ ->
             currentPerson add ministryBonus
@@ -46,10 +42,8 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
     /* do nothing */
 }
 
-private fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministriesProposalV1(
-    officeClass: KClass<Office>,
-    officeMap: Map<Office, Person?>,
-    officeMinistries: Map<Office, List<Ministry>>,
+private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
+    personMinistries: Map<Person, List<Ministry>>,
     ministryBonus: VotingStrength,
     proposal: Proposal
 ) {
@@ -73,9 +67,7 @@ private fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministriesPropo
         is ProposalClassAndChamber.OrdinaryClass -> {
             proposal(proposal.number) {
                 updateVotingStrengthsForProposal(
-                    officeClass,
-                    officeMap,
-                    officeMinistries,
+                    personMinistries,
                     ministryBonus,
                     currentProposalClassAndChamber.chamber
                 )
@@ -96,9 +88,11 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
             is ProposalDataV0 -> ministriesProposalV0()
 
             is ProposalDataV1 -> ministriesProposalV1(
-                officeClass = officeClass,
-                officeMap = officeMap,
-                officeMinistries = officeMinistries,
+                personMinistries = officeMinistriesToPersonMinistries(
+                    officeClass = officeClass,
+                    officeMap = officeMap,
+                    officeMinistries = officeMinistries
+                ),
                 ministryBonus = ministryBonus,
                 proposal = currentProposal
             )
