@@ -1,13 +1,13 @@
 package org.agoranomic.assessor.lib
 
+import io.github.random_internet_cat.util.compareTo
+import io.github.random_internet_cat.util.times
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toProposalSet
-import io.github.random_internet_cat.util.compareTo
-import io.github.random_internet_cat.util.times
 import java.math.BigInteger
 
 enum class ProposalResult {

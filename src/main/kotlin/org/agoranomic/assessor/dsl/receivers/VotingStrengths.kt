@@ -1,11 +1,11 @@
 package org.agoranomic.assessor.dsl.receivers
 
+import io.github.random_internet_cat.util.getOrFail
 import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
-import io.github.random_internet_cat.util.getOrFail
 
 @AssessmentDsl
 interface ProposalVotingStrengthReceiver {

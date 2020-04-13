@@ -1,16 +1,12 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.get
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
-import io.github.random_internet_cat.util.getOrFail
 
 @AssessmentDsl
 interface MultiPersonVotesReceiver {

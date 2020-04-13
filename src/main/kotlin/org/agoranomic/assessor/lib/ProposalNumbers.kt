@@ -1,8 +1,8 @@
 package org.agoranomic.assessor.lib
 
+import io.github.random_internet_cat.util.toSetCheckingDistinct
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
-import io.github.random_internet_cat.util.toSetCheckingDistinct
 
 /**
  * A [Collection] that contains a set of distinct ProposalNumbers.
