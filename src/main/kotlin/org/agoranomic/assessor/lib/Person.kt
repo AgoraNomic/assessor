@@ -2,7 +2,7 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
-import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
+import io.github.random_internet_cat.util.toSetCheckingDistinct
 
 data class Person(val name: String)
 

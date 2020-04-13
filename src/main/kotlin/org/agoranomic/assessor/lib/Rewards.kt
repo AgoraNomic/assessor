@@ -2,10 +2,10 @@ package org.agoranomic.assessor.lib
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
-import org.agoranomic.assessor.lib.util.ceil
-import org.agoranomic.assessor.lib.util.compareTo
-import org.agoranomic.assessor.lib.util.getOrFail
-import org.agoranomic.assessor.lib.util.times
+import io.github.random_internet_cat.util.ceil
+import io.github.random_internet_cat.util.compareTo
+import io.github.random_internet_cat.util.getOrFail
+import io.github.random_internet_cat.util.times
 import java.math.BigDecimal
 import java.math.BigInteger
 

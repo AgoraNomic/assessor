@@ -3,7 +3,7 @@ package org.agoranomic.assessor.lib.proposal_set
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.ProposalNumbers
-import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
+import io.github.random_internet_cat.util.toSetCheckingDistinct
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {

@@ -10,7 +10,7 @@ import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.get
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
-import org.agoranomic.assessor.lib.util.getOrFail
+import io.github.random_internet_cat.util.getOrFail
 
 @AssessmentDsl
 interface MultiPersonVotesReceiver {

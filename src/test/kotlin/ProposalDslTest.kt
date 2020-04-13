@@ -1,7 +1,7 @@
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.lib.util.toSetCheckingDistinct
+import io.github.random_internet_cat.util.toSetCheckingDistinct
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.TestFactory
 import test_objects.*
