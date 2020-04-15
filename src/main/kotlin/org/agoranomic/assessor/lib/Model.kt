@@ -22,14 +22,27 @@ inline class ProposalAI(val raw: RawProposalAI) {
     override fun toString(): String = raw.toString()
 }
 
-data class ProposalCommonData(
-    val number: ProposalNumber,
-    val ai: ProposalAI,
-    val title: String,
-    val author: Person,
-    val coauthors: Persons,
+/**
+ * This exists to allow Proposal to provide these properties without explicitly delegating to each of them. This should
+ * exactly mirror the properties in [ProposalCommonData].
+ */
+private interface ProposalCommonInterface {
+    val number: ProposalNumber
+    val ai: ProposalAI
+    val title: String
+    val author: Person
+    val coauthors: Persons
     val text: String
-)
+}
+
+data class ProposalCommonData(
+    override val number: ProposalNumber,
+    override val ai: ProposalAI,
+    override val title: String,
+    override val author: Person,
+    override val coauthors: Persons,
+    override val text: String
+) : ProposalCommonInterface
 
 sealed class ProposalVersionedData
 
@@ -39,14 +52,7 @@ data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : Propos
 data class Proposal(
     val commonData: ProposalCommonData,
     val versionedData: ProposalVersionedData
-) {
-    val number get() = commonData.number
-    val ai get() = commonData.ai
-    val title get() = commonData.title
-    val author get() = commonData.author
-    val coauthors get() = commonData.coauthors
-    val text get() = commonData.text
-
+) : ProposalCommonInterface by commonData {
     constructor(
         number: ProposalNumber,
         ai: ProposalAI,
