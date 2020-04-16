@@ -44,10 +44,26 @@ data class ProposalCommonData(
     override val text: String
 ) : ProposalCommonInterface
 
-sealed class ProposalVersionedData
+sealed class ProposalVersionedData {
+    abstract fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R
+}
 
-object ProposalDataV0 : ProposalVersionedData()
-data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : ProposalVersionedData()
+object ProposalDataV0 : ProposalVersionedData() {
+    override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData) =
+        mapper.visitV0(commonData, this)
+}
+
+data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : ProposalVersionedData() {
+    override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData) =
+        mapper.visitV1(commonData, this)
+}
+
+interface ProposalMapper<R> {
+    fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0): R
+    fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1): R
+}
+
+typealias ProposalVisitor = ProposalMapper<Unit>
 
 data class Proposal(
     val commonData: ProposalCommonData,
@@ -72,6 +88,10 @@ data class Proposal(
         ),
         versionedData
     )
+
+    fun <R> accept(mapper: ProposalMapper<R>): R {
+        return versionedData.accept(mapper, commonData)
+    }
 }
 
 enum class Ministry(val readableName: String) {
