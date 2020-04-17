@@ -89,5 +89,10 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
         votes(Alexis) {
             endorse(RLee) on all
         }
+
+        votes(PSS) {
+            FOR on 8367
+            FOR on 8366
+        }
     }
 }
