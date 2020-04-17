@@ -113,5 +113,10 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
         votes(Rance) {
             endorse(Jason) on all
         }
+
+        votes(Falsifian) {
+            endorse(Aris) on 8366
+            FOR on 8367
+        }
     }
 }
