@@ -77,4 +77,7 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
             )
         }
     }
+
+    voting {
+    }
 }
