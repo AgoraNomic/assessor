@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.ministries.ministriesV2
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.FOR
 
@@ -83,6 +84,10 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
     voting {
         votes(RLee) {
             FOR on all
+        }
+
+        votes(Alexis) {
+            endorse(RLee) on all
         }
     }
 }
