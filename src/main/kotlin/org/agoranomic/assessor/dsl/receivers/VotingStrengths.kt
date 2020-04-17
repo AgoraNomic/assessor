@@ -14,6 +14,9 @@ interface ProposalVotingStrengthReceiver {
 
     infix fun Person.add(value: VotingStrength)
     infix fun Person.add(value: Int) = add(VotingStrength(value))
+
+    infix fun Person.subtract(value: VotingStrength)
+    infix fun Person.subtract(value: Int) = subtract(VotingStrength(value))
 }
 
 typealias ProposalVotingStrengthReceiverInit = DslInit<ProposalVotingStrengthReceiver>
@@ -30,6 +33,10 @@ private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStre
     override infix fun Person.add(value: VotingStrength) {
         if (!strengthMap.containsKey(this)) strengthMap[this] = globalStrengths[this].value
         strengthMap[this] = strengthMap.getOrFail(this) + value
+    }
+
+    override fun Person.subtract(value: VotingStrength) {
+        add(-value)
     }
 
     fun compile(): Map<Person, VotingStrengthWithComment> {
@@ -57,6 +64,9 @@ interface GlobalVotingStrengthReceiver {
 
     infix fun Person.add(amount: VotingStrength)
     infix fun Person.add(amount: Int) = add(VotingStrength(amount))
+
+    infix fun Person.subtract(amount: VotingStrength)
+    infix fun Person.subtract(amount: Int) = subtract(VotingStrength(amount))
 
     fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit)
     fun default(strength: VotingStrength)
@@ -101,6 +111,10 @@ private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableP
     override fun Person.add(amount: VotingStrength) {
         setDefaultIfAbsent(this)
         globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + amount)
+    }
+
+    override fun Person.subtract(amount: VotingStrength) {
+        add(-amount)
     }
 
     override fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit) {
