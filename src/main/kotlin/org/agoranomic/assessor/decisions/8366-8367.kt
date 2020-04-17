@@ -104,5 +104,14 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
             FOR on 8366
             FOR on 8367
         }
+
+        votes(Jason) {
+            FOR on 8366
+            FOR on 8367
+        }
+
+        votes(Rance) {
+            endorse(Jason) on all
+        }
     }
 }
