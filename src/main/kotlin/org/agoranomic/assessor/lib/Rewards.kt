@@ -104,7 +104,7 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
                     else
                         "$unroundedReward -> $roundedReward"
 
-                "For the adoption of Proposal number, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*$ai=$coinAmountString coins."
+                "For the adoption of Proposal $proposal, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*$ai=$coinAmountString coins."
             }
             .joinToString("\n")
 
