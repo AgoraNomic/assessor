@@ -45,11 +45,10 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
 private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
     personMinistries: Map<Person, List<Ministry>>,
     ministryBonus: VotingStrength,
-    proposal: Proposal
+    commonData: ProposalCommonData,
+    versionedData: ProposalDataV1
 ) {
-    val versionedData = proposal.versionedData
-    check(versionedData is ProposalDataV1)
-
+    val proposalNumber = commonData.number
     val currentProposalClassAndChamber = versionedData.classAndChamber
 
     // This val exists to ensure that, should another ProposalClassAndChamber be added, the compiler will error
@@ -65,7 +64,7 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
         }
 
         is ProposalClassAndChamber.OrdinaryClass -> {
-            proposal(proposal.number) {
+            proposal(proposalNumber) {
                 updateVotingStrengthsForProposal(
                     personMinistries,
                     ministryBonus,
@@ -84,19 +83,24 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
     proposals: ProposalSet
 ) {
     for (currentProposal in proposals) {
-        when (currentProposal.versionedData) {
-            is ProposalDataV0 -> ministriesProposalV0()
+        currentProposal.accept(object : ProposalVisitor {
+            override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
+                ministriesProposalV0()
+            }
 
-            is ProposalDataV1 -> ministriesProposalV1(
-                personMinistries = officeMinistriesToPersonMinistries(
-                    officeClass = officeClass,
-                    officeMap = officeMap,
-                    officeMinistries = officeMinistries
-                ),
-                ministryBonus = ministryBonus,
-                proposal = currentProposal
-            )
-        }
+            override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
+                ministriesProposalV1(
+                    personMinistries = officeMinistriesToPersonMinistries(
+                        officeClass = officeClass,
+                        officeMap = officeMap,
+                        officeMinistries = officeMinistries
+                    ),
+                    ministryBonus = ministryBonus,
+                    commonData = commonData,
+                    versionedData = versionedData
+                )
+            }
+        })
     }
 }
 
