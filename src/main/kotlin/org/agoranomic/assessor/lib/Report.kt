@@ -50,11 +50,15 @@ private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
 private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
 
-    @Suppress("UNUSED_VARIABLE", "LocalVariableName")
-    val _ensureExhaustive_ = when (val versionedData = proposal.versionedData) {
-        is ProposalDataV0 -> emitProposalV0Header(versionedData)
-        is ProposalDataV1 -> emitProposalV1Header(versionedData)
-    }
+    proposal.accept(object : ProposalVisitor {
+        override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
+            emitProposalV0Header(versionedData)
+        }
+
+        override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
+            emitProposalV1Header(versionedData)
+        }
+    })
 }
 
 private val strengthFootnoteMarkerMap = mapOf(
