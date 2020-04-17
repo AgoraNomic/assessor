@@ -18,6 +18,7 @@ inline class VotingStrength(val raw: RawVotingStrength) {
     override fun toString(): String = raw.toString()
 }
 
+operator fun VotingStrength.unaryMinus() = VotingStrength(-this.raw)
 operator fun VotingStrength.plus(other: VotingStrength) = VotingStrength(this.raw + other.raw)
 operator fun VotingStrength.minus(other: VotingStrength) = VotingStrength(this.raw - other.raw)
 operator fun VotingStrength.times(other: RawVotingStrength) = VotingStrength(this.raw * other)
