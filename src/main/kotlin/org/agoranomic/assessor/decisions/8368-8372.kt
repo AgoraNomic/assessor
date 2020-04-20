@@ -318,5 +318,13 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
         votes(Rance) {
             endorse(Jason) on all
         }
+
+        votes(Murphy) {
+            FOR on 8368
+            FOR on 8369
+            FOR on 8370
+            AGAINST on 8371
+            FOR on 8372
+        }
     }
 }
