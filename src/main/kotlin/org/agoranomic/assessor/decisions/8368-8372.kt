@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.ministries.ministriesV2
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.Efficiency
 import org.agoranomic.assessor.lib.Ministry.Justice
@@ -288,6 +289,14 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
             FOR on 8370
             AGAINST on 8371
             AGAINST on 8372
+        }
+
+        votes(Falsifian) {
+            FOR on 8368
+            endorse(Aris) on 8369
+            PRESENT on 8370
+            PRESENT on 8371
+            FOR on 8372
         }
     }
 }
