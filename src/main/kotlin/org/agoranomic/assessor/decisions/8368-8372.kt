@@ -10,6 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.Efficiency
 import org.agoranomic.assessor.lib.Ministry.Justice
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8368 to 8372`() = assessment {
@@ -252,5 +254,12 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8368
+            FOR on 8369
+            FOR on 8370
+            PRESENT on 8371
+            AGAINST on 8372
+        }
     }
 }
