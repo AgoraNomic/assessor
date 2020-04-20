@@ -269,5 +269,9 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
             AGAINST on 8371
             FOR on 8372
         }
+
+        votes(Warrigal) {
+            PRESENT on all
+        }
     }
 }
