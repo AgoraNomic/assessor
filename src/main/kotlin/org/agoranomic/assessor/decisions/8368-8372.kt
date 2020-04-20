@@ -250,4 +250,7 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
             )
         }
     }
+
+    voting {
+    }
 }
