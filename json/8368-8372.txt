@@ -1,0 +1,550 @@
+{
+    "name": "8368-8372",
+    "proposals": [
+        {
+            "number": 8368,
+            "ai": "1.7",
+            "title": "Explicit Accusations",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Rule 2478 (Vigilante Justice) by replacing:\n\n  A player CAN by announcement, but subject to the provisions of\n  this rule, Point eir Finger at a person (the perp) who plays the\n  game, citing an alleged violation of the rules by that person.\n\nwith:\n\n  A player CAN by announcement, but subject to the provisions of\n  this rule, Point eir Finger at a person (the perp) who plays the\n  game; the announcement has to explicitly name the perp and cite a\n  specific rule and an alleged violation of that rule by that person.\n\nand by replacing:\n\n  - Imposing the Cold Hand of Justice on the perp, as described\n    elsewhere; or\n\nwith:\n\n  - Imposing the Cold Hand of Justice on the perp for the cited rule\n    violation, as described elsewhere; or"
+        },
+        {
+            "number": 8369,
+            "ai": "3.0",
+            "title": "Emergency Termination Notice",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "[This gives everyone a bit of warning before someone goes and repeals the\nEmergency Regulations, and gives the PM time to potentially extend\nthe emergency. Note that explicitly specifying the deadline in this rule\nmeans that it can't be extended further.]\n\nAmend the rule entitled \"Eclipse Light\" by changing the text\n  \"by announcement\"\nto read\n  \"with 7 days notice\"."
+        },
+        {
+            "number": 8370,
+            "ai": "2.0",
+            "title": "Announced Petitions",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2143, \"Official Reports and Duties\", by changing the final\nparagraph to read:\n\nA player CAN, by announcement, petition a specified officer to take\na specified action; the officer SHALL publicly respond to the petition\nin a timely fashion."
+        },
+        {
+            "number": 8371,
+            "ai": "2.0",
+            "title": "Petitio Exitus",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2143, \"Official Reports and Duties\", by deleting the final\nparagraph."
+        },
+        {
+            "number": 8372,
+            "ai": "3.0",
+            "title": "Auction Overhaul",
+            "author": "Alexis",
+            "coauthors": [
+                "G.",
+                "Falsifian"
+            ],
+            "text": "Terminate all auctions; this overrides any rule that would prevent an\nauction from being terminated.\n\nRepeal Rule 2545 (Auctions).\nRepeal Rule 2549 (Auction Initiation).\nRepeal Rule 2550 (Bidding).\nRepeal Rule 2551 (Auction End).\nRepeal Rule 2552 (Auction Termination).\nRepeal Rule 2584 (Free Auctions).\n\nAmend Rule 1885 (Zombie Auctions) to read as follows:\n{\n  A zombie auction is an Agoran decision to award ownership of zombies to\n  players. A zombie is eligible for auction if its master switch is set to\n  Agora and has a resale value greater than 0.\n\n  While there is at least one zombie eligible for auction, and no zombie\n  auction is currently in progress (initiated but not resolved), the\n  Registrar CAN initiate a zombie auction. For a zombie auction, the vote\n  collector is the Registrar, the quorum is 0, the voting method is auction,\n  and the valid options are the zombies a) that were eligible for auction at\n  its initiation and b) whose master switch has not changed in the meanwhile.\n  A list of the zombies eligible for auction (the \"default priorities\"),\n  ordered by the date they became a zombie with the newest first, is an\n  essential parameter of the decision.\n\n  In a timely fashion after a zombie auction is resolved, each winner CAN and\n  SHALL pay for eir prize by paying a fee equal to eir valid bid in the\n  auction; when e does so, the prize's master switch is set to em. E CANNOT\n  and NEED NOT do so if, before e does, the zombie's master switch changes.\n\n  In a timely fashion after the beginning of each Agoran month, the Registrar\n  SHALL either initiate a zombie auction, or if there are no zombies eligible\n  for auction, announce this fact.\n}\n\nAmend Rule 2528 (Voting Methods) by replacing {which must be AI-majority,\ninstant runoff, or first-past-the-post} with {which must be AI-majority,\ninstant runoff, first-past-the-post, or auction} and by replacing\n{\n        2. The valid conditional votes, as defined by rules of power at\n           least that of this rule; and\n        3. For an instant runoff decision, the ordered lists of entities.\n        4. For any other decision, the valid options.\n}\nwith\n{\n        2. For a decision other than an auction, the valid conditional votes,\n            as defined by rules of power at least that of this rule;\n        3. For an instant runoff decision, the ordered lists of entities;\n        4. For an auction decision, the positive integers (termed \"bids\"); and\n        5. For a decision other than an instant runoff decision or an\n  auction, the valid options.\n\n  For an auction, the minimum number of options is one; for any other\n  decision, it is two.\n}\n\n[I would like to make it so that voting methods don't need to be defined at\npower 3, but that's beyond the scope of this proposal. It'll be part of my\nadministrative reform series I imagine.]\n\nAmend Rule 683 (Voting on Agoran Decisions) by appending\n{\n  The above notwithstanding, an entity CANNOT withdraw a PRESENT vote on an\n  auction\n  decision, nor withdraw any other vote except to change eir vote to PRESENT\n  or to one with an equal or higher bid.\n\n  An entity CAN, by announcement at any time prior to the end of an auction\n  decision's voting period, designate a list of entities as eir priorities\n  for that decision, or change eir previously-designated priorities. An\n  announcement that an entity is designating priorities for a decision is\n  unsuccessful unless it indicates, clearly but not necessarily explicitly,\n  that e is changing the previous ones.\n}\n\n[Since priorities work only for winners, there is much less need to enforce\nvalidity on the designations, and this will work nicely enough for now. The\nrequirement for explicitness about changing is to line it up with how\nvoting works in general; a second set of votes does not replace the first\nunless it does so.]\n\nAmend Rule 955 (Determining the Will of Agora) by appending the following\nto the list:\n{\n   4. For an auction, the outcome is an association of voters (winners) to\n  valid options (prizes) determined as follows. For each voter (with a valid\n  vote) in descending order of bids (breaking ties in favour of the voter\n  whose valid vote was submitted first), of the remaining prizes, e is\n  assigned the first as-yet unassigned prize that 1) appears first in eir\n  priorities for that decision, if any, otherwise 2) the one that appears\n  first in the decision's default priorities, if any, otherwise 3) one chosen\n  by the vote collector by announcement. Continue in this manner until all\n  prizes have been assigned or the list of voters is exhausted. Any remaining\n  voters do not win any prize, and any remaining prizes are excess lots.\n}\n\n[This allows people to target specific zombies rather than fighting over\nwhich ones they don't want. The bug around zombies that stop being eligible\nis fixed by them being considered no longer valid options.]\n\nAmend Rule 107 (Initiating Agoran Decisions) by replacing {The vote\ncollector for a decision with less than two options CAN and SHALL end the\nvoting period by announcement} with {The vote collector for a decision with\nfewer than its minimum number of options CAN and SHALL end the voting\nperiod by announcement}\n\nAmend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with\n{cast or withdraw a vote in, or designate priorities for, a zombie auction;}"
+        }
+    ],
+    "quorum": 7,
+    "resolutions": [
+        {
+            "proposal": 8368,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 32,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Alexis",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Warrigal",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason"
+                        }
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "twg",
+                        "strength": {
+                            "value": 4
+                        }
+                    },
+                    {
+                        "player": "Murphy",
+                        "strength": {
+                            "value": 2
+                        }
+                    },
+                    {
+                        "player": "G.",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Aris",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Publius Scribonius Scholasticus",
+                        "strength": {
+                            "value": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8369,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 20,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Alexis",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Warrigal",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Aris"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason"
+                        }
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "twg",
+                        "strength": {
+                            "value": 2
+                        }
+                    },
+                    {
+                        "player": "Murphy",
+                        "strength": {
+                            "value": 2
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8370,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 23,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Alexis",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Warrigal",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason"
+                        }
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "twg",
+                        "strength": {
+                            "value": 4
+                        }
+                    },
+                    {
+                        "player": "Murphy",
+                        "strength": {
+                            "value": 4
+                        }
+                    },
+                    {
+                        "player": "Jason",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Aris",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Falsifian",
+                        "strength": {
+                            "value": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8371,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 3,
+                "strength_against": 18,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Alexis",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Warrigal",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "AGAINST",
+                            "comment": "Endorsement of Jason"
+                        }
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "twg",
+                        "strength": {
+                            "value": 4
+                        }
+                    },
+                    {
+                        "player": "Murphy",
+                        "strength": {
+                            "value": 4
+                        }
+                    },
+                    {
+                        "player": "Jason",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Aris",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Falsifian",
+                        "strength": {
+                            "value": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8372,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 8,
+                "strength_against": 18,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Alexis",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Warrigal",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Rance",
+                        "vote": {
+                            "value": "AGAINST",
+                            "comment": "Endorsement of Jason"
+                        }
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "twg",
+                        "strength": {
+                            "value": 2
+                        }
+                    },
+                    {
+                        "player": "Murphy",
+                        "strength": {
+                            "value": 2
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
