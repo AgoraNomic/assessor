@@ -105,10 +105,28 @@ enum class Ministry(val readableName: String) {
 
 typealias ProposalChamber = Ministry
 
+interface ProposalClassAndChamberMapper<R> {
+    fun visitClassless(): R
+    fun visitDemocratic(): R
+    fun visitOrdinary(chamber: ProposalChamber): R
+}
+
+typealias ProposalClassAndChamberVisitor = ProposalClassAndChamberMapper<Unit>
+
 sealed class ProposalClassAndChamber {
-    object Classless : ProposalClassAndChamber()
-    object DemocraticClass : ProposalClassAndChamber()
-    data class OrdinaryClass(val chamber: ProposalChamber) : ProposalClassAndChamber()
+    abstract fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R
+
+    object Classless : ProposalClassAndChamber() {
+        override fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R = mapper.visitClassless()
+    }
+
+    object DemocraticClass : ProposalClassAndChamber() {
+        override fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R = mapper.visitDemocratic()
+    }
+
+    data class OrdinaryClass(val chamber: ProposalChamber) : ProposalClassAndChamber() {
+        override fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R = mapper.visitOrdinary(chamber)
+    }
 }
 
 /**
