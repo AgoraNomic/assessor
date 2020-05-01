@@ -28,23 +28,20 @@ private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
 private fun StringBuilder.emitProposalV0Header(data: ProposalDataV0) {}
 
 private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
-    // This val exists to ensure that, should another ProposalClassAndChamber type be added, the compiler will error
-    // here unless this is also updated.
-    @Suppress("UNUSED_VARIABLE", "LocalVariableName")
-    val _ensureExhaustive_ = when (val classAndChamber = data.classAndChamber) {
-        is ProposalClassAndChamber.Classless -> {
-            /* do nothing */
+    data.classAndChamber.accept(object : ProposalClassAndChamberVisitor {
+        override fun visitClassless() {
+            // do nothing
         }
 
-        is ProposalClassAndChamber.DemocraticClass -> {
+        override fun visitDemocratic() {
             emitLine("CLASS: DEMOCRATIC")
         }
 
-        is ProposalClassAndChamber.OrdinaryClass -> {
+        override fun visitOrdinary(chamber: ProposalChamber) {
             emitLine("CLASS: ORDINARY")
-            emitLine("CHAMBER: ${classAndChamber.chamber.readableName.toUpperCase()}")
+            emitLine("CHAMBER: ${chamber.readableName.toUpperCase()}")
         }
-    }
+    })
 }
 
 private fun StringBuilder.emitProposalHeader(proposal: Proposal) {

@@ -51,28 +51,25 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
     val proposalNumber = commonData.number
     val currentProposalClassAndChamber = versionedData.classAndChamber
 
-    // This val exists to ensure that, should another ProposalClassAndChamber be added, the compiler will error
-    // here unless this is also updated.
-    @Suppress("UNUSED_VARIABLE", "LocalVariableName")
-    val _ensureExhaustive_ = when (currentProposalClassAndChamber) {
-        is ProposalClassAndChamber.Classless -> {
-            /* do nothing */
+    currentProposalClassAndChamber.accept(object : ProposalClassAndChamberVisitor {
+        override fun visitClassless() {
+            // do nothing
         }
 
-        is ProposalClassAndChamber.DemocraticClass -> {
-            /* do nothing */
+        override fun visitDemocratic() {
+            // do nothing
         }
 
-        is ProposalClassAndChamber.OrdinaryClass -> {
+        override fun visitOrdinary(chamber: ProposalChamber) {
             proposal(proposalNumber) {
                 updateVotingStrengthsForProposal(
                     personMinistries,
                     ministryBonus,
-                    currentProposalClassAndChamber.chamber
+                    chamber
                 )
             }
         }
-    }
+    })
 }
 
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
