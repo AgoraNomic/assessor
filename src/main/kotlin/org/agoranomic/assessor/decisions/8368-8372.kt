@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV2
 import org.agoranomic.assessor.dsl.ministries.OfficeV2.*
 import org.agoranomic.assessor.dsl.ministries.ministriesV2
+import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -19,7 +21,7 @@ fun `assessment 8368 to 8372`() = assessment {
     name("8368-8372")
     quorum(7)
 
-    val offices = mapOf(
+    val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
         Assessor to Jason,
@@ -40,7 +42,7 @@ fun `assessment 8368 to 8372`() = assessment {
     strengths {
         default(3)
 
-        offices[Speaker]!! add 1
+        addToHolder(offices, Speaker, 1)
         twg subtract 2 // BLOTS
         Murphy subtract 1 // BLOTS
 

@@ -3,7 +3,10 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV2
 import org.agoranomic.assessor.dsl.ministries.OfficeV2.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesV2
+import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -16,7 +19,7 @@ fun `assessment 8357 to 8365`() = assessment {
     name("8357-8365")
     quorum(7)
 
-    val offices = mapOf(
+    val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
         Assessor to Jason,
@@ -36,7 +39,7 @@ fun `assessment 8357 to 8365`() = assessment {
 
     strengths {
         default(3)
-        offices[Speaker]!! add 1
+        addToHolder(offices, Speaker, 1)
 
         ministriesV2(offices, allProposals)
     }
@@ -334,7 +337,7 @@ to read
 
         votes(Falsifian) {
             endorse(G) on 8357 comment NO_VETO
-            endorse(offices[Referee]!!) on 8358
+            endorseOfficer(offices, Referee) on 8358
             AGAINST on 8359
             endorse(Alexis) on 8360
             endorse(Aris) on 8361

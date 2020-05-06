@@ -1,24 +1,19 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import io.github.random_internet_cat.util.requireExhaustive
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.ProposalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import kotlin.reflect.KClass
 
 private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries(
-    officeClass: KClass<Office>,
-    officeMap: Map<Office, Person?>,
+    officeMap: OfficeMap<Office>,
     officeMinistries: Map<Office, List<Ministry>>
 ): Map<Person, List<Ministry>> {
-    officeMap.keys.requireExhaustive(officeClass)
-
     val personMinistries = mutableMapOf<Person, MutableList<Ministry>>()
 
-    for ((office, person) in officeMap) {
-        if (person != null) {
-            val personMap = personMinistries.computeIfAbsent(person) { mutableListOf() }
+    for ((office, officeState) in officeMap) {
+        if (officeState is OfficeState.Held) {
+            val personMap = personMinistries.computeIfAbsent(officeState.holder) { mutableListOf() }
             personMap += officeMinistries[office] ?: emptyList()
         }
     }
@@ -73,8 +68,7 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
 }
 
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
-    officeClass: KClass<Office>,
-    officeMap: Map<Office, Person?>,
+    officeMap: OfficeMap<Office>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrength,
     proposals: ProposalSet
@@ -88,7 +82,6 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
             override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
                 ministriesProposalV1(
                     personMinistries = officeMinistriesToPersonMinistries(
-                        officeClass = officeClass,
                         officeMap = officeMap,
                         officeMinistries = officeMinistries
                     ),
@@ -100,10 +93,3 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
         })
     }
 }
-
-inline fun <reified Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
-    officeMap: Map<Office, Person?>,
-    officeMinistries: Map<Office, List<Ministry>>,
-    ministryBonus: VotingStrength,
-    proposals: ProposalSet
-) = ministries(Office::class, officeMap, officeMinistries, ministryBonus, proposals)

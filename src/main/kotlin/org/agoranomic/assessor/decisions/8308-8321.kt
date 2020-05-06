@@ -2,8 +2,10 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV0.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesV0
 import org.agoranomic.assessor.dsl.ministries.ministriesV1
+import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -18,7 +20,7 @@ fun `assessment 8308 to 8321`() = assessment {
     name("8308-8321")
     quorum(5)
 
-    val offices = mapOf(
+    val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
         Assessor to Jason,
@@ -545,7 +547,7 @@ least one proposal).]"""
             AGAINST on 8312
             AGAINST on 8313
             FOR on 8314
-            endorse(offices[Assessor]!!) on 8315
+            endorseOfficer(offices, Assessor) on 8315
             PRESENT on 8316
             AGAINST on 8317
             FOR on 8318

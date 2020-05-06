@@ -72,7 +72,7 @@ val INTERESTS_MAP_V0 = mapOf(
 private val MINISTRIES_V0_BONUS = VotingStrength(2)
 
 fun GlobalVotingStrengthReceiver.ministriesV0(
-    officeMap: Map<OfficeV0, Person?>,
+    officeMap: OfficeMap<OfficeV0>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,

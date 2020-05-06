@@ -3,10 +3,13 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV0.*
 import org.agoranomic.assessor.dsl.ministries.ministriesV1
+import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.lib.Ministry.Justice
 import org.agoranomic.assessor.lib.VoteKind.*
 
@@ -15,7 +18,7 @@ fun `assessment 8342 to 8348`() = assessment {
     name("8342-8348")
     quorum(7)
 
-    val offices = mapOf(
+    val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
         Assessor to Jason,
@@ -35,7 +38,7 @@ fun `assessment 8342 to 8348`() = assessment {
 
     strengths {
         default(3)
-        offices[Speaker]!! add 1
+        addToHolder(offices, Speaker, 1)
 
         ministriesV1(offices, allProposals)
     }
@@ -223,7 +226,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
 
         votes(Jason) {
             AGAINST on 8342
-            endorse(offices[Arbitor]!!) on 8343
+            endorseOfficer(offices, Arbitor) on 8343
             PRESENT on 8344
             FOR on 8345
             FOR on 8346
@@ -270,13 +273,13 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         }
 
         votes(Alexis) {
-            endorse(offices[Arbitor]!!) on 8342
+            endorseOfficer(offices, Arbitor) on 8342
             AGAINST on 8343
             FOR on 8344
             AGAINST on 8345
             FOR on 8346
             FOR on 8347 comment "G. and Jason both voted FOR, while Murphy did not vote, so the majority is FOR"
-            endorse(offices[Treasuror]!!) on 8348
+            endorseOfficer(offices, Treasuror) on 8348
         }
 
         votes(Warrigal) {

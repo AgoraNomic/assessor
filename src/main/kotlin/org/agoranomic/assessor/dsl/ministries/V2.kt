@@ -22,7 +22,7 @@ val INTERESTS_MAP_V2: Map<OfficeV2, List<Ministry>> = INTERESTS_MAP_V1.toPersist
 private val MINISTRIES_V2_BONUS = VotingStrength(2)
 
 fun GlobalVotingStrengthReceiver.ministriesV2(
-    officeMap: Map<OfficeV2, Person?>,
+    officeMap: OfficeMap<OfficeV2>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,
