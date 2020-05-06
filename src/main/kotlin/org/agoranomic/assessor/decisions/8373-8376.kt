@@ -14,6 +14,7 @@ import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Participation
 import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
@@ -148,6 +149,13 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
 
         votes(RLee) {
             FOR on all
+        }
+
+        votes(Alexis) {
+            AGAINST on 8373
+            FOR on 8374
+            FOR on 8375
+            FOR on 8376
         }
     }
 }
