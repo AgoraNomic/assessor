@@ -3,7 +3,11 @@ package org.agoranomic.assessor.dsl.ministries
 import io.github.random_internet_cat.util.*
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.HalfFunctionVote
+import org.agoranomic.assessor.lib.InextricableVote
 import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.functionVote
 import kotlin.reflect.KClass
 
 /**
@@ -132,3 +136,19 @@ fun <Office : Enum<Office>> officeMapOf(
  */
 inline fun <reified Office : Enum<Office>> officeMapOf(vararg pairs: Pair<Office, Person?>) =
     officeMapOf(Office::class, *pairs)
+
+fun <Office : Enum<Office>> endorseOfficer(officeMap: OfficeMap<Office>, office: Office): HalfFunctionVote {
+    return when (val officeState = officeMap[office]) {
+        is OfficeState.Vacant -> {
+            functionVote { _, _ ->
+                InextricableVote(
+                    "Endorsement of vacant office: ${office.name}"
+                )
+            }
+        }
+
+        is OfficeState.Held -> {
+            endorse(officeState.holder)
+        }
+    }
+}
