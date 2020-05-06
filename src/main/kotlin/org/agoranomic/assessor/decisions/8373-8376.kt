@@ -176,8 +176,8 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
 
         votes(Jason) {
             FOR on 8373
-            FOR on 8374
-            PRESENT on 8375
+            endorse(G) on 8374
+            endorse(G) on 8375
             FOR on 8376
         }
 
