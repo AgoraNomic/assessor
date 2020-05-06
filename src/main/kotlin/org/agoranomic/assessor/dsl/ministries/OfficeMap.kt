@@ -66,7 +66,7 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
         inline fun <reified Office : Enum<Office>> from(map: Map<Office, OfficeState>) =
             from(Office::class, map)
 
-        private fun <Office : Enum<Office>> OfficeMap<Office>.selectEquality() = this.toSet()
+        private fun OfficeMap<*>.selectEquality(): Set<*> = this.toSet()
     }
 
     private class EntryImpl<Office : Enum<Office>>(
