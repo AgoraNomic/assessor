@@ -197,7 +197,7 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
 
         votes(G) {
             AGAINST on 8374
-            AGAINST on 8375
+            PRESENT on 8375
         }
     }
 }
