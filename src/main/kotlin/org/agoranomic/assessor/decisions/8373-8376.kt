@@ -180,5 +180,12 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             PRESENT on 8375
             FOR on 8376
         }
+
+        votes(Murphy) {
+            endorseOfficer(offices, Registrar) on 8373
+            FOR on 8374
+            endorseOfficer(offices, Herald) on 8375
+            FOR on 8376
+        }
     }
 }
