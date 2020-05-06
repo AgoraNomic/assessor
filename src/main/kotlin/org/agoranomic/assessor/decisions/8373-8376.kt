@@ -190,7 +190,7 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
 
         votes(Falsifian) {
             // TODO resolve conditional vote on 8373: FOR UNLESS VETO
-            // TODO resolve conditional vote on 8374: endorse(Alexis) UNLESS VETO
+            // TODO resolve conditional vote on 8374: FOR UNLESS VETO
             endorse(Alexis) on 8375
             FOR on 8376
         }
