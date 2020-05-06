@@ -51,14 +51,14 @@ interface OfficeMap<Office : Enum<Office>> : Iterable<OfficeMapEntry<Office>> {
  * A default, immutable implementation of [OfficeMap].  As an invariant, its internal [data] map always contains
  * data for each enumerator of [Office].
  */
-private class OfficeMapImpl<Office : Enum<Office>> private constructor(private val data: ImmutableMap<Office, OfficeState>) : OfficeMap<Office> {
+private class OfficeMapImpl<Office : Enum<Office>> private constructor(private val data: ExhaustiveEnumMap<Office, OfficeState>) : OfficeMap<Office> {
     companion object {
         fun <Office : Enum<Office>> from(
             officeClass: KClass<Office>,
             map: Map<Office, OfficeState>
         ): OfficeMap<Office> {
             map.keys.requireExhaustive(officeClass)
-            return OfficeMapImpl(map.toImmutableMap())
+            return OfficeMapImpl(map.toExhaustiveEnumMap(officeClass))
         }
 
         inline fun <reified Office : Enum<Office>> from(map: Map<Office, OfficeState>) =
@@ -73,7 +73,7 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
     ) : OfficeMapEntry<Office>
 
     override fun get(office: Office): OfficeState {
-        return data.getOrFail(office)
+        return data[office]
     }
 
     override fun iterator(): Iterator<OfficeMapEntry<Office>> {
