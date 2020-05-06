@@ -155,9 +155,9 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
 
         votes(Alexis) {
             AGAINST on 8373
-            FOR on 8374
+            AGAINST on 8374
             FOR on 8375
-            FOR on 8376
+            AGAINST on 8376
         }
 
         votes(Trigon) {
