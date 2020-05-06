@@ -2,6 +2,8 @@ package org.agoranomic.assessor.dsl.receivers
 
 import io.github.random_internet_cat.util.getOrFail
 import org.agoranomic.assessor.dsl.*
+import org.agoranomic.assessor.dsl.ministries.OfficeMap
+import org.agoranomic.assessor.dsl.ministries.OfficeState
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
@@ -74,6 +76,30 @@ interface GlobalVotingStrengthReceiver {
 }
 
 typealias GlobalVotingStrengthReceiverInit = DslInit<GlobalVotingStrengthReceiver>
+
+fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
+    officeMap: OfficeMap<Office>,
+    office: Office,
+    strength: VotingStrength
+) = when (val officeState = officeMap[office]) {
+    is OfficeState.Vacant -> {
+        /* do nothing, no holder */
+    }
+
+    is OfficeState.Held -> {
+        officeState.holder add strength
+    }
+}
+
+fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
+    officeMap: OfficeMap<Office>,
+    office: Office,
+    strength: Int
+) = addToHolder(
+    officeMap = officeMap,
+    office = office,
+    strength = VotingStrength(strength)
+)
 
 @AssessmentDsl
 private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthReceiver {
