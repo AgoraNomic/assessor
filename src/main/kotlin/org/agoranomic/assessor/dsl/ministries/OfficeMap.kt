@@ -67,7 +67,7 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
         private fun OfficeMap<*>.selectEquality(): Set<*> = this.toSet()
     }
 
-    private class EntryImpl<Office : Enum<Office>>(
+    private data class EntryImpl<Office : Enum<Office>>(
         override val office: Office,
         override val state: OfficeState
     ) : OfficeMapEntry<Office>
