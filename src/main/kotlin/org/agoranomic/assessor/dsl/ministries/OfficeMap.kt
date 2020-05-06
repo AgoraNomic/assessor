@@ -65,6 +65,8 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
 
         inline fun <reified Office : Enum<Office>> from(map: Map<Office, OfficeState>) =
             from(Office::class, map)
+
+        private fun <Office : Enum<Office>> OfficeMap<Office>.selectEquality() = this.toSet()
     }
 
     private class EntryImpl<Office : Enum<Office>>(
@@ -77,18 +79,17 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
     }
 
     override fun iterator(): Iterator<OfficeMapEntry<Office>> {
-        // TODO this is ugly - potentially write/find transforming iterator without need for Sequences
-        return Sequence { data.iterator() }.map { (k, v) -> EntryImpl(k, v) }.iterator()
+        return this.map { (k, v) -> EntryImpl(k, v) }.iterator()
     }
 
     override fun equals(other: Any?): Boolean {
         if (other !is OfficeMap<*>) return false
 
-        return this.toSet() == other.toSet()
+        return this.selectEquality() == other.selectEquality()
     }
 
     override fun hashCode(): Int {
-        return this.toSet().hashCode()
+        return this.selectEquality().hashCode()
     }
 }
 
@@ -117,8 +118,8 @@ fun <Office : Enum<Office>> officeMapOf(
         uncheckedOfficeMap
             .mapValues { (_, person) ->
                 when (person) {
-                    null -> OfficeState.Vacant
-                    else -> OfficeState.Held(person)
+                    null -> OfficeState.vacant()
+                    else -> OfficeState.heldBy(person)
                 }
             }
     )
