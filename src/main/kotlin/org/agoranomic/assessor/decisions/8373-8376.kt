@@ -36,6 +36,15 @@ fun `assessment 8373 to 8376`() = assessment {
         Treasuror to PSS
     )
 
+    strengths {
+        default(3)
+
+        addToHolder(offices, Speaker, 1)
+        twg subtract 1 // BLOTS
+
+        ministriesV2(offices, allProposals)
+    }
+
     proposals(v1) {
         proposal(8373) {
             title("Auction resolution fixes")
