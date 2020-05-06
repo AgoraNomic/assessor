@@ -148,7 +148,9 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
         }
 
         votes(RLee) {
-            FOR on all
+            PRESENT on 8373
+            FOR on 8375
+            AGAINST on others
         }
 
         votes(Alexis) {
