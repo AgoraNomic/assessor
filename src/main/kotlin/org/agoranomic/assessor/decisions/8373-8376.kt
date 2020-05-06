@@ -163,7 +163,7 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
         votes(Trigon) {
             PRESENT on 8373
             FOR on 8374
-            endorse(Alexis) on 8375
+            FOR on 8375
             FOR on 8376
         }
 
