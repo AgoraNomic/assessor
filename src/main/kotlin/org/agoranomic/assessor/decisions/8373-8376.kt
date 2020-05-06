@@ -9,9 +9,12 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Participation
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
 fun `assessment 8373 to 8376`() = assessment {
@@ -136,5 +139,11 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
     }
 
     voting {
+        votes(PSS) {
+            FOR on 8373
+            FOR on 8374
+            endorse(Alexis) on 8375
+            FOR on 8376
+        }
     }
 }
