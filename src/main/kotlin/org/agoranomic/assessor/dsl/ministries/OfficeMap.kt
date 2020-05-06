@@ -15,12 +15,12 @@ interface OfficeMapEntry<Office : Enum<Office>> {
 }
 
 /**
- * Enable destructuring of [BasicOfficeMapEntries][OfficeMapEntry]. The first part is the office.
+ * Enable destructuring of [OfficeMapEntry]. The first part is the office.
  */
 operator fun <Office : Enum<Office>> OfficeMapEntry<Office>.component1(): Office = office
 
 /**
- * Enable destructuring of [BasicOfficeMapEntries][OfficeMapEntry]. The second part is the state of the office.
+ * Enable destructuring of [OfficeMapEntry]. The second part is the state of the office.
  */
 operator fun <Office : Enum<Office>> OfficeMapEntry<Office>.component2(): OfficeState = state
 
