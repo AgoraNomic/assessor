@@ -77,7 +77,7 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
     }
 
     override fun iterator(): Iterator<OfficeMapEntry<Office>> {
-        return this.map { (k, v) -> EntryImpl(k, v) }.iterator()
+        return data.map { (k, v) -> EntryImpl(k, v) }.iterator()
     }
 
     override fun equals(other: Any?): Boolean {
