@@ -1,8 +1,6 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import io.github.random_internet_cat.util.getOrFail
-import io.github.random_internet_cat.util.requireAllAreDistinct
-import io.github.random_internet_cat.util.requireExhaustive
+import io.github.random_internet_cat.util.*
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
@@ -108,10 +106,8 @@ fun <Office : Enum<Office>> officeMapOf(
     officeClass: KClass<Office>,
     vararg pairs: Pair<Office, Person?>
 ): OfficeMap<Office> {
-    val uncheckedOfficeMap = pairs.toMap()
-
-    uncheckedOfficeMap.keys.requireAllAreDistinct()
-    uncheckedOfficeMap.keys.requireExhaustive(officeClass)
+    pairs.map { it.first }.requireAllAreDistinct()
+    val uncheckedOfficeMap = pairs.toMap().toExhaustiveEnumMap(officeClass)
 
     return OfficeMapImpl.from(
         officeClass,
