@@ -194,5 +194,10 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             endorse(Alexis) on 8375
             FOR on 8376
         }
+
+        votes(G) {
+            AGAINST on 8374
+            AGAINST on 8375
+        }
     }
 }
