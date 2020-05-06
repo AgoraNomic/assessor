@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeV2
 import org.agoranomic.assessor.dsl.ministries.OfficeV2.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesV2
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.addToHolder
@@ -161,6 +162,13 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             PRESENT on 8373
             FOR on 8374
             endorse(Alexis) on 8375
+            FOR on 8376
+        }
+
+        votes(Aris) {
+            FOR on 8373
+            FOR on 8374
+            endorseOfficer(offices, Herald) on 8375
             FOR on 8376
         }
     }
