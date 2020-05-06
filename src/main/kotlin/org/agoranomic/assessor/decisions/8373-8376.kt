@@ -134,4 +134,7 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             )
         }
     }
+
+    voting {
+    }
 }
