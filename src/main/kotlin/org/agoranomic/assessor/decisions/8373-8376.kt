@@ -14,8 +14,7 @@ import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Participation
 import org.agoranomic.assessor.lib.VoteKind
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8373 to 8376`() = assessment {
@@ -155,6 +154,13 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             AGAINST on 8373
             FOR on 8374
             FOR on 8375
+            FOR on 8376
+        }
+
+        votes(Trigon) {
+            PRESENT on 8373
+            FOR on 8374
+            endorse(Alexis) on 8375
             FOR on 8376
         }
     }
