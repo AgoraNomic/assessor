@@ -288,11 +288,9 @@ data class CliConfig(
     val destination: AssessmentDestination?
 )
 
-fun parseCli(args: Iterable<String>): CliConfig {
-    val argsArray = args.toList().toTypedArray()
-
+fun parseCli(args: Array<String>): CliConfig {
     val parseResult = try {
-        DefaultParser().parse(cliOptions(), argsArray)!!
+        DefaultParser().parse(cliOptions(), args)!!
     } catch (e: ParseException) {
         throw CliParseException(e)
     }
@@ -300,7 +298,7 @@ fun parseCli(args: Iterable<String>): CliConfig {
     return readCliConfig(parseResult)
 }
 
-fun parseCli(args: Array<String>) = parseCli(args.asList())
+fun parseCli(args: Iterable<String>) = parseCli(args.toList().toTypedArray())
 
 fun helpString(): String {
     val formatter = HelpFormatter()
