@@ -282,7 +282,13 @@ private fun readCliConfig(commandLine: CommandLine): CliConfig {
     )
 }
 
-private fun rawParseCli(args: Iterable<String>): CliConfig {
+data class CliConfig(
+    val formatter: AssessmentFormatter?,
+    val neededAssessments: NeededAssessments,
+    val destination: AssessmentDestination?
+)
+
+fun parseCli(args: Iterable<String>): CliConfig {
     val argsArray = args.toList().toTypedArray()
 
     val parseResult = try {
@@ -292,21 +298,6 @@ private fun rawParseCli(args: Iterable<String>): CliConfig {
     }
 
     return readCliConfig(parseResult)
-}
-
-data class CliConfig(
-    val formatter: AssessmentFormatter?,
-    val neededAssessments: NeededAssessments,
-    val destination: AssessmentDestination?
-)
-
-fun parseCli(args: Iterable<String>): CliConfig {
-    val parsedCli = rawParseCli(args)
-    return CliConfig(
-        parsedCli.formatter,
-        parsedCli.neededAssessments,
-        parsedCli.destination
-    )
 }
 
 fun parseCli(args: Array<String>) = parseCli(args.asList())
