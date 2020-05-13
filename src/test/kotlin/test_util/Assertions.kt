@@ -4,5 +4,6 @@ import kotlin.test.assertEquals
 
 fun <T> assertEqualsAndHashCode(first: T, second: T) {
     assertEquals(first, second)
+    assertEquals(second, first)
     assertEquals(first.hashCode(), second.hashCode())
 }
