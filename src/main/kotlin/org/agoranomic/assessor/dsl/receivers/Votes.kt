@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 interface VoteCommentable {
     infix fun comment(comment: String)
@@ -41,7 +42,7 @@ interface PersonVotesReceiver {
 typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
 
 interface PersonVotesCompiler {
-    fun compile(init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote>
+    fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote>
 }
 
 @AssessmentDsl
@@ -93,17 +94,15 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
     }
 }
 
-class DefaultPersonVotesCompiler(private val proposals: ImmutableList<ProposalNumber>) : PersonVotesCompiler {
-    constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
-
-    override fun compile(init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote> {
-        return DefaultPersonVotesReceiver(proposals).also(init).compile()
+class DefaultPersonVotesCompiler : PersonVotesCompiler {
+    override fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote> {
+        return DefaultPersonVotesReceiver(allProposals.numbers().toList()).also(init).compile()
     }
 }
 
 fun buildPersonVotes(
-    proposals: List<ProposalNumber>,
+    proposals: ProposalSet,
     block: PersonVotesReceiverInit
 ): Map<ProposalNumber, PendingVote> {
-    return DefaultPersonVotesCompiler(proposals).compile(block)
+    return DefaultPersonVotesCompiler().compile(proposals, block)
 }
