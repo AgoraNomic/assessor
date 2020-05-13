@@ -55,42 +55,48 @@ class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
 
 @AssessmentDsl
 private class DefaultProposalsReceiverV0(
+    private val proposalCompiler: ProposalCompilerV0,
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV0, ProposalsReceiverCommon by commonImpl {
     override fun proposal(number: ProposalNumber, block: ProposalReceiverV0Init) {
-        using(buildProposalV0(number, block))
+        using(proposalCompiler.compile(number, block))
     }
 
     fun compile() = commonImpl.compile()
 }
 
-class DefaultProposalsCompilerV0 : ProposalsCompilerV0 {
+class DefaultProposalsCompilerV0(
+    private val proposalCompiler: ProposalCompilerV0
+) : ProposalsCompilerV0 {
     override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiverV0>>): ImmutableProposalSet {
-        return DefaultProposalsReceiverV0().also(init).compile().toImmutableProposalSet()
+        return DefaultProposalsReceiverV0(proposalCompiler).also(init).compile().toImmutableProposalSet()
     }
 }
 
 fun buildProposalsV0(block: ProposalsReceiverV0Init): ImmutableProposalSet {
-    return DefaultProposalsCompilerV0().compile(block)
+    return DefaultProposalsCompilerV0(DefaultProposalCompilerV0()).compile(block)
 }
 
 @AssessmentDsl
 private class DefaultProposalsReceiverV1(
+    private val proposalCompiler: ProposalCompilerV1,
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
 ) : ProposalsReceiverV1, ProposalsReceiverCommon by commonImpl {
     override fun proposal(number: ProposalNumber, block: ProposalReceiverV1Init) {
-        using(buildProposalV1(number, block))
+        using(proposalCompiler.compile(number, block))
     }
 
     fun compile() = commonImpl.compile()
 }
 
-class DefaultProposalsCompilerV1 : ProposalsCompilerV1 {
+class DefaultProposalsCompilerV1(
+    private val proposalCompiler: ProposalCompilerV1
+) : ProposalsCompilerV1 {
     override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiverV1>>): ImmutableProposalSet {
-        return DefaultProposalsReceiverV1().also(init).compile().toImmutableProposalSet()
+        return DefaultProposalsReceiverV1(proposalCompiler).also(init).compile().toImmutableProposalSet()
     }
 }
 
 fun buildProposalsV1(block: ProposalsReceiverV1Init): ImmutableProposalSet {
-    return DefaultProposalsCompilerV1().compile(block)
+    return DefaultProposalsCompilerV1(DefaultProposalCompilerV1()).compile(block)
 }
