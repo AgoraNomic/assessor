@@ -21,8 +21,7 @@ interface MultiPersonVotesCompiler {
 }
 
 @AssessmentDsl
-private class DefaultMultiPersonVotesReceiver(private val proposals: ImmutableProposalSet) : MultiPersonVotesReceiver {
-    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+private class DefaultMultiPersonVotesReceiver(private val personVotesCompiler: PersonVotesCompiler) : MultiPersonVotesReceiver {
 
     private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
 
@@ -33,7 +32,7 @@ private class DefaultMultiPersonVotesReceiver(private val proposals: ImmutablePr
     override fun votes(person: Person, block: PersonVotesReceiverInit) {
         require(!personVoteMap.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
-        personVoteMap[person] = buildPersonVotes(proposals.map { it.number }, block)
+        personVoteMap[person] = personVotesCompiler.compile(block)
     }
 
     fun compile(): MultiPersonPendingVoteMap {
@@ -42,11 +41,9 @@ private class DefaultMultiPersonVotesReceiver(private val proposals: ImmutablePr
     }
 }
 
-class DefaultMultiPersonVotesCompiler(private val proposals: ImmutableProposalSet) : MultiPersonVotesCompiler {
-    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
-
+class DefaultMultiPersonVotesCompiler(private val personVotesCompiler: PersonVotesCompiler) : MultiPersonVotesCompiler {
     override fun compile(init: MultiPersonVotesReceiverInit): MultiPersonPendingVoteMap {
-        return DefaultMultiPersonVotesReceiver(proposals).also(init).compile()
+        return DefaultMultiPersonVotesReceiver(personVotesCompiler).also(init).compile()
     }
 }
 
@@ -54,5 +51,5 @@ fun buildMultiPersonVotes(
     proposals: ProposalSet,
     block: MultiPersonVotesReceiverInit
 ): MultiPersonPendingVoteMap {
-    return DefaultMultiPersonVotesCompiler(proposals).compile(block)
+    return DefaultMultiPersonVotesCompiler(DefaultPersonVotesCompiler(proposals.numbers().toList())).compile(block)
 }
