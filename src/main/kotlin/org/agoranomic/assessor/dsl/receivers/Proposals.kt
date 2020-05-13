@@ -66,7 +66,7 @@ private class DefaultProposalsReceiverV0(
 }
 
 class DefaultProposalsCompilerV0(
-    private val proposalCompiler: ProposalCompilerV0
+    private val proposalCompiler: ProposalCompilerV0 = DefaultProposalCompilerV0()
 ) : ProposalsCompilerV0 {
     override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiverV0>>): ImmutableProposalSet {
         return DefaultProposalsReceiverV0(proposalCompiler).also(init).compile().toImmutableProposalSet()
@@ -90,7 +90,7 @@ private class DefaultProposalsReceiverV1(
 }
 
 class DefaultProposalsCompilerV1(
-    private val proposalCompiler: ProposalCompilerV1
+    private val proposalCompiler: ProposalCompilerV1 = DefaultProposalCompilerV1()
 ) : ProposalsCompilerV1 {
     override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiverV1>>): ImmutableProposalSet {
         return DefaultProposalsReceiverV1(proposalCompiler).also(init).compile().toImmutableProposalSet()
@@ -98,5 +98,5 @@ class DefaultProposalsCompilerV1(
 }
 
 fun buildProposalsV1(block: ProposalsReceiverV1Init): ImmutableProposalSet {
-    return DefaultProposalsCompilerV1(DefaultProposalCompilerV1()).compile(block)
+    return DefaultProposalsCompilerV1().compile(block)
 }
