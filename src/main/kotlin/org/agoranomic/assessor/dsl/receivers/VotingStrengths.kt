@@ -1,6 +1,8 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import io.github.random_internet_cat.util.getOrFail
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.dsl.ministries.OfficeMap
 import org.agoranomic.assessor.dsl.ministries.OfficeState
@@ -23,8 +25,15 @@ interface ProposalVotingStrengthReceiver {
 
 typealias ProposalVotingStrengthReceiverInit = DslInit<ProposalVotingStrengthReceiver>
 
+interface ProposalVotingStrengthCompiler {
+    fun compile(
+        globalStrengths: VotingStrengthMap,
+        init: ProposalVotingStrengthReceiverInit
+    ): ImmutableMap<Person, VotingStrengthWithComment>
+}
+
 @AssessmentDsl
-private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
+private class DefaultProposalVotingStrengthReceiver(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
     override infix fun Person.strength(value: VotingStrength) {
@@ -41,8 +50,17 @@ private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStre
         add(-value)
     }
 
-    fun compile(): Map<Person, VotingStrengthWithComment> {
-        return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }
+    fun compile(): ImmutableMap<Person, VotingStrengthWithComment> {
+        return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }.toImmutableMap()
+    }
+}
+
+class DefaultProposalVotingStrengthCompiler : ProposalVotingStrengthCompiler {
+    override fun compile(
+        globalStrengths: VotingStrengthMap,
+        init: ProposalVotingStrengthReceiverInit
+    ): ImmutableMap<Person, VotingStrengthWithComment> {
+        return DefaultProposalVotingStrengthReceiver(globalStrengths).also(init).compile()
     }
 }
 
@@ -50,7 +68,7 @@ fun buildProposalVotingStrength(
     globalStrengths: VotingStrengthMap,
     block: ProposalVotingStrengthReceiverInit
 ): Map<Person, VotingStrengthWithComment> {
-    return ProposalVotingStrengthReceiverImpl(globalStrengths).also(block).compile()
+    return DefaultProposalVotingStrengthCompiler().compile(globalStrengths, block)
 }
 
 interface VotingStrengthCommentable {
