@@ -95,6 +95,10 @@ interface GlobalVotingStrengthReceiver {
 
 typealias GlobalVotingStrengthReceiverInit = DslInit<GlobalVotingStrengthReceiver>
 
+interface GlobalVotingStrengthCompiler {
+    fun compile(init: GlobalVotingStrengthReceiverInit): ImmutableMap<ProposalNumber, VotingStrengthMap>
+}
+
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
     officeMap: OfficeMap<Office>,
     office: Office,
@@ -120,7 +124,7 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
 )
 
 @AssessmentDsl
-private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthReceiver {
+private class DefaultGlobalVotingStrengthReceiver(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
     override val allProposals get() = proposals
@@ -170,7 +174,7 @@ private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableP
         defaultStrength.set(strength)
     }
 
-    fun compile(): Map<ProposalNumber, VotingStrengthMap> {
+    fun compile(): ImmutableMap<ProposalNumber, VotingStrengthMap> {
         val defaultStrength = defaultStrength.get()
         val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
@@ -183,7 +187,15 @@ private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableP
             } else {
                 globalStrengthMap
             }
-        }
+        }.toImmutableMap()
+    }
+}
+
+class DefaultGlobalVotingStrengthCompiler(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthCompiler {
+    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+
+    override fun compile(init: GlobalVotingStrengthReceiverInit): ImmutableMap<ProposalNumber, VotingStrengthMap> {
+        return DefaultGlobalVotingStrengthReceiver(proposals).also(init).compile()
     }
 }
 
@@ -191,5 +203,5 @@ fun buildGlobalVotingStrength(
     proposals: ProposalSet,
     block: GlobalVotingStrengthReceiverInit
 ): Map<ProposalNumber, VotingStrengthMap> {
-    return GlobalVotingStrengthReceiverImpl(proposals).also(block).compile()
+    return DefaultGlobalVotingStrengthCompiler(proposals).compile(block)
 }
