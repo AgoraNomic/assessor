@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.dsl
 
-import org.agoranomic.assessor.dsl.receivers.AssessmentReceiverImpl
 import org.agoranomic.assessor.dsl.receivers.AssessmentReceiverInit
+import org.agoranomic.assessor.dsl.receivers.DefaultAssessmentCompiler
 import org.agoranomic.assessor.lib.AssessmentData
 
 @DslMarker
@@ -9,7 +9,5 @@ import org.agoranomic.assessor.lib.AssessmentData
 annotation class AssessmentDsl
 
 fun assessment(block: AssessmentReceiverInit): AssessmentData {
-    val receiver = AssessmentReceiverImpl()
-    receiver.block()
-    return receiver.compile()
+    return DefaultAssessmentCompiler().compile(block)
 }

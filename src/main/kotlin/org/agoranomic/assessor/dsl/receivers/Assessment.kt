@@ -30,8 +30,11 @@ typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
 
 fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 
-@AssessmentDsl
-class AssessmentReceiverImpl : AssessmentReceiver {
+interface AssessmentCompiler {
+    fun compile(init: AssessmentReceiverInit): AssessmentData
+}
+
+private class DefaultAssessmentReceiver : AssessmentReceiver {
     private val votingStrengthsBlockValue = DslValue<GlobalVotingStrengthReceiverInit>()
     private val proposalsBlockValue = DslValue<() -> ImmutableProposalSet>()
     private val proposalVotesBlockValue = DslValue<MultiPersonVotesReceiverInit>()
@@ -88,5 +91,12 @@ class AssessmentReceiverImpl : AssessmentReceiver {
             proposals,
             pendingVoteMap
         )
+    }
+}
+
+@AssessmentDsl
+class DefaultAssessmentCompiler : AssessmentCompiler {
+    override fun compile(init: AssessmentReceiverInit): AssessmentData {
+        return DefaultAssessmentReceiver().also(init).compile()
     }
 }
