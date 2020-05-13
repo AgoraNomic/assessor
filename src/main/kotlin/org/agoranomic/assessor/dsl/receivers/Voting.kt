@@ -42,7 +42,9 @@ private class DefaultMultiPersonVotesReceiver(
     }
 }
 
-class DefaultMultiPersonVotesCompiler(private val personVotesCompiler: PersonVotesCompiler) : MultiPersonVotesCompiler {
+class DefaultMultiPersonVotesCompiler(
+    private val personVotesCompiler: PersonVotesCompiler = DefaultPersonVotesCompiler()
+) : MultiPersonVotesCompiler {
     override fun compile(allProposals: ProposalSet, init: MultiPersonVotesReceiverInit): MultiPersonPendingVoteMap {
         return DefaultMultiPersonVotesReceiver(allProposals, personVotesCompiler).also(init).compile()
     }
@@ -52,5 +54,5 @@ fun buildMultiPersonVotes(
     proposals: ProposalSet,
     block: MultiPersonVotesReceiverInit
 ): MultiPersonPendingVoteMap {
-    return DefaultMultiPersonVotesCompiler(DefaultPersonVotesCompiler()).compile(proposals, block)
+    return DefaultMultiPersonVotesCompiler().compile(proposals, block)
 }
