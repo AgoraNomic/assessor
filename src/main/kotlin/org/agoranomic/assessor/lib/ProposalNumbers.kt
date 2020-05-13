@@ -7,13 +7,16 @@ import kotlinx.collections.immutable.toImmutableSet
 /**
  * A [Collection] that contains a set of distinct ProposalNumbers.
  */
-data class ProposalNumbers(private val data: ImmutableSet<ProposalNumber>) {
+data class ProposalNumbers(private val data: ImmutableSet<ProposalNumber>) : Collection<ProposalNumber> {
     constructor(data: Set<ProposalNumber>) : this(data.toImmutableSet())
 
-    val size get() = data.size
+    override val size get() = data.size
+    override fun isEmpty() = data.isEmpty()
 
-    fun isEmpty() = data.isEmpty()
-    fun isNotEmpty() = data.isNotEmpty()
+    override fun contains(element: ProposalNumber): Boolean = data.contains(element)
+    override fun containsAll(elements: Collection<ProposalNumber>): Boolean = data.containsAll(elements)
+
+    override fun iterator(): Iterator<ProposalNumber> = data.iterator()
 }
 
 /**
