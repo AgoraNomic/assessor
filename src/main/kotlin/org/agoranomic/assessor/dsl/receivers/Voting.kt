@@ -16,8 +16,12 @@ interface MultiPersonVotesReceiver {
 
 typealias MultiPersonVotesReceiverInit = DslInit<MultiPersonVotesReceiver>
 
+interface MultiPersonVotesCompiler {
+    fun compile(init: MultiPersonVotesReceiverInit): MultiPersonPendingVoteMap
+}
+
 @AssessmentDsl
-private class MultiPersonVotesReceiverImpl(private val proposals: ImmutableProposalSet) : MultiPersonVotesReceiver {
+private class DefaultMultiPersonVotesReceiver(private val proposals: ImmutableProposalSet) : MultiPersonVotesReceiver {
     constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
 
     private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
@@ -38,9 +42,17 @@ private class MultiPersonVotesReceiverImpl(private val proposals: ImmutablePropo
     }
 }
 
+class DefaultMultiPersonVotesCompiler(private val proposals: ImmutableProposalSet) : MultiPersonVotesCompiler {
+    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+
+    override fun compile(init: MultiPersonVotesReceiverInit): MultiPersonPendingVoteMap {
+        return DefaultMultiPersonVotesReceiver(proposals).also(init).compile()
+    }
+}
+
 fun buildMultiPersonVotes(
     proposals: ProposalSet,
     block: MultiPersonVotesReceiverInit
 ): MultiPersonPendingVoteMap {
-    return MultiPersonVotesReceiverImpl(proposals).also(block).compile()
+    return DefaultMultiPersonVotesCompiler(proposals).compile(block)
 }
