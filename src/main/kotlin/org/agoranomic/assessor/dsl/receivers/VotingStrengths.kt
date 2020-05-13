@@ -124,8 +124,17 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
 )
 
 @AssessmentDsl
-private class DefaultGlobalVotingStrengthReceiver(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthReceiver {
-    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+private class DefaultGlobalVotingStrengthReceiver(
+    private val proposalStrengthCompiler: ProposalVotingStrengthCompiler,
+    private val proposals: ImmutableProposalSet
+) : GlobalVotingStrengthReceiver {
+    constructor(
+        proposalStrengthCompiler: ProposalVotingStrengthCompiler,
+        proposals: ProposalSet
+    ) : this(
+        proposalStrengthCompiler,
+        proposals.toImmutableProposalSet()
+    )
 
     override val allProposals get() = proposals
 
@@ -183,7 +192,7 @@ private class DefaultGlobalVotingStrengthReceiver(private val proposals: Immutab
             val block = overrideStrengthBlocks.getOrNull(proposal)
 
             if (block != null) {
-                OverrideVotingStrengthMap(globalStrengthMap, buildProposalVotingStrength(globalStrengthMap, block))
+                OverrideVotingStrengthMap(globalStrengthMap, proposalStrengthCompiler.compile(globalStrengthMap, block))
             } else {
                 globalStrengthMap
             }
@@ -191,11 +200,20 @@ private class DefaultGlobalVotingStrengthReceiver(private val proposals: Immutab
     }
 }
 
-class DefaultGlobalVotingStrengthCompiler(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthCompiler {
-    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+class DefaultGlobalVotingStrengthCompiler(
+    private val proposalStrengthCompiler: ProposalVotingStrengthCompiler,
+    private val proposals: ImmutableProposalSet
+) : GlobalVotingStrengthCompiler {
+    constructor(
+        proposalStrengthCompiler: ProposalVotingStrengthCompiler,
+        proposals: ProposalSet
+    ) : this(
+        proposalStrengthCompiler,
+        proposals.toImmutableProposalSet()
+    )
 
     override fun compile(init: GlobalVotingStrengthReceiverInit): ImmutableMap<ProposalNumber, VotingStrengthMap> {
-        return DefaultGlobalVotingStrengthReceiver(proposals).also(init).compile()
+        return DefaultGlobalVotingStrengthReceiver(proposalStrengthCompiler, proposals).also(init).compile()
     }
 }
 
@@ -203,5 +221,8 @@ fun buildGlobalVotingStrength(
     proposals: ProposalSet,
     block: GlobalVotingStrengthReceiverInit
 ): Map<ProposalNumber, VotingStrengthMap> {
-    return DefaultGlobalVotingStrengthCompiler(proposals).compile(block)
+    return DefaultGlobalVotingStrengthCompiler(
+        DefaultProposalVotingStrengthCompiler(),
+        proposals
+    ).compile(block)
 }
