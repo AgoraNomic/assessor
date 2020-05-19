@@ -30,8 +30,16 @@ typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
 
 fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
 
-@AssessmentDsl
-class AssessmentReceiverImpl : AssessmentReceiver {
+interface AssessmentCompiler {
+    fun compile(init: AssessmentReceiverInit): AssessmentData
+}
+
+private class DefaultAssessmentReceiver(
+    val proposalsCompilerV0: ProposalsCompilerV0 = DefaultProposalsCompilerV0(),
+    val proposalsCompilerV1: ProposalsCompilerV1 = DefaultProposalsCompilerV1(),
+    val multiPersonVotesCompiler: MultiPersonVotesCompiler = DefaultMultiPersonVotesCompiler(),
+    val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler()
+) : AssessmentReceiver {
     private val votingStrengthsBlockValue = DslValue<GlobalVotingStrengthReceiverInit>()
     private val proposalsBlockValue = DslValue<() -> ImmutableProposalSet>()
     private val proposalVotesBlockValue = DslValue<MultiPersonVotesReceiverInit>()
@@ -44,12 +52,12 @@ class AssessmentReceiverImpl : AssessmentReceiver {
 
     override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
-        proposalsBlockValue.set({ buildProposalsV0(block) })
+        proposalsBlockValue.set({ proposalsCompilerV0.compile(block) })
     }
 
     override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
-        proposalsBlockValue.set({ buildProposalsV1(block) })
+        proposalsBlockValue.set({ proposalsCompilerV1.compile(block) })
     }
 
     override fun voting(block: MultiPersonVotesReceiverInit) {
@@ -72,10 +80,10 @@ class AssessmentReceiverImpl : AssessmentReceiver {
         val proposals = proposalsBlock()
 
         val proposalVotesBlock = proposalVotesBlockValue.get()
-        val pendingVoteMap = buildMultiPersonVotes(proposals, proposalVotesBlock)
+        val pendingVoteMap = multiPersonVotesCompiler.compile(proposals, proposalVotesBlock)
 
         val votingStrengthsBlock = votingStrengthsBlockValue.get()
-        val votingStrengths = buildGlobalVotingStrength(proposals, votingStrengthsBlock)
+        val votingStrengths = globalVotingStrengthCompiler.compile(proposals, votingStrengthsBlock)
 
         for (proposalNumber in pendingVoteMap.proposalsWithVotes()) {
             if (proposals.find { it.number == proposalNumber } == null) error("Votes specified for unknown proposal $proposalNumber")
@@ -88,5 +96,12 @@ class AssessmentReceiverImpl : AssessmentReceiver {
             proposals,
             pendingVoteMap
         )
+    }
+}
+
+@AssessmentDsl
+class DefaultAssessmentCompiler : AssessmentCompiler {
+    override fun compile(init: AssessmentReceiverInit): AssessmentData {
+        return DefaultAssessmentReceiver().also(init).compile()
     }
 }

@@ -1,11 +1,14 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 interface VoteCommentable {
     infix fun comment(comment: String)
@@ -38,8 +41,12 @@ interface PersonVotesReceiver {
 
 typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
 
+interface PersonVotesCompiler {
+    fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote>
+}
+
 @AssessmentDsl
-private class PersonVotesReceiverImpl(private val proposals: ImmutableList<ProposalNumber>) : PersonVotesReceiver {
+private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<ProposalNumber>) : PersonVotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
     private val voteMap = DslValueMap<ProposalNumber, MutableVote>()
@@ -82,14 +89,20 @@ private class PersonVotesReceiverImpl(private val proposals: ImmutableList<Propo
     override infix fun VoteKind.on(all: PersonVotesReceiver.All) = simpleVoteFunction(this) on all
     override infix fun VoteKind.on(others: PersonVotesReceiver.Others) = simpleVoteFunction(this) on others
 
-    fun compile(): Map<ProposalNumber, PendingVote> {
-        return voteMap.compile().mapValues { (_, v) -> v.compile() }
+    fun compile(): ImmutableMap<ProposalNumber, PendingVote> {
+        return voteMap.compile().mapValues { (_, v) -> v.compile() }.toImmutableMap()
+    }
+}
+
+class DefaultPersonVotesCompiler : PersonVotesCompiler {
+    override fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote> {
+        return DefaultPersonVotesReceiver(allProposals.numbers().toList()).also(init).compile()
     }
 }
 
 fun buildPersonVotes(
-    proposals: List<ProposalNumber>,
+    proposals: ProposalSet,
     block: PersonVotesReceiverInit
 ): Map<ProposalNumber, PendingVote> {
-    return PersonVotesReceiverImpl(proposals).also(block).compile()
+    return DefaultPersonVotesCompiler().compile(proposals, block)
 }

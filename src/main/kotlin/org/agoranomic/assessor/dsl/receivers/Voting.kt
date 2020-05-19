@@ -4,9 +4,7 @@ import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDsl
 interface MultiPersonVotesReceiver {
@@ -16,9 +14,15 @@ interface MultiPersonVotesReceiver {
 
 typealias MultiPersonVotesReceiverInit = DslInit<MultiPersonVotesReceiver>
 
+interface MultiPersonVotesCompiler {
+    fun compile(allProposals: ProposalSet, init: MultiPersonVotesReceiverInit): MultiPersonPendingVoteMap
+}
+
 @AssessmentDsl
-private class MultiPersonVotesReceiverImpl(private val proposals: ImmutableProposalSet) : MultiPersonVotesReceiver {
-    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+private class DefaultMultiPersonVotesReceiver(
+    private val allProposals: ProposalSet,
+    private val personVotesCompiler: PersonVotesCompiler
+) : MultiPersonVotesReceiver {
 
     private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
 
@@ -29,7 +33,7 @@ private class MultiPersonVotesReceiverImpl(private val proposals: ImmutablePropo
     override fun votes(person: Person, block: PersonVotesReceiverInit) {
         require(!personVoteMap.containsKey(person)) { "Votes already specified for player ${person.name}" }
 
-        personVoteMap[person] = buildPersonVotes(proposals.map { it.number }, block)
+        personVoteMap[person] = personVotesCompiler.compile(allProposals, block)
     }
 
     fun compile(): MultiPersonPendingVoteMap {
@@ -38,9 +42,17 @@ private class MultiPersonVotesReceiverImpl(private val proposals: ImmutablePropo
     }
 }
 
+class DefaultMultiPersonVotesCompiler(
+    private val personVotesCompiler: PersonVotesCompiler = DefaultPersonVotesCompiler()
+) : MultiPersonVotesCompiler {
+    override fun compile(allProposals: ProposalSet, init: MultiPersonVotesReceiverInit): MultiPersonPendingVoteMap {
+        return DefaultMultiPersonVotesReceiver(allProposals, personVotesCompiler).also(init).compile()
+    }
+}
+
 fun buildMultiPersonVotes(
     proposals: ProposalSet,
     block: MultiPersonVotesReceiverInit
 ): MultiPersonPendingVoteMap {
-    return MultiPersonVotesReceiverImpl(proposals).also(block).compile()
+    return DefaultMultiPersonVotesCompiler().compile(proposals, block)
 }

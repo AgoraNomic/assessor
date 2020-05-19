@@ -1,6 +1,8 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import io.github.random_internet_cat.util.getOrFail
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.dsl.ministries.OfficeMap
 import org.agoranomic.assessor.dsl.ministries.OfficeState
@@ -23,8 +25,15 @@ interface ProposalVotingStrengthReceiver {
 
 typealias ProposalVotingStrengthReceiverInit = DslInit<ProposalVotingStrengthReceiver>
 
+interface ProposalVotingStrengthCompiler {
+    fun compile(
+        globalStrengths: VotingStrengthMap,
+        init: ProposalVotingStrengthReceiverInit
+    ): ImmutableMap<Person, VotingStrengthWithComment>
+}
+
 @AssessmentDsl
-private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
+private class DefaultProposalVotingStrengthReceiver(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
     override infix fun Person.strength(value: VotingStrength) {
@@ -41,8 +50,17 @@ private class ProposalVotingStrengthReceiverImpl(val globalStrengths: VotingStre
         add(-value)
     }
 
-    fun compile(): Map<Person, VotingStrengthWithComment> {
-        return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }
+    fun compile(): ImmutableMap<Person, VotingStrengthWithComment> {
+        return strengthMap.mapValues { (_, v) -> VotingStrengthWithComment(v) }.toImmutableMap()
+    }
+}
+
+class DefaultProposalVotingStrengthCompiler : ProposalVotingStrengthCompiler {
+    override fun compile(
+        globalStrengths: VotingStrengthMap,
+        init: ProposalVotingStrengthReceiverInit
+    ): ImmutableMap<Person, VotingStrengthWithComment> {
+        return DefaultProposalVotingStrengthReceiver(globalStrengths).also(init).compile()
     }
 }
 
@@ -50,7 +68,7 @@ fun buildProposalVotingStrength(
     globalStrengths: VotingStrengthMap,
     block: ProposalVotingStrengthReceiverInit
 ): Map<Person, VotingStrengthWithComment> {
-    return ProposalVotingStrengthReceiverImpl(globalStrengths).also(block).compile()
+    return DefaultProposalVotingStrengthCompiler().compile(globalStrengths, block)
 }
 
 interface VotingStrengthCommentable {
@@ -77,6 +95,10 @@ interface GlobalVotingStrengthReceiver {
 
 typealias GlobalVotingStrengthReceiverInit = DslInit<GlobalVotingStrengthReceiver>
 
+interface GlobalVotingStrengthCompiler {
+    fun compile(allProposals: ProposalSet, init: GlobalVotingStrengthReceiverInit): ImmutableMap<ProposalNumber, VotingStrengthMap>
+}
+
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
     officeMap: OfficeMap<Office>,
     office: Office,
@@ -102,8 +124,17 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
 )
 
 @AssessmentDsl
-private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableProposalSet) : GlobalVotingStrengthReceiver {
-    constructor(proposals: ProposalSet) : this(proposals.toImmutableProposalSet())
+private class DefaultGlobalVotingStrengthReceiver(
+    private val proposalStrengthCompiler: ProposalVotingStrengthCompiler,
+    private val proposals: ImmutableProposalSet
+) : GlobalVotingStrengthReceiver {
+    constructor(
+        proposalStrengthCompiler: ProposalVotingStrengthCompiler,
+        proposals: ProposalSet
+    ) : this(
+        proposalStrengthCompiler,
+        proposals.toImmutableProposalSet()
+    )
 
     override val allProposals get() = proposals
 
@@ -152,7 +183,7 @@ private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableP
         defaultStrength.set(strength)
     }
 
-    fun compile(): Map<ProposalNumber, VotingStrengthMap> {
+    fun compile(): ImmutableMap<ProposalNumber, VotingStrengthMap> {
         val defaultStrength = defaultStrength.get()
         val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
@@ -161,11 +192,19 @@ private class GlobalVotingStrengthReceiverImpl(private val proposals: ImmutableP
             val block = overrideStrengthBlocks.getOrNull(proposal)
 
             if (block != null) {
-                OverrideVotingStrengthMap(globalStrengthMap, buildProposalVotingStrength(globalStrengthMap, block))
+                OverrideVotingStrengthMap(globalStrengthMap, proposalStrengthCompiler.compile(globalStrengthMap, block))
             } else {
                 globalStrengthMap
             }
-        }
+        }.toImmutableMap()
+    }
+}
+
+class DefaultGlobalVotingStrengthCompiler(
+    private val proposalStrengthCompiler: ProposalVotingStrengthCompiler = DefaultProposalVotingStrengthCompiler()
+) : GlobalVotingStrengthCompiler {
+    override fun compile(allProposals: ProposalSet, init: GlobalVotingStrengthReceiverInit): ImmutableMap<ProposalNumber, VotingStrengthMap> {
+        return DefaultGlobalVotingStrengthReceiver(proposalStrengthCompiler, allProposals).also(init).compile()
     }
 }
 
@@ -173,5 +212,5 @@ fun buildGlobalVotingStrength(
     proposals: ProposalSet,
     block: GlobalVotingStrengthReceiverInit
 ): Map<ProposalNumber, VotingStrengthMap> {
-    return GlobalVotingStrengthReceiverImpl(proposals).also(block).compile()
+    return DefaultGlobalVotingStrengthCompiler().compile(proposals, block)
 }
