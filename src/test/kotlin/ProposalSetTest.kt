@@ -97,6 +97,12 @@ class `ProposalSet tests` {
 
     @ParameterizedTest
     @MethodSource("createProposalSetFuncs")
+    fun `comparisons for empty proposals sets and THE emptyProposalSet`(createProposalSet: CreateProposalSetFunc) {
+        assertEqualsAndHashCode(emptyProposalSet(), createProposalSet())
+    }
+
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
     fun `getOpt returns null when no proposal`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
         val proposalSet = createProposalSet(containedProp)
