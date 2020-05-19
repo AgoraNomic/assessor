@@ -73,6 +73,30 @@ class `ProposalSet tests` {
 
     @ParameterizedTest
     @MethodSource("createProposalSetFuncs")
+    fun `isEmpty and isNotEmpty work`(createProposalSet: CreateProposalSetFunc) {
+        val empty = createProposalSet()
+
+        assertTrue(empty.isEmpty())
+        assertFalse(empty.isNotEmpty())
+
+        assertEqualsAndHashCode(emptyProposalSet(), empty)
+
+        val nonempty = createProposalSet(firstTestProposal())
+
+        assertFalse(nonempty.isEmpty())
+        assertTrue(nonempty.isNotEmpty())
+    }
+
+    @Test
+    fun `emptyProposalSet functions work`() {
+        for (empty in listOf(emptyProposalSet(), emptyMutableProposalSet())) {
+            assertTrue(empty.isEmpty())
+            assertFalse(empty.isNotEmpty())
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("createProposalSetFuncs")
     fun `getOpt returns null when no proposal`(createProposalSet: CreateProposalSetFunc) {
         val containedProp = firstTestProposal()
         val proposalSet = createProposalSet(containedProp)
