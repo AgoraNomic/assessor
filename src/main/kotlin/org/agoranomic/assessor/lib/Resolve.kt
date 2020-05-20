@@ -59,7 +59,12 @@ data class ResolutionData(
     val votes: SimplifiedSingleProposalVoteMap
 )
 
-private fun isAIAdopted(ai: ProposalAI, strengthFor: VotingStrength, strengthAgainst: VotingStrength): Boolean {
+private data class AIStrengths(val strengthFor: VotingStrength, val strengthAgainst: VotingStrength)
+
+private fun isAIAdopted(ai: ProposalAI, aiStrengths: AIStrengths): Boolean {
+    val strengthFor = aiStrengths.strengthFor
+    val strengthAgainst = aiStrengths.strengthAgainst
+
     return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
 }
 
@@ -90,6 +95,13 @@ private fun strengthWithVote(
         .map { strengths[it] }
         .fold(VotingStrength.zero()) { acc, next -> acc + next.value }
 
+private fun aiStrengthsFor(votes: SimplifiedSingleProposalVoteMap, strengths: VotingStrengthMap): AIStrengths {
+    return AIStrengths(
+        strengthFor = strengthWithVote(VoteKind.FOR, votes, strengths),
+        strengthAgainst = strengthWithVote(VoteKind.AGAINST, votes, strengths)
+    )
+}
+
 fun resolve(
     quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthMap,
@@ -98,8 +110,9 @@ fun resolve(
 ): ResolutionData {
     val simplifiedVotes = rawVotes.simplified()
 
-    val strengthFor = strengthWithVote(VoteKind.FOR, simplifiedVotes, votingStrengthMap)
-    val strengthAgainst = strengthWithVote(VoteKind.AGAINST, simplifiedVotes, votingStrengthMap)
+    val aiStrengths = aiStrengthsFor(simplifiedVotes, votingStrengthMap)
+    val strengthFor = aiStrengths.strengthFor
+    val strengthAgainst = aiStrengths.strengthAgainst
 
     if (simplifiedVotes.voters.size < quorum.raw.raw) {
         return ResolutionData(
@@ -110,11 +123,7 @@ fun resolve(
         )
     }
 
-    val isAdopted = isAIAdopted(
-        ai = ai,
-        strengthFor = strengthFor,
-        strengthAgainst = strengthAgainst
-    )
+    val isAdopted = isAIAdopted(ai, aiStrengths)
 
     // Resolution as specified in R955
     return ResolutionData(
