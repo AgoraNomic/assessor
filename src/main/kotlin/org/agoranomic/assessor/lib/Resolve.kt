@@ -50,7 +50,6 @@ fun resolve(
 
     val isAdopted = isAIAdopted(ai, aiStrengths)
 
-    // Resolution as specified in R955
     return ResolutionData(
         result = if (isAdopted) ProposalResult.ADOPTED else ProposalResult.REJECTED,
         strengths = aiStrengths,
