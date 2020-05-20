@@ -49,44 +49,38 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: fat_jar
-          path: assessor.jar
+          path: artifacts
 
-      - name: Inflate fat jar
-        run: jar -xvf assessor.jar
+      - name: Generate reports
+        run: |
+            java -jar artifacts/assessor.jar all --long --dir reports
+            java -jar artifacts/assessor.jar all --json --dir reports/json
 
-      - name: run ls
-        run: ls -la
+      - name: Generate index.md
+        run: |
+            REPORTS_DIR=reports
+            shopt -s nullglob
+            REPORTS=($REPORTS_DIR/*.txt)
+            IFS=$'\n'
+            REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
 
-#      - name: Generate reports
-#        run: |
-#            java -jar assessor.jar all --long --dir reports
-#            java -jar assessor.jar all --json --dir reports/json
-#
-#      - name: Generate index.md
-#        run: |
-#            REPORTS_DIR=reports
-#            shopt -s nullglob
-#            REPORTS=($REPORTS_DIR/*.txt)
-#            IFS=$'\n'
-#            REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
-#
-#            INDEX_FILE=$REPORTS_DIR/index.md
-#            touch $INDEX_FILE
-#
-#            echo "Reports: ${REPORTS[*]}"
-#            echo "# Assessor's Archive" >> $INDEX_FILE
-#            echo "" >> $INDEX_FILE
-#            echo "[Latest Assessment]($(basename "${REPORTS[0]}"))" >> $INDEX_FILE
-#            echo "" >> $INDEX_FILE
-#            echo "List of assessments:" >> $INDEX_FILE
-#            echo "" >> $INDEX_FILE
-#            for report in "${REPORTS[@]}"; do
-#              REPORT_FILENAME=$(basename "$report")
-#              echo "* [$REPORT_FILENAME]($REPORT_FILENAME)" >> $INDEX_FILE;
-#            done;
-#
-#      - name: Upload reports artifacts
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: reports
-#          path: reports
+            INDEX_FILE=$REPORTS_DIR/index.md
+            touch $INDEX_FILE
+
+            echo "Reports: ${REPORTS[*]}"
+            echo "# Assessor's Archive" >> $INDEX_FILE
+            echo "" >> $INDEX_FILE
+            echo "[Latest Assessment]($(basename "${REPORTS[0]}"))" >> $INDEX_FILE
+            echo "" >> $INDEX_FILE
+            echo "List of assessments:" >> $INDEX_FILE
+            echo "" >> $INDEX_FILE
+            for report in "${REPORTS[@]}"; do
+              REPORT_FILENAME=$(basename "$report")
+              echo "* [$REPORT_FILENAME]($REPORT_FILENAME)" >> $INDEX_FILE;
+            done;
+
+      - name: Upload reports artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: reports
+          path: reports
