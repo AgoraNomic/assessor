@@ -29,10 +29,6 @@ data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person
     val voters get() = Persons(data.keys)
     val voteCount get() = voters.size
 
-    val size get() = voteCount
-    fun isEmpty() = size == 0
-    fun isNotEmpty() = !isEmpty()
-
     operator fun get(p: Person) = data[p] ?: throw IllegalArgumentException("Player is not a voter")
 
     fun forEach(f: (Person, SimpleVote) -> Unit) {
