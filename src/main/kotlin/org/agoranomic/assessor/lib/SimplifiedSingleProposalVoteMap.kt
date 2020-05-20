@@ -28,6 +28,7 @@ fun strengthWithVote(
     votes: SimplifiedSingleProposalVoteMap,
     strengths: VotingStrengthMap
 ) =
-    votes.personsWithVote(targetVote)
+    votes
+        .personsWithVote(targetVote)
         .map { strengths[it] }
         .fold(VotingStrength.zero()) { acc, next -> acc + next.value }
