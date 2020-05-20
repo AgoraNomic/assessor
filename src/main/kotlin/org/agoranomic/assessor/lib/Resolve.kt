@@ -92,7 +92,7 @@ fun resolve(
 
     val aiStrengths = aiStrengthsFor(simplifiedVotes, votingStrengthMap)
 
-    if (simplifiedVotes.voters.size < quorum.count()) {
+    if (failsQuorum(simplifiedVotes, quorum)) {
         return ResolutionData(
             result = ProposalResult.FAILED_QUORUM,
             strengths = aiStrengths,

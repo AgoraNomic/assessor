@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.lib
 
+import io.github.random_internet_cat.util.compareTo
 import java.math.BigInteger
 
 typealias RawQuorum = BigInteger
@@ -36,3 +37,6 @@ inline class AssessmentQuorum(private val raw: RawAssessmentQuorum) {
     fun count() = generic().count()
 }
 
+
+fun meetsQuorum(votes: SimplifiedSingleProposalVoteMap, quorum: ProposalQuorum) = votes.voteCount >= quorum.count()
+fun failsQuorum(votes: SimplifiedSingleProposalVoteMap, quorum: ProposalQuorum) = !meetsQuorum(votes, quorum)
