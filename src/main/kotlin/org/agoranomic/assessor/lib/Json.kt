@@ -30,9 +30,9 @@ private fun json(proposal: Proposal) = json {
 @JvmName("jsonOfProposals")
 private fun json(iterable: Iterable<Proposal>) = json(iterable.map { json(it) })
 
-private fun json(quorum: Quorum) = json(quorum.raw)
-private fun json(quorum: ProposalQuorum) = json(quorum.raw)
-private fun json(quorum: AssessmentQuorum) = json(quorum.raw)
+private fun json(quorum: Quorum) = json(quorum.count())
+private fun json(quorum: ProposalQuorum) = json(quorum.generic())
+private fun json(quorum: AssessmentQuorum) = json(quorum.generic())
 
 private fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
 
@@ -71,8 +71,8 @@ private fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
 
 private fun json(resolutionData: ResolutionData) = json {
     "result" to json(resolutionData.result)
-    "strength_for" to json(resolutionData.strengthFor)
-    "strength_against" to json(resolutionData.strengthAgainst)
+    "strength_for" to json(resolutionData.strengths.strengthFor)
+    "strength_against" to json(resolutionData.strengths.strengthAgainst)
     "votes" to json(resolutionData.votes)
 }
 
