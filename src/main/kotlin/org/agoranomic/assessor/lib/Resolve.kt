@@ -52,14 +52,13 @@ data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person
 fun SimplifiedSingleProposalVoteMap.votersFor() = personsWithVote(VoteKind.FOR)
 fun SimplifiedSingleProposalVoteMap.votersAgainst() = personsWithVote(VoteKind.AGAINST)
 
+data class AIStrengths(val strengthFor: VotingStrength, val strengthAgainst: VotingStrength)
+
 data class ResolutionData(
     val result: ProposalResult,
-    val strengthFor: VotingStrength,
-    val strengthAgainst: VotingStrength,
+    val strengths: AIStrengths,
     val votes: SimplifiedSingleProposalVoteMap
 )
-
-private data class AIStrengths(val strengthFor: VotingStrength, val strengthAgainst: VotingStrength)
 
 private fun isAIAdopted(ai: ProposalAI, aiStrengths: AIStrengths): Boolean {
     val strengthFor = aiStrengths.strengthFor
@@ -111,15 +110,12 @@ fun resolve(
     val simplifiedVotes = rawVotes.simplified()
 
     val aiStrengths = aiStrengthsFor(simplifiedVotes, votingStrengthMap)
-    val strengthFor = aiStrengths.strengthFor
-    val strengthAgainst = aiStrengths.strengthAgainst
 
     if (simplifiedVotes.voters.size < quorum.raw.raw) {
         return ResolutionData(
-            ProposalResult.FAILED_QUORUM,
-            strengthFor,
-            strengthAgainst,
-            simplifiedVotes
+            result = ProposalResult.FAILED_QUORUM,
+            strengths = aiStrengths,
+            votes = simplifiedVotes
         )
     }
 
@@ -128,8 +124,7 @@ fun resolve(
     // Resolution as specified in R955
     return ResolutionData(
         result = if (isAdopted) ProposalResult.ADOPTED else ProposalResult.REJECTED,
-        strengthFor = strengthFor,
-        strengthAgainst = strengthAgainst,
+        strengths = aiStrengths,
         votes = simplifiedVotes
     )
 }

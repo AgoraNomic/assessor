@@ -126,7 +126,7 @@ private fun StringBuilder.emitVotingStrengths(votingStrengthMap: VotingStrengthM
 }
 
 private fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
-    emitLine("AI (F/A): ${resolutionData.strengthFor}/${resolutionData.strengthAgainst} (AI=$ai)")
+    emitLine("AI (F/A): ${resolutionData.strengths.strengthFor}/${resolutionData.strengths.strengthAgainst} (AI=$ai)")
 }
 
 private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {

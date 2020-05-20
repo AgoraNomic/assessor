@@ -71,8 +71,8 @@ private fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
 
 private fun json(resolutionData: ResolutionData) = json {
     "result" to json(resolutionData.result)
-    "strength_for" to json(resolutionData.strengthFor)
-    "strength_against" to json(resolutionData.strengthAgainst)
+    "strength_for" to json(resolutionData.strengths.strengthFor)
+    "strength_against" to json(resolutionData.strengths.strengthAgainst)
     "votes" to json(resolutionData.votes)
 }
 
