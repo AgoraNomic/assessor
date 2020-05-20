@@ -2,6 +2,7 @@ import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.ProposalNumbers
 import org.agoranomic.assessor.lib.emptyProposalNumbers
 import org.agoranomic.assessor.lib.proposalNumbersOf
+import org.junit.jupiter.api.DisplayName
 import test_objects.*
 import test_util.assertEqualsAndHashCode
 import kotlin.test.Test
@@ -9,7 +10,8 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class `ProposalNumbers tests` {
+@DisplayName("ProposalNumbers test")
+class ProposalNumbersTest {
     @Test
     fun `emptyProposalNumbers returns empty ProposalNumbers`() {
         assertTrue(emptyProposalNumbers().isEmpty())

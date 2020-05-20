@@ -2,11 +2,13 @@ import org.agoranomic.assessor.dsl.ministries.OfficeState
 import org.agoranomic.assessor.dsl.ministries.isHeld
 import org.agoranomic.assessor.dsl.ministries.isVacant
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.junit.jupiter.api.DisplayName
 import test_objects.firstTestPlayer
 import test_util.assertEqualsAndHashCode
 import kotlin.test.*
 
-class `OfficeState tests` {
+@DisplayName("OfficeState test")
+class OfficeStateTest {
     @Test
     fun `vacant returns Vacant`() {
         assertEquals(OfficeState.Vacant, OfficeState.vacant())
@@ -35,7 +37,8 @@ class `OfficeState tests` {
     }
 }
 
-class `OfficeMap tests` {
+@DisplayName("OfficeMap test")
+class OfficeMapTest {
     private enum class UnaryOffice { Value }
 
     @Test

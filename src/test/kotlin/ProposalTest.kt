@@ -1,5 +1,6 @@
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.checkMismatch
+import org.junit.jupiter.api.DisplayName
 import test_objects.firstTestProposal
 import test_objects.secondTestProposal
 import test_util.assertSucceeds
@@ -8,7 +9,8 @@ import kotlin.test.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertSame
 
-class `checkMismatch tests` {
+@DisplayName("checkMismatch test")
+class CheckMismatchTest {
     @Test
     fun `checkMismatch does not throw for equivalent proposals`() {
         val firstProposal = firstTestProposal()

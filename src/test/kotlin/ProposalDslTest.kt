@@ -2,6 +2,7 @@ import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
 import io.github.random_internet_cat.util.toSetCheckingDistinct
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.TestFactory
 import test_objects.*
@@ -51,7 +52,8 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     ): Proposal
 
     @Nested
-    inner class `title tests` {
+    @DisplayName("title test")
+    inner class TitleTest {
         private fun ProposalReceiver.setupForTitle() = setupForCommonTests(specifyTitle = false)
 
         @Test
@@ -91,7 +93,8 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     }
 
     @Nested
-    inner class `text tests` {
+    @DisplayName("text test")
+    inner class TextTest {
         private fun ProposalReceiver.setupForText() = setupForCommonTests(specifyText = false)
 
         @Test
@@ -131,7 +134,8 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     }
 
     @Nested
-    inner class `author tests` {
+    @DisplayName("author test")
+    inner class AuthorTest {
         private fun ProposalReceiver.setupForAuthor() = setupForCommonTests(specifyAuthor = false)
 
         @Test
@@ -171,7 +175,8 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     }
 
     @Nested
-    inner class `coauthors tests` {
+    @DisplayName("coauthors test")
+    inner class CoauthorsTest {
         private fun ProposalReceiver.setupForCoauthors() = setupForCommonTests(specifyCoauthors = false)
 
         @Test
@@ -222,7 +227,8 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     }
 
     @Nested
-    inner class `AI tests` {
+    @DisplayName("AI tests")
+    inner class AITest {
         private fun ProposalReceiver.setupForAI() = setupForCommonTests(specifyAI = false)
 
         @Test
@@ -338,7 +344,8 @@ class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
     }
 
     @Nested
-    inner class `class and chamber tests` {
+    @DisplayName("class and chamber test")
+    inner class ClassAndChamberTest {
         private fun ProposalReceiverV1.setupForClassAndChamber() {
             setupForV1Tests(specifyClass = false)
         }

@@ -1,5 +1,6 @@
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.*
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import test_objects.firstTestProposal
@@ -13,7 +14,8 @@ import kotlin.test.*
 private typealias CreateProposalSetFunc = (proposals: Array<out Proposal>) -> ProposalSet
 private typealias CreateMutableProposalSetFunc = (proposals: Array<out Proposal>) -> MutableProposalSet
 
-class `ProposalSet tests` {
+@DisplayName("ProposalSet test")
+class ProposalSetTest {
     private operator fun CreateProposalSetFunc.invoke(vararg proposals: Proposal) = this(proposals)
 
     companion object {
@@ -206,7 +208,8 @@ class `ProposalSet tests` {
     }
 }
 
-class `MutableProposalSet tests` {
+@DisplayName("MutableProposalSet test")
+class MutableProposalSetTest {
     private operator fun CreateMutableProposalSetFunc.invoke(vararg proposals: Proposal) = this(proposals)
 
     companion object {

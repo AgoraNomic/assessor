@@ -1,11 +1,13 @@
 import org.agoranomic.assessor.lib.*
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import test_objects.*
 import java.math.BigInteger
 import kotlin.test.*
 
-class `VotingStrength tests` {
+@DisplayName("VotingStrength test")
+class VotingStrengthTest {
     @Test
     fun `VotingStrength zero() works`() {
         assertEquals(VotingStrength.zero().raw, BigInteger.ZERO)
@@ -42,56 +44,8 @@ class `VotingStrength tests` {
     }
 }
 
-class `SimpleVotingStrengthMap tests` {
-    @Test
-    fun `returns provided value for special player`() {
-        val specialPlayer = firstTestPlayer()
-
-        val default = firstTestVotingStrength()
-        val override = firstTestVotingStrengthWithComment()
-
-        val map = SimpleVotingStrengthMap(default, mapOf(specialPlayer to override))
-
-        assertEquals(map[specialPlayer], override)
-    }
-
-    @Test
-    fun `returns default value for non-special player`() {
-        val special = firstTestPlayer()
-        val nonspecial = secondTestPlayer()
-
-        val default = firstTestVotingStrength()
-        val override = firstTestVotingStrengthWithComment()
-
-        val map = SimpleVotingStrengthMap(default, mapOf(special to override))
-
-        assertEquals(map[nonspecial], VotingStrengthWithComment(default, comment = null))
-    }
-
-    @Test
-    fun `specialPlayers empty for empty map`() {
-        val emptyMap = SimpleVotingStrengthMap(firstTestVotingStrength(), emptyMap())
-        assertEquals(emptyMap.specialPeople, emptySet<Person>())
-    }
-
-    @Test
-    fun `specialPlayers correct for non-empty map`() {
-        val firstPlayer = firstTestPlayer()
-        val secondPlayer = secondTestPlayer()
-
-        val map = SimpleVotingStrengthMap(
-            firstTestVotingStrength(),
-            mapOf(
-                firstPlayer to firstTestVotingStrengthWithComment(),
-                secondPlayer to secondTestVotingStrengthWithComment()
-            )
-        )
-
-        assertEquals(map.specialPeople.toSet(), setOf(firstPlayer, secondPlayer))
-    }
-}
-
-class `SingleProposalVoteMap tests` {
+@DisplayName("SingleProposalVoteMap test")
+class SingleProposalVoteMapTest {
     @Test
     fun `get returns specified vote for valid player`() {
         val player = firstTestPlayer()
@@ -126,7 +80,8 @@ class `SingleProposalVoteMap tests` {
     }
 }
 
-class `MultiProposalVoteMap tests` {
+@DisplayName("MultiProposalVoteMap test")
+class MultiProposalVoteMapTest {
     @Test
     fun `get returns correct value for valid proposal`() {
         val proposal = firstTestProposalNumber()
@@ -163,7 +118,8 @@ class `MultiProposalVoteMap tests` {
     }
 }
 
-class `Vote tests` {
+@DisplayName("Vote test")
+class VoteTest {
     companion object {
         @JvmStatic
         private fun testingVotes(): List<Vote> {

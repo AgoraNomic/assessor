@@ -2,13 +2,16 @@ import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.dsl.getOrDefault
 import org.agoranomic.assessor.dsl.getOrNull
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import test_util.assertSucceeds
 import kotlin.test.*
 
-class `DslValue tests` {
+@DisplayName("DslValue test")
+class DslValueTest {
     @Nested
-    inner class `before set` {
+    @DisplayName("before set")
+    inner class BeforeSet {
         @Test
         fun `get fails`() {
             val dslValue = DslValue<String>()
@@ -46,7 +49,8 @@ class `DslValue tests` {
     }
 
     @Nested
-    inner class `after set` {
+    @DisplayName("after set")
+    inner class AfterSet {
         @Test
         fun `get returns value`() {
             val dslValue = DslValue<String>()
@@ -99,7 +103,8 @@ class `DslValue tests` {
     }
 }
 
-class `DslValueMap tests` {
+@DisplayName("DslValueMap test")
+class DslValueMapTest {
     private data class KeyType(val value: String)
     private data class ValueType(val value: String)
 
@@ -117,7 +122,8 @@ class `DslValueMap tests` {
     }
 
     @Nested
-    inner class `before set` {
+    @DisplayName("before set")
+    inner class BeforeSet {
         @Test
         fun `set works`() {
             val map = emptyTestMap()
@@ -157,7 +163,8 @@ class `DslValueMap tests` {
     }
 
     @Nested
-    inner class `after set` {
+    @DisplayName("after set")
+    inner class AfterSet {
         @Test
         fun `set fails`() {
             val map = filledTestMap()

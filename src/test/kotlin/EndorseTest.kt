@@ -2,6 +2,7 @@ import org.agoranomic.assessor.dsl.votes.author
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.makeEndorsementFor
 import org.agoranomic.assessor.lib.*
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
@@ -12,7 +13,8 @@ import test_objects.firstTestProposal
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class `makeEndorsementFor tests` {
+@DisplayName("makeEndorsementFor test")
+class MakeEndorsementForTest {
     @Test
     fun `returns InextricableVote for null endorseeVote`() {
         val endorsee = firstTestPlayer("Endorsee")
@@ -39,7 +41,8 @@ class `makeEndorsementFor tests` {
     }
 }
 
-class `endorse tests` {
+@DisplayName("endorse test")
+class EndorseTest {
     companion object {
         @JvmStatic
         private fun testingVotes(): List<Vote> {
