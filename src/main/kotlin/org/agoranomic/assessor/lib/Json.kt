@@ -30,9 +30,9 @@ private fun json(proposal: Proposal) = json {
 @JvmName("jsonOfProposals")
 private fun json(iterable: Iterable<Proposal>) = json(iterable.map { json(it) })
 
-private fun json(quorum: Quorum) = json(quorum.raw)
-private fun json(quorum: ProposalQuorum) = json(quorum.raw)
-private fun json(quorum: AssessmentQuorum) = json(quorum.raw)
+private fun json(quorum: Quorum) = json(quorum.count())
+private fun json(quorum: ProposalQuorum) = json(quorum.generic())
+private fun json(quorum: AssessmentQuorum) = json(quorum.generic())
 
 private fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
 

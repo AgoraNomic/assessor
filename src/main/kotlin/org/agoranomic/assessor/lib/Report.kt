@@ -22,7 +22,7 @@ private fun StringBuilder.emitHeader() {
 }
 
 private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
-    emitLine("The quorum for all below decisions was ${quorum.raw}.")
+    emitLine("The quorum for all below decisions was ${quorum.count()}.")
 }
 
 private fun StringBuilder.emitProposalV0Header(data: ProposalDataV0) {}
