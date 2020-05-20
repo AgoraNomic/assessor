@@ -23,36 +23,11 @@ enum class ProposalResult {
     }
 }
 
-data class AIStrengths(val strengthFor: VotingStrength, val strengthAgainst: VotingStrength)
-
 data class ResolutionData(
     val result: ProposalResult,
     val strengths: AIStrengths,
     val votes: SimplifiedSingleProposalVoteMap
 )
-
-private fun isAIAdopted(ai: ProposalAI, aiStrengths: AIStrengths): Boolean {
-    val strengthFor = aiStrengths.strengthFor
-    val strengthAgainst = aiStrengths.strengthAgainst
-
-    return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
-}
-
-private fun strengthWithVote(
-    targetVote: VoteKind,
-    votes: SimplifiedSingleProposalVoteMap,
-    strengths: VotingStrengthMap
-) =
-    votes.personsWithVote(targetVote)
-        .map { strengths[it] }
-        .fold(VotingStrength.zero()) { acc, next -> acc + next.value }
-
-private fun aiStrengthsFor(votes: SimplifiedSingleProposalVoteMap, strengths: VotingStrengthMap): AIStrengths {
-    return AIStrengths(
-        strengthFor = strengthWithVote(VoteKind.FOR, votes, strengths),
-        strengthAgainst = strengthWithVote(VoteKind.AGAINST, votes, strengths)
-    )
-}
 
 fun resolve(
     quorum: ProposalQuorum,
