@@ -8,7 +8,6 @@ import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toProposalSet
-import java.math.BigInteger
 
 enum class ProposalResult {
     FAILED_QUORUM("FAILED QUORUM"), REJECTED, ADOPTED;
@@ -65,24 +64,6 @@ private fun isAIAdopted(ai: ProposalAI, aiStrengths: AIStrengths): Boolean {
     val strengthAgainst = aiStrengths.strengthAgainst
 
     return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
-}
-
-typealias RawQuorum = BigInteger
-
-inline class Quorum(val raw: RawQuorum) {
-    constructor(raw: Int) : this(raw.toBigInteger())
-
-    override fun toString(): String = raw.toString()
-}
-
-operator fun Quorum.compareTo(other: Quorum) = (this.raw).compareTo(other.raw)
-
-typealias RawProposalQuorum = Quorum
-
-inline class ProposalQuorum(val raw: RawProposalQuorum) {
-    constructor(raw: Int) : this(Quorum(raw))
-
-    override fun toString(): String = raw.toString()
 }
 
 private fun strengthWithVote(
@@ -167,14 +148,6 @@ data class ProposalResolutionMap(
 }
 
 fun ProposalResolutionMap.adoptedProposals() = proposalsWithResult(ProposalResult.ADOPTED)
-
-typealias RawAssessmentQuorum = Quorum
-
-inline class AssessmentQuorum(val raw: RawAssessmentQuorum) {
-    constructor(raw: Int) : this(Quorum(raw))
-
-    override fun toString(): String = raw.toString()
-}
 
 data class AssessmentData(
     val name: String,
