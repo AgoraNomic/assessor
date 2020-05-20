@@ -31,10 +31,6 @@ data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person
 
     operator fun get(p: Person) = data[p] ?: throw IllegalArgumentException("Player is not a voter")
 
-    fun forEach(f: (Person, SimpleVote) -> Unit) {
-        data.forEach(f)
-    }
-
     fun personsWithVote(kind: VoteKind): Persons {
         return Persons(data.filterValues { vote -> vote.kind == kind }.keys)
     }
