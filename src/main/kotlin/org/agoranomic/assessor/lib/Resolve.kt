@@ -81,6 +81,15 @@ inline class ProposalQuorum(val raw: RawProposalQuorum) {
     override fun toString(): String = raw.toString()
 }
 
+private fun strengthWithVote(
+    targetVote: VoteKind,
+    votes: SimplifiedSingleProposalVoteMap,
+    strengths: VotingStrengthMap
+) =
+    votes.personsWithVote(targetVote)
+        .map { strengths[it] }
+        .fold(VotingStrength.zero()) { acc, next -> acc + next.value }
+
 fun resolve(
     quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthMap,
@@ -89,22 +98,8 @@ fun resolve(
 ): ResolutionData {
     val simplifiedVotes = rawVotes.simplified()
 
-    var strengthFor = VotingStrength.zero()
-    var strengthAgainst = VotingStrength.zero()
-
-    simplifiedVotes.forEach { player, vote ->
-        val strength = votingStrengthMap[player]
-
-        // This val exists to ensure that, should another VoteKind be added, the compiler will error here unless
-        // this is also updated.
-        @Suppress("UNUSED_VARIABLE", "LocalVariableName")
-        val _ensureExhaustive_ = when (vote.kind) {
-            VoteKind.FOR -> strengthFor += strength.value
-            VoteKind.AGAINST -> strengthAgainst += strength.value
-            VoteKind.PRESENT -> { /* do nothing */
-            }
-        }
-    }
+    val strengthFor = strengthWithVote(VoteKind.FOR, simplifiedVotes, votingStrengthMap)
+    val strengthAgainst = strengthWithVote(VoteKind.AGAINST, simplifiedVotes, votingStrengthMap)
 
     if (simplifiedVotes.voters.size < quorum.raw.raw) {
         return ResolutionData(
