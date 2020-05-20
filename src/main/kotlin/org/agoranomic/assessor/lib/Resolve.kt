@@ -23,26 +23,6 @@ enum class ProposalResult {
     }
 }
 
-data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person, SimpleVote>) {
-    constructor(map: Map<Person, SimpleVote>) : this(map.toImmutableMap())
-
-    val voters get() = Persons(data.keys)
-    val voteCount get() = voters.size
-
-    operator fun get(p: Person) = data[p] ?: throw IllegalArgumentException("Player is not a voter")
-
-    fun personsWithVote(kind: VoteKind): Persons {
-        return Persons(data.filterValues { vote -> vote.kind == kind }.keys)
-    }
-
-    fun votesWithComments(): SimplifiedSingleProposalVoteMap {
-        return SimplifiedSingleProposalVoteMap(data.filterValues { it.comment != null })
-    }
-}
-
-fun SimplifiedSingleProposalVoteMap.votersFor() = personsWithVote(VoteKind.FOR)
-fun SimplifiedSingleProposalVoteMap.votersAgainst() = personsWithVote(VoteKind.AGAINST)
-
 data class AIStrengths(val strengthFor: VotingStrength, val strengthAgainst: VotingStrength)
 
 data class ResolutionData(
