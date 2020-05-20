@@ -1,9 +1,9 @@
 plugins {
     java
-    kotlin("jvm") version "1.3.50"
+    kotlin("jvm") version "1.3.71"
 }
 
-val kotlinVersion = "1.3.50"
+val kotlinVersion = "1.3.71"
 
 group = "org.agoranomic"
 version = "1.0-SNAPSHOT"
