@@ -80,6 +80,7 @@ data class ProposalResolutionMap(
 
     init {
         require(proposals.map { it.number }.toSet() == votingStrengths.keys.toSet())
+        require(proposals.map { it.number }.toSet() == resolutions.keys.toSet())
     }
 
     fun resolutionOf(proposal: ProposalNumber) =
