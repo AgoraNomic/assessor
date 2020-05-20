@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.lib
 
 import io.github.random_internet_cat.util.compareTo
+import io.github.random_internet_cat.util.getOrFail
 import io.github.random_internet_cat.util.times
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
@@ -83,10 +84,19 @@ data class ProposalResolutionMap(
         require(proposals.map { it.number }.toSet() == resolutions.keys.toSet())
     }
 
-    fun resolutionOf(proposal: ProposalNumber) =
-        resolutions[proposal] ?: throw IllegalArgumentException("No data for proposal")
+    private fun requireHasProposal(proposal: ProposalNumber) {
+        require(proposals.contains(proposal)) { "No data for proposal $proposal" }
+    }
 
-    fun votingStrengthsFor(proposal: ProposalNumber) = votingStrengths[proposal]!!
+    fun resolutionOf(proposal: ProposalNumber): ResolutionData{
+        requireHasProposal(proposal)
+        return resolutions.getOrFail(proposal)
+    }
+
+    fun votingStrengthsFor(proposal: ProposalNumber): VotingStrengthMap {
+        requireHasProposal(proposal)
+        return votingStrengths.getOrFail(proposal)
+    }
 
     fun proposalsWithResult(result: ProposalResult) =
         proposals
