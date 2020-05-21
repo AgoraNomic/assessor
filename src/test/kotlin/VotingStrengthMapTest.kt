@@ -1,11 +1,12 @@
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.SimpleVotingStrengthMap
-import org.agoranomic.assessor.lib.VotingStrength
 import org.agoranomic.assessor.lib.VotingStrengthWithComment
 import org.junit.jupiter.api.DisplayName
 import test_objects.*
+import test_util.assertEqualsAndHashCode
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 import kotlin.test.assertNull
 
 @DisplayName("SimpleVotingStrengthMap test")
@@ -131,5 +132,119 @@ class SimpleVotingStrengthMapTest {
         )
 
         assertEquals(map.specialPeople.toSet(), setOf(firstPlayer, secondPlayer))
+    }
+
+    @Test
+    fun `equality reflexiveness`() {
+        val firstPlayer = firstTestPlayer()
+        val secondPlayer = secondTestPlayer()
+        val defaultStrength = firstTestVotingStrength()
+
+        val map = SimpleVotingStrengthMap(
+            defaultStrength,
+            mapOf(
+                firstPlayer to firstTestVotingStrengthWithComment(),
+                secondPlayer to secondTestVotingStrengthWithComment()
+            )
+        )
+
+        assertEqualsAndHashCode(map, map)
+    }
+
+    @Test
+    fun `normal equality`() {
+        val firstPlayer = firstTestPlayer()
+        val secondPlayer = secondTestPlayer()
+        val defaultStrength = firstTestVotingStrength()
+
+        fun createMap() = SimpleVotingStrengthMap(
+            defaultStrength,
+            mapOf(
+                firstPlayer to firstTestVotingStrengthWithComment(),
+                secondPlayer to secondTestVotingStrengthWithComment()
+            )
+        )
+
+        assertEqualsAndHashCode(createMap(), createMap())
+    }
+
+    @Test
+    fun `equality and hash code with different special players`() {
+        val firstPlayer = firstTestPlayer()
+        val secondPlayer = secondTestPlayer()
+        val defaultStrength = firstTestVotingStrength()
+
+        val firstMap = SimpleVotingStrengthMap(
+            defaultStrength,
+            mapOf(
+                firstPlayer to firstTestVotingStrengthWithComment(),
+                secondPlayer to VotingStrengthWithComment(defaultStrength, null)
+            )
+        )
+
+        val secondMap = SimpleVotingStrengthMap(
+            defaultStrength,
+            mapOf(
+                firstPlayer to firstTestVotingStrengthWithComment()
+            )
+        )
+
+        // By contract, these maps are different because their special players are different
+        assertNotEquals(firstMap, secondMap)
+        assertNotEquals(secondMap, firstMap)
+    }
+
+    @Test
+    fun `equality and hash code with different default strength`() {
+        val firstPlayer = firstTestPlayer()
+        val secondPlayer = secondTestPlayer()
+
+        val firstDefaultStrength = firstTestVotingStrength()
+        val secondDefaultStrength = secondTestVotingStrength()
+
+        check(firstDefaultStrength != secondDefaultStrength)
+
+        val baseMap = mapOf(
+            firstPlayer to firstTestVotingStrengthWithComment(),
+            secondPlayer to secondTestVotingStrengthWithComment()
+        )
+
+        val firstMap = SimpleVotingStrengthMap(
+            firstDefaultStrength,
+            baseMap
+        )
+
+        val secondMap = SimpleVotingStrengthMap(
+            secondDefaultStrength,
+            baseMap
+        )
+
+        assertNotEquals(firstMap, secondMap)
+        assertNotEquals(secondMap, firstMap)
+    }
+
+    @Test
+    fun `equality and hash code with different strength values`() {
+        val firstPlayer = firstTestPlayer()
+        val secondPlayer = secondTestPlayer()
+
+        val defaultStrength = firstTestVotingStrength()
+        val firstStrength = firstTestVotingStrengthWithComment()
+        val secondStrength = secondTestVotingStrengthWithComment()
+
+        check(firstStrength != secondStrength)
+
+        val firstMap = SimpleVotingStrengthMap(
+            defaultStrength,
+            mapOf(firstPlayer to firstStrength, secondPlayer to secondStrength)
+        )
+
+        val secondMap = SimpleVotingStrengthMap(
+            defaultStrength,
+            mapOf(firstPlayer to secondStrength, secondPlayer to firstStrength) // Order intentionally flipped
+        )
+
+        assertNotEquals(firstMap, secondMap)
+        assertNotEquals(secondMap, firstMap)
     }
 }
