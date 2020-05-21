@@ -30,6 +30,14 @@ operator fun Int.times(other: VotingStrength) = this.toBigInteger() * other
 
 data class VotingStrengthWithComment(val value: VotingStrength, val comment: String? = null)
 
+/**
+ * A mapping from [Person]s to [VotingStrengthWithComment]s.
+ *
+ * Two [VotingStrengthMap]s `first` and `second` are equal iff:
+ * - `first.defaultStrength == second.defaultStrength`
+ * - `first.specialPeople == second.specialPeople`
+ * - For each person in [specialPeople], `first.getOrNull(person) == second.getOrNull(person)`
+ */
 interface VotingStrengthMap {
     /**
      * The strength to be used for [Person]s who are not in [specialPeople].
@@ -65,7 +73,7 @@ interface ImmutableVotingStrengthMap : VotingStrengthMap
 class SimpleVotingStrengthMap(
     override val defaultStrength: VotingStrength,
     private val strengthMap: ImmutableMap<Person, VotingStrengthWithComment>
-) : ImmutableVotingStrengthMap {
+) : AbstractVotingStrengthMap(), ImmutableVotingStrengthMap {
     constructor(
         defaultStrength: VotingStrength,
         strengthMap: Map<Person, VotingStrengthWithComment>
