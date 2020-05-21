@@ -1,9 +1,11 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.lib.CappedVotingStrengthMap
 import org.agoranomic.assessor.lib.SimpleVotingStrengthMap
 import org.agoranomic.assessor.lib.VotingStrength
 import org.agoranomic.assessor.lib.VotingStrengthWithComment
 import org.junit.jupiter.api.DisplayName
-import test_objects.*
+import org.agoranomic.assessor.test.test_objects.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith

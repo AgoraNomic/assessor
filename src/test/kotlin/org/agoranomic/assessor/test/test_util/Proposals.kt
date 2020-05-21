@@ -1,4 +1,4 @@
-package test_util
+package org.agoranomic.assessor.test.test_util
 
 import org.agoranomic.assessor.lib.Proposal
 import org.agoranomic.assessor.lib.ProposalNumber

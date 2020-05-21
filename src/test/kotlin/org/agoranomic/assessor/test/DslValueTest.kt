@@ -1,10 +1,12 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.dsl.getOrDefault
 import org.agoranomic.assessor.dsl.getOrNull
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
-import test_util.assertSucceeds
+import org.agoranomic.assessor.test.test_util.assertSucceeds
 import kotlin.test.*
 
 @DisplayName("DslValue test")

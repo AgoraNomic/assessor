@@ -1,10 +1,12 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.dsl.ministries.OfficeState
 import org.agoranomic.assessor.dsl.ministries.isHeld
 import org.agoranomic.assessor.dsl.ministries.isVacant
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.junit.jupiter.api.DisplayName
-import test_objects.firstTestPlayer
-import test_util.assertEqualsAndHashCode
+import org.agoranomic.assessor.test.test_objects.firstTestPlayer
+import org.agoranomic.assessor.test.test_util.assertEqualsAndHashCode
 import kotlin.test.*
 
 @DisplayName("OfficeState test")

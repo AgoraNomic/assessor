@@ -1,4 +1,4 @@
-package test_objects
+package org.agoranomic.assessor.test.test_objects
 
 import org.agoranomic.assessor.lib.*
 import io.github.random_internet_cat.util.div

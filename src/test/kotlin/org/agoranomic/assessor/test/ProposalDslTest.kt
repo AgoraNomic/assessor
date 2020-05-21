@@ -1,11 +1,12 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
 import io.github.random_internet_cat.util.toSetCheckingDistinct
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
-import org.junit.jupiter.api.TestFactory
-import test_objects.*
+import org.agoranomic.assessor.test.test_objects.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails

@@ -1,4 +1,4 @@
-package test_objects
+package org.agoranomic.assessor.test.test_objects
 
 import org.agoranomic.assessor.lib.LookupProposal
 

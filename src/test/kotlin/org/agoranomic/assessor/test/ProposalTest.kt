@@ -1,10 +1,12 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.lib.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.checkMismatch
 import org.junit.jupiter.api.DisplayName
-import test_objects.firstTestProposal
-import test_objects.secondTestProposal
-import test_util.assertSucceeds
-import test_util.copyWithNumber
+import org.agoranomic.assessor.test.test_objects.firstTestProposal
+import org.agoranomic.assessor.test.test_objects.secondTestProposal
+import org.agoranomic.assessor.test.test_util.assertSucceeds
+import org.agoranomic.assessor.test.test_util.copyWithNumber
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertSame

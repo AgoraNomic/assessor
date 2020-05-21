@@ -1,14 +1,16 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.lib.*
 import org.agoranomic.assessor.lib.proposal_set.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
-import test_objects.firstTestProposal
-import test_objects.secondTestProposal
-import test_objects.thirdTestProposal
-import test_util.assertEqualsAndHashCode
-import test_util.assertSucceeds
-import test_util.copyWithNumber
+import org.agoranomic.assessor.test.test_objects.firstTestProposal
+import org.agoranomic.assessor.test.test_objects.secondTestProposal
+import org.agoranomic.assessor.test.test_objects.thirdTestProposal
+import org.agoranomic.assessor.test.test_util.assertEqualsAndHashCode
+import org.agoranomic.assessor.test.test_util.assertSucceeds
+import org.agoranomic.assessor.test.test_util.copyWithNumber
 import kotlin.test.*
 
 private typealias CreateProposalSetFunc = (proposals: Array<out Proposal>) -> ProposalSet

@@ -1,3 +1,5 @@
+package org.agoranomic.assessor.test
+
 import org.agoranomic.assessor.lib.VoteFunc
 import org.agoranomic.assessor.lib.functionVote
 import org.junit.jupiter.api.DisplayName
