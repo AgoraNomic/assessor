@@ -89,8 +89,15 @@ interface GlobalVotingStrengthReceiver {
     infix fun Person.subtract(amount: Int) = subtract(VotingStrength(amount))
 
     fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit)
+
     fun default(strength: VotingStrength)
     fun default(strength: Int) = default(VotingStrength(strength))
+
+    fun min(strength: VotingStrength)
+    fun min(strength: Int) = min(VotingStrength(strength))
+
+    fun max(strength: VotingStrength)
+    fun max(strength: Int) = max(VotingStrength(strength))
 }
 
 typealias GlobalVotingStrengthReceiverInit = DslInit<GlobalVotingStrengthReceiver>
@@ -139,6 +146,9 @@ private class DefaultGlobalVotingStrengthReceiver(
     override val allProposals get() = proposals
 
     private var defaultStrength = DslValue<VotingStrength>()
+    private var minStrength = DslValue<VotingStrength>()
+    private var maxStrength = DslValue<VotingStrength>()
+
     private var globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
     private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalVotingStrengthReceiverInit>()
 
@@ -183,19 +193,43 @@ private class DefaultGlobalVotingStrengthReceiver(
         defaultStrength.set(strength)
     }
 
+    override fun min(strength: VotingStrength) {
+        minStrength.set(strength)
+    }
+
+    override fun max(strength: VotingStrength) {
+        maxStrength.set(strength)
+    }
+
     fun compile(): ImmutableMap<ProposalNumber, VotingStrengthMap> {
         val defaultStrength = defaultStrength.get()
+        val minStrength = minStrength.getOrNull()
+        val maxStrength = maxStrength.getOrNull()
+
         val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
             val block = overrideStrengthBlocks.getOrNull(proposal)
 
-            if (block != null) {
-                OverrideVotingStrengthMap(globalStrengthMap, proposalStrengthCompiler.compile(globalStrengthMap, block))
-            } else {
-                globalStrengthMap
-            }
+            val baseMap =
+                if (block != null) {
+                    OverrideVotingStrengthMap(
+                        globalStrengthMap,
+                        proposalStrengthCompiler.compile(globalStrengthMap, block)
+                    )
+                } else {
+                    globalStrengthMap
+                }
+
+            // Voting strength caps take precedence, so apply them after proposal overrides.
+            // If min or max is null (i.e. not provided by the init block), then there will be no cap, and it will
+            // preserve the original behavior.
+            CappedVotingStrengthMap(
+                base = baseMap,
+                min = minStrength,
+                max = maxStrength
+            )
         }.toImmutableMap()
     }
 }
