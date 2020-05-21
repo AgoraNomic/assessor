@@ -38,6 +38,8 @@ fun `assesssment 8366 to 8367`() = assessment {
 
     strengths {
         default(3)
+        min(0)
+        max(15)
 
         addToHolder(offices, Speaker, 1)
         Murphy subtract 1 // 4 Blots

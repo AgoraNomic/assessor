@@ -14,6 +14,9 @@ fun `assessment 8253 to 8265`() = assessment {
 
     strengths {
         default(3)
+        min(0)
+        max(5)
+
         G strength 4 comment PM
     }
 

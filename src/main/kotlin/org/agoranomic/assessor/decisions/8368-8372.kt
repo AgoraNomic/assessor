@@ -41,6 +41,8 @@ fun `assessment 8368 to 8372`() = assessment {
 
     strengths {
         default(3)
+        min(0)
+        max(15)
 
         addToHolder(offices, Speaker, 1)
         twg subtract 2 // BLOTS

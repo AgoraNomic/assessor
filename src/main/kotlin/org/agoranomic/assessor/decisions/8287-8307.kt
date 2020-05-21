@@ -16,6 +16,11 @@ fun `assessment 8287 to 8307`() = assessment {
     strengths {
         default(3)
 
+        min(0)
+
+        // Max actually changes mid-way through because of a rule-change, but that doesn't actually affect the result.
+        max(5)
+
         // 8290 comes after 8291 because of a CoE
         val after8291 = ((8292..8307).toList() + 8290).map { ProposalNumber(it) }
         val before8291 = allProposals.map { it.number } - after8291

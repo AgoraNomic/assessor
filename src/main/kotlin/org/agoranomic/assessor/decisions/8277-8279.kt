@@ -13,6 +13,8 @@ fun `assessment 8277 to 8279`() = assessment {
 
     strengths {
         default(3)
+        min(0)
+        max(5)
     }
 
     proposals(v0) {
