@@ -70,6 +70,31 @@ interface VotingStrengthMap {
  */
 interface ImmutableVotingStrengthMap : VotingStrengthMap
 
+abstract class AbstractVotingStrengthMap : VotingStrengthMap {
+    companion object {
+        private fun VotingStrengthMap.toMap() = specialPeople.associateWith { getOrNull(it)!! }
+
+        // Equality contract includes defaultStrength, specialPeople, and the actual values.
+        // The returned Pair includes all three - the defaultStrength (obviously), the specialPeople (in the keys of
+        // the map), and the actual values (in the values of the map).
+        private fun VotingStrengthMap.selectEquality() = Pair(defaultStrength, toMap())
+    }
+
+    final override fun equals(other: Any?): Boolean {
+        if (other !is VotingStrengthMap) return false
+
+        return this.selectEquality() == other.selectEquality()
+    }
+
+    final override fun hashCode(): Int {
+        return this.selectEquality().hashCode()
+    }
+
+    override fun toString(): String {
+        return "VotingStrengthMap[defaultStrength=$defaultStrength, specialStrengths=${toMap()}]"
+    }
+}
+
 class SimpleVotingStrengthMap(
     override val defaultStrength: VotingStrength,
     private val strengthMap: ImmutableMap<Person, VotingStrengthWithComment>
