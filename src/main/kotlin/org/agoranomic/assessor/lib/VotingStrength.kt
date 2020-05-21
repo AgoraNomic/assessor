@@ -44,8 +44,8 @@ interface VotingStrengthMap {
     val specialPeople: ImmutableSet<Person>
 
     /**
-     * If [person] is in [specialPeople], returns the (possibly-commented) voting strength of [person]. Otherwise,
-     * returns `null`.
+     * If [person] is in [specialPeople], returns the (possibly-commented, non-null) voting strength of [person].
+     * Otherwise, returns `null`.
      */
     fun getOrNull(person: Person): VotingStrengthWithComment?
 
