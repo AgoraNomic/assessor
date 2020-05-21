@@ -62,14 +62,14 @@ data class ProposalResolutionMap(
     val proposals: ImmutableProposalSet,
     private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
-    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>
+    val votingStrengths: ImmutableMap<ProposalNumber, ImmutableVotingStrengthMap>
 ) {
     constructor(
         assessmentName: String,
         proposals: ProposalSet,
         resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
-        votingStrengths: Map<ProposalNumber, VotingStrengthMap>
+        votingStrengths: Map<ProposalNumber, ImmutableVotingStrengthMap>
     ) : this(
         assessmentName,
         proposals.toImmutableProposalSet(),
@@ -92,7 +92,7 @@ data class ProposalResolutionMap(
         return resolutions.getOrFail(proposal)
     }
 
-    fun votingStrengthsFor(proposal: ProposalNumber): VotingStrengthMap {
+    fun votingStrengthsFor(proposal: ProposalNumber): ImmutableVotingStrengthMap {
         requireHasProposal(proposal)
         return votingStrengths.getOrFail(proposal)
     }
@@ -109,14 +109,14 @@ fun ProposalResolutionMap.adoptedProposals() = proposalsWithResult(ProposalResul
 data class AssessmentData(
     val name: String,
     val quorum: AssessmentQuorum,
-    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthMap>,
+    val votingStrengths: ImmutableMap<ProposalNumber, ImmutableVotingStrengthMap>,
     val proposals: ImmutableProposalSet,
     val votes: MultiPersonPendingVoteMap
 ) {
     constructor(
         name: String,
         quorum: AssessmentQuorum,
-        votingStrengths: Map<ProposalNumber, VotingStrengthMap>,
+        votingStrengths: Map<ProposalNumber, ImmutableVotingStrengthMap>,
         proposals: ProposalSet,
         votes: MultiPersonPendingVoteMap
     ) : this(

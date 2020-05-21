@@ -57,10 +57,15 @@ interface VotingStrengthMap {
         getOrNull(person) ?: VotingStrengthWithComment(defaultStrength)
 }
 
+/**
+ * A [VotingStrengthMap] that is immutable by contract.
+ */
+interface ImmutableVotingStrengthMap : VotingStrengthMap
+
 class SimpleVotingStrengthMap(
     override val defaultStrength: VotingStrength,
     private val strengthMap: ImmutableMap<Person, VotingStrengthWithComment>
-) : VotingStrengthMap {
+) : ImmutableVotingStrengthMap {
     constructor(
         defaultStrength: VotingStrength,
         strengthMap: Map<Person, VotingStrengthWithComment>
@@ -75,11 +80,11 @@ class SimpleVotingStrengthMap(
 }
 
 class OverrideVotingStrengthMap(
-    val overriden: VotingStrengthMap,
+    val overriden: ImmutableVotingStrengthMap,
     private val overrideMap: ImmutableMap<Person, VotingStrengthWithComment>
-) : VotingStrengthMap {
+) : ImmutableVotingStrengthMap {
     constructor(
-        overriden: VotingStrengthMap,
+        overriden: ImmutableVotingStrengthMap,
         overrideMap: Map<Person, VotingStrengthWithComment>
     ) : this(
         overriden,

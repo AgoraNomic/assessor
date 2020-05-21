@@ -8,10 +8,10 @@ package org.agoranomic.assessor.lib
  * @throws IllegalArgumentException if `base.defaultStrength` is less than `min` or more than `max` (if either is non-null).
  */
 data class CappedVotingStrengthMap(
-    private val base: VotingStrengthMap,
+    private val base: ImmutableVotingStrengthMap,
     private val min: VotingStrength?,
     private val max: VotingStrength?
-) : VotingStrengthMap {
+) : ImmutableVotingStrengthMap {
     init {
         if (min != null && max != null) require(min < max)
         require(base.defaultStrength.isValid())
