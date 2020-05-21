@@ -15,6 +15,8 @@ fun `assessment 8188A to 8195A`() = assessment {
 
     strengths {
         default(3)
+        min(0)
+        max(5)
 
         G strength 4 comment PM
         Corona strength 1 comment BLOTS

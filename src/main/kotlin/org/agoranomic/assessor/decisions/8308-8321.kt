@@ -40,6 +40,9 @@ fun `assessment 8308 to 8321`() = assessment {
 
     strengths {
         default(3)
+        min(0)
+        max(15)
+
         Falsifian strength 4 comment SPEAKER
 
         ministriesV0(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())

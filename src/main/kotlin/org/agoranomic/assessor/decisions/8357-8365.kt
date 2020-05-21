@@ -39,8 +39,10 @@ fun `assessment 8357 to 8365`() = assessment {
 
     strengths {
         default(3)
-        addToHolder(offices, Speaker, 1)
+        min(0)
+        max(15)
 
+        addToHolder(offices, Speaker, 1)
         ministriesV2(offices, allProposals)
     }
 
