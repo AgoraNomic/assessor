@@ -51,6 +51,12 @@ interface OfficeMap<Office : Enum<Office>> : Iterable<OfficeMapEntry<Office>> {
     operator fun get(office: Office): OfficeState
 }
 
+val <Office : Enum<Office>> OfficeMap<Office>.entries: Set<OfficeMapEntry<Office>>
+    get() = this.toSet()
+
+fun <Office : Enum<Office>> OfficeMap<Office>.pairs(): Set<Pair<Office, OfficeState>> =
+    entries.map { (office, state) -> Pair(office, state) }.toSet()
+
 /**
  * A default, immutable implementation of [OfficeMap].  As an invariant, its internal [data] map always contains
  * data for each enumerator of [Office].
