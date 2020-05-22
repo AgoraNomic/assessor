@@ -360,5 +360,9 @@ with:
             endorse(G) on 8386
             // NO VOTE on 8387
         }
+
+        votes(Tcbapo) {
+            endorse(Falsifian) on all
+        }
     }
 }
