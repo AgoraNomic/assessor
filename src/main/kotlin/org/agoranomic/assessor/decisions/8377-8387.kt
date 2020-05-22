@@ -241,5 +241,19 @@ with:
             FOR on 8386
             // FOR on 8387
         }
+
+        votes(PSS) {
+            AGAINST on 8377
+            FOR on 8378
+            AGAINST on 8379
+            AGAINST on 8380
+            FOR on 8381
+            // FOR on 8382
+            AGAINST on 8383
+            AGAINST on 8384
+            // TODO resolve conditional vote on 8388: "As long as no member of the contract votes AGAINST, FOR; otherwise, AGAINST."
+            FOR on 8386
+            // FOR on 8387
+        }
     }
 }
