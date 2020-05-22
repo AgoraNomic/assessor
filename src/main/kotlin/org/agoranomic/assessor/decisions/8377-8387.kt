@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind
@@ -282,6 +283,20 @@ with:
             AGAINST on 8385
             FOR on 8386
             // NO VOTE on 8387
+        }
+
+        votes(Jason) {
+            PRESENT on 8377
+            PRESENT on 8378
+            FOR on 8379
+            endorse(Aris) on 8380
+            FOR on 8381
+            // endorse(nch) on 8382
+            PRESENT on 8383
+            AGAINST on 8384
+            AGAINST on 8385
+            FOR on 8386
+            // NONEXISTENT on 8387
         }
     }
 }
