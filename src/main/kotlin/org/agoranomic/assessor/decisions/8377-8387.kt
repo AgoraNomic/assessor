@@ -2,7 +2,9 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
+import org.agoranomic.assessor.dsl.ministries.ministriesApr02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -29,6 +31,15 @@ fun `assessment 8377 to 8387`() = assessment {
         Tailor to PSS,
         Treasuror to Trigon
     )
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        ministriesApr02(offices, allProposals)
+        addToHolder(offices, Speaker, 1)
+    }
 
     proposals(v1) {
         proposal(8377) {
