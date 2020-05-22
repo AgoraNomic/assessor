@@ -8,6 +8,8 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.Ministry
+import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.VoteKind.FOR
@@ -49,6 +51,7 @@ fun `assessment 8377 to 8387`() = assessment {
             title("Burden + Accurate Naming")
             ai("2.0")
             author(RLee)
+            chamber(Justice)
 
             text(
                 """
@@ -70,6 +73,7 @@ Agora HEREBY RESOLVE the following
             title("Bug Fixing IAR Writ")
             ai("2.0")
             author(RLee)
+            chamber(Efficiency)
 
             text(
                 """
@@ -98,6 +102,7 @@ so that it states
             title("Expand wins by paradox")
             ai("1.0")
             author(Murphy)
+            chamber(Participation)
 
             text(
                 """
@@ -116,6 +121,7 @@ with this text:
             title("Justice for R. Lee")
             ai("1.0")
             author(Murphy)
+            chamber(Participation)
 
             text(
                 """
@@ -128,6 +134,7 @@ awarded it in connection with CFJ 3828."""
             title("You Tried")
             ai("1.0")
             author(Murphy)
+            chamber(Participation)
 
             text(
                 """
@@ -139,6 +146,7 @@ Award R. Lee the Patent Title of Money Launderer."""
             title("Agora plays table tennis")
             ai("1.0")
             author(Trigon)
+            chamber(Participation)
 
             text(
                 """
@@ -159,6 +167,7 @@ Create a new rule entitled "Ping Pong" with Power=0.1 that reads:
             title("Bones of Criminals")
             ai("1.0")
             author(PSS)
+            chamber(Justice)
 
             text(
                 """
@@ -173,6 +182,7 @@ Create a new rule entitled "Criminal Ossification" with Power 1 that reads:
             title("Slaying the dragon")
             ai("1.0")
             author(Jason)
+            chamber(Economy)
 
             text(
                 """
@@ -190,6 +200,7 @@ Destroy the Dragon Corporation."""
             title("Restraining Motions")
             ai("3.0")
             author(G)
+            democratic()
 
             text(
                 """
