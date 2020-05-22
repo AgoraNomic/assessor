@@ -135,29 +135,6 @@ Award R. Lee the Patent Title of Money Launderer."""
             )
         }
 
-        proposal(8382) {
-            title("You Tried")
-            ai("1.0")
-            author(nch)
-
-            text(
-                """
-Enact a rule titled "The Webmastor" with Power=1 and the following text:
-
-  The Webmastor is an office.
-
-  The Webmastor's monthly report includes a Directory, a Changelog, a
-  Warning Log, and an Error Log. The Directory lists notable
-  currently maintained public resources. The Changelog lists notable
-  changes to resources. The Warning Log lists notable potential
-  issues, such as inaccurate or aging resources or unintended issues
-  with a public resource. The Error Log lists notable losses of
-  resources - where a resource has become inaccessible, unmaintained,
-  or unusable. Where 'notable' is used in this rule its meaning is up
-  to the Webmastor's discretion."""
-            )
-        }
-
         proposal(8383) {
             title("Agora plays table tennis")
             ai("1.0")
@@ -235,38 +212,6 @@ with:
   never violated a time limit to assign a judgement to that CFJ,
   nor ever self-filed a motion to reconsider that CFJ, that person
   earns a Blue Ribbon."""
-            )
-        }
-
-        proposal(8387) {
-            title("Defense Against the Dark Arts")
-            ai("1.0")
-            author(Aris)
-            coauthors(PSS)
-
-            text(
-                """
-If a rule entitled "Criminal Ossification" exists, repeal it.
-
-Enact a new power 1.0 rule entitled "Defense Against the Dark Arts" with the
-following text:
-  A proposal is forbidden if it would, upon successfully taking effect,
-  cause Agora to be ossified or to cease to exist.  An action is forbidden
-  if it would, upon its successful occurrence, cause Agora to be ossified or to
-  cease to exist.
-
-  Attempting a forbidden action is PROHIBITED, and is the Class-8 Crime of
-  Engaging in Forbidden Arts.
-
-  Submitting a forbidden proposal is PROHIBITED, and is the Class-4 Crime of
-  Contemplating Forbidden Arts.
-
-  Being the author of an adopted forbidden proposal is PROHIBITED, and is the
-  Class-4 Crime of Suborning Forbidden Arts.
-
-  Having a final ballot that evaluates to FOR in the Agoran decision on whether
-  to adopt a forbidden proposal is PROHIBITED, and is the Class-2 Crime of
-  Abetting Forbidden Arts."""
             )
         }
     }
