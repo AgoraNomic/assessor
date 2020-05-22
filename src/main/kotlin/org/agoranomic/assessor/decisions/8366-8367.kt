@@ -2,14 +2,13 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
-import org.agoranomic.assessor.dsl.ministries.ministriesV2
+import org.agoranomic.assessor.dsl.ministries.ministriesApr02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
@@ -44,7 +43,7 @@ fun `assesssment 8366 to 8367`() = assessment {
         Murphy subtract 1 // 4 Blots
         twg subtract 2 // 6 Blots
 
-        ministriesV2(offices, allProposals)
+        ministriesApr02(offices, allProposals)
     }
 
     proposals(v1) {

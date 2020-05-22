@@ -3,17 +3,15 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.ministries.endorseOfficer
-import org.agoranomic.assessor.dsl.ministries.ministriesV2
+import org.agoranomic.assessor.dsl.ministries.ministriesApr02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Participation
-import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
@@ -47,7 +45,7 @@ fun `assessment 8373 to 8376`() = assessment {
         addToHolder(offices, Speaker, 1)
         twg subtract 1 // BLOTS
 
-        ministriesV2(offices, allProposals)
+        ministriesApr02(offices, allProposals)
     }
 
     proposals(v1) {

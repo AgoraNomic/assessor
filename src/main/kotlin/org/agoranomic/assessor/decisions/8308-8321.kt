@@ -42,8 +42,8 @@ fun `assessment 8308 to 8321`() = assessment {
 
         Falsifian strength 4 comment SPEAKER
 
-        ministriesV0(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())
-        ministriesV1(offices, allProposals.filter { it.number >= ProposalNumber(8319) }.toProposalSet())
+        ministriesJan29(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())
+        ministriesFeb13(offices, allProposals.filter { it.number >= ProposalNumber(8319) }.toProposalSet())
     }
 
     proposals(v1) {

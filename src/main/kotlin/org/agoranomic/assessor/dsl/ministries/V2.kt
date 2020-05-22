@@ -4,14 +4,13 @@ import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.VotingStrength
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 // These interests come from https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2020-April/042508.html,
 // in which Murphy flipped the interests of Comptrollor, Distributor, and Speaker.
-val INTERESTS_MAP_V2: Map<OfficeInitial, List<Ministry>> =
-    INTERESTS_MAP_V1
+val INTERESTS_MAP_APR_02: Map<OfficeInitial, List<Ministry>> =
+    INTERESTS_MAP_FEB_13
         .toPersistentMap()
         .mutate { interests ->
             interests[OfficeInitial.Comptrollor] = listOf(Ministry.Legislation)
@@ -27,14 +26,14 @@ val INTERESTS_MAP_V2: Map<OfficeInitial, List<Ministry>> =
                 )
         }
 
-private val MINISTRIES_V2_BONUS = VotingStrength(2)
+private val MINISTRIES_BONUS_APR_02 = VotingStrength(2)
 
-fun GlobalVotingStrengthReceiver.ministriesV2(
+fun GlobalVotingStrengthReceiver.ministriesApr02(
     officeMap: OfficeMap<OfficeInitial>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,
-    INTERESTS_MAP_V2,
-    MINISTRIES_V2_BONUS,
+    INTERESTS_MAP_APR_02,
+    MINISTRIES_BONUS_APR_02,
     proposals
 )

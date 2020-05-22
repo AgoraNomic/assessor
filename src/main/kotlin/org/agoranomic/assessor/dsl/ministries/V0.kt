@@ -7,7 +7,7 @@ import org.agoranomic.assessor.lib.VotingStrength
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 // These interests come from the original proposal - P8291
-val INTERESTS_MAP_V0 = mapOf(
+val INTERESTS_MAP_JAN_29 = mapOf(
     ADoP to listOf(
         Ministry.Efficiency
     ),
@@ -50,14 +50,14 @@ val INTERESTS_MAP_V0 = mapOf(
     )
 )
 
-private val MINISTRIES_V0_BONUS = VotingStrength(2)
+private val MINISTRIES_BONUS_JAN_29 = VotingStrength(2)
 
-fun GlobalVotingStrengthReceiver.ministriesV0(
+fun GlobalVotingStrengthReceiver.ministriesJan29(
     officeMap: OfficeMap<OfficeInitial>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,
-    INTERESTS_MAP_V0,
-    MINISTRIES_V0_BONUS,
+    INTERESTS_MAP_JAN_29,
+    MINISTRIES_BONUS_JAN_29,
     proposals
 )
