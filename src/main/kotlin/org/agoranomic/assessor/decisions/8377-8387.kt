@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesApr02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.addToHolder
@@ -265,6 +266,20 @@ with:
             FOR on 8383
             AGAINST on 8384
             PRESENT on 8385
+            FOR on 8386
+            // NO VOTE on 8387
+        }
+
+        votes(nch) {
+            PRESENT on 8377
+            AGAINST on 8378
+            FOR on 8379
+            endorseOfficer(offices, Herald) on 8380
+            FOR on 8381
+            // FOR on 8382
+            AGAINST on 8383
+            PRESENT on 8384
+            AGAINST on 8385
             FOR on 8386
             // NO VOTE on 8387
         }
