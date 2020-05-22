@@ -102,6 +102,35 @@ private class OfficeMapImpl<Office : Enum<Office>> private constructor(private v
 }
 
 /**
+ * A helper for creating a [OfficeMap] from pairs of offices to office states.
+ *
+ * @param officeClass the reified class of [Office]
+ *
+ * @throws [IllegalArgumentException] if all enumerators of [Office] do not appear exactly once as the first value in
+ * a pair
+ */
+fun <Office : Enum<Office>> Iterable<Pair<Office, OfficeState>>.toOfficeMap(officeClass: KClass<Office>): OfficeMap<Office> {
+    val thisList = this.toList()
+
+    thisList.requireAllAreDistinctBy { it.first }
+    thisList.map { it.first }.requireExhaustive(officeClass)
+
+    val uncheckedOfficeMap = thisList.toMap().toExhaustiveEnumMap(officeClass)
+
+    return OfficeMapImpl.from(officeClass, uncheckedOfficeMap)
+}
+
+/**
+ * A helper for creating a [OfficeMap] from pairs of offices to office states.
+ *
+ * @throws [IllegalArgumentException] if all enumerators of [Office] do not appear exactly once as the first value in
+ * a pair
+ */
+@JvmName("pairsToOfficeMap")
+inline fun <reified Office : Enum<Office>> Iterable<Pair<Office, OfficeState>>.toOfficeMap() =
+    this.toOfficeMap(Office::class)
+
+/**
  * A helper for creating a [OfficeMap] from pairs of offices to (nullable) persons.
  *
  * For each pair, if the [Person] (the second value) is non-null, it is interpreted as the holder of the office.
@@ -116,19 +145,22 @@ fun <Office : Enum<Office>> officeMapOf(
     officeClass: KClass<Office>,
     vararg pairs: Pair<Office, Person?>
 ): OfficeMap<Office> {
-    pairs.map { it.first }.requireAllAreDistinct()
-    val uncheckedOfficeMap = pairs.toMap().toExhaustiveEnumMap(officeClass)
+    val pairsList = pairs.asList()
 
-    return OfficeMapImpl.from(
-        officeClass,
-        uncheckedOfficeMap
-            .mapValues { (_, person) ->
-                when (person) {
-                    null -> OfficeState.vacant()
-                    else -> OfficeState.heldBy(person)
-                }
+    pairsList.requireAllAreDistinctBy { it.first }
+    pairsList.map { it.first }.requireExhaustive(officeClass)
+
+    val officeStatePairs = pairsList.map { (office, person) ->
+        Pair(
+            office,
+            when (person) {
+                null -> OfficeState.vacant()
+                else -> OfficeState.heldBy(person)
             }
-    )
+        )
+    }
+
+    return officeStatePairs.toOfficeMap(officeClass)
 }
 
 /**

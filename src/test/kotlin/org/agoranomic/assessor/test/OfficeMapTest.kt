@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.dsl.ministries.OfficeState
-import org.agoranomic.assessor.dsl.ministries.isHeld
-import org.agoranomic.assessor.dsl.ministries.isVacant
-import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.ministries.*
 import org.junit.jupiter.api.DisplayName
 import org.agoranomic.assessor.test.test_objects.firstTestPlayer
 import org.agoranomic.assessor.test.test_util.assertEqualsAndHashCode
@@ -42,6 +39,42 @@ class OfficeStateTest {
 @DisplayName("OfficeMap test")
 class OfficeMapTest {
     private enum class UnaryOffice { Value }
+
+    @Test
+    fun `toOfficeMap returns OfficeMap containing given entries`() {
+        val testPerson = firstTestPlayer()
+        val testState = OfficeState.heldBy(testPerson)
+
+        val map = listOf(UnaryOffice.Value to testState).toOfficeMap()
+        assertEquals(testState, map[UnaryOffice.Value])
+    }
+
+    @Test
+    fun `toOfficeMap throws when non-exhaustive`() {
+        assertFailsWith<IllegalArgumentException> {
+            listOf<Pair<UnaryOffice, OfficeState>>().toOfficeMap()
+        }
+    }
+
+    @Test
+    fun `toOfficeMap throws when keys repeated`() {
+        assertFailsWith<IllegalArgumentException> {
+            listOf(
+                UnaryOffice.Value to OfficeState.heldBy(firstTestPlayer()),
+                UnaryOffice.Value to OfficeState.vacant()
+            ).toOfficeMap()
+        }
+    }
+
+    @Test
+    fun `toOfficeMap return compares equal to officeMapOf return`() {
+        val testPerson = firstTestPlayer()
+
+        assertEqualsAndHashCode(
+            officeMapOf(UnaryOffice.Value to testPerson),
+            listOf(UnaryOffice.Value to OfficeState.heldBy(testPerson)).toOfficeMap()
+        )
+    }
 
     @Test
     fun `officeMapOf returns held for non-null holder`() {
