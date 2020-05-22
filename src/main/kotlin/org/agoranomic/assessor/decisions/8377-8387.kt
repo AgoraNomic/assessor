@@ -300,7 +300,17 @@ with:
         }
 
         votes(G) {
+            FOR on 8377
+            AGAINST on 8378
             AGAINST on 8379
+            AGAINST on 8380
+            AGAINST on 8381
+            // FOR on 8382
+            PRESENT on 8383
+            AGAINST on 8384
+            PRESENT on 8385
+            FOR on 8386
+            // AGAINST on 8387
         }
 
         pikhq matches G
