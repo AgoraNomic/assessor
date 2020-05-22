@@ -342,5 +342,19 @@ with:
             FOR on 8386
             // DENIAL OF EXISTENCE on 8387
         }
+
+        votes(Falsifian) {
+            endorse(RLee) on 8377
+            AGAINST on 8378
+            // TODO resolve conditional vote on 8379: endorse(PSS) UNLESS VETO
+            AGAINST on 8380
+            // TODO resolve conditional vote on 8381: PRESENT UNLESS VETO
+            // endorse(nch) unless veto on 8382
+            // TODO resolve conditional vote on 8383: PRESENT UNLESS VETO
+            AGAINST on 8384
+            // TODO resolve conditional vote on 8385: PRESENT UNLESS VETO
+            endorse(G) on 8386
+            // NO VOTE on 8387
+        }
     }
 }
