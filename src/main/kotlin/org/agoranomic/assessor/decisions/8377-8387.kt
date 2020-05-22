@@ -299,6 +299,10 @@ with:
             // NONEXISTENT on 8387
         }
 
+        votes(ATMunn) {
+            endorse(Jason) on all
+        }
+
         votes(G) {
             FOR on 8377
             AGAINST on 8378
