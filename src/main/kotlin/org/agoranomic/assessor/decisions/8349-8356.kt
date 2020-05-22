@@ -1,8 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.OfficeV1
-import org.agoranomic.assessor.dsl.ministries.OfficeV1.*
+import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.ministries.ministriesV1
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.addToHolder

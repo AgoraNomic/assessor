@@ -1,11 +1,8 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.OfficeV0.*
-import org.agoranomic.assessor.dsl.ministries.endorseOfficer
-import org.agoranomic.assessor.dsl.ministries.ministriesV0
-import org.agoranomic.assessor.dsl.ministries.ministriesV1
-import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.ministries.*
+import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
