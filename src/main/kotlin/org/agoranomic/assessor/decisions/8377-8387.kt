@@ -252,7 +252,7 @@ with:
             // FOR on 8382
             AGAINST on 8383
             AGAINST on 8384
-            // TODO resolve conditional vote on 8388: "As long as no member of the contract votes AGAINST, FOR; otherwise, AGAINST."
+            AGAINST on 8385 comment conditional("Aris and Jason voted AGAINST on this proposal")
             FOR on 8386
             // FOR on 8387
         }
@@ -350,13 +350,13 @@ with:
         votes(Falsifian) {
             endorse(RLee) on 8377
             AGAINST on 8378
-            // TODO resolve conditional vote on 8379: endorse(PSS) UNLESS VETO
+            endorse(PSS) on 8379 comment NO_VETO
             AGAINST on 8380
-            // TODO resolve conditional vote on 8381: PRESENT UNLESS VETO
+            PRESENT on 8381 comment NO_VETO
             // endorse(nch) unless veto on 8382
-            // TODO resolve conditional vote on 8383: PRESENT UNLESS VETO
+            PRESENT on 8383 comment NO_VETO
             AGAINST on 8384
-            // TODO resolve conditional vote on 8385: PRESENT UNLESS VETO
+            PRESENT on 8385 comment NO_VETO
             endorse(G) on 8386
             // NO VOTE on 8387
         }
