@@ -228,5 +228,18 @@ with:
     }
 
     voting {
+        votes(Aris) {
+            AGAINST on 8377
+            AGAINST on 8378
+            FOR on 8379
+            AGAINST on 8380
+            FOR on 8381
+            // FOR on 8382
+            AGAINST on 8383
+            AGAINST on 8384
+            AGAINST on 8385
+            FOR on 8386
+            // FOR on 8387
+        }
     }
 }
