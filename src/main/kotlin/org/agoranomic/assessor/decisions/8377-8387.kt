@@ -11,8 +11,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8377 to 8387`() = assessment {
@@ -254,6 +253,20 @@ with:
             // TODO resolve conditional vote on 8388: "As long as no member of the contract votes AGAINST, FOR; otherwise, AGAINST."
             FOR on 8386
             // FOR on 8387
+        }
+
+        votes(Trigon) {
+            PRESENT on 8377
+            AGAINST on 8378
+            FOR on 8379
+            FOR on 8380
+            FOR on 8381
+            // FOR on 8382
+            FOR on 8383
+            AGAINST on 8384
+            PRESENT on 8385
+            FOR on 8386
+            // NO VOTE on 8387
         }
     }
 }
