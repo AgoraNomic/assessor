@@ -298,5 +298,11 @@ with:
             FOR on 8386
             // NONEXISTENT on 8387
         }
+
+        votes(G) {
+            AGAINST on 8379
+        }
+
+        pikhq matches G
     }
 }
