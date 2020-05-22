@@ -314,5 +314,19 @@ with:
         }
 
         pikhq matches G
+
+        votes(Murphy) {
+            FOR on 8377
+            PRESENT on 8378
+            FOR on 8379
+            AGAINST on 8380
+            FOR on 8381
+            // FOR on 8382
+            AGAINST on 8383
+            FOR on 8384
+            PRESENT on 8385
+            FOR on 8386
+            // FOR on 8387
+        }
     }
 }
