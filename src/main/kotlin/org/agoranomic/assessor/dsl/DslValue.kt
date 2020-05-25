@@ -10,6 +10,17 @@ import io.github.random_internet_cat.util.getOrFail
 class DslValue<T> {
     private var currentValue: T? = null
     private var isInitialized: Boolean = false
+    private val name: String?
+
+    companion object {
+        fun <T> namedOf(name: String): DslValue<T> = DslValue<T>(name)
+    }
+
+    private constructor(name: String?) {
+        this.name = name
+    }
+
+    constructor() : this(null)
 
     /**
      * Returns `true` if the value has been set, and `false` otherwise.
@@ -22,7 +33,16 @@ class DslValue<T> {
      * @throws IllegalStateException if the value has already been set.
      */
     fun set(value: T) {
-        check(!hasValue())
+        if (hasValue()) {
+            val message =
+                if (name != null)
+                    "Attempt to set value of DslValue (name = $name) twice"
+                else
+                    "Attempt to set value of DslValue twice"
+
+            error(message)
+        }
+
         currentValue = value
         isInitialized = true
     }
@@ -33,7 +53,15 @@ class DslValue<T> {
      * @throws IllegalStateException if the value has not been set.
      */
     fun get(): T {
-        check(hasValue())
+        if (!hasValue()) {
+            val message =
+                if (name != null)
+                    "Attempt to read unset value of DslValue (name = $name)"
+                else
+                    "Attempt to read unset value of DslValue"
+
+            error(message)
+        }
 
         // Because we know we have a value, we have an object of type T in currentValue, so the cast is unchecked,
         // but it is guaranteed to be correct.
