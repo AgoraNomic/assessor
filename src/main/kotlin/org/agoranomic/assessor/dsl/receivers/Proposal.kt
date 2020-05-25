@@ -56,7 +56,7 @@ private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : P
     private val textValue = DslValue.namedOf<String>("text of proposal $number")
     private val aiValue = DslValue.namedOf<ProposalAI>("AI of proposal $number")
     private val authorValue = DslValue.namedOf<Person>("author of proposal $number")
-    private var coauthorsValue = DslValue.namedOf<Persons>("coauthors of proposal $number")
+    private val coauthorsValue = DslValue.namedOf<Persons>("coauthors of proposal $number")
 
     override fun title(str: String) {
         titleValue.set(str)
