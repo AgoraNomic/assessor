@@ -145,9 +145,9 @@ private class DefaultGlobalVotingStrengthReceiver(
 
     override val allProposals get() = proposals
 
-    private var defaultStrength = DslValue<VotingStrength>()
-    private var minStrength = DslValue<VotingStrength>()
-    private var maxStrength = DslValue<VotingStrength>()
+    private var defaultStrength = DslValue.namedOf<VotingStrength>("default voting strength")
+    private var minStrength = DslValue.namedOf<VotingStrength>("min voting strength")
+    private var maxStrength = DslValue.namedOf<VotingStrength>("max voting strength")
 
     private var globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
     private var overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalVotingStrengthReceiverInit>()

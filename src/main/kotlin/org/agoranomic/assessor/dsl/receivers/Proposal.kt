@@ -52,11 +52,11 @@ interface ProposalCompilerV1 {
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
-    private val titleValue = DslValue<String>()
-    private val textValue = DslValue<String>()
-    private val aiValue = DslValue<ProposalAI>()
-    private val authorValue = DslValue<Person>()
-    private var coauthorsValue = DslValue<Persons>()
+    private val titleValue = DslValue.namedOf<String>("title of proposal $number")
+    private val textValue = DslValue.namedOf<String>("text of proposal $number")
+    private val aiValue = DslValue.namedOf<ProposalAI>("AI of proposal $number")
+    private val authorValue = DslValue.namedOf<Person>("author of proposal $number")
+    private var coauthorsValue = DslValue.namedOf<Persons>("coauthors of proposal $number")
 
     override fun title(str: String) {
         titleValue.set(str)
@@ -124,7 +124,8 @@ private class DefaultProposalReceiverV1(
     number: ProposalNumber,
     val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number)
 ) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl {
-    private val classAndChamberValue = DslValue<ProposalClassAndChamber>()
+    private val classAndChamberValue =
+        DslValue.namedOf<ProposalClassAndChamber>("class and chamber of proposal $number")
 
     override fun classless() {
         classAndChamberValue.set(ProposalClassAndChamber.Classless)

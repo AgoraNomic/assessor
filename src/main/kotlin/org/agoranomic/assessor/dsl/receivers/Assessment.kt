@@ -40,11 +40,11 @@ private class DefaultAssessmentReceiver(
     val multiPersonVotesCompiler: MultiPersonVotesCompiler = DefaultMultiPersonVotesCompiler(),
     val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler()
 ) : AssessmentReceiver {
-    private val votingStrengthsBlockValue = DslValue<GlobalVotingStrengthReceiverInit>()
-    private val proposalsBlockValue = DslValue<() -> ImmutableProposalSet>()
-    private val proposalVotesBlockValue = DslValue<MultiPersonVotesReceiverInit>()
-    private val quorumValue = DslValue<AssessmentQuorum>()
-    private val nameValue = DslValue<String>()
+    private val votingStrengthsBlockValue = DslValue.namedOf<GlobalVotingStrengthReceiverInit>("strengths block")
+    private val proposalsBlockValue = DslValue.namedOf<() -> ImmutableProposalSet>("proposals block")
+    private val proposalVotesBlockValue = DslValue.namedOf<MultiPersonVotesReceiverInit>("voting block")
+    private val quorumValue = DslValue.namedOf<AssessmentQuorum>("assessment quorum")
+    private val nameValue = DslValue.namedOf<String>("assessment name")
 
     override fun strengths(block: GlobalVotingStrengthReceiverInit) {
         votingStrengthsBlockValue.set(block)
