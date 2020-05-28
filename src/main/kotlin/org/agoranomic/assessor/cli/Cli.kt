@@ -44,6 +44,12 @@ open class CliParseException : CliException {
 
 private inline fun <reified T> Option.Builder.type() = this.type(T::class.java)!!
 
+private fun optionGroupOf(vararg options: Option): OptionGroup {
+    val group = OptionGroup()
+    for (option in options) group.addOption(option)
+    return group
+}
+
 private fun destinationOptionGroup(): OptionGroup {
     val optDestStdout = Option.builder().longOpt(DEST_STDOUT).desc("Print resolutions to the standard output").build()
     val optDestFile =
@@ -68,46 +74,28 @@ private fun destinationOptionGroup(): OptionGroup {
             .type<String>()
             .build()
 
-    val optGroupDest = OptionGroup().also {
-        it.addOption(optDestStdout)
-        it.addOption(optDestFile)
-        it.addOption(optDestDir)
-    }
-
-    return optGroupDest
+    return optionGroupOf(optDestStdout, optDestFile, optDestDir)
 }
 
 private fun commentsOptionGroup(): OptionGroup {
     val optVoteCommentsYes = Option.builder().longOpt(VOTE_COMMENTS_YES).desc("Print vote comments").build()
     val optVoteCommentsNo = Option.builder().longOpt(VOTE_COMMENTS_NO).desc("Don't print vote comments").build()
-    val optGroupVoteComments = OptionGroup().also {
-        it.addOption(optVoteCommentsYes)
-        it.addOption(optVoteCommentsNo)
-    }
 
-    return optGroupVoteComments
+    return optionGroupOf(optVoteCommentsYes, optVoteCommentsNo)
 }
 
 private fun ballotsLineOptionGroup(): OptionGroup {
     val optBallotsLineYes = Option.builder().longOpt(BALLOTS_LINE_YES).desc("Print BALLOTS line").build()
     val optBallotsLineNo = Option.builder().longOpt(BALLOTS_LINE_NO).desc("Don't print BALLOTS line").build()
-    val optGroupBallotsLint = OptionGroup().also {
-        it.addOption(optBallotsLineYes)
-        it.addOption(optBallotsLineNo)
-    }
 
-    return optGroupBallotsLint
+    return optionGroupOf(optBallotsLineYes, optBallotsLineNo)
 }
 
 private fun voteCountsOptionGroup(): OptionGroup {
     val optSubVoteCountYes = Option.builder().longOpt(VOTE_KIND_COUNTS_YES).desc("Print vote counts").build()
     val optSubVoteCountNo = Option.builder().longOpt(VOTE_KIND_COUNTS_NO).desc("Don't print vote counts").build()
-    val optGroupSubVoteCount = OptionGroup().also {
-        it.addOption(optSubVoteCountYes)
-        it.addOption(optSubVoteCountNo)
-    }
 
-    return optGroupSubVoteCount
+    return optionGroupOf(optSubVoteCountYes, optSubVoteCountNo)
 }
 
 private fun formOptionGroup(): OptionGroup {
@@ -116,15 +104,8 @@ private fun formOptionGroup(): OptionGroup {
     val optFormOfficial = Option.builder().longOpt(FORM_OFFICIAL).desc("Official report form").build()
     val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
     val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
-    val optGroupForm = OptionGroup().also {
-        it.addOption(optFormLong)
-        it.addOption(optFormShort)
-        it.addOption(optFormOfficial)
-        it.addOption(optFormJson)
-        it.addOption(optFormRewards)
-    }
 
-    return optGroupForm
+    return optionGroupOf(optFormLong, optFormShort, optFormOfficial, optFormJson, optFormRewards)
 }
 
 private fun cliOptions(): Options {
