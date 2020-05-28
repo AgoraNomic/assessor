@@ -2,7 +2,7 @@ package org.agoranomic.assessor.test
 
 import org.agoranomic.assessor.dsl.ministries.*
 import org.junit.jupiter.api.DisplayName
-import org.agoranomic.assessor.test.test_objects.firstTestPlayer
+import org.agoranomic.assessor.test.test_objects.firstTestPerson
 import org.agoranomic.assessor.test.test_util.assertEqualsAndHashCode
 import kotlin.test.*
 
@@ -15,7 +15,7 @@ class OfficeStateTest {
 
     @Test
     fun `heldBy returns Held with correct holder`() {
-        val holder = firstTestPlayer()
+        val holder = firstTestPerson()
         assertEquals(OfficeState.Held(holder), OfficeState.heldBy(holder))
     }
 
@@ -29,7 +29,7 @@ class OfficeStateTest {
 
     @Test
     fun `Held OfficeState is held and not vacant`() {
-        val state = OfficeState.heldBy(firstTestPlayer())
+        val state = OfficeState.heldBy(firstTestPerson())
 
         assertTrue(state.isHeld())
         assertFalse(state.isVacant())
@@ -42,7 +42,7 @@ class OfficeMapTest {
 
     @Test
     fun `toOfficeMap returns OfficeMap containing given entries`() {
-        val testPerson = firstTestPlayer()
+        val testPerson = firstTestPerson()
         val testState = OfficeState.heldBy(testPerson)
 
         val map = listOf(UnaryOffice.Value to testState).toOfficeMap()
@@ -60,7 +60,7 @@ class OfficeMapTest {
     fun `toOfficeMap throws when keys repeated`() {
         assertFailsWith<IllegalArgumentException> {
             listOf(
-                UnaryOffice.Value to OfficeState.heldBy(firstTestPlayer()),
+                UnaryOffice.Value to OfficeState.heldBy(firstTestPerson()),
                 UnaryOffice.Value to OfficeState.vacant()
             ).toOfficeMap()
         }
@@ -68,7 +68,7 @@ class OfficeMapTest {
 
     @Test
     fun `toOfficeMap return compares equal to officeMapOf return`() {
-        val testPerson = firstTestPlayer()
+        val testPerson = firstTestPerson()
 
         assertEqualsAndHashCode(
             officeMapOf(UnaryOffice.Value to testPerson),
@@ -78,7 +78,7 @@ class OfficeMapTest {
 
     @Test
     fun `officeMapOf returns held for non-null holder`() {
-        val testPerson = firstTestPlayer()
+        val testPerson = firstTestPerson()
 
         val map = officeMapOf(UnaryOffice.Value to testPerson)
         assertEquals(OfficeState.heldBy(testPerson), map[UnaryOffice.Value])
@@ -109,7 +109,7 @@ class OfficeMapTest {
         val firstMap = officeMapOf(UnaryOffice.Value to null)
         assertEqualsAndHashCode(firstMap, firstMap)
 
-        val testPerson = firstTestPlayer()
+        val testPerson = firstTestPerson()
         val secondMap = officeMapOf(UnaryOffice.Value to testPerson)
         assertEqualsAndHashCode(secondMap, secondMap)
     }
@@ -118,7 +118,7 @@ class OfficeMapTest {
     fun `OfficeMap compares unequal to different map`() {
         val firstMap = officeMapOf(UnaryOffice.Value to null)
 
-        val testPerson = firstTestPlayer()
+        val testPerson = firstTestPerson()
         val secondMap = officeMapOf(UnaryOffice.Value to testPerson)
 
         assertNotEquals(firstMap, secondMap)

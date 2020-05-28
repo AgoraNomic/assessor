@@ -50,7 +50,7 @@ class VotingStrengthTest {
 class SingleProposalVoteMapTest {
     @Test
     fun `get returns specified vote for valid player`() {
-        val player = firstTestPlayer()
+        val player = firstTestPerson()
         val vote = firstTestVote()
         val map = SingleProposalVoteMap(mapOf(player to vote))
 
@@ -59,19 +59,19 @@ class SingleProposalVoteMapTest {
 
     @Test
     fun `get throws for invalid player`() {
-        val knownPlayer = firstTestPlayer()
+        val knownPlayer = firstTestPerson()
         val vote = firstTestVote()
         val map = SingleProposalVoteMap(mapOf(knownPlayer to vote))
 
-        val unknownPlayer = secondTestPlayer()
+        val unknownPlayer = secondTestPerson()
 
         assertFailsWith<IllegalArgumentException> { map[unknownPlayer] }
     }
 
     @Test
     fun `voters and voteCount are correct`() {
-        val playerA = firstTestPlayer()
-        val playerB = secondTestPlayer()
+        val playerA = firstTestPerson()
+        val playerB = secondTestPerson()
 
         val vote = firstTestVote()
 

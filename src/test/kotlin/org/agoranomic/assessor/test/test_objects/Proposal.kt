@@ -16,11 +16,11 @@ fun testProposalTitle(num: TestNumber): String = testString(subReqNum(num), type
 fun firstTestProposalTitle() = testFirst(::testProposalTitle)
 fun secondTestProposalTitle() = testSecond(::testProposalTitle)
 
-fun testProposalAuthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Author")
+fun testProposalAuthor(num: TestNumber): Person = testPerson(subReqNum(num), type = "Proposal Author")
 fun firstTestProposalAuthor() = testFirst(::testProposalAuthor)
 fun secondTestProposalAuthor() = testSecond(::testProposalAuthor)
 
-fun testProposalCoauthor(num: TestNumber): Person = testPlayer(subReqNum(num), type = "Proposal Coauthor")
+fun testProposalCoauthor(num: TestNumber): Person = testPerson(subReqNum(num), type = "Proposal Coauthor")
 fun firstTestProposalCoauthor() = testFirst(::testProposalCoauthor)
 fun secondTestProposalCoauthor() = testSecond(::testProposalCoauthor)
 

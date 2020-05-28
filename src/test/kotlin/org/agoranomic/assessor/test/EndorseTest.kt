@@ -10,7 +10,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import org.agoranomic.assessor.test.test_objects.ALL_VOTE_KIND_LIST
 import org.agoranomic.assessor.test.test_objects.alwaysFailingLookupProposal
-import org.agoranomic.assessor.test.test_objects.firstTestPlayer
+import org.agoranomic.assessor.test.test_objects.firstTestPerson
 import org.agoranomic.assessor.test.test_objects.firstTestProposal
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -19,7 +19,7 @@ import kotlin.test.assertTrue
 class MakeEndorsementForTest {
     @Test
     fun `returns InextricableVote for null endorseeVote`() {
-        val endorsee = firstTestPlayer("Endorsee")
+        val endorsee = firstTestPerson("Endorsee")
         val endorsement = makeEndorsementFor(endorsee = endorsee, endorseeVote = null)
 
         assertTrue(endorsement is InextricableVote)
@@ -36,7 +36,7 @@ class MakeEndorsementForTest {
     @ParameterizedTest
     @MethodSource("testingVotes")
     fun `returns simplification-equivalent vote for non-null endorseeVote`(vote: Vote) {
-        val endorsee = firstTestPlayer("Endorsee")
+        val endorsee = firstTestPerson("Endorsee")
         val endorsement = makeEndorsementFor(endorsee = endorsee, endorseeVote = vote)
 
         assertEquals(endorsement, vote.copyWithComment("Endorsement of ${endorsee.name}"))
@@ -86,7 +86,7 @@ class EndorseTest {
     @ParameterizedTest
     @MethodSource("testingVotes")
     fun `endorse(Player) test`(endorseeVote: Vote) {
-        val endorsee = firstTestPlayer("Endorsee")
+        val endorsee = firstTestPerson("Endorsee")
         doTestEndorse(
             endorsement = endorse(endorsee),
             proposal = firstTestProposal(),

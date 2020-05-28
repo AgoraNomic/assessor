@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.test
 
 import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.test.test_objects.testPlayer
+import org.agoranomic.assessor.test.test_objects.testPerson
 import java.math.BigDecimal
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -9,10 +9,10 @@ import kotlin.test.assertEquals
 class AITest {
     @Test
     fun `aiStrengthsFor works correctly`() {
-        val firstPerson = testPlayer(0)
-        val secondPerson = testPlayer(1)
-        val thirdPerson = testPlayer(2)
-        val fourthPerson = testPlayer(3)
+        val firstPerson = testPerson(0)
+        val secondPerson = testPerson(1)
+        val thirdPerson = testPerson(2)
+        val fourthPerson = testPerson(3)
 
         val defaultStrength = VotingStrength(1)
 

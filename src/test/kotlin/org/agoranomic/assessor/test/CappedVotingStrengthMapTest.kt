@@ -74,8 +74,8 @@ class CappedVotingStrengthMapTest {
         val baseMap = SimpleVotingStrengthMap(
             defaultStrength = baseDefault,
             strengthMap = mapOf(
-                firstTestPlayer() to firstTestVotingStrengthWithComment(),
-                secondTestPlayer() to secondTestVotingStrengthWithComment()
+                firstTestPerson() to firstTestVotingStrengthWithComment(),
+                secondTestPerson() to secondTestVotingStrengthWithComment()
             )
         )
 
@@ -98,17 +98,17 @@ class CappedVotingStrengthMapTest {
                 val baseDefault = VotingStrength(20) // In between min and max
 
                 val belowMinStrength = VotingStrength(0)
-                val belowMinPlayer = testPlayer(0)
+                val belowMinPlayer = testPerson(0)
                 val belowMinExpected = if (useMin) min else belowMinStrength
 
                 val normalStrength = VotingStrength(25)
-                val normalPlayer = testPlayer(1)
+                val normalPlayer = testPerson(1)
 
                 val aboveMaxStrength = VotingStrength(99)
-                val aboveMaxPlayer = testPlayer(2)
+                val aboveMaxPlayer = testPerson(2)
                 val aboveMaxExpected = if (useMax) max else aboveMaxStrength
 
-                val notInBasePlayer = testPlayer(3)
+                val notInBasePlayer = testPerson(3)
 
                 val baseMap = SimpleVotingStrengthMap(
                     defaultStrength = baseDefault,
