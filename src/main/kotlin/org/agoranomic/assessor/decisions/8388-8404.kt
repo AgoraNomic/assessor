@@ -597,5 +597,25 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             PRESENT on 8403
             PRESENT on 8404
         }
+
+        votes(nch) {
+            FOR on 8388
+            FOR on 8389
+            PRESENT on 8390
+            PRESENT on 8391
+            endorseOfficer(offices, OfficeJune3.Referee) on 8392
+            FOR on 8393
+            FOR on 8394
+            FOR on 8395
+            FOR on 8396
+            PRESENT on 8397
+            PRESENT on 8398
+            FOR on 8399
+            FOR on 8400
+            FOR on 8401
+            PRESENT on 8402
+            AGAINST on 8403
+            AGAINST on 8404
+        }
     }
 }
