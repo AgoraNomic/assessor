@@ -549,4 +549,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             )
         }
     }
+
+    voting {
+    }
 }
