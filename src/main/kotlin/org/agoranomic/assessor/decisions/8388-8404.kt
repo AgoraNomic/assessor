@@ -5,11 +5,16 @@ import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.*
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
+import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.proposal_set.get
+import org.agoranomic.assessor.lib.proposal_set.proposalSetOf
+import org.agoranomic.assessor.lib.proposal_set.toProposalSet
 
 @UseAssessment
 fun `assessment 8388 to 8404`() = assessment {
@@ -41,6 +46,21 @@ fun `assessment 8388 to 8404`() = assessment {
             .toPersistentMap()
             .mutate { it[OfficeJune3.Webmastor] = OfficeState.heldBy(nch) }
             .toOfficeMap()
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        ministriesApr02(officesInitial, proposalSetOf(allProposals[ProposalNumber(8388)]))
+
+        ministriesJun03(
+            offices,
+            (allProposals.numbers() - ProposalNumber(8388)).map { allProposals[it] }.toProposalSet()
+        )
+
+        addToHolder(offices, OfficeJune3.Speaker, 1)
+    }
 
     proposals(v1) {
         proposal(8388) {
