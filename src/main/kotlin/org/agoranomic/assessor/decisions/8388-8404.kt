@@ -637,5 +637,25 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             AGAINST on 8403
             AGAINST on 8404
         }
+
+        votes(Jason) {
+            FOR on 8388
+            FOR on 8389
+            endorseOfficer(offices, OfficeJune3.Registrar) on 8390
+            AGAINST on 8391
+            FOR on 8392
+            FOR on 8393
+            FOR on 8394
+            FOR on 8395
+            FOR on 8396
+            FOR on 8397
+            AGAINST on 8398
+            FOR on 8399
+            PRESENT on 8400
+            FOR on 8401
+            FOR on 8402
+            AGAINST on 8403
+            FOR on 8404
+        }
     }
 }
