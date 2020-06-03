@@ -680,7 +680,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
         }
 
         votes(Falsifian) {
-            // TODO resolve conditional vote on 8388: endorse(nch) UNLESS VETO
+            endorse(nch) on 8388 comment NO_VETO
             endorse(G) on 8389
             AGAINST on 8390
             AGAINST on 8391
@@ -688,12 +688,12 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             endorse(Aris) on 8393
             endorse(Jason) on 8394
             endorse(Jason) on 8395
-            // TODO resolve conditional vote on 8396: FOR UNLESS VETO
+            FOR on 8396 comment NO_VETO
             endorse(PSS) on 8397
             PRESENT on 8398
-            // TODO resolve conditional vote on 8399: endorse(RLee) UNLESS VETO
-            // TODO resolve conditional vote on 8400: endorse(G) UNLESS VETO
-            // TODO resolve conditional vote on 8401: PRESENT UNLESS VETO
+            endorse(RLee) on 8399 comment NO_VETO
+            endorse(G) on 8400 comment NO_VETO
+            PRESENT on 8401 comment NO_VETO
             endorse(Aris) on 8402
             AGAINST on 8403
             PRESENT on 8404
