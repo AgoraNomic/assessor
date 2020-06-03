@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.ProposalNumber
@@ -675,6 +676,26 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             AGAINST on 8401
             PRESENT on 8402
             PRESENT on 8403
+            PRESENT on 8404
+        }
+
+        votes(Falsifian) {
+            // TODO resolve conditional vote on 8388: endorse(nch) UNLESS VETO
+            endorse(G) on 8389
+            AGAINST on 8390
+            AGAINST on 8391
+            endorse(Jason) on 8392
+            endorse(Aris) on 8393
+            endorse(Jason) on 8394
+            endorse(Jason) on 8395
+            // TODO resolve conditional vote on 8396: FOR UNLESS VETO
+            endorse(PSS) on 8397
+            PRESENT on 8398
+            // TODO resolve conditional vote on 8399: endorse(RLee) UNLESS VETO
+            // TODO resolve conditional vote on 8400: endorse(G) UNLESS VETO
+            // TODO resolve conditional vote on 8401: PRESENT UNLESS VETO
+            endorse(Aris) on 8402
+            AGAINST on 8403
             PRESENT on 8404
         }
     }
