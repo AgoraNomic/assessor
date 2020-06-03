@@ -617,5 +617,25 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             AGAINST on 8403
             AGAINST on 8404
         }
+
+        votes(RLee) {
+            FOR on 8388
+            FOR on 8389
+            PRESENT on 8390
+            FOR on 8391
+            FOR on 8392
+            FOR on 8393
+            FOR on 8394
+            FOR on 8395
+            FOR on 8396
+            AGAINST on 8397
+            PRESENT on 8398
+            FOR on 8399
+            FOR on 8400
+            FOR on 8401
+            AGAINST on 8402
+            AGAINST on 8403
+            AGAINST on 8404
+        }
     }
 }
