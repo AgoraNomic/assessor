@@ -1,9 +1,10 @@
 package org.agoranomic.assessor.decisions
 
+import kotlinx.collections.immutable.mutate
+import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.OfficeInitial
+import org.agoranomic.assessor.dsl.ministries.*
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
-import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -15,7 +16,7 @@ fun `assessment 8388 to 8404`() = assessment {
     name("8388-8404")
     quorum(8)
 
-    val offices = officeMapOf(
+    val officesInitial = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
         Assessor to Jason,
@@ -32,6 +33,14 @@ fun `assessment 8388 to 8404`() = assessment {
         Tailor to PSS,
         Treasuror to Trigon
     )
+
+    val offices =
+        officesInitial
+            .toMap()
+            .mapKeys { (k, _) -> OfficeJune3.fromInitial(k) }
+            .toPersistentMap()
+            .mutate { it[OfficeJune3.Webmastor] = OfficeState.heldBy(nch) }
+            .toOfficeMap()
 
     proposals(v1) {
         proposal(8388) {
