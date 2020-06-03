@@ -57,6 +57,8 @@ val <Office : Enum<Office>> OfficeMap<Office>.entries: Set<OfficeMapEntry<Office
 fun <Office : Enum<Office>> OfficeMap<Office>.pairs(): Set<Pair<Office, OfficeState>> =
     entries.map { (office, state) -> Pair(office, state) }.toSet()
 
+fun <Office : Enum<Office>> OfficeMap<Office>.toMap(): Map<Office, OfficeState> = pairs().toMap()
+
 /**
  * A default, immutable implementation of [OfficeMap].  As an invariant, its internal [data] map always contains
  * data for each enumerator of [Office].
@@ -129,6 +131,16 @@ fun <Office : Enum<Office>> Iterable<Pair<Office, OfficeState>>.toOfficeMap(offi
 @JvmName("pairsToOfficeMap")
 inline fun <reified Office : Enum<Office>> Iterable<Pair<Office, OfficeState>>.toOfficeMap() =
     this.toOfficeMap(Office::class)
+
+/**
+ * A helper for creating a [OfficeMap] from a map of offices to office states.
+ *
+ * @throws [IllegalArgumentException] if all enumerators of [Office] do not appear exactly once as the first value in
+ * a pair
+ */
+@JvmName("mapToOfficeMap")
+inline fun <reified Office : Enum<Office>> Map<Office, OfficeState>.toOfficeMap() =
+    map { (k, v) -> k to v }.toOfficeMap()
 
 /**
  * A helper for creating a [OfficeMap] from pairs of offices to (nullable) persons.
