@@ -12,6 +12,9 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.proposal_set.get
 import org.agoranomic.assessor.lib.proposal_set.proposalSetOf
 import org.agoranomic.assessor.lib.proposal_set.toProposalSet
@@ -551,5 +554,29 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
     }
 
     voting {
+        votes(PSS) {
+            FOR on 8388
+            FOR on 8389
+            AGAINST on 8390
+            AGAINST on 8391
+            FOR on 8392
+            endorseOfficer(offices, OfficeJune3.ADoP) on 8393
+            FOR on 8394
+            endorseOfficer(offices, OfficeJune3.Rulekeepor) on 8395
+            FOR on 8396
+            FOR on 8397
+            AGAINST on 8398
+            FOR on 8399
+
+            if (offices[OfficeJune3.Comptrollor].isHeld())
+                endorseOfficer(offices, OfficeJune3.Comptrollor) on 8400 comment conditional("Comptrollor is held")
+            else
+                endorseOfficer(offices, OfficeJune3.ADoP) on 8400 comment conditional("Comptrollor is vacant")
+
+            FOR on 8401
+            FOR on 8402
+            AGAINST on 8403
+            FOR on 8404
+        }
     }
 }
