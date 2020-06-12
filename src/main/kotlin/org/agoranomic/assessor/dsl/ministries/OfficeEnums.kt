@@ -21,7 +21,7 @@ enum class OfficeInitial {
 
 // Reflects addition of Webmastor created by P8388, adopted ~June 3, 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html
-enum class OfficeJune3 {
+enum class OfficeJune3Webmastor {
     ADoP,
     Arbitor,
     Assessor,
@@ -42,8 +42,8 @@ enum class OfficeJune3 {
 
     companion object {
         // Relies on enumerators having the same names as OfficeInitial
-        fun fromInitial(other: OfficeInitial): OfficeJune3 {
-            return OfficeJune3.valueOf(other.name)
+        fun fromInitial(other: OfficeInitial): OfficeJune3Webmastor {
+            return OfficeJune3Webmastor.valueOf(other.name)
         }
     }
 }
