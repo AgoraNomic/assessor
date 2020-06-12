@@ -332,4 +332,7 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             )
         }
     }
+
+    voting {
+    }
 }
