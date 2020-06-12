@@ -1,0 +1,384 @@
+{
+    "name": "8405-8408",
+    "proposals": [
+        {
+            "number": 8405,
+            "ai": "3.0",
+            "title": "Generic private assets",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2166 by replacing the text \"one defined by a contract is\nprivate\" with the text \"any other asset is private\".\n\n[This removes an underpowered dependency of Rule 2166 and makes sure\nthat if we (for some reason) expand Mint Authority we don't forget to\nchange this.]"
+        },
+        {
+            "number": 8406,
+            "ai": "2.0",
+            "title": "Remove churn",
+            "author": "Murphy",
+            "coauthors": [
+            ],
+            "text": "[The line-item veto has been used approximately zero times, whereas the\nrequirement to select a new Comptrollor persists. The replacement text\nis also considerably more compact.]\n\nRepeal Rule 2597 (Line-item Veto).\n\nAmend Rule 2451 (Executive Orders) by appending the following to the\nlist of Cabinet Orders:\n\n  - Line Item Veto (Assessor): The Prime Minister clearly, directly,\n    and without obfuscation identifies one or more individual\n    changes in proposals whose decision's voting periods are\n    ongoing. Such changes CANNOT be applied."
+        },
+        {
+            "number": 8407,
+            "ai": "2.0",
+            "title": "no stinking auction definitions",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Repeal Rule 2584 (Free Auctions)\nRepeal Rule 2552 (Auction Termination)\nRepeal Rule 2551 (Auction End)\nRepeal Rule 2550 (Bidding)\nRepeal Rule 2549 (Auction Initiation)\n\nAmend Rule 2545 (Auctions) to read in full:\n\n  An auction is a way for entities to give away specified assets\n  (items), grouped into lots, in exchange for a currency. A lot is a\n  non-empty list of items to be transferred to a single recipient\n  (an auction winner).\n\n  When the rules authorize a person (the auctioneer) to conduct an\n  auction, e CAN do so by any wholly public method that would be\n  generally recognizable, as specified by the auctioneer at the\n  start of the auction, and under common definitions and terms used\n  in auctions, as a fair, equitable, and timely means of determining\n  the auction winners from among the current players, and enabling\n  the appropriate exchange of goods.\n\n  The rule that authorizes the auction further authorizes the\n  auctioneer or auction winners to transfer said items as necessary\n  to conduct the auction in a manner consistent with the auction\n  method. If the authorization is to auction \"new\" items, it further\n  authorizes the creation of said items as per the chosen method.\n\n  The Treasuror is the promulgator for regulations that define\n  specific auction methods (i.e. \"the default auction method\") and\n  SHOULD do in order to aid trade and commerce.  For the purposes of\n  interpreting auction definitions, such methods are treated as if\n  they are defined in this rule. To further aid trade and commerce,\n  auction methods should be interpreted in the name of fairness with\n  deference to the method's clear intent, if intent can be\n  reasonably inferred."
+        },
+        {
+            "number": 8408,
+            "ai": "3.0",
+            "title": "Sets v1.4",
+            "author": "nch",
+            "coauthors": [
+                "Trigon",
+                "Falsifian",
+                "Publius Scribonius Scholasticus",
+                "Jason",
+                "Aris",
+                "G.",
+                "ais523"
+            ],
+            "text": "Enact a new Power=1 rule titled \"Cards & Sets\" with the text:\n\n  Cards are a type of currency with a corresponding Product.\n  Products are also currencies. The types of Cards and their\n  corresponding Products are:\n\n  * Victory Cards and Victory Points.\n\n  * Justice Cards and Blot-B-Gones\n\n  * Legislative Cards and Pendants\n\n  * Voting Cards and Extra Votes\n\n  A player CAN pay a 'set' of X Cards of the same type to earn Y\n  corresponding Products. The value of X determines the value of Y\n  in the following ways:\n\n  * 1 Card = 1 Product\n\n  * 2 Cards = 3 Products\n\n  * 3 Cards = 6 Products\n\n  * 4 Cards = 10 Products\n\n  A player CANNOT pay more than 4 Cards as one 'set'.\n\n  Cards and Products are tracked by the Treasuror.\n\nFor each player that is not a zombie, grant em 1 card of each type.\n\n[The core of this proposal. Collect cards to make the other assets.]\n\nAmend rule 2499 \"Welcome Packages\" by replacing:\n\n  When a player receives a Welcome Package, e earns 10 coins.\n\nwith:\n\n  When a player receives a Welcome Package, e earns 10 coins and\n  one of each type of Card defined in the rules.\n\n[Simple Welcome package addition]\n\nAmend rule 2483 \"Economics\" by removing the following line:\n\n  A player CAN win the game by paying a fee of 1,000 Coins.\n\n[Ultimately counter to an economy where we want constant trading and\nasset movement.]\n\nEnact a new Power=1 rule titled \"VP Wins\" with the following text:\n\n  If a player has at least 20 more Victory Points than any other\n  player, e CAN win by announcement. When a player wins this way,\n  all Cards and all Products are destroyed. Then each non-zombie\n  player is granted 1 card of each type.\n\n[Exactly what it says on the tin.]\n\nAmend rule 2555 \"Blots\" by replacing the following paragraph:\n\n  If a person (the penitent) has neither gained blots nor had more\n  than 2 blots expunged from emself in the current Agoran week, then\n  any player (the confessor) who has not, by this mechanism,\n  expunged any blots in the current Agoran week CAN expunge 1 blot\n  from the penitent, by announcement.\n\nwith:\n\n  Any player CAN expunge a blot from a specified person (or emself\n  if no one is specified) by paying a fee of one Blot-B-Gone.\n\n[Pretty straightforward, now you need to use Blot-B-Gones to get rid of\nBlots (except for the fugitive decay, I left that in).]\n\nAmend rule 2350 \"Proposals\" by replacing:\n\n  Creating a proposal adds it to the Proposal Pool. Once a proposal\n  is created, neither its text nor any of the aforementioned\n  attributes can be changed. The author (syn. proposer) of a\n  proposal is the person who submitted it.\n\nwith:\n\n  Creating a proposal adds it to the Proposal Pool. Once a proposal\n  is created, its text, author, and AI cannot be changed. The author\n  (syn. proposer) of a proposal is the person who submitted it.\n\n[I moved all the pending stuff out of here, but still modified the\nlanguage to allow the co-author mechanic.]\n\nCreate a new Power=1 rule titled \"Pending Proposals\" with the following\ntext:\n\n  Pended is a negative boolean proposal switch tracked by the\n  Promotor. Any player CAN pay 1 Pendant to flip the Pended switch\n  of a specified proposal to True. If the player did not create the\n  proposal and is not listed in the list of co-authors of the\n  proposal, e is added to the list of co-authors.\n\n  The Promotor CAN, once a week and with 2 support, flip the Pended\n  switch of a proposal in the Proposal Pool to True. E SHOULD NOT do\n  so if the author of the proposal has at least one Pendant or\n  Legislative Card.\n\n  A proposal with a Pended switch set to True is 'pending'.\n\n[Basically pending is a separate mechanic from the Pool, so that it\ninterferes with long standing rules about the pool much less.]\n\nAmend 1607 Distribution by replacing:\n\n  The Promotor CAN distribute a proposal which is in the Proposal\n  Pool at any time.\n\n  In a given Agoran week, the Promotor SHALL distribute each\n  proposal that was in the Proposal Pool at the beginning of that\n  week, except for those excepted from automatic distribution by\n  other rules, or those that are otherwise removed from the Pool.\n\nwith:\n\n  The Promotor CAN distribute a proposal which is in the Proposal\n  Pool at any time, but SHALL NOT do so unless it is pending.\n\n  In a given Agoran week, the Promotor SHALL distribute each\n  pending proposal that was in the Proposal Pool at the beginning\n  of that week, except for those excepted from automatic\n  distribution by other rules, or those that are otherwise removed\n  from the Pool.\n\n  If a proposal has been in the proposal pool for more than 7 days\n  and is not pending, the Promotor CAN and SHOULD remove it from the\n  Pool by announcement.\n\n[This looks long but the actual changes are small. Basically where it\nsays someone can distribute a proposal it now specifies a pending\nproposal. Also adds a way to clear out proposals nobody ever pended.]\n\nAmend rule 2422 \"Voting Strength\" by adding:\n\n  A player CAN Buy Strength by paying 1 Extra Vote and specifying a\n  current Agoran decision on which e is a voter. For each time a\n  player has Bought Strength on a decision, eir voting strength is 1\n  greater on that decision. A player CANNOT Buy Strength for the\n  same decision more than 3 times.\n\n[Inserting this in 2422 is a little wonky, but there's no issues with it\nafaik. I might proposal a somewhat cleaner solution later.]\n\nCreate a new Power=1 rule titled \"Popular Proposal Proposer Privilege\"\nwith the following text:\n\n  The player who proposed the proposal with the greatest F/A, as\n  defined in rule 955, among all proposals assessed in the last 7\n  days CAN once earn one Legislative Card by announcement. If there\n  is a tie, all authors of the tied proposals may do so once each.\n\n[This introduces 4 (or more!) Legislative Cards per month. My math says\nthat this, along with the 6 that can be created by officers should be\nenough. But time will tell for sure.]\n\nCreate a new Power=1 rule titled \"Card Administration\" with the\nfollowing text:\n\n  Justice Cards are associated with the Ministry of Justice.\n  Legislative Cards are associated with the Ministry of Legislation.\n  Voting Cards are associated with the ministry of Participation.\n\n  An officer CAN, once per month and by announcement, grant another\n  player a specified type of card under the following conditions:\n\n  * the officer holds at least one office with the Card's associated\n    ministry in its interests,\n\n  * the player receiving the Card does not hold an office with the\n    Card's associated ministry in its interests, AND\n\n  * the player receiving the Card is not a zombie.\n\n[I like this system a lot but I note the PM and Speaker can't receive\ncards this way. I'm open to patches but I think they'll likely be able\nto trade the cards they can create for the ones they need, so I'm not\nimmediately concerned.]\n\nFlip the Pended switch of every proposal in the proposal pool to True."
+        }
+    ],
+    "quorum": 8,
+    "resolutions": [
+        {
+            "proposal": 8405,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 25,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "nch",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of Jason"
+                        }
+                    },
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "Trigon",
+                        "strength": {
+                            "value": 4
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8406,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 6,
+                "strength_against": 24,
+                "votes": [
+                    {
+                        "voter": "nch",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "Trigon",
+                        "strength": {
+                            "value": 6
+                        }
+                    },
+                    {
+                        "player": "R. Lee",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Jason",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Aris",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Falsifian",
+                        "strength": {
+                            "value": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8407,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 32,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "nch",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of G."
+                        }
+                    },
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "Trigon",
+                        "strength": {
+                            "value": 10
+                        }
+                    },
+                    {
+                        "player": "R. Lee",
+                        "strength": {
+                            "value": 5
+                        }
+                    },
+                    {
+                        "player": "Aris",
+                        "strength": {
+                            "value": 5
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "proposal": 8408,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 25,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "nch",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "FOR",
+                            "comment": "Endorsement of nch"
+                        }
+                    },
+                    {
+                        "voter": "Aris",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": {
+                "default": 3,
+                "players": [
+                    {
+                        "player": "Trigon",
+                        "strength": {
+                            "value": 4
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
