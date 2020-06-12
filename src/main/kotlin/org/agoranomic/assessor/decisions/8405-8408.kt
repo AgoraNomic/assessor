@@ -1,7 +1,6 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.OfficeJune3
 import org.agoranomic.assessor.dsl.ministries.OfficeJune3.*
 import org.agoranomic.assessor.dsl.ministries.ministriesJun03
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
@@ -11,6 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Efficiency
+import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.PRESENT
 
 @UseAssessment
 fun `assessment 8405 to 8408`() = assessment {
@@ -334,5 +335,11 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
     }
 
     voting {
+        votes(RLee) {
+            FOR on 8405
+            // NO VOTE on 8406
+            FOR on 8407
+            PRESENT on 8408
+        }
     }
 }
