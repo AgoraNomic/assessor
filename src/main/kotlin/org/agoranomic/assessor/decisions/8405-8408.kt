@@ -12,6 +12,7 @@ import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Efficiency
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.VoteKind.PRESENT
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
@@ -376,6 +377,13 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             AGAINST on 8406
             FOR on 8407
             FOR on 8408
+        }
+
+        votes(Falsifian) {
+            endorse(Jason) on 8405
+            AGAINST on 8406
+            endorse(G) on 8407
+            endorse(nch) on 8408
         }
     }
 }
