@@ -86,7 +86,7 @@ jobs:
           path: reports
 
   reports_deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     needs: reports_generate
     runs-on: ubuntu-latest
 
