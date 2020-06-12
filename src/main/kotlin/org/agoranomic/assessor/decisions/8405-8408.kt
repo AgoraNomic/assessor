@@ -12,6 +12,7 @@ import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Efficiency
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8405 to 8408`() = assessment {
@@ -340,6 +341,13 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             // NO VOTE on 8406
             FOR on 8407
             PRESENT on 8408
+        }
+
+        votes(nch) {
+            FOR on 8405
+            AGAINST on 8406
+            PRESENT on 8407
+            FOR on 8408
         }
     }
 }
