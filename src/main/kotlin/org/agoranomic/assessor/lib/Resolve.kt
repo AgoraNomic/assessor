@@ -1,8 +1,6 @@
 package org.agoranomic.assessor.lib
 
-import io.github.random_internet_cat.util.compareTo
 import io.github.random_internet_cat.util.getOrFail
-import io.github.random_internet_cat.util.times
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet

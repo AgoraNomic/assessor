@@ -10,10 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.VoteKind
 import org.agoranomic.assessor.lib.VoteKind.*
 import org.agoranomic.assessor.lib.proposal_set.get
 import org.agoranomic.assessor.lib.proposal_set.proposalSetOf

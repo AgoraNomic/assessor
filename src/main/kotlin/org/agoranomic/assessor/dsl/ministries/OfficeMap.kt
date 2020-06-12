@@ -1,8 +1,9 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import io.github.random_internet_cat.util.*
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableMap
+import io.github.random_internet_cat.util.ExhaustiveEnumMap
+import io.github.random_internet_cat.util.requireAllAreDistinctBy
+import io.github.random_internet_cat.util.requireExhaustive
+import io.github.random_internet_cat.util.toExhaustiveEnumMap
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.HalfFunctionVote
 import org.agoranomic.assessor.lib.InextricableVote
