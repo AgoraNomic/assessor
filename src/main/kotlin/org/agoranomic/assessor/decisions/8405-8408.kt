@@ -385,5 +385,12 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             endorse(G) on 8407
             endorse(nch) on 8408
         }
+
+        votes(Aris) {
+            PRESENT on 8405
+            AGAINST on 8406
+            FOR on 8407
+            FOR on 8408
+        }
     }
 }
