@@ -53,6 +53,10 @@ fun `assessment 8388 to 8404`() = assessment {
         min(0)
         max(15)
 
+        // HISTORICAL ERROR: P8400 was adopted, removing Comptrollor. This would affect the interests of P8401-8404.
+        // This cannot be reflected in the source code as the results have self-ratified. Thus, this code will remain
+        // unchanged in order to preserve the accuracy of the Assessor online archive.
+
         ministriesApr02(officesInitial, proposalSetOf(allProposals[ProposalNumber(8388)]))
 
         ministriesJun03Webmastor(
