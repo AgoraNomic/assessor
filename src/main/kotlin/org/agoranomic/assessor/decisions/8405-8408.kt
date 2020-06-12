@@ -1,6 +1,11 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.ministries.OfficeJune3
+import org.agoranomic.assessor.dsl.ministries.OfficeJune3.*
+import org.agoranomic.assessor.dsl.ministries.ministriesJun03
+import org.agoranomic.assessor.dsl.ministries.officeMapOf
+import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
@@ -11,6 +16,33 @@ import org.agoranomic.assessor.lib.Ministry.Efficiency
 fun `assessment 8405 to 8408`() = assessment {
     name("8405-8408")
     quorum(8)
+
+    val offices = officeMapOf(
+        ADoP to RLee,
+        Arbitor to G,
+        Assessor to Jason,
+        Distributor to omd,
+        Herald to PSS,
+        Notary to RLee,
+        PrimeMinister to Aris,
+        Promotor to Aris,
+        Referee to PSS,
+        Registrar to Falsifian,
+        Rulekeepor to Jason,
+        Speaker to Trigon,
+        Tailor to PSS,
+        Treasuror to Trigon,
+        Webmastor to nch
+    )
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        ministriesJun03(offices, allProposals)
+        addToHolder(offices, Speaker, 1)
+    }
 
     proposals(v1) {
         proposal(8405) {
