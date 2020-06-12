@@ -356,5 +356,12 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             FOR on 8407
             FOR on 8408
         }
+
+        votes(ATMunn) {
+            FOR on 8405
+            PRESENT on 8406
+            PRESENT on 8407
+            FOR on 8408
+        }
     }
 }
