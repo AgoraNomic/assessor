@@ -370,5 +370,12 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             FOR on 8407
             FOR on 8408
         }
+
+        votes(Jason) {
+            FOR on 8405
+            AGAINST on 8406
+            FOR on 8407
+            FOR on 8408
+        }
     }
 }
