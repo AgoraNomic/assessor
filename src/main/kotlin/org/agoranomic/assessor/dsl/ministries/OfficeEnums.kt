@@ -47,3 +47,32 @@ enum class OfficeJune3Webmastor {
         }
     }
 }
+
+// Reflects removal of Comptrollor by P8400, adopted ~June 3, 2020
+// See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html
+enum class OfficeJune3 {
+    ADoP,
+    Arbitor,
+    Assessor,
+    Distributor,
+    Herald,
+    Notary,
+    PrimeMinister,
+    Promotor,
+    Referee,
+    Registrar,
+    Rulekeepor,
+    Speaker,
+    Tailor,
+    Treasuror,
+    Webmastor,
+    ;
+
+    companion object {
+        // Relies on enumerators having the same names as OfficeInitial
+        fun fromWebmastor(other: OfficeJune3Webmastor): OfficeJune3 {
+            require(other != OfficeJune3Webmastor.Comptrollor) { "Cannot convert Comptrollor, as it was removed" }
+            return valueOf(other.name)
+        }
+    }
+}
