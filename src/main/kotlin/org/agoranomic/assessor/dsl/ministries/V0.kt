@@ -3,7 +3,7 @@ package org.agoranomic.assessor.dsl.ministries
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.VotingStrength
+import org.agoranomic.assessor.lib.VotingStrengthDifference
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 // These interests come from the original proposal - P8291
@@ -50,7 +50,7 @@ val INTERESTS_MAP_JAN_29 = mapOf(
     )
 )
 
-private val MINISTRIES_BONUS_JAN_29 = VotingStrength(2)
+private val MINISTRIES_BONUS_JAN_29 = VotingStrengthDifference(2)
 
 fun GlobalVotingStrengthReceiver.ministriesJan29(
     officeMap: OfficeMap<OfficeInitial>,

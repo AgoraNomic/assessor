@@ -23,7 +23,7 @@ private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries
 
 private fun ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
     personMinistries: Map<Person, List<Ministry>>,
-    ministryBonus: VotingStrength,
+    ministryBonus: VotingStrengthDifference,
     proposalChamber: ProposalChamber
 ) {
     for ((currentPerson, currentPersonMinistries) in personMinistries) {
@@ -39,7 +39,7 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
 
 private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
     personMinistries: Map<Person, List<Ministry>>,
-    ministryBonus: VotingStrength,
+    ministryBonus: VotingStrengthDifference,
     commonData: ProposalCommonData,
     versionedData: ProposalDataV1
 ) {
@@ -70,7 +70,7 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
     officeMap: OfficeMap<Office>,
     officeMinistries: Map<Office, List<Ministry>>,
-    ministryBonus: VotingStrength,
+    ministryBonus: VotingStrengthDifference,
     proposals: ProposalSet
 ) {
     for (currentProposal in proposals) {

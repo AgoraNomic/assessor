@@ -4,7 +4,7 @@ import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.VotingStrength
+import org.agoranomic.assessor.lib.VotingStrengthDifference
 import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 
 // These interests come from https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2020-April/042508.html,
@@ -26,7 +26,7 @@ val INTERESTS_MAP_APR_02: Map<OfficeInitial, List<Ministry>> =
                 )
         }
 
-private val MINISTRIES_BONUS_APR_02 = VotingStrength(2)
+private val MINISTRIES_BONUS_APR_02 = VotingStrengthDifference(2)
 
 fun GlobalVotingStrengthReceiver.ministriesApr02(
     officeMap: OfficeMap<OfficeInitial>,

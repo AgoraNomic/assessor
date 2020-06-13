@@ -19,11 +19,11 @@ interface ProposalVotingStrengthReceiver {
     infix fun Person.strength(value: VotingStrength)
     infix fun Person.strength(value: Int) = strength(VotingStrength(value))
 
-    infix fun Person.add(value: VotingStrength)
-    infix fun Person.add(value: Int) = add(VotingStrength(value))
+    infix fun Person.add(value: VotingStrengthDifference)
+    infix fun Person.add(value: Int) = add(VotingStrengthDifference(value))
 
-    infix fun Person.subtract(value: VotingStrength)
-    infix fun Person.subtract(value: Int) = subtract(VotingStrength(value))
+    infix fun Person.subtract(value: VotingStrengthDifference)
+    infix fun Person.subtract(value: Int) = subtract(VotingStrengthDifference(value))
 }
 
 typealias ProposalVotingStrengthReceiverInit = DslInit<ProposalVotingStrengthReceiver>
@@ -44,12 +44,12 @@ private class DefaultProposalVotingStrengthReceiver(val globalStrengths: VotingS
         strengthMap[this] = value
     }
 
-    override infix fun Person.add(value: VotingStrength) {
+    override infix fun Person.add(value: VotingStrengthDifference) {
         if (!strengthMap.containsKey(this)) strengthMap[this] = globalStrengths[this].value
         strengthMap[this] = strengthMap.getOrFail(this) + value
     }
 
-    override fun Person.subtract(value: VotingStrength) {
+    override fun Person.subtract(value: VotingStrengthDifference) {
         add(-value)
     }
 
@@ -78,11 +78,11 @@ interface GlobalVotingStrengthReceiver {
     infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable
     infix fun Person.strength(votingStrength: Int) = strength(VotingStrength(votingStrength))
 
-    infix fun Person.add(amount: VotingStrength)
-    infix fun Person.add(amount: Int) = add(VotingStrength(amount))
+    infix fun Person.add(amount: VotingStrengthDifference)
+    infix fun Person.add(amount: Int) = add(VotingStrengthDifference(amount))
 
-    infix fun Person.subtract(amount: VotingStrength)
-    infix fun Person.subtract(amount: Int) = subtract(VotingStrength(amount))
+    infix fun Person.subtract(amount: VotingStrengthDifference)
+    infix fun Person.subtract(amount: Int) = subtract(VotingStrengthDifference(amount))
 
     fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit)
 
@@ -105,7 +105,7 @@ interface GlobalVotingStrengthCompiler {
 fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
     officeMap: OfficeMap<Office>,
     office: Office,
-    strength: VotingStrength
+    strength: VotingStrengthDifference
 ) = when (val officeState = officeMap[office]) {
     is OfficeState.Vacant -> {
         /* do nothing, no holder */
@@ -123,7 +123,7 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.addToHolder(
 ) = addToHolder(
     officeMap = officeMap,
     office = office,
-    strength = VotingStrength(strength)
+    strength = VotingStrengthDifference(strength)
 )
 
 @AssessmentDsl
@@ -171,12 +171,12 @@ private class DefaultGlobalVotingStrengthReceiver(
         return strength
     }
 
-    override fun Person.add(amount: VotingStrength) {
+    override fun Person.add(amount: VotingStrengthDifference) {
         setDefaultIfAbsent(this)
         globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + amount)
     }
 
-    override fun Person.subtract(amount: VotingStrength) {
+    override fun Person.subtract(amount: VotingStrengthDifference) {
         add(-amount)
     }
 

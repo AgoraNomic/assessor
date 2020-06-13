@@ -1,10 +1,10 @@
 package org.agoranomic.assessor.test
 
 import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.test.test_objects.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
-import org.agoranomic.assessor.test.test_objects.*
 import java.math.BigInteger
 import kotlin.test.*
 
@@ -17,13 +17,10 @@ class VotingStrengthTest {
 
     @Test
     fun `VotingStrength math works`() {
-        val first = VotingStrength(3)
-        val second = VotingStrength(4)
-
-        assertEquals(first + second, VotingStrength(7))
-        assertEquals(second - first, VotingStrength(1))
-        assertEquals(first * 2, VotingStrength(6))
-        assertEquals(2 * first, first * 2)
+        assertEquals(VotingStrength(4) + VotingStrengthDifference(3), VotingStrength(7))
+        assertEquals(VotingStrength(4) - VotingStrength(3), VotingStrengthDifference(1))
+        assertEquals(VotingStrengthDifference(3) * 2, VotingStrengthDifference(6))
+        assertEquals(2 * VotingStrengthDifference(4), VotingStrengthDifference(8))
     }
 
     @Test
