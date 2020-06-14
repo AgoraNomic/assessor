@@ -677,4 +677,7 @@ for eir proposal, "Winning by apathy"."""
             )
         }
     }
+
+    voting {
+    }
 }
