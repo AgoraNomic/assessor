@@ -24,9 +24,24 @@ private const val FORM_OFFICIAL = "official"
 private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
 
-val CONFIG_LONG = ReadableReportConfig(voteComments = true, totalBallotCount = true, voteKindBallotCount = true)
-val CONFIG_SHORT = ReadableReportConfig(voteComments = false, totalBallotCount = false, voteKindBallotCount = false)
-val CONFIG_OFFICIAL = ReadableReportConfig(voteComments = false, totalBallotCount = true, voteKindBallotCount = true)
+val CONFIG_LONG = ReadableReportConfig(
+    voteComments = true,
+    totalBallotCount = true,
+    voteKindBallotCount = true,
+    summaryTable = true
+)
+
+val CONFIG_SHORT = ReadableReportConfig(
+    voteComments = false,
+    totalBallotCount = false,
+    voteKindBallotCount = false
+)
+
+val CONFIG_OFFICIAL = ReadableReportConfig(
+    voteComments = false,
+    totalBallotCount = true,
+    voteKindBallotCount = true
+)
 
 open class CliException : Exception {
     constructor() : super()

@@ -3,6 +3,7 @@ package org.agoranomic.assessor.lib
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
+import kotlin.math.max
 
 private fun StringBuilder.emitLine() {
     this.append('\n')
@@ -15,6 +16,56 @@ private fun StringBuilder.emitString(string: String) {
 private fun StringBuilder.emitLine(string: String) {
     emitString(string)
     emitLine()
+}
+
+private fun tableRowText(maxLengths: List<Int>, row: List<String>): String {
+    val result = StringBuilder()
+
+    for ((item, maxLength) in row.zip(maxLengths)) {
+        val paddingNeeded = maxLength - item.length
+
+        // Note: integer division intentional; round down on padding to the right, so that if
+        // there's an extra it will be to the left
+        val rightPadding = paddingNeeded / 2
+        val leftPadding = paddingNeeded - rightPadding
+
+        result.append("| ")
+        result.append(" ".repeat(leftPadding))
+        result.append(item)
+        result.append(" ".repeat(rightPadding))
+        result.append(" ")
+    }
+
+    result.append("|")
+
+    return result.toString()
+}
+
+private fun StringBuilder.emitTable(columnNames: List<String>, dataRows: List<List<String>>) {
+    dataRows.forEach { require(it.size == columnNames.size) }
+
+    val maxLengths = columnNames.indices.map { idx ->
+        max(columnNames[idx].length, dataRows.map { it[idx] }.maxBy { it.length }?.length ?: 0)
+    }
+
+    val headerText = tableRowText(maxLengths, columnNames)
+
+    emitLine(headerText)
+    emitLine("-".repeat(headerText.length))
+
+    for (dataRow in dataRows) {
+        emitLine(tableRowText(maxLengths, dataRow))
+    }
+}
+
+private fun StringBuilder.emitSummaryTable(resolutionMap: ProposalResolutionMap) {
+    val columnNames = listOf("#", "Title", "Result")
+
+    val dataRows = resolutionMap.proposals.map {
+        listOf(it.number.toString(), it.title, resolutionMap.resolutionOf(it.number).result.readableName)
+    }
+
+    emitTable(columnNames, dataRows)
 }
 
 private fun StringBuilder.emitHeader() {
@@ -239,7 +290,8 @@ private fun StringBuilder.emitWithDelimiter(string: String) {
 data class ReadableReportConfig(
     val voteComments: Boolean = true,
     val totalBallotCount: Boolean = true,
-    val voteKindBallotCount: Boolean = true
+    val voteKindBallotCount: Boolean = true,
+    val summaryTable: Boolean = false
 )
 
 fun readableReport(resolutionMap: ProposalResolutionMap, config: ReadableReportConfig = ReadableReportConfig()): String {
@@ -249,6 +301,12 @@ fun readableReport(resolutionMap: ProposalResolutionMap, config: ReadableReportC
 
     output.run {
         emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.assessmentName}")
+
+        if (config.summaryTable) {
+            emitLine()
+            emitSummaryTable(resolutionMap)
+        }
+
         emitLine()
         emitHeader()
         emitLine()
