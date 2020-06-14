@@ -706,6 +706,10 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8430
         }
 
+        votes(Tcbapo) {
+            endorse(RLee) on all
+        }
+
         votes(Aris) {
             FOR on 8409
             FOR on 8410
