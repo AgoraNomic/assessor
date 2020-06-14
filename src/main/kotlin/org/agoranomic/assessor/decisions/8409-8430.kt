@@ -461,21 +461,21 @@ Amend Rule 2451 (Executive Orders) by appending the following paragraph:
             )
         }
 
-        proposal(8421) {
-            title("Transmutation")
-            ai("2.0")
-            author(nch)
-            coauthors(Trigon)
-            chamber(Economy)
-
-            text(
-                """
-Enact a new Power=1 rule titled "Transmutation" with the text:
-
-  A player CAN pay 3 Cards (syn. transmute) to earn a Card of a
-  specified type."""
-            )
-        }
+//        proposal(8421) {
+//            title("Transmutation")
+//            ai("2.0")
+//            author(nch)
+//            coauthors(Trigon)
+//            chamber(Economy)
+//
+//            text(
+//                """
+//Enact a new Power=1 rule titled "Transmutation" with the text:
+//
+//  A player CAN pay 3 Cards (syn. transmute) to earn a Card of a
+//  specified type."""
+//            )
+//        }
 
         proposal(8422) {
             title("No More Numbers!")
@@ -694,7 +694,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8418
             AGAINST on 8419
             AGAINST on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             FOR on 8423
             AGAINST on 8424
@@ -723,7 +723,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8418
             FOR on 8419
             AGAINST on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             AGAINST on 8423
             FOR on 8424
@@ -748,7 +748,7 @@ for eir proposal, "Winning by apathy"."""
             AGAINST on 8418
             AGAINST on 8419
             AGAINST on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             FOR on 8423
             PRESENT on 8424
@@ -773,7 +773,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8418
             FOR on 8419
             FOR on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             PRESENT on 8423
             FOR on 8424
@@ -798,7 +798,7 @@ for eir proposal, "Winning by apathy"."""
             PRESENT on 8418
             AGAINST on 8419
             FOR on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             AGAINST on 8423
             AGAINST on 8424
@@ -823,7 +823,7 @@ for eir proposal, "Winning by apathy"."""
             PRESENT on 8418
             FOR on 8419
             PRESENT on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             FOR on 8423
             FOR on 8424
@@ -848,7 +848,7 @@ for eir proposal, "Winning by apathy"."""
             PRESENT on 8418
             FOR on 8419
             FOR on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             FOR on 8423
             FOR on 8424
@@ -873,7 +873,7 @@ for eir proposal, "Winning by apathy"."""
             PRESENT on 8418
             FOR on 8419
             FOR on 8420
-            FOR on 8421
+            // FOR on 8421
             FOR on 8422
             FOR on 8423
             PRESENT on 8424
@@ -902,7 +902,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8418
             FOR on 8419
             FOR on 8420
-            AGAINST on 8421
+            // AGAINST on 8421
             FOR on 8422
             FOR on 8423
             AGAINST on 8424
