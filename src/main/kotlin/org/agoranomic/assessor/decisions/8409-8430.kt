@@ -829,5 +829,30 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8429
             FOR on 8430
         }
+
+        votes(Falsifian) {
+            FOR on 8409
+            FOR on 8410
+            FOR on 8411
+            AGAINST on 8412
+            FOR on 8413
+            FOR on 8414
+            FOR on 8415
+            FOR on 8416
+            FOR on 8417
+            PRESENT on 8418
+            PRESENT on 8419
+            FOR on 8420
+            FOR on 8421
+            FOR on 8422
+            FOR on 8423
+            FOR on 8424
+            PRESENT on 8425
+            PRESENT on 8426
+            AGAINST on 8427
+            FOR on 8428
+            PRESENT on 8429
+            FOR on 8430
+        }
     }
 }
