@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8409 to 8430`() = assessment {
@@ -679,5 +680,29 @@ for eir proposal, "Winning by apathy"."""
     }
 
     voting {
+        votes(RLee) {
+            PRESENT on 8409
+            FOR on 8410
+            FOR on 8411
+            FOR on 8412
+            FOR on 8413
+            AGAINST on 8414
+            FOR on 8415
+            FOR on 8416
+            FOR on 8417
+            FOR on 8418
+            AGAINST on 8419
+            AGAINST on 8420
+            FOR on 8421
+            FOR on 8422
+            FOR on 8423
+            AGAINST on 8424
+            AGAINST on 8425
+            AGAINST on 8426
+            FOR on 8427
+            FOR on 8428
+            AGAINST on 8429
+            FOR on 8430
+        }
     }
 }
