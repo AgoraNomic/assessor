@@ -759,7 +759,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8409
             FOR on 8410
             FOR on 8411
-            FOR on 8412
+            AGAINST on 8412
             FOR on 8413
             FOR on 8414
             FOR on 8415
