@@ -854,5 +854,30 @@ for eir proposal, "Winning by apathy"."""
             PRESENT on 8429
             FOR on 8430
         }
+
+        votes(ATMunn) {
+            FOR on 8409
+            FOR on 8410
+            FOR on 8411
+            AGAINST on 8412
+            FOR on 8413
+            PRESENT on 8414
+            FOR on 8415
+            FOR on 8416
+            FOR on 8417
+            PRESENT on 8418
+            FOR on 8419
+            FOR on 8420
+            FOR on 8421
+            FOR on 8422
+            FOR on 8423
+            PRESENT on 8424
+            FOR on 8425
+            FOR on 8426
+            PRESENT on 8427
+            PRESENT on 8428
+            FOR on 8429
+            FOR on 8430
+        }
     }
 }
