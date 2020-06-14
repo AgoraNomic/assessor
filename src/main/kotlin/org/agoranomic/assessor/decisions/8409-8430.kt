@@ -879,5 +879,9 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8429
             FOR on 8430
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
