@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind.*
 
@@ -882,6 +883,35 @@ for eir proposal, "Winning by apathy"."""
 
         votes(CuddleBeam) {
             FOR on all
+        }
+
+        votes(G) {
+            FOR on 8409
+            AGAINST on 8410
+            FOR on 8411
+            FOR on 8412
+            PRESENT on 8413
+            PRESENT on 8414
+            FOR on 8415
+            FOR on 8416
+            FOR on 8417
+            FOR on 8418
+            FOR on 8419
+            FOR on 8420
+            AGAINST on 8421
+            FOR on 8422
+            FOR on 8423
+            AGAINST on 8424
+            FOR on 8425
+            FOR on 8426
+            AGAINST on 8427
+            FOR on 8428
+            FOR on 8429
+            FOR on 8430
+        }
+
+        votes(twg) {
+            endorse(G) on all
         }
     }
 }
