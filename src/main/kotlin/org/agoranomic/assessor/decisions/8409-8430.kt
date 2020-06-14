@@ -729,5 +729,30 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8429
             FOR on 8430
         }
+
+        votes(Trigon) {
+            FOR on 8409
+            PRESENT on 8410
+            FOR on 8411
+            PRESENT on 8412
+            FOR on 8413
+            AGAINST on 8414
+            FOR on 8415
+            FOR on 8416
+            PRESENT on 8417
+            AGAINST on 8418
+            AGAINST on 8419
+            AGAINST on 8420
+            FOR on 8421
+            FOR on 8422
+            FOR on 8423
+            PRESENT on 8424
+            FOR on 8425
+            FOR on 8426
+            FOR on 8427
+            FOR on 8428
+            FOR on 8429
+            FOR on 8430
+        }
     }
 }
