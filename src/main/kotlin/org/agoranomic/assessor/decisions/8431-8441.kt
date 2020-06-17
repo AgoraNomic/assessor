@@ -268,4 +268,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             )
         }
     }
+
+    voting {
+    }
 }
