@@ -406,5 +406,19 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             AGAINST on 8440
             AGAINST on 8441
         }
+
+        votes(Murphy) {
+            PRESENT on 8431
+            PRESENT on 8432
+            FOR on 8433
+            FOR on 8434
+            FOR on 8435
+            FOR on 8436
+            AGAINST on 8437
+            FOR on 8438
+            FOR on 8439
+            FOR on 8440
+            FOR on 8441
+        }
     }
 }
