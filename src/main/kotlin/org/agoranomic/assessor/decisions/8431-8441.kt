@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
 fun `assessment 8431 to 8441`() = assessment {
@@ -270,5 +271,18 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8431
+            FOR on 8432
+            FOR on 8433
+            FOR on 8434
+            FOR on 8435
+            FOR on 8436
+            FOR on 8437
+            FOR on 8438
+            FOR on 8439
+            FOR on 8440
+            FOR on 8441
+        }
     }
 }
