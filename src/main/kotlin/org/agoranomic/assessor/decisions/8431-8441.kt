@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.VoteKind.*
 
@@ -368,6 +369,20 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             FOR on 8439
             FOR on 8440
             FOR on 8441
+        }
+
+        votes(Jason) {
+            PRESENT on 8431
+            endorse(G) on 8432
+            AGAINST on 8433
+            FOR on 8434
+            FOR on 8435
+            PRESENT on 8436
+            PRESENT on 8437
+            endorseOfficer(offices, Tailor) on 8438
+            FOR on 8439
+            PRESENT on 8440
+            PRESENT on 8441
         }
     }
 }
