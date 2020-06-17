@@ -297,7 +297,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             FOR on 8438
             FOR on 8439
             FOR on 8440
-            FOR on 8441
+            AGAINST on 8441
         }
 
         votes(RLee) {
