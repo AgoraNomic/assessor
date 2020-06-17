@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune3.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesJun15
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.addToHolder
@@ -325,6 +326,20 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             FOR on 8439
             PRESENT on 8440
             FOR on 8441
+        }
+
+        votes(G) {
+            FOR on 8431
+            AGAINST on 8432
+            AGAINST on 8433
+            FOR on 8434
+            FOR on 8435
+            AGAINST on 8436
+            FOR on 8437
+            endorseOfficer(offices, Tailor) on 8438
+            FOR on 8439
+            AGAINST on 8440
+            AGAINST on 8441
         }
     }
 }
