@@ -19,26 +19,9 @@ private fun StringBuilder.emitLine(string: String) {
 }
 
 private fun tableRowText(maxLengths: List<Int>, row: List<String>): String {
-    val result = StringBuilder()
+    require(maxLengths.size == row.size)
 
-    for ((item, maxLength) in row.zip(maxLengths)) {
-        val paddingNeeded = maxLength - item.length
-
-        // Note: integer division intentional; round down on padding to the right, so that if
-        // there's an extra it will be to the left
-        val rightPadding = paddingNeeded / 2
-        val leftPadding = paddingNeeded - rightPadding
-
-        result.append("| ")
-        result.append(" ".repeat(leftPadding))
-        result.append(item)
-        result.append(" ".repeat(rightPadding))
-        result.append(" ")
-    }
-
-    result.append("|")
-
-    return result.toString()
+    return row.zip(maxLengths) { item, maxLength -> item.padEnd(maxLength) }.joinToString("  ")
 }
 
 private fun StringBuilder.emitTable(columnNames: List<String>, dataRows: List<List<String>>) {
@@ -59,7 +42,7 @@ private fun StringBuilder.emitTable(columnNames: List<String>, dataRows: List<Li
 }
 
 private fun StringBuilder.emitSummaryTable(resolutionMap: ProposalResolutionMap) {
-    val columnNames = listOf("#", "Title", "Result")
+    val columnNames = listOf("ID", "Title", "Result")
 
     val dataRows = resolutionMap.proposals.map {
         listOf(it.number.toString(), it.title, resolutionMap.resolutionOf(it.number).result.readableName)
