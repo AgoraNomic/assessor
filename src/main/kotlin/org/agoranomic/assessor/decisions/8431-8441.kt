@@ -392,5 +392,19 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             PRESENT on 8440
             PRESENT on 8441
         }
+
+        votes(Falsifian) {
+            endorse(Aris) on 8431
+            PRESENT on 8432
+            // TODO resolve conditional vote on 8433: FOR if 8432 adopted, else endorse(Aris)
+            PRESENT on 8434
+            PRESENT on 8435
+            FOR on 8436
+            endorse(RLee) on 8437
+            endorse(PSS) on 8438
+            endorse(PSS) on 8439
+            AGAINST on 8440
+            AGAINST on 8441
+        }
     }
 }
