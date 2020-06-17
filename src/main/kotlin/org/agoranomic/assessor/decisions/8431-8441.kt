@@ -312,5 +312,19 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             FOR on 8440
             FOR on 8441
         }
+
+        votes(ATMunn) {
+            FOR on 8431
+            PRESENT on 8432
+            // TODO: resolve conditional votes on 8433: FOR if 8432 ADOPTED, else AGAINST
+            FOR on 8434
+            FOR on 8435
+            AGAINST on 8436
+            PRESENT on 8437
+            FOR on 8438
+            FOR on 8439
+            PRESENT on 8440
+            FOR on 8441
+        }
     }
 }
