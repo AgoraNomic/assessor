@@ -355,5 +355,19 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             AGAINST on 8440
             AGAINST on 8441
         }
+
+        votes(Trigon) {
+            PRESENT on 8431
+            AGAINST on 8432
+            PRESENT on 8433
+            PRESENT on 8434
+            FOR on 8435
+            AGAINST on 8436
+            PRESENT on 8437
+            endorseOfficer(offices, Tailor) on 8438
+            FOR on 8439
+            FOR on 8440
+            FOR on 8441
+        }
     }
 }
