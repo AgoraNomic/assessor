@@ -315,6 +315,10 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             AGAINST on 8441
         }
 
+        votes(Tcbapo) {
+            endorse(RLee) on all
+        }
+
         votes(ATMunn) {
             FOR on 8431
             PRESENT on 8432
