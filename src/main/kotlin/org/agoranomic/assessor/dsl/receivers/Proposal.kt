@@ -28,14 +28,15 @@ fun ProposalCommonReceiver.ai(value: BigDecimal) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: String) = adoption_index(value)
 fun ProposalCommonReceiver.ai(value: Int) = adoption_index(value)
 
+interface ProposalCompiler<Receiver : ProposalCommonReceiver> {
+    fun compile(number: ProposalNumber, init: DslInit<Receiver>): Proposal
+}
+
 @AssessmentDsl
 interface ProposalReceiverV0 : ProposalCommonReceiver
 
 typealias ProposalReceiverV0Init = DslInit<ProposalReceiverV0>
-
-interface ProposalCompilerV0 {
-    fun compile(number: ProposalNumber, init: ProposalReceiverV0Init): Proposal
-}
+typealias ProposalCompilerV0 = ProposalCompiler<ProposalReceiverV0>
 
 @AssessmentDsl
 interface ProposalReceiverV1 : ProposalCommonReceiver {
@@ -45,10 +46,7 @@ interface ProposalReceiverV1 : ProposalCommonReceiver {
 }
 
 typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
-
-interface ProposalCompilerV1 {
-    fun compile(number: ProposalNumber, init: ProposalReceiverV1Init): Proposal
-}
+typealias ProposalCompilerV1 = ProposalCompiler<ProposalReceiverV1>
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
