@@ -1,18 +1,18 @@
 package org.agoranomic.assessor.test
 
+import io.github.random_internet_cat.util.toSetCheckingDistinct
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.*
-import io.github.random_internet_cat.util.toSetCheckingDistinct
+import org.agoranomic.assessor.test.test_objects.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
-import org.agoranomic.assessor.test.test_objects.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
 import kotlin.test.assertTrue
 
-abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
+abstract class ProposalCompilerTestBase<ProposalReceiver : ProposalCommonReceiver> {
     protected fun ProposalReceiver.onlyCommonSetup(
         specifyTitle: Boolean = true,
         specifyText: Boolean = true,
@@ -47,10 +47,14 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
         extendSetupForCommonTests()
     }
 
-    protected abstract fun compile(
+    protected abstract fun newCompiler(): ProposalCompiler<ProposalReceiver>
+
+    protected fun compile(
         number: ProposalNumber = firstTestProposalNumber(),
         init: DslInit<ProposalReceiver>
-    ): Proposal
+    ): Proposal {
+        return newCompiler().compile(number, init)
+    }
 
     @Nested
     @DisplayName("title test")
@@ -287,13 +291,13 @@ abstract class ProposalDslTestBase<ProposalReceiver : ProposalCommonReceiver> {
     }
 }
 
-class ProposalDslV0Test : ProposalDslTestBase<ProposalReceiverV0>() {
+class ProposalCompilerV0Test : ProposalCompilerTestBase<ProposalReceiverV0>() {
     override fun ProposalReceiverV0.extendSetupForCommonTests() {
         // Nothing else to do, since V0 dsl is the same as the common
     }
 
-    override fun compile(number: ProposalNumber, init: ProposalReceiverV0Init): Proposal {
-        return buildProposalV0(number, init)
+    override fun newCompiler(): ProposalCompiler<ProposalReceiverV0> {
+        return DefaultProposalCompilerV0()
     }
 
     private fun fullProposal() = compile(firstTestProposalNumber()) {
@@ -308,7 +312,7 @@ class ProposalDslV0Test : ProposalDslTestBase<ProposalReceiverV0>() {
     }
 }
 
-class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
+class ProposalCompilerV1Test : ProposalCompilerTestBase<ProposalReceiverV1>() {
     override fun ProposalReceiverV1.extendSetupForCommonTests() {
         onlyV1SpecificSetup()
     }
@@ -340,8 +344,8 @@ class ProposalDslV1Test : ProposalDslTestBase<ProposalReceiverV1>() {
         )
     }
 
-    override fun compile(number: ProposalNumber, init: ProposalReceiverV1Init): Proposal {
-        return buildProposalV1(number, init)
+    override fun newCompiler(): ProposalCompiler<ProposalReceiverV1> {
+        return DefaultProposalCompilerV1()
     }
 
     @Nested
