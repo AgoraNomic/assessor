@@ -3,7 +3,6 @@ package org.agoranomic.assessor.lib
 import io.github.random_internet_cat.util.ceil
 import io.github.random_internet_cat.util.compareTo
 import io.github.random_internet_cat.util.getOrFail
-import io.github.random_internet_cat.util.times
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import java.math.BigDecimal
@@ -32,7 +31,7 @@ private fun calculateReward(
     voteCountFor: BigInteger,
     voteCountAgainst: BigInteger
 ): ProposalUnroundedReward {
-    return ProposalUnroundedReward((voteCountFor - voteCountAgainst) * ai.raw)
+    return ProposalUnroundedReward((voteCountFor - voteCountAgainst).toBigDecimal())
 }
 
 data class ProposalRewardData(
@@ -96,7 +95,6 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
                 val voteCountAgainst = rewardData.voteCountAgainst
                 val unroundedReward = rewardData.unroundedReward
                 val roundedReward = rewardData.roundedReward
-                val ai = rewardData.ai
 
                 val coinAmountString =
                     if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
@@ -104,7 +102,7 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
                     else
                         "$unroundedReward -> $roundedReward"
 
-                "For the adoption of Proposal $proposal, I grant ${author.name} ($voteCountFor-$voteCountAgainst)*$ai=$coinAmountString coins."
+                "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$coinAmountString coins."
             }
             .joinToString("\n")
 
