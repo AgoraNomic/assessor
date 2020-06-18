@@ -20,7 +20,6 @@ private const val DEST_FILE = "file"
 private const val DEST_DIR = "dir"
 private const val FORM_LONG = "long"
 private const val FORM_SHORT = "short"
-private const val FORM_OFFICIAL = "official"
 private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
 
@@ -37,13 +36,6 @@ val CONFIG_SHORT = ReadableReportConfig(
     totalBallotCount = false,
     popularity = false,
     voteKindBallotCount = false
-)
-
-val CONFIG_OFFICIAL = ReadableReportConfig(
-    voteComments = false,
-    totalBallotCount = true,
-    popularity = true,
-    voteKindBallotCount = true
 )
 
 open class CliException : Exception {
@@ -119,11 +111,10 @@ private fun voteCountsOptionGroup(): OptionGroup {
 private fun formOptionGroup(): OptionGroup {
     val optFormLong = Option.builder().longOpt(FORM_LONG).desc("Generally longer form").build()
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
-    val optFormOfficial = Option.builder().longOpt(FORM_OFFICIAL).desc("Official report form").build()
     val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
     val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
 
-    return optionGroupOf(optFormLong, optFormShort, optFormOfficial, optFormJson, optFormRewards)
+    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards)
 }
 
 private fun cliOptions(): Options {
@@ -213,10 +204,6 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
     return when {
         commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(
             withOverrides(commandLine, CONFIG_LONG)
-        )
-
-        commandLine.hasOption(FORM_OFFICIAL) -> HumanReadableFormatter(
-            withOverrides(commandLine, CONFIG_OFFICIAL)
         )
 
         commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(
