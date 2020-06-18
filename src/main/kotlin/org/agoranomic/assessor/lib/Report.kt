@@ -299,6 +299,19 @@ fun readableReport(resolutionMap: ProposalResolutionMap, config: ReadableReportC
     output.run {
         emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.assessmentName}")
 
+        run {
+            val url = resolutionMap.assessmentUrl
+
+            if (url != null) {
+                emitLine()
+                emitLine("THIS IS AN AUTOMATICALLY GENERATED REPORT.")
+                emitLine("SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.")
+                emitLine("THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.")
+                emitLine()
+                emitLine("The official historical report is located at $url")
+            }
+        }
+
         if (config.summaryTable) {
             emitLine()
             emitSummaryTable(resolutionMap)

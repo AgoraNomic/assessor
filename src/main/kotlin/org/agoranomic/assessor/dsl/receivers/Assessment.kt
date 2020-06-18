@@ -3,8 +3,10 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
+import org.agoranomic.assessor.dsl.getOrNull
 import org.agoranomic.assessor.lib.AssessmentData
 import org.agoranomic.assessor.lib.AssessmentQuorum
+import org.agoranomic.assessor.lib.AssessmentUrl
 import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
 
 @AssessmentDsl
@@ -13,6 +15,7 @@ interface AssessmentReceiver {
     fun voting(block: MultiPersonVotesReceiverInit)
     fun quorum(value: AssessmentQuorum)
     fun name(value: String)
+    fun url(value: AssessmentUrl)
 
     object Version0
 
@@ -29,6 +32,7 @@ interface AssessmentReceiver {
 typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
 
 fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
+fun AssessmentReceiver.url(value: String) = url(AssessmentUrl(value))
 
 interface AssessmentCompiler {
     fun compile(init: AssessmentReceiverInit): AssessmentData
@@ -45,6 +49,7 @@ private class DefaultAssessmentReceiver(
     private val proposalVotesBlockValue = DslValue.namedOf<MultiPersonVotesReceiverInit>("voting block")
     private val quorumValue = DslValue.namedOf<AssessmentQuorum>("assessment quorum")
     private val nameValue = DslValue.namedOf<String>("assessment name")
+    private val urlValue = DslValue.namedOf<AssessmentUrl>("assessment url")
 
     override fun strengths(block: GlobalVotingStrengthReceiverInit) {
         votingStrengthsBlockValue.set(block)
@@ -72,8 +77,13 @@ private class DefaultAssessmentReceiver(
         nameValue.set(value)
     }
 
+    override fun url(value: AssessmentUrl) {
+        urlValue.set(value)
+    }
+
     fun compile(): AssessmentData {
         val name = nameValue.get()
+        val url = urlValue.getOrNull()
         val quorum = quorumValue.get()
 
         val proposalsBlock = proposalsBlockValue.get()
@@ -91,6 +101,7 @@ private class DefaultAssessmentReceiver(
 
         return AssessmentData(
             name,
+            url,
             quorum,
             votingStrengths,
             proposals,

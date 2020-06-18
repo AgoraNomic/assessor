@@ -57,6 +57,7 @@ fun resolve(
 
 data class ProposalResolutionMap(
     val assessmentName: String,
+    val assessmentUrl: AssessmentUrl?,
     val proposals: ImmutableProposalSet,
     private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
@@ -64,12 +65,14 @@ data class ProposalResolutionMap(
 ) {
     constructor(
         assessmentName: String,
+        assessmentUrl: AssessmentUrl?,
         proposals: ProposalSet,
         resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, ImmutableVotingStrengthMap>
     ) : this(
         assessmentName,
+        assessmentUrl,
         proposals.toImmutableProposalSet(),
         resolutions.toImmutableMap(),
         quorum,
@@ -104,8 +107,13 @@ data class ProposalResolutionMap(
 
 fun ProposalResolutionMap.adoptedProposals() = proposalsWithResult(ProposalResult.ADOPTED)
 
+inline class AssessmentUrl(val raw: String) {
+    override fun toString(): String = raw
+}
+
 data class AssessmentData(
     val name: String,
+    val url: AssessmentUrl?,
     val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, ImmutableVotingStrengthMap>,
     val proposals: ImmutableProposalSet,
@@ -113,12 +121,14 @@ data class AssessmentData(
 ) {
     constructor(
         name: String,
+        url: AssessmentUrl?,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, ImmutableVotingStrengthMap>,
         proposals: ProposalSet,
         votes: MultiPersonPendingVoteMap
     ) : this(
         name,
+        url,
         quorum,
         votingStrengths.toImmutableMap(),
         proposals.toImmutableProposalSet(),
@@ -146,6 +156,7 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
 
     return ProposalResolutionMap(
         assessmentData.name,
+        assessmentData.url,
         assessmentData.proposals,
         map,
         assessmentData.quorum,
