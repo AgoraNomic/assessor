@@ -49,10 +49,3 @@ class DefaultMultiPersonVotesCompiler(
         return DefaultMultiPersonVotesReceiver(allProposals, personVotesCompiler).also(init).compile()
     }
 }
-
-fun buildMultiPersonVotes(
-    proposals: ProposalSet,
-    block: MultiPersonVotesReceiverInit
-): MultiPersonPendingVoteMap {
-    return DefaultMultiPersonVotesCompiler().compile(proposals, block)
-}

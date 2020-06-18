@@ -64,13 +64,6 @@ class DefaultProposalVotingStrengthCompiler : ProposalVotingStrengthCompiler {
     }
 }
 
-fun buildProposalVotingStrength(
-    globalStrengths: VotingStrengthMap,
-    block: ProposalVotingStrengthReceiverInit
-): Map<Person, VotingStrengthWithComment> {
-    return DefaultProposalVotingStrengthCompiler().compile(globalStrengths, block)
-}
-
 interface VotingStrengthCommentable {
     infix fun comment(comment: String)
 }
@@ -240,11 +233,4 @@ class DefaultGlobalVotingStrengthCompiler(
     override fun compile(allProposals: ProposalSet, init: GlobalVotingStrengthReceiverInit): ImmutableMap<ProposalNumber, ImmutableVotingStrengthMap> {
         return DefaultGlobalVotingStrengthReceiver(proposalStrengthCompiler, allProposals).also(init).compile()
     }
-}
-
-fun buildGlobalVotingStrength(
-    proposals: ProposalSet,
-    block: GlobalVotingStrengthReceiverInit
-): Map<ProposalNumber, VotingStrengthMap> {
-    return DefaultGlobalVotingStrengthCompiler().compile(proposals, block)
 }

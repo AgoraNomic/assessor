@@ -113,10 +113,6 @@ class DefaultProposalCompilerV0 : ProposalCompilerV0 {
     }
 }
 
-fun buildProposalV0(number: ProposalNumber, block: ProposalReceiverV0Init): Proposal {
-    return DefaultProposalCompilerV0().compile(number, block)
-}
-
 @AssessmentDsl
 private class DefaultProposalReceiverV1(
     number: ProposalNumber,
@@ -151,8 +147,4 @@ class DefaultProposalCompilerV1 : ProposalCompilerV1 {
     override fun compile(number: ProposalNumber, init: ProposalReceiverV1Init): Proposal {
         return DefaultProposalReceiverV1(number).also(init).compile()
     }
-}
-
-fun buildProposalV1(number: ProposalNumber, block: ProposalReceiverV1Init): Proposal {
-    return DefaultProposalCompilerV1().compile(number, block)
 }

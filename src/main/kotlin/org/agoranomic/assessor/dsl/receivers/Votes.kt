@@ -99,10 +99,3 @@ class DefaultPersonVotesCompiler : PersonVotesCompiler {
         return DefaultPersonVotesReceiver(allProposals.numbers().toList()).also(init).compile()
     }
 }
-
-fun buildPersonVotes(
-    proposals: ProposalSet,
-    block: PersonVotesReceiverInit
-): Map<ProposalNumber, PendingVote> {
-    return DefaultPersonVotesCompiler().compile(proposals, block)
-}
