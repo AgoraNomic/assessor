@@ -4,12 +4,14 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8235A to 8242A`() = assessment {
     name("8235A-8242A")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2019-September/013157.html")
     quorum(5)
 
     strengths {
