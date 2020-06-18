@@ -28,18 +28,21 @@ val CONFIG_LONG = ReadableReportConfig(
     voteComments = true,
     totalBallotCount = true,
     voteKindBallotCount = true,
+    popularity = true,
     summaryTable = true
 )
 
 val CONFIG_SHORT = ReadableReportConfig(
     voteComments = false,
     totalBallotCount = false,
+    popularity = false,
     voteKindBallotCount = false
 )
 
 val CONFIG_OFFICIAL = ReadableReportConfig(
     voteComments = false,
     totalBallotCount = true,
+    popularity = true,
     voteKindBallotCount = true
 )
 

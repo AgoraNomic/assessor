@@ -163,6 +163,18 @@ private fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: Pro
     emitLine("AI (F/A): ${resolutionData.strengths.strengthFor}/${resolutionData.strengths.strengthAgainst} (AI=$ai)")
 }
 
+private fun StringBuilder.emitProposalPopularity(votes: SimplifiedSingleProposalVoteMap) {
+    // As defined by Rule 2623
+    val F = votes.personsWithVote(VoteKind.FOR).size
+    val A = votes.personsWithVote(VoteKind.AGAINST).size
+    val T = votes.voteCount
+
+    val popularity = (F.toDouble() - A.toDouble()) / (T.toDouble())
+    val popularityStr = "%.3f".format(popularity)
+
+    emitLine("POPULARITY: $popularityStr")
+}
+
 private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
     emitLine("OUTCOME: ${resolutionData.result.readableName}")
 }
@@ -259,6 +271,7 @@ private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, 
 
         if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
         emitProposalAI(resolution, proposal.ai)
+        if (config.popularity) emitProposalPopularity(resolution.votes)
         emitProposalOutcome(resolution)
         if (config.voteComments) emitVoteComments(resolution)
         emitLine()
@@ -274,6 +287,7 @@ data class ReadableReportConfig(
     val voteComments: Boolean = true,
     val totalBallotCount: Boolean = true,
     val voteKindBallotCount: Boolean = true,
+    val popularity: Boolean = true,
     val summaryTable: Boolean = false
 )
 
