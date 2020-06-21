@@ -1,6 +1,10 @@
 package org.agoranomic.assessor.dsl.ministries
 
-enum class OfficeInitial {
+interface OfficeID {
+    val readableName: String
+}
+
+enum class OfficeInitial : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
@@ -8,7 +12,7 @@ enum class OfficeInitial {
     Distributor,
     Herald,
     Notary,
-    PrimeMinister,
+    PrimeMinister("Prime Minister"),
     Promotor,
     Referee,
     Registrar,
@@ -17,11 +21,21 @@ enum class OfficeInitial {
     Tailor,
     Treasuror,
     ;
+
+    override val readableName: String
+
+    constructor(readableName: String) {
+        this.readableName = readableName
+    }
+
+    constructor() {
+        this.readableName = this.name
+    }
 }
 
 // Reflects addition of Webmastor created by P8388, adopted ~June 3, 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html
-enum class OfficeJune3Webmastor {
+enum class OfficeJune3Webmastor : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
@@ -29,7 +43,7 @@ enum class OfficeJune3Webmastor {
     Distributor,
     Herald,
     Notary,
-    PrimeMinister,
+    PrimeMinister("Prime Minister"),
     Promotor,
     Referee,
     Registrar,
@@ -39,6 +53,16 @@ enum class OfficeJune3Webmastor {
     Treasuror,
     Webmastor,
     ;
+
+    override val readableName: String
+
+    constructor(readableName: String) {
+        this.readableName = readableName
+    }
+
+    constructor() {
+        this.readableName = this.name
+    }
 
     companion object {
         // Relies on enumerators having the same names as OfficeInitial
@@ -50,14 +74,14 @@ enum class OfficeJune3Webmastor {
 
 // Reflects removal of Comptrollor by P8400, adopted ~June 3, 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html
-enum class OfficeJune3 {
+enum class OfficeJune3 : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
     Distributor,
     Herald,
     Notary,
-    PrimeMinister,
+    PrimeMinister("Prime Minister"),
     Promotor,
     Referee,
     Registrar,
@@ -67,6 +91,16 @@ enum class OfficeJune3 {
     Treasuror,
     Webmastor,
     ;
+
+    override val readableName: String
+
+    constructor(readableName: String) {
+        this.readableName = readableName
+    }
+
+    constructor() {
+        this.readableName = this.name
+    }
 
     companion object {
         // Relies on enumerators having the same names as OfficeInitial
