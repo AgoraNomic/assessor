@@ -15,8 +15,8 @@ import org.agoranomic.assessor.lib.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDsl
-interface ProposalVotingStrengthReceiver {
-    infix fun Person.strength(value: VotingStrength)
+interface GeneralVotingStrengthReceiver {
+    infix fun Person.strength(value: VotingStrength): VotingStrengthCommentable
     infix fun Person.strength(value: Int) = strength(VotingStrength(value))
 
     infix fun Person.add(value: VotingStrengthDifference)
@@ -25,6 +25,9 @@ interface ProposalVotingStrengthReceiver {
     infix fun Person.subtract(value: VotingStrengthDifference)
     infix fun Person.subtract(value: Int) = subtract(VotingStrengthDifference(value))
 }
+
+@AssessmentDsl
+interface ProposalVotingStrengthReceiver : GeneralVotingStrengthReceiver
 
 typealias ProposalVotingStrengthReceiverInit = DslInit<ProposalVotingStrengthReceiver>
 
@@ -39,9 +42,17 @@ interface ProposalVotingStrengthCompiler {
 private class DefaultProposalVotingStrengthReceiver(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
-    override infix fun Person.strength(value: VotingStrength) {
+    private class IgnoredVotingStrengthCommentable : VotingStrengthCommentable {
+        override fun comment(comment: String) {
+            // ignored
+        }
+    }
+
+    override infix fun Person.strength(value: VotingStrength): VotingStrengthCommentable {
         require(!strengthMap.containsKey(this)) { "Cannot set strength when it has already been set" }
         strengthMap[this] = value
+
+        return IgnoredVotingStrengthCommentable()
     }
 
     override infix fun Person.add(value: VotingStrengthDifference) {
@@ -72,17 +83,8 @@ interface VotingStrengthCommentable {
 }
 
 @AssessmentDsl
-interface GlobalVotingStrengthReceiver {
+interface GlobalVotingStrengthReceiver : GeneralVotingStrengthReceiver {
     val allProposals: ProposalSet
-
-    infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable
-    infix fun Person.strength(votingStrength: Int) = strength(VotingStrength(votingStrength))
-
-    infix fun Person.add(amount: VotingStrengthDifference)
-    infix fun Person.add(amount: Int) = add(VotingStrengthDifference(amount))
-
-    infix fun Person.subtract(amount: VotingStrengthDifference)
-    infix fun Person.subtract(amount: Int) = subtract(VotingStrengthDifference(amount))
 
     fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit)
 
