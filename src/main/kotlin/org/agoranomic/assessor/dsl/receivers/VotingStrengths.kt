@@ -16,9 +16,6 @@ import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
 
 @AssessmentDsl
 interface GeneralVotingStrengthReceiver {
-    infix fun Person.strength(value: VotingStrength): VotingStrengthCommentable
-    infix fun Person.strength(value: Int) = strength(VotingStrength(value))
-
     infix fun Person.add(value: VotingStrengthDifference)
     infix fun Person.add(value: Int) = add(VotingStrengthDifference(value))
 
@@ -42,19 +39,6 @@ interface ProposalVotingStrengthCompiler {
 private class DefaultProposalVotingStrengthReceiver(val globalStrengths: VotingStrengthMap) : ProposalVotingStrengthReceiver {
     val strengthMap = mutableMapOf<Person, VotingStrength>()
 
-    private class IgnoredVotingStrengthCommentable : VotingStrengthCommentable {
-        override fun comment(comment: String) {
-            // ignored
-        }
-    }
-
-    override infix fun Person.strength(value: VotingStrength): VotingStrengthCommentable {
-        require(!strengthMap.containsKey(this)) { "Cannot set strength when it has already been set" }
-        strengthMap[this] = value
-
-        return IgnoredVotingStrengthCommentable()
-    }
-
     override infix fun Person.add(value: VotingStrengthDifference) {
         if (!strengthMap.containsKey(this)) strengthMap[this] = globalStrengths[this].value
         strengthMap[this] = strengthMap.getOrFail(this) + value
@@ -76,10 +60,6 @@ class DefaultProposalVotingStrengthCompiler : ProposalVotingStrengthCompiler {
     ): ImmutableMap<Person, VotingStrengthWithComment> {
         return DefaultProposalVotingStrengthReceiver(globalStrengths).also(init).compile()
     }
-}
-
-interface VotingStrengthCommentable {
-    infix fun comment(comment: String)
 }
 
 @AssessmentDsl
@@ -147,35 +127,16 @@ private class DefaultGlobalVotingStrengthReceiver(
     private val minStrength = DslValue.namedOf<VotingStrength>("min voting strength")
     private val maxStrength = DslValue.namedOf<VotingStrength>("max voting strength")
 
-    private val globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
+    private val globalStrengths = mutableMapOf<Person, VotingStrengthWithComment>()
     private val overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalVotingStrengthReceiverInit>()
 
-    private data class MutableVotingStrength(
-        val value: VotingStrength,
-        var comment: String? = null
-    ) : VotingStrengthCommentable {
-        override fun comment(comment: String) {
-            this.comment = comment
-        }
-
-        fun compile() = VotingStrengthWithComment(value, comment)
-    }
-
     private fun setDefaultIfAbsent(person: Person) {
-        if (!globalStrengths.containsKey(person)) globalStrengths[person] = MutableVotingStrength(defaultStrength.get())
-    }
-
-    override infix fun Person.strength(votingStrength: VotingStrength): VotingStrengthCommentable {
-        require(!globalStrengths.containsKey(this)) { "Voting strength specified twice for player ${this.name}" }
-
-        val strength = MutableVotingStrength(votingStrength)
-        globalStrengths[this] = strength
-        return strength
+        if (!globalStrengths.containsKey(person)) globalStrengths[person] = VotingStrengthWithComment(defaultStrength.get())
     }
 
     override fun Person.add(amount: VotingStrengthDifference) {
         setDefaultIfAbsent(this)
-        globalStrengths[this] = MutableVotingStrength(globalStrengths.getOrFail(this).value + amount)
+        globalStrengths[this] = VotingStrengthWithComment(globalStrengths.getOrFail(this).value + amount)
     }
 
     override fun Person.subtract(amount: VotingStrengthDifference) {
@@ -210,7 +171,6 @@ private class DefaultGlobalVotingStrengthReceiver(
         val minStrength = minStrength.getOrNull()
         val maxStrength = maxStrength.getOrNull()
 
-        val globalStrengths = globalStrengths.mapValues { (_, strength) -> strength.compile() }
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
