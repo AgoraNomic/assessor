@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.pmBonus
+import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*
 
@@ -30,14 +32,14 @@ fun `assessment 8287 to 8307`() = assessment {
         for (prop in before8291) {
             proposal(prop) {
                 // Alexis was PM and thus had a bonus for all proposals
-                Alexis strength 4
+                pmBonus(Alexis)
             }
         }
 
         for (prop in after8291) {
             proposal(prop) {
                 // After 8291, the PM only gets a bonus for proposals with ministries, and the speaker gets a bonus for all
-                G strength 4
+                speakerBonus(G)
             }
         }
     }

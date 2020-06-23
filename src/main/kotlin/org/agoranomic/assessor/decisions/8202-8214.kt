@@ -5,7 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
+import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
@@ -19,9 +21,10 @@ fun `assessment 8202 to 8214`() = assessment {
         min(0)
         max(5)
 
-        G strength 4 comment PM
-        Corona strength 1 comment BLOTS
-        twg strength 2 comment BLOTS
+        pmBonus(G)
+
+        blotPenalty(Corona, 2)
+        blotPenalty(twg, 1)
     }
 
     proposals(v0) {

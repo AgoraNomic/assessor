@@ -11,6 +11,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*
@@ -45,7 +46,7 @@ fun `assessment 8308 to 8321`() = assessment {
         min(0)
         max(15)
 
-        Falsifian strength 4 comment SPEAKER
+        speakerBonus(Falsifian)
 
         ministriesJan29(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())
         ministriesFeb13(offices, allProposals.filter { it.number >= ProposalNumber(8319) }.toProposalSet())

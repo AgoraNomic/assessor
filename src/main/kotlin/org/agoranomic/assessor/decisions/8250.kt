@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.VoteKind.FOR
 import org.agoranomic.assessor.lib.VoteKind.PRESENT
 
@@ -20,7 +21,7 @@ fun `assessment 8250`() = assessment {
         min(0)
         max(5)
 
-        G strength 4 comment PM
+        pmBonus(G)
     }
 
     proposals(v0) {

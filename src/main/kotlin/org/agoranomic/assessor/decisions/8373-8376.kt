@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesApr02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.*
+import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.Economy
 import org.agoranomic.assessor.lib.Ministry.Participation
@@ -41,7 +42,7 @@ fun `assessment 8373 to 8376`() = assessment {
         max(15)
 
         addToHolder(offices, Speaker, 1)
-        twg subtract 1 // BLOTS
+        blotPenalty(twg, 1)
 
         ministriesApr02(offices, allProposals)
     }
