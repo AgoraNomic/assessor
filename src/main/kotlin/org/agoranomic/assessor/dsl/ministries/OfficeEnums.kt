@@ -2,6 +2,7 @@ package org.agoranomic.assessor.dsl.ministries
 
 interface OfficeID {
     val readableName: String
+    val programmaticName: String
 }
 
 enum class OfficeInitial : OfficeID {
@@ -23,6 +24,9 @@ enum class OfficeInitial : OfficeID {
     ;
 
     override val readableName: String
+
+    override val programmaticName: String
+        get() = name
 
     constructor(readableName: String) {
         this.readableName = readableName
@@ -55,6 +59,9 @@ enum class OfficeJune3Webmastor : OfficeID {
     ;
 
     override val readableName: String
+
+    override val programmaticName: String
+        get() = name
 
     constructor(readableName: String) {
         this.readableName = readableName
@@ -93,6 +100,9 @@ enum class OfficeJune3 : OfficeID {
     ;
 
     override val readableName: String
+
+    override val programmaticName: String
+        get() = name
 
     constructor(readableName: String) {
         this.readableName = readableName
