@@ -56,7 +56,7 @@ tasks.compileKotlin {
     kotlinOptions.jvmTarget = "11"
 
     kotlinOptions {
-        freeCompilerArgs += listOf("-Xinline-classes")
+        freeCompilerArgs += listOf("-Xinline-classes", "-Xopt-in=kotlin.RequiresOptIn")
     }
 }
 
