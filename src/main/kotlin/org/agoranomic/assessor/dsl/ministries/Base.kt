@@ -21,14 +21,39 @@ private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries
     return personMinistries
 }
 
+private fun ProposalVotingStrengthReceiver.singleMinistry(
+    officeID: OfficeID,
+    ministry: Ministry,
+    person: Person,
+    bonus: VotingStrengthDifference
+) {
+    person add bonus describedAs (VotingStrengthModificationDescription(
+        readable = "Bonus of $bonus for ${officeID.readableName}'s interest in ${ministry.readableName}",
+        kind = "ministry_bonus",
+        parameters = mapOf(
+            "office" to officeID.programmaticName,
+            "interest" to ministry.readableName,
+            "amount" to bonus.toString()
+        )
+    ))
+}
+
 private fun ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
-    personMinistries: Map<Person, List<Ministry>>,
+    officeMap: Map<OfficeID, Person>,
+    officeMinistries: Map<OfficeID, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
     proposalChamber: ProposalChamber
 ) {
-    for ((currentPerson, currentPersonMinistries) in personMinistries) {
-        repeat(currentPersonMinistries.count { it == proposalChamber }) { _ ->
-            currentPerson add ministryBonus
+    for ((office, holder) in officeMap) {
+        for (ministry in officeMinistries.getOrElse(office) { emptyList() }) {
+            if (ministry == proposalChamber) {
+                singleMinistry(
+                    office,
+                    ministry,
+                    holder,
+                    ministryBonus
+                )
+            }
         }
     }
 }
@@ -38,7 +63,8 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
 }
 
 private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
-    personMinistries: Map<Person, List<Ministry>>,
+    officeMap: Map<OfficeID, Person>,
+    officeMinistries: Map<OfficeID, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
     commonData: ProposalCommonData,
     versionedData: ProposalDataV1
@@ -58,7 +84,8 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
         override fun visitOrdinary(chamber: ProposalChamber) {
             proposal(proposalNumber) {
                 updateVotingStrengthsForProposal(
-                    personMinistries,
+                    officeMap,
+                    officeMinistries,
                     ministryBonus,
                     chamber
                 )
@@ -67,12 +94,12 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
     })
 }
 
-fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
+fun <Office> GlobalVotingStrengthReceiver.ministries(
     officeMap: OfficeMap<Office>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
     proposals: ProposalSet
-) {
+) where Office : Enum<Office>, Office : OfficeID {
     for (currentProposal in proposals) {
         currentProposal.accept(object : ProposalVisitor {
             override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
@@ -80,11 +107,16 @@ fun <Office : Enum<Office>> GlobalVotingStrengthReceiver.ministries(
             }
 
             override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
+                val rawOfficeMap =
+                    officeMap
+                        .toMap()
+                        .mapKeys { (office: OfficeID, _) -> office as OfficeID } // Compiler demands cast
+                        .filterValues { it.isHeld() }
+                        .mapValues { (_, state) -> (state as OfficeState.Held).holder }
+
                 ministriesProposalV1(
-                    personMinistries = officeMinistriesToPersonMinistries(
-                        officeMap = officeMap,
-                        officeMinistries = officeMinistries
-                    ),
+                    officeMap = rawOfficeMap,
+                    officeMinistries = officeMinistries.mapKeys { (office: OfficeID, _) -> office },
                     ministryBonus = ministryBonus,
                     commonData = commonData,
                     versionedData = versionedData
