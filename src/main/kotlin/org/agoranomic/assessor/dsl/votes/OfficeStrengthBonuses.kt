@@ -4,13 +4,20 @@ import org.agoranomic.assessor.dsl.ministries.OfficeID
 import org.agoranomic.assessor.dsl.receivers.GeneralVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.VotingStrengthDifference
+import org.agoranomic.assessor.lib.VotingStrengthModificationDescription
 
 fun GeneralVotingStrengthReceiver.officeStrengthBonus(
     person: Person,
     officeID: OfficeID,
     amount: VotingStrengthDifference
 ) {
-    person add amount
+    person add amount describedAs VotingStrengthModificationDescription(
+        readable = "Bonus of $amount for holding ${officeID.readableName}",
+        kind = "office_bonus",
+        parameters = mapOf(
+            "office" to officeID.programmaticName
+        )
+    )
 }
 
 fun GeneralVotingStrengthReceiver.officeStrengthBonus(
