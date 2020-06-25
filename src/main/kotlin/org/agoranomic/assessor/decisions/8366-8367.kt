@@ -4,7 +4,11 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.ministries.ministriesApr02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
-import org.agoranomic.assessor.dsl.receivers.*
+import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.coauthors
+import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
+import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.VoteKind.FOR

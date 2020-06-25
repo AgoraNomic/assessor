@@ -4,9 +4,9 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune3.*
 import org.agoranomic.assessor.dsl.ministries.ministriesJun15
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
-import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*

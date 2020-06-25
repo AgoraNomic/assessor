@@ -5,7 +5,11 @@ import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.*
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
-import org.agoranomic.assessor.dsl.receivers.*
+import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.coauthors
+import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
+import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.lib.ProposalNumber
