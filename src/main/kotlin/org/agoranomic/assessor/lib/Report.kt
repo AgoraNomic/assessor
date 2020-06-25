@@ -112,20 +112,20 @@ private val strengthFootnoteMarkerMap = mapOf(
 
 private fun StringBuilder.emitProposalVotes(
     voteMap: SimplifiedSingleProposalVoteMap,
-    strengthMap: VotingStrengthMap,
+    strengthMap: VotingStrengthTrailForPersons,
     voteKindVoteCounts: Boolean
 ) {
     val actualFootnotes =
         strengthFootnoteMarkerMap
             .mapKeys { (k, _) -> VotingStrength(k) }
-            .filterKeys { it != strengthMap.defaultStrength }
+            .filterKeys { it != strengthMap.default }
 
     fun emitVoteKind(voteKind: VoteKind) {
         val matchingVotes = voteMap.personsWithVote(voteKind)
 
         emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
         emitString(matchingVotes.sortedBy { it.name }
-            .map { "${it.name}${actualFootnotes[strengthMap[it].value] ?: ""}" }
+            .map { "${it.name}${actualFootnotes[strengthMap.finalStrengthForPerson(it)] ?: ""}" }
             .joinToString(", "))
         emitLine()
     }
@@ -229,15 +229,19 @@ private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
     }
 }
 
-private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthMap>) {
+private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTrailForPersons>) {
     check(allStrengthMaps.isNotEmpty())
-    check(allStrengthMaps.map { it.defaultStrength }.distinct().size == 1)
+    check(allStrengthMaps.map { it.default }.distinct().size == 1)
 
-    val defaultStrength = allStrengthMaps.first().defaultStrength
+    val defaultStrength = allStrengthMaps.first().default
 
     val specialVotingStrengths =
         allStrengthMaps
-            .flatMap { strengthMap -> strengthMap.specialPeople.map { player -> strengthMap[player].value.raw } }
+            .flatMap { strengthMap ->
+                strengthMap.overriddenPersons.map { person ->
+                    strengthMap.finalStrengthForPerson(person).raw
+                }
+            }
             .toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {

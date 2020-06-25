@@ -41,15 +41,31 @@ private fun json(votingStrength: VotingStrengthWithComment) = json {
     if (votingStrength.comment != null) "comment" to json(votingStrength.comment)
 }
 
-private fun json(votingStrengths: VotingStrengthMap) = json {
-    "default" to json(votingStrengths.defaultStrength)
-    "players" to json(votingStrengths.specialPeople.map {
+private fun json(description: VotingStrengthModificationDescription) = json {
+    "readable" to json(description.readable)
+    "kind" to json(description.kind)
+    "parameters" to json(description.parameters.entries.map { (name, value) ->
         json {
-            "player" to json(it)
-            "strength" to json(votingStrengths[it])
+            "name" to json(name)
+            "value" to json(value)
         }
     })
 }
+
+private fun json(votingStrengths: VotingStrengthTrailForPersons) =
+    json(votingStrengths.overridesMap().map { (person, trail) ->
+        json {
+            "person" to json(person)
+            "initial" to json(trail.initial)
+            "modifications" to json(trail.modificationsWithValue().map { (modification, strength) ->
+                json {
+                    "description" to json(modification.description)
+                    "current_strength" to json(strength)
+                }
+            })
+            "final" to json(trail.final)
+        }
+    })
 
 private fun json(propsalResult: ProposalResult) = json(propsalResult.name)
 

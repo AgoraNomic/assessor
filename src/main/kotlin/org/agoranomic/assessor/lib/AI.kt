@@ -12,7 +12,7 @@ fun isAIAdopted(ai: ProposalAI, aiStrengths: AIStrengths): Boolean {
     return strengthFor.raw >= (ai.raw * strengthAgainst.raw) && (strengthFor > strengthAgainst)
 }
 
-fun aiStrengthsFor(votes: SimplifiedSingleProposalVoteMap, strengths: VotingStrengthMap): AIStrengths {
+fun aiStrengthsFor(votes: SimplifiedSingleProposalVoteMap, strengths: VotingStrengthTrailForPersons): AIStrengths {
     return AIStrengths(
         strengthFor = strengthWithVote(VoteKind.FOR, votes, strengths),
         strengthAgainst = strengthWithVote(VoteKind.AGAINST, votes, strengths)

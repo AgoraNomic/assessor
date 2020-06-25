@@ -30,7 +30,7 @@ data class ResolutionData(
 
 fun resolve(
     quorum: ProposalQuorum,
-    votingStrengthMap: VotingStrengthMap,
+    votingStrengthMap: VotingStrengthTrailForPersons,
     ai: ProposalAI,
     rawVotes: SingleProposalVoteMap
 ): ResolutionData {
@@ -61,7 +61,7 @@ data class ProposalResolutionMap(
     val proposals: ImmutableProposalSet,
     private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
-    val votingStrengths: ImmutableMap<ProposalNumber, ImmutableVotingStrengthMap>
+    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>
 ) {
     constructor(
         assessmentName: String,
@@ -69,7 +69,7 @@ data class ProposalResolutionMap(
         proposals: ProposalSet,
         resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
-        votingStrengths: Map<ProposalNumber, ImmutableVotingStrengthMap>
+        votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>
     ) : this(
         assessmentName,
         assessmentUrl,
@@ -93,7 +93,7 @@ data class ProposalResolutionMap(
         return resolutions.getOrFail(proposal)
     }
 
-    fun votingStrengthsFor(proposal: ProposalNumber): ImmutableVotingStrengthMap {
+    fun votingStrengthsFor(proposal: ProposalNumber): VotingStrengthTrailForPersons {
         requireHasProposal(proposal)
         return votingStrengths.getOrFail(proposal)
     }
@@ -115,7 +115,7 @@ data class AssessmentData(
     val name: String,
     val url: AssessmentUrl?,
     val quorum: AssessmentQuorum,
-    val votingStrengths: ImmutableMap<ProposalNumber, ImmutableVotingStrengthMap>,
+    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>,
     val proposals: ImmutableProposalSet,
     val votes: MultiPersonPendingVoteMap
 ) {
@@ -123,7 +123,7 @@ data class AssessmentData(
         name: String,
         url: AssessmentUrl?,
         quorum: AssessmentQuorum,
-        votingStrengths: Map<ProposalNumber, ImmutableVotingStrengthMap>,
+        votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>,
         proposals: ProposalSet,
         votes: MultiPersonPendingVoteMap
     ) : this(
@@ -146,11 +146,14 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     val resolvedVotes = resolveVotes(assessmentData.votes, assessmentData.proposals)
 
     val map = assessmentData.proposals.associateWith { proposal ->
+        val strengthTrails = assessmentData.votingStrengthsOf(proposal.number)
+        val votes = resolvedVotes[proposal.number]
+
         resolve(
             ProposalQuorum(assessmentData.quorum.generic()),
-            assessmentData.votingStrengthsOf(proposal.number),
+            strengthTrails,
             proposal.ai,
-            resolvedVotes[proposal.number]
+            votes
         )
     }.mapKeys { (proposal, _) -> proposal.number }
 

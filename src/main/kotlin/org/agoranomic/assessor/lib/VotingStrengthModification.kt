@@ -36,6 +36,18 @@ class AdditiveVotingStrengthModification(
     private val addend: VotingStrengthDifference,
     override val description: VotingStrengthModificationDescription
 ) : VotingStrengthModification {
+    companion object {
+        fun defaultDescriptionFor(addend: VotingStrengthDifference): VotingStrengthModificationDescription {
+            return VotingStrengthModificationDescription(
+                readable = "Voting strength increased by $addend",
+                kind = "addition",
+                parameters = mapOf(
+                    "amount" to addend.toString()
+                )
+            )
+        }
+    }
+
     override fun transform(old: VotingStrength): VotingStrength {
         return old + addend
     }

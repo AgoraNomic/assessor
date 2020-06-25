@@ -1,47 +1,14 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.test.test_objects.testPerson
+import org.agoranomic.assessor.lib.AIStrengths
+import org.agoranomic.assessor.lib.ProposalAI
+import org.agoranomic.assessor.lib.VotingStrength
+import org.agoranomic.assessor.lib.isAIAdopted
 import java.math.BigDecimal
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class AITest {
-    @Test
-    fun `aiStrengthsFor works correctly`() {
-        val firstPerson = testPerson(0)
-        val secondPerson = testPerson(1)
-        val thirdPerson = testPerson(2)
-        val fourthPerson = testPerson(3)
-
-        val defaultStrength = VotingStrength(1)
-
-        val votingStrengthMap = SimpleVotingStrengthMap(
-            defaultStrength,
-            mapOf(
-                firstPerson to VotingStrengthWithComment(VotingStrength(2), null),
-                secondPerson to VotingStrengthWithComment(VotingStrength(3), null),
-                thirdPerson to VotingStrengthWithComment(VotingStrength(4), null)
-            )
-        )
-
-        val votesMap = SimplifiedSingleProposalVoteMap(
-            mapOf(
-                firstPerson to SimpleVote(VoteKind.FOR, null),
-                secondPerson to SimpleVote(VoteKind.AGAINST, null),
-                thirdPerson to SimpleVote(VoteKind.PRESENT, null),
-                fourthPerson to SimpleVote(VoteKind.FOR, null)
-            )
-        )
-
-        val expected = AIStrengths(
-            strengthFor = VotingStrength(3),
-            strengthAgainst = VotingStrength(3)
-        )
-
-        assertEquals(expected, aiStrengthsFor(votesMap, votingStrengthMap))
-    }
-
     private fun testAdopted(expected: Boolean, ai: BigDecimal, strengthFor: Int, strengthAgainst: Int) {
         assertEquals(
             expected,

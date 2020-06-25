@@ -26,9 +26,10 @@ fun SimplifiedSingleProposalVoteMap.votersAgainst() = personsWithVote(VoteKind.A
 fun strengthWithVote(
     targetVote: VoteKind,
     votes: SimplifiedSingleProposalVoteMap,
-    strengths: VotingStrengthMap
-) =
-    votes
+    strengths: VotingStrengthTrailForPersons
+): VotingStrength {
+    return votes
         .personsWithVote(targetVote)
-        .map { strengths[it] }
-        .fold(VotingStrength.zero()) { acc, next -> (acc.absoluteValue) + next.value.absoluteValue + VotingStrength.zero() }
+        .map { strengths.finalStrengthForPerson(it) }
+        .fold(VotingStrength.zero()) { acc, next -> (acc.absoluteValue) + next }
+}
