@@ -22,6 +22,7 @@ private const val FORM_LONG = "long"
 private const val FORM_SHORT = "short"
 private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
+private const val FORM_STRENGTH_AUDIT = "strength-audit"
 
 val CONFIG_LONG = ReadableReportConfig(
     voteComments = true,
@@ -113,8 +114,9 @@ private fun formOptionGroup(): OptionGroup {
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
     val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
     val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
+    val optFormStrengthAudit = Option.builder().longOpt(FORM_STRENGTH_AUDIT).desc("Voting strength audit").build()
 
-    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards)
+    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards, optFormStrengthAudit)
 }
 
 private fun cliOptions(): Options {
@@ -202,17 +204,11 @@ private fun withOverrides(commandLine: CommandLine, baseConfig: ReadableReportCo
 
 private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
     return when {
-        commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(
-            withOverrides(commandLine, CONFIG_LONG)
-        )
-
-        commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(
-            withOverrides(commandLine, CONFIG_SHORT)
-        )
-
+        commandLine.hasOption(FORM_LONG) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_LONG))
+        commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_SHORT))
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
-
         commandLine.hasOption(FORM_REWARDS) -> RewardsFormatter
+        commandLine.hasOption(FORM_STRENGTH_AUDIT) -> StrengthAuditFormatter
 
         else -> null
     }

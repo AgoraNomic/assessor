@@ -23,3 +23,9 @@ object RewardsFormatter : AssessmentFormatter {
         return rewardsReport(calculateRewards(assessment))
     }
 }
+
+object StrengthAuditFormatter : AssessmentFormatter {
+    override fun format(assessment: ProposalResolutionMap): String {
+        return strengthAuditReport(assessment)
+    }
+}
