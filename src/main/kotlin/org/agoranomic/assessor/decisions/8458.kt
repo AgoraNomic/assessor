@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
 fun `assessment 8458`() = assessment {
@@ -66,6 +67,10 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
 
         votes(Tcbapo) {
             AGAINST on 8458
+        }
+
+        votes(Falsifian) {
+            FOR on 8458
         }
     }
 }
