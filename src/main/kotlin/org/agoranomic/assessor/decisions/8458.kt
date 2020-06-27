@@ -94,5 +94,9 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
         votes(ATMunn) {
             FOR on 8458
         }
+
+        votes(Aris) {
+            FOR on 8458
+        }
     }
 }
