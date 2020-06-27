@@ -90,5 +90,9 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
         votes(PSS) {
             FOR on 8458
         }
+
+        votes(ATMunn) {
+            FOR on 8458
+        }
     }
 }
