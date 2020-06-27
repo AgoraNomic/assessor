@@ -45,6 +45,7 @@ fun `assessment 8458`() = assessment {
 
         proposal(ProposalNumber(8458)) {
             nch add 3 // Extra votes
+            RLee add 3 // Extra votes
         }
     }
 
