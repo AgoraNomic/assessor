@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
+import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.VoteKind.FOR
 
@@ -41,6 +42,10 @@ fun `assessment 8458`() = assessment {
 
         ministriesJun15(offices, allProposals)
         addToHolder(offices, Speaker, 1)
+
+        proposal(ProposalNumber(8458)) {
+            nch add 3 // Extra votes
+        }
     }
 
     proposals(v1) {
@@ -75,6 +80,10 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
 
         votes(Jason) {
             FOR on 8458
+        }
+
+        votes(nch) {
+            AGAINST on 8458
         }
     }
 }
