@@ -57,4 +57,7 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
             )
         }
     }
+
+    voting {
+    }
 }
