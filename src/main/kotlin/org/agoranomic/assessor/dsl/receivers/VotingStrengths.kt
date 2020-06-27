@@ -3,7 +3,10 @@ package org.agoranomic.assessor.dsl.receivers
 import io.github.random_internet_cat.util.getOrFail
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
-import org.agoranomic.assessor.dsl.*
+import org.agoranomic.assessor.dsl.AssessmentDsl
+import org.agoranomic.assessor.dsl.DslInit
+import org.agoranomic.assessor.dsl.DslValue
+import org.agoranomic.assessor.dsl.getOrNull
 import org.agoranomic.assessor.dsl.ministries.OfficeMap
 import org.agoranomic.assessor.dsl.ministries.OfficeState
 import org.agoranomic.assessor.lib.*
@@ -143,7 +146,7 @@ private class DefaultGlobalVotingStrengthReceiver(
     private val maxStrength = DslValue.namedOf<VotingStrength>("max voting strength")
 
     private val globalStrengths = mutableMapOf<Person, MutableVotingStrength>()
-    private val overrideStrengthBlocks = DslValueMap<ProposalNumber, ProposalVotingStrengthReceiverInit>()
+    private val overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalVotingStrengthReceiverInit>()
 
     private data class MutableVotingStrength(
         val value: VotingStrength,
@@ -178,8 +181,14 @@ private class DefaultGlobalVotingStrengthReceiver(
     }
 
     override fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit) {
-        require(!overrideStrengthBlocks.containsKey(number))
-        overrideStrengthBlocks[number] = block
+        // The outer {}s delimit a lambda returning the default value. The inner braces {} delimit the lambda that
+        // is the default value.
+        val oldBlock = overrideStrengthBlocks.getOrElse(number) { {} }
+
+        overrideStrengthBlocks[number] = {
+            oldBlock()
+            block()
+        }
     }
 
     override fun default(strength: VotingStrength) {
@@ -203,7 +212,7 @@ private class DefaultGlobalVotingStrengthReceiver(
         val globalStrengthMap = SimpleVotingStrengthMap(defaultStrength, globalStrengths)
 
         return proposals.map { it.number }.associateWith { proposal ->
-            val block = overrideStrengthBlocks.getOrNull(proposal)
+            val block = overrideStrengthBlocks[proposal]
 
             val baseMap =
                 if (block != null) {
