@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.addToHolder
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
 
 @UseAssessment
 fun `assessment 8458`() = assessment {
@@ -59,5 +60,12 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
     }
 
     voting {
+        votes(RLee) {
+            AGAINST on 8458
+        }
+
+        votes(Tcbapo) {
+            AGAINST on 8458
+        }
     }
 }
