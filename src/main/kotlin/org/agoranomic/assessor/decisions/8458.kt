@@ -72,5 +72,9 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
         votes(Falsifian) {
             FOR on 8458
         }
+
+        votes(Jason) {
+            FOR on 8458
+        }
     }
 }
