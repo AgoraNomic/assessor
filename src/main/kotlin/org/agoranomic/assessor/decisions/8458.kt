@@ -9,8 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8458`() = assessment {
@@ -101,6 +100,10 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
 
         votes(Trigon) {
             FOR on 8458
+        }
+
+        votes(Murphy) {
+            PRESENT on 8458
         }
     }
 }
