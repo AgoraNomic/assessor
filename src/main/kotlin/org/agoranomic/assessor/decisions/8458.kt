@@ -68,7 +68,7 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
 
     voting {
         votes(RLee) {
-            AGAINST on 8458
+            FOR on 8458
         }
 
         votes(Tcbapo) {
