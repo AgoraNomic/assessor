@@ -5,11 +5,11 @@ import org.agoranomic.assessor.dsl.ministries.OfficeJune3.*
 import org.agoranomic.assessor.dsl.ministries.ministriesJun15
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.proposal
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
@@ -43,7 +43,7 @@ fun `assessment 8458`() = assessment {
         ministriesJun15(offices, allProposals)
         addToHolder(offices, Speaker, 1)
 
-        proposal(ProposalNumber(8458)) {
+        proposal(8458) {
             extraVotes(nch, 3)
             extraVotes(RLee, 3)
         }

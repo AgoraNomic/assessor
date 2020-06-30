@@ -129,6 +129,9 @@ interface GlobalVotingStrengthReceiver : GeneralVotingStrengthReceiver {
     fun max(strength: Int) = max(VotingStrength(strength))
 }
 
+fun GlobalVotingStrengthReceiver.proposal(number: Int, block: ProposalVotingStrengthReceiverInit) =
+    proposal(ProposalNumber(number), block)
+
 typealias GlobalVotingStrengthReceiverInit = DslInit<GlobalVotingStrengthReceiver>
 
 interface GlobalVotingStrengthCompiler {
