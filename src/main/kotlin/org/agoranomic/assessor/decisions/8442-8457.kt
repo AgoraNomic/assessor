@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune3.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministriesJun15
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
@@ -10,8 +11,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8442 to 8457`() = assessment {
@@ -462,6 +462,25 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8455
             AGAINST on 8456
             FOR on 8457
+        }
+
+        votes(Jason) {
+            FOR on 8442
+            AGAINST on 8443
+            PRESENT on 8444
+            FOR on 8445
+            FOR on 8446
+            AGAINST on 8447
+            FOR on 8448
+            FOR on 8449
+            FOR on 8450
+            AGAINST on 8451
+            FOR on 8452
+            FOR on 8453
+            FOR on 8454
+            FOR on 8455
+            FOR on 8456
+            endorseOfficer(offices, Promotor) on 8457
         }
     }
 }
