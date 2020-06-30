@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
+import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.lib.Ministry
 import org.agoranomic.assessor.lib.ProposalNumber
 import org.agoranomic.assessor.lib.VoteKind.*
@@ -43,8 +44,8 @@ fun `assessment 8458`() = assessment {
         addToHolder(offices, Speaker, 1)
 
         proposal(ProposalNumber(8458)) {
-            nch add 3 // Extra votes
-            RLee add 3 // Extra votes
+            extraVotes(nch, 3)
+            extraVotes(RLee, 3)
         }
     }
 
