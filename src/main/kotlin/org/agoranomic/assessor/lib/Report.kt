@@ -250,7 +250,7 @@ private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<Voti
             intValue to strengthFootnoteMarkerMap[intValue]!!
         }.map { (value, symbol) -> "$symbol: player has voting strength $value" }.joinToString(separator = "\n")
 
-        emitWithDelimiter("Voting Strengths")
+        emitWithDelimiter("VOTING STRENGTHS")
         emitLine("Strength is ${defaultStrength} unless otherwise noted.")
         emitString(footnotes)
         emitLine()
