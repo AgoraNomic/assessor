@@ -524,5 +524,24 @@ Create a power 2 rule called "Excess Proposals" with the text'
             // TODO resolve conditional vote on 8456: endorse(G) unless G FOR, else AGAINST
             AGAINST on 8457
         }
+
+        votes(Trigon) {
+            PRESENT on 8442
+            AGAINST on 8443
+            AGAINST on 8444
+            FOR on 8445
+            FOR on 8446
+            AGAINST on 8447
+            FOR on 8448
+            FOR on 8449
+            PRESENT on 8450
+            FOR on 8451
+            FOR on 8452
+            PRESENT on 8453
+            PRESENT on 8454
+            PRESENT on 8455
+            FOR on 8456
+            AGAINST on 8457
+        }
     }
 }
