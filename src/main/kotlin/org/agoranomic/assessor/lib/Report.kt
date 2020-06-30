@@ -262,6 +262,7 @@ private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, 
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     emitWithDelimiter("PROPOSALS")
+    emitLine()
 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
