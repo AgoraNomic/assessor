@@ -78,8 +78,9 @@ private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
     })
 }
 
-private fun StringBuilder.emitProposalHeader(proposal: Proposal) {
+private fun StringBuilder.emitProposalHeader(config: ReadableReportConfig, proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
+    if (config.authorLine) emitLine("AUTHOR: ${proposal.author.name}")
 
     proposal.accept(object : ProposalVisitor {
         override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
@@ -265,7 +266,7 @@ private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
 
-        emitProposalHeader(proposal)
+        emitProposalHeader(config, proposal)
 
         emitProposalVotes(
             resolution.votes,
@@ -289,6 +290,7 @@ private fun StringBuilder.emitWithDelimiter(string: String) {
 
 data class ReadableReportConfig(
     val voteComments: Boolean = true,
+    val authorLine: Boolean = true,
     val totalBallotCount: Boolean = true,
     val voteKindBallotCount: Boolean = true,
     val popularity: Boolean = true,

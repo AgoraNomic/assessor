@@ -26,6 +26,7 @@ private const val FORM_STRENGTH_AUDIT = "strength-audit"
 
 val CONFIG_LONG = ReadableReportConfig(
     voteComments = true,
+    authorLine = true,
     totalBallotCount = true,
     voteKindBallotCount = true,
     popularity = true,
@@ -34,6 +35,7 @@ val CONFIG_LONG = ReadableReportConfig(
 
 val CONFIG_SHORT = ReadableReportConfig(
     voteComments = false,
+    authorLine = false,
     totalBallotCount = false,
     popularity = false,
     voteKindBallotCount = false
