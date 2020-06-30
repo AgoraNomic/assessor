@@ -514,14 +514,14 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8446
             AGAINST on 8447
             FOR on 8448
-            // TODO resolve conditional vote on 8449: FOR if 8448 resolved and passed, else AGAINST
+            FOR on 8449 comment conditional("8448 passed")
             FOR on 8450
             AGAINST on 8451
             endorse(PSS) on 8452
             FOR on 8453
             PRESENT on 8454
             FOR on 8455
-            // TODO resolve conditional vote on 8456: endorse(G) unless G FOR, else AGAINST
+            endorse(G) on 8456 comment conditional("G. not FOR")
             AGAINST on 8457
         }
 
