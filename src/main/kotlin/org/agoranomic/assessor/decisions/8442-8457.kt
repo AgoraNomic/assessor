@@ -490,7 +490,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8445
             FOR on 8446
             AGAINST on 8447
-            AGAINST on 8448
+            PRESENT on 8448
             AGAINST on 8449
             FOR on 8450
             PRESENT on 8451
