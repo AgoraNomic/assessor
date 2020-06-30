@@ -543,5 +543,24 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8456
             AGAINST on 8457
         }
+
+        votes(ATMunn) {
+            endorse(G) on 8442
+            AGAINST on 8443
+            AGAINST on 8444
+            FOR on 8445
+            FOR on 8446
+            AGAINST on 8447
+            endorse(Aris) on 8448
+            PRESENT on 8449
+            FOR on 8450
+            AGAINST on 8451
+            endorse(PSS) on 8452
+            PRESENT on 8453
+            FOR on 8454
+            FOR on 8455
+            FOR on 8456
+            AGAINST on 8457
+        }
     }
 }
