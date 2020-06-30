@@ -482,5 +482,28 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8456
             endorseOfficer(offices, Promotor) on 8457
         }
+
+        votes(G) {
+            FOR on 8442
+            PRESENT on 8443
+            AGAINST on 8444
+            FOR on 8445
+            FOR on 8446
+            AGAINST on 8447
+            AGAINST on 8448
+            AGAINST on 8449
+            FOR on 8450
+            PRESENT on 8451
+            FOR on 8452
+            FOR on 8453
+            FOR on 8454
+            FOR on 8455
+            PRESENT on 8456
+            AGAINST on 8457
+        }
+
+        votes(twg) {
+            endorse(G) on all
+        }
     }
 }
