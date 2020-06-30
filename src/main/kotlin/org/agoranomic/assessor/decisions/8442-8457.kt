@@ -440,4 +440,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
             )
         }
     }
+
+    voting {
+    }
 }
