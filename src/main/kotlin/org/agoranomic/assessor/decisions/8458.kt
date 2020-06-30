@@ -108,5 +108,9 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
         votes(Murphy) {
             PRESENT on 8458
         }
+        
+        votes(G) {
+            FOR on 8458
+        }
     }
 }
