@@ -562,5 +562,24 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8456
             AGAINST on 8457
         }
+
+        votes(RLee) {
+            AGAINST on 8442
+            AGAINST on 8443
+            AGAINST on 8444
+            AGAINST on 8445
+            FOR on 8446
+            AGAINST on 8447
+            AGAINST on 8448
+            AGAINST on 8449
+            AGAINST on 8450
+            AGAINST on 8451
+            FOR on 8452
+            FOR on 8453
+            FOR on 8454
+            FOR on 8455
+            AGAINST on 8456
+            FOR on 8457
+        }
     }
 }
