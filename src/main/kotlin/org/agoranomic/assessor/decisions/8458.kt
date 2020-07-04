@@ -16,7 +16,7 @@ import org.agoranomic.assessor.lib.VoteKind.*
 @UseAssessment
 fun `assessment 8458`() = assessment {
     name("8458")
-    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-June/013876.html")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-June/013874.html")
     quorum(8)
 
     val offices = officeMapOf(
@@ -107,10 +107,6 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
 
         votes(Murphy) {
             PRESENT on 8458
-        }
-        
-        votes(G) {
-            FOR on 8458
         }
     }
 }
