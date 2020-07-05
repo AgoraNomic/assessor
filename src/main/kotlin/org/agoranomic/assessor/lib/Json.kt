@@ -18,6 +18,15 @@ private fun json(iterable: Iterable<Person>) = json(iterable.map { json(it) })
 private fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
 private fun json(proposalAI: ProposalAI) = json(proposalAI.raw)
 
+private fun json(url: AssessmentUrl) = json(url.raw)
+
+private fun json(metadata: AssessmentMetadata) = json {
+    "name" to json(metadata.name)
+
+    val url = metadata.url
+    if (url != null) "url" to json(url)
+}
+
 private fun json(proposal: Proposal) = json {
     "number" to json(proposal.number)
     "ai" to json(proposal.ai)
@@ -93,7 +102,7 @@ private fun json(resolutionData: ResolutionData) = json {
 }
 
 fun json(resolutionMap: ProposalResolutionMap) = json {
-    "name" to json(resolutionMap.assessmentName)
+    "metadata" to json(resolutionMap.metadata)
     "proposals" to json(resolutionMap.proposals)
     "quorum" to json(resolutionMap.quorum)
     "resolutions" to json(resolutionMap.proposals.map { proposal ->

@@ -1,11 +1,12 @@
 package org.agoranomic.assessor.cli
 
+import org.agoranomic.assessor.lib.AssessmentMetadata
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
 
 data class AssessmentPendingOutput(
-    val name: String,
+    val metadata: AssessmentMetadata,
     val assessmentText: String
 )
 
@@ -35,8 +36,8 @@ data class NamedFileDestination(val file: String) : AssessmentDestination() {
 
 object UnnamedFileDestination : AssessmentDestination() {
     override fun outputAssessments(assessments: List<AssessmentPendingOutput>) {
-        for ((name, assessment) in assessments) {
-            val path = Path.of("$name.txt")
+        for ((metadata, assessment) in assessments) {
+            val path = Path.of("${metadata.name}.txt")
 
             Files.writeString(path, assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
         }
@@ -49,8 +50,8 @@ data class NamedDirDestination(val dir: String) : AssessmentDestination() {
 
         Files.createDirectories(dirPath)
 
-        for ((name, assessment) in assessments) {
-            val filePath = dirPath.resolve("$name.txt")
+        for ((metadata, assessment) in assessments) {
+            val filePath = dirPath.resolve("${metadata.name}.txt")
 
             Files.writeString(filePath, assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
         }

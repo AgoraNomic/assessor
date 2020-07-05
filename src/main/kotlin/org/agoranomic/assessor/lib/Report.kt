@@ -304,10 +304,10 @@ fun readableReport(resolutionMap: ProposalResolutionMap, config: ReadableReportC
     val output = StringBuilder()
 
     output.run {
-        emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.assessmentName}")
+        emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.metadata.name}")
 
         run {
-            val url = resolutionMap.assessmentUrl
+            val url = resolutionMap.metadata.url
 
             if (url != null) {
                 emitLine()

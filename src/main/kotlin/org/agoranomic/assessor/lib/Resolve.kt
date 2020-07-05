@@ -56,23 +56,20 @@ fun resolve(
 }
 
 data class ProposalResolutionMap(
-    val assessmentName: String,
-    val assessmentUrl: AssessmentUrl?,
+    val metadata: AssessmentMetadata,
     val proposals: ImmutableProposalSet,
     private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>
 ) {
     constructor(
-        assessmentName: String,
-        assessmentUrl: AssessmentUrl?,
+        metadata: AssessmentMetadata,
         proposals: ProposalSet,
         resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>
     ) : this(
-        assessmentName,
-        assessmentUrl,
+        metadata,
         proposals.toImmutableProposalSet(),
         resolutions.toImmutableMap(),
         quorum,
@@ -111,24 +108,26 @@ inline class AssessmentUrl(val raw: String) {
     override fun toString(): String = raw
 }
 
-data class AssessmentData(
+data class AssessmentMetadata(
     val name: String,
-    val url: AssessmentUrl?,
+    val url: AssessmentUrl?
+)
+
+data class AssessmentData(
+    val metadata: AssessmentMetadata,
     val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>,
     val proposals: ImmutableProposalSet,
     val votes: MultiPersonPendingVoteMap
 ) {
     constructor(
-        name: String,
-        url: AssessmentUrl?,
+        metadata: AssessmentMetadata,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>,
         proposals: ProposalSet,
         votes: MultiPersonPendingVoteMap
     ) : this(
-        name,
-        url,
+        metadata,
         quorum,
         votingStrengths.toImmutableMap(),
         proposals.toImmutableProposalSet(),
@@ -158,8 +157,7 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     }.mapKeys { (proposal, _) -> proposal.number }
 
     return ProposalResolutionMap(
-        assessmentData.name,
-        assessmentData.url,
+        assessmentData.metadata,
         assessmentData.proposals,
         map,
         assessmentData.quorum,

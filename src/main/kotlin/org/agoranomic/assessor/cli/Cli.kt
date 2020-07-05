@@ -165,7 +165,7 @@ data class SingleAssessment(val name: String) : NeededAssessments() {
      * not exist.
      */
     override fun selectFrom(availableAssessments: List<AssessmentData>): ImmutableList<AssessmentData> {
-        val assessmentsByName = availableAssessments.associateBy { it.name }
+        val assessmentsByName = availableAssessments.associateBy { it.metadata.name }
         val selectedAssessment = assessmentsByName[name]
 
         if (selectedAssessment != null) return persistentListOf(selectedAssessment)

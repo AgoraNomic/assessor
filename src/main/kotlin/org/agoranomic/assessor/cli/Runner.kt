@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
     val toAssess = try {
         programConfig.neededAssessments.selectFrom(allAssessments)
     } catch (exception: InvalidAssessmentNameException) {
-        val allAssessmentNames = allAssessments.map { it.name }.sorted()
+        val allAssessmentNames = allAssessments.map { it.metadata.name }.sorted()
 
         println("No such assessment \"${exception.name}\": valid options are \"all\" and $allAssessmentNames")
         return
@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
 
     val pendingAssessments = toAssess.map {
         AssessmentPendingOutput(
-            name = it.name,
+            metadata = it.metadata,
             assessmentText = programConfig.formatter.format(resolve(it))
         )
     }
