@@ -120,3 +120,45 @@ enum class OfficeJune3 : OfficeID {
         }
     }
 }
+
+// Reflects addition of Coopor by P8442, adopted 30 June 2020
+// See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-June/013879.html
+enum class OfficeJune30 : OfficeID {
+    ADoP,
+    Arbitor,
+    Assessor,
+    Coopor,
+    Distributor,
+    Herald,
+    Notary,
+    PrimeMinister("Prime Minister"),
+    Promotor,
+    Referee,
+    Registrar,
+    Rulekeepor,
+    Speaker,
+    Tailor,
+    Treasuror,
+    Webmastor,
+    ;
+
+    override val readableName: String
+
+    override val programmaticName: String
+        get() = name
+
+    constructor(readableName: String) {
+        this.readableName = readableName
+    }
+
+    constructor() {
+        this.readableName = this.name
+    }
+
+    companion object {
+        // Relies on enumerators having the same names as OfficeInitial
+        fun fromJune3(other: OfficeJune3): OfficeJune30 {
+            return valueOf(other.name)
+        }
+    }
+}
