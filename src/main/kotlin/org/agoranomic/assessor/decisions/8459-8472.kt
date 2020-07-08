@@ -554,7 +554,7 @@ with:
             FOR on 8468
             FOR on 8469
             PRESENT on 8470
-            PRESENT on 8471
+            AGAINST on 8471
             FOR on 8472
         }
 
