@@ -591,5 +591,22 @@ with:
             AGAINST on 8471
             FOR on 8472
         }
+
+        votes(nch) {
+            FOR on 8459
+            PRESENT on 8460
+            PRESENT on 8461
+            FOR on 8462
+            PRESENT on 8463
+            PRESENT on 8464
+            FOR on 8465
+            FOR on 8466
+            PRESENT on 8467
+            FOR on 8468
+            FOR on 8469
+            FOR on 8470
+            PRESENT on 8471
+            FOR on 8472
+        }
     }
 }
