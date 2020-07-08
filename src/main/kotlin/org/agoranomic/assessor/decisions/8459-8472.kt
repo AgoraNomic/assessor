@@ -625,5 +625,22 @@ with:
             AGAINST on 8471
             FOR on 8472
         }
+
+        votes(Falsifian) {
+            endorse(Jason) on 8459
+            endorse(G) on 8460
+            endorse(RLee) on 8461
+            endorse(Jason) on 8462
+            endorse(Jason) on 8463
+            AGAINST on 8464
+            endorse(Jason) on 8465
+            PRESENT on 8466
+            endorse(Jason) on 8467
+            PRESENT on 8468
+            // TODO: resolve conditional vote on 8469: AGAINST if Aris AGAINST else FOR
+            endorse(nch) on 8470
+            AGAINST on 8471
+            // TODO: resolve conditional vote on 8472: AGAINST if Aris AGAINST else FOR
+        }
     }
 }
