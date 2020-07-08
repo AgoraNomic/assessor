@@ -574,5 +574,22 @@ with:
             FOR on 8471
             FOR on 8472
         }
+
+        votes(omd) {
+            FOR on 8459
+            PRESENT on 8460
+            AGAINST on 8461
+            AGAINST on 8462
+            PRESENT on 8463
+            AGAINST on 8464
+            AGAINST on 8465
+            AGAINST on 8466
+            FOR on 8467
+            FOR on 8468
+            FOR on 8469
+            AGAINST on 8470
+            AGAINST on 8471
+            FOR on 8472
+        }
     }
 }
