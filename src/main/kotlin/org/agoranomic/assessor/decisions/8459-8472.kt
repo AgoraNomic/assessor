@@ -642,5 +642,26 @@ with:
             AGAINST on 8471
             // TODO: resolve conditional vote on 8472: AGAINST if Aris AGAINST else FOR
         }
+
+        votes(G) {
+            FOR on 8459
+            FOR on 8460
+            endorse(Aris) on 8461
+            FOR on 8462
+            FOR on 8463
+            FOR on 8464
+            FOR on 8465
+            FOR on 8466
+            FOR on 8467
+            FOR on 8468
+            FOR on 8469
+            FOR on 8470
+            FOR on 8471
+            FOR on 8472
+        }
+
+        votes(twg) {
+            endorse(G) on all
+        }
     }
 }
