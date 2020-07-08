@@ -663,5 +663,22 @@ with:
         votes(twg) {
             endorse(G) on all
         }
+
+        votes(Trigon) {
+            FOR on 8459
+            endorse(G) on 8460
+            FOR on 8461
+            FOR on 8462
+            PRESENT on 8463
+            AGAINST on 8464
+            FOR on 8465
+            FOR on 8466
+            FOR on 8467
+            PRESENT on 8468
+            FOR on 8469
+            FOR on 8470
+            PRESENT on 8471
+            FOR on 8472
+        }
     }
 }
