@@ -520,5 +520,9 @@ with:
         votes(Tcbapo) {
             endorse(RLee) on all
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
