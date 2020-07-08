@@ -7,9 +7,12 @@ import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.Ministry.*
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.Ministry.*
+import org.agoranomic.assessor.lib.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.VoteKind.FOR
 
 @UseAssessment
 fun `assessment 8459 to 8472`() = assessment {
@@ -493,6 +496,29 @@ with:
   to perform it has been withdrawn within the past 24 hours, then Agora
   is not Satisfied with that intent."""
             )
+        }
+    }
+
+    voting {
+        votes(RLee) {
+            FOR on 8459
+            FOR on 8460
+            FOR on 8461
+            FOR on 8462
+            AGAINST on 8463
+            FOR on 8464
+            FOR on 8465
+            FOR on 8466
+            FOR on 8467
+            AGAINST on 8468
+            FOR on 8469
+            // TODO: resolve conditional vote on 8470: PRESENT unless either proposal 8464 or 8466 has passed, in which case AGAINST
+            FOR on 8471
+            FOR on 8472
+        }
+
+        votes(Tcbapo) {
+            endorse(RLee) on all
         }
     }
 }
