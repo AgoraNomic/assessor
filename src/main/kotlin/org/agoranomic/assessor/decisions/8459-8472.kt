@@ -52,7 +52,7 @@ fun `assessment 8459 to 8472`() = assessment {
         proposal(8459) {
             title("Talismans")
             ai("3.0")
-            author(Aris)
+            author(Jason)
             coauthors(nch, Falsifian, G)
             democratic()
 
@@ -280,7 +280,7 @@ in giving black ribbons to anybody capable of forming a contract.]"""
         proposal(8464) {
             title("You can certify, but you can't win ever!")
             ai("1.0")
-            author(Aris)
+            author(RLee)
             chamber(Justice)
 
             text(
