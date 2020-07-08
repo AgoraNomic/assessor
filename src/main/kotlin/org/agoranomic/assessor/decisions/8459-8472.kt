@@ -11,8 +11,7 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Ministry.*
-import org.agoranomic.assessor.lib.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.VoteKind.FOR
+import org.agoranomic.assessor.lib.VoteKind.*
 
 @UseAssessment
 fun `assessment 8459 to 8472`() = assessment {
@@ -539,6 +538,23 @@ with:
             FOR on 8469
             AGAINST on 8470
             AGAINST on 8471
+            FOR on 8472
+        }
+
+        votes(Jason) {
+            FOR on 8459
+            endorse(G) on 8460
+            FOR on 8461
+            FOR on 8462
+            FOR on 8463
+            AGAINST on 8464
+            FOR on 8465
+            AGAINST on 8466
+            FOR on 8467
+            FOR on 8468
+            FOR on 8469
+            PRESENT on 8470
+            PRESENT on 8471
             FOR on 8472
         }
     }
