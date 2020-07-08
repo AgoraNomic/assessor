@@ -524,5 +524,22 @@ with:
         votes(CuddleBeam) {
             FOR on all
         }
+
+        votes(PSS) {
+            FOR on 8459
+            FOR on 8460
+            FOR on 8461
+            FOR on 8462
+            FOR on 8463
+            AGAINST on 8464
+            FOR on 8465
+            AGAINST on 8466
+            FOR on 8467
+            FOR on 8468
+            FOR on 8469
+            AGAINST on 8470
+            AGAINST on 8471
+            FOR on 8472
+        }
     }
 }
