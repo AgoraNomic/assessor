@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -678,6 +679,8 @@ Append the following paragraph to Rule 2510 (Such is Karma):
             FOR on 8234
         }
 
-        Telnaior matches G
+        votes(Telnaior) {
+            match(G) on all
+        }
     }
 }

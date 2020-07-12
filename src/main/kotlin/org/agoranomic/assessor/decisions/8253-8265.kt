@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -310,7 +311,9 @@ Enact a new Rule of Power 3.0 with the text:
             AGAINST on 8265
         }
 
-        Rance matches G
+        votes(Rance) {
+            match(G) on all
+        }
 
         votes(Jason) {
             FOR on 8253

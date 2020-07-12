@@ -10,6 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.lib.proposal.Ministry.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -316,7 +317,9 @@ with:
             // AGAINST on 8387
         }
 
-        pikhq matches G
+        votes(pikhq) {
+            match(G) on all
+        }
 
         votes(Murphy) {
             FOR on 8377

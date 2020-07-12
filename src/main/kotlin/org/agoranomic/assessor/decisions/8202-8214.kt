@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -458,7 +459,9 @@ following:
             FOR on 8214
         }
 
-        Telnaior matches G
+        votes(Telnaior) {
+            match(G) on all
+        }
 
         votes(Falsifian) {
             FOR on 8202

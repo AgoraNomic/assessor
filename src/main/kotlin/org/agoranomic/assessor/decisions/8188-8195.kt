@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -161,7 +162,9 @@ spaceship
             FOR on 8195
         }
 
-        Telnaior matches G
+        votes(Telnaior) {
+            match(G) on all
+        }
 
         votes(Jason) {
             FOR on 8188

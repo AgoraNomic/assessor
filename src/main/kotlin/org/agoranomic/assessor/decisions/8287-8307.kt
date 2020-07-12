@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
@@ -763,7 +764,9 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8307
         }
 
-        o matches G
+        votes(o) {
+            match(G) on all
+        }
 
         votes(twg) {
             FOR on 8287

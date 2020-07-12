@@ -11,6 +11,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.lib.proposal.Ministry.Justice
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -216,7 +217,9 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             AGAINST on 8348
         }
 
-        o matches G
+        votes(o) {
+            match(G) on all
+        }
 
         votes(sukil) {
             FOR on 8342

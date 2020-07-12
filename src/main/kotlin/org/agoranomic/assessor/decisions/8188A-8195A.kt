@@ -5,10 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
-import org.agoranomic.assessor.dsl.votes.author
-import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.pmBonus
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -284,7 +281,9 @@ to read
             AGAINST on 8195
         }
 
-        Telnaior matches G
+        votes(Telnaior) {
+            match(G) on all
+        }
 
         votes(Falsifian) {
             FOR on 8188

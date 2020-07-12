@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -211,7 +212,11 @@ the following list, to read in full:
             AGAINST on 8201
         }
 
-        Telnaior matches G
-        Tarhulindur matches RLee
+        votes(Telnaior) {
+            match(G) on all
+        }
+        votes(Tarhulindur) {
+            match(RLee) on all
+        }
     }
 }

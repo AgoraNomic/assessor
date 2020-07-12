@@ -11,6 +11,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.Ministry.*
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
@@ -677,6 +678,8 @@ least one proposal).]"""
             AGAINST on 8317
         }
 
-        o matches G
+        votes(o) {
+            match(G) on all
+        }
     }
 }
