@@ -64,7 +64,8 @@ fun <Office : Enum<Office>> OfficeMap<Office>.toMap(): Map<Office, OfficeState> 
  * A default, immutable implementation of [OfficeMap].  As an invariant, its internal [data] map always contains
  * data for each enumerator of [Office].
  */
-private class OfficeMapImpl<Office : Enum<Office>> private constructor(private val data: ExhaustiveEnumMap<Office, OfficeState>) : OfficeMap<Office> {
+private class OfficeMapImpl<Office : Enum<Office>>
+private constructor(private val data: ExhaustiveEnumMap<Office, OfficeState>) : OfficeMap<Office> {
     companion object {
         fun <Office : Enum<Office>> from(
             officeClass: KClass<Office>,

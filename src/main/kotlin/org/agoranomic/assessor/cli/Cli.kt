@@ -174,8 +174,11 @@ data class SingleAssessment(val name: String) : NeededAssessments() {
     }
 }
 
-class AssessmentNotSpecifiedException : CliParseException("Must specify a single assessment (or \"all\") - none were specified")
-class MultipleAssessmentsSpecifiedException : CliParseException("Must specify a single assessment (or \"all\") - multiple were specified")
+class AssessmentNotSpecifiedException :
+    CliParseException("Must specify a single assessment (or \"all\") - none were specified")
+
+class MultipleAssessmentsSpecifiedException :
+    CliParseException("Must specify a single assessment (or \"all\") - multiple were specified")
 
 private fun readNeededAssessment(commandLine: CommandLine): NeededAssessments {
     val argList = commandLine.argList as List<String>

@@ -5,7 +5,8 @@ import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 
-class ImmutableListProposalSet private constructor(private val list: ImmutableList<Proposal>) : AbstractProposalSet(), ImmutableProposalSet {
+class ImmutableListProposalSet
+private constructor(private val list: ImmutableList<Proposal>) : AbstractProposalSet(), ImmutableProposalSet {
     companion object {
         private fun fromListUnchecked(list: List<Proposal>): ImmutableListProposalSet {
             return ImmutableListProposalSet(list.toImmutableList())

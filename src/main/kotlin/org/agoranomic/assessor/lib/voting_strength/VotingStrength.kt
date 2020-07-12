@@ -45,7 +45,9 @@ operator fun VotingStrengthDifference.compareTo(other: VotingStrengthDifference)
 
 operator fun VotingStrengthDifference.unaryMinus() = VotingStrengthDifference(this.raw.unaryMinus())
 
-operator fun VotingStrengthDifference.times(other: RawVotingStrength) = VotingStrengthDifference((this.raw).times(other))
+operator fun VotingStrengthDifference.times(other: RawVotingStrength) =
+    VotingStrengthDifference((this.raw).times(other))
+
 operator fun VotingStrengthDifference.times(other: Int) = this.times(other.toBigInteger())
 
 operator fun RawVotingStrength.times(other: VotingStrengthDifference) = other.times(this)

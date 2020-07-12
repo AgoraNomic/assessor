@@ -1,9 +1,9 @@
 package org.agoranomic.assessor.test
 
 import org.agoranomic.assessor.dsl.ministries.*
-import org.junit.jupiter.api.DisplayName
 import org.agoranomic.assessor.test.test_objects.firstTestPerson
 import org.agoranomic.assessor.test.test_util.assertEqualsAndHashCode
+import org.junit.jupiter.api.DisplayName
 import kotlin.test.*
 
 @DisplayName("OfficeState test")

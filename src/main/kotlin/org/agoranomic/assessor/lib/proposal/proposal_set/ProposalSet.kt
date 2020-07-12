@@ -43,7 +43,8 @@ interface ProposalSet : Iterable<Proposal> {
  * Returns a [Proposal] if this [ProposalSet] contains a [Proposal] with the provided [number]
  * @throws NoSuchProposalException if this [ProposalSet] does not contain a [Proposal] with the provided [number]
  */
-operator fun ProposalSet.get(number: ProposalNumber): Proposal = getOrNull(number) ?: throw NoSuchProposalException(number)
+operator fun ProposalSet.get(number: ProposalNumber): Proposal =
+    getOrNull(number) ?: throw NoSuchProposalException(number)
 
 fun ProposalSet.isEmpty(): Boolean = size == 0
 fun ProposalSet.isNotEmpty() = !isEmpty()

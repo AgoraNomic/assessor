@@ -573,9 +573,15 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             FOR on 8399
 
             if (offices[OfficeJune3Webmastor.Comptrollor].isHeld())
-                endorseOfficer(offices, OfficeJune3Webmastor.Comptrollor) on 8400 comment conditional("Comptrollor is held")
+                endorseOfficer(
+                    offices,
+                    OfficeJune3Webmastor.Comptrollor
+                ) on 8400 comment conditional("Comptrollor is held")
             else
-                endorseOfficer(offices, OfficeJune3Webmastor.ADoP) on 8400 comment conditional("Comptrollor is vacant")
+                endorseOfficer(
+                    offices,
+                    OfficeJune3Webmastor.ADoP
+                ) on 8400 comment conditional("Comptrollor is vacant")
 
             FOR on 8401
             FOR on 8402

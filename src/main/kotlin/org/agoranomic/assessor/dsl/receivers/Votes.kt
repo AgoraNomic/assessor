@@ -96,7 +96,10 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
 }
 
 class DefaultPersonVotesCompiler : PersonVotesCompiler {
-    override fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote> {
+    override fun compile(
+        allProposals: ProposalSet,
+        init: PersonVotesReceiverInit
+    ): ImmutableMap<ProposalNumber, PendingVote> {
         return DefaultPersonVotesReceiver(allProposals.numbers().toList()).also(init).compile()
     }
 }

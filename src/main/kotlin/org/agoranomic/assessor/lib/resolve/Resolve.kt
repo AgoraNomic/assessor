@@ -90,7 +90,7 @@ data class ProposalResolutionMap(
         require(proposals.contains(proposal)) { "No data for proposal $proposal" }
     }
 
-    fun resolutionOf(proposal: ProposalNumber): ResolutionData{
+    fun resolutionOf(proposal: ProposalNumber): ResolutionData {
         requireHasProposal(proposal)
         return resolutions.getOrFail(proposal)
     }

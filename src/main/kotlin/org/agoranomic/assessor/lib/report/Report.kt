@@ -294,7 +294,10 @@ data class ReadableReportConfig(
     val summaryTable: Boolean = false
 )
 
-fun readableReport(resolutionMap: ProposalResolutionMap, config: ReadableReportConfig = ReadableReportConfig()): String {
+fun readableReport(
+    resolutionMap: ProposalResolutionMap,
+    config: ReadableReportConfig = ReadableReportConfig()
+): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     val output = StringBuilder()
