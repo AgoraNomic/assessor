@@ -1,10 +1,10 @@
 package org.agoranomic.assessor.dsl.votes
 
 import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.vote.FunctionVote
 import org.agoranomic.assessor.lib.vote.InextricableVote
 import org.agoranomic.assessor.lib.vote.Vote
 import org.agoranomic.assessor.lib.vote.VoteFunc
-import org.agoranomic.assessor.lib.vote.functionVote
 
 fun makeEndorsementFor(endorsee: Person, endorseeVote: Vote?): Vote {
     return when (endorseeVote) {
@@ -17,10 +17,10 @@ private fun endorsementFunc(endorsee: Person): VoteFunc = { prop, context ->
     makeEndorsementFor(endorsee, context.resolve(prop, endorsee))
 }
 
-private fun endorsementVote(endorsee: Person) = functionVote(endorsementFunc(endorsee))
+private fun endorsementVote(endorsee: Person) = FunctionVote(endorsementFunc(endorsee))
 
 private fun authorEndorsementFunc(): VoteFunc = { prop, context -> endorsementFunc(prop.author)(prop, context) }
-private fun authorEndorsementVote() = functionVote(authorEndorsementFunc())
+private fun authorEndorsementVote() = FunctionVote(authorEndorsementFunc())
 
 object _Author
 

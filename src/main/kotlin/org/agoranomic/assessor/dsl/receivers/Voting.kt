@@ -6,10 +6,10 @@ import org.agoranomic.assessor.dsl.DslValueMap
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.vote.FunctionVote
 import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.PendingVote
 import org.agoranomic.assessor.lib.vote.SinglePersonPendingVoteMap
-import org.agoranomic.assessor.lib.vote.functionVote
 
 @AssessmentDsl
 interface MultiPersonVotesReceiver {
@@ -32,7 +32,7 @@ private class DefaultMultiPersonVotesReceiver(
     private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
 
     override infix fun Person.matches(other: Person) = votes(this) {
-        functionVote { proposal, context -> context.resolve(proposal, other) } on all
+        FunctionVote { proposal, context -> context.resolve(proposal, other) } on all
     }
 
     override fun votes(person: Person, block: PersonVotesReceiverInit) {

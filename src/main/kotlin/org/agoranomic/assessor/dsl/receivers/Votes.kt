@@ -25,11 +25,11 @@ interface PersonVotesReceiver {
 
     val others: Others get() = Others
 
-    infix fun HalfFunctionVote.on(proposal: ProposalNumber): VoteCommentable
-    infix fun HalfFunctionVote.on(number: Int) = on(ProposalNumber(number))
+    infix fun FunctionVote.on(proposal: ProposalNumber): VoteCommentable
+    infix fun FunctionVote.on(number: Int) = on(ProposalNumber(number))
 
-    infix fun HalfFunctionVote.on(all: All)
-    infix fun HalfFunctionVote.on(others: Others)
+    infix fun FunctionVote.on(all: All)
+    infix fun FunctionVote.on(others: Others)
 
     infix fun VoteKind.on(proposal: ProposalNumber): VoteCommentable
     infix fun VoteKind.on(proposal: Int) = on(ProposalNumber(proposal))
@@ -37,7 +37,7 @@ interface PersonVotesReceiver {
     infix fun VoteKind.on(all: All)
     infix fun VoteKind.on(others: Others)
 
-    fun function(func: VoteFunc): HalfFunctionVote
+    fun function(func: VoteFunc): FunctionVote
 }
 
 typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
@@ -67,23 +67,23 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
         return vote
     }
 
-    private fun addVote(proposal: ProposalNumber, vote: HalfFunctionVote) = addVote(proposal, MutableVote(vote.func))
+    private fun addVote(proposal: ProposalNumber, vote: FunctionVote) = addVote(proposal, MutableVote(vote.func))
 
-    override infix fun HalfFunctionVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this.func))
+    override infix fun FunctionVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this.func))
 
-    override infix fun HalfFunctionVote.on(all: PersonVotesReceiver.All) {
+    override infix fun FunctionVote.on(all: PersonVotesReceiver.All) {
         proposals.forEach { addVote(it, this) }
     }
 
-    override infix fun HalfFunctionVote.on(others: PersonVotesReceiver.Others) {
+    override infix fun FunctionVote.on(others: PersonVotesReceiver.Others) {
         for (proposal in proposals.map { it }) {
             if (!voteMap.containsKey(proposal)) addVote(proposal, this)
         }
     }
 
-    override fun function(func: VoteFunc) = functionVote(func)
+    override fun function(func: VoteFunc) = FunctionVote(func)
 
-    private fun simpleVoteFunction(vote: VoteKind) = functionVote { _, _ -> SimpleVote(vote, comment = null) }
+    private fun simpleVoteFunction(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
 
     override infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
 

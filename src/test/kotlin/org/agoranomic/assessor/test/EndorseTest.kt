@@ -55,7 +55,7 @@ class EndorseTest {
     }
 
     private fun doTestEndorse(
-        endorsement: HalfFunctionVote,
+        endorsement: FunctionVote,
         proposal: Proposal,
         expectedEndorsee: Person,
         endorseeVote: Vote
