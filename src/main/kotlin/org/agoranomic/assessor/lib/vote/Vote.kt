@@ -1,7 +1,9 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.vote
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
 
 enum class VoteKind { PRESENT, AGAINST, FOR }
 

@@ -4,7 +4,11 @@ import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.getOrDefault
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.Persons
+import org.agoranomic.assessor.lib.emptyPersons
+import org.agoranomic.assessor.lib.personsOf
+import org.agoranomic.assessor.lib.proposal.*
 import java.math.BigDecimal
 
 @AssessmentDsl

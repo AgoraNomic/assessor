@@ -11,8 +11,8 @@ import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.Ministry.*
-import org.agoranomic.assessor.lib.VoteKind.*
+import org.agoranomic.assessor.lib.proposal.Ministry.*
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun `assessment 8459 to 8472`() = assessment {

@@ -6,10 +6,12 @@ import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.getOrNull
-import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.voting_strength.*
 
 @AssessmentDsl
 interface GeneralVotingStrengthReceiver {
@@ -41,10 +43,14 @@ private class VotingStrengthTrailForPersonsBuilder {
         val amount: VotingStrengthDifference,
         var description: VotingStrengthModificationDescription? = null
     ) {
-        fun compile() = AdditiveVotingStrengthModification(
-            amount,
-            description ?: AdditiveVotingStrengthModification.defaultDescriptionFor(amount)
-        )
+        fun compile() =
+            AdditiveVotingStrengthModification(
+                amount,
+                description
+                    ?: AdditiveVotingStrengthModification.defaultDescriptionFor(
+                        amount
+                    )
+            )
     }
 
     private class VotingStrengthDescribableImpl(private val data: MutableStrengthAddition) : VotingStrengthDescribable {

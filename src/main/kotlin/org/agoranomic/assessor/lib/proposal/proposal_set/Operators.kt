@@ -1,6 +1,6 @@
-package org.agoranomic.assessor.lib.proposal_set
+package org.agoranomic.assessor.lib.proposal.proposal_set
 
-import org.agoranomic.assessor.lib.Proposal
+import org.agoranomic.assessor.lib.proposal.Proposal
 
 operator fun ProposalSet.plus(other: ProposalSet) =
     ((this as Iterable<Proposal>) + (other as Iterable<Proposal>)).toProposalSet()

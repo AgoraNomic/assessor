@@ -2,9 +2,9 @@ package org.agoranomic.assessor.dsl.ministries
 
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.VotingStrengthDifference
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.Ministry
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // These interests come from the original proposal - P8291
 val INTERESTS_MAP_JAN_29 = mapOf(

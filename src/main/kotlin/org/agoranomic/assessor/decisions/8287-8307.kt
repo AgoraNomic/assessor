@@ -8,8 +8,8 @@ import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.dsl.votes.speakerBonus
-import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.VoteKind.*
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun `assessment 8287 to 8307`() = assessment {

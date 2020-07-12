@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.VoteFunc
-import org.agoranomic.assessor.lib.functionVote
+import org.agoranomic.assessor.lib.vote.VoteFunc
+import org.agoranomic.assessor.lib.vote.functionVote
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

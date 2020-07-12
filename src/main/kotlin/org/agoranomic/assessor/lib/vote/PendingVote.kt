@@ -1,7 +1,10 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.vote
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
 
 data class PendingVote(val voteFunc: VoteFunc, val comment: String?) {
     fun compile(proposal: Proposal, context: VoteContext): Vote? {

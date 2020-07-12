@@ -1,12 +1,17 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.resolve
 
 import io.github.random_internet_cat.util.getOrFail
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
-import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.toImmutableProposalSet
-import org.agoranomic.assessor.lib.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.proposal.*
+import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
+import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.vote.SingleProposalVoteMap
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 
 enum class ProposalResult {
     FAILED_QUORUM("FAILED QUORUM"), REJECTED, ADOPTED;

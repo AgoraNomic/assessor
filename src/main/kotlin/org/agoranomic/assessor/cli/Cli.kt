@@ -3,8 +3,8 @@ package org.agoranomic.assessor.cli
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
-import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.ReadableReportConfig
+import org.agoranomic.assessor.lib.report.ReadableReportConfig
+import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.apache.commons.cli.*
 import java.io.CharArrayWriter
 import java.io.PrintWriter

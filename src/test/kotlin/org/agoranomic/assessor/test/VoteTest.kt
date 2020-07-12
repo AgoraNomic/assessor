@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.vote.*
+import org.agoranomic.assessor.lib.voting_strength.*
 import org.agoranomic.assessor.test.test_objects.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
@@ -72,7 +73,12 @@ class SingleProposalVoteMapTest {
 
         val vote = firstTestVote()
 
-        val map = SingleProposalVoteMap(mapOf(playerA to vote, playerB to vote))
+        val map = SingleProposalVoteMap(
+            mapOf(
+                playerA to vote,
+                playerB to vote
+            )
+        )
 
         assertEquals(map.voters.toSet(), setOf(playerA, playerB))
         assertEquals(map.voteCount, 2)

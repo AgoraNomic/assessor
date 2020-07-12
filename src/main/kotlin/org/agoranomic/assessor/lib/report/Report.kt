@@ -1,8 +1,18 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.report
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.*
+import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
+import org.agoranomic.assessor.lib.resolve.ResolutionData
+import org.agoranomic.assessor.lib.resolve.adoptedProposals
+import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.voting_strength.VotingStrength
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthWithComment
 import kotlin.math.max
 
 private fun StringBuilder.emitLine() {

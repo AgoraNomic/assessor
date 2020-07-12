@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.voting_strength
 
 import java.math.BigInteger
 

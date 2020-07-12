@@ -1,9 +1,9 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.AIStrengths
-import org.agoranomic.assessor.lib.ProposalAI
-import org.agoranomic.assessor.lib.VotingStrength
-import org.agoranomic.assessor.lib.isAIAdopted
+import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.resolve.AIStrengths
+import org.agoranomic.assessor.lib.resolve.isAIAdopted
+import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import java.math.BigDecimal
 import kotlin.test.Test
 import kotlin.test.assertEquals

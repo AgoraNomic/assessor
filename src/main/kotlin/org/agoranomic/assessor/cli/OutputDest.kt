@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.AssessmentMetadata
+import org.agoranomic.assessor.lib.resolve.AssessmentMetadata
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption

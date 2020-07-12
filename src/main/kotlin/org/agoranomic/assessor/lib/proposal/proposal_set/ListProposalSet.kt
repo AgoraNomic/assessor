@@ -1,9 +1,9 @@
-package org.agoranomic.assessor.lib.proposal_set
+package org.agoranomic.assessor.lib.proposal.proposal_set
 
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
-import org.agoranomic.assessor.lib.Proposal
-import org.agoranomic.assessor.lib.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
 
 class ImmutableListProposalSet private constructor(private val list: ImmutableList<Proposal>) : AbstractProposalSet(), ImmutableProposalSet {
     companion object {

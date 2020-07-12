@@ -1,9 +1,10 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.voting_strength
 
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.Person
 
 data class VotingStrengthTrail(
     val initial: VotingStrength,

@@ -3,9 +3,9 @@ package org.agoranomic.assessor.dsl.ministries
 import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.VotingStrengthDifference
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.Ministry
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // Reflects addition of Webmastor created by P8388, adopted ~June 3, 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html.

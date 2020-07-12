@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.voting_strength
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap

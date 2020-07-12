@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.cli
 
 import org.agoranomic.assessor.decisions.findAssessments
-import org.agoranomic.assessor.lib.resolve
+import org.agoranomic.assessor.lib.resolve.resolve
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) {

@@ -1,4 +1,6 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.report
+
+import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 
 private fun lineWithDelimiter(header: String, delimiter: Char): String {
     return header + "\n" + (delimiter.toString()).repeat(header.length) + "\n"

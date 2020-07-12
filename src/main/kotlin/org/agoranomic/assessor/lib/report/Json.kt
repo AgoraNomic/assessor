@@ -1,6 +1,15 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.report
 
 import kotlinx.serialization.json.*
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.*
+import org.agoranomic.assessor.lib.resolve.*
+import org.agoranomic.assessor.lib.vote.SimpleVote
+import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.voting_strength.VotingStrength
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthWithComment
 import java.math.BigDecimal
 import java.math.BigInteger
 

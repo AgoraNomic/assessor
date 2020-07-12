@@ -1,10 +1,17 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.report
 
 import io.github.random_internet_cat.util.ceil
 import io.github.random_internet_cat.util.compareTo
 import io.github.random_internet_cat.util.getOrFail
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
+import org.agoranomic.assessor.lib.resolve.adoptedProposals
+import org.agoranomic.assessor.lib.vote.votersAgainst
+import org.agoranomic.assessor.lib.vote.votersFor
 import java.math.BigDecimal
 import java.math.BigInteger
 

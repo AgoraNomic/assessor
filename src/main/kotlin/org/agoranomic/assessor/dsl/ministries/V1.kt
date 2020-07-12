@@ -3,9 +3,9 @@ package org.agoranomic.assessor.dsl.ministries
 import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.Ministry
-import org.agoranomic.assessor.lib.VotingStrengthDifference
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.Ministry
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // These interests come from V0 and P8318 (Notorial Economy) which set the Notary's interest to [Economy]
 val INTERESTS_MAP_FEB_13: Map<OfficeInitial, List<Ministry>> =

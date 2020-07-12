@@ -1,5 +1,7 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.proposal
 
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.Persons
 import java.math.BigDecimal
 import java.math.BigInteger
 

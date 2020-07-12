@@ -10,9 +10,9 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.Ministry.Economy
-import org.agoranomic.assessor.lib.Ministry.Efficiency
-import org.agoranomic.assessor.lib.VoteKind.*
+import org.agoranomic.assessor.lib.proposal.Ministry.Economy
+import org.agoranomic.assessor.lib.proposal.Ministry.Efficiency
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun `assessment 8405 to 8408`() = assessment {

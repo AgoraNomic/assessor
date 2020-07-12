@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl
 
 import org.agoranomic.assessor.dsl.receivers.AssessmentReceiverInit
 import org.agoranomic.assessor.dsl.receivers.DefaultAssessmentCompiler
-import org.agoranomic.assessor.lib.AssessmentData
+import org.agoranomic.assessor.lib.resolve.AssessmentData
 
 @DslMarker
 @Target(AnnotationTarget.CLASS)

@@ -1,8 +1,10 @@
 package org.agoranomic.assessor.test.test_objects
 
-import org.agoranomic.assessor.lib.*
 import io.github.random_internet_cat.util.div
 import io.github.random_internet_cat.util.rem
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.Persons
+import org.agoranomic.assessor.lib.proposal.*
 
 fun testProposalNumber(num: TestNumber): ProposalNumber = ProposalNumber(num)
 fun firstTestProposalNumber() = testFirst(::testProposalNumber)

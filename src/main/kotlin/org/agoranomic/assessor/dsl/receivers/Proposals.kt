@@ -2,9 +2,9 @@ package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
-import org.agoranomic.assessor.lib.Proposal
-import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.proposal_set.*
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.proposal_set.*
 
 @AssessmentDsl
 interface ProposalsReceiverCommon {

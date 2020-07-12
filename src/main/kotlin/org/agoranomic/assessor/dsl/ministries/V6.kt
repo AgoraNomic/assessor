@@ -3,8 +3,8 @@ package org.agoranomic.assessor.dsl.ministries
 import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.VotingStrengthDifference
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // Reflects addition of Coopor by P8442 with no interest set, adopted 30 June 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-June/013879.html

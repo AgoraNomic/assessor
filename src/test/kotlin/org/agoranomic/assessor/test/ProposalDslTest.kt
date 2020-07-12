@@ -3,7 +3,9 @@ package org.agoranomic.assessor.test
 import io.github.random_internet_cat.util.toSetCheckingDistinct
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.Persons
+import org.agoranomic.assessor.lib.emptyPersons
+import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.test.test_objects.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested

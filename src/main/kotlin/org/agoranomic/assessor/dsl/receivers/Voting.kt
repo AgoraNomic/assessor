@@ -3,8 +3,13 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValueMap
-import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
+import org.agoranomic.assessor.lib.vote.PendingVote
+import org.agoranomic.assessor.lib.vote.SinglePersonPendingVoteMap
+import org.agoranomic.assessor.lib.vote.functionVote
 
 @AssessmentDsl
 interface MultiPersonVotesReceiver {

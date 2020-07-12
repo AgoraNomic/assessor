@@ -1,7 +1,10 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.resolve
 
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal_set.get
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.get
+import org.agoranomic.assessor.lib.vote.*
 
 private fun resolveSingleVote(
     allVotes: MultiPersonPendingVoteMap,

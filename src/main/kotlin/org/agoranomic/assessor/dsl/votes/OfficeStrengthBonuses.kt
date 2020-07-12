@@ -6,8 +6,8 @@ import org.agoranomic.assessor.dsl.ministries.OfficeState
 import org.agoranomic.assessor.dsl.receivers.GeneralVotingStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Person
-import org.agoranomic.assessor.lib.VotingStrengthDifference
-import org.agoranomic.assessor.lib.VotingStrengthModificationDescription
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
 
 fun GeneralVotingStrengthReceiver.officeStrengthBonus(
     person: Person,

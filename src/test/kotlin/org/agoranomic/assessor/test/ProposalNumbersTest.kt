@@ -1,12 +1,15 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.ProposalNumbers
-import org.agoranomic.assessor.lib.emptyProposalNumbers
-import org.agoranomic.assessor.lib.proposalNumbersOf
-import org.junit.jupiter.api.DisplayName
-import org.agoranomic.assessor.test.test_objects.*
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.ProposalNumbers
+import org.agoranomic.assessor.lib.proposal.emptyProposalNumbers
+import org.agoranomic.assessor.lib.proposal.proposalNumbersOf
+import org.agoranomic.assessor.test.test_objects.firstTestProposalNumber
+import org.agoranomic.assessor.test.test_objects.secondTestProposalNumber
+import org.agoranomic.assessor.test.test_objects.testProposalNumber
+import org.agoranomic.assessor.test.test_objects.testThird
 import org.agoranomic.assessor.test.test_util.assertEqualsAndHashCode
+import org.junit.jupiter.api.DisplayName
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse

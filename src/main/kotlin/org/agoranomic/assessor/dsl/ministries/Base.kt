@@ -2,8 +2,11 @@ package org.agoranomic.assessor.dsl.ministries
 
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.dsl.receivers.ProposalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.*
-import org.agoranomic.assessor.lib.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.*
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
 
 private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries(
     officeMap: OfficeMap<Office>,

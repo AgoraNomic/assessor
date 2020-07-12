@@ -1,9 +1,9 @@
 package org.agoranomic.assessor.test.test_objects
 
-import org.agoranomic.assessor.lib.InextricableVote
-import org.agoranomic.assessor.lib.SimpleVote
-import org.agoranomic.assessor.lib.Vote
-import org.agoranomic.assessor.lib.VoteKind
+import org.agoranomic.assessor.lib.vote.InextricableVote
+import org.agoranomic.assessor.lib.vote.SimpleVote
+import org.agoranomic.assessor.lib.vote.Vote
+import org.agoranomic.assessor.lib.vote.VoteKind
 
 fun testVoteKind(num: TestNumber) = testValueOf<VoteKind>(num)
 

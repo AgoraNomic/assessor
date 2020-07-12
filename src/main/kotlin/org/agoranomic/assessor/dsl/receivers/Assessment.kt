@@ -4,11 +4,11 @@ import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.DslInit
 import org.agoranomic.assessor.dsl.DslValue
 import org.agoranomic.assessor.dsl.getOrNull
-import org.agoranomic.assessor.lib.AssessmentData
-import org.agoranomic.assessor.lib.AssessmentMetadata
-import org.agoranomic.assessor.lib.AssessmentQuorum
-import org.agoranomic.assessor.lib.AssessmentUrl
-import org.agoranomic.assessor.lib.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.AssessmentQuorum
+import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.resolve.AssessmentData
+import org.agoranomic.assessor.lib.resolve.AssessmentMetadata
+import org.agoranomic.assessor.lib.resolve.AssessmentUrl
 
 @AssessmentDsl
 interface AssessmentReceiver {

@@ -5,10 +5,10 @@ import io.github.random_internet_cat.util.requireAllAreDistinctBy
 import io.github.random_internet_cat.util.requireExhaustive
 import io.github.random_internet_cat.util.toExhaustiveEnumMap
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.HalfFunctionVote
-import org.agoranomic.assessor.lib.InextricableVote
 import org.agoranomic.assessor.lib.Person
-import org.agoranomic.assessor.lib.functionVote
+import org.agoranomic.assessor.lib.vote.HalfFunctionVote
+import org.agoranomic.assessor.lib.vote.InextricableVote
+import org.agoranomic.assessor.lib.vote.functionVote
 import kotlin.reflect.KClass
 
 /**

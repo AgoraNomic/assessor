@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.proposal
 
 import io.github.random_internet_cat.util.toSetCheckingDistinct
 import kotlinx.collections.immutable.ImmutableSet

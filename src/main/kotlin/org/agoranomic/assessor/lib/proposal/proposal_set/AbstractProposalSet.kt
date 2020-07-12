@@ -1,9 +1,9 @@
-package org.agoranomic.assessor.lib.proposal_set
+package org.agoranomic.assessor.lib.proposal.proposal_set
 
 import io.github.random_internet_cat.util.toSetCheckingDistinct
-import org.agoranomic.assessor.lib.Proposal
-import org.agoranomic.assessor.lib.ProposalDataMismatchException
-import org.agoranomic.assessor.lib.ProposalNumbers
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.proposal.ProposalDataMismatchException
+import org.agoranomic.assessor.lib.proposal.ProposalNumbers
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {

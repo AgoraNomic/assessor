@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.report.*
+import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 
 interface AssessmentFormatter {
     fun format(assessment: ProposalResolutionMap): String

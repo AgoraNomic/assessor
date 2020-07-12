@@ -3,15 +3,17 @@ package org.agoranomic.assessor.test
 import org.agoranomic.assessor.dsl.votes.author
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.makeEndorsementFor
-import org.agoranomic.assessor.lib.*
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.params.ParameterizedTest
-import org.junit.jupiter.params.provider.MethodSource
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.vote.*
 import org.agoranomic.assessor.test.test_objects.ALL_VOTE_KIND_LIST
 import org.agoranomic.assessor.test.test_objects.alwaysFailingLookupProposal
 import org.agoranomic.assessor.test.test_objects.firstTestPerson
 import org.agoranomic.assessor.test.test_objects.firstTestProposal
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.MethodSource
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 

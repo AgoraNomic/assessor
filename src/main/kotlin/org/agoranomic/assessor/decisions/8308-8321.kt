@@ -12,10 +12,10 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
-import org.agoranomic.assessor.lib.Ministry.*
-import org.agoranomic.assessor.lib.ProposalNumber
-import org.agoranomic.assessor.lib.VoteKind.*
-import org.agoranomic.assessor.lib.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.proposal.Ministry.*
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun `assessment 8308 to 8321`() = assessment {

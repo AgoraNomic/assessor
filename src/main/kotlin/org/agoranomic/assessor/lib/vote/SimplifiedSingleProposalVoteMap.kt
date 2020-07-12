@@ -1,7 +1,12 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.vote
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.Persons
+import org.agoranomic.assessor.lib.voting_strength.VotingStrength
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
+import org.agoranomic.assessor.lib.voting_strength.plus
 
 data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person, SimpleVote>) {
     constructor(map: Map<Person, SimpleVote>) : this(map.toImmutableMap())

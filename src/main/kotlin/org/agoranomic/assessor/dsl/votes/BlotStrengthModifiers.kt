@@ -2,8 +2,8 @@ package org.agoranomic.assessor.dsl.votes
 
 import org.agoranomic.assessor.dsl.receivers.GeneralVotingStrengthReceiver
 import org.agoranomic.assessor.lib.Person
-import org.agoranomic.assessor.lib.VotingStrengthDifference
-import org.agoranomic.assessor.lib.VotingStrengthModificationDescription
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
 
 fun GeneralVotingStrengthReceiver.blotPenalty(person: Person, amount: VotingStrengthDifference) {
     person subtract amount describedAs VotingStrengthModificationDescription(

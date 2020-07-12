@@ -1,6 +1,10 @@
 package org.agoranomic.assessor.dsl.votes
 
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.vote.InextricableVote
+import org.agoranomic.assessor.lib.vote.Vote
+import org.agoranomic.assessor.lib.vote.VoteFunc
+import org.agoranomic.assessor.lib.vote.functionVote
 
 fun makeEndorsementFor(endorsee: Person, endorseeVote: Vote?): Vote {
     return when (endorseeVote) {

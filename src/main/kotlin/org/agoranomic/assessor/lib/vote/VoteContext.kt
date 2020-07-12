@@ -1,4 +1,8 @@
-package org.agoranomic.assessor.lib
+package org.agoranomic.assessor.lib.vote
+
+import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
 
 data class LookupProposal(private val func: (ProposalNumber) -> Proposal) {
     operator fun invoke(number: ProposalNumber) = func(number)

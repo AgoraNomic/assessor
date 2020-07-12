@@ -1,7 +1,10 @@
-package org.agoranomic.assessor.lib.proposal_set
+package org.agoranomic.assessor.lib.proposal.proposal_set
 
 import kotlinx.collections.immutable.ImmutableSet
-import org.agoranomic.assessor.lib.*
+import org.agoranomic.assessor.lib.proposal.Proposal
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.ProposalNumbers
+import org.agoranomic.assessor.lib.proposal.checkMismatch
 
 /**
  * Thrown when by a [ProposalSet] when a proposal is requested but does not exist.

@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.test.test_objects
 
-import org.agoranomic.assessor.lib.VotingStrength
-import org.agoranomic.assessor.lib.VotingStrengthWithComment
+import org.agoranomic.assessor.lib.voting_strength.VotingStrength
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthWithComment
 
 fun testVotingStrength(num: TestNumber) = VotingStrength(num)
 fun firstTestVotingStrength() = testFirst(::testVotingStrength)
