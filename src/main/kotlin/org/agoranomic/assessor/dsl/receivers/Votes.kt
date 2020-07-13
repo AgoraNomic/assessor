@@ -5,8 +5,8 @@ import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
-import org.agoranomic.assessor.dsl.DslInit
-import org.agoranomic.assessor.dsl.DslValueMap
+import org.agoranomic.assessor.dsl.detail.DslInit
+import org.agoranomic.assessor.dsl.detail.DslValueMap
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.vote.*

@@ -1,4 +1,4 @@
-package org.agoranomic.assessor.dsl
+package org.agoranomic.assessor.dsl.detail
 
 import io.github.random_internet_cat.util.getOrFail
 

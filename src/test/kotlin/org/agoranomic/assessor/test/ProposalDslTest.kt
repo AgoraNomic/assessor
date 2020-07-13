@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.test
 
 import io.github.random_internet_cat.util.toSetCheckingDistinct
-import org.agoranomic.assessor.dsl.DslInit
+import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.dsl.receivers.*
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.emptyPersons

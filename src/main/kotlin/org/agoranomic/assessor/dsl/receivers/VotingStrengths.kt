@@ -3,9 +3,9 @@ package org.agoranomic.assessor.dsl.receivers
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
-import org.agoranomic.assessor.dsl.DslInit
-import org.agoranomic.assessor.dsl.DslValue
-import org.agoranomic.assessor.dsl.getOrNull
+import org.agoranomic.assessor.dsl.detail.DslInit
+import org.agoranomic.assessor.dsl.detail.DslValue
+import org.agoranomic.assessor.dsl.detail.getOrNull
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
