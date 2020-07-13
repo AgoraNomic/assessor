@@ -3,6 +3,7 @@ package org.agoranomic.assessor.dsl.receivers
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.dsl.detail.SetOnce
+import org.agoranomic.assessor.dsl.detail.SetOnceFuse
 import org.agoranomic.assessor.dsl.detail.getOrDefault
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
@@ -53,6 +54,19 @@ interface ProposalReceiverV1 : ProposalCommonReceiver, ProposalClassAndChamberRe
 
 typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 typealias ProposalCompilerV1 = ProposalCompiler<ProposalReceiverV1>
+
+@AssessmentDsl
+interface ProposalReceiverV2 : ProposalCommonReceiver, ProposalClassAndChamberReceiver {
+    /**
+     * Marks this proposal as sponsored. If this function is not called, the proposal is unsponsored.
+     *
+     * @throws IllegalStateException if this function is called more than once
+     */
+    fun sponsored()
+}
+
+typealias ProposalReceiverV2Init = DslInit<ProposalReceiverV2>
+typealias ProposalCompilerV2 = ProposalCompiler<ProposalReceiverV2>
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
@@ -157,5 +171,34 @@ private class DefaultProposalReceiverV1(
 class DefaultProposalCompilerV1 : ProposalCompilerV1 {
     override fun compile(number: ProposalNumber, init: ProposalReceiverV1Init): Proposal {
         return DefaultProposalReceiverV1(number).also(init).compile()
+    }
+}
+
+@AssessmentDsl
+private class DefaultProposalReceiverV2(
+    number: ProposalNumber,
+    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
+    val classAndChamberImpl: ProposalClassAndChamberReceiverImpl = ProposalClassAndChamberReceiverImpl(number)
+) : ProposalReceiverV2, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberReceiver by classAndChamberImpl {
+    private val sponsoredFuse = SetOnceFuse()
+
+    override fun sponsored() {
+        sponsoredFuse.blow()
+    }
+
+    fun compile(): Proposal {
+        return Proposal(
+            commonData = commonImpl.compile(),
+            versionedData = ProposalDataV2(
+                classAndChamber = classAndChamberImpl.compile(),
+                sponsored = sponsoredFuse.isBlown()
+            )
+        )
+    }
+}
+
+class DefaultProposalCompilerV2 : ProposalCompilerV2 {
+    override fun compile(number: ProposalNumber, init: DslInit<ProposalReceiverV2>): Proposal {
+        return DefaultProposalReceiverV2(number).also(init).compile()
     }
 }
