@@ -42,12 +42,14 @@ interface ProposalReceiverV0 : ProposalCommonReceiver
 typealias ProposalReceiverV0Init = DslInit<ProposalReceiverV0>
 typealias ProposalCompilerV0 = ProposalCompiler<ProposalReceiverV0>
 
-@AssessmentDsl
-interface ProposalReceiverV1 : ProposalCommonReceiver {
+interface ProposalClassAndChamberReceiver {
     fun classless()
     fun democratic()
     fun chamber(chamber: ProposalChamber)
 }
+
+@AssessmentDsl
+interface ProposalReceiverV1 : ProposalCommonReceiver, ProposalClassAndChamberReceiver
 
 typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 typealias ProposalCompilerV1 = ProposalCompiler<ProposalReceiverV1>
@@ -117,11 +119,7 @@ class DefaultProposalCompilerV0 : ProposalCompilerV0 {
     }
 }
 
-@AssessmentDsl
-private class DefaultProposalReceiverV1(
-    number: ProposalNumber,
-    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number)
-) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl {
+private class ProposalClassAndChamberReceiverImpl(val number: ProposalNumber) : ProposalClassAndChamberReceiver {
     private val classAndChamberValue =
         SetOnce.namedOf<ProposalClassAndChamber>("class and chamber of proposal $number")
 
@@ -137,12 +135,21 @@ private class DefaultProposalReceiverV1(
         classAndChamberValue.set(ProposalClassAndChamber.OrdinaryClass(chamber = chamber))
     }
 
-    fun compile(): Proposal {
-        val classAndChamber = classAndChamberValue.get()
+    fun compile(): ProposalClassAndChamber {
+        return classAndChamberValue.get()
+    }
+}
 
+@AssessmentDsl
+private class DefaultProposalReceiverV1(
+    number: ProposalNumber,
+    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
+    val classAndChamberImpl: ProposalClassAndChamberReceiverImpl = ProposalClassAndChamberReceiverImpl(number)
+) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberReceiver by classAndChamberImpl {
+    fun compile(): Proposal {
         return Proposal(
             commonImpl.compile(),
-            ProposalDataV1(classAndChamber)
+            ProposalDataV1(classAndChamberImpl.compile())
         )
     }
 }
