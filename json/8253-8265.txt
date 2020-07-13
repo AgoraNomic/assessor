@@ -5,6 +5,7 @@
     },
     "proposals": [
         {
+            "version": "0",
             "number": 8253,
             "ai": "2.0",
             "title": "Clarify salary",
@@ -16,6 +17,7 @@
             "text": "Amend Rule 2559 (Paydays) by replacing this text:\n\n  2. For each office, if a single player held that office for 16 or\n     more days in the previous month and no unforgivable fines were\n     levied on em for eir conduct in that office during that time,\n     that player earns 5 coins.\n\nwith this text:\n\n  2. For each office, if a single player held that office for 16 or\n     more days in the previous month and no unforgivable fines were\n     levied on em during that month for eir conduct in that office,\n     that player earns 5 coins.\n\n[Legislates based on the judgement of CFJ 3774, but also covers edge\ncases like \"do something in late September, get dinged for it in early\nOctober\": you still earn your salary for September, but forfeit it for\nOctober. Covering corner cases like \"exit office in early October,\nno October salary to forfeit, impose fine/debt against September salary\"\nis left as an exercise for future proposal authors.]"
         },
         {
+            "version": "0",
             "number": 8254,
             "ai": "3.0",
             "title": "Anything is POSSIBLE",
@@ -25,6 +27,7 @@
             "text": "Amend Rule 2152 (\"Mother, May I?\") by replacing the text \"CAN:\" with the\ntext \"CAN, POSSIBLE:\".\n\n[\"POSSIBLE\" is used in the Rules right now, but is never defined; this\ndefines it.]"
         },
         {
+            "version": "0",
             "number": 8255,
             "ai": "3.0",
             "title": "Possibly-Indeterminate Switches",
@@ -34,6 +37,7 @@
             "text": "Amend Rule 2162 (\"Switches\") by replacing the paragraph beginning \"If an\naction or set of actions\" with the following:\n\n  If a type of switch is not explicitly designated as\n  possibly-indeterminate by the rule that defines it, and if an action\n  or set of actions would cause the value of an instance of that type\n  of switch to become indeterminate, that instance instead takes on\n  its last determinate and possible value, if any, otherwise it takes\n  on its default value.\n\n[Provides an escape hatch so that rules can allow their switches to have\nindeterminate values. This has come up in protos by both me and\nFalsifian. It is useful to have these possibly-indeterminate properties\nbe switches, since switches have useful properties and precedent, so the\nalways-determinate system cuts off some use-cases.]"
         },
         {
+            "version": "0",
             "number": 8256,
             "ai": "2.0",
             "title": "Yes, Prime Minister",
@@ -44,6 +48,7 @@
             "text": "Amend Rule 2193 (The Registrar) by removing this text:\n\n  The Registrar is also responsible for tracking any switches,\n  defined in a rule, that would otherwise lack an officer to track\n  them, unless the switch is defined as untracked.\n\nAmend Rule 2423 (First Among Equals) by appending this text:\n\n  The Prime Minister is responsible for tracking any switches\n  defined by the rules, not defined as untracked, and not defined\n  as tracked by another officer."
         },
         {
+            "version": "0",
             "number": 8258,
             "ai": "2.0",
             "title": "Elections Fix",
@@ -53,6 +58,7 @@
             "text": "Amend Rule 2154 (\"Election Procedure\") by replacing the text \"election\nfor a specified office\" with the text \"election for a specified elected\noffice\"."
         },
         {
+            "version": "0",
             "number": 8260,
             "ai": "1.0",
             "title": "The Low Zombie",
@@ -62,6 +68,7 @@
             "text": "Create a Rule titled \"Boo!\" with the following text:\n  One week after this rule is repealed, it is reenacted."
         },
         {
+            "version": "0",
             "number": 8261,
             "ai": "3.0",
             "title": "The High Zombie",
@@ -71,6 +78,7 @@
             "text": "Create a Power=3 Rule titled \"Boo!!\" with the following text:\n  Rules to the contrary notwithstanding, one week after this rule is\n  repealed, it is reenacted."
         },
         {
+            "version": "0",
             "number": 8262,
             "ai": "1.0",
             "title": "trick candles",
@@ -80,6 +88,7 @@
             "text": "Create a Rule entitled \"Blink\" with the following text:\n  One week after this sentence is modified in any way, this rule\n  is amended by inserting this sentence as the first paragraph of\n  this rule."
         },
         {
+            "version": "0",
             "number": 8263,
             "ai": "3.0",
             "title": "Persistent",
@@ -89,6 +98,7 @@
             "text": "I submit the following proposal, \"Persistent\", AI=3 {\n\n  When this rule is amended, also amend it by appending this sentence to the\n  end of the rule.\n\n}"
         },
         {
+            "version": "0",
             "number": 8264,
             "ai": "1.0",
             "title": "Encouraging Democracy Through Capitalism or Who Pays Subs Full Wages Anyway",
@@ -98,6 +108,7 @@
             "text": "Amend rule 2496 by replacing the current text {\n\n  * Publishing an office's weekly or monthly report, provided that\n    publication was the first report published for that office in\n    the relevant time period (week or month respectively) to fulfill\n    an official weekly or monthly duty: 5 coins.\n\n} with the text {\n\n  * Publishing an office's weekly or monthly report, provided that\n    publication was the first report published for that office in\n    the relevant time period (week or month respectively) to fulfill\n    an official weekly or monthly duty: 3 coins for an interim office\n    or 5 coins for any other office.\n\n}\n\nReasoning: This should encourage elections for offices. Elections are Fun\nand Cool and help spread the workload and reduce consolidation."
         },
         {
+            "version": "0",
             "number": 8265,
             "ai": "3.0",
             "title": "",

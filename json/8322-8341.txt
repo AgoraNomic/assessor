@@ -5,6 +5,7 @@
     },
     "proposals": [
         {
+            "version": "1",
             "number": 8322,
             "ai": "3.0",
             "title": "Unrepetition v1.1",
@@ -16,6 +17,7 @@
             "text": "For each of Proposals 8287-8307, if the proposal took effect more than\nonce, then any changes to rule text caused by the second and later\ntimes the proposal took effect are considered \"extra\" for the purposes\nof this proposal.\n\nReverse all such \"extra\" changes, in the reverse of the order in which\nthey occurred.\n\n[Comment: See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-discussion/2020-February/056587.html\nfor context. I think the changes this undoes are relatively benign,\nbut it's nice to have certainty about the state of the ruleset.]"
         },
         {
+            "version": "1",
             "number": 8323,
             "ai": "3.0",
             "title": "Secure Ribbons",
@@ -25,6 +27,7 @@
             "text": "Amend Rule 2438 (Ribbons) by replacing the text \"Ribbon Ownership is a\nperson switch\" with the text \"Ribbon Ownership is a secured person switch\"."
         },
         {
+            "version": "1",
             "number": 8324,
             "ai": "2.0",
             "title": "Democratic unassignment",
@@ -34,6 +37,7 @@
             "text": "If Proposal 8320 (Promotorial Assignment) has been adopted, then amend\nthe rule entitled \"Proposal Chambers\" by replacing \"If a proposal in\nthe Proposal Pool has its chamber unset\" with \"If the chamber of an\nordinary proposal in the Proposal Pool is unset\"."
         },
         {
+            "version": "1",
             "number": 8325,
             "ai": "2.0",
             "title": "Inflation Vote",
@@ -43,6 +47,7 @@
             "text": "[Comments:\n\nAre we just going to let a steady stream of sufficiently dedicated\nplayers claim their standard victories? I say we raise the bar a\nlittle.\n\nThere's been some talk of a larger re-working of the economy. In the\nmeantime, this proposal calls for players to vote on a new number to\nreplace the 1,000 coin victory fee. The median vote wins, favouring the\nhigher vote if there are two middle votes.\n\n]\n\nFor the purpose of this proposal:\n\n* An Inflation Ballot is a body of text published during the voting\n  period of this proposal that clearly, directly and without\n  obfuscation specifies a single non-negative integer and that it is an\n  Inflation Ballot.\n\n* Each player's Inflation Vote is the integer specified in the last\n  Inflation Ballot they published, or \"none\" if they never published\n  one.\n\n* P is the number of players with Inflation Votes other than \"none\".\n\n* Median is the (unique) integer such that that at least P/2 Inflation\n  Votes are integers greater than or equal to Median, and at least\n  (P/2+0.5) Inflation votes are integers less than or equal to Median.\n\nAmend Rule 2483 (Economics) by replacing \"1,000\" with Median, written\nin decimal with commas separating groups of three digits, as in\n\"12,345,678\"."
         },
         {
+            "version": "1",
             "number": 8326,
             "ai": "3.0",
             "title": "Attempted cleanup",
@@ -52,6 +57,7 @@
             "text": "Repeal Rule 2604 (\"Nothing to see here, Rule 1030,\") and Rule 2600 (\"Boo!!\")."
         },
         {
+            "version": "1",
             "number": 8327,
             "ai": "1.0",
             "title": "Blink test v1.2",
@@ -61,6 +67,7 @@
             "text": "Amend Rule 2601 to read in full:\n\n  If this is the only paragraph in this rule, and it has been at\n  least one week since this rule was last amended, then any player\n  CAN Close the Eye by announcement. When that happens, this rule\n  repeals itself."
         },
         {
+            "version": "1",
             "number": 8328,
             "ai": "3.0",
             "title": "The Eternal Sprit",
@@ -70,6 +77,7 @@
             "text": "Amend Rule 869 by replacing the text \"is a person\" with \"is forever a\nperson\"."
         },
         {
+            "version": "1",
             "number": 8329,
             "ai": "1.0",
             "title": "RtRW Reschedule",
@@ -79,6 +87,7 @@
             "text": "Amend Rule 2327 (Read the Ruleset Week) by adding the following paragraph:\n{\n  The above notwithstanding, due to serious uncertainty surrounding the\n  state of the rules during the scheduled Read the Ruleset Week, in the\n  year 2020, Read the Ruleset Week is, instead, the week of February 24\n  - March 1\n}"
         },
         {
+            "version": "1",
             "number": 8330,
             "ai": "3.0",
             "title": "No looting white ribbons",
@@ -88,6 +97,7 @@
             "text": "Amend Rule 2438 (Ribbons) by replacing:\n  A player who has been registered for at least 30 days\n  and has never caused another person to gain a White Ribbon\n  (including under a previous ruleset) CAN award a White Ribbon to\n  another person by announcement.\nwith:\n  A player who has been registered for at least 30 days\n  and has never acted on eir own behalf to cause another person to\n  gain a White Ribbon (including under a previous ruleset) CAN act\n  on eir own behalf to award a White Ribbon to another person by\n  announcement."
         },
         {
+            "version": "1",
             "number": 8331,
             "ai": "1.7",
             "title": "Promissory cleanliness",
@@ -97,6 +107,7 @@
             "text": "Append the following paragraph to Rule 2450 \"Pledges\":\n\nThe Notary CAN destroy a pledge Without Objection, and SHOULD do so if and\nonly if the pledge no longer serves any significant purpose."
         },
         {
+            "version": "1",
             "number": 8332,
             "ai": "1.0",
             "title": "Switch Responsibility Responsibility",
@@ -107,6 +118,7 @@
             "text": "Amend Rule 2603 (Switch Responsibility) by appending this text:\n\n  The ADoP CAN appoint a player to such an office by announcement,\n  and SHOULD appoint the player primarily responsible for its\n  existence."
         },
         {
+            "version": "1",
             "number": 8333,
             "ai": "2.0",
             "title": "Meaningful extra votes",
@@ -117,6 +129,7 @@
             "text": "Amend Rule 2423 (First Among Equals) by replacing \"voting strength is\nincreased by 1\" to \"voting strength is doubled\".\n\n[I think this is a no-op due to Interesting Chambers, though.]\n\nAmend Rule 103 (The Speaker) by replacing \"voting strength one greater\nthan e would have\" with \"voting strength twice what e would have\"."
         },
         {
+            "version": "1",
             "number": 8334,
             "ai": "2.0",
             "title": "Meaningless extra coins",
@@ -127,6 +140,7 @@
             "text": "Amend Rule 2483 (Economics) by appending this text:\n\n  Upon doing so, eir remaining Coins (if any) are destroyed."
         },
         {
+            "version": "1",
             "number": 8335,
             "ai": "2.0",
             "title": "Consistent ADoP duties",
@@ -136,6 +150,7 @@
             "text": "Amend Rule 2154 (Election Procedure) by appending to this text:\n\n  If at any point an uncontested election has a single candidate,\n  then any player CAN by announcement declare em the winner of the\n  election, thereby causing em to win the election. If at any point\n  an uncontested election has no candidates, then any player CAN\n  declare the election ended with no winner by announcement.\n\nthis text:\n\n  In each of these cases, the ADoP SHALL so announce in a timely\n  fashion, unless someone else has already done so.\n\n[I think the recent resolutions of Treasuror and Tailor, while still\neffective resolutions, didn't count as temporary deputisation because\nthe ADoP wasn't required to do them.]"
         },
         {
+            "version": "1",
             "number": 8336,
             "ai": "3.0",
             "title": "Define \"publicly\"",
@@ -145,6 +160,7 @@
             "text": "Amend Rule 478 by appending to the paragraph beginning \"A public message\nis\" the following sentence:\n\n  To do something \"publicly\" is to do that thing within a public message."
         },
         {
+            "version": "1",
             "number": 8337,
             "ai": "1.0",
             "title": "Fix Auctions",
@@ -154,6 +170,7 @@
             "text": "Amend Rule 2549 (Auction Initiation) by replacing this text:\n\n  An Auction also CANNOT be initiated unless the Auctioneer is able\n  to give away each item in each of the Auction's lots.\n\nwith this text:\n\n  An Auction also CANNOT be initiated unless the Auctioneer is able\n  to give away each item in each of the Auction's lots; however, if\n  the Auctioneer is Agora, then it CAN give them away at will."
         },
         {
+            "version": "1",
             "number": 8338,
             "ai": "2.0",
             "title": "Clarify quorum (option 1)",
@@ -163,6 +180,7 @@
             "text": "If the author's proposal \"Clarify quorum (option 2)\" has been or\nwould be adopted with a greater proportion of support, then this\nproposal has no effect. Otherwise:\n\nAmend Rule 879 (Quorum) by replacing \"Agoran decision to adopt a\nproposal\" with \"Agoran decision on whether to adopt a proposal\"."
         },
         {
+            "version": "1",
             "number": 8339,
             "ai": "2.0",
             "title": "Clarify quorum (option 2)",
@@ -172,6 +190,7 @@
             "text": "If the author's proposal \"Clarify quorum (option 1)\" has been or\nwould be adopted with a greater or equal proportion of support, then\nthis proposal has no effect. Otherwise:\n\nAmend Rule 879 (Quorum) by replacing \"Agoran decision to adopt a\nproposal\" with \"Agoran decision that adopted a proposal\"."
         },
         {
+            "version": "1",
             "number": 8340,
             "ai": "1.0",
             "title": "The Paradox of Self-Appointment",
@@ -181,6 +200,7 @@
             "text": "Amend Rule 103 (The Speaker) by inserting\n{\n  If the Prime Minister is emself Laureled, eir power to appoint a\n  Speaker continues for the entirety of a message in which e resigns as\n  Prime Minister, and if e is the only Laureled player, e CAN void that\n  power, and thereby discharge the obligation to use it, by announcing\n  that e declines to take the office.\n}\n\nat the end of the second paragraph, and by moving the first two\nsentences of the second paragraph to the first paragraph."
         },
         {
+            "version": "1",
             "number": 8341,
             "ai": "3.0",
             "title": "Support of the Person",

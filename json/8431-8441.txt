@@ -5,6 +5,7 @@
     },
     "proposals": [
         {
+            "version": "1",
             "number": 8431,
             "ai": "1.0",
             "title": "Proposal Reward Trimming",
@@ -15,6 +16,7 @@
             "text": "[This reduces proposal rewards by removing AI from the calculation.\nAs it is, an extremely detailed and well developed AI 1.0 proposal\nthat is adopted unanimously gets fewer coins than an AI 3.0 bug fix.\n\nNote for the Assessor: Since this proposal is AI 1.0, its\nreward is the same in both the old and the new systems. Please adjust\nyour algorithms for future proposals if this passes.]\n\nAmend Rule 2496, \"Rewards\", by replacing:\n\n  Being the author of an adopted proposal: a number of coins equal to\n  ((the total number of valid ballots cast FOR the decision - the total\n  number of valid ballots cast AGAINST) times the adoption index of the\n  result) rounded up\n\nwith:\n\n  Being the author of an adopted proposal: a number of coins equal to\n  (the total number of valid ballots cast FOR the decision - the total\n  number of valid ballots cast AGAINST)"
         },
         {
+            "version": "1",
             "number": 8432,
             "ai": "3.0",
             "title": "The Administrative State",
@@ -26,6 +28,7 @@
             "text": "Amend Rule 1728, \"Dependent Action Methods\", by adding as new list item\nafter the third list item:\n\n  3. with N official consent, where N is an integer multiple of 0.1\n     with a minimum of 1 (\"With official consent\" is shorthand for this\n     method with N = 1);\nand renumbering the list accordingly.\n\nAmend Rule 2595, \"Performing a Dependent Action\" by changing the text\n\"without N objections, with N Agoran consent,\" to read\n\"without N objections, with N Agoran consent, with N official consent,\"\n\nAmend Rule 2124, \"Agoran Satisfaction\", by adding as a new item at the end\nof the list:\n\n  4. The action is to be performed with N official consent, and the\n     number of offices held by Supporters of the intent is less than or equal\n     to N times the number of offices held by Objectors to the intent.\n  5. The action is to be performed with N official consent, the Prime\n     Minister is an Objector, and the Speaker is not a Supporter.\n\nEnact a new power 2.0 rule entitled \"The Administrative State\", with the\nfollowing text:\n\n  Each officer CAN, with 2 official consent, enact, amend, or repeal\n  eir's own office's Administrative Regulations. Administrative Regulations\n  have the following properties:\n\n  1. An officer SHALL abide by eir office's administrative regulations in\n     the discharge of eir office.\n  2. Any player CAN act on behalf of an officer to exercise eir official\n     powers as authorized by eir office's administrative regulations.\n  3. All players SHOULD abide by an officer's administrative regulations\n     in matters relating to eir area of responsibility."
         },
         {
+            "version": "1",
             "number": 8433,
             "ai": "1.5",
             "title": "Simpler Heraldry",
@@ -38,6 +41,7 @@
             "text": "Amend Rule 649, \"Patent Titles\", by appending to the last paragraph:\n\n  Any player CAN award a specified Patent Title to a specified player,\n  as authorized by the Herald's Administrative Regulations."
         },
         {
+            "version": "1",
             "number": 8434,
             "ai": "1.0",
             "title": "Majoritarian Confidence",
@@ -47,6 +51,7 @@
             "text": "Amend Rule 2463, \"Motion of No Confidence\", by replacing:\n\n  Any player can cause the office of Prime Minister to become vacant\n  with 2 Agoran consent by publishing a message with the character\n  string \"MOTION OF NO CONFIDENCE\" in the subject line.\n\nwith:\n  Any player can cause the office of Prime Minister to become vacant\n  with Agoran consent by publishing a message with the character\n  string \"MOTION OF NO CONFIDENCE\" in the subject line."
         },
         {
+            "version": "1",
             "number": 8435,
             "ai": "1.0",
             "title": "No Confidence Isn't Personal",
@@ -56,6 +61,7 @@
             "text": "Amend Rule 2463, \"Motion of No Confidence\", by appending:\n  Motions of confidence SHOULD used whenever Agorans want to shake things\n  up, rather than as a personal judgement of the Prime Minister."
         },
         {
+            "version": "1",
             "number": 8436,
             "ai": "2.0",
             "title": "Stately Officiation",
@@ -65,6 +71,7 @@
             "text": "Amend each of Rule 1023 (\"Agoran Time\"), Rule 2496 (\"Rewards\"), and\nRule 2602 (\"Glitter\"), in that order, by changing the text\n\"in an officially timely fashion\" to read \"in a stately fashion\"."
         },
         {
+            "version": "1",
             "number": 8437,
             "ai": "1.0",
             "title": "Guilderoy Lockhart",
@@ -75,6 +82,7 @@
             "text": "Amend rule 2617 by deleting the last three paragraphs and the first\nsentence [nonbinding explanatory note: this would make it forbidden to\nattempt an action that would ossify the game, but not forbidden to create\nor vote FOR a proposal that would have that effect]"
         },
         {
+            "version": "1",
             "number": 8438,
             "ai": "1.0",
             "title": "Tailor Pay",
@@ -84,6 +92,7 @@
             "text": "Amend rule 2602 by adding on the end \"The amount payable for each\ntype of glitter is tracked in the Tailor's weekly report\""
         },
         {
+            "version": "1",
             "number": 8439,
             "ai": "2.0",
             "title": "Termination of Candidacy",
@@ -93,6 +102,7 @@
             "text": "Amend Rule 2154, \"Election Procedure\" by changing the paragraph\nbeginning, \"When an election is initiated,\" to read in full:\n\n  When an election is initiated, it enters the nomination period,\n  which lasts for 4 days. After an election is initiated and until\n  nominations close, any player CAN become a candidate by\n  announcement. A candidate ceases to be a candidate if e ceases to\n  be a player during the election or if holding the office would\n  make em Overpowered. During the nomination period, a candidate CAN\n  cease to be a candidate by announcement if there is at least one\n  other candidate."
         },
         {
+            "version": "1",
             "number": 8440,
             "ai": "1.7",
             "title": "0 blots patch",
@@ -103,6 +113,7 @@
             "text": "Amend rule 2557 \"Sentencing Guidelines\" by replacing \"- B is at least\n1 and at most twice the base value of the violation\" with \"- B is at most\ntwice the base value of the violation\"."
         },
         {
+            "version": "1",
             "number": 8441,
             "ai": "1.0",
             "title": "Transmutation",
