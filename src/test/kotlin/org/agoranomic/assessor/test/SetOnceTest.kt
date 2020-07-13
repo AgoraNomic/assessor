@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.dsl.detail.DslValue
-import org.agoranomic.assessor.dsl.detail.DslValueMap
+import org.agoranomic.assessor.dsl.detail.SetOnce
+import org.agoranomic.assessor.dsl.detail.SetOnceMap
 import org.agoranomic.assessor.dsl.detail.getOrDefault
 import org.agoranomic.assessor.dsl.detail.getOrNull
 import org.agoranomic.assessor.test.test_util.assertSucceeds
@@ -9,20 +9,20 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import kotlin.test.*
 
-@DisplayName("DslValue test")
-class DslValueTest {
+@DisplayName("SetOnce test")
+class SetOnceTest {
     @Nested
     @DisplayName("before set")
     inner class BeforeSet {
         @Test
         fun `get fails`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             assertFailsWith<IllegalStateException> { dslValue.get() }
         }
 
         @Test
         fun `set does not fail`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
 
             assertSucceeds {
                 dslValue.set("I'm a string")
@@ -31,7 +31,7 @@ class DslValueTest {
 
         @Test
         fun `getOrDefault returns default`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             val default = "I'm a string"
 
             assertSame(default, dslValue.getOrDefault(default))
@@ -39,13 +39,13 @@ class DslValueTest {
 
         @Test
         fun `getOrNull returns null`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             assertNull(dslValue.getOrNull())
         }
 
         @Test
         fun `hasValue returns false`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             assertFalse(dslValue.hasValue())
         }
     }
@@ -55,7 +55,7 @@ class DslValueTest {
     inner class AfterSet {
         @Test
         fun `get returns value`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             val value = "I'm a string"
 
             dslValue.set(value)
@@ -65,7 +65,7 @@ class DslValueTest {
 
         @Test
         fun `set fails`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             val value = "I'm a string"
 
             dslValue.set(value)
@@ -75,7 +75,7 @@ class DslValueTest {
 
         @Test
         fun `getOrDefault returns value`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             val value = "First string"
 
             dslValue.set(value)
@@ -85,7 +85,7 @@ class DslValueTest {
 
         @Test
         fun `getOrNull returns value`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             val value = "First string"
 
             dslValue.set(value)
@@ -95,7 +95,7 @@ class DslValueTest {
 
         @Test
         fun `hasValue returns false`() {
-            val dslValue = DslValue<String>()
+            val dslValue = SetOnce<String>()
             val value = "I'm a string"
 
             dslValue.set(value)
@@ -105,8 +105,8 @@ class DslValueTest {
     }
 }
 
-@DisplayName("DslValueMap test")
-class DslValueMapTest {
+@DisplayName("SetOnceMap test")
+class SetOnceMapTest {
     private data class KeyType(val value: String)
     private data class ValueType(val value: String)
 
@@ -115,11 +115,11 @@ class DslValueMapTest {
 
     private val defaultValue = ValueType("Default value")
 
-    private fun emptyTestMap(): DslValueMap<KeyType, ValueType> {
-        return DslValueMap()
+    private fun emptyTestMap(): SetOnceMap<KeyType, ValueType> {
+        return SetOnceMap()
     }
 
-    private fun filledTestMap(): DslValueMap<KeyType, ValueType> {
+    private fun filledTestMap(): SetOnceMap<KeyType, ValueType> {
         return emptyTestMap().also { it[testKey] = testValue }
     }
 

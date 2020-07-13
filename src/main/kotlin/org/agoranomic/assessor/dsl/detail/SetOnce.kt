@@ -7,13 +7,13 @@ import io.github.random_internet_cat.util.getOrFail
  *
  * @param T the type of the value
  */
-class DslValue<T> {
+class SetOnce<T> {
     private var currentValue: T? = null
     private var isInitialized: Boolean = false
     private val name: String?
 
     companion object {
-        fun <T> namedOf(name: String): DslValue<T> = DslValue<T>(name)
+        fun <T> namedOf(name: String): SetOnce<T> = SetOnce<T>(name)
     }
 
     private constructor(name: String?) {
@@ -73,14 +73,14 @@ class DslValue<T> {
 /**
  * Gets the value, or [defaultValue] if the value has not been set. [defaultValue] is not nullable.
  */
-fun <T> DslValue<T>.getOrDefault(defaultValue: T): T {
+fun <T> SetOnce<T>.getOrDefault(defaultValue: T): T {
     return if (hasValue()) get() else defaultValue
 }
 
 /**
  * Gets the value, or null if the value has not been set.
  */
-fun <T> DslValue<T>.getOrNull(): T? {
+fun <T> SetOnce<T>.getOrNull(): T? {
     return if (hasValue()) get() else null
 }
 
@@ -90,8 +90,8 @@ fun <T> DslValue<T>.getOrNull(): T? {
  * @param K the key type
  * @param V the value type
  */
-class DslValueMap<K, V> {
-    private val map = mutableMapOf<K, DslValue<V>>()
+class SetOnceMap<K, V> {
+    private val map = mutableMapOf<K, SetOnce<V>>()
 
     /**
      * Sets the value for [key]. Fails if the value has already been set for [key].
@@ -99,7 +99,7 @@ class DslValueMap<K, V> {
      * @throws IllegalStateException if the value has already been set for [key].
      */
     operator fun set(key: K, value: V) {
-        val dslValue = map.computeIfAbsent(key) { DslValue() }
+        val dslValue = map.computeIfAbsent(key) { SetOnce() }
         dslValue.set(value)
     }
 
@@ -129,13 +129,13 @@ class DslValueMap<K, V> {
 /**
  * Gets the value for [key], or [defaultValue] if it has not been set. [defaultValue] is not nullable.
  */
-fun <K, V> DslValueMap<K, V>.getOrDefault(key: K, defaultValue: V): V {
+fun <K, V> SetOnceMap<K, V>.getOrDefault(key: K, defaultValue: V): V {
     return if (containsKey(key)) get(key) else defaultValue
 }
 
 /**
  * Gets the value for [key], or null if it has not been set.
  */
-fun <K, V> DslValueMap<K, V>.getOrNull(key: K): V? {
+fun <K, V> SetOnceMap<K, V>.getOrNull(key: K): V? {
     return if (containsKey(key)) get(key) else null
 }

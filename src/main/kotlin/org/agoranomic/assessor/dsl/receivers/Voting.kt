@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
-import org.agoranomic.assessor.dsl.detail.DslValueMap
+import org.agoranomic.assessor.dsl.detail.SetOnceMap
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
@@ -27,7 +27,7 @@ private class DefaultMultiPersonVotesReceiver(
     private val personVotesCompiler: PersonVotesCompiler
 ) : MultiPersonVotesReceiver {
 
-    private val personVoteMap = DslValueMap<Person, Map<ProposalNumber, PendingVote>>()
+    private val personVoteMap = SetOnceMap<Person, Map<ProposalNumber, PendingVote>>()
 
     override fun votes(person: Person, block: PersonVotesReceiverInit) {
         require(!personVoteMap.containsKey(person)) { "Votes already specified for player ${person.name}" }

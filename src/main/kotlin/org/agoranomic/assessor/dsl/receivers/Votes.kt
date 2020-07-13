@@ -6,7 +6,7 @@ import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
-import org.agoranomic.assessor.dsl.detail.DslValueMap
+import org.agoranomic.assessor.dsl.detail.SetOnceMap
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.vote.*
@@ -50,7 +50,7 @@ interface PersonVotesCompiler {
 private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<ProposalNumber>) : PersonVotesReceiver {
     constructor(proposals: List<ProposalNumber>) : this(proposals.toImmutableList())
 
-    private val voteMap = DslValueMap<ProposalNumber, MutableVote>()
+    private val voteMap = SetOnceMap<ProposalNumber, MutableVote>()
 
     private data class MutableVote(val vote: VoteFunc, var comment: String? = null) : VoteCommentable {
         override fun comment(comment: String) {

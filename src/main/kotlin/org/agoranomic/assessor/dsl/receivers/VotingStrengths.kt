@@ -4,7 +4,7 @@ import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
-import org.agoranomic.assessor.dsl.detail.DslValue
+import org.agoranomic.assessor.dsl.detail.SetOnce
 import org.agoranomic.assessor.dsl.detail.getOrNull
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
@@ -162,9 +162,9 @@ private class DefaultGlobalVotingStrengthReceiver(
 
     override val allProposals get() = proposals
 
-    private val defaultStrength = DslValue.namedOf<VotingStrength>("default voting strength")
-    private val minStrength = DslValue.namedOf<VotingStrength>("min voting strength")
-    private val maxStrength = DslValue.namedOf<VotingStrength>("max voting strength")
+    private val defaultStrength = SetOnce.namedOf<VotingStrength>("default voting strength")
+    private val minStrength = SetOnce.namedOf<VotingStrength>("min voting strength")
+    private val maxStrength = SetOnce.namedOf<VotingStrength>("max voting strength")
 
     private val globalStrengthBuilder = VotingStrengthTrailForPersonsBuilder()
     private val overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalVotingStrengthReceiverInit>()

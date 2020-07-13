@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
-import org.agoranomic.assessor.dsl.detail.DslValue
+import org.agoranomic.assessor.dsl.detail.SetOnce
 import org.agoranomic.assessor.dsl.detail.getOrDefault
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
@@ -54,11 +54,11 @@ typealias ProposalCompilerV1 = ProposalCompiler<ProposalReceiverV1>
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
-    private val titleValue = DslValue.namedOf<String>("title of proposal $number")
-    private val textValue = DslValue.namedOf<String>("text of proposal $number")
-    private val aiValue = DslValue.namedOf<ProposalAI>("AI of proposal $number")
-    private val authorValue = DslValue.namedOf<Person>("author of proposal $number")
-    private val coauthorsValue = DslValue.namedOf<Persons>("coauthors of proposal $number")
+    private val titleValue = SetOnce.namedOf<String>("title of proposal $number")
+    private val textValue = SetOnce.namedOf<String>("text of proposal $number")
+    private val aiValue = SetOnce.namedOf<ProposalAI>("AI of proposal $number")
+    private val authorValue = SetOnce.namedOf<Person>("author of proposal $number")
+    private val coauthorsValue = SetOnce.namedOf<Persons>("coauthors of proposal $number")
 
     override fun title(str: String) {
         titleValue.set(str)
@@ -123,7 +123,7 @@ private class DefaultProposalReceiverV1(
     val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number)
 ) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl {
     private val classAndChamberValue =
-        DslValue.namedOf<ProposalClassAndChamber>("class and chamber of proposal $number")
+        SetOnce.namedOf<ProposalClassAndChamber>("class and chamber of proposal $number")
 
     override fun classless() {
         classAndChamberValue.set(ProposalClassAndChamber.Classless)

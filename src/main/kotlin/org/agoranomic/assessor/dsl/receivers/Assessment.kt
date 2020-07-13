@@ -2,7 +2,7 @@ package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
-import org.agoranomic.assessor.dsl.detail.DslValue
+import org.agoranomic.assessor.dsl.detail.SetOnce
 import org.agoranomic.assessor.dsl.detail.getOrNull
 import org.agoranomic.assessor.lib.proposal.AssessmentQuorum
 import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
@@ -45,12 +45,12 @@ private class DefaultAssessmentReceiver(
     val multiPersonVotesCompiler: MultiPersonVotesCompiler = DefaultMultiPersonVotesCompiler(),
     val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler()
 ) : AssessmentReceiver {
-    private val votingStrengthsBlockValue = DslValue.namedOf<GlobalVotingStrengthReceiverInit>("strengths block")
-    private val proposalsBlockValue = DslValue.namedOf<() -> ImmutableProposalSet>("proposals block")
-    private val proposalVotesBlockValue = DslValue.namedOf<MultiPersonVotesReceiverInit>("voting block")
-    private val quorumValue = DslValue.namedOf<AssessmentQuorum>("assessment quorum")
-    private val nameValue = DslValue.namedOf<String>("assessment name")
-    private val urlValue = DslValue.namedOf<AssessmentUrl>("assessment url")
+    private val votingStrengthsBlockValue = SetOnce.namedOf<GlobalVotingStrengthReceiverInit>("strengths block")
+    private val proposalsBlockValue = SetOnce.namedOf<() -> ImmutableProposalSet>("proposals block")
+    private val proposalVotesBlockValue = SetOnce.namedOf<MultiPersonVotesReceiverInit>("voting block")
+    private val quorumValue = SetOnce.namedOf<AssessmentQuorum>("assessment quorum")
+    private val nameValue = SetOnce.namedOf<String>("assessment name")
+    private val urlValue = SetOnce.namedOf<AssessmentUrl>("assessment url")
 
     override fun strengths(block: GlobalVotingStrengthReceiverInit) {
         votingStrengthsBlockValue.set(block)
