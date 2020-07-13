@@ -139,3 +139,36 @@ fun <K, V> SetOnceMap<K, V>.getOrDefault(key: K, defaultValue: V): V {
 fun <K, V> SetOnceMap<K, V>.getOrNull(key: K): V? {
     return if (containsKey(key)) get(key) else null
 }
+
+/**
+ * Represents a value that can only be set to true once, and which can never be set back to false.
+ */
+class SetOnceFuse
+private constructor(name: String?) {
+    private val impl: SetOnce<Unit> = SetOnce.namedOf(
+        if (name != null)
+            "internal value of fuse (name = $name)"
+        else
+            "internal value of fuse"
+    )
+
+    companion object {
+        fun <T> namedOf(name: String): SetOnceFuse = SetOnceFuse(name)
+    }
+
+    constructor() : this(null)
+
+    /**
+     * Blows this fuse, i.e. sets a flag as true.
+     *
+     * @throws IllegalStateException if this fuse has already been blown
+     */
+    fun blow() {
+        impl.set(Unit)
+    }
+
+    /**
+     * Returns whether or not this fuse has been blown, i.e. whether [blow] has ever been called.
+     */
+    fun isBlown() = impl.hasValue()
+}

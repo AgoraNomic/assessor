@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.dsl.detail.SetOnce
-import org.agoranomic.assessor.dsl.detail.SetOnceMap
-import org.agoranomic.assessor.dsl.detail.getOrDefault
-import org.agoranomic.assessor.dsl.detail.getOrNull
+import org.agoranomic.assessor.dsl.detail.*
 import org.agoranomic.assessor.test.test_util.assertSucceeds
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
@@ -227,5 +224,45 @@ class SetOnceMapTest {
             ),
             map.compile()
         )
+    }
+}
+
+@DisplayName("SetOnceFuse test")
+class SetOnceFuseTest {
+    @Test
+    fun `isBlown returns false after construction`() {
+        val fuse = SetOnceFuse()
+        assertFalse(fuse.isBlown())
+    }
+
+    @Test
+    fun `blow succeeds only on first call`() {
+        val fuse = SetOnceFuse()
+
+        assertSucceeds {
+            fuse.blow()
+        }
+
+        assertFails {
+            fuse.blow()
+        }
+    }
+
+    @Test
+    fun `isBlown returns true after blow is called`() {
+        val fuse = SetOnceFuse()
+
+        fuse.blow()
+        assertTrue(fuse.isBlown())
+    }
+
+    @Test
+    fun `isBlown returns true after failed call to blow`() {
+        val fuse = SetOnceFuse()
+
+        fuse.blow()
+        assertFails { fuse.blow() }
+
+        assertTrue(fuse.isBlown())
     }
 }
