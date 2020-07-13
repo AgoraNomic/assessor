@@ -54,41 +54,27 @@ class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
 }
 
 @AssessmentDsl
-private class DefaultProposalsReceiverV0(
-    private val proposalCompiler: ProposalCompilerV0,
+private class ProposalsReceiverImpl<ProposalReceiver : ProposalCommonReceiver>(
+    private val proposalCompiler: ProposalCompiler<ProposalReceiver>,
     private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
-) : ProposalsReceiverV0, ProposalsReceiverCommon by commonImpl {
-    override fun proposal(number: ProposalNumber, block: ProposalReceiverV0Init) {
+) : ProposalsReceiver<ProposalReceiver>, ProposalsReceiverCommon by commonImpl {
+    override fun proposal(number: ProposalNumber, block: DslInit<ProposalReceiver>) {
         using(proposalCompiler.compile(number, block))
     }
 
     fun compile() = commonImpl.compile()
 }
 
-class DefaultProposalsCompilerV0(
-    private val proposalCompiler: ProposalCompilerV0 = DefaultProposalCompilerV0()
-) : ProposalsCompilerV0 {
-    override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiverV0>>): ImmutableProposalSet {
-        return DefaultProposalsReceiverV0(proposalCompiler).also(init).compile().toImmutableProposalSet()
+class DefaultProposalsCompiler<ProposalReceiver : ProposalCommonReceiver>(
+    private val proposalCompiler: ProposalCompiler<ProposalReceiver>
+) : ProposalsCompiler<ProposalReceiver> {
+    override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiver>>): ImmutableProposalSet {
+        return ProposalsReceiverImpl(proposalCompiler).also(init).compile().toImmutableProposalSet()
     }
 }
 
-@AssessmentDsl
-private class DefaultProposalsReceiverV1(
-    private val proposalCompiler: ProposalCompilerV1,
-    private val commonImpl: ProposalsReceiverImplCommon = ProposalsReceiverImplCommon()
-) : ProposalsReceiverV1, ProposalsReceiverCommon by commonImpl {
-    override fun proposal(number: ProposalNumber, block: ProposalReceiverV1Init) {
-        using(proposalCompiler.compile(number, block))
-    }
+typealias DefaultProposalsCompilerV0 = DefaultProposalsCompiler<ProposalReceiverV0>
+typealias DefaultProposalsCompilerV1 = DefaultProposalsCompiler<ProposalReceiverV1>
 
-    fun compile() = commonImpl.compile()
-}
-
-class DefaultProposalsCompilerV1(
-    private val proposalCompiler: ProposalCompilerV1 = DefaultProposalCompilerV1()
-) : ProposalsCompilerV1 {
-    override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiverV1>>): ImmutableProposalSet {
-        return DefaultProposalsReceiverV1(proposalCompiler).also(init).compile().toImmutableProposalSet()
-    }
-}
+fun DefaultProposalsCompilerV0() = DefaultProposalsCompilerV0(DefaultProposalCompilerV0())
+fun DefaultProposalsCompilerV1() = DefaultProposalsCompilerV1(DefaultProposalCompilerV1())
