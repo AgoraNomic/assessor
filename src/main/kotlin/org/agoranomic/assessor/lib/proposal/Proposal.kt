@@ -75,9 +75,21 @@ data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : Propos
         mapper.visitV1(commonData, this)
 }
 
+data class ProposalDataV2(
+    val classAndChamber: ProposalClassAndChamber,
+    val sponsored: Boolean
+) : ProposalVersionedData() {
+    override val version: ProposalVersionNumber
+        get() = ProposalVersionNumber(2)
+
+    override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData) =
+        mapper.visitV2(commonData, this)
+}
+
 interface ProposalMapper<R> {
     fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0): R
     fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1): R
+    fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2): R
 }
 
 typealias ProposalVisitor = ProposalMapper<Unit>

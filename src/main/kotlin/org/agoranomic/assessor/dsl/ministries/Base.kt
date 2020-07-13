@@ -65,17 +65,14 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
     /* do nothing */
 }
 
-private fun GlobalVotingStrengthReceiver.ministriesProposalV1(
+private fun GlobalVotingStrengthReceiver.ministriesChambered(
     officeMap: Map<OfficeID, Person>,
     officeMinistries: Map<OfficeID, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
-    commonData: ProposalCommonData,
-    versionedData: ProposalDataV1
+    proposalNumber: ProposalNumber,
+    classAndChamber: ProposalClassAndChamber
 ) {
-    val proposalNumber = commonData.number
-    val currentProposalClassAndChamber = versionedData.classAndChamber
-
-    currentProposalClassAndChamber.accept(object : ProposalClassAndChamberVisitor {
+    classAndChamber.accept(object : ProposalClassAndChamberVisitor {
         override fun visitClassless() {
             // do nothing
         }
@@ -103,6 +100,16 @@ fun <Office> GlobalVotingStrengthReceiver.ministries(
     ministryBonus: VotingStrengthDifference,
     proposals: ProposalSet
 ) where Office : Enum<Office>, Office : OfficeID {
+    val rawOfficeMap =
+        officeMap
+            .toMap()
+            .mapKeys { (office: OfficeID, _) -> office as OfficeID } // Compiler demands cast
+            .filterValues { it.isHeld() }
+            .mapValues { (_, state) -> (state as OfficeState.Held).holder }
+
+    val castOfficeMinistries =
+        officeMinistries.mapKeys { (office: OfficeID, _) -> (office as OfficeID) }
+
     for (currentProposal in proposals) {
         currentProposal.accept(object : ProposalVisitor {
             override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
@@ -110,19 +117,22 @@ fun <Office> GlobalVotingStrengthReceiver.ministries(
             }
 
             override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
-                val rawOfficeMap =
-                    officeMap
-                        .toMap()
-                        .mapKeys { (office: OfficeID, _) -> office as OfficeID } // Compiler demands cast
-                        .filterValues { it.isHeld() }
-                        .mapValues { (_, state) -> (state as OfficeState.Held).holder }
-
-                ministriesProposalV1(
+                ministriesChambered(
                     officeMap = rawOfficeMap,
-                    officeMinistries = officeMinistries.mapKeys { (office: OfficeID, _) -> office },
+                    officeMinistries = castOfficeMinistries,
                     ministryBonus = ministryBonus,
-                    commonData = commonData,
-                    versionedData = versionedData
+                    proposalNumber = commonData.number,
+                    classAndChamber = versionedData.classAndChamber
+                )
+            }
+
+            override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) {
+                ministriesChambered(
+                    officeMap = rawOfficeMap,
+                    officeMinistries = castOfficeMinistries,
+                    ministryBonus = ministryBonus,
+                    proposalNumber = commonData.number,
+                    classAndChamber = versionedData.classAndChamber
                 )
             }
         })

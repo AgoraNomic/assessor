@@ -71,8 +71,8 @@ private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
 
 private fun StringBuilder.emitProposalV0Header(data: ProposalDataV0) {}
 
-private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
-    data.classAndChamber.accept(object : ProposalClassAndChamberVisitor {
+private fun StringBuilder.emitClassAndChamberHeader(classAndChamber: ProposalClassAndChamber) {
+    classAndChamber.accept(object : ProposalClassAndChamberVisitor {
         override fun visitClassless() {
             // do nothing
         }
@@ -88,6 +88,15 @@ private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
     })
 }
 
+private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
+    emitClassAndChamberHeader(data.classAndChamber)
+}
+
+private fun StringBuilder.emitProposalV2Header(data: ProposalDataV2) {
+    emitClassAndChamberHeader(data.classAndChamber)
+    emitLine("SPONSORED: ${if (data.sponsored) "YES" else "NO"}")
+}
+
 private fun StringBuilder.emitProposalHeader(config: ReadableReportConfig, proposal: Proposal) {
     emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
     if (config.authorLine) emitLine("AUTHOR: ${proposal.author.name}")
@@ -99,6 +108,10 @@ private fun StringBuilder.emitProposalHeader(config: ReadableReportConfig, propo
 
         override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
             emitProposalV1Header(versionedData)
+        }
+
+        override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) {
+            emitProposalV2Header(versionedData)
         }
     })
 }
