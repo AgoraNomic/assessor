@@ -25,6 +25,7 @@ private fun json(person: Person) = json(person.name)
 private fun json(iterable: Iterable<Person>) = json(iterable.map { json(it) })
 
 private fun json(proposalNumber: ProposalNumber) = json(proposalNumber.raw)
+private fun json(proposalVersion: ProposalVersionNumber) = json(proposalVersion.raw)
 private fun json(proposalAI: ProposalAI) = json(proposalAI.raw)
 
 private fun json(url: AssessmentUrl) = json(url.raw)
@@ -37,6 +38,7 @@ private fun json(metadata: AssessmentMetadata) = json {
 }
 
 private fun json(proposal: Proposal) = json {
+    "version" to json(proposal.version)
     "number" to json(proposal.number)
     "ai" to json(proposal.ai)
     "title" to json(proposal.title)

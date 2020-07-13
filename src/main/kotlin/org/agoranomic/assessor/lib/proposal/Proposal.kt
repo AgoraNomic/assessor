@@ -48,16 +48,29 @@ data class ProposalCommonData(
     override val text: String
 ) : ProposalCommonInterface
 
+typealias RawProposalVersionNumber = BigDecimal
+
+inline class ProposalVersionNumber(val raw: RawProposalVersionNumber) {
+    constructor(raw: Int) : this(raw.toBigDecimal())
+}
+
 sealed class ProposalVersionedData {
+    abstract val version: ProposalVersionNumber
     abstract fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R
 }
 
 object ProposalDataV0 : ProposalVersionedData() {
+    override val version: ProposalVersionNumber
+        get() = ProposalVersionNumber(0)
+
     override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData) =
         mapper.visitV0(commonData, this)
 }
 
 data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : ProposalVersionedData() {
+    override val version: ProposalVersionNumber
+        get() = ProposalVersionNumber(1)
+
     override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData) =
         mapper.visitV1(commonData, this)
 }
@@ -92,6 +105,8 @@ data class Proposal(
         ),
         versionedData
     )
+
+    val version get() = versionedData.version
 
     fun <R> accept(mapper: ProposalMapper<R>): R {
         return versionedData.accept(mapper, commonData)
