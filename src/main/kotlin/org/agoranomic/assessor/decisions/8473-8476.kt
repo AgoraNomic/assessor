@@ -1,0 +1,121 @@
+package org.agoranomic.assessor.decisions
+
+import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.coauthors
+import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.proposal.Ministry.Economy
+import org.agoranomic.assessor.lib.proposal.Ministry.Participation
+
+@UseAssessment
+fun `assessment 8473 to 8476`() = assessment {
+    name("8473-8476")
+    quorum(9)
+
+    proposals(v2) {
+        proposal(8473) {
+            title("Plain Old Bribery")
+            ai("1.0")
+            author(Jason)
+            coauthors(G)
+            chamber(Participation)
+
+            text(
+                """
+Every player who cast a valid non-withdrawn unconditional ballot FOR
+this proposal earns a Black Ribbon.
+
+[Note to the Tailor: the definition of Black Ribbons in R2438 means
+that, immediately after this proposal is adopted, people will have the
+Black Ribbons without needing to separately claim them.]"""
+            )
+        }
+
+        proposal(8474) {
+            title("Agora the karma bank")
+            ai("1.0")
+            author(G)
+            coauthors(omd)
+            chamber(Participation)
+
+            text(
+                """
+[First, a partial reset.  People with negative karma are mostly zombies
+or people with fairly old sins; worth a full forgiveness/reset. People
+with positive karma have generally done good things more recently - a
+partial reset for them, akin to the just-passed July releveling.  Agora
+is balanced one last time so we can start counting total positivity or
+negativity from here on out.]
+
+Each person with positive karma has eir karma set to half its current
+value, rounded up.
+
+Each person with negative karma has eir karma set to 0.
+
+Agora's karma is then set such that the sum of all Karma values in the
+game equals 0.
+
+
+Amend Rule 2510 (Such is Karma) by deleting:
+
+      4. Not result in Agora's karma moving farther away from 0.
+
+and by replacing its last paragraph with:
+
+      At the beginning of each quarter, the Karma of every person is
+      halved (rounding towards 0).
+
+[It's still an exchange of karma, but you can take freely from Agora.
+Everybody's karma decays every quarter, but Agora's karma isn't reset
+to zero-sum, therefore Agoran's karma is an inverse measure of our
+overall positivity/negativity over time.]"""
+            )
+        }
+
+        proposal(8475) {
+            title("Saving Sponsorship")
+            ai("1.0")
+            author(Aris)
+            chamber(Participation)
+
+            text(
+                """
+Each of the following proposals is hereby rendered sponsored:
+- "Plain Old Bribery", by Jason
+- "Agora the karma bank", by G."""
+            )
+        }
+
+        proposal(8476) {
+            title("Contract charities")
+            ai("1.0")
+            author(ATMunn)
+            coauthors(G, Falsifian, PSS)
+            chamber(Economy)
+            sponsored()
+
+            text(
+                """
+[Comment: The original version was by G., then resubmitted by Falsifian,
+then again by me. :) P.S.S. also suggested a minor change, so I included
+em as a coauthor as well.]
+
+Enact the following rule, Charities:
+
+  Donation Level is a natural switch for contracts, tracked by the
+  Notary, with a default of 0 and a maximum of 25.  A contract with
+  nonzero donation level is called a Charity.
+
+  The Notary CAN flip a contract's donation level to a non-default
+  value with 3 Agoran consent.  This SHOULD only be done if the
+  contract's provisions ensure that its funds received from Agora
+  will be used solely for the betterment of Agora.  Any player CAN
+  flip a contract's donation level to 0 with Agoran consent.
+
+  Whenever a payday occurs, half of each charity's coin holdings
+  (rounded down) are destroyed, and then each charity earns a
+  number of coins equal to its donation level."""
+            )
+        }
+    }
+}
