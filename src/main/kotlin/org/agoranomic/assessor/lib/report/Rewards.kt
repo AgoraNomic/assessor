@@ -107,27 +107,24 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
 }
 
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
-    val result =
-        rewardsMap
-            .proposals
-            .map { proposal ->
-                val rewardData = rewardsMap[proposal]
+    return rewardsMap
+        .proposals
+        .map { proposal ->
+            val rewardData = rewardsMap[proposal]
 
-                val author = rewardData.author
-                val voteCountFor = rewardData.voteCountFor
-                val voteCountAgainst = rewardData.voteCountAgainst
-                val unroundedReward = rewardData.unroundedReward
-                val roundedReward = rewardData.roundedReward
+            val author = rewardData.author
+            val voteCountFor = rewardData.voteCountFor
+            val voteCountAgainst = rewardData.voteCountAgainst
+            val unroundedReward = rewardData.unroundedReward
+            val roundedReward = rewardData.roundedReward
 
-                val coinAmountString =
-                    if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
-                        roundedReward.toString()
-                    else
-                        "$unroundedReward -> $roundedReward"
+            val coinAmountString =
+                if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
+                    roundedReward.toString()
+                else
+                    "$unroundedReward -> $roundedReward"
 
-                "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$coinAmountString coins."
-            }
-            .joinToString("\n")
-
-    return result
+            "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$coinAmountString coins."
+        }
+        .joinToString("\n")
 }
