@@ -55,6 +55,7 @@ fun `assessment 8473 to 8476`() = assessment {
             author(Jason)
             coauthors(G)
             chamber(Participation)
+            sponsored()
 
             text(
                 """
@@ -73,6 +74,7 @@ Black Ribbons without needing to separately claim them.]"""
             author(G)
             coauthors(omd)
             chamber(Participation)
+            sponsored()
 
             text(
                 """
