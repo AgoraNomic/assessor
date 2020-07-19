@@ -6,8 +6,7 @@ import io.github.random_internet_cat.util.getOrFail
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
-import org.agoranomic.assessor.lib.proposal.ProposalAI
-import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.adoptedProposals
 import org.agoranomic.assessor.lib.vote.votersAgainst
@@ -68,10 +67,27 @@ data class ProposalRewardsMap(
     operator fun get(proposal: ProposalNumber) = data.getOrFail(proposal)
 }
 
+private fun Proposal.isRewardable(): Boolean {
+    return accept(object : ProposalMapper<Boolean> {
+        override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0): Boolean {
+            return true
+        }
+
+        override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1): Boolean {
+            return true
+        }
+
+        override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2): Boolean {
+            return versionedData.sponsored
+        }
+    })
+}
+
 fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
     return ProposalRewardsMap(
         resolutionMap
             .adoptedProposals()
+            .filter { it.isRewardable() }
             .associate { proposal ->
                 val proposalVotes = resolutionMap.resolutionOf(proposal.number).votes
                 val voteCountFor = proposalVotes.votersFor().size.toBigInteger()
