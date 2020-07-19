@@ -11,8 +11,7 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun `assessment 8473 to 8476`() = assessment {
@@ -198,6 +197,13 @@ Enact the following rule, Charities:
 
         votes(twg) {
             FOR on all
+        }
+
+        votes(omd) {
+            AGAINST on 8473
+            FOR on 8474
+            PRESENT on 8475
+            PRESENT on 8476
         }
     }
 }
