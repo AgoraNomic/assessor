@@ -11,6 +11,7 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -180,6 +181,13 @@ Enact the following rule, Charities:
         votes(ATMunn) {
             FOR on 8473
             FOR on 8474
+            FOR on 8475
+            FOR on 8476
+        }
+
+        votes(PSS) {
+            FOR on 8473
+            AGAINST on 8474
             FOR on 8475
             FOR on 8476
         }
