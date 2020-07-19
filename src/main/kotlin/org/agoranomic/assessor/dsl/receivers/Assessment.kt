@@ -20,12 +20,15 @@ interface AssessmentReceiver {
 
     object Version0
     object Version1
+    object Version2
 
     val v0 get() = Version0
     val v1 get() = Version1
+    val v2 get() = Version2
 
     fun proposals(v0: Version0, block: ProposalsReceiverV0Init)
     fun proposals(v1: Version1, block: ProposalsReceiverV1Init)
+    fun proposals(v2: Version2, block: ProposalsReceiverV2Init)
 }
 
 typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
@@ -40,6 +43,7 @@ interface AssessmentCompiler {
 private class DefaultAssessmentReceiver(
     val proposalsCompilerV0: ProposalsCompilerV0 = DefaultProposalsCompilerV0(),
     val proposalsCompilerV1: ProposalsCompilerV1 = DefaultProposalsCompilerV1(),
+    val proposalsCompilerV2: ProposalsCompilerV2 = DefaultProposalsCompilerV2(),
     val multiPersonVotesCompiler: MultiPersonVotesCompiler = DefaultMultiPersonVotesCompiler(),
     val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler()
 ) : AssessmentReceiver {
@@ -62,6 +66,11 @@ private class DefaultAssessmentReceiver(
     override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
         proposalsBlockValue.set({ proposalsCompilerV1.compile(block) })
+    }
+
+    override fun proposals(v2: AssessmentReceiver.Version2, block: ProposalsReceiverV2Init) {
+        @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
+        proposalsBlockValue.set({ proposalsCompilerV2.compile(block) })
     }
 
     override fun voting(block: MultiPersonVotesReceiverInit) {
