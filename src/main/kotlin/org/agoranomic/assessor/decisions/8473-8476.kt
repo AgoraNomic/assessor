@@ -226,5 +226,12 @@ Enact the following rule, Charities:
             FOR on 8475
             PRESENT on 8476
         }
+
+        votes(Murphy) {
+            FOR on 8473
+            FOR on 8474
+            PRESENT on 8475
+            FOR on 8476
+        }
     }
 }
