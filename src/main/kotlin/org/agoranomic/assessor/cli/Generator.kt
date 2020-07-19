@@ -91,7 +91,7 @@ private fun distributionToDSL(rawDistribution: String): String {
         emitln(decl)
     }
 
-    scope("proposals(v1)") {
+    scope("proposals(v2)") {
         for (untrimmedProposal in proposals) {
             val proposal = untrimmedProposal.trim()
 
