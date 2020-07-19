@@ -169,5 +169,12 @@ Enact the following rule, Charities:
             FOR on 8475
             FOR on 8476
         }
+
+        votes(Trigon) {
+            FOR on 8473
+            FOR on 8474
+            FOR on 8475
+            FOR on 8476
+        }
     }
 }
