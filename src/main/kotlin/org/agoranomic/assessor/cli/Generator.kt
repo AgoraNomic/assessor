@@ -7,6 +7,7 @@ private fun playerName(player: String): String {
     return when (player) {
         "Alexis" -> "Alexis"
         "Aris" -> "Aris"
+        "ATMunn" -> "ATMunn"
         "Bernie" -> "Bernie"
         "Corona" -> "Corona"
         "D. Margaux", "D Margaux" -> "DMargaux"
