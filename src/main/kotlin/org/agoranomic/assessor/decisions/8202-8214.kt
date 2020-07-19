@@ -262,7 +262,7 @@ Repeal Rule 2517."""
         proposal(8213) {
             title("Space Fixes")
             ai("1.0")
-            author(nch)
+            author(nix)
 
             text(
                 """
@@ -288,7 +288,7 @@ Flip every spaceships' Armour switch to 10."""
         proposal(8214) {
             title("Space Isn't Linear")
             ai("1.0")
-            author(nch)
+            author(nix)
 
             text(
                 """
@@ -319,7 +319,7 @@ following:
             FOR on 8214
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8202
             AGAINST on 8203
             PRESENT on 8204
@@ -435,8 +435,8 @@ following:
             AGAINST on 8210
             endorse(G) on 8211
             endorse(Jason) on 8212
-            endorse(nch) on 8213
-            endorse(nch) on 8214
+            endorse(nix) on 8213
+            endorse(nix) on 8214
         }
 
         votes(JacobArduino) {

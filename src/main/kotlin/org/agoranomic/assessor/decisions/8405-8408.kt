@@ -35,7 +35,7 @@ fun `assessment 8405 to 8408`() = assessment {
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to Trigon,
-        Webmastor to nch
+        Webmastor to nix
     )
 
     strengths {
@@ -138,7 +138,7 @@ Amend Rule 2545 (Auctions) to read in full:
         proposal(8408) {
             title("Sets v1.4")
             ai("3.0")
-            author(nch)
+            author(nix)
             coauthors(Trigon, Falsifian, PSS, Jason, Aris, G, ais523)
             democratic()
 
@@ -344,7 +344,7 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             PRESENT on 8408
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8405
             AGAINST on 8406
             PRESENT on 8407
@@ -383,7 +383,7 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             endorse(Jason) on 8405
             AGAINST on 8406
             endorse(G) on 8407
-            endorse(nch) on 8408
+            endorse(nix) on 8408
         }
 
         votes(Aris) {

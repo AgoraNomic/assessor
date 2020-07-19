@@ -26,7 +26,7 @@ fun `assessment 8458`() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
-        PrimeMinister to nch,
+        PrimeMinister to nix,
         Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
@@ -34,7 +34,7 @@ fun `assessment 8458`() = assessment {
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
-        Webmastor to nch
+        Webmastor to nix
     )
 
     strengths {
@@ -46,7 +46,7 @@ fun `assessment 8458`() = assessment {
         addToHolder(offices, Speaker, 1)
 
         proposal(8458) {
-            extraVotes(nch, 3)
+            extraVotes(nix, 3)
             extraVotes(RLee, 3)
         }
     }
@@ -85,7 +85,7 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
             FOR on 8458
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8458
         }
 

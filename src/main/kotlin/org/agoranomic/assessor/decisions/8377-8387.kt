@@ -271,7 +271,7 @@ with:
             // NO VOTE on 8387
         }
 
-        votes(nch) {
+        votes(nix) {
             PRESENT on 8377
             AGAINST on 8378
             FOR on 8379

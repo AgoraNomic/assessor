@@ -27,7 +27,7 @@ fun `assessment 8442 to 8457`() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
-        PrimeMinister to nch,
+        PrimeMinister to nix,
         Promotor to Aris,
         Referee to PSS,
         Rulekeepor to Jason,
@@ -35,7 +35,7 @@ fun `assessment 8442 to 8457`() = assessment {
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
-        Webmastor to nch
+        Webmastor to nix
     )
 
     strengths {
@@ -171,7 +171,7 @@ Retitle Rule 2221 to "Cleanliness and Tidy Filing""""
             title("Victory Auctions")
             ai("1.0")
             author(G)
-            coauthors(nch)
+            coauthors(nix)
             chamber(Economy)
 
             text(
@@ -508,7 +508,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
             endorse(G) on all
         }
 
-        votes(nch) {
+        votes(nix) {
             endorse(G) on 8442
             PRESENT on 8443
             AGAINST on 8444

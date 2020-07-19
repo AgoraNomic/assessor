@@ -202,7 +202,7 @@ to read
             FOR on 8195
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8188
             FOR on 8189
             FOR on 8190

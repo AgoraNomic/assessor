@@ -28,7 +28,7 @@ fun `assessment 8266 to 8274`() = assessment {
         proposal(8266) {
             title("Glitter")
             ai("1.0")
-            author(nch)
+            author(nix)
 
             text(
                 """

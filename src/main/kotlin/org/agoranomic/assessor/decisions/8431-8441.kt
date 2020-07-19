@@ -35,7 +35,7 @@ fun `assessment 8431 to 8441`() = assessment {
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
-        Webmastor to nch
+        Webmastor to nix
     )
 
     strengths {
@@ -260,7 +260,7 @@ twice the base value of the violation"."""
         proposal(8441) {
             title("Transmutation")
             ai("1.0")
-            author(nch)
+            author(nix)
             coauthors(Trigon)
             chamber(Economy)
 
@@ -353,7 +353,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             endorse(G) on all
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8431
             PRESENT on 8432
             AGAINST on 8433

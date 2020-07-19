@@ -173,7 +173,7 @@ Create a Rule entitled "Blink" with the following text:
         proposal(8263) {
             title("Persistent")
             ai("3.0")
-            author(nch)
+            author(nix)
 
             text(
                 """
@@ -189,7 +189,7 @@ I submit the following proposal, "Persistent", AI=3 {
         proposal(8264) {
             title("Encouraging Democracy Through Capitalism or Who Pays Subs Full Wages Anyway")
             ai("1.0")
-            author(nch)
+            author(nix)
 
             text(
                 """
@@ -269,7 +269,7 @@ Enact a new Rule of Power 3.0 with the text:
             FOR on 8265
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8253
             endorse(G) on 8254
             PRESENT on 8255
@@ -374,7 +374,7 @@ Enact a new Rule of Power 3.0 with the text:
             endorse(G) on 8260
             endorse(G) on 8261
             endorse(G) on 8262
-            endorse(nch) on 8263
+            endorse(nix) on 8263
             AGAINST on 8264
             FOR on 8265
         }

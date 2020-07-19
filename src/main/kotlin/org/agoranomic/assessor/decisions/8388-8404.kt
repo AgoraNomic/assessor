@@ -47,7 +47,7 @@ fun `assessment 8388 to 8404`() = assessment {
             .toMap()
             .mapKeys { (k, _) -> OfficeJune3Webmastor.fromInitial(k) }
             .toPersistentMap()
-            .mutate { it[OfficeJune3Webmastor.Webmastor] = OfficeState.heldBy(nch) }
+            .mutate { it[OfficeJune3Webmastor.Webmastor] = OfficeState.heldBy(nix) }
             .toOfficeMap()
 
     strengths {
@@ -73,7 +73,7 @@ fun `assessment 8388 to 8404`() = assessment {
         proposal(8388) {
             title("The Webmastor")
             ai("1.0")
-            author(nch)
+            author(nix)
             chamber(Efficiency)
 
             text(
@@ -277,7 +277,7 @@ Amend Rule 2607, "Proposal Chambers", by appending the following paragraph:
             title("More conservative implicit announcements")
             ai("3.0")
             author(Murphy)
-            coauthors(nch, G)
+            coauthors(nix, G)
             democratic()
 
             text(
@@ -609,7 +609,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             PRESENT on 8404
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8388
             FOR on 8389
             PRESENT on 8390
@@ -690,7 +690,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
         }
 
         votes(Falsifian) {
-            endorse(nch) on 8388 comment NO_VETO
+            endorse(nix) on 8388 comment NO_VETO
             endorse(G) on 8389
             AGAINST on 8390
             AGAINST on 8391

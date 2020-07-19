@@ -34,7 +34,7 @@ fun `assessment 8409 to 8430`() = assessment {
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to Trigon,
-        Webmastor to nch
+        Webmastor to nix
     )
 
     strengths {
@@ -483,7 +483,7 @@ Amend Rule 2451 (Executive Orders) by appending the following paragraph:
             title("No More Numbers!")
             ai("3.0")
             author(PSS)
-            coauthors(G, Trigon, Aris, nch)
+            coauthors(G, Trigon, Aris, nix)
             democratic()
 
             text(
@@ -514,7 +514,7 @@ Remove the final paragraph and all included list items from Rule 2139,
             title("Certifiable Patches")
             ai("1.0")
             author(Aris)
-            coauthors(nch, PSS)
+            coauthors(nix, PSS)
             chamber(Legislation)
 
             text(
@@ -787,7 +787,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8430
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8409
             FOR on 8410
             FOR on 8411

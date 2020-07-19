@@ -28,7 +28,7 @@ fun `assessment 8459 to 8472`() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
-        PrimeMinister to nch,
+        PrimeMinister to nix,
         Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
@@ -36,7 +36,7 @@ fun `assessment 8459 to 8472`() = assessment {
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
-        Webmastor to nch
+        Webmastor to nix
     )
 
     strengths {
@@ -55,7 +55,7 @@ fun `assessment 8459 to 8472`() = assessment {
             title("Talismans")
             ai("3.0")
             author(Jason)
-            coauthors(nch, Falsifian, G)
+            coauthors(nix, Falsifian, G)
             democratic()
 
             text(
@@ -349,7 +349,7 @@ this will have no effect.]"""
             title("Decision resolution patch")
             ai("3.0")
             author(Jason)
-            coauthors(nch, G)
+            coauthors(nix, G)
             democratic()
 
             text(
@@ -378,7 +378,7 @@ CAN) rather than the "announcement".]"""
             title("Bureaucratic Reengineering")
             ai("2.0")
             author(Aris)
-            coauthors(Alexis, Falsifian, nch, G)
+            coauthors(Alexis, Falsifian, nix, G)
             chamber(Efficiency)
 
             text(
@@ -406,7 +406,7 @@ NEW TEXT: {
         proposal(8470) {
             title("Sponsored Proposals")
             ai("1.0")
-            author(nch)
+            author(nix)
             coauthors(G, Trigon)
             chamber(Legislation)
 
@@ -594,7 +594,7 @@ with:
             FOR on 8472
         }
 
-        votes(nch) {
+        votes(nix) {
             FOR on 8459
             PRESENT on 8460
             PRESENT on 8461
@@ -640,7 +640,7 @@ with:
             endorse(Jason) on 8467
             PRESENT on 8468
             FOR on 8469 comment conditional("Aris not against")
-            endorse(nch) on 8470
+            endorse(nix) on 8470
             AGAINST on 8471
             FOR on 8472 comment conditional("Aris not against")
         }
