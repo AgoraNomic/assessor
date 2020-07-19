@@ -191,5 +191,13 @@ Enact the following rule, Charities:
             FOR on 8475
             FOR on 8476
         }
+
+        votes(G) {
+            FOR on all
+        }
+
+        votes(twg) {
+            FOR on all
+        }
     }
 }
