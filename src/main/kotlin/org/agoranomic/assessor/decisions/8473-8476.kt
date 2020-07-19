@@ -153,4 +153,7 @@ Enact the following rule, Charities:
             )
         }
     }
+
+    voting {
+    }
 }
