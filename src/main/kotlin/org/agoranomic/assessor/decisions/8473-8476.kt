@@ -205,5 +205,12 @@ Enact the following rule, Charities:
             PRESENT on 8475
             PRESENT on 8476
         }
+
+        votes(Falsifian) {
+            FOR on 8473
+            FOR on 8474
+            FOR on 8475
+            FOR on 8476
+        }
     }
 }
