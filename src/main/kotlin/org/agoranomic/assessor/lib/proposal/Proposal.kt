@@ -59,6 +59,10 @@ sealed class ProposalVersionedData {
     abstract fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R
 }
 
+interface ProposalClassAndChamberData {
+    val classAndChamber: ProposalClassAndChamber
+}
+
 object ProposalDataV0 : ProposalVersionedData() {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(0)
@@ -67,7 +71,9 @@ object ProposalDataV0 : ProposalVersionedData() {
         mapper.visitV0(commonData, this)
 }
 
-data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : ProposalVersionedData() {
+data class ProposalDataV1(
+    override val classAndChamber: ProposalClassAndChamber
+) : ProposalVersionedData(), ProposalClassAndChamberData {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(1)
 
@@ -76,9 +82,9 @@ data class ProposalDataV1(val classAndChamber: ProposalClassAndChamber) : Propos
 }
 
 data class ProposalDataV2(
-    val classAndChamber: ProposalClassAndChamber,
+    override val classAndChamber: ProposalClassAndChamber,
     val sponsored: Boolean
-) : ProposalVersionedData() {
+) : ProposalVersionedData(), ProposalClassAndChamberData {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(2)
 
