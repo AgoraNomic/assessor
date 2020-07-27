@@ -89,5 +89,9 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
         votes(PSS) {
             FOR on 8477
         }
+
+        votes(nix) {
+            FOR on 8477
+        }
     }
 }
