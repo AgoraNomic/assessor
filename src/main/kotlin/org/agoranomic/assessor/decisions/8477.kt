@@ -78,4 +78,7 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
             )
         }
     }
+
+    voting {
+    }
 }
