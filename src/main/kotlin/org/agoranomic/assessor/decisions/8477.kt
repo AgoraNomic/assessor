@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun `assessment 8477`() = assessment {
@@ -80,5 +81,8 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
     }
 
     voting {
+        votes(omd) {
+            PRESENT on 8477
+        }
     }
 }
