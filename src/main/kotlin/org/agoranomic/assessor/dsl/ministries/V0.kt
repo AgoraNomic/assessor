@@ -7,7 +7,7 @@ import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // These interests come from the original proposal - P8291
-val INTERESTS_MAP_JAN_29 = mapOf(
+val INTERESTS_MAP_2020_01_29 = mapOf(
     ADoP to listOf(
         Ministry.Efficiency
     ),
@@ -50,14 +50,16 @@ val INTERESTS_MAP_JAN_29 = mapOf(
     )
 )
 
-private val MINISTRIES_BONUS_JAN_29 = VotingStrengthDifference(2)
+private val MINISTRIES_BONUS_2020_01_29 = VotingStrengthDifference(2)
 
-fun GlobalVotingStrengthReceiver.ministriesJan29(
+// The underscores are the clearest way to show the date.
+@Suppress("FunctionName")
+fun GlobalVotingStrengthReceiver.ministries_2020_01_29(
     officeMap: OfficeMap<OfficeInitial>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,
-    INTERESTS_MAP_JAN_29,
-    MINISTRIES_BONUS_JAN_29,
+    INTERESTS_MAP_2020_01_29,
+    MINISTRIES_BONUS_2020_01_29,
     proposals
 )

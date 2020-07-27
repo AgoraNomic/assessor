@@ -3,8 +3,8 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.ministries.endorseOfficer
-import org.agoranomic.assessor.dsl.ministries.ministriesFeb13
-import org.agoranomic.assessor.dsl.ministries.ministriesJan29
+import org.agoranomic.assessor.dsl.ministries.ministries_2020_01_29
+import org.agoranomic.assessor.dsl.ministries.ministries_2020_02_13
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
@@ -49,8 +49,8 @@ fun `assessment 8308 to 8321`() = assessment {
 
         speakerBonus(Falsifian)
 
-        ministriesJan29(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())
-        ministriesFeb13(offices, allProposals.filter { it.number >= ProposalNumber(8319) }.toProposalSet())
+        ministries_2020_01_29(offices, allProposals.filter { it.number <= ProposalNumber(8318) }.toProposalSet())
+        ministries_2020_02_13(offices, allProposals.filter { it.number >= ProposalNumber(8319) }.toProposalSet())
     }
 
     proposals(v1) {

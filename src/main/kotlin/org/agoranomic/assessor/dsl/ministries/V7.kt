@@ -9,19 +9,19 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // Reflects flipping of Notary's interest to [Economy, Participation] by Murphy on 26 July 2020.
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2020-July/044291.html
-val INTERESTS_MAP_JUL_26 =
-    INTERESTS_MAP_JUN_30
+val INTERESTS_MAP_2020_07_26 =
+    INTERESTS_MAP_2020_06_30
         .toPersistentMap()
         .mutate { it[OfficeJune30.Notary] = listOf(Ministry.Economy, Ministry.Participation) }
 
-private val MINISTRIES_BONUS_JUL_26 = VotingStrengthDifference(2)
+private val MINISTRIES_BONUS_2020_07_26 = VotingStrengthDifference(2)
 
-fun GlobalVotingStrengthReceiver.ministriesJul26(
+fun GlobalVotingStrengthReceiver.ministries_2020_07_26(
     officeMap: OfficeMap<OfficeJune30>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,
-    INTERESTS_MAP_JUL_26,
-    MINISTRIES_BONUS_JUL_26,
+    INTERESTS_MAP_2020_07_26,
+    MINISTRIES_BONUS_2020_07_26,
     proposals
 )

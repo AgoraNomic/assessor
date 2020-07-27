@@ -8,19 +8,21 @@ import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // These interests come from V0 and P8318 (Notorial Economy) which set the Notary's interest to [Economy]
-val INTERESTS_MAP_FEB_13: Map<OfficeInitial, List<Ministry>> =
-    INTERESTS_MAP_JAN_29
+val INTERESTS_MAP_2020_02_13: Map<OfficeInitial, List<Ministry>> =
+    INTERESTS_MAP_2020_01_29
         .toPersistentMap()
         .mutate { interests -> interests[OfficeInitial.Notary] = listOf(Ministry.Economy) }
 
-private val MINISTRIES_BONUS_FEB_13 = VotingStrengthDifference(2)
+private val MINISTRIES_BONUS_2020_02_13 = VotingStrengthDifference(2)
 
-fun GlobalVotingStrengthReceiver.ministriesFeb13(
+// The underscores are the clearest way to show the date.
+@Suppress("FunctionName")
+fun GlobalVotingStrengthReceiver.ministries_2020_02_13(
     officeMap: OfficeMap<OfficeInitial>,
     proposals: ProposalSet
 ) = ministries(
     officeMap,
-    INTERESTS_MAP_FEB_13,
-    MINISTRIES_BONUS_FEB_13,
+    INTERESTS_MAP_2020_02_13,
+    MINISTRIES_BONUS_2020_02_13,
     proposals
 )

@@ -3,7 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.ministries.endorseOfficer
-import org.agoranomic.assessor.dsl.ministries.ministriesApr02
+import org.agoranomic.assessor.dsl.ministries.ministries_2020_04_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
@@ -44,7 +44,7 @@ fun `assessment 8357 to 8365`() = assessment {
         max(15)
 
         addToHolder(offices, Speaker, 1)
-        ministriesApr02(offices, allProposals)
+        ministries_2020_04_02(offices, allProposals)
     }
 
     proposals(v1) {

@@ -2,7 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
-import org.agoranomic.assessor.dsl.ministries.ministriesJun30
+import org.agoranomic.assessor.dsl.ministries.ministries_2020_06_30
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
@@ -47,7 +47,7 @@ fun `assessment 8473 to 8476`() = assessment {
         blotPenalty(RLee, 80 / 3)
 
         addToHolder(offices, Speaker, 1)
-        ministriesJun30(offices, allProposals)
+        ministries_2020_06_30(offices, allProposals)
     }
 
     proposals(v2) {
