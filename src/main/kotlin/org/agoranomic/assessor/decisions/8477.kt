@@ -112,5 +112,9 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
         votes(twg) {
             FOR on 8477
         }
+
+        votes(Murphy) {
+            FOR on 8477
+        }
     }
 }
