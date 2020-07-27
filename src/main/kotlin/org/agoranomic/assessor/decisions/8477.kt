@@ -97,5 +97,9 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
         votes(Jason) {
             FOR on 8477
         }
+
+        votes(ATMunn) {
+            FOR on 8477
+        }
     }
 }
