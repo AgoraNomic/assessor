@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
@@ -83,6 +84,10 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
     voting {
         votes(omd) {
             PRESENT on 8477
+        }
+
+        votes(PSS) {
+            FOR on 8477
         }
     }
 }
