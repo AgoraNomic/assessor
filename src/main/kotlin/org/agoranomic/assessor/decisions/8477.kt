@@ -104,5 +104,13 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
         votes(Falsifian) {
             AGAINST on 8477
         }
+
+        votes(G) {
+            FOR on 8477
+        }
+
+        votes(twg) {
+            FOR on 8477
+        }
     }
 }
