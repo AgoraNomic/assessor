@@ -1,14 +1,50 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
+import org.agoranomic.assessor.dsl.ministries.ministries_2020_07_26
+import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.addToHolder
+import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 
 @UseAssessment
 fun `assessment 8477`() = assessment {
     name("8477")
     quorum(8)
+
+    val offices = officeMapOf(
+        ADoP to Murphy,
+        Arbitor to G,
+        Assessor to Jason,
+        Coopor to RLee,
+        Distributor to omd,
+        Herald to PSS,
+        Notary to ATMunn,
+        PrimeMinister to nix,
+        Promotor to Aris,
+        Referee to PSS,
+        Registrar to Falsifian,
+        Rulekeepor to Jason,
+        Speaker to Jason,
+        Tailor to PSS,
+        Treasuror to Trigon,
+        Webmastor to nix
+    )
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        blotPenalty(Gaelan, 4 / 3)
+        blotPenalty(RLee, 80 / 3)
+
+        addToHolder(offices, Speaker, 1)
+        ministries_2020_07_26(offices, allProposals)
+    }
 
     proposals(v2) {
         proposal(8477) {
