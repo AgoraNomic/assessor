@@ -1,0 +1,374 @@
+{
+    "metadata": {
+        "name": "8477"
+    },
+    "proposals": [
+        {
+            "version": "2",
+            "number": 8477,
+            "ai": "1.0",
+            "title": "More officer cards",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2624 (Card Administration) by replacing the final paragraph\n(including the list) with the following:\n\n{\n\n  The officeholder of an office CAN by announcement grant another player a\n  specified type of card, specifying that office, under the following\n  conditions:\n\n  * e has not done so in reference to that office in the current Agoran month,\n\n  * that office's interests includes the card's associated ministry,\n\n  * the player receiving the card does not hold an office with the card's\n  associated ministry in its interests, and\n\n  * the player receiving the card is not a zombie.\n\n}"
+        }
+    ],
+    "quorum": 8,
+    "resolutions": [
+        {
+            "proposal": 8477,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 28,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "omd",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "Publius Scribonius Scholasticus",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": {
+                            "value": "AGAINST"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "twg",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Gaelan",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                },
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 26 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "26"
+                                    }
+                                ]
+                            },
+                            "current_strength": -23
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 0
+                        }
+                    ],
+                    "final": 0
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 1 for holding Speaker",
+                                "kind": "office_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Speaker's interest in Economy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Economy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "ATMunn",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Notary's interest in Economy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Notary"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Economy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Prime Minister's interest in Economy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "PrimeMinister"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Economy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "Trigon",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Treasuror's interest in Economy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Treasuror"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Economy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Treasuror's interest in Economy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Treasuror"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Economy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                }
+            ]
+        }
+    ]
+}
