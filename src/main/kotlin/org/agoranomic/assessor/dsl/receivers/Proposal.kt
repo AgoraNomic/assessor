@@ -180,7 +180,7 @@ private class DefaultProposalReceiverV2(
     val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
     val classAndChamberImpl: ProposalClassAndChamberReceiverImpl = ProposalClassAndChamberReceiverImpl(number)
 ) : ProposalReceiverV2, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberReceiver by classAndChamberImpl {
-    private val sponsoredFuse = SetOnceFuse()
+    private val sponsoredFuse = SetOnceFuse.named("sponsored")
 
     override fun sponsored() {
         sponsoredFuse.blow()
