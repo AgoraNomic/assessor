@@ -153,7 +153,7 @@ private constructor(name: String?) {
     )
 
     companion object {
-        fun <T> namedOf(name: String): SetOnceFuse = SetOnceFuse(name)
+        fun named(name: String): SetOnceFuse = SetOnceFuse(name)
     }
 
     constructor() : this(null)
