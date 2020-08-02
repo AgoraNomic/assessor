@@ -71,17 +71,24 @@ class SetOnce<T> {
 }
 
 /**
- * Gets the value, or [defaultValue] if the value has not been set. [defaultValue] is not nullable.
+ * If `hasValue()`, returns `get()`; otherwise, returns `defaultValue()`.
  */
-fun <T> SetOnce<T>.getOrDefault(defaultValue: T): T {
-    return if (hasValue()) get() else defaultValue
+inline fun <T> SetOnce<T>.getOrElse(defaultValue: () -> T): T {
+    return if (hasValue()) get() else defaultValue()
 }
 
 /**
- * Gets the value, or null if the value has not been set.
+ * If `hasValue()`, returns `get()`; otherwise, returns `defaultValue`.
+ */
+fun <T> SetOnce<T>.getOrDefault(defaultValue: T): T {
+    return getOrElse { defaultValue }
+}
+
+/**
+ * If `hasValue()` returns `get()`; otherwise, returns null.
  */
 fun <T> SetOnce<T>.getOrNull(): T? {
-    return if (hasValue()) get() else null
+    return getOrElse { return null }
 }
 
 /**
@@ -127,17 +134,24 @@ class SetOnceMap<K, V> {
 }
 
 /**
- * Gets the value for [key], or [defaultValue] if it has not been set. [defaultValue] is not nullable.
+ * If this contains [key], returns `get(key)`, otherwise returns `defaultValue()`.
  */
-fun <K, V> SetOnceMap<K, V>.getOrDefault(key: K, defaultValue: V): V {
-    return if (containsKey(key)) get(key) else defaultValue
+inline fun <K, V> SetOnceMap<K, V>.getOrElse(key: K, defaultValue: () -> V): V {
+    return if (containsKey(key)) get(key) else defaultValue()
 }
 
 /**
- * Gets the value for [key], or null if it has not been set.
+ * If this contains [key], returns `get(key)`, otherwise returns `defaultValue`.
+ */
+fun <K, V> SetOnceMap<K, V>.getOrDefault(key: K, defaultValue: V): V {
+    return getOrElse(key) { defaultValue }
+}
+
+/**
+ * If this contains [key], returns `get(key)`, otherwise returns null.
  */
 fun <K, V> SetOnceMap<K, V>.getOrNull(key: K): V? {
-    return if (containsKey(key)) get(key) else null
+    return getOrElse(key) { return null }
 }
 
 /**

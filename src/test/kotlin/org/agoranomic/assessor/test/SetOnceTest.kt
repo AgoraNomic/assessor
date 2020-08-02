@@ -27,6 +27,22 @@ class SetOnceTest {
         }
 
         @Test
+        fun `getOrElse calls default function`() {
+            val dslValue = SetOnce<String>()
+
+            val default = "default value"
+            var called: Boolean = false
+
+            val result = dslValue.getOrElse {
+                called = true
+                default
+            }
+
+            assertTrue(called)
+            assertEquals(default, result)
+        }
+
+        @Test
         fun `getOrDefault returns default`() {
             val dslValue = SetOnce<String>()
             val default = "I'm a string"
@@ -68,6 +84,25 @@ class SetOnceTest {
             dslValue.set(value)
 
             assertFailsWith<IllegalStateException> { dslValue.set(value) }
+        }
+
+        @Test
+        fun `getOrElse does not call default function`() {
+            val dslValue = SetOnce<String>()
+
+            val value = "some value"
+            dslValue.set(value)
+
+            val default = "default value"
+            var called: Boolean = false
+
+            val result = dslValue.getOrElse {
+                called = true
+                default
+            }
+
+            assertFalse(called)
+            assertEquals(value, result)
         }
 
         @Test
@@ -140,6 +175,20 @@ class SetOnceMapTest {
         }
 
         @Test
+        fun `getOrElse calls default function`() {
+            val map = emptyTestMap()
+            var called: Boolean = false
+
+            val result = map.getOrElse(testKey) {
+                called = true
+                defaultValue
+            }
+
+            assertTrue(called)
+            assertEquals(defaultValue, result)
+        }
+
+        @Test
         fun `getOrDefault returns default`() {
             val map = emptyTestMap()
 
@@ -183,6 +232,20 @@ class SetOnceMapTest {
             val map = filledTestMap()
 
             assertTrue(map.containsKey(testKey))
+        }
+
+        @Test
+        fun `getOrElse does not call default function`() {
+            val map = filledTestMap()
+            var called: Boolean = false
+
+            val result = map.getOrElse(testKey) {
+                called = true
+                defaultValue
+            }
+
+            assertFalse(called)
+            assertEquals(testValue, result)
         }
 
         @Test
