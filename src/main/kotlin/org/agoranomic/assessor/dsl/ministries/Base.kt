@@ -111,28 +111,18 @@ fun <Office> GlobalVotingStrengthReceiver.ministries(
         officeMinistries.mapKeys { (office: OfficeID, _) -> (office as OfficeID) }
 
     for (currentProposal in proposals) {
-        currentProposal.accept(object : ProposalVisitor {
-            override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
+        currentProposal.accept(object : ProposalChamberedVisitor() {
+            override fun visitUnchambered(commonData: ProposalCommonData) {
                 ministriesProposalV0()
             }
 
-            override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
+            override fun visitChambered(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamber) {
                 ministriesChambered(
                     officeMap = rawOfficeMap,
                     officeMinistries = castOfficeMinistries,
                     ministryBonus = ministryBonus,
                     proposalNumber = commonData.number,
-                    classAndChamber = versionedData.classAndChamber
-                )
-            }
-
-            override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) {
-                ministriesChambered(
-                    officeMap = rawOfficeMap,
-                    officeMinistries = castOfficeMinistries,
-                    ministryBonus = ministryBonus,
-                    proposalNumber = commonData.number,
-                    classAndChamber = versionedData.classAndChamber
+                    classAndChamber = classAndChamber
                 )
             }
         })

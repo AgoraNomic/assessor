@@ -100,6 +100,22 @@ interface ProposalMapper<R> {
 
 typealias ProposalVisitor = ProposalMapper<Unit>
 
+abstract class ProposalChamberedMapper<R> : ProposalMapper<R> {
+    protected abstract fun visitUnchambered(commonData: ProposalCommonData): R
+    protected abstract fun visitChambered(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamber): R
+
+    final override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) =
+        visitUnchambered(commonData)
+
+    final override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) =
+        visitChambered(commonData, versionedData.classAndChamber)
+
+    final override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) =
+        visitChambered(commonData, versionedData.classAndChamber)
+}
+
+typealias ProposalChamberedVisitor = ProposalChamberedMapper<Unit>
+
 data class Proposal(
     val commonData: ProposalCommonData,
     val versionedData: ProposalVersionedData
