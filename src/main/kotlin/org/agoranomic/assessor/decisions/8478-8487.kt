@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
@@ -396,6 +397,19 @@ Ribbon Ownership to True."""
             FOR on 8485
             FOR on 8486
             FOR on 8487
+        }
+
+        votes(Jason) {
+            FOR on 8478
+            PRESENT on 8479
+            FOR on 8480
+            endorseOfficer(offices, Promotor) on 8481
+            FOR on 8482
+            AGAINST on 8483
+            AGAINST on 8484
+            FOR on 8485
+            FOR on 8486
+            endorseOfficer(offices, Tailor) on 8487
         }
     }
 }
