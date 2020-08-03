@@ -364,4 +364,7 @@ Ribbon Ownership to True."""
             )
         }
     }
+
+    voting {
+    }
 }
