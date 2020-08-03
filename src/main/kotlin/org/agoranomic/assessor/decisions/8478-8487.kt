@@ -10,6 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.*
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun `assessment 8478 to 8487`() = assessment {
@@ -366,5 +368,9 @@ Ribbon Ownership to True."""
     }
 
     voting {
+        votes(RLee) {
+            FOR on 8483
+            PRESENT on others
+        }
     }
 }
