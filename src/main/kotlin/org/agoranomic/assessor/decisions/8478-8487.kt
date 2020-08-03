@@ -424,5 +424,9 @@ Ribbon Ownership to True."""
             FOR on 8486
             FOR on 8487
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
