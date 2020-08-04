@@ -10,6 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -427,6 +428,19 @@ Ribbon Ownership to True."""
 
         votes(CuddleBeam) {
             FOR on all
+        }
+
+        votes(Falsifian) {
+            FOR on 8478
+            FOR on 8479
+            FOR on 8480
+            endorse(Aris) on 8481
+            FOR on 8482
+            AGAINST on 8483
+            FOR on 8484
+            FOR on 8485
+            FOR on 8486
+            FOR on 8487
         }
     }
 }
