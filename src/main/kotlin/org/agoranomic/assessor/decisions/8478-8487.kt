@@ -407,7 +407,7 @@ Ribbon Ownership to True."""
             endorseOfficer(offices, Promotor) on 8481
             FOR on 8482
             AGAINST on 8483
-            AGAINST on 8484
+            PRESENT on 8484
             FOR on 8485
             FOR on 8486
             endorseOfficer(offices, Tailor) on 8487
