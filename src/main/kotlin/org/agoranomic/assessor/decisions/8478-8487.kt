@@ -459,5 +459,13 @@ Ribbon Ownership to True."""
         votes(omd) {
             FOR on 8483
         }
+
+        votes(G) {
+            FOR on all
+        }
+
+        votes(twg) {
+            FOR on all
+        }
     }
 }
