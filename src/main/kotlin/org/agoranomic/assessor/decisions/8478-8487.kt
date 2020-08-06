@@ -455,5 +455,9 @@ Ribbon Ownership to True."""
             FOR on 8486
             PRESENT on 8487
         }
+
+        votes(omd) {
+            FOR on 8483
+        }
     }
 }
