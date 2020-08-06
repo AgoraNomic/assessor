@@ -419,7 +419,7 @@ Ribbon Ownership to True."""
             FOR on 8480
             AGAINST on 8481
             FOR on 8482
-            AGAINST on 8483
+            // TODO resolve conditional vote on 8483: FOR if ADOPTED assuming all conditional votes resolve to AGAINST, else FOR
             AGAINST on 8484
             FOR on 8485
             FOR on 8486
