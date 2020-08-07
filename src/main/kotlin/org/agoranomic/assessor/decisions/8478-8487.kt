@@ -393,7 +393,7 @@ Ribbon Ownership to True."""
             FOR on 8480
             FOR on 8481
             FOR on 8482
-            AGAINST on 8483
+            FOR on 8483
             FOR on 8484
             FOR on 8485
             FOR on 8486
