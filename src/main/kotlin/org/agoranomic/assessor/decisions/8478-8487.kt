@@ -463,7 +463,11 @@ Ribbon Ownership to True."""
         }
 
         votes(omd) {
-            // TODO resolve conditional ballot on 8483: AGAINST if all of humanity destroyed before end of voting, else FOR
+            // TODO resolve conditional ballot on 8483: {
+            //   If Gaelan cast a valid vote before I cast this vote that was
+            //   substantially equivalent to the above except for not having a
+            //   parenthetical, then denounce Gaelan.  Otherwise, FOR.
+            // }
         }
 
         votes(G) {
