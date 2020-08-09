@@ -442,7 +442,10 @@ Ribbon Ownership to True."""
             FOR on 8480
             endorse(Aris) on 8481
             FOR on 8482
-            // TODO resolve conditional vote on 8483: FOR if ADOPTED assuming all conditional votes resolve to AGAINST, else FOR
+            // TODO resolve conditional vote on 8483: {
+            //   If Proposal 8483 would be adopted even if all parties to the Foot
+            //   Draggers Union voted AGAINST it, then FOR. Otherwise, AGAINST.
+            // }
             FOR on 8484
             FOR on 8485
             FOR on 8486
