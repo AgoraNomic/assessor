@@ -493,5 +493,9 @@ Ribbon Ownership to True."""
             AGAINST on 8486
             FOR on 8487
         }
+
+        votes(nix) {
+            FOR on all
+        }
     }
 }
