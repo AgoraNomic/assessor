@@ -474,11 +474,11 @@ Ribbon Ownership to True."""
         }
 
         votes(G) {
-            FOR on all
+            FOR on 8483
         }
 
         votes(twg) {
-            FOR on all
+            FOR on 8483
         }
 
         votes(Murphy) {
