@@ -419,7 +419,13 @@ Ribbon Ownership to True."""
             FOR on 8480
             AGAINST on 8481
             FOR on 8482
-            // TODO resolve conditional vote on 8483: FOR if ADOPTED assuming all conditional votes resolve to AGAINST, else FOR
+            // TODO resolve conditional vote on 8483: {
+            //   If this proposal would be ADOPTED if this vote (
+            //     and any other conditional votes that, if not for this parenthetical,
+            //     would directly or indirectly depend on my vote in such a way that
+            //     causes my vote to become inextricable
+            //   ) resolved to AGAINST, then FOR. Otherwise, AGAINST.
+            // }
             AGAINST on 8484
             FOR on 8485
             FOR on 8486
