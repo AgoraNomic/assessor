@@ -457,7 +457,7 @@ Ribbon Ownership to True."""
         }
 
         votes(omd) {
-            FOR on 8483
+            // TODO resolve conditional ballot on 8483: AGAINST if all of humanity destroyed before end of voting, else FOR
         }
 
         votes(G) {
