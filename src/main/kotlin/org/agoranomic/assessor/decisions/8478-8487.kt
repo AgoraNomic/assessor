@@ -456,7 +456,7 @@ Ribbon Ownership to True."""
             FOR on 8478
             PRESENT on 8479
             FOR on 8480
-            FOR on 8481
+            endorseOfficer(offices, Promotor) on 8481
             FOR on 8482
             FOR on 8483
             PRESENT on 8484
