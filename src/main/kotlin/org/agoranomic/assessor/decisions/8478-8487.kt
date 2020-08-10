@@ -419,13 +419,7 @@ Ribbon Ownership to True."""
             FOR on 8480
             AGAINST on 8481
             FOR on 8482
-            // TODO resolve conditional vote on 8483: {
-            //   If this proposal would be ADOPTED if this vote (
-            //     and any other conditional votes that, if not for this parenthetical,
-            //     would directly or indirectly depend on my vote in such a way that
-            //     causes my vote to become inextricable
-            //   ) resolved to AGAINST, then FOR. Otherwise, AGAINST.
-            // }
+            FOR on 8483 comment conditional("P8483 would be ADOPTED under the specified criteria, with at most omd voting AGAINST")
             AGAINST on 8484
             FOR on 8485
             FOR on 8486
@@ -442,10 +436,7 @@ Ribbon Ownership to True."""
             FOR on 8480
             endorse(Aris) on 8481
             FOR on 8482
-            // TODO resolve conditional vote on 8483: {
-            //   If Proposal 8483 would be adopted even if all parties to the Foot
-            //   Draggers Union voted AGAINST it, then FOR. Otherwise, AGAINST.
-            // }
+            FOR on 8483 comment conditional("P8483 would be ADOPTED even if all parties to the Foot Draggers Union voted AGAINST")
             FOR on 8484
             FOR on 8485
             FOR on 8486
@@ -466,11 +457,7 @@ Ribbon Ownership to True."""
         }
 
         votes(omd) {
-            // TODO resolve conditional ballot on 8483: {
-            //   If Gaelan cast a valid vote before I cast this vote that was
-            //   substantially equivalent to the above except for not having a
-            //   parenthetical, then denounce Gaelan.  Otherwise, FOR.
-            // }
+            FOR on 8483 comment conditional("Gaelan did not cast a ballot matching the specified criteria")
         }
 
         votes(G) {
