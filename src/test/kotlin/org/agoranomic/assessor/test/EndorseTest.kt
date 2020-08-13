@@ -7,7 +7,7 @@ import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.vote.*
 import org.agoranomic.assessor.test.test_objects.ALL_VOTE_KIND_LIST
-import org.agoranomic.assessor.test.test_objects.alwaysFailingLookupProposal
+import org.agoranomic.assessor.test.test_objects.alwaysFailingLookupProposalFunc
 import org.agoranomic.assessor.test.test_objects.firstTestPerson
 import org.agoranomic.assessor.test.test_objects.firstTestProposal
 import org.junit.jupiter.api.DisplayName
@@ -75,7 +75,7 @@ class EndorseTest {
         val resolved =
             endorsement.func(
                 proposal,
-                StandardVoteContext(resolveFunc = resolveFunc, lookupProposal = alwaysFailingLookupProposal)
+                StandardVoteContext(resolveFunc = resolveFunc, lookupProposalFunc = alwaysFailingLookupProposalFunc)
             )
 
         // Assert that resolve is called

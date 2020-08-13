@@ -3,12 +3,11 @@ package org.agoranomic.assessor.lib.resolve
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal.proposal_set.get
 import org.agoranomic.assessor.lib.vote.*
 
 private fun resolveSingleVote(
     allVotes: MultiPersonPendingVoteMap,
-    lookupProposal: LookupProposal,
+    lookupProposalFunc: LookupProposalFunc,
     proposalNumber: ProposalNumber,
     voter: Person,
     alreadySeen: List<Pair<ProposalNumber, Person>> = emptyList()
@@ -22,26 +21,29 @@ private fun resolveSingleVote(
 
     val proposalVote = personVotes.voteFor(proposalNumber)
 
-    val proposal = lookupProposal(proposalNumber)
+    val proposal = lookupProposalFunc(proposalNumber)
 
     val nextAlreadySeen = alreadySeen + Pair(proposalNumber, voter)
 
     val nextResolve: ResolveFunc = { nextProposal, nextVoter ->
         resolveSingleVote(
             allVotes = allVotes,
-            lookupProposal = lookupProposal,
+            lookupProposalFunc = lookupProposalFunc,
             proposalNumber = nextProposal.number,
             voter = nextVoter,
             alreadySeen = nextAlreadySeen
         )
     }
 
-    val voteContext = StandardVoteContext(resolveFunc = nextResolve, lookupProposal = lookupProposal)
+    val voteContext = StandardVoteContext(resolveFunc = nextResolve, lookupProposalFunc = lookupProposalFunc)
 
     return proposalVote.compile(proposal, voteContext)
 }
 
-private fun resolveVotes(votes: MultiPersonPendingVoteMap, lookupProposal: LookupProposal): MultiProposalVoteMap {
+private fun resolveVotes(
+    votes: MultiPersonPendingVoteMap,
+    lookupProposalFunc: LookupProposalFunc
+): MultiProposalVoteMap {
     return MultiProposalVoteMap(votes.proposalsWithVotes().associateWith { proposalNumber ->
         val voters = votes.voters
 
@@ -50,7 +52,7 @@ private fun resolveVotes(votes: MultiPersonPendingVoteMap, lookupProposal: Looku
                 .associateWith { voter ->
                     resolveSingleVote(
                         allVotes = votes,
-                        lookupProposal = lookupProposal,
+                        lookupProposalFunc = lookupProposalFunc,
                         proposalNumber = proposalNumber,
                         voter = voter
                     )
@@ -61,5 +63,4 @@ private fun resolveVotes(votes: MultiPersonPendingVoteMap, lookupProposal: Looku
     })
 }
 
-fun resolveVotes(votes: MultiPersonPendingVoteMap, proposals: ProposalSet) =
-    resolveVotes(votes, LookupProposal { proposals[it] })
+fun resolveVotes(votes: MultiPersonPendingVoteMap, proposals: ProposalSet) = resolveVotes(votes, proposals.lookupFunc)

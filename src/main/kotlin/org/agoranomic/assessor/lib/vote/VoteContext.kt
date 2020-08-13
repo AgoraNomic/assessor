@@ -3,23 +3,28 @@ package org.agoranomic.assessor.lib.vote
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
-
-data class LookupProposal(private val func: (ProposalNumber) -> Proposal) {
-    operator fun invoke(number: ProposalNumber) = func(number)
-    operator fun invoke(number: Int) = this(ProposalNumber(number))
-}
+import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.get
 
 interface VoteContext {
-    val lookupProposal: LookupProposal
+    fun lookupProposal(number: ProposalNumber): Proposal
     fun resolve(proposal: Proposal, voter: Person): Vote?
 }
+
+fun VoteContext.lookupProposal(number: Int) = lookupProposal(ProposalNumber(number))
+
+typealias LookupProposalFunc = (ProposalNumber) -> Proposal
+
+val ProposalSet.lookupFunc: LookupProposalFunc
+    get() = { number -> this[number] }
 
 typealias ResolveFunc = (proposal: Proposal, voter: Person) -> Vote?
 
 data class StandardVoteContext(
     val resolveFunc: ResolveFunc,
-    override val lookupProposal: LookupProposal
+    val lookupProposalFunc: LookupProposalFunc
 ) : VoteContext {
+    override fun lookupProposal(number: ProposalNumber): Proposal = lookupProposalFunc(number)
     override fun resolve(proposal: Proposal, voter: Person): Vote? = resolveFunc(proposal, voter)
 }
 

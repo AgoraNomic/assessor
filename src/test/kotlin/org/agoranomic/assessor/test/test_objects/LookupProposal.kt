@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.test.test_objects
 
-import org.agoranomic.assessor.lib.vote.LookupProposal
+import org.agoranomic.assessor.lib.vote.LookupProposalFunc
 
-val alwaysFailingLookupProposal =
-    LookupProposal { _ -> throw UnsupportedOperationException("Invalid request to lookup proposal") }
+val alwaysFailingLookupProposalFunc: LookupProposalFunc =
+    { _ -> throw UnsupportedOperationException("Invalid request to lookup proposal") }
