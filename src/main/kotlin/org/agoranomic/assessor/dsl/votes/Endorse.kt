@@ -22,12 +22,12 @@ private fun endorsementVote(endorsee: Person) = FunctionVote(endorsementFunc(end
 private fun authorEndorsementFunc(): VoteFunc = { prop, context -> endorsementFunc(prop.author)(prop, context) }
 private fun authorEndorsementVote() = FunctionVote(authorEndorsementFunc())
 
-object _Author
+object AuthorMarker
 
-val author = _Author
+val author = AuthorMarker
 
 fun endorse(person: Person) = endorsementVote(person)
 
 // author parameter exists for overloading, so it is kept
 @Suppress("UNUSED_PARAMETER")
-fun endorse(author: _Author) = authorEndorsementVote()
+fun endorse(author: AuthorMarker) = authorEndorsementVote()
