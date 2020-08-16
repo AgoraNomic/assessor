@@ -254,7 +254,8 @@ Amend Rule 2493 ("Regulations") as follows:
         proposal(8241) {
             title("Secured switches (v2.0)")
             ai("3.0")
-            author(Falsifian)
+            author(Jason)
+            coauthors(Falsifian)
 
             text(
                 """
