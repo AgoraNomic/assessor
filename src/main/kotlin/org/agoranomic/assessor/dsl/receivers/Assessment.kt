@@ -26,6 +26,7 @@ interface AssessmentReceiver {
     val v1 get() = org.agoranomic.assessor.dsl.v1
     val v2 get() = org.agoranomic.assessor.dsl.v2
 
+    fun proposals(block: ProposalsReceiverAddOnlyInit)
     fun proposals(v0: Version0, block: ProposalsReceiverV0Init)
     fun proposals(v1: Version1, block: ProposalsReceiverV1Init)
     fun proposals(v2: Version2, block: ProposalsReceiverV2Init)
@@ -41,6 +42,7 @@ interface AssessmentCompiler {
 }
 
 private class DefaultAssessmentReceiver(
+    val proposalsCompilerAddOnly: ProposalsCompilerAddOnly = DefaultProposalsCompilerAddOnly(),
     val proposalsCompilerV0: ProposalsCompilerV0 = DefaultProposalsCompilerV0(),
     val proposalsCompilerV1: ProposalsCompilerV1 = DefaultProposalsCompilerV1(),
     val proposalsCompilerV2: ProposalsCompilerV2 = DefaultProposalsCompilerV2(),
@@ -56,6 +58,11 @@ private class DefaultAssessmentReceiver(
 
     override fun strengths(block: GlobalVotingStrengthReceiverInit) {
         votingStrengthsBlockValue.set(block)
+    }
+
+    override fun proposals(block: ProposalsReceiverAddOnlyInit) {
+        @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
+        proposalsBlockValue.set({ proposalsCompilerAddOnly.compile(block) })
     }
 
     override fun proposals(v0: Version0, block: ProposalsReceiverV0Init) {
