@@ -16,6 +16,9 @@ interface ProposalsReceiverCommon {
 }
 
 @AssessmentDsl
+interface ProposalsReceiverAddOnly : ProposalsReceiverCommon
+
+@AssessmentDsl
 interface ProposalsReceiver<ProposalReceiver> : ProposalsReceiverCommon {
     fun proposal(number: ProposalNumber, block: DslInit<ProposalReceiver>)
     fun proposal(number: Int, block: DslInit<ProposalReceiver>) = proposal(ProposalNumber(number), block)
@@ -23,6 +26,12 @@ interface ProposalsReceiver<ProposalReceiver> : ProposalsReceiverCommon {
 
 interface ProposalsCompiler<ProposalReceiver> {
     fun compile(init: DslInit<ProposalsReceiver<ProposalReceiver>>): ImmutableProposalSet
+}
+
+typealias ProposalsReceiverAddOnlyInit = DslInit<ProposalsReceiverAddOnly>
+
+interface ProposalsCompilerAddOnly {
+    fun compile(init: ProposalsReceiverAddOnlyInit): ImmutableProposalSet
 }
 
 typealias ProposalsReceiverV0 = ProposalsReceiver<ProposalReceiverV0>
@@ -38,7 +47,7 @@ typealias ProposalsReceiverV2Init = DslInit<ProposalsReceiverV2>
 typealias ProposalsCompilerV2 = ProposalsCompiler<ProposalReceiverV2>
 
 @AssessmentDsl
-private class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
+private class ProposalsReceiverImplCommon : ProposalsReceiverCommon, ProposalsReceiverAddOnly {
     private val proposals = emptyMutableProposalSet()
 
     private fun requireUnusuedNumber(number: ProposalNumber) {
@@ -84,3 +93,9 @@ typealias DefaultProposalsCompilerV2 = DefaultProposalsCompiler<ProposalReceiver
 fun DefaultProposalsCompilerV0() = DefaultProposalsCompilerV0(DefaultProposalCompilerV0())
 fun DefaultProposalsCompilerV1() = DefaultProposalsCompilerV1(DefaultProposalCompilerV1())
 fun DefaultProposalsCompilerV2() = DefaultProposalsCompilerV2(DefaultProposalCompilerV2())
+
+class DefaultProposalsCompilerAddOnly : ProposalsCompilerAddOnly {
+    override fun compile(init: ProposalsReceiverAddOnlyInit): ImmutableProposalSet {
+        return ProposalsReceiverImplCommon().also(init).compile().toImmutableProposalSet()
+    }
+}
