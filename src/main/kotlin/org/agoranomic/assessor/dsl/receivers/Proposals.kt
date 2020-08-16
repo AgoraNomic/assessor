@@ -38,7 +38,7 @@ typealias ProposalsReceiverV2Init = DslInit<ProposalsReceiverV2>
 typealias ProposalsCompilerV2 = ProposalsCompiler<ProposalReceiverV2>
 
 @AssessmentDsl
-class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
+private class ProposalsReceiverImplCommon : ProposalsReceiverCommon {
     private val proposals = emptyMutableProposalSet()
 
     private fun requireUnusuedNumber(number: ProposalNumber) {
