@@ -4,7 +4,10 @@ import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
-import org.agoranomic.assessor.lib.proposal.proposal_set.*
+import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.emptyMutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.plusAssign
+import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
 
 @AssessmentDsl
 interface ProposalsReceiverCommon {
@@ -63,7 +66,7 @@ private class ProposalsReceiverImplCommon : ProposalsReceiverCommon, ProposalsRe
         proposals.forEach(::using)
     }
 
-    fun compile(): ProposalSet = proposals.toProposalSet()
+    fun compile(): ImmutableProposalSet = proposals.toImmutableProposalSet()
 }
 
 @AssessmentDsl
@@ -82,7 +85,7 @@ class DefaultProposalsCompiler<ProposalReceiver : ProposalCommonReceiver>(
     private val proposalCompiler: ProposalCompiler<ProposalReceiver>
 ) : ProposalsCompiler<ProposalReceiver> {
     override fun compile(init: DslInit<ProposalsReceiver<ProposalReceiver>>): ImmutableProposalSet {
-        return ProposalsReceiverImpl(proposalCompiler).also(init).compile().toImmutableProposalSet()
+        return ProposalsReceiverImpl(proposalCompiler).also(init).compile()
     }
 }
 
@@ -96,6 +99,6 @@ fun DefaultProposalsCompilerV2() = DefaultProposalsCompilerV2(DefaultProposalCom
 
 class DefaultProposalsCompilerAddOnly : ProposalsCompilerAddOnly {
     override fun compile(init: ProposalsReceiverAddOnlyInit): ImmutableProposalSet {
-        return ProposalsReceiverImplCommon().also(init).compile().toImmutableProposalSet()
+        return ProposalsReceiverImplCommon().also(init).compile()
     }
 }
