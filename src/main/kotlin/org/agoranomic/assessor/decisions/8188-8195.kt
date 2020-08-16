@@ -145,9 +145,51 @@ debt"].
             ai("3.0")
             text(
                 """
-Create a spaceship in the possession of each player without a
-spaceship
-"""
+Enact a new power 3.1 Rule, entitled "Timelines", with the following text:
+
+  A timeline is a temporal sequence of events and states.
+
+  The Objective Timeline is the timeline of matters as they actually happened.
+  On the Objective Timeline, the consequences of an event are determined
+  based on the conditions actually in effect, under Agoran law, when that event
+  occurred. The Objective Timeline is not part of the gamestate; instead, it
+  is the recording of events on reality itself, and changing it retroactively
+  without actual time travel is thus IMPOSSIBLE, rules to the contrary
+  notwithstanding.
+
+  The Standard Timeline is the timeline used for the purposes of ordinary
+  gameplay. By default, the Standard Timeline is defined by events and their
+  consequences in the same way that the Objective Timeline is. However,
+  the Standard Timeline is part of the gamestate. Accordingly, it can be
+  modified retroactively; such retroactive modifications are secured
+  at power 3.
+
+  Attempted retroactive changes are to be interpreted as attempts to change the
+  Standard Timeline. All changes are to be interpreted as prospective unless
+  they are explicitly retroactive.
+
+  By default, any entity with a power less than the power of this rule that
+  refers to the past, present, or future is to be interpreted as referring to
+  the Standard Timeline; however, entities may explicitly reference
+  different timelines.
+
+Amend Rule 1551, "Ratification" by changing the text "the gamestate is modified"
+to read "the gamestate is retroactively modified".
+
+Amend Rule 591, "Delivering Judgements", by changing the text
+
+  "The valid judgements for an inquiry case are as follows, based on
+  the facts and legal situation at the time the inquiry case was
+  initiated, not taking into account any events since that time:"
+
+to read
+
+  "The judgement of an inquiry case should be based on the facts and legal
+  situation as they objectively existed at the time the inquiry case was
+  initiated, not taking into account any events or retroactive modifications
+  since that time.
+
+  The valid judgements for an inquiry case are as follows:""""
             )
         }
     }
