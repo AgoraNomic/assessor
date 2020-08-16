@@ -106,7 +106,7 @@ spaceship
 
         proposal(8192) {
             title("auctions have fees")
-            author(Falsifian)
+            author(G)
             ai("1.0")
             text(
                 """
