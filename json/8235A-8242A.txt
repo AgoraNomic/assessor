@@ -77,8 +77,9 @@
             "number": 8241,
             "ai": "3.0",
             "title": "Secured switches (v2.0)",
-            "author": "Falsifian",
+            "author": "Jason",
             "coauthors": [
+                "Falsifian"
             ],
             "text": "[Comment: define what it means for switches to be \"secured\", then use\nthat definition. This works with default power thresholds since it isn't\nR2162 that designates the changes as secured, the Rule that defines the\nswitch is defined as designating the changes as secured.]\n\nAmend Rule 2162 by appending the following sentence to the paragraph\nbeginning \"At any given time\":\n\n  A Rule that designates a switch as \"secured\" (at a given power\n  level) designates changes to the properties of that type of switch\n  as secured (at that power level) and designates changes to the value\n  of each instance of the switch as secured (at that power level).\n\nAmend Rule 1950 as follows:\n\n  Delete the text \"Adoption index is secured with a power threshold of\n  2.\".\n\n  Replace the text\n\n    Adoption index (AI) is an untracked switch possessed by Agoran\n    decisions and proposals.\n\n  with the text\n\n    Adoption index (AI) is an untracked switch possessed by Agoran\n    decisions and proposals, secured at power 2.\n\nAmend Rule 2480 as follows:\n\n  Delete the text \"Changes to Festivity are secured.\".\n\n  Replace the text \"Festivity is a singleton switch\" with the text\n  \"Festivity is a secured singleton switch\".\n\nAmend Rule 869 as follows:\n\n  Delete the text \"Changes to citizenship are secured.\".\n\n  Replace the text \"Citizenship is a person switch\" with the text\n  \"Citizenship is a secured person switch\".\n\nAmend Rule 478 as follows:\n\n  Delete the text \"Changes to publicity are secured.\".\n\n  Replace the text \"Publicity is a forum switch\" with the text\n  \"Publicity is a secured forum switch.\"."
         },
