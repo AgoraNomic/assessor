@@ -1,6 +1,9 @@
 package org.agoranomic.assessor.dsl.receivers
 
 import org.agoranomic.assessor.dsl.AssessmentDsl
+import org.agoranomic.assessor.dsl.Version0
+import org.agoranomic.assessor.dsl.Version1
+import org.agoranomic.assessor.dsl.Version2
 import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.dsl.detail.SetOnce
 import org.agoranomic.assessor.dsl.detail.getOrNull
@@ -18,13 +21,10 @@ interface AssessmentReceiver {
     fun name(value: String)
     fun url(value: AssessmentUrl)
 
-    object Version0
-    object Version1
-    object Version2
-
-    val v0 get() = Version0
-    val v1 get() = Version1
-    val v2 get() = Version2
+    // TODO fix this dirty hack for not adding an import to everywhere that uses this
+    val v0 get() = org.agoranomic.assessor.dsl.v0
+    val v1 get() = org.agoranomic.assessor.dsl.v1
+    val v2 get() = org.agoranomic.assessor.dsl.v2
 
     fun proposals(v0: Version0, block: ProposalsReceiverV0Init)
     fun proposals(v1: Version1, block: ProposalsReceiverV1Init)
@@ -58,17 +58,17 @@ private class DefaultAssessmentReceiver(
         votingStrengthsBlockValue.set(block)
     }
 
-    override fun proposals(v0: AssessmentReceiver.Version0, block: ProposalsReceiverV0Init) {
+    override fun proposals(v0: Version0, block: ProposalsReceiverV0Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
         proposalsBlockValue.set({ proposalsCompilerV0.compile(block) })
     }
 
-    override fun proposals(v1: AssessmentReceiver.Version1, block: ProposalsReceiverV1Init) {
+    override fun proposals(v1: Version1, block: ProposalsReceiverV1Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
         proposalsBlockValue.set({ proposalsCompilerV1.compile(block) })
     }
 
-    override fun proposals(v2: AssessmentReceiver.Version2, block: ProposalsReceiverV2Init) {
+    override fun proposals(v2: Version2, block: ProposalsReceiverV2Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
         proposalsBlockValue.set({ proposalsCompilerV2.compile(block) })
     }
