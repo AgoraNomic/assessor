@@ -50,7 +50,7 @@
             "number": 8192,
             "ai": "1.0",
             "title": "auctions have fees",
-            "author": "Falsifian",
+            "author": "G.",
             "coauthors": [
             ],
             "text": "[The payment rule for auctions just says that if you happen to have an\nauction debt, if you pay Agora under any circumstances, it triggers\nstuff.  This means, if someone happens to have two auction debts, they\ncan make one payment and it would count for both.  This brings things\ninto line.]\n\nAmend Rule 2551 (Auction End) by replacing:\n  The winner of a lot SHALL pay the Auctioneer the number of the\n  Auction's currency equal to eir bid, in a single payment, in a\n  timely fashion.\nwith:\n  The winner of the lot SHALL, in a timely fashion, pay a fee (the\n  number of the Auction's currency equal to eir bid) to the\n  Auctioneer in order to satisfy eir auction debt.\n\n[This makes \"satisfying eir auction debt\" a fee-based action governed\nunder R2579, which didn't exist when the auction rules were written.\nR2579 then takes care of the various CANs and method details.  The\ntransfer of the lots is then a consequence of \"satisfying eir auction\ndebt\"]."
