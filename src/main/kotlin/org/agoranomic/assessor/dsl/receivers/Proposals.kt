@@ -5,18 +5,16 @@ import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.addAll
 import org.agoranomic.assessor.lib.proposal.proposal_set.emptyMutableProposalSet
-import org.agoranomic.assessor.lib.proposal.proposal_set.plusAssign
 import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
 
 @AssessmentDsl
 interface ProposalsReceiverCommon {
-    fun using(proposal: Proposal)
-
-    fun using(proposals: Iterable<Proposal>) {
-        for (proposal in proposals) using(proposal)
-    }
+    fun using(proposals: Iterable<Proposal>)
 }
+
+fun ProposalsReceiverCommon.using(proposal: Proposal) = using(listOf(proposal))
 
 @AssessmentDsl
 interface ProposalsReceiverAddOnly : ProposalsReceiverCommon
@@ -53,17 +51,13 @@ typealias ProposalsCompilerV2 = ProposalsCompiler<ProposalReceiverV2>
 private class ProposalsReceiverImplCommon : ProposalsReceiverCommon, ProposalsReceiverAddOnly {
     private val proposals = emptyMutableProposalSet()
 
-    private fun requireUnusuedNumber(number: ProposalNumber) {
+    private fun requireUnusedNumber(number: ProposalNumber) {
         require(!proposals.contains(number)) { "Use of duplicate proposal number: $number." }
     }
 
-    override fun using(proposal: Proposal) {
-        requireUnusuedNumber(proposal.number)
-        proposals += proposal
-    }
-
     override fun using(proposals: Iterable<Proposal>) {
-        proposals.forEach(::using)
+        proposals.forEach { requireUnusedNumber(it.number) }
+        this.proposals.addAll(proposals)
     }
 
     fun compile(): ImmutableProposalSet = proposals.toImmutableProposalSet()
