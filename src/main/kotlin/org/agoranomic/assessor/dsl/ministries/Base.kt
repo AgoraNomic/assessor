@@ -100,13 +100,15 @@ fun <Office> GlobalVotingStrengthReceiver.ministries(
     ministryBonus: VotingStrengthDifference,
     proposals: ProposalSet
 ) where Office : Enum<Office>, Office : OfficeID {
+    @Suppress("USELESS_CAST") // Compiler demands cast
     val rawOfficeMap =
         officeMap
             .toMap()
-            .mapKeys { (office: OfficeID, _) -> office as OfficeID } // Compiler demands cast
+            .mapKeys { (office: OfficeID, _) -> office as OfficeID }
             .filterValues { it.isHeld() }
             .mapValues { (_, state) -> (state as OfficeState.Held).holder }
 
+    @Suppress("USELESS_CAST") // Compiler demands cast
     val castOfficeMinistries =
         officeMinistries.mapKeys { (office: OfficeID, _) -> (office as OfficeID) }
 
