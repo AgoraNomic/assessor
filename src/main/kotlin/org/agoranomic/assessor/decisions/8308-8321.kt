@@ -19,7 +19,7 @@ import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
-fun `assessment 8308 to 8321`() = assessment {
+fun assessment8308to8321() = assessment {
     name("8308-8321")
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-February/013430.html")
     quorum(5)

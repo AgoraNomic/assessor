@@ -9,7 +9,7 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
-fun `assessment 8280 to 8286`() = assessment {
+fun assessment8280to8286() = assessment {
     name("8280-8286")
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-January/013352.html")
     quorum(4)

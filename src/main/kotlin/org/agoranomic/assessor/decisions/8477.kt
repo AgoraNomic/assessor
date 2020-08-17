@@ -12,7 +12,7 @@ import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
-fun `assessment 8477`() = assessment {
+fun assessment8477() = assessment {
     name("8477")
     quorum(8)
 
