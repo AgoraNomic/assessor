@@ -15,9 +15,8 @@ dependencies {
     fun kotlinx(module: String, version: String? = null): Any =
         "org.jetbrains.kotlinx:kotlinx-$module${version?.let { ":$version" } ?: ""}"
 
-    implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
-    implementation(kotlinx("collections-immutable-jvm", "0.3"))
+    implementation(kotlinx("collections-immutable", "0.3"))
     implementation(kotlinx("serialization-runtime", "0.13.0"))
     implementation("commons-cli:commons-cli:1.4")
     implementation("io.github.classgraph:classgraph:4.8.46")
