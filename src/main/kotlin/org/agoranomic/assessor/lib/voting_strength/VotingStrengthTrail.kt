@@ -35,7 +35,6 @@ data class VotingStrengthTrail(
      * - ((*4), 20)
      */
     fun stepsWithValues(): List<Pair<VotingStrengthModification?, VotingStrength>> {
-        @OptIn(ExperimentalStdlibApi::class)
         return modifications.scan((null as VotingStrengthModification?) to initial) { acc, modification ->
             modification to (modification.transform(acc.second))
         }
