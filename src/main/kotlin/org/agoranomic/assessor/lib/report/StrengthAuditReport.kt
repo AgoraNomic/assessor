@@ -34,7 +34,7 @@ fun strengthAuditReport(resolutionMap: ProposalResolutionMap): String {
                 check(rows.isNotEmpty())
 
                 val strengthColumnMaxLength =
-                    rows.map { it.first.length }.max() ?: error("Expected at least one entry")
+                    rows.map { it.first.length }.maxOrNull() ?: error("Expected at least one entry")
 
                 append(rows.joinToString("") { it.first.padStart(strengthColumnMaxLength) + " | " + it.second + "\n" })
                 appendln()

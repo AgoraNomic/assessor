@@ -38,7 +38,7 @@ private fun StringBuilder.emitTable(columnNames: List<String>, dataRows: List<Li
     dataRows.forEach { require(it.size == columnNames.size) }
 
     val maxLengths = columnNames.indices.map { idx ->
-        max(columnNames[idx].length, dataRows.map { it[idx] }.maxBy { it.length }?.length ?: 0)
+        max(columnNames[idx].length, dataRows.map { it[idx] }.maxByOrNull { it.length }?.length ?: 0)
     }
 
     val headerText = tableRowText(maxLengths, columnNames)
