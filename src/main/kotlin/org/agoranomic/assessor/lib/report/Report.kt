@@ -3,7 +3,6 @@ package org.agoranomic.assessor.lib.report
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
-import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.ResolutionData
@@ -12,21 +11,7 @@ import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
 import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
-import org.agoranomic.assessor.lib.voting_strength.VotingStrengthWithComment
 import kotlin.math.max
-
-private fun StringBuilder.emitLine() {
-    this.append('\n')
-}
-
-private fun StringBuilder.emitString(string: String) {
-    this.append(string)
-}
-
-private fun StringBuilder.emitLine(string: String) {
-    emitString(string)
-    emitLine()
-}
 
 private fun tableRowText(maxLengths: List<Int>, row: List<String>): String {
     require(maxLengths.size == row.size)
@@ -34,7 +19,7 @@ private fun tableRowText(maxLengths: List<Int>, row: List<String>): String {
     return row.zip(maxLengths) { item, maxLength -> item.padEnd(maxLength) }.joinToString("  ")
 }
 
-private fun StringBuilder.emitTable(columnNames: List<String>, dataRows: List<List<String>>) {
+private fun renderTable(columnNames: List<String>, dataRows: List<List<String>>) = buildString {
     dataRows.forEach { require(it.size == columnNames.size) }
 
     val maxLengths = columnNames.indices.map { idx ->
@@ -43,75 +28,61 @@ private fun StringBuilder.emitTable(columnNames: List<String>, dataRows: List<Li
 
     val headerText = tableRowText(maxLengths, columnNames)
 
-    emitLine(headerText)
-    emitLine("-".repeat(headerText.length))
+    appendLine(headerText)
+    appendLine("-".repeat(headerText.length))
 
     for (dataRow in dataRows) {
-        emitLine(tableRowText(maxLengths, dataRow))
+        appendLine(tableRowText(maxLengths, dataRow))
     }
 }
 
-private fun StringBuilder.emitSummaryTable(resolutionMap: ProposalResolutionMap) {
+private fun renderSummaryTable(resolutionMap: ProposalResolutionMap): String {
     val columnNames = listOf("ID", "Title", "Result")
 
     val dataRows = resolutionMap.proposals.map {
         listOf(it.number.toString(), it.title, resolutionMap.resolutionOf(it.number).result.readableName)
     }
 
-    emitTable(columnNames, dataRows)
+    return renderTable(columnNames, dataRows)
 }
 
-private fun StringBuilder.emitHeader() {
-    emitLine("I hereby resolve the Agoran decisions to adopt the below proposals.")
-}
+private fun header() = "I hereby resolve the Agoran decisions to adopt the below proposals."
 
-private fun StringBuilder.emitQuorum(quorum: AssessmentQuorum) {
-    emitLine("The quorum for all below decisions was ${quorum.count()}.")
-}
+private fun renderQuorum(quorum: AssessmentQuorum) = "The quorum for all below decisions was ${quorum.count()}."
 
-private fun StringBuilder.emitProposalV0Header(data: ProposalDataV0) {}
+private fun renderClassAndChamberHeader(classAndChamber: ProposalClassAndChamber): String {
+    return classAndChamber.accept(object : ProposalClassAndChamberMapper<String> {
+        override fun visitClassless() = ""
 
-private fun StringBuilder.emitClassAndChamberHeader(classAndChamber: ProposalClassAndChamber) {
-    classAndChamber.accept(object : ProposalClassAndChamberVisitor {
-        override fun visitClassless() {
-            // do nothing
-        }
+        override fun visitDemocratic() = "CLASS: DEMOCRATIC\n"
 
-        override fun visitDemocratic() {
-            emitLine("CLASS: DEMOCRATIC")
-        }
-
-        override fun visitOrdinary(chamber: ProposalChamber) {
-            emitLine("CLASS: ORDINARY")
-            emitLine("CHAMBER: ${chamber.readableName.toUpperCase()}")
-        }
+        override fun visitOrdinary(chamber: ProposalChamber) =
+            "CLASS: ORDINARY\nCHAMBER: ${chamber.readableName.toUpperCase()}\n"
     })
 }
 
-private fun StringBuilder.emitProposalV1Header(data: ProposalDataV1) {
-    emitClassAndChamberHeader(data.classAndChamber)
+private fun renderProposalV1Header(data: ProposalDataV1) = renderClassAndChamberHeader(data.classAndChamber)
+
+private fun renderProposalV2Header(data: ProposalDataV2) = buildString {
+    append(renderClassAndChamberHeader(data.classAndChamber))
+    appendLine("SPONSORED: ${if (data.sponsored) "YES" else "NO"}")
 }
 
-private fun StringBuilder.emitProposalV2Header(data: ProposalDataV2) {
-    emitClassAndChamberHeader(data.classAndChamber)
-    emitLine("SPONSORED: ${if (data.sponsored) "YES" else "NO"}")
-}
-
-private fun StringBuilder.emitProposalHeader(config: ReadableReportConfig, proposal: Proposal) {
-    emitLine("PROPOSAL ${proposal.number} (${proposal.title})")
-    if (config.authorLine) emitLine("AUTHOR: ${proposal.author.name}")
+private fun renderProposalHeader(config: ReadableReportConfig, proposal: Proposal) = buildString {
+    appendLine("PROPOSAL ${proposal.number} (${proposal.title})")
+    if (config.authorLine) appendLine("AUTHOR: ${proposal.author.name}")
 
     proposal.accept(object : ProposalVisitor {
         override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
-            emitProposalV0Header(versionedData)
+            /* no header */
         }
 
         override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) {
-            emitProposalV1Header(versionedData)
+            append(renderProposalV1Header(versionedData))
         }
 
         override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) {
-            emitProposalV2Header(versionedData)
+            append(renderProposalV2Header(versionedData))
         }
     })
 }
@@ -134,46 +105,35 @@ private val strengthFootnoteMarkerMap = mapOf(
     14 to ">"
 )
 
-private fun StringBuilder.emitProposalVotes(
+private fun renderProposalVotes(
     voteMap: SimplifiedSingleProposalVoteMap,
     strengthMap: VotingStrengthTrailForPersons,
     voteKindVoteCounts: Boolean
-) {
+) = buildString {
     val actualFootnotes =
         strengthFootnoteMarkerMap
             .mapKeys { (k, _) -> VotingStrength(k) }
             .filterKeys { it != strengthMap.default }
 
-    fun emitVoteKind(voteKind: VoteKind) {
+    fun appendVoteKind(voteKind: VoteKind) {
         val matchingVotes = voteMap.personsWithVote(voteKind)
 
-        emitString("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
-        emitString(matchingVotes.sortedBy { it.name }
+        append("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
+        append(matchingVotes.sortedBy { it.name }
             .map { "${it.name}${actualFootnotes[strengthMap.finalStrengthForPerson(it)] ?: ""}" }
             .joinToString(", "))
-        emitLine()
+        appendLine()
     }
 
-    emitVoteKind(VoteKind.FOR)
-    emitVoteKind(VoteKind.AGAINST)
-    emitVoteKind(VoteKind.PRESENT)
+    appendVoteKind(VoteKind.FOR)
+    appendVoteKind(VoteKind.AGAINST)
+    appendVoteKind(VoteKind.PRESENT)
 }
 
-private fun StringBuilder.emitSingleVotingStrength(person: Person, strength: VotingStrengthWithComment) {
-    emitString("${person.name} has voting strength ${strength.value}")
+private fun renderProposalAI(resolutionData: ResolutionData, ai: ProposalAI) =
+    "AI (F/A): ${resolutionData.strengths.strengthFor}/${resolutionData.strengths.strengthAgainst} (AI=$ai)"
 
-    if (strength.comment != null) {
-        emitString(" (${strength.comment})")
-    }
-
-    emitLine()
-}
-
-private fun StringBuilder.emitProposalAI(resolutionData: ResolutionData, ai: ProposalAI) {
-    emitLine("AI (F/A): ${resolutionData.strengths.strengthFor}/${resolutionData.strengths.strengthAgainst} (AI=$ai)")
-}
-
-private fun StringBuilder.emitProposalPopularity(votes: SimplifiedSingleProposalVoteMap) {
+private fun renderProposalPopularity(votes: SimplifiedSingleProposalVoteMap): String {
     // As defined by Rule 2623
     val F = votes.personsWithVote(VoteKind.FOR).size
     val A = votes.personsWithVote(VoteKind.AGAINST).size
@@ -182,64 +142,62 @@ private fun StringBuilder.emitProposalPopularity(votes: SimplifiedSingleProposal
     val popularity = (F.toDouble() - A.toDouble()) / (T.toDouble())
     val popularityStr = "%.3f".format(popularity)
 
-    emitLine("POPULARITY: $popularityStr")
+    return "POPULARITY: $popularityStr"
 }
 
-private fun StringBuilder.emitProposalOutcome(resolutionData: ResolutionData) {
-    emitLine("OUTCOME: ${resolutionData.result.readableName}")
-}
+private fun renderProposalOutcome(resolutionData: ResolutionData) = "OUTCOME: ${resolutionData.result.readableName}"
 
-private fun StringBuilder.emitVoteComments(resolutionData: ResolutionData) {
+private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
     val votes = resolutionData.votes
     val votersWithComment = votes.votesWithComments().voters
 
     if (votersWithComment.isNotEmpty()) {
-        emitLine("[")
+        appendLine("[")
 
         votersWithComment
             .toList()
             .sortedBy { it.name }
             .forEach { voter ->
                 val vote = votes[voter]
-                emitLine("${voter.name}: ${vote.comment}")
+                appendLine("${voter.name}: ${vote.comment}")
             }
 
-        emitLine("]")
+        appendLine("]")
     }
 }
 
-private fun StringBuilder.emitProposalText(proposals: Iterable<Proposal>) {
-    fun emitSeparator() {
-        emitLine("//////////////////////////////////////////////////////////////////////")
+private fun renderProposalText(proposals: Iterable<Proposal>) = buildString {
+    fun appendSeparator() {
+        appendLine("//////////////////////////////////////////////////////////////////////")
     }
 
     val sortedProposals = proposals.sortedBy { it.number.raw }
 
     if (sortedProposals.isNotEmpty()) {
-        emitLine("The full text of each ADOPTED proposal is included below:")
-        emitLine()
+        appendLine("The full text of each ADOPTED proposal is included below:")
+        appendLine()
 
         for (proposal in sortedProposals) {
-            emitSeparator()
-            emitLine("ID: ${proposal.number}")
-            emitLine("Title: ${proposal.title}")
-            emitLine("Adoption index: ${proposal.ai}")
-            emitLine("Author: ${proposal.author.name}")
-            emitLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
-            emitLine()
-            emitLine()
-            emitString(proposal.text.trim())
-            emitLine()
-            emitLine()
+            appendSeparator()
+            appendLine("ID: ${proposal.number}")
+            appendLine("Title: ${proposal.title}")
+            appendLine("Adoption index: ${proposal.ai}")
+            appendLine("Author: ${proposal.author.name}")
+            appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
+            appendLine()
+            appendLine()
+            append(proposal.text.trim())
+            appendLine()
+            appendLine()
         }
 
-        emitSeparator()
+        appendSeparator()
     } else {
-        emitLine("No proposals were adopted.")
+        appendLine("No proposals were adopted.")
     }
 }
 
-private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTrailForPersons>) {
+private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTrailForPersons>) = buildString {
     check(allStrengthMaps.isNotEmpty())
     check(allStrengthMaps.map { it.default }.distinct().size == 1)
 
@@ -255,47 +213,52 @@ private fun StringBuilder.emitStrengthFootnotes(allStrengthMaps: Collection<Voti
             .toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {
-        val footnotes = specialVotingStrengths.sorted().map {
-            val intValue = it.toInt()
-            intValue to strengthFootnoteMarkerMap[intValue]!!
-        }.map { (value, symbol) -> "$symbol: player has voting strength $value" }.joinToString(separator = "\n")
+        val footnotes = specialVotingStrengths
+            .sorted()
+            .map {
+                val intValue = it.toInt()
+                intValue to strengthFootnoteMarkerMap[intValue]!!
+            }
+            .map { (value, symbol) -> "$symbol: player has voting strength $value\n" }
+            .joinToString("")
 
-        emitWithDelimiter("VOTING STRENGTHS")
-        emitLine("Strength is ${defaultStrength} unless otherwise noted.")
-        emitString(footnotes)
-        emitLine()
+        appendWithDelimiter("VOTING STRENGTHS")
+        appendLine("Strength is ${defaultStrength} unless otherwise noted.")
+        append(footnotes)
     }
 }
 
 private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, resolutionMap: ProposalResolutionMap) {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
-    emitWithDelimiter("PROPOSALS")
-    emitLine()
+    appendWithDelimiter("PROPOSALS")
+    appendLine()
 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
 
-        emitProposalHeader(config, proposal)
+        append(renderProposalHeader(config, proposal))
 
-        emitProposalVotes(
-            resolution.votes,
-            resolutionMap.votingStrengthsFor(proposal.number),
-            config.voteKindBallotCount
+        append(
+            renderProposalVotes(
+                resolution.votes,
+                resolutionMap.votingStrengthsFor(proposal.number),
+                config.voteKindBallotCount
+            )
         )
 
-        if (config.totalBallotCount) emitLine("BALLOTS: ${resolution.votes.voteCount}")
-        emitProposalAI(resolution, proposal.ai)
-        if (config.popularity) emitProposalPopularity(resolution.votes)
-        emitProposalOutcome(resolution)
-        if (config.voteComments) emitVoteComments(resolution)
-        emitLine()
+        if (config.totalBallotCount) appendLine("BALLOTS: ${resolution.votes.voteCount}")
+        appendLine(renderProposalAI(resolution, proposal.ai))
+        if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
+        appendLine(renderProposalOutcome(resolution))
+        if (config.voteComments) append(renderVoteComments(resolution))
+        appendLine()
     }
 }
 
-private fun StringBuilder.emitWithDelimiter(string: String) {
-    emitLine(string)
-    emitLine("=".repeat(string.length))
+private fun StringBuilder.appendWithDelimiter(string: String) {
+    appendLine(string)
+    appendLine("=".repeat(string.length))
 }
 
 data class ReadableReportConfig(
@@ -313,43 +276,39 @@ fun readableReport(
 ): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
-    val output = StringBuilder()
-
-    output.run {
-        emitWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.metadata.name}")
+    return buildString {
+        appendWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.metadata.name}")
 
         run {
             val url = resolutionMap.metadata.url
 
             if (url != null) {
-                emitLine()
-                emitLine("THIS IS AN AUTOMATICALLY GENERATED REPORT.")
-                emitLine("SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.")
-                emitLine("THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.")
-                emitLine()
-                emitLine("The official historical report is located at $url")
+                appendLine()
+                appendLine("THIS IS AN AUTOMATICALLY GENERATED REPORT.")
+                appendLine("SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.")
+                appendLine("THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.")
+                appendLine()
+                appendLine("The official historical report is located at $url")
             }
         }
 
         if (config.summaryTable) {
-            emitLine()
-            emitSummaryTable(resolutionMap)
+            appendLine()
+            append(renderSummaryTable(resolutionMap))
         }
 
-        emitLine()
-        emitHeader()
-        emitLine()
-        emitQuorum(resolutionMap.quorum)
-        emitLine()
-        emitStrengthFootnotes(resolutionMap.votingStrengths.values)
-        emitLine()
+        appendLine()
+        appendLine(header())
+        appendLine()
+        appendLine(renderQuorum(resolutionMap.quorum))
+        appendLine()
+        append(renderStrengthFootnotes(resolutionMap.votingStrengths.values))
+        appendLine()
         emitProposalResolutions(config, resolutionMap)
 
         val adoptedProposals = resolutionMap.adoptedProposals()
-        emitProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) })
+        append(renderProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
     }
-
-    return output.toString()
 }
 
 fun jsonReport(resolutionMap: ProposalResolutionMap): String {
