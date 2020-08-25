@@ -91,5 +91,10 @@ associated with the Ministry of Economy.""""
             PRESENT on 8488
             FOR on 8489
         }
+
+        votes(Trigon) {
+            FOR on 8488
+            FOR on 8489
+        }
     }
 }
