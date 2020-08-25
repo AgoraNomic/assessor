@@ -83,4 +83,7 @@ associated with the Ministry of Economy.""""
             )
         }
     }
+
+    voting {
+    }
 }
