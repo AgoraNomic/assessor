@@ -107,5 +107,10 @@ associated with the Ministry of Economy.""""
             FOR on 8488
             FOR on 8489
         }
+
+        votes(Murphy) {
+            FOR on 8488
+            FOR on 8489
+        }
     }
 }
