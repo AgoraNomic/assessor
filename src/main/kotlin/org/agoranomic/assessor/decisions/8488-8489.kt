@@ -102,5 +102,10 @@ associated with the Ministry of Economy.""""
             FOR on 8488
             endorseOfficer(offices, Assessor) on 8489
         }
+
+        votes(ATMunn) {
+            FOR on 8488
+            FOR on 8489
+        }
     }
 }
