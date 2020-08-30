@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.Efficiency
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -130,6 +131,12 @@ public document."""")
 
         votes(Trigon) {
             FOR on all
+        }
+
+        votes(Falsifian) {
+            AGAINST on 8490
+            AGAINST on 8491
+            endorse(Jason) on 8492
         }
     }
 }
