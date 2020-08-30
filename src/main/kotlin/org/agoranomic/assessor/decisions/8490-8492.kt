@@ -138,5 +138,11 @@ public document."""")
             AGAINST on 8491
             endorse(Jason) on 8492
         }
+
+        votes(Gaelan) {
+            endorse(Jason) on 8490
+            endorse(ATMunn) on 8491
+            endorse(Jason) on 8492
+        }
     }
 }
