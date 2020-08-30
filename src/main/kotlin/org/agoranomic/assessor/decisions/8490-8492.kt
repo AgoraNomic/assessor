@@ -121,5 +121,11 @@ public document."""")
             AGAINST on 8491
             FOR on 8492
         }
+
+        votes(Murphy) {
+            FOR on 8490
+            FOR on 8491
+            FOR on 8492
+        }
     }
 }
