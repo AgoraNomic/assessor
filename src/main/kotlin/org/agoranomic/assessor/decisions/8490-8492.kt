@@ -102,4 +102,7 @@ the following: "A player CAN, without objection, ratify a specified
 public document."""")
         }
     }
+
+    voting {
+    }
 }
