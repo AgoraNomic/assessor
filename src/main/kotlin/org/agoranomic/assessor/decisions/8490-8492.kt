@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Efficiency
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -112,6 +113,12 @@ public document."""")
         votes(ATMunn) {
             FOR on 8490
             FOR on 8491
+            FOR on 8492
+        }
+
+        votes(Jason) {
+            FOR on 8490
+            AGAINST on 8491
             FOR on 8492
         }
     }
