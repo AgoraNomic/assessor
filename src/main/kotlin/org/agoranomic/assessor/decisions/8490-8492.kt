@@ -127,5 +127,9 @@ public document."""")
             FOR on 8491
             FOR on 8492
         }
+
+        votes(Trigon) {
+            FOR on all
+        }
     }
 }
