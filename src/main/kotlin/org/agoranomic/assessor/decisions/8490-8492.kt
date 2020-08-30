@@ -108,5 +108,11 @@ public document."""")
         votes(PSS) {
             FOR on all
         }
+
+        votes(ATMunn) {
+            FOR on 8490
+            FOR on 8491
+            FOR on 8492
+        }
     }
 }
