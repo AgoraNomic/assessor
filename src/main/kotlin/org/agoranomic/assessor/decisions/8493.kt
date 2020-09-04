@@ -89,5 +89,9 @@ fun assessment8493() = assessment {
         votes(DMargaux) {
             FOR on 8493
         }
+
+        votes(RLee) {
+            FOR on 8493
+        }
     }
 }
