@@ -21,6 +21,7 @@ val JacobArduino = Person("Jacob Arduino")
 val Jason = Person("Jason")
 val L = Person("L")
 val Murphy = Person("Murphy")
+val Nathan = Person("Nathan")
 val nix = Person("nix")
 val o = Person("o")
 val Oerjan = Person("Oerjan") // Not a player, just a watcher
