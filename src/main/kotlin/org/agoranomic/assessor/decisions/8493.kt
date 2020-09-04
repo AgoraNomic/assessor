@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8493() = assessment {
@@ -81,6 +80,14 @@ fun assessment8493() = assessment {
 
         votes(PSS) {
             AGAINST on 8493
+        }
+
+        votes(G) {
+            FOR on 8493
+        }
+
+        votes(DMargaux) {
+            FOR on 8493
         }
     }
 }
