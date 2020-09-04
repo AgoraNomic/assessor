@@ -8,7 +8,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8493() = assessment {
@@ -58,28 +59,8 @@ fun assessment8493() = assessment {
     }
 
     voting {
-        votes(Gaelan) {
-            AGAINST on 8493
-        }
-
-        votes(Nathan) {
-            AGAINST on 8493
-        }
-
         votes(ATMunn) {
             PRESENT on 8493
-        }
-
-        votes(Shelvacu) {
-            AGAINST on 8493
-        }
-
-        votes(Murphy) {
-            AGAINST on 8493
-        }
-
-        votes(PSS) {
-            AGAINST on 8493
         }
 
         votes(G) {
