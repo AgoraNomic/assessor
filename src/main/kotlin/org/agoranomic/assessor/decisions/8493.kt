@@ -61,5 +61,9 @@ fun assessment8493() = assessment {
         votes(Gaelan) {
             AGAINST on 8493
         }
+
+        votes(Nathan) {
+            AGAINST on 8493
+        }
     }
 }
