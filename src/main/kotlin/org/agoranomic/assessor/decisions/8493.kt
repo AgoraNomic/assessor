@@ -55,4 +55,7 @@ fun assessment8493() = assessment {
             text("Increase the power of Rule 2633 (Rulebending) to 3.")
         }
     }
+
+    voting {
+    }
 }
