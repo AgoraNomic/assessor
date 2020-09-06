@@ -1,0 +1,167 @@
+{
+    "metadata": {
+        "name": "8493"
+    },
+    "proposals": [
+        {
+            "version": "2",
+            "number": 8493,
+            "ai": "3.0",
+            "title": "Minor Adjustments",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Increase the power of Rule 2633 (Rulebending) to 3."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8493,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 6,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "ATMunn",
+                        "vote": {
+                            "value": "PRESENT"
+                        }
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "D. Margaux",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": {
+                            "value": "FOR"
+                        }
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Gaelan",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                },
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 27 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "27"
+                                    }
+                                ]
+                            },
+                            "current_strength": -24
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 0
+                        }
+                    ],
+                    "final": 0
+                },
+                {
+                    "person": "ATMunn",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 1 for holding Speaker",
+                                "kind": "office_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        }
+                    ],
+                    "final": 4
+                }
+            ]
+        }
+    ]
+}
