@@ -95,5 +95,9 @@ fun assessment8494to8495() = assessment {
         votes(DMargaux) {
             AGAINST on all
         }
+
+        votes(Nathan) {
+            FOR on all
+        }
     }
 }
