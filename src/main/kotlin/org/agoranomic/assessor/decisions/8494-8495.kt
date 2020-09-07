@@ -66,4 +66,7 @@ fun assessment8494to8495() = assessment {
             text("Repeal rule 2633.")
         }
     }
+
+    voting {
+    }
 }
