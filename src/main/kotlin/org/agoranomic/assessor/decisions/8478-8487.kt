@@ -17,8 +17,8 @@ import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8478to8487() = assessment {
-    quorum(6)
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-August/014097.html")
+    quorum(6)
 
     val offices = officeMapOf(
         ADoP to Murphy,
