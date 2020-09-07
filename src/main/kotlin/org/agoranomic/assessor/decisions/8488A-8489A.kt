@@ -10,6 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8488Ato8489A() = assessment {
@@ -81,5 +83,13 @@ associated with the Ministry of Economy."""")
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8488
+            FOR on 8489
+        }
+
+        votes(Telnaior) {
+            endorse(Aris) on all
+        }
     }
 }
