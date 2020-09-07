@@ -96,5 +96,9 @@ associated with the Ministry of Economy."""")
             FOR on 8488
             FOR on 8489
         }
+
+        votes(BaronVV) {
+            endorse(Jason) on all
+        }
     }
 }
