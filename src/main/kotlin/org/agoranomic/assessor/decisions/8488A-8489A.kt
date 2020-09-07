@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
@@ -109,6 +110,11 @@ associated with the Ministry of Economy."""")
 
         votes(sukil) {
             match(Trigon) on all
+        }
+
+        votes(Falsifian) {
+            FOR on 8488
+            endorseOfficer(offices, Assessor) on 8489
         }
     }
 }
