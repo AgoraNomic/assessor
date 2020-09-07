@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -15,6 +16,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 fun assessment8493() = assessment {
     name("8493")
     quorum(3)
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014182.html")
 
     val offices = officeMapOf(
         ADoP to Murphy,
