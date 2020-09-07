@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8494to8495() = assessment {
@@ -68,5 +69,8 @@ fun assessment8494to8495() = assessment {
     }
 
     voting {
+        votes(Shelvacu) {
+            FOR on all
+        }
     }
 }
