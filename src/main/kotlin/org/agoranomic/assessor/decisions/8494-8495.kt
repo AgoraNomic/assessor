@@ -6,13 +6,15 @@ import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 
 @UseAssessment
 fun assessment8494to8495() = assessment {
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014195.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014196.html")
     quorum(3)
 
     val offices = officeMapOf(
