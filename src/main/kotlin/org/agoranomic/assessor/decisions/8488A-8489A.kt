@@ -11,6 +11,7 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -99,6 +100,15 @@ associated with the Ministry of Economy."""")
 
         votes(BaronVV) {
             endorse(Jason) on all
+        }
+
+        votes(Trigon) {
+            FOR on 8488
+            FOR on 8489
+        }
+
+        votes(sukil) {
+            match(Trigon) on all
         }
     }
 }
