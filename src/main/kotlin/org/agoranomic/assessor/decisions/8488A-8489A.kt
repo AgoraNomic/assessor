@@ -79,4 +79,7 @@ paragraph: "The type of card with the fewest existing instances is
 associated with the Ministry of Economy."""")
         }
     }
+
+    voting {
+    }
 }
