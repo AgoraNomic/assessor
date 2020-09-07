@@ -30,7 +30,7 @@ fun assessment8494to8495() = assessment {
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
-        Speaker to ATMunn,
+        Speaker to grok,
         Tailor to PSS,
         Treasuror to Trigon,
         Webmastor to nix,
