@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.detail.SetOnce
 import org.agoranomic.assessor.dsl.detail.getOrNull
 import org.agoranomic.assessor.lib.proposal.AssessmentQuorum
 import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
+import org.agoranomic.assessor.lib.proposal.proposal_set.isNotEmpty
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.AssessmentMetadata
 import org.agoranomic.assessor.lib.resolve.AssessmentUrl
@@ -18,7 +19,7 @@ interface AssessmentReceiver {
     fun strengths(block: GlobalVotingStrengthReceiverInit)
     fun voting(block: MultiPersonVotesReceiverInit)
     fun quorum(value: AssessmentQuorum)
-    fun name(value: String)
+    fun suffix(value: String)
     fun url(value: AssessmentUrl)
 
     // TODO fix this dirty hack for not adding an import to everywhere that uses this
@@ -53,7 +54,7 @@ private class DefaultAssessmentReceiver(
     private val proposalsBlockValue = SetOnce.namedOf<() -> ImmutableProposalSet>("proposals block")
     private val proposalVotesBlockValue = SetOnce.namedOf<MultiPersonVotesReceiverInit>("voting block")
     private val quorumValue = SetOnce.namedOf<AssessmentQuorum>("assessment quorum")
-    private val nameValue = SetOnce.namedOf<String>("assessment name")
+    private val suffixValue = SetOnce.namedOf<String>("assessment suffix")
     private val urlValue = SetOnce.namedOf<AssessmentUrl>("assessment url")
 
     override fun strengths(block: GlobalVotingStrengthReceiverInit) {
@@ -88,8 +89,8 @@ private class DefaultAssessmentReceiver(
         quorumValue.set(value)
     }
 
-    override fun name(value: String) {
-        nameValue.set(value)
+    override fun suffix(value: String) {
+        suffixValue.set(value)
     }
 
     override fun url(value: AssessmentUrl) {
@@ -97,12 +98,16 @@ private class DefaultAssessmentReceiver(
     }
 
     fun compile(): AssessmentData {
-        val name = nameValue.get()
+        val suffix = suffixValue.getOrNull()
         val url = urlValue.getOrNull()
         val quorum = quorumValue.get()
 
         val proposalsBlock = proposalsBlockValue.get()
         val proposals = proposalsBlock()
+
+        check(proposals.isNotEmpty()) { "proposals cannot be empty" }
+        val minNumber = proposals.numbers().minOrNull() ?: error("already checked not empty")
+        val maxNumber = proposals.numbers().maxOrNull() ?: error("already checked not empty")
 
         val proposalVotesBlock = proposalVotesBlockValue.get()
         val pendingVoteMap = multiPersonVotesCompiler.compile(proposals, proposalVotesBlock)
@@ -116,8 +121,10 @@ private class DefaultAssessmentReceiver(
 
         return AssessmentData(
             AssessmentMetadata(
-                name = name,
-                url = url
+                minNumber = minNumber,
+                maxNumber = maxNumber,
+                suffix = suffix,
+                url = url,
             ),
             quorum,
             votingStrengths,

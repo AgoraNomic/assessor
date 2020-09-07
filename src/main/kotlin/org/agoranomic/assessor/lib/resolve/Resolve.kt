@@ -30,14 +30,14 @@ enum class ProposalResult {
 data class ResolutionData(
     val result: ProposalResult,
     val strengths: AIStrengths,
-    val votes: SimplifiedSingleProposalVoteMap
+    val votes: SimplifiedSingleProposalVoteMap,
 )
 
 fun resolve(
     quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthTrailForPersons,
     ai: ProposalAI,
-    rawVotes: SingleProposalVoteMap
+    rawVotes: SingleProposalVoteMap,
 ): ResolutionData {
     val simplifiedVotes = rawVotes.simplified()
 
@@ -65,14 +65,14 @@ data class ProposalResolutionMap(
     val proposals: ImmutableProposalSet,
     private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
-    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>
+    val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>,
 ) {
     constructor(
         metadata: AssessmentMetadata,
         proposals: ProposalSet,
         resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
-        votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>
+        votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>,
     ) : this(
         metadata,
         proposals.toImmutableProposalSet(),
@@ -114,23 +114,39 @@ inline class AssessmentUrl(val raw: String) {
 }
 
 data class AssessmentMetadata(
-    val name: String,
-    val url: AssessmentUrl?
-)
+    val minNumber: ProposalNumber,
+    val maxNumber: ProposalNumber,
+    val suffix: String?,
+    val url: AssessmentUrl?,
+) {
+    init {
+        require(minNumber <= maxNumber)
+    }
+
+    private val suffixOrEmpty
+        get() = suffix ?: ""
+
+    val name
+        get() =
+            if (minNumber == maxNumber)
+                "$minNumber$suffixOrEmpty"
+            else
+                "$minNumber$suffixOrEmpty-$maxNumber$suffixOrEmpty"
+}
 
 data class AssessmentData(
     val metadata: AssessmentMetadata,
     val quorum: AssessmentQuorum,
     val votingStrengths: ImmutableMap<ProposalNumber, VotingStrengthTrailForPersons>,
     val proposals: ImmutableProposalSet,
-    val votes: MultiPersonPendingVoteMap
+    val votes: MultiPersonPendingVoteMap,
 ) {
     constructor(
         metadata: AssessmentMetadata,
         quorum: AssessmentQuorum,
         votingStrengths: Map<ProposalNumber, VotingStrengthTrailForPersons>,
         proposals: ProposalSet,
-        votes: MultiPersonPendingVoteMap
+        votes: MultiPersonPendingVoteMap,
     ) : this(
         metadata,
         quorum,
