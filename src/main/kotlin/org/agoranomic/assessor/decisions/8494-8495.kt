@@ -81,5 +81,10 @@ fun assessment8494to8495() = assessment {
             FOR on 8494
             FOR on 8495
         }
+
+        votes(Gaelan) {
+            FOR on 8494
+            FOR on 8495
+        }
     }
 }
