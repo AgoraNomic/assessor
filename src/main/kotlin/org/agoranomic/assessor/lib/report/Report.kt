@@ -223,6 +223,7 @@ private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTr
             .joinToString("")
 
         appendWithDelimiter("VOTING STRENGTHS")
+        appendLine()
         appendLine("Strength is ${defaultStrength} unless otherwise noted.")
         append(footnotes)
     }
