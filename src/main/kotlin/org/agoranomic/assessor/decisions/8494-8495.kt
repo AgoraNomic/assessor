@@ -10,7 +10,6 @@ import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8494to8495() = assessment {
@@ -70,34 +69,12 @@ fun assessment8494to8495() = assessment {
     }
 
     voting {
-        votes(Shelvacu) {
-            FOR on all
-        }
-
-        votes(Murphy) {
-            FOR on all
-        }
-
-        votes(Jason) {
-            FOR on 8494
-            FOR on 8495
-        }
-
-        votes(Gaelan) {
-            FOR on 8494
-            FOR on 8495
-        }
-
         votes(G) {
             AGAINST on all
         }
 
         votes(DMargaux) {
             AGAINST on all
-        }
-
-        votes(Nathan) {
-            FOR on all
         }
     }
 }
