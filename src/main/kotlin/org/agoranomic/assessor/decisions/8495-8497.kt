@@ -88,4 +88,7 @@ Amend R2350 "Proposals" by adding, to the last paragraph:
 grant a Pendant to the player that pended the proposal."""")
         }
     }
+
+    voting {
+    }
 }
