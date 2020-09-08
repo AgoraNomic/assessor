@@ -95,5 +95,9 @@ grant a Pendant to the player that pended the proposal."""")
             // FOR on 8496
             FOR on 8497
         }
+
+        votes(BaronVV) {
+            endorse(Jason) on all
+        }
     }
 }
