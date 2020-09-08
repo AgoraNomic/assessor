@@ -5,11 +5,9 @@ import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
-import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
 
 @UseAssessment
@@ -61,18 +59,8 @@ Create a rule, "Please Stand By", with the following text:
   Normal service will resume shortly.""")
         }
 
-        proposal(8496) {
-            title("Timely reminders")
-            ai("1.0")
-            author(Jason)
-            coauthors(Aris)
-            chamber(Legislation)
-            sponsored()
-
-            text("""
-Amend Rule 2168 by replacing  the text "Upon such an occurrence" with
-the text "Within two days of such an occurrence"""")
-        }
+        // Decision on 8496 was never initiated.
+        // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2020-September/044761.html
 
         proposal(8497) {
             title("Withdrawal Quick-Fix")
