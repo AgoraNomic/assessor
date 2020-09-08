@@ -8,7 +8,10 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8495to8497() = assessment {
@@ -78,5 +81,14 @@ grant a Pendant to the player that pended the proposal."""")
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8495
+            // FOR on 8496
+            AGAINST on 8497
+        }
+
+        votes(Telnaior) {
+            endorse(Aris) on all
+        }
     }
 }
