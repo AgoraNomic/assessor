@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
@@ -109,6 +110,12 @@ grant a Pendant to the player that pended the proposal."""")
 
         votes(sukil) {
             match(Trigon) on all
+        }
+
+        votes(Falsifian) {
+            AGAINST on 8495
+            // FOR on 8496
+            endorseOfficer(offices, Treasuror) on 8497
         }
     }
 }
