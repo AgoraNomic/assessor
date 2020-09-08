@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -98,6 +99,16 @@ grant a Pendant to the player that pended the proposal."""")
 
         votes(BaronVV) {
             endorse(Jason) on all
+        }
+
+        votes(Trigon) {
+            AGAINST on 8495
+            // FOR on 8496
+            AGAINST on 8497
+        }
+
+        votes(sukil) {
+            match(Trigon) on all
         }
     }
 }
