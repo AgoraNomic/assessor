@@ -9,8 +9,11 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.Justice
 import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8500to8503() = assessment {
@@ -195,5 +198,15 @@ with:
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8500
+            PRESENT on 8501
+            FOR on 8502
+            FOR on 8503
+        }
+
+        votes(Telnaior) {
+            endorse(Aris) on all
+        }
     }
 }
