@@ -208,5 +208,12 @@ with:
         votes(Telnaior) {
             endorse(Aris) on all
         }
+
+        votes(Murphy) {
+            FOR on 8500
+            FOR on 8501
+            FOR on 8502
+            FOR on 8503
+        }
     }
 }
