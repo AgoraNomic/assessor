@@ -215,5 +215,16 @@ with:
             FOR on 8502
             FOR on 8503
         }
+
+        votes(Jason) {
+            FOR on 8500
+            FOR on 8501
+            FOR on 8502
+            FOR on 8503
+        }
+
+        votes(BaronVV) {
+            endorse(Jason) on all
+        }
     }
 }
