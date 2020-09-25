@@ -193,4 +193,7 @@ with:
   Making My Eyes Bleed.""")
         }
     }
+
+    voting {
+    }
 }
