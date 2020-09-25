@@ -226,5 +226,12 @@ with:
         votes(BaronVV) {
             endorse(Jason) on all
         }
+
+        votes(ATMunn) {
+            endorse(G) on 8500
+            PRESENT on 8501
+            FOR on 8502
+            FOR on 8503
+        }
     }
 }
