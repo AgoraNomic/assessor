@@ -110,4 +110,7 @@ is granted 2 coins for every vote on this proposal that evaluated to
 FOR.""")
         }
     }
+
+    voting {
+    }
 }
