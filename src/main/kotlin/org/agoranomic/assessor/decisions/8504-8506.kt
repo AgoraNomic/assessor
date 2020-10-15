@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -118,6 +119,16 @@ FOR.""")
             FOR on 8504
             FOR on 8505
             PRESENT on 8506
+        }
+
+        votes(Jason) {
+            FOR on 8504
+            FOR on 8505
+            endorse(Falsifian) on 8506
+        }
+
+        votes(BaronVV) {
+            endorse(Jason) on all
         }
     }
 }
