@@ -11,6 +11,8 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8504to8506() = assessment {
@@ -112,5 +114,10 @@ FOR.""")
     }
 
     voting {
+        votes(Falsifian) {
+            FOR on 8504
+            FOR on 8505
+            PRESENT on 8506
+        }
     }
 }
