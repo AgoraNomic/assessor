@@ -130,5 +130,11 @@ FOR.""")
         votes(BaronVV) {
             endorse(Jason) on all
         }
+
+        votes(nix) {
+            PRESENT on 8504
+            FOR on 8505
+            PRESENT on 8506
+        }
     }
 }
