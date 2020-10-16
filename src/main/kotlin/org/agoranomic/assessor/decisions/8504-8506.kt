@@ -146,5 +146,9 @@ FOR.""")
         votes(Telnaior) {
             endorse(Aris) on all
         }
+
+        votes(ATMunn) {
+            (8504..8506).forEach { FOR on it }
+        }
     }
 }
