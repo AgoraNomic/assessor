@@ -10,10 +10,10 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.proposal.Ministry.Participation
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8504to8506() = assessment {
@@ -135,6 +135,16 @@ FOR.""")
             PRESENT on 8504
             FOR on 8505
             PRESENT on 8506
+        }
+
+        votes(Aris) {
+            endorseOrElse(G, FOR) on 8504
+            endorseOrElse(Jason, FOR) on 8505
+            AGAINST on 8506
+        }
+
+        votes(Telnaior) {
+            endorse(Aris) on all
         }
     }
 }
