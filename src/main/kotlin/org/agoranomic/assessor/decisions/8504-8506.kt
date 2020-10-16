@@ -118,7 +118,11 @@ FOR.""")
         votes(Falsifian) {
             FOR on 8504
             FOR on 8505
-            PRESENT on 8506
+            AGAINST on 8506
+        }
+
+        votes(twg) {
+            endorse(Falsifian) on all
         }
 
         votes(Jason) {
