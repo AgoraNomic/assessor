@@ -29,16 +29,11 @@ private constructor(private val list: ImmutableList<Proposal>) : AbstractProposa
     }
 }
 
-class MutableListProposalSet : AbstractMutableProposalSet {
-    private val list: MutableList<Proposal>
-
-    private constructor(initialList: List<Proposal>) {
-        this.list = initialList.toMutableList() // Defensive copy
-    }
-
+class MutableListProposalSet
+private constructor(val list: MutableList<Proposal>) : AbstractMutableProposalSet() {
     companion object {
         private fun fromListUnchecked(list: List<Proposal>): MutableListProposalSet {
-            return MutableListProposalSet(initialList = list)
+            return MutableListProposalSet(list.distinct().toMutableList())
         }
 
         fun from(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
