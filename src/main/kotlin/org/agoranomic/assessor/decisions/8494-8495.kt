@@ -59,7 +59,7 @@ fun assessment8494to8495() = assessment {
             text("Repeal rule 2633.")
         }
 
-        proposal(8495) {
+        proposal(8498) {
             title("nopenopenope")
             ai("3.0")
             author(Gaelan)

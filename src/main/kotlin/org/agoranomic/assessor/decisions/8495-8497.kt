@@ -50,7 +50,7 @@ fun assessment8495to8497() = assessment {
     }
 
     proposals(v2) {
-        proposal(8495) {
+        proposal(8499) {
             title("Please stand by")
             ai("1.0")
             author(G)
@@ -83,7 +83,7 @@ grant a Pendant to the player that pended the proposal."""")
 
     voting {
         votes(Aris) {
-            FOR on 8495
+            FOR on 8499
             // FOR on 8496
             AGAINST on 8497
         }
@@ -93,7 +93,7 @@ grant a Pendant to the player that pended the proposal."""")
         }
 
         votes(Jason) {
-            PRESENT on 8495
+            PRESENT on 8499
             // FOR on 8496
             FOR on 8497
         }
@@ -103,7 +103,7 @@ grant a Pendant to the player that pended the proposal."""")
         }
 
         votes(Trigon) {
-            AGAINST on 8495
+            AGAINST on 8499
             // FOR on 8496
             AGAINST on 8497
         }
@@ -113,7 +113,7 @@ grant a Pendant to the player that pended the proposal."""")
         }
 
         votes(Falsifian) {
-            AGAINST on 8495
+            AGAINST on 8499
             // FOR on 8496
             endorseOfficer(offices, Treasuror) on 8497
         }
