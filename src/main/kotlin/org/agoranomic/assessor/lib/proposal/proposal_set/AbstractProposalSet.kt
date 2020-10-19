@@ -13,10 +13,11 @@ abstract class AbstractProposalSet : ProposalSet {
          */
         @JvmStatic
         protected fun checkInitialList(list: List<Proposal>) {
-            val distinctList = list.distinctBy { it.number }
+            val distinctList = list.distinct()
+            val distinctNumberList = distinctList.distinctBy { it.number }
 
-            if (distinctList != list) {
-                val differingList = list - distinctList
+            if (distinctList != distinctNumberList) {
+                val differingList = distinctList - distinctNumberList
                 check(differingList.isNotEmpty())
 
                 val firstDiffering = differingList.first()
