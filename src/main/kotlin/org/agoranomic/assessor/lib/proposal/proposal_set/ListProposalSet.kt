@@ -9,7 +9,7 @@ class ImmutableListProposalSet
 private constructor(private val list: ImmutableList<Proposal>) : AbstractProposalSet(), ImmutableProposalSet {
     companion object {
         private fun fromListUnchecked(list: List<Proposal>): ImmutableListProposalSet {
-            return ImmutableListProposalSet(list.toImmutableList())
+            return ImmutableListProposalSet(list.distinct().toImmutableList())
         }
 
         fun from(list: List<Proposal>) = fromListUnchecked(list.also { checkInitialList(it) })
