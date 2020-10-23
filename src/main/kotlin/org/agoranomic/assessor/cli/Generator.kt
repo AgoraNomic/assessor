@@ -52,92 +52,91 @@ private fun String.escapedAndMultiLineQuoted(): String {
     return "\"\"\"\n$body\"\"\""
 }
 
+private const val ID_LINE_INDEX = 0
+private const val TITLE_LINE_INDEX = 1
+private const val AI_LINE_INDEX = 2
+private const val AUTHOR_LINE_INDEX = 3
+private const val COAUTHORS_LINE_INDEX = 4
+private const val TEXT_START_LINE_INDEX = 5
+
 private fun distributionToDSL(rawDistribution: String): String {
     val distribution = rawDistribution.trim()
     val proposals = distribution.split("//////////////////////////////////////////////////////////////////////")
         .filter { it.isNotEmpty() }
 
-    val stringBuilder = StringBuilder()
-
-    fun emit(string: String) {
-        stringBuilder.append(string)
+    fun StringBuilder.appendScopeOpen(opener: String) {
+        appendLine("$opener {")
     }
 
-    fun emitln() {
-        stringBuilder.appendln()
+    fun StringBuilder.appendScopeClose() {
+        appendLine("}")
     }
 
-    fun emitln(string: String) {
-        stringBuilder.appendln(string)
-    }
+    fun StringBuilder.appendScope(opener: String, block: () -> Unit) {
+        appendScopeOpen(opener)
 
-    fun emitScopeOpen(opener: String) {
-        emit(opener)
-        emit(" {")
-        emitln()
-    }
-
-    fun emitScopeClose() {
-        emitln("}")
-    }
-
-    fun scope(opener: String, block: () -> Unit) {
-        emitScopeOpen(opener)
-        block()
-        emitScopeClose()
-    }
-
-    fun emitDecl(decl: String) {
-        emitln(decl)
-    }
-
-    scope("proposals(v2)") {
-        for (untrimmedProposal in proposals) {
-            val proposal = untrimmedProposal.trim()
-
-            val lines = proposal.lines()
-
-            val id = lines[0].afterExpected("ID: ").toInt()
-
-            scope("proposal($id)") {
-
-                val title = lines[1].afterExpected("Title: ")
-                val quotedTitle = title.escapedAndQuoted()
-
-                emitDecl("title($quotedTitle)")
-
-                val ai = lines[2].afterExpected("Adoption index: ").toBigDecimal()
-
-                emitDecl("ai(${ai.toString().escapedAndQuoted()})")
-
-                val author = lines[3].afterExpected("Author: ")
-
-                emitDecl("author(${playerName(author)})")
-
-                val coauthorsString = lines[4].afterExpected(Regex("Co-author(s|\\(s\\)):")).trim()
-                val coauthors = coauthorsString.split(", ").filter { it.isNotBlank() }
-
-                if (coauthors.isNotEmpty()) {
-                    val coauthorsListStr = coauthors.joinToString(", ") { playerName(it) }
-                    val coauthorsDecl = "coauthors($coauthorsListStr)"
-
-                    emitDecl(coauthorsDecl)
-                }
-
-                emitln()
-
-                val text =
-                    lines.subList(5, lines.size).map { it.trimEnd() }.dropWhile { it.isBlank() }.joinToString("\n")
-                val quotedText = text.escapedAndMultiLineQuoted()
-
-                emitDecl("text($quotedText)")
-            }
-
-            emitln()
+        try {
+            block()
+        } finally {
+            appendScopeClose()
         }
     }
 
-    return stringBuilder.toString()
+    fun StringBuilder.appendDecl(decl: String) {
+        appendLine(decl)
+    }
+
+    return buildString {
+        appendScope("proposals(v2)") {
+            for (untrimmedProposal in proposals) {
+                val proposal = untrimmedProposal.trim()
+                val lines = proposal.lines()
+                val id = lines[ID_LINE_INDEX].afterExpected("ID: ").toInt()
+
+                appendScope("proposal($id)") {
+                    val title = lines[TITLE_LINE_INDEX].afterExpected("Title: ")
+                    val quotedTitle = title.escapedAndQuoted()
+
+                    appendDecl("title($quotedTitle)")
+
+                    val ai = lines[AI_LINE_INDEX].afterExpected("Adoption index: ").toBigDecimal()
+
+                    appendDecl("ai(${ai.toString().escapedAndQuoted()})")
+
+                    val author = lines[AUTHOR_LINE_INDEX].afterExpected("Author: ")
+
+                    appendDecl("author(${playerName(author)})")
+
+                    val coauthorsString =
+                        lines[COAUTHORS_LINE_INDEX]
+                            .afterExpected(Regex("Co-author(s|\\(s\\)):"))
+                            .trim()
+
+                    val coauthorFullNames = coauthorsString.split(", ").filter { it.isNotBlank() }
+                    val coauthorProgramNames = coauthorFullNames.map { playerName(it) }
+
+                    if (coauthorProgramNames.isNotEmpty()) {
+                        appendDecl("coauthors(${coauthorProgramNames.joinToString(", ")})")
+                    }
+
+                    appendLine()
+
+                    val text =
+                        lines
+                            .subList(TEXT_START_LINE_INDEX, lines.size)
+                            .map { it.trimEnd() }
+                            .dropWhile { it.isBlank() }
+                            .joinToString("\n")
+
+                    val quotedText = text.escapedAndMultiLineQuoted()
+
+                    appendDecl("text($quotedText)")
+                }
+
+                appendLine()
+            }
+        }
+    }
 }
 
 fun main(args: Array<String>) {
