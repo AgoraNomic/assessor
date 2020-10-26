@@ -10,7 +10,7 @@ fun strengthAuditReport(resolutionMap: ProposalResolutionMap): String {
     return buildString {
         for (proposal in resolutionMap.proposals) {
             append(lineWithDelimiter("STRENGTHS FOR PROPOSAL ${proposal.number}", '='))
-            appendln()
+            appendLine()
 
             val strengthTrails = resolutionMap.votingStrengthsFor(proposal.number)
 
@@ -37,7 +37,7 @@ fun strengthAuditReport(resolutionMap: ProposalResolutionMap): String {
                     rows.map { it.first.length }.maxOrNull() ?: error("Expected at least one entry")
 
                 append(rows.joinToString("") { it.first.padStart(strengthColumnMaxLength) + " | " + it.second + "\n" })
-                appendln()
+                appendLine()
             }
         }
     }
