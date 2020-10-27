@@ -427,4 +427,7 @@ Amend R2422, "Voting Strength", by replacing the last paragraph with:
 see.)""")
         }
     }
+
+    voting {
+    }
 }
