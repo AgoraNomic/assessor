@@ -448,7 +448,7 @@ see.)""")
         }
 
         votes(Gaelan) {
-            FOR on 8512
+            AGAINST on 8512
             endorse(author) on others
         }
 
