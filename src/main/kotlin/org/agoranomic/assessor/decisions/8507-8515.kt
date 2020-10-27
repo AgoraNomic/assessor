@@ -11,8 +11,7 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.*
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8507to8515() = assessment {
@@ -479,6 +478,18 @@ see.)""")
             FOR on 8513
             FOR on 8514
             FOR on 8515
+        }
+
+        votes(PSS) {
+            FOR on 8507
+            FOR on 8508
+            FOR on 8509
+            endorse(Aris) on 8510
+            FOR on 8511
+            AGAINST on 8512
+            FOR on 8513
+            FOR on 8514
+            PRESENT on 8515
         }
     }
 }
