@@ -539,9 +539,9 @@ see.)""")
         votes(Falsifian) {
             endorse(ATMunn) on 8507
             FOR on 8508
-            AGAINST on 8509
-            AGAINST on 8510
-            AGAINST on 8511
+            endorse(Jason) on 8509
+            endorse(Jason) on 8510
+            endorse(Jason) on 8511
             AGAINST on 8512
             endorse(Aris) on 8513
 
