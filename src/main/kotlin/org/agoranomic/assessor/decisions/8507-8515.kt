@@ -498,7 +498,7 @@ see.)""")
             AGAINST on 8509
             AGAINST on 8510
             AGAINST on 8511
-            PRESENT on 8512
+            AGAINST on 8512
             FOR on 8513
             PRESENT on 8514
             PRESENT on 8515
