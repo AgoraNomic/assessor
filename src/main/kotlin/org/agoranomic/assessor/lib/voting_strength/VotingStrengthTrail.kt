@@ -6,13 +6,22 @@ import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
 
+sealed class VotingStrengthStep {
+    abstract val value: VotingStrength
+
+    data class Initial(override val value: VotingStrength) : VotingStrengthStep()
+
+    data class Modification(val modification: VotingStrengthModification, override val value: VotingStrength) :
+        VotingStrengthStep()
+}
+
 data class VotingStrengthTrail(
     val initial: VotingStrength,
-    val modifications: ImmutableList<VotingStrengthModification>
+    val modifications: ImmutableList<VotingStrengthModification>,
 ) {
     constructor(
         start: VotingStrength,
-        modifications: List<VotingStrengthModification>
+        modifications: List<VotingStrengthModification>,
     ) : this(
         start,
         modifications.toImmutableList()
@@ -34,9 +43,9 @@ data class VotingStrengthTrail(
      * - ((+2), 5)
      * - ((*4), 20)
      */
-    fun stepsWithValues(): List<Pair<VotingStrengthModification?, VotingStrength>> {
-        return modifications.scan((null as VotingStrengthModification?) to initial) { acc, modification ->
-            modification to (modification.transform(acc.second))
+    fun steps(): List<VotingStrengthStep> {
+        return modifications.scan(VotingStrengthStep.Initial(initial) as VotingStrengthStep) { acc, modification ->
+            VotingStrengthStep.Modification(modification, modification.transform(acc.value))
         }
     }
 
@@ -50,14 +59,13 @@ data class VotingStrengthTrail(
      * - ((*4), 20)
      */
     fun modificationsWithValue(): List<Pair<VotingStrengthModification, VotingStrength>> {
-        val steps = stepsWithValues()
+        val steps = steps()
         check(steps.isNotEmpty())
-        check(steps.first().first == null)
 
         val modifications = steps.drop(1)
-        check(modifications.all { it.first != null })
+        check(modifications.all { it is VotingStrengthStep.Modification })
 
-        return modifications.map { (it.first!!) to it.second }
+        return modifications.map { it as VotingStrengthStep.Modification }.map { it.modification to it.value }
     }
 
     fun withAppended(modification: VotingStrengthModification): VotingStrengthTrail {
@@ -71,7 +79,7 @@ data class VotingStrengthTrail(
 
 data class VotingStrengthTrailForPersons(
     val default: VotingStrength,
-    private val override: ImmutableMap<Person, VotingStrengthTrail>
+    private val override: ImmutableMap<Person, VotingStrengthTrail>,
 ) {
     companion object {
         fun emptyWithDefault(default: VotingStrength) = VotingStrengthTrailForPersons(default, mapOf())
@@ -79,7 +87,7 @@ data class VotingStrengthTrailForPersons(
 
     constructor(
         default: VotingStrength,
-        data: Map<Person, VotingStrengthTrail>
+        data: Map<Person, VotingStrengthTrail>,
     ) : this(
         default,
         data.toImmutableMap()
