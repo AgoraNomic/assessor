@@ -523,5 +523,17 @@ see.)""")
         votes(BaronVV) {
             endorse(Jason) on all
         }
+
+        votes(nix) {
+            FOR on 8507
+            FOR on 8508
+            PRESENT on 8509
+            PRESENT on 8510
+            FOR on 8511
+            endorse(Gaelan) on 8512
+            FOR on 8513
+            FOR on 8514
+            FOR on 8515
+        }
     }
 }
