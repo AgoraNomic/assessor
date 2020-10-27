@@ -7,17 +7,12 @@ import io.github.random_internet_cat.util.getOrFail
  *
  * @param T the type of the value
  */
-class SetOnce<T> {
+class SetOnce<T> private constructor(private val name: String?) {
     private var currentValue: T? = null
     private var isInitialized: Boolean = false
-    private val name: String?
 
     companion object {
         fun <T> namedOf(name: String): SetOnce<T> = SetOnce<T>(name)
-    }
-
-    private constructor(name: String?) {
-        this.name = name
     }
 
     constructor() : this(null)

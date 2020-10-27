@@ -27,7 +27,7 @@ data class NamedFileDestination(val file: String) : AssessmentDestination() {
     override fun outputAssessments(assessments: List<AssessmentPendingOutput>) {
         Files.writeString(
             Path.of(file),
-            assessments.map { it.assessmentText }.joinToString("\n"),
+            assessments.joinToString("\n") { it.assessmentText },
             StandardOpenOption.CREATE,
             StandardOpenOption.TRUNCATE_EXISTING
         )

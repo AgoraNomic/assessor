@@ -40,7 +40,7 @@ private fun String.afterExpected(regex: Regex): String {
     val match = regex.find(this)
     require(match != null && match.range.first == 0) { "Unable to match pattern $regex to line $this" }
 
-    return this.substring(match.range.endInclusive + 1)
+    return this.substring(match.range.last + 1)
 }
 
 private fun String.escapedAndQuoted(): String {

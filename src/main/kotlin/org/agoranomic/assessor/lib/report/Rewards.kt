@@ -35,7 +35,7 @@ fun ProposalUnroundedReward.rounded(): ProposalRoundedReward {
 private fun calculateReward(
     ai: ProposalAI,
     voteCountFor: BigInteger,
-    voteCountAgainst: BigInteger
+    voteCountAgainst: BigInteger,
 ): ProposalUnroundedReward {
     return ProposalUnroundedReward((voteCountFor - voteCountAgainst).toBigDecimal())
 }
@@ -44,7 +44,7 @@ data class ProposalRewardData(
     val author: Person,
     val voteCountFor: BigInteger,
     val voteCountAgainst: BigInteger,
-    val ai: ProposalAI
+    val ai: ProposalAI,
 ) {
     val unroundedReward
         get() =
@@ -58,7 +58,7 @@ data class ProposalRewardData(
 }
 
 data class ProposalRewardsMap(
-    private val data: ImmutableMap<ProposalNumber, ProposalRewardData>
+    private val data: ImmutableMap<ProposalNumber, ProposalRewardData>,
 ) {
     constructor(data: Map<ProposalNumber, ProposalRewardData>) : this(data.toImmutableMap())
 
@@ -107,24 +107,21 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
 }
 
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
-    return rewardsMap
-        .proposals
-        .map { proposal ->
-            val rewardData = rewardsMap[proposal]
+    return rewardsMap.proposals.joinToString("\n") { proposal ->
+        val rewardData = rewardsMap[proposal]
 
-            val author = rewardData.author
-            val voteCountFor = rewardData.voteCountFor
-            val voteCountAgainst = rewardData.voteCountAgainst
-            val unroundedReward = rewardData.unroundedReward
-            val roundedReward = rewardData.roundedReward
+        val author = rewardData.author
+        val voteCountFor = rewardData.voteCountFor
+        val voteCountAgainst = rewardData.voteCountAgainst
+        val unroundedReward = rewardData.unroundedReward
+        val roundedReward = rewardData.roundedReward
 
-            val coinAmountString =
-                if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
-                    roundedReward.toString()
-                else
-                    "$unroundedReward -> $roundedReward"
+        val coinAmountString =
+            if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
+                roundedReward.toString()
+            else
+                "$unroundedReward -> $roundedReward"
 
-            "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$coinAmountString coins."
-        }
-        .joinToString("\n")
+        "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$coinAmountString coins."
+    }
 }

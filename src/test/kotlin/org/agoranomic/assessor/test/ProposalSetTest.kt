@@ -70,8 +70,9 @@ class ProposalSetTest {
 
         for (firstCreateProposalSet in createProposalSetFuncs) {
             for (secondCreateProposalSet in createProposalSetFuncs) {
-                assertFalse(
-                    firstCreateProposalSet(firstProp, secondProp) == secondCreateProposalSet(secondProp, thirdProp)
+                assertNotEquals(
+                    firstCreateProposalSet(firstProp, secondProp),
+                    secondCreateProposalSet(secondProp, thirdProp),
                 )
             }
         }

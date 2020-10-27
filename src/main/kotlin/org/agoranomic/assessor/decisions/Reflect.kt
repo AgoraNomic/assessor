@@ -25,6 +25,7 @@ fun findAssessments(): List<AssessmentData> {
             val methodInfos = classInfo.methodInfo as Iterable<MethodInfo>
 
             methodInfos
+                .asSequence()
                 .filter { it.hasAnnotation(annotationName) }
                 .map { methodInfo -> methodInfo.loadClassAndGetMethod().kotlinFunction }
                 .map { it as KFunction }

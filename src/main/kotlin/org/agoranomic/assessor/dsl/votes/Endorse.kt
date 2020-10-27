@@ -30,7 +30,8 @@ fun endorse(person: Person) = endorsementVote(person)
 fun endorse(author: AuthorMarker) = authorEndorsementVote()
 
 fun endorseOrElse(endorsee: Person, default: FunctionVote) = FunctionVote { prop, context ->
-    checkNotNull(endorsementFunc(endorsee)(prop, context)).takeUnless { it is InextricableVote }
+    checkNotNull(endorsementFunc(endorsee)(prop, context))
+        .takeUnless { it is InextricableVote }
         ?: default.func(prop, context)
 }
 

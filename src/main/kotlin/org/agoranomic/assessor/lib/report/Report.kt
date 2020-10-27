@@ -118,11 +118,14 @@ private fun renderProposalVotes(
     fun appendVoteKind(voteKind: VoteKind) {
         val matchingVotes = voteMap.personsWithVote(voteKind)
 
-        append("${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: ")
-        append(matchingVotes.sortedBy { it.name }
-            .map { "${it.name}${actualFootnotes[strengthMap.finalStrengthForPerson(it)] ?: ""}" }
-            .joinToString(", "))
-        appendLine()
+        appendLine(
+            "${voteKind.name}${if (voteKindVoteCounts) " (${matchingVotes.size})" else ""}: " +
+                    matchingVotes
+                        .sortedBy { it.name }
+                        .joinToString(", ") {
+                            "${it.name}${actualFootnotes[strengthMap.finalStrengthForPerson(it)] ?: ""}"
+                        }
+        )
     }
 
     appendVoteKind(VoteKind.FOR)
@@ -213,18 +216,17 @@ private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTr
             .toSet()
 
     if (specialVotingStrengths.isNotEmpty()) {
-        val footnotes = specialVotingStrengths
-            .sorted()
-            .map {
-                val intValue = it.toInt()
-                intValue to strengthFootnoteMarkerMap[intValue]!!
-            }
-            .map { (value, symbol) -> "$symbol: player has voting strength $value\n" }
-            .joinToString("")
+        val footnotes =
+            specialVotingStrengths
+                .map { it.intValueExact() }
+                .sorted()
+                .joinToString(separator = "\n", postfix = "\n") { strength ->
+                    "${strengthFootnoteMarkerMap.getValue(strength)}: player has voting strength $strength"
+                }
 
         appendWithDelimiter("VOTING STRENGTHS")
         appendLine()
-        appendLine("Strength is ${defaultStrength} unless otherwise noted.")
+        appendLine("Strength is $defaultStrength unless otherwise noted.")
         append(footnotes)
     }
 }
