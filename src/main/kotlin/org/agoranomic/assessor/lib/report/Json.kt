@@ -9,7 +9,6 @@ import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
-import org.agoranomic.assessor.lib.voting_strength.VotingStrengthWithComment
 import java.math.BigDecimal
 import java.math.BigInteger
 
@@ -55,11 +54,6 @@ private fun json(quorum: ProposalQuorum) = json(quorum.generic())
 private fun json(quorum: AssessmentQuorum) = json(quorum.generic())
 
 private fun json(votingStrength: VotingStrength) = json(votingStrength.raw)
-
-private fun json(votingStrength: VotingStrengthWithComment) = json {
-    "value" to json(votingStrength.value)
-    if (votingStrength.comment != null) "comment" to json(votingStrength.comment)
-}
 
 private fun json(description: VotingStrengthModificationDescription) = json {
     "readable" to json(description.readable)

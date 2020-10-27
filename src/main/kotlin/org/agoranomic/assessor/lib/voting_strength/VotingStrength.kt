@@ -38,8 +38,6 @@ operator fun VotingStrengthDifference.plus(other: VotingStrengthDifference) =
 operator fun VotingStrengthDifference.minus(other: VotingStrengthDifference) =
     VotingStrengthDifference((this.raw).minus(other.raw))
 
-data class VotingStrengthWithComment(val value: VotingStrength, val comment: String? = null)
-
 operator fun VotingStrength.compareTo(other: VotingStrength) = (this.raw).compareTo(other.raw)
 operator fun VotingStrengthDifference.compareTo(other: VotingStrengthDifference) = (this.raw).compareTo(other.raw)
 
