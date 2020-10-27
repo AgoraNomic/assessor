@@ -9,7 +9,9 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.Ministry.*
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8507to8515() = assessment {
@@ -429,5 +431,20 @@ see.)""")
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8507
+            FOR on 8508
+            FOR on 8509
+            FOR on 8510
+            FOR on 8511
+            FOR on 8512
+            FOR on 8513
+            FOR on 8514
+            FOR on 8515
+        }
+
+        votes(Telnaior) {
+            endorse(Aris) on all
+        }
     }
 }
