@@ -437,7 +437,7 @@ see.)""")
             FOR on 8509
             FOR on 8510
             FOR on 8511
-            FOR on 8512
+            endorse(PSS) on 8512
             FOR on 8513
             FOR on 8514
             FOR on 8515
