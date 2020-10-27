@@ -468,5 +468,17 @@ see.)""")
         votes(sukil) {
             endorse(Trigon) on all
         }
+
+        votes(ATMunn) {
+            FOR on 8507
+            FOR on 8508
+            FOR on 8509
+            FOR on 8510
+            FOR on 8511
+            PRESENT on 8512
+            FOR on 8513
+            FOR on 8514
+            FOR on 8515
+        }
     }
 }
