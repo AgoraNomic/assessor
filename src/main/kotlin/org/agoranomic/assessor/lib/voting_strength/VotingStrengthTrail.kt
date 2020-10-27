@@ -11,8 +11,10 @@ sealed class VotingStrengthStep {
 
     data class Initial(override val value: VotingStrength) : VotingStrengthStep()
 
-    data class Modification(val modification: VotingStrengthModification, override val value: VotingStrength) :
-        VotingStrengthStep()
+    data class Modification(
+        val modification: VotingStrengthModification,
+        override val value: VotingStrength,
+    ) : VotingStrengthStep()
 }
 
 data class VotingStrengthTrail(
