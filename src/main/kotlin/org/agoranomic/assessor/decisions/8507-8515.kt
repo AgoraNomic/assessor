@@ -448,7 +448,8 @@ see.)""")
         }
 
         votes(Gaelan) {
-            endorse(author) on all
+            FOR on 8512
+            endorse(author) on others
         }
     }
 }
