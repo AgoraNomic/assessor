@@ -535,5 +535,29 @@ see.)""")
             FOR on 8514
             FOR on 8515
         }
+
+        votes(Falsifian) {
+            endorse(ATMunn) on 8507
+            FOR on 8508
+            AGAINST on 8509
+            AGAINST on 8510
+            AGAINST on 8511
+            AGAINST on 8512
+            endorse(Aris) on 8513
+
+            function { proposal, context ->
+                if (context.resolve(proposal, Trigon)?.simplified()?.kind != PRESENT) {
+                    endorse(Trigon).func(proposal, context) // TODO: annotate conditional somehow
+                } else {
+                    endorse(Aris).func(proposal, context) // TODO: annotate conditional somehow
+                }
+            } on 8514
+
+            endorse(nix) on 8515
+        }
+
+        votes(twg) {
+            endorse(Falsifian) on all
+        }
     }
 }
