@@ -446,5 +446,9 @@ see.)""")
         votes(Telnaior) {
             endorse(Aris) on all
         }
+
+        votes(Gaelan) {
+            endorse(author) on all
+        }
     }
 }
