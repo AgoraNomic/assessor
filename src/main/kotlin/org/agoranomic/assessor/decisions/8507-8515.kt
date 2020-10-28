@@ -495,9 +495,9 @@ see.)""")
         votes(G) {
             FOR on 8507
             FOR on 8508
-            AGAINST on 8509
-            AGAINST on 8510
-            AGAINST on 8511
+            PRESENT on 8509
+            PRESENT on 8510
+            PRESENT on 8511
             AGAINST on 8512
             FOR on 8513
             PRESENT on 8514
