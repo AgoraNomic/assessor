@@ -7,6 +7,7 @@ import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.dsl.AssessmentDsl
 import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.dsl.detail.SetOnceMap
+import org.agoranomic.assessor.dsl.votes.AuthorMarker
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.vote.*
@@ -17,25 +18,24 @@ interface VoteCommentable {
 
 @AssessmentDsl
 interface PersonVotesReceiver {
-    object All
+    object AllMarker
+    object OthersMarker
 
-    val all: All get() = All
-
-    object Others
-
-    val others: Others get() = Others
+    val all: AllMarker get() = AllMarker
+    val others: OthersMarker get() = OthersMarker
+    val author: AuthorMarker get() = AuthorMarker
 
     infix fun FunctionVote.on(proposal: ProposalNumber): VoteCommentable
     infix fun FunctionVote.on(number: Int) = on(ProposalNumber(number))
 
-    infix fun FunctionVote.on(all: All)
-    infix fun FunctionVote.on(others: Others)
+    infix fun FunctionVote.on(all: AllMarker)
+    infix fun FunctionVote.on(others: OthersMarker)
 
     infix fun VoteKind.on(proposal: ProposalNumber): VoteCommentable
     infix fun VoteKind.on(proposal: Int) = on(ProposalNumber(proposal))
 
-    infix fun VoteKind.on(all: All)
-    infix fun VoteKind.on(others: Others)
+    infix fun VoteKind.on(all: AllMarker)
+    infix fun VoteKind.on(others: OthersMarker)
 
     fun function(func: VoteFunc): FunctionVote
 }
@@ -71,11 +71,11 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
 
     override infix fun FunctionVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this.func))
 
-    override infix fun FunctionVote.on(all: PersonVotesReceiver.All) {
+    override infix fun FunctionVote.on(all: PersonVotesReceiver.AllMarker) {
         proposals.forEach { addVote(it, this) }
     }
 
-    override infix fun FunctionVote.on(others: PersonVotesReceiver.Others) {
+    override infix fun FunctionVote.on(others: PersonVotesReceiver.OthersMarker) {
         for (proposal in proposals.map { it }) {
             if (!voteMap.containsKey(proposal)) addVote(proposal, this)
         }
@@ -87,8 +87,8 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
 
     override infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
 
-    override infix fun VoteKind.on(all: PersonVotesReceiver.All) = simpleVoteFunction(this) on all
-    override infix fun VoteKind.on(others: PersonVotesReceiver.Others) = simpleVoteFunction(this) on others
+    override infix fun VoteKind.on(all: PersonVotesReceiver.AllMarker) = simpleVoteFunction(this) on all
+    override infix fun VoteKind.on(others: PersonVotesReceiver.OthersMarker) = simpleVoteFunction(this) on others
 
     fun compile(): ImmutableMap<ProposalNumber, PendingVote> {
         return voteMap.compile().mapValues { (_, v) -> v.compile() }.toImmutableMap()

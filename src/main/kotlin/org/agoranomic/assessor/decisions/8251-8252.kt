@@ -4,7 +4,6 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
-import org.agoranomic.assessor.dsl.votes.author
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR

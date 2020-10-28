@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.dsl.votes.author
+import org.agoranomic.assessor.dsl.votes.AuthorMarker
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.makeEndorsementFor
 import org.agoranomic.assessor.lib.Person
@@ -104,7 +104,7 @@ class EndorseTest {
         val proposalAuthor = proposal.author
 
         doTestEndorse(
-            endorsement = endorse(author),
+            endorsement = endorse(AuthorMarker),
             proposal = proposal,
             expectedEndorsee = proposalAuthor,
             endorseeVote = authorVote
