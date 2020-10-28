@@ -115,12 +115,12 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
         val unroundedReward = rewardData.unroundedReward
         val roundedReward = rewardData.roundedReward
 
-        val coinAmountString =
+        val amountString =
             if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
                 roundedReward.toString()
             else
                 "$unroundedReward -> $roundedReward"
 
-        "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$coinAmountString coins."
+        "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins."
     }
 }
