@@ -1,6 +1,5 @@
 package org.agoranomic.assessor.dsl.detail
 
-import io.github.random_internet_cat.util.getOrFail
 
 /**
  * Represents a value that must be set exactly once.
@@ -111,7 +110,7 @@ class SetOnceMap<K, V> {
      * @throws IllegalStateException if the value has not already been set for [key].
      */
     operator fun get(key: K): V {
-        val dslValue = map.getOrFail(key)
+        val dslValue = map.getOrElse(key) { error("Missing expected key in SetOnceMap: $key") }
         return dslValue.get()
     }
 

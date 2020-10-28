@@ -2,7 +2,6 @@ package org.agoranomic.assessor.lib.report
 
 import io.github.random_internet_cat.util.ceil
 import io.github.random_internet_cat.util.compareTo
-import io.github.random_internet_cat.util.getOrFail
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
@@ -64,7 +63,7 @@ data class ProposalRewardsMap(
 
     val proposals get() = data.keys
 
-    operator fun get(proposal: ProposalNumber) = data.getOrFail(proposal)
+    operator fun get(proposal: ProposalNumber) = data.getValue(proposal)
 }
 
 private fun Proposal.isRewardable(): Boolean {

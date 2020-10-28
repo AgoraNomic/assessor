@@ -1,6 +1,5 @@
 package org.agoranomic.assessor.lib.resolve
 
-import io.github.random_internet_cat.util.getOrFail
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal.*
@@ -92,12 +91,12 @@ data class ProposalResolutionMap(
 
     fun resolutionOf(proposal: ProposalNumber): ResolutionData {
         requireHasProposal(proposal)
-        return resolutions.getOrFail(proposal)
+        return resolutions.getValue(proposal)
     }
 
     fun votingStrengthsFor(proposal: ProposalNumber): VotingStrengthTrailForPersons {
         requireHasProposal(proposal)
-        return votingStrengths.getOrFail(proposal)
+        return votingStrengths.getValue(proposal)
     }
 
     fun proposalsWithResult(result: ProposalResult) =
