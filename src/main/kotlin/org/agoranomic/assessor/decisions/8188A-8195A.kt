@@ -3,12 +3,15 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
-import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.match
+import org.agoranomic.assessor.dsl.votes.pmBonus
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8188Ato8195A() = assessment {
-    suffix("A")
+    name("8188A-8195A")
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2019-July/013040.html")
     quorum(7)
 

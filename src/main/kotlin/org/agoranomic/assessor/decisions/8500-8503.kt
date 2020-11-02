@@ -18,6 +18,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8500to8503() = assessment {
+    name("8500-8503")
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014240.html")
     quorum(5)
 

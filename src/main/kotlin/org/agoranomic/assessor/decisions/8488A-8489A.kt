@@ -10,14 +10,14 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.match
+import org.agoranomic.assessor.lib.proposal.Ministry.Economy
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8488Ato8489A() = assessment {
-    suffix("A")
+    name("8488A-8489A")
     quorum(5)
 
     val offices = officeMapOf(

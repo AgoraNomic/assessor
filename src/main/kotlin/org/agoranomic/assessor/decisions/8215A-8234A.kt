@@ -10,7 +10,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8215Ato8234A() = assessment {
-    suffix("A")
+    name("8215A-8234A")
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2019-September/013133.html")
     quorum(4)
 

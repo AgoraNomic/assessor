@@ -113,25 +113,9 @@ inline class AssessmentUrl(val raw: String) {
 }
 
 data class AssessmentMetadata(
-    val minNumber: ProposalNumber,
-    val maxNumber: ProposalNumber,
-    val suffix: String?,
+    val name: String,
     val url: AssessmentUrl?,
-) {
-    init {
-        require(minNumber <= maxNumber)
-    }
-
-    private val suffixOrEmpty
-        get() = suffix ?: ""
-
-    val name
-        get() =
-            if (minNumber == maxNumber)
-                "$minNumber$suffixOrEmpty"
-            else
-                "$minNumber$suffixOrEmpty-$maxNumber$suffixOrEmpty"
-}
+)
 
 data class AssessmentData(
     val metadata: AssessmentMetadata,

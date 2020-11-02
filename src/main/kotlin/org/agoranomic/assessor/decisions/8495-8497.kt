@@ -16,6 +16,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8495to8497() = assessment {
+    name("8495-8497")
     quorum(5)
 
     val offices = officeMapOf(
