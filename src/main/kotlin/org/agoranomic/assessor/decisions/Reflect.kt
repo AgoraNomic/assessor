@@ -1,7 +1,6 @@
 package org.agoranomic.assessor.decisions
 
 import io.github.classgraph.ClassGraph
-import io.github.classgraph.MethodInfo
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import kotlin.reflect.KFunction
 import kotlin.reflect.jvm.jvmName
@@ -18,16 +17,11 @@ fun findAssessments(): List<AssessmentData> {
     val classGraph = ClassGraph().enableAllInfo().whitelistPackages(packageName)
 
     return classGraph.scan().use { result ->
-        val classInfos = result.getClassesWithMethodAnnotation(annotationName)!!
-
-        classInfos.flatMap { classInfo ->
-            // Cast to Iterable to ensure that we get stdlib functions instead of MethodInfoList methods
-            val methodInfos = classInfo.methodInfo as Iterable<MethodInfo>
-
-            methodInfos
+        result.getClassesWithMethodAnnotation(annotationName).flatMap { classInfo ->
+            classInfo.methodInfo
                 .asSequence()
                 .filter { it.hasAnnotation(annotationName) }
-                .map { methodInfo -> methodInfo.loadClassAndGetMethod().kotlinFunction }
+                .map { it.loadClassAndGetMethod().kotlinFunction }
                 .map { it as KFunction }
                 .map { it.call() }
                 .map { it as AssessmentData }
