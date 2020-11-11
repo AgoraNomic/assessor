@@ -5,9 +5,11 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -250,6 +252,15 @@ Jason hereby becomes the Stonemason.""")
             FOR on 8518
             FOR on 8519
             FOR on 8520
+            FOR on 8521
+        }
+
+        votes(nix) {
+            FOR on 8516
+            FOR on 8517
+            FOR on 8518
+            AGAINST on 8519
+            endorse(PSS) on 8520
             FOR on 8521
         }
     }
