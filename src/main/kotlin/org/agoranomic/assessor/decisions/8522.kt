@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8522() = assessment {
@@ -107,6 +108,10 @@ master performed on its behalf.
 
         votes(PSS) {
             FOR on 8522
+        }
+
+        votes(Trigon) {
+            PRESENT on 8522
         }
     }
 }
