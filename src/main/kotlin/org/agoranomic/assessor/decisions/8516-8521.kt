@@ -241,4 +241,7 @@ Enact a new rule, power 2, title "The Stones", with the following text:
 Jason hereby becomes the Stonemason.""")
         }
     }
+
+    voting {
+    }
 }
