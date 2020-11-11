@@ -2,7 +2,7 @@ package org.agoranomic.assessor.test.dsl.proposal
 
 import org.agoranomic.assessor.dsl.receivers.ProposalClassAndChamberV1Receiver
 import org.agoranomic.assessor.dsl.receivers.ProposalCommonReceiver
-import org.agoranomic.assessor.lib.proposal.ProposalChamberV1
+import org.agoranomic.assessor.lib.proposal.MinistryV1
 import org.agoranomic.assessor.lib.proposal.ProposalClassAndChamberV1
 import org.agoranomic.assessor.lib.proposal.ProposalClassAndChamberV1Data
 import kotlin.test.Test
@@ -49,10 +49,10 @@ interface ProposalClassAndChamberV1CompilerTest<R> :
                     to ProposalClassAndChamberV1.Classless,
             { it: R -> it.democratic() }
                     to ProposalClassAndChamberV1.DemocraticClass,
-            { it: R -> it.chamber(ProposalChamberV1.Participation) }
-                    to ProposalClassAndChamberV1.OrdinaryClass(ProposalChamberV1.Participation),
-            { it: R -> it.chamber(ProposalChamberV1.Economy) }
-                    to ProposalClassAndChamberV1.OrdinaryClass(ProposalChamberV1.Economy)
+            { it: R -> it.chamber(MinistryV1.Participation) }
+                    to ProposalClassAndChamberV1.OrdinaryClass(MinistryV1.Participation),
+            { it: R -> it.chamber(MinistryV1.Economy) }
+                    to ProposalClassAndChamberV1.OrdinaryClass(MinistryV1.Economy)
         )
 
         for ((init, expectedClassAndChamber) in initToExpected) {

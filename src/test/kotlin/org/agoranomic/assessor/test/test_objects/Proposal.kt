@@ -47,7 +47,7 @@ private enum class ProposalClassAndChamberResult {
     },
     Ordinary {
         override fun makeWith(num: TestNumber): ProposalClassAndChamberV1 {
-            return ProposalClassAndChamberV1.OrdinaryClass(testValueOf<ProposalChamberV1>(num))
+            return ProposalClassAndChamberV1.OrdinaryClass(testValueOf<MinistryV1>(num))
         }
     },
     ;

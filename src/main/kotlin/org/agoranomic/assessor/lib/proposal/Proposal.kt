@@ -201,9 +201,6 @@ enum class MinistryV2(override val readableName: String) : AnyMinistry {
     Participation("Participation"),
 }
 
-typealias ProposalChamberV1 = MinistryV1
-typealias ProposalChamberV2 = MinistryV2
-
 interface ProposalClassAndChamberMapper<Chamber : AnyMinistry, R> {
     fun visitClassless(): R
     fun visitDemocratic(): R
@@ -212,8 +209,8 @@ interface ProposalClassAndChamberMapper<Chamber : AnyMinistry, R> {
 
 typealias ProposalClassAndChamberVisitor<Chamber> = ProposalClassAndChamberMapper<Chamber, Unit>
 
-typealias ProposalClassAndChamberV1Mapper<R> = ProposalClassAndChamberMapper<ProposalChamberV1, R>
-typealias ProposalClassAndChamberV2Mapper<R> = ProposalClassAndChamberMapper<ProposalChamberV2, R>
+typealias ProposalClassAndChamberV1Mapper<R> = ProposalClassAndChamberMapper<MinistryV1, R>
+typealias ProposalClassAndChamberV2Mapper<R> = ProposalClassAndChamberMapper<MinistryV2, R>
 
 typealias ProposalClassAndChamberV1Visitor = ProposalClassAndChamberV1Mapper<Unit>
 
@@ -230,7 +227,7 @@ sealed class ProposalClassAndChamberV1 : ProposalClassAndChamber<MinistryV1> {
         override fun <R> accept(mapper: ProposalClassAndChamberV1Mapper<R>): R = mapper.visitDemocratic()
     }
 
-    data class OrdinaryClass(val chamber: ProposalChamberV1) : ProposalClassAndChamberV1() {
+    data class OrdinaryClass(val chamber: MinistryV1) : ProposalClassAndChamberV1() {
         override fun <R> accept(mapper: ProposalClassAndChamberV1Mapper<R>): R = mapper.visitOrdinary(chamber)
     }
 }
@@ -244,7 +241,7 @@ sealed class ProposalClassAndChamberV2 : ProposalClassAndChamber<MinistryV2> {
         override fun <R> accept(mapper: ProposalClassAndChamberV2Mapper<R>): R = mapper.visitDemocratic()
     }
 
-    data class OrdinaryClass(val chamber: ProposalChamberV2) : ProposalClassAndChamberV2() {
+    data class OrdinaryClass(val chamber: MinistryV2) : ProposalClassAndChamberV2() {
         override fun <R> accept(mapper: ProposalClassAndChamberV2Mapper<R>): R = mapper.visitOrdinary(chamber)
     }
 }

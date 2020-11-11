@@ -158,7 +158,7 @@ private class ProposalClassAndChamberV1ReceiverImpl(val number: ProposalNumber) 
         classAndChamberValue.set(ProposalClassAndChamberV1.DemocraticClass)
     }
 
-    override fun chamber(chamber: ProposalChamberV1) {
+    override fun chamber(chamber: MinistryV1) {
         classAndChamberValue.set(ProposalClassAndChamberV1.OrdinaryClass(chamber = chamber))
     }
 
@@ -179,7 +179,7 @@ private class ProposalClassAndChamberV2ReceiverImpl(val number: ProposalNumber) 
         classAndChamberValue.set(ProposalClassAndChamberV2.DemocraticClass)
     }
 
-    override fun chamber(chamber: ProposalChamberV2) {
+    override fun chamber(chamber: MinistryV2) {
         classAndChamberValue.set(ProposalClassAndChamberV2.OrdinaryClass(chamber = chamber))
     }
 
