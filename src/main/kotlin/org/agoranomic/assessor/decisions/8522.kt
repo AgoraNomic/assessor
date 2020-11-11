@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8522() = assessment {
@@ -112,6 +111,10 @@ master performed on its behalf.
 
         votes(Trigon) {
             PRESENT on 8522
+        }
+
+        votes(Gaelan) {
+            AGAINST on 8522
         }
     }
 }
