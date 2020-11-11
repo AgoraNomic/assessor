@@ -2,51 +2,51 @@ package org.agoranomic.assessor.dsl.ministries
 
 import org.agoranomic.assessor.dsl.ministries.OfficeInitial.*
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.proposal.Ministry
+import org.agoranomic.assessor.lib.proposal.MinistryV1
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
 // These interests come from the original proposal - P8291
 val INTERESTS_MAP_2020_01_29 = mapOf(
     ADoP to listOf(
-        Ministry.Efficiency
+        MinistryV1.Efficiency
     ),
     Arbitor to listOf(
-        Ministry.Justice
+        MinistryV1.Justice
     ),
     Assessor to listOf(
-        Ministry.Efficiency,
-        Ministry.Legislation
+        MinistryV1.Efficiency,
+        MinistryV1.Legislation
     ),
     Herald to listOf(
-        Ministry.Participation
+        MinistryV1.Participation
     ),
     PrimeMinister to listOf(
-        Ministry.Justice,
-        Ministry.Efficiency,
-        Ministry.Legislation,
-        Ministry.Participation,
-        Ministry.Economy
+        MinistryV1.Justice,
+        MinistryV1.Efficiency,
+        MinistryV1.Legislation,
+        MinistryV1.Participation,
+        MinistryV1.Economy
     ),
     Promotor to listOf(
-        Ministry.Legislation
+        MinistryV1.Legislation
     ),
     Referee to listOf(
-        Ministry.Justice
+        MinistryV1.Justice
     ),
     Registrar to listOf(
-        Ministry.Efficiency
+        MinistryV1.Efficiency
     ),
     Rulekeepor to listOf(
-        Ministry.Legislation,
-        Ministry.Participation
+        MinistryV1.Legislation,
+        MinistryV1.Participation
     ),
     Tailor to listOf(
-        Ministry.Participation
+        MinistryV1.Participation
     ),
     Treasuror to listOf(
-        Ministry.Economy,
-        Ministry.Economy
+        MinistryV1.Economy,
+        MinistryV1.Economy
     )
 )
 
@@ -56,8 +56,8 @@ private val MINISTRIES_BONUS_2020_01_29 = VotingStrengthDifference(2)
 @Suppress("FunctionName")
 fun GlobalVotingStrengthReceiver.ministries_2020_01_29(
     officeMap: OfficeMap<OfficeInitial>,
-    proposals: ProposalSet
-) = ministries(
+    proposals: ProposalSet,
+) = ministriesV1(
     officeMap,
     INTERESTS_MAP_2020_01_29,
     MINISTRIES_BONUS_2020_01_29,

@@ -26,10 +26,10 @@ interface ProposalCompilerV0Test : ProposalCommonCompilerTest<ProposalReceiverV0
 
 interface ProposalCompilerV1Test :
     ProposalCommonCompilerTest<ProposalReceiverV1>,
-    ProposalClassAndChamberCompilerTest<ProposalReceiverV1> {
+    ProposalClassAndChamberV1CompilerTest<ProposalReceiverV1> {
     private fun ProposalReceiverV1.doSetup(
         setupCommon: Boolean = true,
-        setupClassAndChamber: Boolean = true
+        setupClassAndChamber: Boolean = true,
     ) {
         if (setupCommon) setupOnlyCommon()
         if (setupClassAndChamber) setupOnlyClassAndChamber()

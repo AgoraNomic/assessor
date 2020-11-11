@@ -21,8 +21,8 @@ private val MINISTRIES_BONUS_2020_06_30 = VotingStrengthDifference(2)
 @Suppress("FunctionName")
 fun GlobalVotingStrengthReceiver.ministries_2020_06_30(
     officeMap: OfficeMap<OfficeJune30>,
-    proposals: ProposalSet
-) = ministries(
+    proposals: ProposalSet,
+) = ministriesV1(
     officeMap,
     INTERESTS_MAP_2020_06_30,
     MINISTRIES_BONUS_2020_06_30,

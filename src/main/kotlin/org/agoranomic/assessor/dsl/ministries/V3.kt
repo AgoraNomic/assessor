@@ -3,7 +3,7 @@ package org.agoranomic.assessor.dsl.ministries
 import kotlinx.collections.immutable.mutate
 import kotlinx.collections.immutable.toPersistentMap
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
-import org.agoranomic.assessor.lib.proposal.Ministry
+import org.agoranomic.assessor.lib.proposal.MinistryV1
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 
@@ -11,7 +11,7 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html.
 //
 // The proposal does not specify interests for the new office, so it stays at the default (the empty list).
-val INTERESTS_MAP_2020_06_03_WEBMASTOR: Map<OfficeJune3Webmastor, List<Ministry>> =
+val INTERESTS_MAP_2020_06_03_WEBMASTOR: Map<OfficeJune3Webmastor, List<MinistryV1>> =
     INTERESTS_MAP_2020_04_02
         .mapKeys { (k, _) -> OfficeJune3Webmastor.fromInitial(k) }
         .toPersistentMap()
@@ -25,8 +25,8 @@ private val MINISTRIES_BONUS_2020_06_03_WEBMASTOR = VotingStrengthDifference(2)
 @Suppress("FunctionName")
 fun GlobalVotingStrengthReceiver.ministries_2020_06_03_Webmastor(
     officeMap: OfficeMap<OfficeJune3Webmastor>,
-    proposals: ProposalSet
-) = ministries(
+    proposals: ProposalSet,
+) = ministriesV1(
     officeMap,
     INTERESTS_MAP_2020_06_03_WEBMASTOR,
     MINISTRIES_BONUS_2020_06_03_WEBMASTOR,

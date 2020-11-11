@@ -59,8 +59,16 @@ sealed class ProposalVersionedData {
     abstract fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R
 }
 
-interface ProposalClassAndChamberData {
-    val classAndChamber: ProposalClassAndChamber
+interface ProposalClassAndChamberData<ClassAndChamber> {
+    val classAndChamber: ClassAndChamber
+}
+
+interface ProposalClassAndChamberV1Data {
+    val classAndChamber: ProposalClassAndChamberV1
+}
+
+interface ProposalClassAndChamberV2Data {
+    val classAndChamber: ProposalClassAndChamberV2
 }
 
 object ProposalDataV0 : ProposalVersionedData() {
@@ -72,8 +80,8 @@ object ProposalDataV0 : ProposalVersionedData() {
 }
 
 data class ProposalDataV1(
-    override val classAndChamber: ProposalClassAndChamber
-) : ProposalVersionedData(), ProposalClassAndChamberData {
+    override val classAndChamber: ProposalClassAndChamberV1,
+) : ProposalVersionedData(), ProposalClassAndChamberV1Data {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(1)
 
@@ -82,9 +90,9 @@ data class ProposalDataV1(
 }
 
 data class ProposalDataV2(
-    override val classAndChamber: ProposalClassAndChamber,
-    val sponsored: Boolean
-) : ProposalVersionedData(), ProposalClassAndChamberData {
+    override val classAndChamber: ProposalClassAndChamberV1,
+    val sponsored: Boolean,
+) : ProposalVersionedData(), ProposalClassAndChamberV1Data {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(2)
 
@@ -92,26 +100,51 @@ data class ProposalDataV2(
         mapper.visitV2(commonData, this)
 }
 
+data class ProposalDataV3(
+    override val classAndChamber: ProposalClassAndChamberV2,
+    val sponsored: Boolean,
+) : ProposalVersionedData(), ProposalClassAndChamberV2Data {
+    override val version: ProposalVersionNumber
+        get() = ProposalVersionNumber(3)
+
+    override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R {
+        return mapper.visitV3(commonData, this)
+    }
+}
+
 interface ProposalMapper<R> {
     fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0): R
     fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1): R
     fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2): R
+    fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3): R
 }
 
 typealias ProposalVisitor = ProposalMapper<Unit>
 
 abstract class ProposalChamberedMapper<R> : ProposalMapper<R> {
     protected abstract fun visitUnchambered(commonData: ProposalCommonData): R
-    protected abstract fun visitChambered(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamber): R
+
+    protected abstract fun visitChamberedV1(
+        commonData: ProposalCommonData,
+        classAndChamber: ProposalClassAndChamberV1,
+    ): R
+
+    protected abstract fun visitChamberedV2(
+        commonData: ProposalCommonData,
+        classAndChamber: ProposalClassAndChamberV2,
+    ): R
 
     final override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) =
         visitUnchambered(commonData)
 
     final override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1) =
-        visitChambered(commonData, versionedData.classAndChamber)
+        visitChamberedV1(commonData, versionedData.classAndChamber)
 
     final override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) =
-        visitChambered(commonData, versionedData.classAndChamber)
+        visitChamberedV1(commonData, versionedData.classAndChamber)
+
+    final override fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3): R =
+        visitChamberedV2(commonData, versionedData.classAndChamber)
 }
 
 typealias ProposalChamberedVisitor = ProposalChamberedMapper<Unit>
@@ -147,7 +180,11 @@ data class Proposal(
     }
 }
 
-enum class Ministry(val readableName: String) {
+interface AnyMinistry {
+    val readableName: String
+}
+
+enum class MinistryV1(override val readableName: String) : AnyMinistry {
     Justice("Justice"),
     Efficiency("Efficiency"),
     Legislation("Legislation"),
@@ -156,31 +193,62 @@ enum class Ministry(val readableName: String) {
     ;
 }
 
-typealias ProposalChamber = Ministry
+enum class MinistryV2(override val readableName: String) : AnyMinistry {
+    Compliance("Compliance"),
+    Legislation("Legislation"),
+    Economy("Economy"),
+    Legacy("Legacy"),
+    Participation("Participation"),
+}
 
-interface ProposalClassAndChamberMapper<R> {
+typealias ProposalChamberV1 = MinistryV1
+typealias ProposalChamberV2 = MinistryV2
+
+interface ProposalClassAndChamberMapper<Chamber : AnyMinistry, R> {
     fun visitClassless(): R
     fun visitDemocratic(): R
-    fun visitOrdinary(chamber: ProposalChamber): R
+    fun visitOrdinary(chamber: Chamber): R
 }
 
-typealias ProposalClassAndChamberVisitor = ProposalClassAndChamberMapper<Unit>
+typealias ProposalClassAndChamberVisitor<Chamber> = ProposalClassAndChamberMapper<Chamber, Unit>
 
-sealed class ProposalClassAndChamber {
-    abstract fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R
+typealias ProposalClassAndChamberV1Mapper<R> = ProposalClassAndChamberMapper<ProposalChamberV1, R>
+typealias ProposalClassAndChamberV2Mapper<R> = ProposalClassAndChamberMapper<ProposalChamberV2, R>
 
-    object Classless : ProposalClassAndChamber() {
-        override fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R = mapper.visitClassless()
+typealias ProposalClassAndChamberV1Visitor = ProposalClassAndChamberV1Mapper<Unit>
+
+interface ProposalClassAndChamber<Chamber : AnyMinistry> {
+    abstract fun <R> accept(mapper: ProposalClassAndChamberMapper<Chamber, R>): R
+}
+
+sealed class ProposalClassAndChamberV1 : ProposalClassAndChamber<MinistryV1> {
+    object Classless : ProposalClassAndChamberV1() {
+        override fun <R> accept(mapper: ProposalClassAndChamberV1Mapper<R>): R = mapper.visitClassless()
     }
 
-    object DemocraticClass : ProposalClassAndChamber() {
-        override fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R = mapper.visitDemocratic()
+    object DemocraticClass : ProposalClassAndChamberV1() {
+        override fun <R> accept(mapper: ProposalClassAndChamberV1Mapper<R>): R = mapper.visitDemocratic()
     }
 
-    data class OrdinaryClass(val chamber: ProposalChamber) : ProposalClassAndChamber() {
-        override fun <R> accept(mapper: ProposalClassAndChamberMapper<R>): R = mapper.visitOrdinary(chamber)
+    data class OrdinaryClass(val chamber: ProposalChamberV1) : ProposalClassAndChamberV1() {
+        override fun <R> accept(mapper: ProposalClassAndChamberV1Mapper<R>): R = mapper.visitOrdinary(chamber)
     }
 }
+
+sealed class ProposalClassAndChamberV2 : ProposalClassAndChamber<MinistryV2> {
+    object Classless : ProposalClassAndChamberV2() {
+        override fun <R> accept(mapper: ProposalClassAndChamberV2Mapper<R>): R = mapper.visitClassless()
+    }
+
+    object DemocraticClass : ProposalClassAndChamberV2() {
+        override fun <R> accept(mapper: ProposalClassAndChamberV2Mapper<R>): R = mapper.visitDemocratic()
+    }
+
+    data class OrdinaryClass(val chamber: ProposalChamberV2) : ProposalClassAndChamberV2() {
+        override fun <R> accept(mapper: ProposalClassAndChamberV2Mapper<R>): R = mapper.visitOrdinary(chamber)
+    }
+}
+
 
 /**
  * Indicates that two proposals with the same [number][Proposal.number] but otherwise different data were encountered
@@ -190,7 +258,7 @@ sealed class ProposalClassAndChamber {
  */
 data class ProposalDataMismatchException(
     val next: Proposal,
-    val original: Proposal
+    val original: Proposal,
 ) : Exception("Proposals with same number but different data found: $next and $original") {
     init {
         require(next.number == original.number)

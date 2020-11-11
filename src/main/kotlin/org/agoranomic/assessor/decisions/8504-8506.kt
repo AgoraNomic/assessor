@@ -12,8 +12,8 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.endorseOrElse
-import org.agoranomic.assessor.lib.proposal.Ministry.Economy
-import org.agoranomic.assessor.lib.proposal.Ministry.Participation
+import org.agoranomic.assessor.lib.proposal.MinistryV1.Economy
+import org.agoranomic.assessor.lib.proposal.MinistryV1.Participation
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment

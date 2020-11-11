@@ -11,7 +11,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.proposal.Ministry.*
+import org.agoranomic.assessor.lib.proposal.MinistryV1.*
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.get
 import org.agoranomic.assessor.lib.proposal.proposal_set.proposalSetOf

@@ -24,11 +24,11 @@ private fun <Office : Enum<Office>, Ministry> officeMinistriesToPersonMinistries
     return personMinistries
 }
 
-private fun ProposalVotingStrengthReceiver.singleMinistry(
+private fun <Ministry : AnyMinistry> ProposalVotingStrengthReceiver.singleMinistry(
     officeID: OfficeID,
     ministry: Ministry,
     person: Person,
-    bonus: VotingStrengthDifference
+    bonus: VotingStrengthDifference,
 ) {
     person add bonus describedAs (VotingStrengthModificationDescription(
         readable = "Bonus of $bonus for ${officeID.readableName}'s interest in ${ministry.readableName}",
@@ -41,11 +41,11 @@ private fun ProposalVotingStrengthReceiver.singleMinistry(
     ))
 }
 
-private fun ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
+private fun <Ministry : AnyMinistry> ProposalVotingStrengthReceiver.updateVotingStrengthsForProposal(
     officeMap: Map<OfficeID, Person>,
     officeMinistries: Map<OfficeID, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
-    proposalChamber: ProposalChamber
+    proposalChamber: Ministry,
 ) {
     for ((office, holder) in officeMap) {
         for (ministry in officeMinistries.getOrElse(office) { emptyList() }) {
@@ -65,14 +65,14 @@ private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
     /* do nothing */
 }
 
-private fun GlobalVotingStrengthReceiver.ministriesChambered(
+private fun <Ministry : AnyMinistry> GlobalVotingStrengthReceiver.ministriesChambered(
     officeMap: Map<OfficeID, Person>,
     officeMinistries: Map<OfficeID, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
     proposalNumber: ProposalNumber,
-    classAndChamber: ProposalClassAndChamber
+    classAndChamber: ProposalClassAndChamber<Ministry>,
 ) {
-    classAndChamber.accept(object : ProposalClassAndChamberVisitor {
+    classAndChamber.accept(object : ProposalClassAndChamberVisitor<Ministry> {
         override fun visitClassless() {
             // do nothing
         }
@@ -81,24 +81,26 @@ private fun GlobalVotingStrengthReceiver.ministriesChambered(
             // do nothing
         }
 
-        override fun visitOrdinary(chamber: ProposalChamber) {
+        override fun visitOrdinary(chamber: Ministry) {
             proposal(proposalNumber) {
                 updateVotingStrengthsForProposal(
                     officeMap,
                     officeMinistries,
                     ministryBonus,
-                    chamber
+                    chamber,
                 )
             }
         }
     })
 }
 
-fun <Office> GlobalVotingStrengthReceiver.ministries(
+private fun <Office, Ministry : AnyMinistry> GlobalVotingStrengthReceiver.ministriesGeneric(
     officeMap: OfficeMap<Office>,
     officeMinistries: Map<Office, List<Ministry>>,
     ministryBonus: VotingStrengthDifference,
-    proposals: ProposalSet
+    proposals: ProposalSet,
+    tryCastV1: (Ministry) -> MinistryV1,
+    tryCastV2: (Ministry) -> MinistryV2,
 ) where Office : Enum<Office>, Office : OfficeID {
     @Suppress("USELESS_CAST") // Compiler demands cast
     val rawOfficeMap =
@@ -118,15 +120,61 @@ fun <Office> GlobalVotingStrengthReceiver.ministries(
                 ministriesProposalV0()
             }
 
-            override fun visitChambered(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamber) {
+            override fun visitChamberedV1(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamberV1) {
                 ministriesChambered(
                     officeMap = rawOfficeMap,
-                    officeMinistries = castOfficeMinistries,
+                    officeMinistries = castOfficeMinistries.mapValues { (_, v) -> v.map(tryCastV1) },
                     ministryBonus = ministryBonus,
                     proposalNumber = commonData.number,
-                    classAndChamber = classAndChamber
+                    classAndChamber = classAndChamber,
+                )
+            }
+
+            override fun visitChamberedV2(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamberV2) {
+                ministriesChambered(
+                    officeMap = rawOfficeMap,
+                    officeMinistries = castOfficeMinistries.mapValues { (_, v) -> v.map(tryCastV2) },
+                    ministryBonus = ministryBonus,
+                    proposalNumber = commonData.number,
+                    classAndChamber = classAndChamber,
                 )
             }
         })
     }
+}
+
+fun <Office> GlobalVotingStrengthReceiver.ministriesV1(
+    officeMap: OfficeMap<Office>,
+    officeMinistries: Map<Office, List<MinistryV1>>,
+    ministryBonus: VotingStrengthDifference,
+    proposals: ProposalSet,
+) where Office : Enum<Office>, Office : OfficeID {
+    require(proposals.all { it.versionedData is ProposalClassAndChamberV1Data })
+
+    ministriesGeneric(
+        officeMap = officeMap,
+        officeMinistries = officeMinistries,
+        ministryBonus = ministryBonus,
+        proposals = proposals,
+        tryCastV1 = { it },
+        tryCastV2 = { error("Cannot use MinistryV2 in ministriesV1") }
+    )
+}
+
+fun <Office> GlobalVotingStrengthReceiver.ministriesV2(
+    officeMap: OfficeMap<Office>,
+    officeMinistries: Map<Office, List<MinistryV2>>,
+    ministryBonus: VotingStrengthDifference,
+    proposals: ProposalSet,
+) where Office : Enum<Office>, Office : OfficeID {
+    require(proposals.all { it.versionedData is ProposalClassAndChamberV2Data })
+
+    ministriesGeneric(
+        officeMap = officeMap,
+        officeMinistries = officeMinistries,
+        ministryBonus = ministryBonus,
+        proposals = proposals,
+        tryCastV1 = { error("Cannot use MinistryV1 in ministriesV2") },
+        tryCastV2 = { it }
+    )
 }

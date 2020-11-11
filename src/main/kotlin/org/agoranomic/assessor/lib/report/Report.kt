@@ -50,22 +50,33 @@ private fun header() = "I hereby resolve the Agoran decisions to adopt the below
 
 private fun renderQuorum(quorum: AssessmentQuorum) = "The quorum for all below decisions was ${quorum.count()}."
 
-private fun renderClassAndChamberHeader(classAndChamber: ProposalClassAndChamber): String {
-    return classAndChamber.accept(object : ProposalClassAndChamberMapper<String> {
+private fun <Chamber : AnyMinistry> renderClassAndChamberHeader(
+    classAndChamber: ProposalClassAndChamber<Chamber>,
+): String {
+    return classAndChamber.accept(object : ProposalClassAndChamberMapper<Chamber, String> {
         override fun visitClassless() = ""
 
         override fun visitDemocratic() = "CLASS: DEMOCRATIC\n"
 
-        override fun visitOrdinary(chamber: ProposalChamber) =
+        override fun visitOrdinary(chamber: Chamber) =
             "CLASS: ORDINARY\nCHAMBER: ${chamber.readableName.toUpperCase()}\n"
     })
+}
+
+private fun renderSponsoredHeader(sponsored: Boolean): String {
+    return "SPONSORED: ${if (sponsored) "YES" else "NO"}\n"
 }
 
 private fun renderProposalV1Header(data: ProposalDataV1) = renderClassAndChamberHeader(data.classAndChamber)
 
 private fun renderProposalV2Header(data: ProposalDataV2) = buildString {
     append(renderClassAndChamberHeader(data.classAndChamber))
-    appendLine("SPONSORED: ${if (data.sponsored) "YES" else "NO"}")
+    append(renderSponsoredHeader(data.sponsored))
+}
+
+private fun renderProposalV3Header(data: ProposalDataV3) = buildString {
+    append(renderClassAndChamberHeader(data.classAndChamber))
+    append(renderSponsoredHeader(data.sponsored))
 }
 
 private fun renderProposalHeader(config: ReadableReportConfig, proposal: Proposal) = buildString {
@@ -83,6 +94,10 @@ private fun renderProposalHeader(config: ReadableReportConfig, proposal: Proposa
 
         override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2) {
             append(renderProposalV2Header(versionedData))
+        }
+
+        override fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3) {
+            append(renderProposalV3Header(versionedData))
         }
     })
 }

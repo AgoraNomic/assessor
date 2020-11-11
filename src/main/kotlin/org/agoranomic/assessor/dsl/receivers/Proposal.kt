@@ -43,20 +43,20 @@ interface ProposalReceiverV0 : ProposalCommonReceiver
 typealias ProposalReceiverV0Init = DslInit<ProposalReceiverV0>
 typealias ProposalCompilerV0 = ProposalCompiler<ProposalReceiverV0>
 
-interface ProposalClassAndChamberReceiver {
+interface ProposalClassAndChamberV1Receiver {
     fun classless()
     fun democratic()
-    fun chamber(chamber: ProposalChamber)
+    fun chamber(chamber: ProposalChamberV1)
 }
 
 @AssessmentDsl
-interface ProposalReceiverV1 : ProposalCommonReceiver, ProposalClassAndChamberReceiver
+interface ProposalReceiverV1 : ProposalCommonReceiver, ProposalClassAndChamberV1Receiver
 
 typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 typealias ProposalCompilerV1 = ProposalCompiler<ProposalReceiverV1>
 
 @AssessmentDsl
-interface ProposalReceiverV2 : ProposalCommonReceiver, ProposalClassAndChamberReceiver {
+interface ProposalReceiverV2 : ProposalCommonReceiver, ProposalClassAndChamberV1Receiver {
     /**
      * Marks this proposal as sponsored. If this function is not called, the proposal is unsponsored.
      *
@@ -133,23 +133,23 @@ class DefaultProposalCompilerV0 : ProposalCompilerV0 {
     }
 }
 
-private class ProposalClassAndChamberReceiverImpl(val number: ProposalNumber) : ProposalClassAndChamberReceiver {
+private class ProposalClassAndChamberV1ReceiverImpl(val number: ProposalNumber) : ProposalClassAndChamberV1Receiver {
     private val classAndChamberValue =
-        SetOnce.namedOf<ProposalClassAndChamber>("class and chamber of proposal $number")
+        SetOnce.namedOf<ProposalClassAndChamberV1>("class and chamber of proposal $number")
 
     override fun classless() {
-        classAndChamberValue.set(ProposalClassAndChamber.Classless)
+        classAndChamberValue.set(ProposalClassAndChamberV1.Classless)
     }
 
     override fun democratic() {
-        classAndChamberValue.set(ProposalClassAndChamber.DemocraticClass)
+        classAndChamberValue.set(ProposalClassAndChamberV1.DemocraticClass)
     }
 
-    override fun chamber(chamber: ProposalChamber) {
-        classAndChamberValue.set(ProposalClassAndChamber.OrdinaryClass(chamber = chamber))
+    override fun chamber(chamber: ProposalChamberV1) {
+        classAndChamberValue.set(ProposalClassAndChamberV1.OrdinaryClass(chamber = chamber))
     }
 
-    fun compile(): ProposalClassAndChamber {
+    fun compile(): ProposalClassAndChamberV1 {
         return classAndChamberValue.get()
     }
 }
@@ -158,8 +158,8 @@ private class ProposalClassAndChamberReceiverImpl(val number: ProposalNumber) : 
 private class DefaultProposalReceiverV1(
     number: ProposalNumber,
     val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
-    val classAndChamberImpl: ProposalClassAndChamberReceiverImpl = ProposalClassAndChamberReceiverImpl(number)
-) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberReceiver by classAndChamberImpl {
+    val classAndChamberImpl: ProposalClassAndChamberV1ReceiverImpl = ProposalClassAndChamberV1ReceiverImpl(number),
+) : ProposalReceiverV1, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberV1Receiver by classAndChamberImpl {
     fun compile(): Proposal {
         return Proposal(
             commonImpl.compile(),
@@ -178,8 +178,8 @@ class DefaultProposalCompilerV1 : ProposalCompilerV1 {
 private class DefaultProposalReceiverV2(
     number: ProposalNumber,
     val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
-    val classAndChamberImpl: ProposalClassAndChamberReceiverImpl = ProposalClassAndChamberReceiverImpl(number)
-) : ProposalReceiverV2, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberReceiver by classAndChamberImpl {
+    val classAndChamberImpl: ProposalClassAndChamberV1ReceiverImpl = ProposalClassAndChamberV1ReceiverImpl(number),
+) : ProposalReceiverV2, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberV1Receiver by classAndChamberImpl {
     private val sponsoredFuse = SetOnceFuse.named("sponsored")
 
     override fun sponsored() {

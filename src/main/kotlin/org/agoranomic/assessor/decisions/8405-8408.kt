@@ -10,8 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.proposal.Ministry.Economy
-import org.agoranomic.assessor.lib.proposal.Ministry.Efficiency
+import org.agoranomic.assessor.lib.proposal.MinistryV1.Economy
+import org.agoranomic.assessor.lib.proposal.MinistryV1.Efficiency
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment

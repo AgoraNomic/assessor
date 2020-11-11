@@ -1,17 +1,17 @@
 package org.agoranomic.assessor.test.dsl.proposal
 
-import org.agoranomic.assessor.dsl.receivers.ProposalClassAndChamberReceiver
+import org.agoranomic.assessor.dsl.receivers.ProposalClassAndChamberV1Receiver
 import org.agoranomic.assessor.dsl.receivers.ProposalCommonReceiver
-import org.agoranomic.assessor.lib.proposal.ProposalChamber
-import org.agoranomic.assessor.lib.proposal.ProposalClassAndChamber
-import org.agoranomic.assessor.lib.proposal.ProposalClassAndChamberData
+import org.agoranomic.assessor.lib.proposal.ProposalChamberV1
+import org.agoranomic.assessor.lib.proposal.ProposalClassAndChamberV1
+import org.agoranomic.assessor.lib.proposal.ProposalClassAndChamberV1Data
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
 import kotlin.test.assertTrue
 
-interface ProposalClassAndChamberCompilerTest<R> :
-    ProposalCompilerTestBase<R> where R : ProposalCommonReceiver, R : ProposalClassAndChamberReceiver {
+interface ProposalClassAndChamberV1CompilerTest<R> :
+    ProposalCompilerTestBase<R> where R : ProposalCommonReceiver, R : ProposalClassAndChamberV1Receiver {
 
     fun R.setupOnlyClassAndChamber() {
         democratic()
@@ -46,13 +46,13 @@ interface ProposalClassAndChamberCompilerTest<R> :
     fun `returns expected versioned data`() {
         val initToExpected = mapOf(
             { it: R -> it.classless() }
-                    to ProposalClassAndChamber.Classless,
+                    to ProposalClassAndChamberV1.Classless,
             { it: R -> it.democratic() }
-                    to ProposalClassAndChamber.DemocraticClass,
-            { it: R -> it.chamber(ProposalChamber.Participation) }
-                    to ProposalClassAndChamber.OrdinaryClass(ProposalChamber.Participation),
-            { it: R -> it.chamber(ProposalChamber.Economy) }
-                    to ProposalClassAndChamber.OrdinaryClass(ProposalChamber.Economy)
+                    to ProposalClassAndChamberV1.DemocraticClass,
+            { it: R -> it.chamber(ProposalChamberV1.Participation) }
+                    to ProposalClassAndChamberV1.OrdinaryClass(ProposalChamberV1.Participation),
+            { it: R -> it.chamber(ProposalChamberV1.Economy) }
+                    to ProposalClassAndChamberV1.OrdinaryClass(ProposalChamberV1.Economy)
         )
 
         for ((init, expectedClassAndChamber) in initToExpected) {
@@ -64,7 +64,7 @@ interface ProposalClassAndChamberCompilerTest<R> :
 
             val versionedData = proposal.versionedData
 
-            assertTrue(versionedData is ProposalClassAndChamberData)
+            assertTrue(versionedData is ProposalClassAndChamberV1Data)
             assertEquals(expectedClassAndChamber, versionedData.classAndChamber)
         }
     }

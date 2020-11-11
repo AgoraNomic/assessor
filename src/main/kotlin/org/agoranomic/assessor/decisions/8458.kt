@@ -10,7 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.extraVotes
-import org.agoranomic.assessor.lib.proposal.Ministry
+import org.agoranomic.assessor.lib.proposal.MinistryV1
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -56,7 +56,7 @@ fun assessment8458() = assessment {
             title("Welcome Package Patch")
             ai("1.0")
             author(Aris)
-            chamber(Ministry.Economy)
+            chamber(MinistryV1.Economy)
 
             text(
                 """

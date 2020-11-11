@@ -11,8 +11,8 @@ import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.proposal.Ministry.Justice
-import org.agoranomic.assessor.lib.proposal.Ministry.Legislation
+import org.agoranomic.assessor.lib.proposal.MinistryV1.Justice
+import org.agoranomic.assessor.lib.proposal.MinistryV1.Legislation
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 

@@ -36,26 +36,26 @@ fun secondTestProposalText() = testSecond(::testProposalText)
 
 private enum class ProposalClassAndChamberResult {
     Classless {
-        override fun makeWith(num: TestNumber): ProposalClassAndChamber {
-            return ProposalClassAndChamber.Classless
+        override fun makeWith(num: TestNumber): ProposalClassAndChamberV1 {
+            return ProposalClassAndChamberV1.Classless
         }
     },
     Democratic {
-        override fun makeWith(num: TestNumber): ProposalClassAndChamber {
-            return ProposalClassAndChamber.DemocraticClass
+        override fun makeWith(num: TestNumber): ProposalClassAndChamberV1 {
+            return ProposalClassAndChamberV1.DemocraticClass
         }
     },
     Ordinary {
-        override fun makeWith(num: TestNumber): ProposalClassAndChamber {
-            return ProposalClassAndChamber.OrdinaryClass(testValueOf<ProposalChamber>(num))
+        override fun makeWith(num: TestNumber): ProposalClassAndChamberV1 {
+            return ProposalClassAndChamberV1.OrdinaryClass(testValueOf<ProposalChamberV1>(num))
         }
     },
     ;
 
-    abstract fun makeWith(num: TestNumber): ProposalClassAndChamber
+    abstract fun makeWith(num: TestNumber): ProposalClassAndChamberV1
 }
 
-fun testProposalChamber(num: TestNumber): ProposalClassAndChamber {
+fun testProposalChamber(num: TestNumber): ProposalClassAndChamberV1 {
     return testValueOf<ProposalClassAndChamberResult>(num).makeWith(num)
 }
 
