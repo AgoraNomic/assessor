@@ -100,5 +100,9 @@ master performed on its behalf.
         votes(BaronVV) {
             endorse(Jason) on 8522
         }
+
+        votes(ATMunn) {
+            endorse(Jason) on 8522
+        }
     }
 }
