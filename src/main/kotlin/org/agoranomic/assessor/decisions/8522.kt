@@ -4,12 +4,29 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 
 @UseAssessment
 fun assessment8522() = assessment {
     name("8522")
     quorum(9)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        speakerBonus(G)
+        blotPenalty(RLee, 81 / 3)
+
+        // Ministries are broken as of this resolution due to a bug in P8515:
+        //    For each item of each office's Ministry Interest, that office's
+        //    holder's voting strength is increased by 2 on proposals whose
+        //    Ministry Impact is set to that Ministry.
+        // "Ministry Impact" is not defined.
+    }
 
     proposals(v3) {
         proposal(8522) {
