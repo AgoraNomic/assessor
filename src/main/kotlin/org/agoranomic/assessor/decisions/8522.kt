@@ -104,5 +104,9 @@ master performed on its behalf.
         votes(ATMunn) {
             endorse(Jason) on 8522
         }
+
+        votes(PSS) {
+            FOR on 8522
+        }
     }
 }
