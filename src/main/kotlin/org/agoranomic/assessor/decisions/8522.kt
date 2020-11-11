@@ -5,8 +5,10 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8522() = assessment {
@@ -91,5 +93,12 @@ master performed on its behalf.
     }
 
     voting {
+        votes(Jason) {
+            FOR on 8522
+        }
+
+        votes(BaronVV) {
+            endorse(Jason) on 8522
+        }
     }
 }
