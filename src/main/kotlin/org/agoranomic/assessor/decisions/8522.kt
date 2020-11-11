@@ -136,5 +136,13 @@ master performed on its behalf.
         votes(DMargaux) {
             PRESENT on all
         }
+
+        votes(Falsifian) {
+            FOR on 8522
+        }
+
+        votes(twg) {
+            endorse(Falsifian) on 8522
+        }
     }
 }
