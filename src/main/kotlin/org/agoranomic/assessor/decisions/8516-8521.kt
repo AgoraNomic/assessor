@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8516to8521() = assessment {
@@ -243,5 +244,13 @@ Jason hereby becomes the Stonemason.""")
     }
 
     voting {
+        votes(PSS) {
+            FOR on 8516
+            FOR on 8517
+            FOR on 8518
+            FOR on 8519
+            FOR on 8520
+            FOR on 8521
+        }
     }
 }
