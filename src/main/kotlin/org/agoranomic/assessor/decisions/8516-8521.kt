@@ -298,5 +298,14 @@ Jason hereby becomes the Stonemason.""")
         votes(sukil) {
             endorse(Trigon) on all
         }
+
+        votes(Gaelan) {
+            endorse(nix) on 8516
+            // TODO resolve conditional vote on 8517: vote made by majority of zombies
+            endorse(Aris) on 8518
+            AGAINST on 8519
+            AGAINST on 8520
+            endorse(Jason) on 8521
+        }
     }
 }
