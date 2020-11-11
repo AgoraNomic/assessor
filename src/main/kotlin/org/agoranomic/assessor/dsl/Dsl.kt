@@ -29,3 +29,9 @@ fun compileProposals(v1: Version1, init: ProposalsReceiverV1Init): ImmutableProp
  */
 fun compileProposals(v2: Version2, init: ProposalsReceiverV2Init): ImmutableProposalSet =
     DefaultProposalsCompilerV2().compile(init)
+
+/**
+ * Returns the proposals compiled from [init] using [DefaultProposalsCompilerV3].
+ */
+fun compileProposals(v3: Version3, init: ProposalsReceiverV3Init): ImmutableProposalSet =
+    DefaultProposalsCompilerV3().compile(init)

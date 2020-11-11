@@ -47,6 +47,10 @@ typealias ProposalsReceiverV2 = ProposalsReceiver<ProposalReceiverV2>
 typealias ProposalsReceiverV2Init = DslInit<ProposalsReceiverV2>
 typealias ProposalsCompilerV2 = ProposalsCompiler<ProposalReceiverV2>
 
+typealias ProposalsReceiverV3 = ProposalsReceiver<ProposalReceiverV3>
+typealias ProposalsReceiverV3Init = DslInit<ProposalsReceiverV3>
+typealias ProposalsCompilerV3 = ProposalsCompiler<ProposalReceiverV3>
+
 @AssessmentDsl
 private class ProposalsReceiverImplCommon : ProposalsReceiverCommon, ProposalsReceiverAddOnly {
     private val proposals = emptyMutableProposalSet()
@@ -86,10 +90,12 @@ class DefaultProposalsCompiler<ProposalReceiver : ProposalCommonReceiver>(
 typealias DefaultProposalsCompilerV0 = DefaultProposalsCompiler<ProposalReceiverV0>
 typealias DefaultProposalsCompilerV1 = DefaultProposalsCompiler<ProposalReceiverV1>
 typealias DefaultProposalsCompilerV2 = DefaultProposalsCompiler<ProposalReceiverV2>
+typealias DefaultProposalsCompilerV3 = DefaultProposalsCompiler<ProposalReceiverV3>
 
 fun DefaultProposalsCompilerV0() = DefaultProposalsCompilerV0(DefaultProposalCompilerV0())
 fun DefaultProposalsCompilerV1() = DefaultProposalsCompilerV1(DefaultProposalCompilerV1())
 fun DefaultProposalsCompilerV2() = DefaultProposalsCompilerV2(DefaultProposalCompilerV2())
+fun DefaultProposalsCompilerV3() = DefaultProposalsCompilerV3(DefaultProposalCompilerV3())
 
 class DefaultProposalsCompilerAddOnly : ProposalsCompilerAddOnly {
     override fun compile(init: ProposalsReceiverAddOnlyInit): ImmutableProposalSet {

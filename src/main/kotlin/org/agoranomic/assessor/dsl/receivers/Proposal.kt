@@ -43,11 +43,14 @@ interface ProposalReceiverV0 : ProposalCommonReceiver
 typealias ProposalReceiverV0Init = DslInit<ProposalReceiverV0>
 typealias ProposalCompilerV0 = ProposalCompiler<ProposalReceiverV0>
 
-interface ProposalClassAndChamberV1Receiver {
+interface ProposalClassAndChamberReceiver<Ministry : AnyMinistry> {
     fun classless()
     fun democratic()
-    fun chamber(chamber: ProposalChamberV1)
+    fun chamber(chamber: Ministry)
 }
+
+typealias ProposalClassAndChamberV1Receiver = ProposalClassAndChamberReceiver<MinistryV1>
+typealias ProposalClassAndChamberV2Receiver = ProposalClassAndChamberReceiver<MinistryV2>
 
 @AssessmentDsl
 interface ProposalReceiverV1 : ProposalCommonReceiver, ProposalClassAndChamberV1Receiver
@@ -56,7 +59,7 @@ typealias ProposalReceiverV1Init = DslInit<ProposalReceiverV1>
 typealias ProposalCompilerV1 = ProposalCompiler<ProposalReceiverV1>
 
 @AssessmentDsl
-interface ProposalReceiverV2 : ProposalCommonReceiver, ProposalClassAndChamberV1Receiver {
+interface ProposalSponsoredReceiver {
     /**
      * Marks this proposal as sponsored. If this function is not called, the proposal is unsponsored.
      *
@@ -65,8 +68,18 @@ interface ProposalReceiverV2 : ProposalCommonReceiver, ProposalClassAndChamberV1
     fun sponsored()
 }
 
+@AssessmentDsl
+interface ProposalReceiverV2 : ProposalCommonReceiver, ProposalClassAndChamberV1Receiver, ProposalSponsoredReceiver
+
 typealias ProposalReceiverV2Init = DslInit<ProposalReceiverV2>
 typealias ProposalCompilerV2 = ProposalCompiler<ProposalReceiverV2>
+
+@AssessmentDsl
+interface ProposalReceiverV3 : ProposalCommonReceiver, ProposalClassAndChamberV2Receiver, ProposalSponsoredReceiver
+
+typealias ProposalReceiverV3Init = DslInit<ProposalReceiverV3>
+typealias ProposalCompilerV3 = ProposalCompiler<ProposalReceiverV3>
+
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
@@ -154,6 +167,27 @@ private class ProposalClassAndChamberV1ReceiverImpl(val number: ProposalNumber) 
     }
 }
 
+private class ProposalClassAndChamberV2ReceiverImpl(val number: ProposalNumber) : ProposalClassAndChamberV2Receiver {
+    private val classAndChamberValue =
+        SetOnce.namedOf<ProposalClassAndChamberV2>("class and chamber of proposal $number")
+
+    override fun classless() {
+        classAndChamberValue.set(ProposalClassAndChamberV2.Classless)
+    }
+
+    override fun democratic() {
+        classAndChamberValue.set(ProposalClassAndChamberV2.DemocraticClass)
+    }
+
+    override fun chamber(chamber: ProposalChamberV2) {
+        classAndChamberValue.set(ProposalClassAndChamberV2.OrdinaryClass(chamber = chamber))
+    }
+
+    fun compile(): ProposalClassAndChamberV2 {
+        return classAndChamberValue.get()
+    }
+}
+
 @AssessmentDsl
 private class DefaultProposalReceiverV1(
     number: ProposalNumber,
@@ -200,5 +234,34 @@ private class DefaultProposalReceiverV2(
 class DefaultProposalCompilerV2 : ProposalCompilerV2 {
     override fun compile(number: ProposalNumber, init: DslInit<ProposalReceiverV2>): Proposal {
         return DefaultProposalReceiverV2(number).also(init).compile()
+    }
+}
+
+@AssessmentDsl
+private class DefaultProposalReceiverV3(
+    number: ProposalNumber,
+    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
+    val classAndChamberImpl: ProposalClassAndChamberV2ReceiverImpl = ProposalClassAndChamberV2ReceiverImpl(number),
+) : ProposalReceiverV3, ProposalCommonReceiver by commonImpl, ProposalClassAndChamberV2Receiver by classAndChamberImpl {
+    private val sponsoredFuse = SetOnceFuse.named("sponsored")
+
+    override fun sponsored() {
+        sponsoredFuse.blow()
+    }
+
+    fun compile(): Proposal {
+        return Proposal(
+            commonData = commonImpl.compile(),
+            versionedData = ProposalDataV3(
+                classAndChamber = classAndChamberImpl.compile(),
+                sponsored = sponsoredFuse.isBlown()
+            )
+        )
+    }
+}
+
+class DefaultProposalCompilerV3 : ProposalCompilerV3 {
+    override fun compile(number: ProposalNumber, init: DslInit<ProposalReceiverV3>): Proposal {
+        return DefaultProposalReceiverV3(number).also(init).compile()
     }
 }

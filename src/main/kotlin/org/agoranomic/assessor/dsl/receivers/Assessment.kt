@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.dsl.receivers
 
-import org.agoranomic.assessor.dsl.AssessmentDsl
-import org.agoranomic.assessor.dsl.Version0
-import org.agoranomic.assessor.dsl.Version1
-import org.agoranomic.assessor.dsl.Version2
+import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.dsl.detail.SetOnce
 import org.agoranomic.assessor.dsl.detail.getOrNull
@@ -25,11 +22,13 @@ interface AssessmentReceiver {
     val v0 get() = org.agoranomic.assessor.dsl.v0
     val v1 get() = org.agoranomic.assessor.dsl.v1
     val v2 get() = org.agoranomic.assessor.dsl.v2
+    val v3 get() = org.agoranomic.assessor.dsl.v3
 
     fun proposals(block: ProposalsReceiverAddOnlyInit)
     fun proposals(v0: Version0, block: ProposalsReceiverV0Init)
     fun proposals(v1: Version1, block: ProposalsReceiverV1Init)
     fun proposals(v2: Version2, block: ProposalsReceiverV2Init)
+    fun proposals(v3: Version3, block: ProposalsReceiverV3Init)
 }
 
 typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
@@ -46,8 +45,9 @@ private class DefaultAssessmentReceiver(
     val proposalsCompilerV0: ProposalsCompilerV0 = DefaultProposalsCompilerV0(),
     val proposalsCompilerV1: ProposalsCompilerV1 = DefaultProposalsCompilerV1(),
     val proposalsCompilerV2: ProposalsCompilerV2 = DefaultProposalsCompilerV2(),
+    val proposalsCompilerV3: ProposalsCompilerV3 = DefaultProposalsCompilerV3(),
     val multiPersonVotesCompiler: MultiPersonVotesCompiler = DefaultMultiPersonVotesCompiler(),
-    val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler()
+    val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler(),
 ) : AssessmentReceiver {
     private val votingStrengthsBlockValue = SetOnce.namedOf<GlobalVotingStrengthReceiverInit>("strengths block")
     private val proposalsBlockValue = SetOnce.namedOf<() -> ImmutableProposalSet>("proposals block")
@@ -78,6 +78,11 @@ private class DefaultAssessmentReceiver(
     override fun proposals(v2: Version2, block: ProposalsReceiverV2Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
         proposalsBlockValue.set({ proposalsCompilerV2.compile(block) })
+    }
+
+    override fun proposals(v3: Version3, block: ProposalsReceiverV3Init) {
+        @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
+        proposalsBlockValue.set({ proposalsCompilerV3.compile(block) })
     }
 
     override fun voting(block: MultiPersonVotesReceiverInit) {
