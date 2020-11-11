@@ -9,8 +9,7 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8516to8521() = assessment {
@@ -306,6 +305,14 @@ Jason hereby becomes the Stonemason.""")
             AGAINST on 8519
             AGAINST on 8520
             endorse(Jason) on 8521
+        }
+
+        votes(G) {
+            PRESENT on all
+        }
+
+        votes(DMargaux) {
+            PRESENT on all
         }
     }
 }
