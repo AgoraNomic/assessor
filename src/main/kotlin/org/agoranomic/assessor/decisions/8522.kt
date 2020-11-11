@@ -144,5 +144,9 @@ master performed on its behalf.
         votes(twg) {
             endorse(Falsifian) on 8522
         }
+
+        votes(Murphy) {
+            PRESENT on 8522
+        }
     }
 }
