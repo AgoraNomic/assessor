@@ -250,7 +250,7 @@ Jason hereby becomes the Stonemason.""")
             FOR on 8516
             FOR on 8517
             FOR on 8518
-            FOR on 8519
+            AGAINST on 8519
             FOR on 8520
             FOR on 8521
         }
