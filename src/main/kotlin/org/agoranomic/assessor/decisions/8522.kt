@@ -128,5 +128,13 @@ master performed on its behalf.
         votes(Telnaior) {
             endorse(Aris) on all
         }
+
+        votes(G) {
+            PRESENT on all
+        }
+
+        votes(DMargaux) {
+            PRESENT on all
+        }
     }
 }
