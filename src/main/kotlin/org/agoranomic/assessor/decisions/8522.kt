@@ -89,4 +89,7 @@ master performed on its behalf.
             )
         }
     }
+
+    voting {
+    }
 }
