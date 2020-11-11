@@ -263,5 +263,14 @@ Jason hereby becomes the Stonemason.""")
             endorse(PSS) on 8520
             FOR on 8521
         }
+
+        votes(ATMunn) {
+            FOR on 8516
+            FOR on 8517
+            FOR on 8518
+            endorse(Jason) on 8519
+            endorse(PSS) on 8520
+            FOR on 8521
+        }
     }
 }
