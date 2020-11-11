@@ -116,5 +116,9 @@ master performed on its behalf.
         votes(Gaelan) {
             AGAINST on 8522
         }
+
+        votes(nix) {
+            PRESENT on 8522
+        }
     }
 }
