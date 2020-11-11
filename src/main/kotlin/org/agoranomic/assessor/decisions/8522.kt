@@ -120,5 +120,13 @@ master performed on its behalf.
         votes(nix) {
             PRESENT on 8522
         }
+
+        votes(Aris) {
+            FOR on 8522
+        }
+
+        votes(Telnaior) {
+            endorse(Aris) on all
+        }
     }
 }
