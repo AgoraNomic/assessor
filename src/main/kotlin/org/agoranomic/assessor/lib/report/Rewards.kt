@@ -32,7 +32,6 @@ fun ProposalUnroundedReward.rounded(): ProposalRoundedReward {
 }
 
 private fun calculateReward(
-    ai: ProposalAI,
     voteCountFor: BigInteger,
     voteCountAgainst: BigInteger,
 ): ProposalUnroundedReward {
@@ -48,7 +47,6 @@ data class ProposalRewardData(
     val unroundedReward
         get() =
             calculateReward(
-                ai = ai,
                 voteCountFor = voteCountFor,
                 voteCountAgainst = voteCountAgainst
             )
