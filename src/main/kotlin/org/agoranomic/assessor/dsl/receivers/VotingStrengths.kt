@@ -169,11 +169,11 @@ private class DefaultGlobalVotingStrengthReceiver(
     private val globalStrengthBuilder = VotingStrengthTrailForPersonsBuilder()
     private val overrideStrengthBlocks = mutableMapOf<ProposalNumber, ProposalVotingStrengthReceiverInit>()
 
-    override fun Person.add(amount: VotingStrengthDifference): VotingStrengthDescribable {
-        return globalStrengthBuilder.addToPerson(this, amount)
+    override fun Person.add(value: VotingStrengthDifference): VotingStrengthDescribable {
+        return globalStrengthBuilder.addToPerson(this, value)
     }
 
-    override fun Person.subtract(amount: VotingStrengthDifference) = add(-amount)
+    override fun Person.subtract(value: VotingStrengthDifference) = add(-value)
 
     override fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit) {
         // The outer {}s delimit a lambda returning the default value. The inner braces {} delimit the lambda that
