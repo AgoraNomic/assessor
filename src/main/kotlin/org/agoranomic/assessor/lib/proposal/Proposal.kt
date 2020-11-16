@@ -67,6 +67,10 @@ interface ProposalClassAndChamberV2Data {
     val classAndChamber: ProposalClassAndChamberV2
 }
 
+interface ProposalSponsoredData {
+    val sponsored: Boolean
+}
+
 object ProposalDataV0 : ProposalVersionedData() {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(0)
@@ -87,8 +91,8 @@ data class ProposalDataV1(
 
 data class ProposalDataV2(
     override val classAndChamber: ProposalClassAndChamberV1,
-    val sponsored: Boolean,
-) : ProposalVersionedData(), ProposalClassAndChamberV1Data {
+    override val sponsored: Boolean,
+) : ProposalVersionedData(), ProposalClassAndChamberV1Data, ProposalSponsoredData {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(2)
 
@@ -98,8 +102,8 @@ data class ProposalDataV2(
 
 data class ProposalDataV3(
     override val classAndChamber: ProposalClassAndChamberV2,
-    val sponsored: Boolean,
-) : ProposalVersionedData(), ProposalClassAndChamberV2Data {
+    override val sponsored: Boolean,
+) : ProposalVersionedData(), ProposalClassAndChamberV2Data, ProposalSponsoredData {
     override val version: ProposalVersionNumber
         get() = ProposalVersionNumber(3)
 
