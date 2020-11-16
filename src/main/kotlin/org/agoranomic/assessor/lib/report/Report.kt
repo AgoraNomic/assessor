@@ -4,7 +4,9 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
 import org.agoranomic.assessor.lib.proposal.*
+import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
+import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
 import org.agoranomic.assessor.lib.resolve.adoptedProposals
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
@@ -49,6 +51,31 @@ private fun renderSummaryTable(resolutionMap: ProposalResolutionMap): String {
 private fun header() = "I hereby resolve the Agoran decisions to adopt the below proposals."
 
 private fun renderQuorum(quorum: AssessmentQuorum) = "The quorum for all below decisions was ${quorum.count()}."
+
+fun renderPopularProposalsInfo(resolutionMap: ProposalResolutionMap): String? {
+    val eligibleProposals =
+        resolutionMap.proposals
+            .filter { resolutionMap.resolutionOf(it.number).result == ProposalResult.ADOPTED }
+            .filter {
+                val versionedData = it.versionedData
+                versionedData is ProposalSponsoredData && versionedData.sponsored
+            }
+            .toProposalSet()
+
+    val popularityMap = eligibleProposals.associate {
+        it.number to popularityOf(resolutionMap.resolutionOf(it.number).votes)
+    }
+
+    val maxPopularity = popularityMap.values.maxOrNull() ?: return null
+
+    val maxPopularityProposals = eligibleProposals.filter { popularityMap.getValue(it.number) == maxPopularity }
+    check(maxPopularityProposals.isNotEmpty())
+
+    return "The following sponsored adopted proposals have the highest popularity ($maxPopularity): " +
+            maxPopularityProposals.joinToString(separator = ", ", postfix = ".") {
+                "${it.number} (by ${it.author.name})"
+            }
+}
 
 private fun <Chamber : AnyMinistry> renderClassAndChamberHeader(
     classAndChamber: ProposalClassAndChamber<Chamber>,
@@ -321,6 +348,10 @@ fun readableReport(
         appendLine()
         appendLine(renderQuorum(resolutionMap.quorum))
         appendLine()
+        renderPopularProposalsInfo(resolutionMap)?.let {
+            appendLine(it)
+            appendLine()
+        }
         append(renderStrengthFootnotes(resolutionMap.votingStrengths.values))
         appendLine()
         emitProposalResolutions(config, resolutionMap)
