@@ -59,10 +59,6 @@ sealed class ProposalVersionedData {
     abstract fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R
 }
 
-interface ProposalClassAndChamberData<ClassAndChamber> {
-    val classAndChamber: ClassAndChamber
-}
-
 interface ProposalClassAndChamberV1Data {
     val classAndChamber: ProposalClassAndChamberV1
 }
