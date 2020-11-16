@@ -151,16 +151,17 @@ private fun renderProposalVotes(
 private fun renderProposalAI(resolutionData: ResolutionData, ai: ProposalAI) =
     "AI (F/A): ${resolutionData.strengths.strengthFor}/${resolutionData.strengths.strengthAgainst} (AI=$ai)"
 
-private fun renderProposalPopularity(votes: SimplifiedSingleProposalVoteMap): String {
+private fun popularityOf(votes: SimplifiedSingleProposalVoteMap): Double {
     // As defined by Rule 2623
     val F = votes.personsWithVote(VoteKind.FOR).size
     val A = votes.personsWithVote(VoteKind.AGAINST).size
     val T = votes.voteCount
 
-    val popularity = (F.toDouble() - A.toDouble()) / (T.toDouble())
-    val popularityStr = "%.3f".format(popularity)
+    return (F.toDouble() - A.toDouble()) / (T.toDouble())
+}
 
-    return "POPULARITY: $popularityStr"
+private fun renderProposalPopularity(votes: SimplifiedSingleProposalVoteMap): String {
+    return "POPULARITY: ${"%.3f".format(popularityOf(votes))}"
 }
 
 private fun renderProposalOutcome(resolutionData: ResolutionData) = "OUTCOME: ${resolutionData.result.readableName}"
