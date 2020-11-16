@@ -71,7 +71,8 @@ fun renderPopularProposalsInfo(resolutionMap: ProposalResolutionMap): String? {
     val maxPopularityProposals = eligibleProposals.filter { popularityMap.getValue(it.number) == maxPopularity }
     check(maxPopularityProposals.isNotEmpty())
 
-    return "The following sponsored adopted proposals have the highest popularity ($maxPopularity): " +
+    return "The following sponsored adopted proposals have the highest popularity " +
+            "(${formatPopularity(maxPopularity)}): " +
             maxPopularityProposals.joinToString(separator = ", ", postfix = ".") {
                 "${it.number} (by ${it.author.name})"
             }
@@ -187,8 +188,12 @@ private fun popularityOf(votes: SimplifiedSingleProposalVoteMap): Double {
     return (F.toDouble() - A.toDouble()) / (T.toDouble())
 }
 
+private fun formatPopularity(popularity: Double): String {
+    return "%.3f".format(popularity)
+}
+
 private fun renderProposalPopularity(votes: SimplifiedSingleProposalVoteMap): String {
-    return "POPULARITY: ${"%.3f".format(popularityOf(votes))}"
+    return "POPULARITY: ${formatPopularity(popularityOf(votes))}"
 }
 
 private fun renderProposalOutcome(resolutionData: ResolutionData) = "OUTCOME: ${resolutionData.result.readableName}"
