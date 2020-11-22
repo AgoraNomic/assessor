@@ -162,3 +162,39 @@ enum class OfficeJune30 : OfficeID {
         }
     }
 }
+
+// Reflects addition of Ministor by P8515, adopted on 28 Oct 2020.
+// See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-October/014335.html
+enum class OfficeOct28 : OfficeID {
+    ADoP,
+    Arbitor,
+    Assessor,
+    Coopor,
+    Distributor,
+    Herald,
+    Ministor,
+    Notary,
+    PrimeMinister("Prime Minister"),
+    Promotor,
+    Referee,
+    Registrar,
+    Rulekeepor,
+    Speaker,
+    Tailor,
+    Treasuror,
+    Webmastor,
+    ;
+
+    override val readableName: String
+
+    override val programmaticName: String
+        get() = name
+
+    constructor(readableName: String) {
+        this.readableName = readableName
+    }
+
+    constructor() {
+        this.readableName = this.name
+    }
+}
