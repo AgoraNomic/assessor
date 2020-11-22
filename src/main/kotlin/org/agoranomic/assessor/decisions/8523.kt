@@ -101,5 +101,9 @@ with:
         votes(twg) {
             endorse(Falsifian) on 8523
         }
+
+        votes(Murphy) {
+            FOR on 8523
+        }
     }
 }
