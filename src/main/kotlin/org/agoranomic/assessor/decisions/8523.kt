@@ -10,6 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8523() = assessment {
@@ -72,5 +73,8 @@ with:
     }
 
     voting {
+        votes(ShyOwl) {
+            FOR on 8523
+        }
     }
 }
