@@ -80,5 +80,9 @@ with:
         votes(ATMunn) {
             FOR on 8523
         }
+
+        votes(lucidiot) {
+            FOR on 8523
+        }
     }
 }
