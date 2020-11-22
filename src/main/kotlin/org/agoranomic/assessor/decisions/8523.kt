@@ -93,5 +93,13 @@ with:
         votes(BaronVV) {
             endorse(Jason) on 8523
         }
+
+        votes(Falsifian) {
+            FOR on 8523
+        }
+
+        votes(twg) {
+            endorse(Falsifian) on 8523
+        }
     }
 }
