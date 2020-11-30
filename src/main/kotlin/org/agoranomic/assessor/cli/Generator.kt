@@ -87,7 +87,7 @@ private fun distributionToDSL(rawDistribution: String): String {
     }
 
     return buildString {
-        appendScope("proposals(v2)") {
+        appendScope("proposals(v3)") {
             for (untrimmedProposal in proposals) {
                 val proposal = untrimmedProposal.trim()
                 val lines = proposal.lines()
