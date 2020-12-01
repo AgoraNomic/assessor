@@ -139,5 +139,10 @@ Expunge 72 of R. Lee's blots.""")
         votes(twg) {
             endorse(Falsifian) on all
         }
+
+        votes(Gaelan) {
+            PRESENT on 8524
+            FOR on 8525
+        }
     }
 }
