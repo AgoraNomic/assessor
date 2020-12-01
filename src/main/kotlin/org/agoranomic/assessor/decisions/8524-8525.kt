@@ -133,7 +133,7 @@ Expunge 72 of R. Lee's blots.""")
 
         votes(Falsifian) {
             FOR on 8524
-            // TODO resolve conditional vote on 8525: AGAINST if R. Lee has fewer than 72 blots, otherwise FOR
+            FOR on 8525 comment conditional("R. Lee has at least 72 blots")
         }
 
         votes(twg) {
