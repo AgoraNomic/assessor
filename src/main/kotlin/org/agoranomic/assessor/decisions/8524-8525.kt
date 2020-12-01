@@ -98,4 +98,7 @@ still count against em.]
 Expunge 72 of R. Lee's blots.""")
         }
     }
+
+    voting {
+    }
 }
