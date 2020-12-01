@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -128,6 +129,15 @@ Expunge 72 of R. Lee's blots.""")
         votes(nix) {
             FOR on 8524
             PRESENT on 8525
+        }
+
+        votes(Falsifian) {
+            FOR on 8524
+            // TODO resolve conditional vote on 8525: AGAINST if R. Lee has fewer than 72 blots, otherwise FOR
+        }
+
+        votes(twg) {
+            endorse(Falsifian) on all
         }
     }
 }
