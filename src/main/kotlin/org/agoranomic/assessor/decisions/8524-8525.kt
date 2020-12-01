@@ -104,5 +104,10 @@ Expunge 72 of R. Lee's blots.""")
         votes(ATMunn) {
             FOR on all
         }
+
+        votes(Murphy) {
+            FOR on 8524
+            FOR on 8525
+        }
     }
 }
