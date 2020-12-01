@@ -11,6 +11,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8524to8525() = assessment {
@@ -108,6 +109,11 @@ Expunge 72 of R. Lee's blots.""")
         votes(Murphy) {
             FOR on 8524
             FOR on 8525
+        }
+
+        votes(Jason) {
+            FOR on 8524
+            PRESENT on 8525
         }
     }
 }
