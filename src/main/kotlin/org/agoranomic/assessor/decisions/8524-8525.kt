@@ -124,5 +124,10 @@ Expunge 72 of R. Lee's blots.""")
             PRESENT on 8524
             FOR on 8525
         }
+
+        votes(nix) {
+            FOR on 8524
+            PRESENT on 8525
+        }
     }
 }
