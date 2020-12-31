@@ -71,5 +71,9 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
         votes(Falsifian) {
             FOR on 8526
         }
+
+        votes(ATMunn) {
+            FOR on 8526
+        }
     }
 }
