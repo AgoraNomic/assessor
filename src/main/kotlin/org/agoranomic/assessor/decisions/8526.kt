@@ -61,4 +61,7 @@ Repeal Rule 2627 (The General Store).
 Repeal Rule 2628 (Bargains on the Barrel).""")
         }
     }
+
+    voting {
+    }
 }
