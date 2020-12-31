@@ -97,5 +97,9 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
         votes(nix) {
             FOR on 8526
         }
+
+        votes(Trigon) {
+            FOR on 8526
+        }
     }
 }
