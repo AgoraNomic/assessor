@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8526() = assessment {
@@ -63,5 +64,8 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
     }
 
     voting {
+        votes(Jason) {
+            FOR on 8526
+        }
     }
 }
