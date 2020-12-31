@@ -2,14 +2,19 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.OfficeOct28.*
+import org.agoranomic.assessor.dsl.ministries.OfficeState
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_11_07
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
+import org.agoranomic.assessor.lib.vote.FunctionVote
+import org.agoranomic.assessor.lib.vote.SimpleVote
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8526() = assessment {
@@ -74,6 +79,15 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
 
         votes(ATMunn) {
             FOR on 8526
+        }
+
+        votes(Gaelan) {
+            offices[Coopor].let {
+                if (it is OfficeState.Held)
+                    endorseOrElse(it.holder, PRESENT)
+                else
+                    FunctionVote { _, _ -> SimpleVote(FOR, conditional("Coopor is not held")) }
+            } on 8526
         }
     }
 }
