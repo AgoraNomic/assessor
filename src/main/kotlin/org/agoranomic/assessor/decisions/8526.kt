@@ -89,5 +89,9 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
                     FunctionVote { _, _ -> SimpleVote(FOR, conditional("Coopor is not held")) }
             } on 8526
         }
+
+        votes(Aris) {
+            FOR on 8526
+        }
     }
 }
