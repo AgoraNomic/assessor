@@ -279,7 +279,10 @@ private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTr
     }
 }
 
-private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, resolutionMap: ProposalResolutionMap) {
+private fun appendProposalResolutions(
+    config: ReadableReportConfig,
+    resolutionMap: ProposalResolutionMap,
+) = buildString {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     appendWithDelimiter("PROPOSALS")
@@ -287,24 +290,32 @@ private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, 
 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
-
-        append(renderProposalHeader(config, proposal))
-
-        append(
-            renderProposalVotes(
-                resolution.votes,
-                resolutionMap.votingStrengthsFor(proposal.number),
-                config.voteKindBallotCount
-            )
-        )
-
-        if (config.totalBallotCount) appendLine("BALLOTS: ${resolution.votes.voteCount}")
-        appendLine(renderProposalAI(resolution, proposal.ai))
-        if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
-        appendLine(renderProposalOutcome(resolution))
-        if (config.voteComments) append(renderVoteComments(resolution))
-        appendLine()
+        append(renderReadableProposal(config, proposal, resolution, resolutionMap.votingStrengthsFor(proposal.number)))
     }
+}
+
+fun renderReadableProposal(
+    config: ReadableReportConfig,
+    proposal: Proposal,
+    resolution: ResolutionData,
+    votingStrengths: VotingStrengthTrailForPersons,
+) = buildString {
+    append(renderProposalHeader(config, proposal))
+
+    append(
+        renderProposalVotes(
+            resolution.votes,
+            votingStrengths,
+            config.voteKindBallotCount
+        )
+    )
+
+    if (config.totalBallotCount) appendLine("BALLOTS: ${resolution.votes.voteCount}")
+    appendLine(renderProposalAI(resolution, proposal.ai))
+    if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
+    appendLine(renderProposalOutcome(resolution))
+    if (config.voteComments) append(renderVoteComments(resolution))
+    appendLine()
 }
 
 private fun StringBuilder.appendWithDelimiter(string: String) {
@@ -359,7 +370,7 @@ fun readableReport(
         }
         append(renderStrengthFootnotes(resolutionMap.votingStrengths.values))
         appendLine()
-        emitProposalResolutions(config, resolutionMap)
+        append(appendProposalResolutions(config, resolutionMap))
 
         val adoptedProposals = resolutionMap.adoptedProposals()
         append(renderProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
