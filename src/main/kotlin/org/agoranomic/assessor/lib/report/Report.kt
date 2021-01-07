@@ -279,7 +279,7 @@ private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTr
     }
 }
 
-private fun appendProposalResolutions(
+private fun renderProposalResolutions(
     config: ReadableReportConfig,
     resolutionMap: ProposalResolutionMap,
 ) = buildString {
@@ -290,11 +290,14 @@ private fun appendProposalResolutions(
 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
-        append(renderReadableProposal(config, proposal, resolution, resolutionMap.votingStrengthsFor(proposal.number)))
+        append(renderReadableProposalResolutions(config,
+            proposal,
+            resolution,
+            resolutionMap.votingStrengthsFor(proposal.number)))
     }
 }
 
-fun renderReadableProposal(
+fun renderReadableProposalResolutions(
     config: ReadableReportConfig,
     proposal: Proposal,
     resolution: ResolutionData,
@@ -370,7 +373,7 @@ fun readableReport(
         }
         append(renderStrengthFootnotes(resolutionMap.votingStrengths.values))
         appendLine()
-        append(appendProposalResolutions(config, resolutionMap))
+        append(renderProposalResolutions(config, resolutionMap))
 
         val adoptedProposals = resolutionMap.adoptedProposals()
         append(renderProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
