@@ -57,6 +57,7 @@ data class ProposalsReadableFormatter(
             allProposals
                 .sortedBy { it.number }
                 .associateWith { proposal -> allResolutions.filter { it.proposals.contains(proposal.number) } }
+                .mapValues { (_, v) -> v.sortedBy { it.metadata.name } }
 
         return AssessmentFormatOutput(
             resolutionsByProposal.asIterable().associate { (proposal, resolutions) ->
