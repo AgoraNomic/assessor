@@ -1,0 +1,88 @@
+PROPOSAL 8241 (Secured switches (v2.0))
+AUTHOR: Jason
+FOR (11): ATMunn, Aris, Bernie, Falsifian, Gaelan, Jacob Arduino, Jason, Murphy, Trigon, o, twg
+AGAINST (0): 
+PRESENT (2): G.$, Rance
+BALLOTS: 13
+AI (F/A): 33/0 (AI=3.0)
+POPULARITY: 0.846
+OUTCOME: ADOPTED
+[
+ATMunn: Endorsement of Falsifian
+Bernie: Endorsement of Jason
+Falsifian: Endorsement of Jason
+Gaelan: Endorsement of Murphy
+Jacob Arduino: Endorsement of twg
+o: Endorsement of Trigon
+twg: Endorsement of Murphy
+]
+
+PROPOSAL 8241 (Secured switches (v2.0))
+AUTHOR: Jason
+FOR (4): Falsifian, Jacob Arduino, Jason, twg@
+AGAINST (0): 
+PRESENT (3): G.$, Murphy, Telnaior
+BALLOTS: 7
+AI (F/A): 11/0 (AI=3.0)
+POPULARITY: 0.571
+OUTCOME: FAILED QUORUM
+[
+Falsifian: Endorsement of Jason
+Jacob Arduino: Endorsement of twg
+]
+
+ID: 8241
+Title: Secured switches (v2.0)
+Adoption index: 3.0
+Author: Jason
+Co-authors: Falsifian
+
+
+[Comment: define what it means for switches to be "secured", then use
+that definition. This works with default power thresholds since it isn't
+R2162 that designates the changes as secured, the Rule that defines the
+switch is defined as designating the changes as secured.]
+
+Amend Rule 2162 by appending the following sentence to the paragraph
+beginning "At any given time":
+
+  A Rule that designates a switch as "secured" (at a given power
+  level) designates changes to the properties of that type of switch
+  as secured (at that power level) and designates changes to the value
+  of each instance of the switch as secured (at that power level).
+
+Amend Rule 1950 as follows:
+
+  Delete the text "Adoption index is secured with a power threshold of
+  2.".
+
+  Replace the text
+
+    Adoption index (AI) is an untracked switch possessed by Agoran
+    decisions and proposals.
+
+  with the text
+
+    Adoption index (AI) is an untracked switch possessed by Agoran
+    decisions and proposals, secured at power 2.
+
+Amend Rule 2480 as follows:
+
+  Delete the text "Changes to Festivity are secured.".
+
+  Replace the text "Festivity is a singleton switch" with the text
+  "Festivity is a secured singleton switch".
+
+Amend Rule 869 as follows:
+
+  Delete the text "Changes to citizenship are secured.".
+
+  Replace the text "Citizenship is a person switch" with the text
+  "Citizenship is a secured person switch".
+
+Amend Rule 478 as follows:
+
+  Delete the text "Changes to publicity are secured.".
+
+  Replace the text "Publicity is a forum switch" with the text
+  "Publicity is a secured forum switch.".

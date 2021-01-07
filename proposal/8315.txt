@@ -1,0 +1,93 @@
+PROPOSAL 8315 (Clearer Resolutions)
+AUTHOR: Alexis
+CLASS: DEMOCRATIC
+FOR (2): Alexis, Gaelan
+AGAINST (7): Aris, Bernie, Falsifian$, Jason, Rance, omd, twg
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 6/22 (AI=3.0)
+POPULARITY: -0.556
+OUTCOME: REJECTED
+[
+Aris: Endorsement of Jason
+Bernie: Endorsement of twg
+Gaelan: Endorsement of Alexis
+Rance: Endorsement of Jason
+twg: Conditional resolved: No such proposal was submitted
+]
+
+ID: 8315
+Title: Clearer Resolutions
+Adoption index: 3.0
+Author: Alexis
+Co-authors: 
+
+
+Amend Rule 208 (Resolving Agoran Decisions) by replacing the third and
+fourth items in the list with the following:
+{
+  3. It specifies the quorum of the decision.
+
+  4. It specifies all the valid ballots, and no invalid ballots, on that
+  decision, as of the end of the voting period, including each ballot's
+  author, eir voting strength, its vote, and, if the vote is a conditional
+  one, the unconditional vote to which it is evaluated.
+
+  5. The total strength of all ballots cast for each non-PRESENT option.
+
+  6. It specifies the outcome, as defined by other rules.
+}
+
+[Note that the existing "more than one option" text is basically
+tautologically true and practically useless anyway. PRESENT is an option,
+so only a decision with no other options would only have one. And even if
+we changed it, we short-circuit single-candidate elections so we might as
+well just drop that text.
+
+This is the main point of the proposal; I apologize to the Assessor that e
+does perhaps not wish to do the additional work here, but it was a
+longstanding Assessor practice and, as we are getting into the space of
+highly variable voting power again, quite necessary.]
+
+Amend Rule 683 (Voting on Agoran Decisions) by appending the following
+paragraph to the end of the rule:
+{
+  When used in reference to a person who has cast a vote on an Agoran
+  decision, rather than to a person who is eligible to or otherwise might
+  cast a vote, the term "voter" refers only to a person who has a valid
+  ballot on that decision.
+}
+
+[This is slightly different from the existing definition, as it includes
+people whose votes were not valid but became valid, but such a scenario
+shouldn't happen and in any case, this lines up with existing language so
+as to prevent a weird situation where a person's vote counts towards the
+result but not quorum.]
+
+Amend Rule 955 (Determining the Will of Agora) by replacing the text "The
+outcome of a decision is determined when it is resolved, and cannot change
+thereafter." with "The outcome of a decision is fixed at the end of its
+voting period, after evaluating all votes whose values are determined only
+at the end of the voting period, and cannot change thereafter."
+
+[This prevents manipulation of voting strength post-decision from affecting
+the result because that's an absurd amount of power to offer an Assessor,
+to be able to delay or otherwise manipulate the timing of resolutions so as
+to modify voting strength after a resolution. It also simplifies eir job
+considerably by not requiring em to take into account the effects of
+proposals on voting strength as e resolves them, especially if a CoE
+results in different ordering of proposals.]
+
+Amend Rule 2034 (Vote Protection and Cutoff for Challenges) to read:
+{
+  A public message purporting to resolve an Agoran decision is a
+  self-ratifying attestation that:
+
+  1. such a decision existed;
+  2. it had the outcome indicated;
+  3. if the indicated outcome was to adopt a proposal, that such a decision
+  existed, was adopted, and took effect by virtue of the resolution;
+  4. if the indicated outcome was to elect a person to an office and if the
+  person was eligible for that office, that that person won the election and
+  took office.
+}

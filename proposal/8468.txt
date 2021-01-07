@@ -1,0 +1,39 @@
+PROPOSAL 8468 (Decision resolution patch)
+AUTHOR: Jason
+CLASS: DEMOCRATIC
+FOR (9): ATMunn, Cuddle Beam, G.$, Jason, Murphy, Publius Scribonius Scholasticus, nix, omd, twg
+AGAINST (2): R. Lee~, Tcbapo
+PRESENT (2): Falsifian, Trigon
+BALLOTS: 13
+AI (F/A): 28/3 (AI=3.0)
+POPULARITY: 0.538
+OUTCOME: ADOPTED
+[
+Tcbapo: Endorsement of R. Lee
+twg: Endorsement of G.
+]
+
+ID: 8468
+Title: Decision resolution patch
+Adoption index: 3.0
+Author: Jason
+Co-authors: nix, G.
+
+
+Amend Rule 208 by replacing the text "To be valid, this announcement
+must satisfy the following conditions" with the text "To be EFFECTIVE,
+such an attempt must satisfy the following conditions".
+
+[This resolves a potential bug that *may* permit the vote collector of a
+decision to resolve it without adhering to the conditions in the
+numbered list of Rule 208 based on the precise wording of how the
+conditions are enforced. The argument that they don't work is that the
+sentence doesn't sufficiently override R208's earlier statement that
+"The vote collector for an unresolved Agoran decision CAN resolve it by
+announcement, indicating the outcome.", because it describes the
+announcement, rather than the attempt itself.
+
+Even if that interpretation is wrong, there is enough of an ambiguity
+that it should be resolved. The new wording makes this clearer by
+describing the /attempt/ as INEFFECTIVE (clearly overriding the earlier
+CAN) rather than the "announcement".]

@@ -1,0 +1,125 @@
+PROPOSAL 8291 (Interesting Chambers v3.1)
+AUTHOR: Bernie
+FOR (8): Alexis$, Aris, Bernie, Falsifian, Gaelan, Jason, Rance, twg
+AGAINST (0): 
+PRESENT (1): omd
+BALLOTS: 9
+AI (F/A): 25/0 (AI=3.0)
+POPULARITY: 0.889
+OUTCOME: ADOPTED
+[
+Bernie: Endorsement of twg
+Falsifian: Endorsement of twg
+Rance: Endorsement of Jason
+]
+
+ID: 8291
+Title: Interesting Chambers v3.1
+Adoption index: 3.0
+Author: Bernie
+Co-authors: Trigon, Aris, Gaelan, G., Jason, twg
+
+
+[Enact a new Rule of Power 2.0, entitled "Ministries", with the following
+text:
+
+  A Ministry is an entity defined as such by this rule. Each
+  Ministry has a goal. The Ministries of Agora, and their goals, are
+  as follows:
+
+   A. Ministry of Justice: serve justice to rulebreakers
+   B. Ministry of Efficiency: see official duties performed swiftly
+   C. Ministry of Legislation: see votes cast on proposals
+   D. Ministry of Participation: reward players for achievements
+   E. Ministry of Economy: encourage economic activity and contracts
+
+  Interest is an office switch, tracked by the ADoP, whose possible
+  values are lists of ministries, defaulting to the empty list. The
+  ADoP CAN flip an office's interest without objection.
+
+  For each item of each office's interest, that office's holder's
+  voting strength is increased by 2 on proposals whose chamber is
+  set to that ministry.
+
+
+Enact a new Rule of Power 2.0, entitled "Proposal Classes", with the
+following text:
+
+  Proposals created since the enactment of this rule have an
+  untracked Class switch with possible values ordinary (the default)
+  and democratic.
+
+  When a proposal with an adoption index greater than 2.0 is
+  created, its class becomes democratic.
+
+  Any player CAN, with 2 Agoran consent, flip an ordinary proposal's
+  class to democratic, provided that it is in the Proposal Pool or
+  that there is an Agoran decision on its adoption whose voting
+  period has not yet ended.
+
+
+Enact a new Rule of Power 2.0, entitled "Proposal Chambers", with the
+following text:
+
+  Chamber is an untracked ordinary proposal switch whose possible
+  values include unset (the default) and each of the ministries of
+  Agora.
+
+  A proposal's chamber SHOULD only be decided by which ministry's
+  goals it effects to the greatest degree.
+
+  Any player CAN, with 2 Agoran consent, flip the chamber of an
+  ordinary proposal to any ministry, provided that it is in the
+  Proposal Pool or that there is an Agoran decision on its adoption
+  whose voting period has not yet ended.
+
+
+Amend Rule 1607, "Distribution", by changing "the text, author, and
+coauthors of the proposal" to "the text, author, coauthors, class and
+(if applicable) chamber of the proposal".
+
+
+Amend Rule 2350, "Proposals", by adding the following to the list:
+
+  * A chamber to which the proposal shall be assigned upon its
+    creation.
+
+
+Amend Rule 2422, "Voting Strength", by changing "between 0 and 5" to
+"between 0 and 15".
+
+
+// Move the PM's casting vote to the Speaker, since the PM already gets
+// all ministries:
+
+Amend Rule 2423, "First Among Equals", by removing the second paragraph.
+
+Amend Rule 103, "The Speaker", by changing "For an election of the Prime
+Minister, the Speaker" to "The Speaker".
+
+
+Set the ADoP's Interest to [Efficiency].
+Set the Arbitor's Interest to [Justice].
+Set the Assessor's Interest to [Efficiency, Legislation].
+Set the Herald's Interest to [Participation].
+Set the Prime Minister's Interest to [Justice, Efficiency, Legislation,
+  Participation, Economy].
+Set the Promotor's Interest to [Legislation].
+Set the Referee's Interest to [Justice].
+Set the Registrar's Interest to [Efficiency].
+Set the Rulekeepor's Interest to [Legislation, Participation].
+Set the Tailor's Interest to [Participation].
+Set the Treasuror's Interest to [Economy, Economy].
+
+// Some of the above have been slightly rejigged given the new
+// definition of Participation
+
+/* Treasuror is given Economy twice for balance reasons:
+ *  - It is a high-complexity office (was given Complexity=3 under
+ *    Politics), like Assessor and Rulekeepor; this makes the power
+ *    commensurate to the importance, and there is no ministry it really
+ *    fits under besides Economy
+ *  - It bumps up the number of voting increases issued for Economy
+ *    proposals; all other ministries have 2-3 excluding the PM.
+ * Not just trying to give myself votes, I swear :P
+ */

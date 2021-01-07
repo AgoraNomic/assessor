@@ -1,0 +1,146 @@
+PROPOSAL 8515 (adMinistration v1.1)
+AUTHOR: nix
+CLASS: ORDINARY
+CHAMBER: ECONOMY
+SPONSORED: YES
+FOR (11): ATMunn&, Aris, Baron von Vanderham, Falsifian, Gaelan@, Jason, Telnaior, Trigon&, nix, sukil, twg
+AGAINST (0): 
+PRESENT (3): D. Margaux, G.^, Publius Scribonius Scholasticus
+BALLOTS: 14
+AI (F/A): 40/0 (AI=2.0)
+POPULARITY: 0.786
+OUTCOME: ADOPTED
+[
+Baron von Vanderham: Endorsement of Jason
+D. Margaux: Endorsement of G.
+Falsifian: Endorsement of nix
+Gaelan: Endorsement of nix
+Telnaior: Endorsement of Aris
+sukil: Endorsement of Trigon
+twg: Endorsement of Falsifian
+]
+
+ID: 8515
+Title: adMinistration v1.1
+Adoption index: 2.0
+Author: nix
+Co-authors: Trigon, Aris
+
+
+Amend R2605, "Ministries", to read in full:
+
+  A Ministry is an entity defined as such by this rule. Each
+  Ministry has a goal. The Ministries of Agora, and their goals,
+  are as follows:
+
+  A. Ministry of Compliance: Ensure players follow rules and
+  voluntary agreements and receive appropriate sanctions when they
+  do not.
+  B. Ministry of Legislation: Enable and encourage gameplay
+  related to the rules themselves.
+  C. Ministry of Economy: Enable and encourage gameplay related to
+  assets and currencies.
+  D. Ministry of Legacy: Track and reward great Agoran
+  achievements
+  E. Ministry of Participation: Track information about the
+  participation of people in Agora.
+
+(Reworked the list to hopefully have a better distribution in offices
+and proposals)
+
+Enact a new Power=1 rule titled "The Ministor" with the following text:
+
+  The Ministor is an office, tasked with overseeing gameplay
+  related to Ministries. The Ministor SHALL publish eir monthly
+  report in a timely manner from the beginning of the month.
+
+Nix assumes the office of Ministor.
+
+(New office with a special time sensitive monthly report, to ensure
+these things are easy for players to keep up on)
+
+Enact a new Power=2 rule titled "Office Interests" with the following
+text:
+
+  Ministry Interest (or just Interest) is a secured office switch,
+  tracked by the Ministor in eir monthly report, whose possible
+  values are lists of ministries, defaulting to the empty list. The
+  Ministor CAN flip an office's Ministry Interests without
+  objection.
+
+  For each item of each office's Ministry Interest, that office's
+  holder's voting strength is increased by 2 on proposals whose
+  Ministry Impact is set to that Ministry.
+
+(Note that this moves a duty that used to belong to ADoP to Ministor.
+It just makes a bit more sense here.)
+
+When this proposal passes flip the Ministry Interest switch of every
+office to the value of that office's Interest switch immediately before
+this proposal passed with the following changes, applied in order:
+
+* replace every instance of "justice" with "compliance"
+* replace every instance of "efficiency" with "participation"
+
+(This will ensure that every office still has at least one interest,
+but it will also change some switches in undesirable ways. I'll, as
+Ministor, separately intend to fix a bunch of these offices' interests
+to better match the new categories)
+
+Enact a new Power=2 rule titled "Player Focuses" with the following
+text:
+
+  Ministry Focus (or just Focus) is a secured active player switch,
+  tracked by the Ministor in eir monthly report, with possible values
+  Unfocused (the default) and any Ministry.
+
+  An active player CAN Plan to Flip eir own Ministry Focus,
+  specifying any valid value for eir Ministry Focus, by
+  announcement. At the beginning of a month, every active player's
+  Ministry Focus is set to the value e mostly recently specified by
+  Planning to Flip. If a player did not Plan to Flip eir Ministry
+  Focus switch in the last month, it is not flipped.
+
+(This, combined with the below rule, will take over the card grants
+that offices used to get, making it less gerontocratic and more
+strategic.)
+
+Amend R2624, "Card Administration", to be titled "Focus Grants" and to
+read in full:
+
+  Each of the following Ministries has a Grant, listed below.
+
+  Ministry of Compliance: 1 Justice Card
+  Ministry of Legislation: 1 Legislative Card
+  Ministry of Participation: 1 Voting Card
+  Ministry of Economy: 50 coins divided by X, rounded up; where X
+  is the number of players with their Ministry Focus set to
+  Economy. The Ministor SHALL report this value in a timely manner
+  after the beginning of the month.
+
+  A player CAN once a month grant eir Ministry Focus' Grant to a
+  specified player by announcement.
+
+  The Ministor CAN, once a month and by announcement, and SHALL, in
+  a timely manner from the beginning of the month, grant 1 Victory
+  Card to a random player whose Ministry Focus is Legacy and 1
+  Victory Point to every other player whose Ministry Focus is
+  Legacy.
+
+(This system replaces officer grants, in a way that involves a lot more
+planning and strategy.)
+
+Amend R2422, "Voting Strength", by replacing the last paragraph with:
+
+  A player CAN Buy Strength by paying 1 Extra Vote and specifying a
+  current Agoran decision on which e is a voter. For each time a
+  player has Bought Strength on a decision, eir voting strength is
+  1 greater on that decision. If the decision is on a proposal, and
+  the proposal's chamber and the player's focus are the same value,
+  then eir voting strength is instead 2 greater on that decision.
+  A player CANNOT Buy Strength for the same decision more than 3
+  times.
+
+(Added a clause where if Focus=Chamber, you get 2 strength instead of
+1. Flavorful, and potentially makes Extra Votes more useful. We'll
+see.)

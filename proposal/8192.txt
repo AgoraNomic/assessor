@@ -1,0 +1,53 @@
+PROPOSAL 8192 (auctions have fees)
+AUTHOR: G.
+FOR (14): Aris, D. Margaux, Falsifian, G.$, Halian, Jacob Arduino, Jason, L, Murphy, R. Lee, Telnaior, Trigon, nix, twg@
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 14
+AI (F/A): 42/0 (AI=1.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+[
+Halian: Endorsement of R. Lee
+Jacob Arduino: Endorsement of twg
+L: Endorsement of D. Margaux
+twg: Endorsement of G.
+]
+
+PROPOSAL 8192 (auctions have fees)
+AUTHOR: G.
+FOR (4): Falsifian, G.$, Jason, Telnaior
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 4
+AI (F/A): 13/0 (AI=1.0)
+POPULARITY: 1.000
+OUTCOME: FAILED QUORUM
+
+ID: 8192
+Title: auctions have fees
+Adoption index: 1.0
+Author: G.
+Co-authors: 
+
+
+[The payment rule for auctions just says that if you happen to have an
+auction debt, if you pay Agora under any circumstances, it triggers
+stuff.  This means, if someone happens to have two auction debts, they
+can make one payment and it would count for both.  This brings things
+into line.]
+
+Amend Rule 2551 (Auction End) by replacing:
+  The winner of a lot SHALL pay the Auctioneer the number of the
+  Auction's currency equal to eir bid, in a single payment, in a
+  timely fashion.
+with:
+  The winner of the lot SHALL, in a timely fashion, pay a fee (the
+  number of the Auction's currency equal to eir bid) to the
+  Auctioneer in order to satisfy eir auction debt.
+
+[This makes "satisfying eir auction debt" a fee-based action governed
+under R2579, which didn't exist when the auction rules were written.
+R2579 then takes care of the various CANs and method details.  The
+transfer of the lots is then a consequence of "satisfying eir auction
+debt"].

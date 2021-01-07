@@ -1,0 +1,83 @@
+PROPOSAL 8316 (Zombie voting package)
+AUTHOR: Alexis
+CLASS: DEMOCRATIC
+FOR (2): Alexis, Gaelan
+AGAINST (7): Bernie, Falsifian$, G., Jason, Rance, o, twg
+PRESENT (2): Aris, omd
+BALLOTS: 11
+AI (F/A): 6/22 (AI=3.0)
+POPULARITY: -0.455
+OUTCOME: REJECTED
+[
+Bernie: Endorsement of twg
+Rance: Endorsement of Jason
+]
+
+ID: 8316
+Title: Zombie voting package
+Adoption index: 3.0
+Author: Alexis
+Co-authors: 
+
+
+Amend Rule 683 (Voting on Agoran Decisions) by appending the following
+paragraph:
+{{
+  The above notwithstanding, at the end of the voting period for an Agoran
+  decision, prior to the evaluation of conditionals, each entity who has
+  never submitted a valid ballot for that decision, and for whom the Rules
+  provide a default vote for that decision, automatically submits a valid
+  vote on that decision for eir default vote and becomes quorum-ineligible
+  for that decision. Providing an entity with a default vote on an Agoran
+  decision is secured with power threshold 2.
+}}
+
+[We do not think that the "never submitted" condition is too onerous on the
+Assessor as e will be going through all the votes anyway.
+
+We would even go with "never attempted to", but we suspect that might lead
+to too much litigation, particularly because the easiest way to try and
+fail is a NttPF.]
+
+Amend Rule 955 (Determining the Will of Agora) by inserting: {
+  Designating a voter as quorum-ineligible on an Agoran decision is secured
+  with Power Threshold 2; all voters are otherwise quorum-eligible.
+}
+and by replacing: {
+  If there is more than one option, and the number of voters is less than the
+  quorum of that decision, the outcome is instead FAILED QUORUM.
+} with {
+  If there is more than one option on an Agoran decision, and the number of
+  quorum-eligible voters on it is less than its quorum, its outcome is
+  instead FAILED QUORUM.
+}
+
+[Cleaned up this language because there's already a definition of a voter
+applicable to R955 here in R208 (possibly moved as a result of my other
+proposal). While I don't think Gaelan's suggestion of clearing up the
+possibility of a ballot identical to a default ballot was necessary, this
+is cleaner IMO.]
+
+Amend Rule 879 (Quorum) by replacing {
+  If no other rule defines the quorum of an Agoran Decision, the quorum for
+  that decision is equal to 2/3 of the number of voters on the Agoran
+  Decision to adopt a proposal that had been most recently resolved at the
+  time of that decision's initiation, the whole rounded to the nearest
+  integer (breaking ties upward).
+} with {
+  The Activity Level is equal to 2/3, rounded to the nearest integer and
+  breaking ties upward, of the number of quorum-eligible voters on the most
+  recently-resolved Agoran decision to adopt a proposal. If no other rules
+  define the quorum of an Agoran decision, then the quorum of that decision
+  is equal to the Activity Level at the time if its initiation.
+}
+
+Enact a new power-2 rule entitled "Zombie Voting" reading as follows:
+{{
+  A zombie has its voting strength halved.
+
+  The default vote of a zombie is to endorse eir master.
+
+  Zombies are not quorum-eligible for any Agoran decision.
+}}
+[Rounding is already provided by R2422.]

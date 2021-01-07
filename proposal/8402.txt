@@ -1,0 +1,83 @@
+PROPOSAL 8402 (Promises)
+AUTHOR: Aris
+CLASS: DEMOCRATIC
+FOR (5): Aris, Falsifian, Jason, Murphy, Publius Scribonius Scholasticus
+AGAINST (1): R. Lee
+PRESENT (4): ATMunn, G., Trigon$, nix
+BALLOTS: 10
+AI (F/A): 15/3 (AI=3.0)
+POPULARITY: 0.400
+OUTCOME: ADOPTED
+[
+Falsifian: Endorsement of Aris
+]
+
+ID: 8402
+Title: Promises
+Adoption index: 3.0
+Author: Aris
+Co-authors: Falsifian
+
+
+Enact a new power 2.2 rule, entitled "Promises", with the following text:
+
+  Promises are a class of assets, tracked by the Notary. Their essential
+  attributes are their text and creator. A person CAN, by announcement,
+  acting as emself, grant emself a promise, specifying its text and becoming its
+  creator. A promise's owner is referred to as its bearer. Promises with the
+  same text, creator, and bearer are fungible. Promises with the same text and
+  creator SHOULD be referred to by the same title, but the title is not an
+  essential attribute of the promise, just a way of referring to it.
+
+  A promise's bearer CAN, by announcement, cash the promise,
+  provided that any conditions for cashing it specified by its text are
+  unambiguously met. By doing so, e acts on the creator of
+  the promise's behalf, causing the creator to act as if e published the
+  promise's text, and destroys the promise. The bearer SHOULD recite the
+  promise's essential attributes in the same message e cashes it.
+
+  In a promise's text, "the bearer" (or the like) refers to the promise's
+  bearer, and "this promise" (or the like) refers to the promise. The text of
+  the promise can refer to the context of the message in which it is cashed,
+  but the context of the message does not otherwise change the meaning of
+  the promise.
+
+  The Library is an entity and CAN own promises. Any player CAN take a specified
+  promise from the Library by announcement, provided e cashes the promise in the
+  same message. Any player CAN revoke a specified promise from the Library
+  without objection.
+
+
+Amend Rule 2608, "The Notary", by changing the numbered list to read as
+follows:
+
+  1. every pledge, along with its title, creator, time window, time
+     of creation, and time of expiry;
+  2. every contract, with its title, full provisions, and parties; and
+  3. every promise, along with its title, text, creator, and bearer.
+
+Amend Rule 2466, "Acting on Behalf", by changing the text
+
+  "A person CANNOT act on behalf of another person to do anything except
+   perform a game action; in particular, a person CANNOT act on behalf of
+   another person to send a message, only to perform specific actions that
+   might be taken within a message."
+to read
+  "A person CANNOT act on behalf of another person to do anything except
+   perform a game action; in particular, a person CANNOT act on behalf of
+   another person to send a message, only to perform specific actions that
+   might be taken within a message, including actions that would otherwise
+   be taken by publishing certain text."
+
+Amend Rule 2519, "Consent", by changing it to read in full:
+
+  A person is deemed to have consented to an action if and only if,
+  at the time the action took place:
+
+    1. e, acting as emself, has publicly stated that e agrees to the
+       action and not subsequently publicly withdrawn eir statement;
+    2. e is party to a contract whose body explicitly and
+       unambiguously indicates eir consent;
+    3. the action is taken as part of a promise which e created; or
+    4. it is reasonably clear from context that e wanted the
+       action to take place or assented to it taking place.

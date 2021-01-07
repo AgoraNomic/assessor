@@ -1,0 +1,99 @@
+PROPOSAL 8295 (Rewards Reform Act)
+AUTHOR: Bernie
+FOR (8): Alexis, Aris, Bernie, Falsifian, Gaelan, Jason, Rance, twg
+AGAINST (1): omd
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 24/3 (AI=3.0)
+POPULARITY: 0.778
+OUTCOME: ADOPTED
+[
+Alexis: Conditional resolved: 8304 is going to be resolved as ADOPTED
+Bernie: Endorsement of twg
+Falsifian: Endorsement of twg: Conditional resolved: None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST
+Rance: Endorsement of Jason
+]
+
+ID: 8295
+Title: Rewards Reform Act
+Adoption index: 3.0
+Author: Bernie
+Co-authors: twg, Alexis
+
+
+/* 1. Changes rewards to be issued by relevant officers (mostly ADoP,
+   *    Arbitor) in their weekly reports, instead of calculated and
+   *    claimed by individual players themselves.
+   * 2. Effectively converts Glitter into a reward issued by the Tailor.
+   *    (Players must still claim their Glitter by announcement, but the
+   *    Tailor calculates the coin amounts and awards them all in
+   *    weekly batches.)
+   * 3. Makes all Ribbons (except White, Gray, Black) eligible for
+   *    Glitter.
+   */
+
+Amend Rule 2496 ("Rewards") as follows:
+
+  Replace its first two paragraphs with the following:
+
+    Each time a player fulfills a reward condition, the officer
+    associated with the condition CAN once, and SHALL before the end
+    of the next Agoran week, grant the associated set of assets to the
+    player.
+
+    Below is a list of reward conditions and their associated assets
+    and officers.
+
+  Append "(Assessor)" to the first list item.
+
+  Append "(Arbitor)" to the second list item.
+
+  Append "(ADoP)" to the third list item.
+
+  Append "(ADoP)" to the fourth list item.
+
+  Append "(Herald)" to the fifth list item.
+
+
+Amend Rule 2438 ("Ribbons") as follows:
+
+  Replace the paragraph starting "While a person qualifies..." with
+  the following:
+
+    A person qualifies for a type of Ribbon if e has earned that type
+    of Ribbon within the preceding 7 days (including earlier in the
+    same message).
+
+  [Removed the Gray and Transparent rephrasings as they were
+   unnecessarily confusing and had minimal effect.]
+
+  Move the list item starting "Emerald" so that it falls between the
+  list items starting "Green" and "Cyan". [This was bothering me.]
+
+  Append the following:
+
+    While a person qualifies for a type of Ribbon:
+
+      - If e has not owned that type of Ribbon within the preceding 7
+        days, any player CAN, by announcement, award em that type of
+        Ribbon.
+
+      - Otherwise, if e has not been awarded that type of Ribbon or
+        the corresponding type of Glitter since e last earned or
+        came to qualify for that type of Ribbon, e CAN, by
+        announcement, award emself that type of Glitter.
+
+Amend Rule 2602 ("Glitter") to read:
+
+  For each type of Ribbon, there is a type of Glitter with the same
+  name. An attempt to award Glitter is INEFFECTIVE if the type of
+  Glitter is not specified.
+
+  Each time a player is awarded a type of Glitter, the Tailor CAN
+  once, and SHALL before the end of the next Agoran week, grant the
+  player N+1 coins, where N is the number of players who did not
+  own the corresponding type of Ribbon at the time of the award.
+
+  [If the mechanics of the change are approved, R2602 could later be
+   further simplified by merging the first para into 2438 and the
+   second into R2496]

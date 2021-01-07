@@ -1,0 +1,37 @@
+PROPOSAL 8255 (Possibly-Indeterminate Switches)
+AUTHOR: Jason
+FOR (10): ATMunn, Aris, Bernie, Falsifian, G.$, Gaelan, Jason, Rance, pikhq, twg
+AGAINST (0): 
+PRESENT (2): nix, omd
+BALLOTS: 12
+AI (F/A): 31/0 (AI=3.0)
+POPULARITY: 0.833
+OUTCOME: ADOPTED
+[
+ATMunn: Endorsement of Falsifian
+Bernie: Endorsement of Jason
+twg: Endorsement of Jason
+]
+
+ID: 8255
+Title: Possibly-Indeterminate Switches
+Adoption index: 3.0
+Author: Jason
+Co-authors: 
+
+
+Amend Rule 2162 ("Switches") by replacing the paragraph beginning "If an
+action or set of actions" with the following:
+
+  If a type of switch is not explicitly designated as
+  possibly-indeterminate by the rule that defines it, and if an action
+  or set of actions would cause the value of an instance of that type
+  of switch to become indeterminate, that instance instead takes on
+  its last determinate and possible value, if any, otherwise it takes
+  on its default value.
+
+[Provides an escape hatch so that rules can allow their switches to have
+indeterminate values. This has come up in protos by both me and
+Falsifian. It is useful to have these possibly-indeterminate properties
+be switches, since switches have useful properties and precedent, so the
+always-determinate system cuts off some use-cases.]

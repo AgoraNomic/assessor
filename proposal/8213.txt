@@ -1,0 +1,39 @@
+PROPOSAL 8213 (Space Fixes)
+AUTHOR: nix
+FOR (12): Aris, D. Margaux, Falsifian, Halian, Jacob Arduino, Jason, L, Murphy, R. Lee, Trigon, nix, twg@
+AGAINST (0): 
+PRESENT (2): G.$, Telnaior
+BALLOTS: 14
+AI (F/A): 35/0 (AI=1.0)
+POPULARITY: 0.857
+OUTCOME: ADOPTED
+[
+Halian: Endorsement of R. Lee
+Jacob Arduino: Endorsement of twg
+L: Endorsement of D. Margaux
+twg: Endorsement of nix
+]
+
+ID: 8213
+Title: Space Fixes
+Adoption index: 1.0
+Author: nix
+Co-authors: 
+
+
+Amend rule 2591 "Spaceships" by changing:
+
+  * Armour (an integer switch limited to values less than or equal to
+    10).
+
+to:
+
+  * Armour (an integer switch limited to values less than or equal to
+    10, defaulting to 10).
+
+and by appending the following to the end of the rule:
+
+  If a player does not have a spaceship in eir possession e CAN, by
+  announcement, create a spaceship in eir possession.
+
+Flip every spaceships' Armour switch to 10.

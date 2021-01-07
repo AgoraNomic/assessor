@@ -1,0 +1,62 @@
+PROPOSAL 8487 (Simpler ribbon switches)
+AUTHOR: Murphy
+CLASS: DEMOCRATIC
+SPONSORED: YES
+FOR (8): Aris, Cuddle Beam, Falsifian, Gaelan@, Jason$, Murphy, Publius Scribonius Scholasticus, nix
+AGAINST (0): 
+PRESENT (2): R. Lee~, Trigon
+BALLOTS: 10
+AI (F/A): 24/0 (AI=3.0)
+POPULARITY: 0.800
+OUTCOME: ADOPTED
+[
+Jason: Endorsement of Publius Scribonius Scholasticus
+]
+
+ID: 8487
+Title: Simpler ribbon switches
+Adoption index: 3.0
+Author: Murphy
+Co-authors: R. Lee
+
+
+Amend Rule 2438 (Ribbons) by replacing this text:
+
+  Ribbon Ownership is a secured person switch, tracked by the
+  Tailor in eir monthly report, whose values are the subsets of
+  the set of types of Ribbon, defaulting to the empty set. If the
+  rules are amended to change the types of Ribbon, if a player's
+  Ribbon Ownership is subsequently illegal, then it is updated by
+  removing all nonexistent types rather than resetting the entire
+  value to default.
+
+  To "award a person a <Ribbon type>" is to add that type of Ribbon
+  to that person's Ribbon Ownership. A person "owns a <Ribbon type>"
+  if that type of Ribbon is an element of eir Ribbon Ownership.
+
+with this text:
+
+  For each type of Ribbon, <type> Ribbon Ownership is a secured
+  negative boolean person switch, tracked by the Tailor in eir
+  monthly report.
+
+  To "award a person a <Ribbon type>" is to flip that person's
+  <that type> Ribbon Ownership to True. A person "owns a <Ribbon
+  type>" if eir <that type> Ribbon Ownership is True.
+
+and by replacing this text:
+
+  While a person owns all types of Ribbon, that person can Raise a
+  Banner by announcement. This causes that person to win the game.
+  That person's Ribbon Ownership becomes the empty set.
+
+with this text:
+
+  While a person owns all types of Ribbon, that person can Raise a
+  Banner by announcement. This causes that person to win the game.
+  When a person wins this way, for each type of Ribbon, that
+  person's <type> Ribbon Ownership is flipped to False.
+
+For each type of Ribbon, for each person whose Ribbon Ownership prior to
+the adoption of this proposal included that type, flip eir <that type>
+Ribbon Ownership to True.

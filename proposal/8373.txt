@@ -1,0 +1,46 @@
+PROPOSAL 8373 (Auction resolution fixes)
+AUTHOR: Jason
+CLASS: ORDINARY
+CHAMBER: ECONOMY
+FOR (5): Aris%, Falsifian, Jason, Murphy, Publius Scribonius Scholasticus&
+AGAINST (1): Alexis
+PRESENT (2): R. Lee%, Trigon^
+BALLOTS: 8
+AI (F/A): 21/3 (AI=1.0)
+POPULARITY: 0.500
+OUTCOME: ADOPTED
+[
+Falsifian: Conditional resolved: no Notice of Veto was published
+Murphy: Endorsement of Falsifian
+]
+
+ID: 8373
+Title: Auction resolution fixes
+Adoption index: 1.0
+Author: Jason
+Co-authors: Aris
+
+
+Amend Rule 2551 by replacing the text from "A person's priority on an
+Auction is their" to "the excess lots are not won by any person."
+(including both ends) with the following paragraphs:
+
+  The bidders in an Auction are the players who have a non-withdrawn
+  bid in that Auction. Priority is a strict total ordering over the
+  bidders in an Auction. For two bidders with different bid amounts on
+  their non-withdrawn bids, the bidder with the higher bid has higher
+  priority than the other bidder; otherwise, the bidder whose
+  non-withdrawn bid was placed earlier has higher priority than the
+  other bidder.
+
+  Upon the end of an Auction, for each lot, in the order they are to
+  be awarded, the bidder with the highest priority in the Auction who
+  is not yet the winner of a lot becomes the winner of the lot. If
+  there are more lots than there are persons with non-withdrawn bids,
+  the excess lots are not won by any person.
+
+
+See [0] for an explanation on what this does.
+
+[0]:
+https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-discussion/2020-April/057218.html

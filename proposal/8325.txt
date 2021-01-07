@@ -1,0 +1,57 @@
+PROPOSAL 8325 (Inflation Vote)
+AUTHOR: Falsifian
+CLASS: ORDINARY
+CHAMBER: ECONOMY
+FOR (4): Aris, Cuddle Beam, Falsifian, Murphy
+AGAINST (5): Alexis, G., Jason$, Rance, o
+PRESENT (4): Bernie, Warrigal, sukil, twg+
+BALLOTS: 13
+AI (F/A): 12/16 (AI=2.0)
+POPULARITY: -0.077
+OUTCOME: REJECTED
+[
+Bernie: Endorsement of twg
+Rance: Endorsement of Jason
+twg: Conditional resolved: Falsifian did not vote AGAINST
+]
+
+ID: 8325
+Title: Inflation Vote
+Adoption index: 2.0
+Author: Falsifian
+Co-authors: 
+
+
+[Comments:
+
+Are we just going to let a steady stream of sufficiently dedicated
+players claim their standard victories? I say we raise the bar a
+little.
+
+There's been some talk of a larger re-working of the economy. In the
+meantime, this proposal calls for players to vote on a new number to
+replace the 1,000 coin victory fee. The median vote wins, favouring the
+higher vote if there are two middle votes.
+
+]
+
+For the purpose of this proposal:
+
+* An Inflation Ballot is a body of text published during the voting
+  period of this proposal that clearly, directly and without
+  obfuscation specifies a single non-negative integer and that it is an
+  Inflation Ballot.
+
+* Each player's Inflation Vote is the integer specified in the last
+  Inflation Ballot they published, or "none" if they never published
+  one.
+
+* P is the number of players with Inflation Votes other than "none".
+
+* Median is the (unique) integer such that that at least P/2 Inflation
+  Votes are integers greater than or equal to Median, and at least
+  (P/2+0.5) Inflation votes are integers less than or equal to Median.
+
+Amend Rule 2483 (Economics) by replacing "1,000" with Median, written
+in decimal with commas separating groups of three digits, as in
+"12,345,678".

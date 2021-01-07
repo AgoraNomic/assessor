@@ -1,0 +1,44 @@
+PROPOSAL 8431 (Proposal Reward Trimming)
+AUTHOR: Aris
+CLASS: ORDINARY
+CHAMBER: LEGISLATION
+FOR (9): ATMunn, Aris&, Falsifian, G.^, Publius Scribonius Scholasticus, R. Lee, Tcbapo, nix, twg
+AGAINST (0): 
+PRESENT (3): Jason&, Murphy, Trigon
+BALLOTS: 12
+AI (F/A): 34/0 (AI=1.0)
+POPULARITY: 0.750
+OUTCOME: ADOPTED
+[
+Falsifian: Endorsement of Aris
+Tcbapo: Endorsement of R. Lee
+twg: Endorsement of G.
+]
+
+ID: 8431
+Title: Proposal Reward Trimming
+Adoption index: 1.0
+Author: Aris
+Co-authors: ais523
+
+
+[This reduces proposal rewards by removing AI from the calculation.
+As it is, an extremely detailed and well developed AI 1.0 proposal
+that is adopted unanimously gets fewer coins than an AI 3.0 bug fix.
+
+Note for the Assessor: Since this proposal is AI 1.0, its
+reward is the same in both the old and the new systems. Please adjust
+your algorithms for future proposals if this passes.]
+
+Amend Rule 2496, "Rewards", by replacing:
+
+  Being the author of an adopted proposal: a number of coins equal to
+  ((the total number of valid ballots cast FOR the decision - the total
+  number of valid ballots cast AGAINST) times the adoption index of the
+  result) rounded up
+
+with:
+
+  Being the author of an adopted proposal: a number of coins equal to
+  (the total number of valid ballots cast FOR the decision - the total
+  number of valid ballots cast AGAINST)

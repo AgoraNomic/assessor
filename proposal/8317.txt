@@ -1,0 +1,80 @@
+PROPOSAL 8317 (Zombie trade)
+AUTHOR: Aris
+CLASS: ORDINARY
+CHAMBER: ECONOMY
+FOR (5): Alexis%, Bernie, Gaelan, omd, twg&
+AGAINST (6): Aris, Falsifian$, G., Jason, Rance, o
+PRESENT (0): 
+BALLOTS: 11
+AI (F/A): 21/19 (AI=1.0)
+POPULARITY: -0.091
+OUTCOME: ADOPTED
+[
+Bernie: Endorsement of twg
+Rance: Endorsement of Jason
+twg: Endorsement of Alexis
+]
+
+ID: 8317
+Title: Zombie trade
+Adoption index: 1.0
+Author: Aris
+Co-authors: 
+
+
+[This proposal allows zombies to collect the fruits of their zombie
+auctions, and to allow players to voluntarily enter servitude. Yes, it does
+make buying a zombie a risky business!]
+
+Amend Rule 2483 (Economics) by replacing "Agora, players, and contracts"
+with "Agora, players, zombie trusts, and contracts".
+
+Amend Rule 2532 (Zombies) by:
+- appending "A player CAN, without 3 objections, flip eir own master switch
+    to any other player. Other players SHOULD NOT object unless they believe
+    that the intent is part of an attempt to flood Agora with the undead."
+- inserting "- flip eir master switch;" in the list after the first item
+- replacing "A zombie's master CAN flip that zombie's master switch to
+    Agora by announcement." with "A zombie's master CAN flip that zombie's
+    master switch to Agora or to any player who does not own any zombies by
+    announcement."; and
+- replacing "resale value" with "integrity".
+
+Amend Rule 2574 (Zombie Life Cycle) by:
+- replacing the first two paragraphs with: {
+  Any player CAN, with notice, putrefy player who has not made a public
+  announcement in the past 60 days. When a player is putrefied:
+    - if e is not a zombie, eir master switch is flipped to Agora; and then
+    - eir integrity is set to 2.
+
+  Integrity is a secured switch for zombies, tracked by the Registrar, with
+  possible values of the natural numbers and "well-maintained" (default). If
+  an integrity switch would be modified in a manner that assumes it is
+  already a number, such as to increase or decrease it, such a modification
+  leaves "well-maintained" as-is. Whenever a zombie's master switch is
+  flipped from Agora to a player other than emself, eir integrity is
+  decreased by 1. At the end of a zombie auction, every zombie that is an
+  excess lot in that auction has eir integrity decreased by 1.
+};
+- inserting "- if a zombie is master to another zombie, flipping the second
+    zombie's master switch to Agora;" after the second item in the list; and
+- replacing "resale value" with "integrity" throughout the rule.
+
+Amend Rule 1885 (Zombie Auctions) by:
+- replacing "resale value" with "integrity";
+- appending "When the winner of a zombie auction pays Agora to fulfill eir
+    obligation to satisfy eir bid, the coins so transferred are immediately
+    transferred into trust for the zombie."
+
+Create a new power-2 Rule entitled "Zombie Trusts":
+{
+  Each zombie has a zombie trust, an entity referred to as the "<zombie name>
+  Trust". To place assets "in trust" to a zombie is to transfer those assets
+  to that zombie's trust, and similarly for other similar language.
+
+  When an active player becomes a zombie, all of eir coins are transferred
+  into eir zombie trust unless e flipped eir master switch emself and
+  specified otherwise in the same message. Whenever a zombie becomes active,
+  all coins held in trust for em are transferred to em immediately before eir
+  trust ceases to exist.
+}
