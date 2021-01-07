@@ -57,6 +57,7 @@ jobs:
         run: |
           java -jar artifacts/assessor.jar all --long --dir reports
           java -jar artifacts/assessor.jar all --json --dir reports/json
+          java -jar artifacts/assessor.jar all --proposals --dir reports/proposal
 
       - name: Generate index.md
         run: |
