@@ -294,14 +294,16 @@ private fun renderProposalResolutions(
 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
-        append(renderReadableProposalResolutions(config,
+        append(renderReadableProposalResolution(
+            config,
             proposal,
             resolution,
-            resolutionMap.votingStrengthsFor(proposal.number)))
+            resolutionMap.votingStrengthsFor(proposal.number),
+        ))
     }
 }
 
-fun renderReadableProposalResolutions(
+fun renderReadableProposalResolution(
     config: ReadableReportConfig,
     proposal: Proposal,
     resolution: ResolutionData,
