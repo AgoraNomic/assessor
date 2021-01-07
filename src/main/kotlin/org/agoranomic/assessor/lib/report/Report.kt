@@ -300,6 +300,7 @@ private fun renderProposalResolutions(
             resolution,
             resolutionMap.votingStrengthsFor(proposal.number),
         ))
+        appendLine()
     }
 }
 
@@ -324,7 +325,6 @@ fun renderReadableProposalResolution(
     if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
     appendLine(renderProposalOutcome(resolution))
     if (config.voteComments) append(renderVoteComments(resolution))
-    appendLine()
 }
 
 private fun StringBuilder.appendWithDelimiter(string: String) {
