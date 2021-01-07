@@ -2,6 +2,7 @@ package org.agoranomic.assessor.cli
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.report.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 
@@ -42,5 +43,35 @@ object RewardsFormatter : AssessmentIndependentFormatter() {
 object StrengthAuditFormatter : AssessmentIndependentFormatter() {
     override fun formatSingle(assessment: ProposalResolutionMap): String {
         return strengthAuditReport(assessment)
+    }
+}
+
+data class ProposalsReadableFormatter(
+    private val reportConfig: ReadableProposalReportConfig,
+) : AssessmentFormatter {
+    override fun formatBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
+        val allResolutions = assessments.values
+        val allProposals = allResolutions.flatMap { it.proposals }.toProposalSet()
+
+        val resolutionsByProposal =
+            allProposals
+                .sortedBy { it.number }
+                .associateWith { proposal -> allResolutions.filter { it.proposals.contains(proposal.number) } }
+
+        return AssessmentFormatOutput(
+            resolutionsByProposal.asIterable().associate { (proposal, resolutions) ->
+                proposal.number.toString() to
+                        resolutions.joinToString("\n") { resolution ->
+                            renderReadableProposalResolution(
+                                reportConfig,
+                                proposal,
+                                resolution.resolutionOf(proposal.number),
+                                resolution.votingStrengthsFor(proposal.number),
+                            )
+                        } +
+                        "\n" +
+                        renderProposalText(proposal)
+            }
+        )
     }
 }
