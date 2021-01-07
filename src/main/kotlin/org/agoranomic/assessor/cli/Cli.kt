@@ -3,6 +3,7 @@ package org.agoranomic.assessor.cli
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
+import org.agoranomic.assessor.lib.report.ReadableProposalReportConfig
 import org.agoranomic.assessor.lib.report.ReadableReportConfig
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.apache.commons.cli.*
@@ -25,20 +26,24 @@ private const val FORM_REWARDS = "rewards"
 private const val FORM_STRENGTH_AUDIT = "strength-audit"
 
 val CONFIG_LONG = ReadableReportConfig(
-    voteComments = true,
-    authorLine = true,
-    totalBallotCount = true,
-    voteKindBallotCount = true,
-    popularity = true,
-    summaryTable = true
+    proposalConfig = ReadableProposalReportConfig(
+        voteComments = true,
+        authorLine = true,
+        totalBallotCount = true,
+        voteKindBallotCount = true,
+        popularity = true,
+    ),
+    summaryTable = true,
 )
 
 val CONFIG_SHORT = ReadableReportConfig(
-    voteComments = false,
-    authorLine = false,
-    totalBallotCount = false,
-    popularity = false,
-    voteKindBallotCount = false
+    proposalConfig = ReadableProposalReportConfig(
+        voteComments = false,
+        authorLine = false,
+        totalBallotCount = false,
+        popularity = false,
+        voteKindBallotCount = false
+    ),
 )
 
 open class CliException : Exception {
@@ -137,9 +142,14 @@ private enum class CommentsConfig(val value: Boolean) { ENABLED(true), DISABLED(
 private enum class BallotsLineConfig(val value: Boolean) { ENABLED(true), DISABLED(false) }
 private enum class VoteCountsConfig(val value: Boolean) { ENABLED(true), DISABLED(false) }
 
-private fun ReadableReportConfig.copyWith(config: CommentsConfig) = this.copy(voteComments = config.value)
-private fun ReadableReportConfig.copyWith(config: BallotsLineConfig) = this.copy(totalBallotCount = config.value)
-private fun ReadableReportConfig.copyWith(config: VoteCountsConfig) = this.copy(voteComments = config.value)
+private fun ReadableReportConfig.copyWith(config: CommentsConfig) =
+    copy(proposalConfig = proposalConfig.copy(voteComments = config.value))
+
+private fun ReadableReportConfig.copyWith(config: BallotsLineConfig) =
+    copy(proposalConfig = proposalConfig.copy(totalBallotCount = config.value))
+
+private fun ReadableReportConfig.copyWith(config: VoteCountsConfig) =
+    copy(proposalConfig = proposalConfig.copy(voteComments = config.value))
 
 class InvalidAssessmentNameException(val name: String) : CliException("Invalid exception name: $name")
 

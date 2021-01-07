@@ -107,7 +107,7 @@ private fun renderProposalV3Header(data: ProposalDataV3) = buildString {
     append(renderSponsoredHeader(data.sponsored))
 }
 
-private fun renderProposalHeader(config: ReadableReportConfig, proposal: Proposal) = buildString {
+private fun renderProposalHeader(config: ReadableProposalReportConfig, proposal: Proposal) = buildString {
     appendLine("PROPOSAL ${proposal.number} (${proposal.title})")
     if (config.authorLine) appendLine("AUTHOR: ${proposal.author.name}")
 
@@ -284,7 +284,7 @@ private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTr
 }
 
 private fun renderProposalResolutions(
-    config: ReadableReportConfig,
+    config: ReadableProposalReportConfig,
     resolutionMap: ProposalResolutionMap,
 ) = buildString {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
@@ -304,7 +304,7 @@ private fun renderProposalResolutions(
 }
 
 fun renderReadableProposalResolution(
-    config: ReadableReportConfig,
+    config: ReadableProposalReportConfig,
     proposal: Proposal,
     resolution: ResolutionData,
     votingStrengths: VotingStrengthTrailForPersons,
@@ -332,18 +332,22 @@ private fun StringBuilder.appendWithDelimiter(string: String) {
     appendLine("=".repeat(string.length))
 }
 
-data class ReadableReportConfig(
+data class ReadableProposalReportConfig(
     val voteComments: Boolean = true,
     val authorLine: Boolean = true,
     val totalBallotCount: Boolean = true,
     val voteKindBallotCount: Boolean = true,
     val popularity: Boolean = true,
-    val summaryTable: Boolean = false
+)
+
+data class ReadableReportConfig(
+    val proposalConfig: ReadableProposalReportConfig = ReadableProposalReportConfig(),
+    val summaryTable: Boolean = false,
 )
 
 fun readableReport(
     resolutionMap: ProposalResolutionMap,
-    config: ReadableReportConfig = ReadableReportConfig()
+    config: ReadableReportConfig = ReadableReportConfig(),
 ): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
@@ -379,7 +383,7 @@ fun readableReport(
         }
         append(renderStrengthFootnotes(resolutionMap.votingStrengths.values))
         appendLine()
-        append(renderProposalResolutions(config, resolutionMap))
+        append(renderProposalResolutions(config.proposalConfig, resolutionMap))
 
         val adoptedProposals = resolutionMap.adoptedProposals()
         append(renderProposalsText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
