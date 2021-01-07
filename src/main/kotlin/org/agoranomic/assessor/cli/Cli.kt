@@ -226,8 +226,8 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
         commandLine.hasOption(FORM_REWARDS) -> RewardsFormatter
         commandLine.hasOption(FORM_STRENGTH_AUDIT) -> StrengthAuditFormatter
-        commandLine.hasOption(FORM_PROPOSALS) -> ProposalsReadableFormatter(withOverrides(commandLine,
-            CONFIG_LONG).proposalConfig)
+        commandLine.hasOption(FORM_PROPOSALS) ->
+            ProposalsReadableFormatter(withOverrides(commandLine, CONFIG_LONG).proposalConfig)
 
         else -> null
     }
