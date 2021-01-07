@@ -29,12 +29,7 @@ fun main(args: Array<String>) {
         return
     }
 
-    val pendingAssessments = toAssess.map {
-        AssessmentPendingOutput(
-            metadata = it.metadata,
-            assessmentText = programConfig.formatter.format(resolve(it))
-        )
-    }
-
-    programConfig.destination.outputAssessments(pendingAssessments)
+    programConfig.destination.outputAssessments(
+        programConfig.formatter.formatBatch(toAssess.associate { it.metadata.name to resolve(it) })
+    )
 }

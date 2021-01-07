@@ -3,6 +3,7 @@ package org.agoranomic.assessor.cli
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
+import org.agoranomic.assessor.lib.report.ReadableProposalReportConfig
 import org.agoranomic.assessor.lib.report.ReadableReportConfig
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.apache.commons.cli.*
@@ -23,22 +24,27 @@ private const val FORM_SHORT = "short"
 private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
 private const val FORM_STRENGTH_AUDIT = "strength-audit"
+private const val FORM_PROPOSALS = "proposals"
 
 val CONFIG_LONG = ReadableReportConfig(
-    voteComments = true,
-    authorLine = true,
-    totalBallotCount = true,
-    voteKindBallotCount = true,
-    popularity = true,
-    summaryTable = true
+    proposalConfig = ReadableProposalReportConfig(
+        voteComments = true,
+        authorLine = true,
+        totalBallotCount = true,
+        voteKindBallotCount = true,
+        popularity = true,
+    ),
+    summaryTable = true,
 )
 
 val CONFIG_SHORT = ReadableReportConfig(
-    voteComments = false,
-    authorLine = false,
-    totalBallotCount = false,
-    popularity = false,
-    voteKindBallotCount = false
+    proposalConfig = ReadableProposalReportConfig(
+        voteComments = false,
+        authorLine = false,
+        totalBallotCount = false,
+        popularity = false,
+        voteKindBallotCount = false
+    ),
 )
 
 open class CliException : Exception {
@@ -117,8 +123,9 @@ private fun formOptionGroup(): OptionGroup {
     val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
     val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
     val optFormStrengthAudit = Option.builder().longOpt(FORM_STRENGTH_AUDIT).desc("Voting strength audit").build()
+    val optFormProposals = Option.builder().longOpt(FORM_PROPOSALS).desc("Proposals output").build()
 
-    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards, optFormStrengthAudit)
+    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards, optFormStrengthAudit, optFormProposals)
 }
 
 private fun cliOptions(): Options {
@@ -137,9 +144,14 @@ private enum class CommentsConfig(val value: Boolean) { ENABLED(true), DISABLED(
 private enum class BallotsLineConfig(val value: Boolean) { ENABLED(true), DISABLED(false) }
 private enum class VoteCountsConfig(val value: Boolean) { ENABLED(true), DISABLED(false) }
 
-private fun ReadableReportConfig.copyWith(config: CommentsConfig) = this.copy(voteComments = config.value)
-private fun ReadableReportConfig.copyWith(config: BallotsLineConfig) = this.copy(totalBallotCount = config.value)
-private fun ReadableReportConfig.copyWith(config: VoteCountsConfig) = this.copy(voteComments = config.value)
+private fun ReadableReportConfig.copyWith(config: CommentsConfig) =
+    copy(proposalConfig = proposalConfig.copy(voteComments = config.value))
+
+private fun ReadableReportConfig.copyWith(config: BallotsLineConfig) =
+    copy(proposalConfig = proposalConfig.copy(totalBallotCount = config.value))
+
+private fun ReadableReportConfig.copyWith(config: VoteCountsConfig) =
+    copy(proposalConfig = proposalConfig.copy(voteComments = config.value))
 
 class InvalidAssessmentNameException(val name: String) : CliException("Invalid exception name: $name")
 
@@ -214,6 +226,8 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
         commandLine.hasOption(FORM_REWARDS) -> RewardsFormatter
         commandLine.hasOption(FORM_STRENGTH_AUDIT) -> StrengthAuditFormatter
+        commandLine.hasOption(FORM_PROPOSALS) ->
+            ProposalsReadableFormatter(withOverrides(commandLine, CONFIG_LONG).proposalConfig)
 
         else -> null
     }

@@ -107,7 +107,7 @@ private fun renderProposalV3Header(data: ProposalDataV3) = buildString {
     append(renderSponsoredHeader(data.sponsored))
 }
 
-private fun renderProposalHeader(config: ReadableReportConfig, proposal: Proposal) = buildString {
+private fun renderProposalHeader(config: ReadableProposalReportConfig, proposal: Proposal) = buildString {
     appendLine("PROPOSAL ${proposal.number} (${proposal.title})")
     if (config.authorLine) appendLine("AUTHOR: ${proposal.author.name}")
 
@@ -217,7 +217,19 @@ private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
     }
 }
 
-private fun renderProposalText(proposals: Iterable<Proposal>) = buildString {
+fun renderProposalText(proposal: Proposal): String = buildString {
+    appendLine("ID: ${proposal.number}")
+    appendLine("Title: ${proposal.title}")
+    appendLine("Adoption index: ${proposal.ai}")
+    appendLine("Author: ${proposal.author.name}")
+    appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
+    appendLine()
+    appendLine()
+    append(proposal.text.trim())
+    appendLine()
+}
+
+private fun renderProposalsText(proposals: Iterable<Proposal>) = buildString {
     fun appendSeparator() {
         appendLine("//////////////////////////////////////////////////////////////////////")
     }
@@ -230,15 +242,7 @@ private fun renderProposalText(proposals: Iterable<Proposal>) = buildString {
 
         for (proposal in sortedProposals) {
             appendSeparator()
-            appendLine("ID: ${proposal.number}")
-            appendLine("Title: ${proposal.title}")
-            appendLine("Adoption index: ${proposal.ai}")
-            appendLine("Author: ${proposal.author.name}")
-            appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
-            appendLine()
-            appendLine()
-            append(proposal.text.trim())
-            appendLine()
+            append(renderProposalText(proposal))
             appendLine()
         }
 
@@ -279,7 +283,10 @@ private fun renderStrengthFootnotes(allStrengthMaps: Collection<VotingStrengthTr
     }
 }
 
-private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, resolutionMap: ProposalResolutionMap) {
+private fun renderProposalResolutions(
+    config: ReadableProposalReportConfig,
+    resolutionMap: ProposalResolutionMap,
+) = buildString {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
     appendWithDelimiter("PROPOSALS")
@@ -287,24 +294,37 @@ private fun StringBuilder.emitProposalResolutions(config: ReadableReportConfig, 
 
     for (proposal in sortedProposals) {
         val resolution = resolutionMap.resolutionOf(proposal.number)
-
-        append(renderProposalHeader(config, proposal))
-
-        append(
-            renderProposalVotes(
-                resolution.votes,
-                resolutionMap.votingStrengthsFor(proposal.number),
-                config.voteKindBallotCount
-            )
-        )
-
-        if (config.totalBallotCount) appendLine("BALLOTS: ${resolution.votes.voteCount}")
-        appendLine(renderProposalAI(resolution, proposal.ai))
-        if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
-        appendLine(renderProposalOutcome(resolution))
-        if (config.voteComments) append(renderVoteComments(resolution))
+        append(renderReadableProposalResolution(
+            config,
+            proposal,
+            resolution,
+            resolutionMap.votingStrengthsFor(proposal.number),
+        ))
         appendLine()
     }
+}
+
+fun renderReadableProposalResolution(
+    config: ReadableProposalReportConfig,
+    proposal: Proposal,
+    resolution: ResolutionData,
+    votingStrengths: VotingStrengthTrailForPersons,
+) = buildString {
+    append(renderProposalHeader(config, proposal))
+
+    append(
+        renderProposalVotes(
+            resolution.votes,
+            votingStrengths,
+            config.voteKindBallotCount
+        )
+    )
+
+    if (config.totalBallotCount) appendLine("BALLOTS: ${resolution.votes.voteCount}")
+    appendLine(renderProposalAI(resolution, proposal.ai))
+    if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
+    appendLine(renderProposalOutcome(resolution))
+    if (config.voteComments) append(renderVoteComments(resolution))
 }
 
 private fun StringBuilder.appendWithDelimiter(string: String) {
@@ -312,18 +332,22 @@ private fun StringBuilder.appendWithDelimiter(string: String) {
     appendLine("=".repeat(string.length))
 }
 
-data class ReadableReportConfig(
+data class ReadableProposalReportConfig(
     val voteComments: Boolean = true,
     val authorLine: Boolean = true,
     val totalBallotCount: Boolean = true,
     val voteKindBallotCount: Boolean = true,
     val popularity: Boolean = true,
-    val summaryTable: Boolean = false
+)
+
+data class ReadableReportConfig(
+    val proposalConfig: ReadableProposalReportConfig = ReadableProposalReportConfig(),
+    val summaryTable: Boolean = false,
 )
 
 fun readableReport(
     resolutionMap: ProposalResolutionMap,
-    config: ReadableReportConfig = ReadableReportConfig()
+    config: ReadableReportConfig = ReadableReportConfig(),
 ): String {
     val sortedProposals = resolutionMap.proposals.sortedBy { it.number }
 
@@ -359,10 +383,10 @@ fun readableReport(
         }
         append(renderStrengthFootnotes(resolutionMap.votingStrengths.values))
         appendLine()
-        emitProposalResolutions(config, resolutionMap)
+        append(renderProposalResolutions(config.proposalConfig, resolutionMap))
 
         val adoptedProposals = resolutionMap.adoptedProposals()
-        append(renderProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
+        append(renderProposalsText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
     }
 }
 
