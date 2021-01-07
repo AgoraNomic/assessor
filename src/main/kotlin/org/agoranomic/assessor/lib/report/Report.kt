@@ -217,7 +217,19 @@ private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
     }
 }
 
-private fun renderProposalText(proposals: Iterable<Proposal>) = buildString {
+fun renderProposalText(proposal: Proposal): String = buildString {
+    appendLine("ID: ${proposal.number}")
+    appendLine("Title: ${proposal.title}")
+    appendLine("Adoption index: ${proposal.ai}")
+    appendLine("Author: ${proposal.author.name}")
+    appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
+    appendLine()
+    appendLine()
+    append(proposal.text.trim())
+    appendLine()
+}
+
+private fun renderProposalsText(proposals: Iterable<Proposal>) = buildString {
     fun appendSeparator() {
         appendLine("//////////////////////////////////////////////////////////////////////")
     }
@@ -230,15 +242,7 @@ private fun renderProposalText(proposals: Iterable<Proposal>) = buildString {
 
         for (proposal in sortedProposals) {
             appendSeparator()
-            appendLine("ID: ${proposal.number}")
-            appendLine("Title: ${proposal.title}")
-            appendLine("Adoption index: ${proposal.ai}")
-            appendLine("Author: ${proposal.author.name}")
-            appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
-            appendLine()
-            appendLine()
-            append(proposal.text.trim())
-            appendLine()
+            append(renderProposalText(proposal))
             appendLine()
         }
 
@@ -376,7 +380,7 @@ fun readableReport(
         append(renderProposalResolutions(config, resolutionMap))
 
         val adoptedProposals = resolutionMap.adoptedProposals()
-        append(renderProposalText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
+        append(renderProposalsText(sortedProposals.filter { adoptedProposals.contains(it.number) }))
     }
 }
 
