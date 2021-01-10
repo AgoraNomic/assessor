@@ -177,7 +177,7 @@ private fun renderProposalVotes(
 }
 
 private fun renderProposalAI(resolutionData: ResolutionData, ai: ProposalAI) =
-    "AI (F/A): ${resolutionData.strengths.strengthFor}/${resolutionData.strengths.strengthAgainst} (AI=$ai)"
+    "AI (F/A): ${resolutionData.aiStrengths.strengthFor}/${resolutionData.aiStrengths.strengthAgainst} (AI=$ai)"
 
 private fun popularityOf(votes: SimplifiedSingleProposalVoteMap): Double {
     // As defined by Rule 2623
