@@ -20,6 +20,24 @@ data class PendingVote(val voteFunc: VoteFunc, val comment: String?) {
 
         return vote
     }
+
+    fun asResolvingVote(): ResolvingVote {
+        val baseVote = object : ResolvingVote {
+            override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
+                return voteFunc(context.currentProposal, context)?.let {
+                    VoteStepResolution.Continue(it.asResolvingVote())
+                } ?: VoteStepResolution.Resolved.Abstained
+            }
+
+            override val currentStepDescription: VoteStepDescription?
+                get() = null
+        }
+
+        return if (comment != null)
+            CommentedResolvingVote(comment = comment, nextVote = baseVote)
+        else
+            baseVote
+    }
 }
 
 data class SinglePersonPendingVoteMap(private val map: ImmutableMap<ProposalNumber, PendingVote>) {
