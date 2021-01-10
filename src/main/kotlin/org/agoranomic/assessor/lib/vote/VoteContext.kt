@@ -18,6 +18,17 @@ interface ProposalVoteContext : VoteContext {
 
 fun VoteContext.lookupProposal(number: Int) = lookupProposal(ProposalNumber(number))
 
+fun VoteContext.forProposal(proposal: Proposal): ProposalVoteContext {
+    check(lookupProposal(proposal.number) == proposal)
+
+    val orig = this
+
+    return object : ProposalVoteContext, VoteContext by orig {
+        override val currentProposalNumber: ProposalNumber
+            get() = proposal.number
+    }
+}
+
 typealias LookupProposalFunc = (ProposalNumber) -> Proposal
 
 val ProposalSet.lookupFunc: LookupProposalFunc
@@ -27,7 +38,7 @@ typealias ResolveFunc = (proposal: Proposal, voter: Person) -> Vote?
 
 data class StandardVoteContext(
     val resolveFunc: ResolveFunc,
-    val lookupProposalFunc: LookupProposalFunc
+    val lookupProposalFunc: LookupProposalFunc,
 ) : VoteContext {
     override fun lookupProposal(number: ProposalNumber): Proposal = lookupProposalFunc(number)
     override fun resolve(proposal: Proposal, voter: Person): Vote? = resolveFunc(proposal, voter)
