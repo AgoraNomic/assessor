@@ -25,7 +25,11 @@ data class VoteStepDescription(
 
 sealed class VoteStepResolution {
     data class Continue(val nextVote: ResolvingVote) : VoteStepResolution()
-    data class Resolved(val resolution: VoteKind) : VoteStepResolution()
+
+    sealed class Resolved : VoteStepResolution() {
+        object Abstained : Resolved()
+        data class Voted(val resolution: VoteKind) : Resolved()
+    }
 }
 
 interface ResolvingVote {
@@ -35,7 +39,7 @@ interface ResolvingVote {
 
 data class ResolvedVote(val value: VoteKind) : ResolvingVote {
     override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
-        return VoteStepResolution.Resolved(value)
+        return VoteStepResolution.Resolved.Voted(value)
     }
 
     override val currentStepDescription: VoteStepDescription?
@@ -69,10 +73,10 @@ object InextricableResolvingVote : ResolvingVote {
 
 }
 
-tailrec fun ResolvingVote.finalResolution(voteContext: ProposalVoteContext): VoteKind {
+tailrec fun ResolvingVote.finalResolution(voteContext: ProposalVoteContext): VoteStepResolution.Resolved {
     return when (val resolution = resolveStep(voteContext)) {
         is VoteStepResolution.Continue -> resolution.nextVote.finalResolution(voteContext)
-        is VoteStepResolution.Resolved -> resolution.resolution
+        is VoteStepResolution.Resolved -> resolution
     }
 }
 
