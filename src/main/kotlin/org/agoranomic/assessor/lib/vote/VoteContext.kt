@@ -11,6 +11,11 @@ interface VoteContext {
     fun resolve(proposal: Proposal, voter: Person): Vote?
 }
 
+interface ProposalVoteContext : VoteContext {
+    val currentProposalNumber: ProposalNumber
+    val currentProposal get() = lookupProposal(currentProposalNumber)
+}
+
 fun VoteContext.lookupProposal(number: Int) = lookupProposal(ProposalNumber(number))
 
 typealias LookupProposalFunc = (ProposalNumber) -> Proposal

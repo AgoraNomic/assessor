@@ -29,12 +29,12 @@ sealed class VoteStepResolution {
 }
 
 interface ResolvingVote {
-    fun resolveStep(context: VoteContext): VoteStepResolution
+    fun resolveStep(context: ProposalVoteContext): VoteStepResolution
     val currentStepDescription: VoteStepDescription?
 }
 
 data class ResolvedVote(val value: VoteKind) : ResolvingVote {
-    override fun resolveStep(context: VoteContext): VoteStepResolution {
+    override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
         return VoteStepResolution.Resolved(value)
     }
 
@@ -43,7 +43,7 @@ data class ResolvedVote(val value: VoteKind) : ResolvingVote {
 }
 
 data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVote) : ResolvingVote {
-    override fun resolveStep(context: VoteContext): VoteStepResolution {
+    override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
         return VoteStepResolution.Continue(nextVote)
     }
 
@@ -56,7 +56,7 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
 }
 
 object InextricableResolvingVote : ResolvingVote {
-    override fun resolveStep(context: VoteContext): VoteStepResolution {
+    override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
         return VoteStepResolution.Continue(ResolvedVote(VoteKind.PRESENT))
     }
 
@@ -69,14 +69,14 @@ object InextricableResolvingVote : ResolvingVote {
 
 }
 
-tailrec fun ResolvingVote.finalResolution(voteContext: VoteContext): VoteKind {
+tailrec fun ResolvingVote.finalResolution(voteContext: ProposalVoteContext): VoteKind {
     return when (val resolution = resolveStep(voteContext)) {
         is VoteStepResolution.Continue -> resolution.nextVote.finalResolution(voteContext)
         is VoteStepResolution.Resolved -> resolution.resolution
     }
 }
 
-fun ResolvingVote.resolveDescriptions(voteContext: VoteContext): List<VoteStepDescription?> {
+fun ResolvingVote.resolveDescriptions(voteContext: ProposalVoteContext): List<VoteStepDescription?> {
     return generateSequence(this) {
         when (val resolution = it.resolveStep(voteContext)) {
             is VoteStepResolution.Continue -> resolution.nextVote
