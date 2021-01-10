@@ -55,6 +55,22 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
         )
 }
 
+tailrec fun ResolvingVote.finalResolution(voteContext: VoteContext): VoteKind {
+    return when (val resolution = resolveStep(voteContext)) {
+        is VoteStepResolution.Continue -> resolution.nextVote.finalResolution(voteContext)
+        is VoteStepResolution.Resolved -> resolution.resolution
+    }
+}
+
+fun ResolvingVote.resolveDescriptions(voteContext: VoteContext): List<VoteStepDescription?> {
+    return generateSequence(this) {
+        when (val resolution = it.resolveStep(voteContext)) {
+            is VoteStepResolution.Continue -> resolution.nextVote
+            is VoteStepResolution.Resolved -> null
+        }
+    }.map { it.currentStepDescription }.toList()
+}
+
 sealed class Vote {
     abstract val comment: String?
     abstract fun copyWithComment(newComment: String?): Vote
