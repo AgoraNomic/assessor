@@ -55,6 +55,20 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
         )
 }
 
+object InextricableResolvingVote : ResolvingVote {
+    override fun resolveStep(context: VoteContext): VoteStepResolution {
+        return VoteStepResolution.Continue(ResolvedVote(VoteKind.PRESENT))
+    }
+
+    override val currentStepDescription: VoteStepDescription
+        get() = VoteStepDescription(
+            readable = "Inextricable",
+            kind = "inextricable",
+            parameters = emptyMap(),
+        )
+
+}
+
 tailrec fun ResolvingVote.finalResolution(voteContext: VoteContext): VoteKind {
     return when (val resolution = resolveStep(voteContext)) {
         is VoteStepResolution.Continue -> resolution.nextVote.finalResolution(voteContext)
@@ -76,6 +90,8 @@ sealed class Vote {
     abstract fun copyWithComment(newComment: String?): Vote
 
     abstract fun simplified(): SimpleVote
+
+    abstract fun asResolvingVote(): ResolvingVote
 }
 
 data class InextricableVote(override val comment: String?) : Vote() {
@@ -84,11 +100,24 @@ data class InextricableVote(override val comment: String?) : Vote() {
         VoteKind.PRESENT,
         comment = if (comment != null) "Inextricable: $comment" else "Inextricable"
     )
+
+    override fun asResolvingVote(): ResolvingVote {
+        return if (comment != null)
+            CommentedResolvingVote(comment = comment, nextVote = InextricableResolvingVote)
+        else
+            InextricableResolvingVote
+    }
 }
 
 data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
     override fun copyWithComment(newComment: String?) = copy(comment = newComment)
     override fun simplified(): SimpleVote = this
+
+    override fun asResolvingVote(): ResolvingVote {
+        return ResolvedVote(kind).let {
+            if (comment != null) CommentedResolvingVote(comment = comment, nextVote = it) else it
+        }
+    }
 }
 
 data class SingleProposalVoteMap(private val data: ImmutableMap<Person, Vote>) {
