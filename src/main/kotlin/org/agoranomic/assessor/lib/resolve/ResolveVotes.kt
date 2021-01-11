@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.lib.resolve
 
 import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
 import org.agoranomic.assessor.lib.vote.*
@@ -40,14 +41,25 @@ private fun resolveSingleVote(
     return proposalVote.compile(proposal, voteContext)
 }
 
+private fun makeVoteContext(
+    allVotes: MultiPersonPendingVoteMap,
+    lookupProposalFunc: LookupProposalFunc,
+): VoteContext {
+    return StandardVoteContext(resolveFunc = { proposal: Proposal, voter: Person ->
+        resolveSingleVote(allVotes, lookupProposalFunc, proposal.number, voter, alreadySeen = emptyList())
+    }, lookupProposalFunc = lookupProposalFunc)
+}
+
 private fun resolveVotes(
     votes: MultiPersonPendingVoteMap,
-    lookupProposalFunc: LookupProposalFunc
+    lookupProposalFunc: LookupProposalFunc,
 ): MultiProposalVoteMap {
+    val voteContext = makeVoteContext(votes, lookupProposalFunc)
+
     return MultiProposalVoteMap(votes.proposalsWithVotes().associateWith { proposalNumber ->
         val voters = votes.voters
 
-        SingleProposalVoteMap(
+        SimplifiedSingleProposalVoteMap(
             voters
                 .associateWith { voter ->
                     resolveSingleVote(
@@ -55,10 +67,22 @@ private fun resolveVotes(
                         lookupProposalFunc = lookupProposalFunc,
                         proposalNumber = proposalNumber,
                         voter = voter
-                    )
+                    )?.asResolvingVote() ?: AbstentionResolvingVote
+                }
+                .mapValues { (_, value) ->
+                    val proposalVoteContext = voteContext.forProposal(proposalNumber)
+
+                    when (val voteResolution = value.finalResolution(proposalVoteContext)) {
+                        is VoteStepResolution.Resolved.Abstained -> null
+
+                        is VoteStepResolution.Resolved.Voted -> ResolvingVoteResolvedVote(
+                            value.resolveDescriptions(proposalVoteContext),
+                            voteResolution.resolution
+                        )
+                    }
                 }
                 .filterValues { it != null }
-                .mapValues { (_, value) -> value!! }
+                .mapValues { (_, v) -> v!! }
         )
     })
 }

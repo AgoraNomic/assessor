@@ -4,8 +4,9 @@ import kotlinx.serialization.json.*
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.*
-import org.agoranomic.assessor.lib.vote.SimpleVote
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteStepDescription
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
@@ -83,18 +84,30 @@ private fun json(votingStrengths: VotingStrengthTrailForPersons) =
 
 private fun json(propsalResult: ProposalResult) = json(propsalResult.name)
 
-private fun json(vote: SimpleVote) = json {
-    "value" to vote.kind.name
+private fun json(vote: VoteKind) = json(vote.name)
 
-    val comment = vote.comment
-    if (comment != null) "comment" to json(comment)
+private fun json(voteStepDescription: VoteStepDescription) = json {
+    "kind" to json(voteStepDescription.kind)
+    "readable" to json(voteStepDescription.readable)
+    "parameters" to json(voteStepDescription.parameters.map { (name, value) ->
+        json {
+            "name" to json(name)
+            "value" to json(value)
+        }
+    })
+}
+
+@JvmName("jsonVoteDescription")
+private fun json(voteDescription: List<VoteStepDescription?>) = jsonArray {
+    voteDescription.filterNotNull().forEach { +json(it) }
 }
 
 private fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {
     for (player in voteMap.voters) {
         +json {
             "voter" to json(player)
-            "vote" to json(voteMap[player])
+            "vote" to json(voteMap.voteFor(player))
+            "comments" to json(voteMap.voteDescriptionsFor(player))
         }
     }
 }

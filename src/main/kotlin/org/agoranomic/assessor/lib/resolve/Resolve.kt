@@ -9,7 +9,6 @@ import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
-import org.agoranomic.assessor.lib.vote.SingleProposalVoteMap
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 
 enum class ProposalResult {
@@ -37,14 +36,12 @@ fun resolve(
     quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthTrailForPersons,
     ai: ProposalAI,
-    rawVotes: SingleProposalVoteMap,
+    votes: SimplifiedSingleProposalVoteMap,
 ): ResolutionData {
-    val simplifiedVotes = rawVotes.simplified()
-
-    val aiStrengths = aiStrengthsFor(simplifiedVotes, votingStrengthMap)
+    val aiStrengths = aiStrengthsFor(votes, votingStrengthMap)
 
     return ResolutionData(
-        result = if (meetsQuorum(simplifiedVotes, quorum)) {
+        result = if (meetsQuorum(votes, quorum)) {
             if (isAIAdopted(ai, aiStrengths))
                 ProposalResult.ADOPTED
             else
@@ -54,7 +51,7 @@ fun resolve(
         },
         aiStrengths = aiStrengths,
         votingStrengths = votingStrengthMap,
-        votes = simplifiedVotes,
+        votes = votes,
     )
 }
 

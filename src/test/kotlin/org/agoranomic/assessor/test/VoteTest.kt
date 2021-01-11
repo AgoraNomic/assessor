@@ -1,13 +1,20 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.vote.*
+import org.agoranomic.assessor.lib.vote.InextricableVote
+import org.agoranomic.assessor.lib.vote.SimpleVote
+import org.agoranomic.assessor.lib.vote.Vote
+import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.voting_strength.*
-import org.agoranomic.assessor.test.test_objects.*
+import org.agoranomic.assessor.test.test_objects.ALL_VOTE_KIND_LIST
+import org.agoranomic.assessor.test.test_objects.firstTestString
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import java.math.BigInteger
-import kotlin.test.*
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 @DisplayName("VotingStrength test")
 class VotingStrengthTest {
@@ -41,85 +48,6 @@ class VotingStrengthTest {
         assertTrue(first <= second)
         assertFalse(first > second)
         assertFalse(first >= second)
-    }
-}
-
-@DisplayName("SingleProposalVoteMap test")
-class SingleProposalVoteMapTest {
-    @Test
-    fun `get returns specified vote for valid player`() {
-        val player = firstTestPerson()
-        val vote = firstTestVote()
-        val map = SingleProposalVoteMap(mapOf(player to vote))
-
-        assertEquals(map[player], vote)
-    }
-
-    @Test
-    fun `get throws for invalid player`() {
-        val knownPlayer = firstTestPerson()
-        val vote = firstTestVote()
-        val map = SingleProposalVoteMap(mapOf(knownPlayer to vote))
-
-        val unknownPlayer = secondTestPerson()
-
-        assertFailsWith<IllegalArgumentException> { map[unknownPlayer] }
-    }
-
-    @Test
-    fun `voters and voteCount are correct`() {
-        val playerA = firstTestPerson()
-        val playerB = secondTestPerson()
-
-        val vote = firstTestVote()
-
-        val map = SingleProposalVoteMap(
-            mapOf(
-                playerA to vote,
-                playerB to vote
-            )
-        )
-
-        assertEquals(map.voters.toSet(), setOf(playerA, playerB))
-        assertEquals(map.voteCount, 2)
-    }
-}
-
-@DisplayName("MultiProposalVoteMap test")
-class MultiProposalVoteMapTest {
-    @Test
-    fun `get returns correct value for valid proposal`() {
-        val proposal = firstTestProposalNumber()
-        val singleProposalMap = firstSingleProposalVoteMap()
-
-        val multiProposalMap = MultiProposalVoteMap(mapOf(proposal to singleProposalMap))
-
-        assertEquals(multiProposalMap[proposal], singleProposalMap)
-    }
-
-    @Test
-    fun `get throws for invalid proposal`() {
-        val validProposal = firstTestProposalNumber()
-        val singleProposalMap = firstSingleProposalVoteMap()
-
-        val invalidProposal = secondTestProposalNumber()
-
-        val multiProposalMap = MultiProposalVoteMap(mapOf(validProposal to singleProposalMap))
-
-        assertFailsWith<IllegalArgumentException> { multiProposalMap[invalidProposal] }
-    }
-
-    @Test
-    fun `proposals is correct`() {
-        val singleProposalMap = firstSingleProposalVoteMap()
-
-        val proposalA = firstTestProposalNumber()
-        val proposalB = secondTestProposalNumber()
-
-        val multiProposalMap =
-            MultiProposalVoteMap(mapOf(proposalA to singleProposalMap, proposalB to singleProposalMap))
-
-        assertEquals(multiProposalMap.proposals.toSet(), setOf(proposalA, proposalB))
     }
 }
 
