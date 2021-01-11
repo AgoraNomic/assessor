@@ -33,6 +33,12 @@ sealed class VoteStepResolution {
     }
 }
 
+val VoteStepResolution.Resolved.voteIfVoted: VoteKind?
+    get() = when (this) {
+        is VoteStepResolution.Resolved.Abstained -> null
+        is VoteStepResolution.Resolved.Voted -> this.resolution
+    }
+
 data class ResolvingVoteResolvedVote(
     val stepDescriptions: ImmutableList<VoteStepDescription?>,
     val resolution: VoteKind,
