@@ -18,15 +18,20 @@ interface ProposalVoteContext : VoteContext {
 
 fun VoteContext.lookupProposal(number: Int) = lookupProposal(ProposalNumber(number))
 
-fun VoteContext.forProposal(proposal: Proposal): ProposalVoteContext {
-    check(lookupProposal(proposal.number) == proposal)
+fun VoteContext.forProposal(proposalNumber: ProposalNumber): ProposalVoteContext {
+    check(runCatching { lookupProposal(proposalNumber) }.isSuccess) { "Could not find proposal $proposalNumber" }
 
     val orig = this
 
     return object : ProposalVoteContext, VoteContext by orig {
         override val currentProposalNumber: ProposalNumber
-            get() = proposal.number
+            get() = proposalNumber
     }
+}
+
+fun VoteContext.forProposal(proposal: Proposal): ProposalVoteContext {
+    check(lookupProposal(proposal.number) == proposal)
+    return forProposal(proposal.number)
 }
 
 typealias LookupProposalFunc = (ProposalNumber) -> Proposal
