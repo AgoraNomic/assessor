@@ -11,9 +11,9 @@ private fun resolveSingleVote(
     lookupProposalFunc: LookupProposalFunc,
     proposalNumber: ProposalNumber,
     voter: Person,
-    alreadySeen: List<Pair<ProposalNumber, Person>> = emptyList()
-): Vote? {
-    if (alreadySeen.contains(Pair(proposalNumber, voter))) return InextricableVote(comment = null)
+    alreadySeen: List<Pair<ProposalNumber, Person>> = emptyList(),
+): ResolvingVote? {
+    if (alreadySeen.contains(Pair(proposalNumber, voter))) return InextricableResolvingVote
 
     if (!allVotes.hasVotesFor(voter)) return null
 
@@ -36,9 +36,7 @@ private fun resolveSingleVote(
         )
     }
 
-    val voteContext = StandardVoteContext(resolveFunc = nextResolve, lookupProposalFunc = lookupProposalFunc)
-
-    return proposalVote.compile(proposal, voteContext)
+    return proposalVote
 }
 
 private fun makeVoteContext(
@@ -67,7 +65,7 @@ private fun resolveVotes(
                         lookupProposalFunc = lookupProposalFunc,
                         proposalNumber = proposalNumber,
                         voter = voter
-                    )?.asResolvingVote() ?: AbstentionResolvingVote
+                    ) ?: AbstentionResolvingVote
                 }
                 .mapValues { (_, value) ->
                     val proposalVoteContext = voteContext.forProposal(proposalNumber)

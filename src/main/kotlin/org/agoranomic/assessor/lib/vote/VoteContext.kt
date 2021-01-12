@@ -8,7 +8,7 @@ import org.agoranomic.assessor.lib.proposal.proposal_set.get
 
 interface VoteContext {
     fun lookupProposal(number: ProposalNumber): Proposal
-    fun resolve(proposal: Proposal, voter: Person): Vote?
+    fun resolve(proposal: Proposal, voter: Person): ResolvingVote?
 }
 
 interface ProposalVoteContext : VoteContext {
@@ -39,14 +39,14 @@ typealias LookupProposalFunc = (ProposalNumber) -> Proposal
 val ProposalSet.lookupFunc: LookupProposalFunc
     get() = { number -> this[number] }
 
-typealias ResolveFunc = (proposal: Proposal, voter: Person) -> Vote?
+typealias ResolveFunc = (proposal: Proposal, voter: Person) -> ResolvingVote?
 
 data class StandardVoteContext(
     val resolveFunc: ResolveFunc,
     val lookupProposalFunc: LookupProposalFunc,
 ) : VoteContext {
     override fun lookupProposal(number: ProposalNumber): Proposal = lookupProposalFunc(number)
-    override fun resolve(proposal: Proposal, voter: Person): Vote? = resolveFunc(proposal, voter)
+    override fun resolve(proposal: Proposal, voter: Person): ResolvingVote? = resolveFunc(proposal, voter)
 }
 
-typealias VoteFunc = (proposal: Proposal, context: VoteContext) -> Vote?
+typealias VoteFunc = (proposal: Proposal, context: VoteContext) -> ResolvingVote?

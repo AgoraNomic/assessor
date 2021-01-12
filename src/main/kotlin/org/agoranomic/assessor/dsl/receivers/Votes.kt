@@ -25,11 +25,11 @@ interface PersonVotesReceiver {
     val others: OthersMarker get() = OthersMarker
     val author: AuthorMarker get() = AuthorMarker
 
-    infix fun FunctionVote.on(proposal: ProposalNumber): VoteCommentable
-    infix fun FunctionVote.on(number: Int) = on(ProposalNumber(number))
+    infix fun ResolvingVote.on(proposal: ProposalNumber): VoteCommentable
+    infix fun ResolvingVote.on(number: Int) = on(ProposalNumber(number))
 
-    infix fun FunctionVote.on(all: AllMarker)
-    infix fun FunctionVote.on(others: OthersMarker)
+    infix fun ResolvingVote.on(all: AllMarker)
+    infix fun ResolvingVote.on(others: OthersMarker)
 
     infix fun VoteKind.on(proposal: ProposalNumber): VoteCommentable
     infix fun VoteKind.on(proposal: Int) = on(ProposalNumber(proposal))
@@ -37,13 +37,13 @@ interface PersonVotesReceiver {
     infix fun VoteKind.on(all: AllMarker)
     infix fun VoteKind.on(others: OthersMarker)
 
-    fun function(func: VoteFunc): FunctionVote
+    fun function(func: VoteFunc): ResolvingVote
 }
 
 typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
 
 interface PersonVotesCompiler {
-    fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, PendingVote>
+    fun compile(allProposals: ProposalSet, init: PersonVotesReceiverInit): ImmutableMap<ProposalNumber, ResolvingVote>
 }
 
 @AssessmentDsl
@@ -52,12 +52,15 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
 
     private val voteMap = SetOnceMap<ProposalNumber, MutableVote>()
 
-    private data class MutableVote(val vote: VoteFunc, var comment: String? = null) : VoteCommentable {
+    private data class MutableVote(val vote: ResolvingVote, var comment: String? = null) : VoteCommentable {
         override fun comment(comment: String) {
             this.comment = comment
         }
 
-        fun compile() = PendingVote(vote, comment)
+        fun compile(): ResolvingVote {
+            val comment = comment
+            return if (comment != null) CommentedResolvingVote(comment, vote) else vote
+        }
     }
 
     private fun addVote(proposal: ProposalNumber, vote: MutableVote): VoteCommentable {
@@ -67,30 +70,35 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
         return vote
     }
 
-    private fun addVote(proposal: ProposalNumber, vote: FunctionVote) = addVote(proposal, MutableVote(vote.func))
+    private fun addVote(proposal: ProposalNumber, vote: ResolvingVote) = addVote(proposal, MutableVote(vote))
 
-    override infix fun FunctionVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this.func))
+    override infix fun ResolvingVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this))
 
-    override infix fun FunctionVote.on(all: PersonVotesReceiver.AllMarker) {
+    override infix fun ResolvingVote.on(all: PersonVotesReceiver.AllMarker) {
         proposals.forEach { addVote(it, this) }
     }
 
-    override infix fun FunctionVote.on(others: PersonVotesReceiver.OthersMarker) {
+    override infix fun ResolvingVote.on(others: PersonVotesReceiver.OthersMarker) {
         for (proposal in proposals.map { it }) {
             if (!voteMap.containsKey(proposal)) addVote(proposal, this)
         }
     }
 
-    override fun function(func: VoteFunc) = FunctionVote(func)
+    override fun function(func: VoteFunc) = object : ResolvingVote {
+        override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
+            return VoteStepResolution.Continue(func(context.currentProposal, context) ?: AbstentionResolvingVote)
+        }
 
-    private fun simpleVoteFunction(vote: VoteKind) = function { _, _ -> SimpleVote(vote, comment = null) }
+        override val currentStepDescription: VoteStepDescription?
+            get() = null
+    }
 
-    override infix fun VoteKind.on(proposal: ProposalNumber) = simpleVoteFunction(this) on proposal
+    override infix fun VoteKind.on(proposal: ProposalNumber) = ResolvedVote(this) on proposal
 
-    override infix fun VoteKind.on(all: PersonVotesReceiver.AllMarker) = simpleVoteFunction(this) on all
-    override infix fun VoteKind.on(others: PersonVotesReceiver.OthersMarker) = simpleVoteFunction(this) on others
+    override infix fun VoteKind.on(all: PersonVotesReceiver.AllMarker) = ResolvedVote(this) on all
+    override infix fun VoteKind.on(others: PersonVotesReceiver.OthersMarker) = ResolvedVote(this) on others
 
-    fun compile(): ImmutableMap<ProposalNumber, PendingVote> {
+    fun compile(): ImmutableMap<ProposalNumber, ResolvingVote> {
         return voteMap.compile().mapValues { (_, v) -> v.compile() }.toImmutableMap()
     }
 }
@@ -98,8 +106,8 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
 class DefaultPersonVotesCompiler : PersonVotesCompiler {
     override fun compile(
         allProposals: ProposalSet,
-        init: PersonVotesReceiverInit
-    ): ImmutableMap<ProposalNumber, PendingVote> {
+        init: PersonVotesReceiverInit,
+    ): ImmutableMap<ProposalNumber, ResolvingVote> {
         return DefaultPersonVotesReceiver(allProposals.numbers().toList()).also(init).compile()
     }
 }
