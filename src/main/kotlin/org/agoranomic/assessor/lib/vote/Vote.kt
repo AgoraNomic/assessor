@@ -118,41 +118,6 @@ fun ResolvingVote.resolveDescriptions(voteContext: ProposalVoteContext): List<Vo
     }.map { it.currentStepDescription }.toList()
 }
 
-sealed class Vote {
-    abstract val comment: String?
-    abstract fun copyWithComment(newComment: String?): Vote
-
-    abstract fun simplified(): SimpleVote
-
-    abstract fun asResolvingVote(): ResolvingVote
-}
-
-data class InextricableVote(override val comment: String?) : Vote() {
-    override fun copyWithComment(newComment: String?) = copy(comment = newComment)
-    override fun simplified(): SimpleVote = SimpleVote(
-        VoteKind.PRESENT,
-        comment = if (comment != null) "Inextricable: $comment" else "Inextricable"
-    )
-
-    override fun asResolvingVote(): ResolvingVote {
-        return if (comment != null)
-            CommentedResolvingVote(comment = comment, nextVote = InextricableResolvingVote)
-        else
-            InextricableResolvingVote
-    }
-}
-
-data class SimpleVote(val kind: VoteKind, override val comment: String?) : Vote() {
-    override fun copyWithComment(newComment: String?) = copy(comment = newComment)
-    override fun simplified(): SimpleVote = this
-
-    override fun asResolvingVote(): ResolvingVote {
-        return ResolvedVote(kind).let {
-            if (comment != null) CommentedResolvingVote(comment = comment, nextVote = it) else it
-        }
-    }
-}
-
 data class MultiProposalVoteMap(private val data: ImmutableMap<ProposalNumber, SimplifiedSingleProposalVoteMap>) {
     constructor(map: Map<ProposalNumber, SimplifiedSingleProposalVoteMap>) : this(map.toImmutableMap())
 
