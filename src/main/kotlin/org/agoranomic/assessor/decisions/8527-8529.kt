@@ -149,5 +149,9 @@ Repeal rule 2633, "Rulebending."""")
         votes(Trigon) {
             FOR on all
         }
+
+        votes(JTAC) {
+            FOR on all
+        }
     }
 }
