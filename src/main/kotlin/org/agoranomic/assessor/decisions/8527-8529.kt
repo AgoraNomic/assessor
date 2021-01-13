@@ -129,5 +129,11 @@ Repeal rule 2633, "Rulebending."""")
             FOR on 8528
             AGAINST on 8529
         }
+
+        votes(Aris) {
+            FOR on 8527
+            FOR on 8528
+            FOR on 8529
+        }
     }
 }
