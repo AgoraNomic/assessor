@@ -45,9 +45,9 @@ fun assessment8388to8404() = assessment {
     val offices =
         officesInitial
             .toMap()
-            .mapKeys { (k, _) -> OfficeJune3Webmastor.fromInitial(k) }
+            .mapKeys { (k, _) -> Office_2020_06_03_Webmastor.fromInitial(k) }
             .toPersistentMap()
-            .mutate { it[OfficeJune3Webmastor.Webmastor] = OfficeState.heldBy(nix) }
+            .mutate { it[Office_2020_06_03_Webmastor.Webmastor] = OfficeState.heldBy(nix) }
             .toOfficeMap()
 
     strengths {
@@ -66,7 +66,7 @@ fun assessment8388to8404() = assessment {
             (allProposals.numbers() - ProposalNumber(8388)).map { allProposals[it] }.toProposalSet()
         )
 
-        addToHolder(offices, OfficeJune3Webmastor.Speaker, 1)
+        addToHolder(offices, Office_2020_06_03_Webmastor.Speaker, 1)
     }
 
     proposals(v1) {
@@ -564,23 +564,23 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             AGAINST on 8390
             AGAINST on 8391
             FOR on 8392
-            endorseOfficer(offices, OfficeJune3Webmastor.ADoP) on 8393
+            endorseOfficer(offices, Office_2020_06_03_Webmastor.ADoP) on 8393
             FOR on 8394
-            endorseOfficer(offices, OfficeJune3Webmastor.Rulekeepor) on 8395
+            endorseOfficer(offices, Office_2020_06_03_Webmastor.Rulekeepor) on 8395
             FOR on 8396
             FOR on 8397
             AGAINST on 8398
             FOR on 8399
 
-            if (offices[OfficeJune3Webmastor.Comptrollor].isHeld())
+            if (offices[Office_2020_06_03_Webmastor.Comptrollor].isHeld())
                 endorseOfficer(
                     offices,
-                    OfficeJune3Webmastor.Comptrollor
+                    Office_2020_06_03_Webmastor.Comptrollor
                 ) on 8400 comment conditional("Comptrollor is held")
             else
                 endorseOfficer(
                     offices,
-                    OfficeJune3Webmastor.ADoP
+                    Office_2020_06_03_Webmastor.ADoP
                 ) on 8400 comment conditional("Comptrollor is vacant")
 
             FOR on 8401
@@ -614,7 +614,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             FOR on 8389
             PRESENT on 8390
             PRESENT on 8391
-            endorseOfficer(offices, OfficeJune3Webmastor.Referee) on 8392
+            endorseOfficer(offices, Office_2020_06_03_Webmastor.Referee) on 8392
             FOR on 8393
             FOR on 8394
             FOR on 8395
@@ -652,7 +652,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
         votes(Jason) {
             FOR on 8388
             FOR on 8389
-            endorseOfficer(offices, OfficeJune3Webmastor.Registrar) on 8390
+            endorseOfficer(offices, Office_2020_06_03_Webmastor.Registrar) on 8390
             AGAINST on 8391
             FOR on 8392
             FOR on 8393

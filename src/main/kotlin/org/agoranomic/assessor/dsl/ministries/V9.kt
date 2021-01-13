@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import org.agoranomic.assessor.dsl.ministries.OfficeOct28.*
+import org.agoranomic.assessor.dsl.ministries.Office_2020_10_28.*
 import org.agoranomic.assessor.dsl.receivers.GlobalVotingStrengthReceiver
 import org.agoranomic.assessor.lib.proposal.MinistryV2.*
 import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
@@ -31,6 +31,6 @@ val INTERESTS_MAP_2020_11_07 = mapOf(
 private val MINISTRIES_BONUS_2020_08_02 = VotingStrengthDifference(2)
 
 fun GlobalVotingStrengthReceiver.ministries_2020_11_07(
-    officeMap: OfficeMap<OfficeOct28>,
+    officeMap: OfficeMap<Office_2020_10_28>,
     proposals: ProposalSet,
 ) = ministriesV2(officeMap, INTERESTS_MAP_2020_11_07, MINISTRIES_BONUS_2020_08_02, proposals)

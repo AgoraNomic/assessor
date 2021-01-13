@@ -11,16 +11,16 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 val INTERESTS_MAP_2020_06_30 =
     INTERESTS_MAP_2020_06_15
         .toPersistentMap()
-        .mapKeys { (k, _) -> OfficeJune30.fromJune3(k) }
+        .mapKeys { (k, _) -> Office_2020_06_30.fromJune3(k) }
         .toPersistentMap()
-        .mutate { it[OfficeJune30.Coopor] = emptyList() }
+        .mutate { it[Office_2020_06_30.Coopor] = emptyList() }
 
 private val MINISTRIES_BONUS_2020_06_30 = VotingStrengthDifference(2)
 
 // The underscores are the clearest way to show the date.
 @Suppress("FunctionName")
 fun GlobalVotingStrengthReceiver.ministries_2020_06_30(
-    officeMap: OfficeMap<OfficeJune30>,
+    officeMap: OfficeMap<Office_2020_06_30>,
     proposals: ProposalSet,
 ) = ministriesV1(
     officeMap,

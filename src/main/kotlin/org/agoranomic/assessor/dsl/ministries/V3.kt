@@ -11,12 +11,12 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html.
 //
 // The proposal does not specify interests for the new office, so it stays at the default (the empty list).
-val INTERESTS_MAP_2020_06_03_WEBMASTOR: Map<OfficeJune3Webmastor, List<MinistryV1>> =
+val INTERESTS_MAP_2020_06_03_WEBMASTOR: Map<Office_2020_06_03_Webmastor, List<MinistryV1>> =
     INTERESTS_MAP_2020_04_02
-        .mapKeys { (k, _) -> OfficeJune3Webmastor.fromInitial(k) }
+        .mapKeys { (k, _) -> Office_2020_06_03_Webmastor.fromInitial(k) }
         .toPersistentMap()
         .mutate { interests ->
-            interests[OfficeJune3Webmastor.Webmastor] = listOf()
+            interests[Office_2020_06_03_Webmastor.Webmastor] = listOf()
         }
 
 private val MINISTRIES_BONUS_2020_06_03_WEBMASTOR = VotingStrengthDifference(2)
@@ -24,7 +24,7 @@ private val MINISTRIES_BONUS_2020_06_03_WEBMASTOR = VotingStrengthDifference(2)
 // The underscores are the clearest way to show the date.
 @Suppress("FunctionName")
 fun GlobalVotingStrengthReceiver.ministries_2020_06_03_Webmastor(
-    officeMap: OfficeMap<OfficeJune3Webmastor>,
+    officeMap: OfficeMap<Office_2020_06_03_Webmastor>,
     proposals: ProposalSet,
 ) = ministriesV1(
     officeMap,

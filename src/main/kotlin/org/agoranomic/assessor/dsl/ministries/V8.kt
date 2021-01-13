@@ -13,13 +13,13 @@ val INTERESTS_MAP_2020_08_02 =
     INTERESTS_MAP_2020_07_26
         .toPersistentMap()
         .mutate {
-            it[OfficeJune30.Coopor] = listOf(MinistryV1.Participation)
+            it[Office_2020_06_30.Coopor] = listOf(MinistryV1.Participation)
         }
 
 private val MINISTRIES_BONUS_2020_08_02 = VotingStrengthDifference(2)
 
 fun GlobalVotingStrengthReceiver.ministries_2020_08_02(
-    officeMap: OfficeMap<OfficeJune30>,
+    officeMap: OfficeMap<Office_2020_06_30>,
     proposals: ProposalSet,
 ) = ministriesV1(
     officeMap,

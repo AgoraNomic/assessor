@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.ministries.OfficeJune30.*
+import org.agoranomic.assessor.dsl.ministries.Office_2020_06_30.*
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_08_02
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai

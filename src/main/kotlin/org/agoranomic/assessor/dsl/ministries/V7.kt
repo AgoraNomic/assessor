@@ -12,12 +12,12 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrengthDifference
 val INTERESTS_MAP_2020_07_26 =
     INTERESTS_MAP_2020_06_30
         .toPersistentMap()
-        .mutate { it[OfficeJune30.Notary] = listOf(MinistryV1.Economy, MinistryV1.Participation) }
+        .mutate { it[Office_2020_06_30.Notary] = listOf(MinistryV1.Economy, MinistryV1.Participation) }
 
 private val MINISTRIES_BONUS_2020_07_26 = VotingStrengthDifference(2)
 
 fun GlobalVotingStrengthReceiver.ministries_2020_07_26(
-    officeMap: OfficeMap<OfficeJune30>,
+    officeMap: OfficeMap<Office_2020_06_30>,
     proposals: ProposalSet,
 ) = ministriesV1(
     officeMap,

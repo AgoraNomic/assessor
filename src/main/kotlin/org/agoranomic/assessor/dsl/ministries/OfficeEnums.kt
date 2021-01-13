@@ -39,7 +39,7 @@ enum class OfficeInitial : OfficeID {
 
 // Reflects addition of Webmastor created by P8388, adopted ~June 3, 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html
-enum class OfficeJune3Webmastor : OfficeID {
+enum class Office_2020_06_03_Webmastor : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
@@ -73,15 +73,15 @@ enum class OfficeJune3Webmastor : OfficeID {
 
     companion object {
         // Relies on enumerators having the same names as OfficeInitial
-        fun fromInitial(other: OfficeInitial): OfficeJune3Webmastor {
-            return OfficeJune3Webmastor.valueOf(other.name)
+        fun fromInitial(other: OfficeInitial): Office_2020_06_03_Webmastor {
+            return Office_2020_06_03_Webmastor.valueOf(other.name)
         }
     }
 }
 
 // Reflects removal of Comptrollor by P8400, adopted ~June 3, 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-May/013695.html
-enum class OfficeJune3 : OfficeID {
+enum class Office_2020_06_03 : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
@@ -114,8 +114,8 @@ enum class OfficeJune3 : OfficeID {
 
     companion object {
         // Relies on enumerators having the same names as OfficeInitial
-        fun fromWebmastor(other: OfficeJune3Webmastor): OfficeJune3 {
-            require(other != OfficeJune3Webmastor.Comptrollor) { "Cannot convert Comptrollor, as it was removed" }
+        fun fromWebmastor(other: Office_2020_06_03_Webmastor): Office_2020_06_03 {
+            require(other != Office_2020_06_03_Webmastor.Comptrollor) { "Cannot convert Comptrollor, as it was removed" }
             return valueOf(other.name)
         }
     }
@@ -123,7 +123,7 @@ enum class OfficeJune3 : OfficeID {
 
 // Reflects addition of Coopor by P8442, adopted 30 June 2020
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-June/013879.html
-enum class OfficeJune30 : OfficeID {
+enum class Office_2020_06_30 : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
@@ -157,7 +157,7 @@ enum class OfficeJune30 : OfficeID {
 
     companion object {
         // Relies on enumerators having the same names as OfficeInitial
-        fun fromJune3(other: OfficeJune3): OfficeJune30 {
+        fun fromJune3(other: Office_2020_06_03): Office_2020_06_30 {
             return valueOf(other.name)
         }
     }
@@ -165,7 +165,7 @@ enum class OfficeJune30 : OfficeID {
 
 // Reflects addition of Ministor by P8515, adopted on 28 Oct 2020.
 // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-October/014335.html
-enum class OfficeOct28 : OfficeID {
+enum class Office_2020_10_28 : OfficeID {
     ADoP,
     Arbitor,
     Assessor,
