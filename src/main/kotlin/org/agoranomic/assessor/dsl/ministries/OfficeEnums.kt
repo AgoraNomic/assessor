@@ -198,3 +198,46 @@ enum class Office_2020_10_28 : OfficeID {
         this.readableName = this.name
     }
 }
+
+// Reflects addition of Stonemason by P8521 and removal of Coopor by P8526.
+// See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-November/014382.html
+// See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-December/014513.html
+enum class Office_2020_12_31 : OfficeID {
+    ADoP,
+    Arbitor,
+    Assessor,
+    Distributor,
+    Herald,
+    Ministor,
+    Notary,
+    PrimeMinister("Prime Minister"),
+    Promotor,
+    Referee,
+    Registrar,
+    Rulekeepor,
+    Speaker,
+    Stonemason,
+    Tailor,
+    Treasuror,
+    Webmastor,
+    ;
+
+    override val readableName: String
+
+    override val programmaticName: String
+        get() = name
+
+    constructor(readableName: String) {
+        this.readableName = readableName
+    }
+
+    constructor() {
+        this.readableName = this.name
+    }
+
+    companion object {
+        fun from_2020_10_28(other: Office_2020_10_28): Office_2020_12_31 {
+            return valueOf(other.name)
+        }
+    }
+}
