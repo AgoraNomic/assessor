@@ -165,5 +165,9 @@ Repeal rule 2633, "Rulebending."""")
         votes(ATMunn) {
             FOR on all
         }
+
+        votes(Murphy) {
+            FOR on all
+        }
     }
 }
