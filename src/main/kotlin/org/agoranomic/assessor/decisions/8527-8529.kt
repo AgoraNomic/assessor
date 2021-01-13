@@ -133,7 +133,6 @@ Repeal rule 2633, "Rulebending."""")
         votes(Aris) {
             FOR on 8527
             FOR on 8528
-            FOR on 8529
         }
 
         votes(nix) {
@@ -143,31 +142,44 @@ Repeal rule 2633, "Rulebending."""")
         }
 
         votes(Gaelan) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
         }
 
         votes(Trigon) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
         }
 
         votes(JTAC) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
         }
 
         votes(lucidiot) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
         }
 
         votes(Falsifian) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
         }
 
         votes(ATMunn) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
         }
 
         votes(Murphy) {
-            FOR on all
+            FOR on 8527
+            FOR on 8528
+        }
+
+        votes(G) {
+            FOR on 8527
+            FOR on 8528
+            AGAINST on 8529
         }
     }
 }
