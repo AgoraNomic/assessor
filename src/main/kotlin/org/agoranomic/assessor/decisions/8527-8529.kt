@@ -120,4 +120,7 @@ Amend Rule 2645, "The Stones", by replacing each instance of
 Repeal rule 2633, "Rulebending."""")
         }
     }
+
+    voting {
+    }
 }
