@@ -145,5 +145,9 @@ Repeal rule 2633, "Rulebending."""")
         votes(Gaelan) {
             FOR on all
         }
+
+        votes(Trigon) {
+            FOR on all
+        }
     }
 }
