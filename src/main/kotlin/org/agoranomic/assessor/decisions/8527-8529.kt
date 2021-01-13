@@ -157,5 +157,9 @@ Repeal rule 2633, "Rulebending."""")
         votes(lucidiot) {
             FOR on all
         }
+
+        votes(Falsifian) {
+            FOR on all
+        }
     }
 }
