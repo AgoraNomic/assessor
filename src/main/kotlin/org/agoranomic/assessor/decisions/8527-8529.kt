@@ -141,5 +141,9 @@ Repeal rule 2633, "Rulebending."""")
             FOR on 8528
             // TODO: resolve conditional vote on 8529: FOR if day of month when voting ends is even, else AGAINST
         }
+
+        votes(Gaelan) {
+            FOR on all
+        }
     }
 }
