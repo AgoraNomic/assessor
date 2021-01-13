@@ -10,6 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8527to8529() = assessment {
@@ -122,5 +124,10 @@ Repeal rule 2633, "Rulebending."""")
     }
 
     voting {
+        votes(Jason) {
+            FOR on 8527
+            FOR on 8528
+            AGAINST on 8529
+        }
     }
 }
