@@ -1,6 +1,7 @@
 package org.agoranomic.assessor.lib.resolve
 
 import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
@@ -80,6 +81,8 @@ data class ProposalResolutionMap(
     val votingStrengths by lazy {
         resolutions.mapValues { (_, v) -> v.votingStrengths }.toImmutableMap()
     }
+
+    val proposalResolutions by lazy { resolutions.values.toImmutableList() }
 
     private fun requireHasProposal(proposal: ProposalNumber) {
         require(proposals.contains(proposal)) { "No data for proposal $proposal" }
