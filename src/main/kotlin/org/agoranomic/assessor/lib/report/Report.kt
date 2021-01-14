@@ -200,17 +200,22 @@ private fun renderProposalOutcome(resolutionData: ResolutionData) = "OUTCOME: ${
 
 private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
     val votes = resolutionData.votes
-    val votersWithComment = votes.votesWithComments().voters
 
-    if (votersWithComment.isNotEmpty()) {
+    val votesWithComments =
+        votes
+            .voters
+            .associateWith { votes.voteDescriptionsFor(it) }
+            .mapValues { (_, v) -> v.filterNotNull() }
+            .filterValues { v -> v.isNotEmpty() }
+
+    if (votesWithComments.isNotEmpty()) {
         appendLine("[")
 
-        votersWithComment
-            .toList()
-            .sortedBy { it.name }
-            .forEach { voter ->
-                val vote = votes[voter]
-                appendLine("${voter.name}: ${vote.comment}")
+        votesWithComments
+            .asIterable()
+            .sortedBy { it.key.name }
+            .forEach { (voter, descriptions) ->
+                appendLine("${voter.name}: ${descriptions.joinToString(": ") { it.readable }}")
             }
 
         appendLine("]")

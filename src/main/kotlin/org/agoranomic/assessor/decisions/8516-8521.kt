@@ -10,7 +10,7 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.speakerBonus
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
-import org.agoranomic.assessor.lib.vote.InextricableVote
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -303,7 +303,7 @@ Jason hereby becomes the Stonemason.""")
 
         votes(Gaelan) {
             endorse(nix) on 8516
-            function { _, _ -> InextricableVote("two zombie votes: sukil FOR and D. Margaux PRESENT") } on 8517
+            InextricableResolvingVote on 8517 comment "two zombie votes: sukil FOR and D. Margaux PRESENT"
             endorse(Aris) on 8518
             AGAINST on 8519
             AGAINST on 8520

@@ -2,63 +2,31 @@ package org.agoranomic.assessor.test
 
 import org.agoranomic.assessor.dsl.votes.AuthorMarker
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.makeEndorsementFor
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.vote.*
-import org.agoranomic.assessor.test.test_objects.ALL_VOTE_KIND_LIST
-import org.agoranomic.assessor.test.test_objects.alwaysFailingLookupProposalFunc
 import org.agoranomic.assessor.test.test_objects.firstTestPerson
 import org.agoranomic.assessor.test.test_objects.firstTestProposal
 import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@DisplayName("makeEndorsementFor test")
-class MakeEndorsementForTest {
-    @Test
-    fun `returns InextricableVote for null endorseeVote`() {
-        val endorsee = firstTestPerson("Endorsee")
-        val endorsement = makeEndorsementFor(endorsee = endorsee, endorseeVote = null)
-
-        assertTrue(endorsement is InextricableVote)
-        assertEquals(endorsement.comment, "Endorsement of non-voter ${endorsee.name}")
-    }
-
-    companion object {
-        @JvmStatic
-        private fun testingVotes(): List<Vote> {
-            return ALL_VOTE_KIND_LIST
-        }
-    }
-
-    @ParameterizedTest
-    @MethodSource("testingVotes")
-    fun `returns simplification-equivalent vote for non-null endorseeVote`(vote: Vote) {
-        val endorsee = firstTestPerson("Endorsee")
-        val endorsement = makeEndorsementFor(endorsee = endorsee, endorseeVote = vote)
-
-        assertEquals(endorsement, vote.copyWithComment("Endorsement of ${endorsee.name}"))
-    }
-}
-
 @DisplayName("endorse test")
 class EndorseTest {
     companion object {
         @JvmStatic
-        private fun testingVotes(): List<Vote> {
-            return ALL_VOTE_KIND_LIST
+        private fun testingVotes(): List<ResolvingVote> {
+            return listOf(ResolvedVote(VoteKind.FOR), ResolvedVote(VoteKind.AGAINST), InextricableResolvingVote)
         }
     }
 
     private fun doTestEndorse(
-        endorsement: FunctionVote,
+        endorsement: ResolvingVote,
         proposal: Proposal,
         expectedEndorsee: Person,
-        endorseeVote: Vote
+        endorseeVote: ResolvingVote,
     ) {
         var called = false
 
@@ -72,34 +40,54 @@ class EndorseTest {
             endorseeVote
         }
 
-        val resolved =
-            endorsement.func(
-                proposal,
-                StandardVoteContext(resolveFunc = resolveFunc, lookupProposalFunc = alwaysFailingLookupProposalFunc)
-            )
+        val voteContext = StandardVoteContext(
+            resolveFunc = resolveFunc,
+            lookupProposalFunc = { proposalNumber ->
+                assertEquals(proposal.number, proposalNumber)
+                proposal
+            }
+        ).forProposal(proposal)
+
+        val endorsementResolution = endorsement.finalResolution(voteContext)
+        val baseResolution = endorseeVote.finalResolution(voteContext)
+
+        assertEquals(baseResolution, endorsementResolution)
+
+        check(endorsementResolution is VoteStepResolution.Resolved.Voted) { "can't handle this test case yet" }
+
+        val endorsementDescriptions = endorsement.resolveDescriptions(voteContext).filterNotNull()
+
+        assertEquals(
+            VoteStepDescription(
+                readable = "Endorsement of ${expectedEndorsee.name}",
+                kind = "endorsement",
+                parameters = mapOf(
+                    "endorsee" to expectedEndorsee.name,
+                    "inextricable" to "false",
+                ),
+            ),
+            endorsementDescriptions.single(),
+        )
 
         // Assert that resolve is called
         assertTrue(called)
-
-        // Assert that resolved vote matches manually-generated endorsement vote
-        assertEquals(resolved, makeEndorsementFor(endorsee = expectedEndorsee, endorseeVote = endorseeVote))
     }
 
     @ParameterizedTest
     @MethodSource("testingVotes")
-    fun `endorse(Player) test`(endorseeVote: Vote) {
+    fun `endorse(Player) test`(endorseeVote: ResolvingVote) {
         val endorsee = firstTestPerson("Endorsee")
         doTestEndorse(
             endorsement = endorse(endorsee),
             proposal = firstTestProposal(),
             expectedEndorsee = endorsee,
-            endorseeVote = endorseeVote
+            endorseeVote = endorseeVote,
         )
     }
 
     @ParameterizedTest
     @MethodSource("testingVotes")
-    fun `endorse(author) test`(authorVote: Vote) {
+    fun `endorse(author) test`(authorVote: ResolvingVote) {
         val proposal = firstTestProposal()
         val proposalAuthor = proposal.author
 
@@ -107,7 +95,7 @@ class EndorseTest {
             endorsement = endorse(AuthorMarker),
             proposal = proposal,
             expectedEndorsee = proposalAuthor,
-            endorseeVote = authorVote
+            endorseeVote = authorVote,
         )
     }
 }

@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.lib.vote
 
+import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
@@ -8,20 +9,24 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 import org.agoranomic.assessor.lib.voting_strength.plus
 
-data class SimplifiedSingleProposalVoteMap(private val data: ImmutableMap<Person, SimpleVote>) {
-    constructor(map: Map<Person, SimpleVote>) : this(map.toImmutableMap())
+data class SimplifiedSingleProposalVoteMap(
+    private val data: ImmutableMap<Person, ResolvingVoteResolvedVote>,
+) {
+    constructor(map: Map<Person, ResolvingVoteResolvedVote>) : this(map.toImmutableMap())
 
     val voters get() = Persons(data.keys)
     val voteCount get() = voters.size
 
-    operator fun get(p: Person) = data[p] ?: throw IllegalArgumentException("Player is not a voter")
-
     fun personsWithVote(kind: VoteKind): Persons {
-        return Persons(data.filterValues { vote -> vote.kind == kind }.keys)
+        return Persons(data.filterValues { vote -> vote.resolution == kind }.keys)
     }
 
-    fun votesWithComments(): SimplifiedSingleProposalVoteMap {
-        return SimplifiedSingleProposalVoteMap(data.filterValues { it.comment != null })
+    fun voteFor(person: Person): VoteKind {
+        return data.getValue(person).resolution
+    }
+
+    fun voteDescriptionsFor(person: Person): ImmutableList<VoteStepDescription?> {
+        return data.getValue(person).stepDescriptions
     }
 }
 

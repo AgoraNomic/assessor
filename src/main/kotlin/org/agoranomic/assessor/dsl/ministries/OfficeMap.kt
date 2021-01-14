@@ -6,8 +6,9 @@ import io.github.random_internet_cat.util.requireExhaustive
 import io.github.random_internet_cat.util.toExhaustiveEnumMap
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Person
-import org.agoranomic.assessor.lib.vote.FunctionVote
-import org.agoranomic.assessor.lib.vote.InextricableVote
+import org.agoranomic.assessor.lib.vote.CommentedResolvingVote
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
+import org.agoranomic.assessor.lib.vote.ResolvingVote
 import kotlin.reflect.KClass
 
 /**
@@ -188,14 +189,13 @@ fun <Office : Enum<Office>> officeMapOf(
 inline fun <reified Office : Enum<Office>> officeMapOf(vararg pairs: Pair<Office, Person?>) =
     officeMapOf(Office::class, *pairs)
 
-fun <Office : Enum<Office>> endorseOfficer(officeMap: OfficeMap<Office>, office: Office): FunctionVote {
+fun <Office : Enum<Office>> endorseOfficer(officeMap: OfficeMap<Office>, office: Office): ResolvingVote {
     return when (val officeState = officeMap[office]) {
         is OfficeState.Vacant -> {
-            FunctionVote { _, _ ->
-                InextricableVote(
-                    "Endorsement of vacant office: ${office.name}"
-                )
-            }
+            CommentedResolvingVote(
+                comment = "Endorsement of vacant office: ${office.name}",
+                nextVote = InextricableResolvingVote,
+            )
         }
 
         is OfficeState.Held -> {

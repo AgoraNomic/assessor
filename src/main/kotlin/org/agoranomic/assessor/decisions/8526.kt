@@ -12,8 +12,8 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Economy
-import org.agoranomic.assessor.lib.vote.FunctionVote
-import org.agoranomic.assessor.lib.vote.SimpleVote
+import org.agoranomic.assessor.lib.vote.CommentedResolvingVote
+import org.agoranomic.assessor.lib.vote.ResolvedVote
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
@@ -88,7 +88,7 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
                 if (it is OfficeState.Held)
                     endorseOrElse(it.holder, PRESENT)
                 else
-                    FunctionVote { _, _ -> SimpleVote(FOR, conditional("Coopor is not held")) }
+                    CommentedResolvingVote(conditional("Coopor is not held"), ResolvedVote(FOR))
             } on 8526
         }
 

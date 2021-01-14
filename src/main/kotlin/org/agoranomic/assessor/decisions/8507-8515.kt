@@ -13,6 +13,9 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.MinistryV1.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.forProposal
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment8507to8515() = assessment {
@@ -548,10 +551,13 @@ see.)""")
             endorse(Aris) on 8513
 
             function { proposal, context ->
-                if (context.resolve(proposal, Trigon)?.simplified()?.kind != PRESENT) {
-                    endorse(Trigon).func(proposal, context) // TODO: annotate conditional somehow
+                if (
+                    context.resolve(proposal, Trigon)?.finalResolution(context.forProposal(proposal))?.voteIfVoted
+                    != PRESENT
+                ) {
+                    endorse(Trigon) // TODO: annotate conditional somehow
                 } else {
-                    endorse(Aris).func(proposal, context) // TODO: annotate conditional somehow
+                    endorse(Aris) // TODO: annotate conditional somehow
                 }
             } on 8514
 
