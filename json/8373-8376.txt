@@ -57,53 +57,75 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "R. Lee",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Murphy",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Falsifian"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Falsifian",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Falsifian"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Conditional resolved: no Notice of Veto was published"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: no Notice of Veto was published",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: no Notice of Veto was published"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
@@ -370,60 +392,95 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "R. Lee",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Murphy",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Conditional resolved: no Notice of Veto was published"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: no Notice of Veto was published",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: no Notice of Veto was published"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -714,62 +771,129 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "R. Lee",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Murphy",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Inextricable: Endorsement of vacant office: Herald"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Endorsement of vacant office: Herald",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Endorsement of vacant office: Herald"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "inextricable",
+                                "readable": "Inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Alexis"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Alexis",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Alexis"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1060,51 +1184,51 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "R. Lee",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Murphy",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },

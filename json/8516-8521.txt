@@ -88,66 +88,105 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "nix",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Baron von Vanderham",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "sukil",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Trigon"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Trigon",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Trigon"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of nix"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of nix",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "D. Margaux",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -237,66 +276,107 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "nix",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Baron von Vanderham",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "sukil",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Trigon"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Trigon",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Trigon"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Inextricable: two zombie votes: sukil FOR and D. Margaux PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "two zombie votes: sukil FOR and D. Margaux PRESENT",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "two zombie votes: sukil FOR and D. Margaux PRESENT"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "inextricable",
+                                "readable": "Inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "D. Margaux",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -386,66 +466,111 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "nix",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Baron von Vanderham",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "sukil",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Trigon"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Trigon",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Trigon"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Inextricable: Endorsement of non-voter Aris"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of non-voter Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "inextricable",
+                                "readable": "Inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "D. Margaux",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -535,67 +660,119 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "nix",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Baron von Vanderham",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "sukil",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Trigon"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Trigon",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Trigon"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "D. Margaux",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -685,67 +862,119 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "nix",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Publius Scribonius Scholasticus"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Publius Scribonius Scholasticus",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Publius Scribonius Scholasticus"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Publius Scribonius Scholasticus"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Publius Scribonius Scholasticus",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Publius Scribonius Scholasticus"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Baron von Vanderham",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "sukil",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Trigon"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Trigon",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Trigon"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "D. Margaux",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -835,66 +1064,105 @@
                 "votes": [
                     {
                         "voter": "Publius Scribonius Scholasticus",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "nix",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Baron von Vanderham",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "sukil",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Trigon"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Trigon",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Trigon"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "D. Margaux",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },

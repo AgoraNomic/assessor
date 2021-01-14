@@ -250,71 +250,97 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -367,76 +393,207 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg: twg is Treasuror"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "twg is Treasuror",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "twg is Treasuror"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg: twg is Treasuror"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "twg is Treasuror",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "twg is Treasuror"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of omd"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of omd",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "omd"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of omd: Conditional resolved: no Notice of Veto was published"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: no Notice of Veto was published",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: no Notice of Veto was published"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of omd",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "omd"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg: twg is the Treasuror"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "twg is the Treasuror",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "twg is the Treasuror"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -489,72 +646,107 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Conditional resolved: no Notice of Veto was published"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: no Notice of Veto was published",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: no Notice of Veto was published"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -607,73 +799,125 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -726,60 +970,99 @@
                 "votes": [
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -832,61 +1115,123 @@
                 "votes": [
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Falsifian: Falsifian was first of (omd, G., Falsifian) to vote on this proposal"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Falsifian was first of (omd, G., Falsifian) to vote on this proposal",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Falsifian was first of (omd, G., Falsifian) to vote on this proposal"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Falsifian",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Falsifian"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -939,72 +1284,121 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of G.: G. is the Arbitor"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "G. is the Arbitor",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "G. is the Arbitor"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1057,71 +1451,97 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1174,61 +1594,119 @@
                 "votes": [
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Conditional resolved: 8304 is going to be resolved as ADOPTED"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: 8304 is going to be resolved as ADOPTED",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: 8304 is going to be resolved as ADOPTED"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg: Conditional resolved: None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1281,71 +1759,97 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1398,73 +1902,125 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1517,73 +2073,125 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1636,73 +2244,125 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of G."
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of G.",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1755,74 +2415,139 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -1875,74 +2600,159 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason: Jason is the Rulekeepor"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Jason is the Rulekeepor",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Jason is the Rulekeepor"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason: Jason is the Rulekeepor"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Jason is the Rulekeepor",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Jason is the Rulekeepor"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
@@ -1995,73 +2805,125 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -2114,60 +2976,99 @@
                 "votes": [
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Aris"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Aris",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -2220,60 +3121,99 @@
                 "votes": [
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -2326,74 +3266,135 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Alexis"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Alexis",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Alexis"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Alexis"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Alexis",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Alexis"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Conditional resolved: G. not AGAINST"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "readable": "Conditional resolved: G. not AGAINST",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: G. not AGAINST"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -2446,72 +3447,117 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Inextricable: Endorsement of non-voter D. Margaux"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of non-voter D. Margaux",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "D. Margaux"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "inextricable",
+                                "readable": "Inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
@@ -2564,73 +3610,131 @@
                 "votes": [
                     {
                         "voter": "G.",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "o",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "twg",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Bernie",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of twg"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of twg",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "twg"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Aris",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Alexis",
-                        "vote": {
-                            "value": "PRESENT",
-                            "comment": "Inextricable: Endorsement of non-voter D. Margaux"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of non-voter D. Margaux",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "D. Margaux"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "kind": "inextricable",
+                                "readable": "Inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Rance",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "Gaelan",
-                        "vote": {
-                            "value": "AGAINST"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "omd",
-                        "vote": {
-                            "value": "AGAINST",
-                            "comment": "Endorsement of Gaelan"
-                        }
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Gaelan",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Gaelan"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },

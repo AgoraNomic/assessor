@@ -38,33 +38,33 @@
                 "votes": [
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "PRESENT"
-                        }
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Murphy",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
@@ -191,34 +191,47 @@
                 "votes": [
                     {
                         "voter": "Jason",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Trigon",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Falsifian",
-                        "vote": {
-                            "value": "FOR",
-                            "comment": "Endorsement of Jason"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "readable": "Endorsement of Jason",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "voter": "ATMunn",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     },
                     {
                         "voter": "Murphy",
-                        "vote": {
-                            "value": "FOR"
-                        }
+                        "vote": "FOR",
+                        "comments": [
+                        ]
                     }
                 ]
             },
