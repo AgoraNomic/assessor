@@ -75,7 +75,8 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
     override infix fun ResolvingVote.on(proposal: ProposalNumber) = addVote(proposal, MutableVote(this))
 
     override infix fun ResolvingVote.on(all: PersonVotesReceiver.AllMarker) {
-        proposals.forEach { addVote(it, this) }
+        val adjustedVote = TaggedResolvingVote("part_of_all_vote", this)
+        proposals.forEach { addVote(it, adjustedVote) }
     }
 
     override infix fun ResolvingVote.on(others: PersonVotesReceiver.OthersMarker) {

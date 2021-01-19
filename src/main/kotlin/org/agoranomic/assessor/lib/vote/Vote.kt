@@ -93,6 +93,15 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
         )
 }
 
+data class TaggedResolvingVote(val tag: String, val nextVote: ResolvingVote) : ResolvingVote {
+    override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
+        return VoteStepResolution.Continue(nextVote)
+    }
+
+    override val currentStepDescription: VoteStepDescription
+        get() = VoteStepDescription.tagOnly(tag)
+}
+
 object InextricableResolvingVote : ResolvingVote {
     override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
         return VoteStepResolution.Continue(ResolvedVote(VoteKind.PRESENT))
