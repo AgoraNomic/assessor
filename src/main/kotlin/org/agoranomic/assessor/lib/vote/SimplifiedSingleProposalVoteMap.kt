@@ -25,7 +25,7 @@ data class SimplifiedSingleProposalVoteMap(
         return data.getValue(person).resolution
     }
 
-    fun voteDescriptionsFor(person: Person): ImmutableList<VoteStepDescription?> {
+    fun voteDescriptionsFor(person: Person): ImmutableList<VoteStepDescription> {
         return data.getValue(person).stepDescriptions
     }
 }

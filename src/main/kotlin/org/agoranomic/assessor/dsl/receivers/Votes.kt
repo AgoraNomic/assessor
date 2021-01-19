@@ -89,8 +89,8 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
             return VoteStepResolution.Continue(func(context.currentProposal, context) ?: AbstentionResolvingVote)
         }
 
-        override val currentStepDescription: VoteStepDescription?
-            get() = null
+        override val currentStepDescription: VoteStepDescription
+            get() = VoteStepDescription.None
     }
 
     override infix fun VoteKind.on(proposal: ProposalNumber) = ResolvedVote(this) on proposal

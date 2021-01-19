@@ -55,15 +55,18 @@ class EndorseTest {
 
         check(endorsementResolution is VoteStepResolution.Resolved.Voted) { "can't handle this test case yet" }
 
-        val endorsementDescriptions = endorsement.resolveDescriptions(voteContext).filterNotNull()
+        val endorsementDescriptions =
+            endorsement.resolveDescriptions(voteContext).filterIsInstance<VoteStepDescription.WithReadable>()
 
         assertEquals(
-            VoteStepDescription(
+            VoteStepDescription.WithReadable(
                 readable = "Endorsement of ${expectedEndorsee.name}",
-                kind = "endorsement",
-                parameters = mapOf(
-                    "endorsee" to expectedEndorsee.name,
-                    "inextricable" to "false",
+                machine = VoteStepMachineDescription(
+                    kind = "endorsement",
+                    parameters = mapOf(
+                        "endorsee" to expectedEndorsee.name,
+                        "inextricable" to "false",
+                    ),
                 ),
             ),
             endorsementDescriptions.single(),

@@ -7,6 +7,7 @@ import org.agoranomic.assessor.lib.resolve.*
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
 import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.VoteStepDescription
+import org.agoranomic.assessor.lib.vote.VoteStepMachineDescription
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDescription
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
@@ -86,20 +87,34 @@ private fun json(propsalResult: ProposalResult) = json(propsalResult.name)
 
 private fun json(vote: VoteKind) = json(vote.name)
 
-private fun json(voteStepDescription: VoteStepDescription) = json {
-    "kind" to json(voteStepDescription.kind)
-    "readable" to json(voteStepDescription.readable)
-    "parameters" to json(voteStepDescription.parameters.map { (name, value) ->
-        json {
-            "name" to json(name)
-            "value" to json(value)
+private fun json(voteStepDescription: VoteStepDescription): JsonObject? {
+    fun JsonObjectBuilder.handleMachineData(machineData: VoteStepMachineDescription) {
+        "kind" to json(machineData.kind)
+        "parameters" to json(machineData.parameters.map { (name, value) ->
+            json {
+                "name" to json(name)
+                "value" to json(value)
+            }
+        })
+    }
+
+    return when (voteStepDescription) {
+        is VoteStepDescription.None -> null
+
+        is VoteStepDescription.MachineOnly -> json {
+            handleMachineData(voteStepDescription.data)
         }
-    })
+
+        is VoteStepDescription.WithReadable -> json {
+            "readable" to json(voteStepDescription.readable)
+            handleMachineData(voteStepDescription.machine)
+        }
+    }
 }
 
 @JvmName("jsonVoteDescription")
-private fun json(voteDescription: List<VoteStepDescription?>) = jsonArray {
-    voteDescription.filterNotNull().forEach { +json(it) }
+private fun json(voteDescription: List<VoteStepDescription>) = jsonArray {
+    voteDescription.mapNotNull { json(it) }.forEach { +it }
 }
 
 private fun json(voteMap: SimplifiedSingleProposalVoteMap) = jsonArray {

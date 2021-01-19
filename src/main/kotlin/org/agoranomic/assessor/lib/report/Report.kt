@@ -11,6 +11,7 @@ import org.agoranomic.assessor.lib.resolve.ResolutionData
 import org.agoranomic.assessor.lib.resolve.adoptedProposals
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
 import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteStepDescription
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 import kotlin.math.max
@@ -205,7 +206,15 @@ private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
         votes
             .voters
             .associateWith { votes.voteDescriptionsFor(it) }
-            .mapValues { (_, v) -> v.filterNotNull() }
+            .mapValues { (_, descriptions) ->
+                descriptions.mapNotNull {
+                    when (it) {
+                        is VoteStepDescription.None -> null
+                        is VoteStepDescription.MachineOnly -> null
+                        is VoteStepDescription.WithReadable -> it.readable
+                    }
+                }
+            }
             .filterValues { v -> v.isNotEmpty() }
 
     if (votesWithComments.isNotEmpty()) {
@@ -215,7 +224,7 @@ private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
             .asIterable()
             .sortedBy { it.key.name }
             .forEach { (voter, descriptions) ->
-                appendLine("${voter.name}: ${descriptions.joinToString(": ") { it.readable }}")
+                appendLine("${voter.name}: ${descriptions.joinToString(": ")}")
             }
 
         appendLine("]")

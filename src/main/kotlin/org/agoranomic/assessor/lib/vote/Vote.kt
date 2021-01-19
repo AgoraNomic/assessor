@@ -1,27 +1,39 @@
 package org.agoranomic.assessor.lib.vote
 
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.collections.immutable.*
 import org.agoranomic.assessor.lib.proposal.ProposalNumber
 
 enum class VoteKind { PRESENT, AGAINST, FOR }
 
-data class VoteStepDescription(
-    val readable: String,
+data class VoteStepMachineDescription(
     val kind: String,
     val parameters: ImmutableMap<String, String>,
 ) {
     constructor(
-        readable: String,
         kind: String,
         parameters: Map<String, String>,
     ) : this(
-        readable = readable,
         kind = kind,
         parameters = parameters.toImmutableMap(),
     )
+}
+
+sealed class VoteStepDescription {
+    object None : VoteStepDescription()
+
+    data class MachineOnly(val data: VoteStepMachineDescription) : VoteStepDescription() {
+        val kind
+            get() = data.kind
+
+        val parameters
+            get() = data.parameters
+    }
+
+    data class WithReadable(val readable: String, val machine: VoteStepMachineDescription) : VoteStepDescription()
+
+    companion object {
+        fun tagOnly(kind: String) = MachineOnly(VoteStepMachineDescription(kind = kind, parameters = persistentMapOf()))
+    }
 }
 
 sealed class VoteStepResolution {
@@ -40,11 +52,11 @@ val VoteStepResolution.Resolved.voteIfVoted: VoteKind?
     }
 
 data class ResolvingVoteResolvedVote(
-    val stepDescriptions: ImmutableList<VoteStepDescription?>,
+    val stepDescriptions: ImmutableList<VoteStepDescription>,
     val resolution: VoteKind,
 ) {
     constructor(
-        stepDescriptions: List<VoteStepDescription?>,
+        stepDescriptions: List<VoteStepDescription>,
         resolution: VoteKind,
     ) : this(
         stepDescriptions = stepDescriptions.toImmutableList(),
@@ -54,7 +66,7 @@ data class ResolvingVoteResolvedVote(
 
 interface ResolvingVote {
     fun resolveStep(context: ProposalVoteContext): VoteStepResolution
-    val currentStepDescription: VoteStepDescription?
+    val currentStepDescription: VoteStepDescription
 }
 
 data class ResolvedVote(val value: VoteKind) : ResolvingVote {
@@ -62,8 +74,8 @@ data class ResolvedVote(val value: VoteKind) : ResolvingVote {
         return VoteStepResolution.Resolved.Voted(value)
     }
 
-    override val currentStepDescription: VoteStepDescription?
-        get() = null
+    override val currentStepDescription: VoteStepDescription
+        get() = VoteStepDescription.None
 }
 
 data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVote) : ResolvingVote {
@@ -72,10 +84,12 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
     }
 
     override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription(
+        get() = VoteStepDescription.WithReadable(
             readable = comment,
-            kind = "commented",
-            parameters = mapOf("comment" to comment),
+            machine = VoteStepMachineDescription(
+                kind = "commented",
+                parameters = mapOf("comment" to comment),
+            )
         )
 }
 
@@ -85,12 +99,13 @@ object InextricableResolvingVote : ResolvingVote {
     }
 
     override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription(
+        get() = VoteStepDescription.WithReadable(
             readable = "Inextricable",
-            kind = "inextricable",
-            parameters = emptyMap(),
+            machine = VoteStepMachineDescription(
+                kind = "inextricable",
+                parameters = emptyMap(),
+            )
         )
-
 }
 
 object AbstentionResolvingVote : ResolvingVote {
@@ -98,8 +113,8 @@ object AbstentionResolvingVote : ResolvingVote {
         return VoteStepResolution.Resolved.Abstained
     }
 
-    override val currentStepDescription: VoteStepDescription?
-        get() = null
+    override val currentStepDescription: VoteStepDescription
+        get() = VoteStepDescription.None
 }
 
 tailrec fun ResolvingVote.finalResolution(voteContext: ProposalVoteContext): VoteStepResolution.Resolved {
@@ -109,7 +124,7 @@ tailrec fun ResolvingVote.finalResolution(voteContext: ProposalVoteContext): Vot
     }
 }
 
-fun ResolvingVote.resolveDescriptions(voteContext: ProposalVoteContext): List<VoteStepDescription?> {
+fun ResolvingVote.resolveDescriptions(voteContext: ProposalVoteContext): List<VoteStepDescription> {
     return generateSequence(this) {
         when (val resolution = it.resolveStep(voteContext)) {
             is VoteStepResolution.Continue -> resolution.nextVote
