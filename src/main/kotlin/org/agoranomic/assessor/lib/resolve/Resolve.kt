@@ -27,6 +27,7 @@ enum class ProposalResult {
 }
 
 data class ResolutionData(
+    val proposal: Proposal,
     val result: ProposalResult,
     val aiStrengths: AIStrengths,
     val votingStrengths: VotingStrengthTrailForPersons,
@@ -34,6 +35,7 @@ data class ResolutionData(
 )
 
 fun resolve(
+    proposal: Proposal,
     quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthTrailForPersons,
     ai: ProposalAI,
@@ -42,6 +44,7 @@ fun resolve(
     val aiStrengths = aiStrengthsFor(votes, votingStrengthMap)
 
     return ResolutionData(
+        proposal = proposal,
         result = if (meetsQuorum(votes, quorum)) {
             if (isAIAdopted(ai, aiStrengths))
                 ProposalResult.ADOPTED
@@ -58,30 +61,28 @@ fun resolve(
 
 data class ProposalResolutionMap(
     val metadata: AssessmentMetadata,
-    val proposals: ImmutableProposalSet,
     private val resolutions: ImmutableMap<ProposalNumber, ResolutionData>,
     val quorum: AssessmentQuorum,
 ) {
     constructor(
         metadata: AssessmentMetadata,
-        proposals: ProposalSet,
         resolutions: Map<ProposalNumber, ResolutionData>,
         quorum: AssessmentQuorum,
     ) : this(
         metadata,
-        proposals.toImmutableProposalSet(),
         resolutions.toImmutableMap(),
         quorum,
     )
 
     init {
-        require(proposals.map { it.number }.toSet() == resolutions.keys.toSet())
+        require(resolutions.all { (number, resolution) -> number == resolution.proposal.number })
     }
 
     val votingStrengths by lazy {
         resolutions.mapValues { (_, v) -> v.votingStrengths }.toImmutableMap()
     }
 
+    val proposals by lazy { resolutions.values.map { it.proposal }.toImmutableProposalSet() }
     val proposalResolutions by lazy { resolutions.values.toImmutableList() }
 
     private fun requireHasProposal(proposal: ProposalNumber) {
@@ -146,22 +147,22 @@ data class AssessmentData(
 fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
     val resolvedVotes = resolveVotes(assessmentData.votes, assessmentData.proposals)
 
-    val map = assessmentData.proposals.associateWith { proposal ->
-        val strengthTrails = assessmentData.votingStrengthsOf(proposal.number)
-        val votes = resolvedVotes[proposal.number]
-
-        resolve(
-            ProposalQuorum(assessmentData.quorum.generic()),
-            strengthTrails,
-            proposal.ai,
-            votes
-        )
-    }.mapKeys { (proposal, _) -> proposal.number }
-
     return ProposalResolutionMap(
-        assessmentData.metadata,
-        assessmentData.proposals,
-        map,
-        assessmentData.quorum,
+        metadata = assessmentData.metadata,
+        resolutions = assessmentData
+            .proposals
+            .associate { proposal ->
+                val strengthTrails = assessmentData.votingStrengthsOf(proposal.number)
+                val votes = resolvedVotes[proposal.number]
+
+                proposal.number to resolve(
+                    proposal = proposal,
+                    quorum = ProposalQuorum(assessmentData.quorum.generic()),
+                    votingStrengthMap = strengthTrails,
+                    ai = proposal.ai,
+                    votes = votes,
+                )
+            },
+        quorum = assessmentData.quorum,
     )
 }
