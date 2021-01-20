@@ -36,6 +36,13 @@ sealed class VoteStepDescription {
     }
 }
 
+val VoteStepDescription.machineIfPresent
+    get() = when (this) {
+        is VoteStepDescription.None -> null
+        is VoteStepDescription.MachineOnly -> data
+        is VoteStepDescription.WithReadable -> machine
+    }
+
 sealed class VoteStepResolution {
     data class Continue(val nextVote: ResolvingVote) : VoteStepResolution()
 
