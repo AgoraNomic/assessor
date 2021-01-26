@@ -37,7 +37,7 @@ interface PersonVotesReceiver {
     infix fun VoteKind.on(all: AllMarker)
     infix fun VoteKind.on(others: OthersMarker)
 
-    fun function(func: VoteFunc): ResolvingVote
+    fun function(func: (ProposalVoteContext) -> ResolvingVote?): ResolvingVote
 }
 
 typealias PersonVotesReceiverInit = DslInit<PersonVotesReceiver>
@@ -85,9 +85,9 @@ private class DefaultPersonVotesReceiver(private val proposals: ImmutableList<Pr
         }
     }
 
-    override fun function(func: VoteFunc) = object : ResolvingVote {
+    override fun function(func: (ProposalVoteContext) -> ResolvingVote?) = object : ResolvingVote {
         override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
-            return VoteStepResolution.Continue(func(context.currentProposal, context) ?: AbstentionResolvingVote)
+            return VoteStepResolution.Continue(func(context) ?: AbstentionResolvingVote)
         }
 
         override val currentStepDescription: VoteStepDescription

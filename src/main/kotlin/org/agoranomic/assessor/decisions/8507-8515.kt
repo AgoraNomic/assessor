@@ -14,7 +14,6 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.MinistryV1.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 import org.agoranomic.assessor.lib.vote.finalResolution
-import org.agoranomic.assessor.lib.vote.forProposal
 import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
@@ -550,9 +549,12 @@ see.)""")
             AGAINST on 8512
             endorse(Aris) on 8513
 
-            function { proposal, context ->
+            function { context ->
                 if (
-                    context.resolve(proposal, Trigon)?.finalResolution(context.forProposal(proposal))?.voteIfVoted
+                    context
+                        .resolve(context.currentProposal, Trigon)
+                        ?.finalResolution(context)
+                        ?.voteIfVoted
                     != PRESENT
                 ) {
                     endorse(Trigon) // TODO: annotate conditional somehow

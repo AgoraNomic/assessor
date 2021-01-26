@@ -48,5 +48,3 @@ data class StandardVoteContext(
     override fun lookupProposal(number: ProposalNumber): Proposal = lookupProposalFunc(number)
     override fun resolve(proposal: Proposal, voter: Person): ResolvingVote? = resolveFunc(proposal, voter)
 }
-
-typealias VoteFunc = (proposal: Proposal, context: VoteContext) -> ResolvingVote?
