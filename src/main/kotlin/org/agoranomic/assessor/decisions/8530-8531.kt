@@ -144,5 +144,10 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
             endorseOfficer(offices, Herald) on 8530
             FOR on 8531
         }
+
+        votes(nix) {
+            FOR on 8530
+            FOR on 8531
+        }
     }
 }
