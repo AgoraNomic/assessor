@@ -123,5 +123,10 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
             AGAINST on 8530
             endorse(G) on 8531
         }
+
+        votes(Falsifian) {
+            // TODO: resolve conditional vote on 8530: AGAINST if Herald AGAINST, else FOR
+            FOR on 8531
+        }
     }
 }
