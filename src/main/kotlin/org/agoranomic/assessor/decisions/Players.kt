@@ -25,6 +25,7 @@ val lucidiot = Person("lucidiot")
 val Murphy = Person("Murphy")
 val Nathan = Person("Nathan")
 val nix = Person("nix")
+val Noah = Person("Noah")
 val o = Person("o")
 val Oerjan = Person("Oerjan") // Not a player, just a watcher
 val omd = Person("omd")
