@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.ministries.Office_2020_12_31.*
+import org.agoranomic.assessor.dsl.ministries.endorseOfficer
 import org.agoranomic.assessor.dsl.ministries.ministries_2020_12_31
 import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
@@ -136,6 +137,11 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
 
         votes(Noah) {
             PRESENT on 8530
+            FOR on 8531
+        }
+
+        votes(Murphy) {
+            endorseOfficer(offices, Herald) on 8530
             FOR on 8531
         }
     }
