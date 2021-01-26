@@ -103,5 +103,9 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
             FOR on 8530
             FOR on 8531
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
