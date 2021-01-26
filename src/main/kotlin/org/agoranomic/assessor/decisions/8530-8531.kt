@@ -128,5 +128,10 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
             // TODO: resolve conditional vote on 8530: FOR if Herald FOR, else AGAINST
             FOR on 8531
         }
+
+        votes(ATMunn) {
+            FOR on 8530
+            FOR on 8531
+        }
     }
 }
