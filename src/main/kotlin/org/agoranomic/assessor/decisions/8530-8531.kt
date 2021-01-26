@@ -10,6 +10,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Legacy
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8530to8531() = assessment {
@@ -98,5 +99,9 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8530
+            FOR on 8531
+        }
     }
 }
