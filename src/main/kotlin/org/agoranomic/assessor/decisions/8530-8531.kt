@@ -96,4 +96,7 @@ of "person"), other than Hero of Agora Nomic or Grand Hero of Agora Nomic.
 stripped and because this proposal doesn't have high enough AI to do so.]""")
         }
     }
+
+    voting {
+    }
 }
