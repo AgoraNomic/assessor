@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Legacy
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
@@ -112,6 +113,11 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
         votes(Jason) {
             PRESENT on 8530
             FOR on 8531
+        }
+
+        votes(JTAC) {
+            FOR on 8530
+            endorse(nix) on 8531
         }
     }
 }
