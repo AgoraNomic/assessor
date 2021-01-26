@@ -11,8 +11,7 @@ import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Legacy
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8530to8531() = assessment {
@@ -118,6 +117,11 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
         votes(JTAC) {
             FOR on 8530
             endorse(nix) on 8531
+        }
+
+        votes(Gaelan) {
+            AGAINST on 8530
+            endorse(G) on 8531
         }
     }
 }
