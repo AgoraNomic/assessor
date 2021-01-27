@@ -28,6 +28,8 @@ data class SimplifiedSingleProposalVoteMap(
     fun voteDescriptionsFor(person: Person): ImmutableList<VoteStepDescription> {
         return data.getValue(person).stepDescriptions
     }
+
+    fun toMap(): ImmutableMap<Person, ResolvingVoteResolvedVote> = data
 }
 
 fun SimplifiedSingleProposalVoteMap.votersFor() = personsWithVote(VoteKind.FOR)
