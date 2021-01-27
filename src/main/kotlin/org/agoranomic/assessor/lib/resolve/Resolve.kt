@@ -29,6 +29,7 @@ enum class ProposalResult {
 data class ResolutionData(
     val proposal: Proposal,
     val result: ProposalResult,
+    val quorum: ProposalQuorum,
     val aiStrengths: AIStrengths,
     val votingStrengths: VotingStrengthTrailForPersons,
     val votes: SimplifiedSingleProposalVoteMap,
@@ -38,7 +39,6 @@ fun resolve(
     proposal: Proposal,
     quorum: ProposalQuorum,
     votingStrengthMap: VotingStrengthTrailForPersons,
-    ai: ProposalAI,
     votes: SimplifiedSingleProposalVoteMap,
 ): ResolutionData {
     val aiStrengths = aiStrengthsFor(votes, votingStrengthMap)
@@ -46,13 +46,14 @@ fun resolve(
     return ResolutionData(
         proposal = proposal,
         result = if (meetsQuorum(votes, quorum)) {
-            if (isAIAdopted(ai, aiStrengths))
+            if (isAIAdopted(proposal.ai, aiStrengths))
                 ProposalResult.ADOPTED
             else
                 ProposalResult.REJECTED
         } else {
             ProposalResult.FAILED_QUORUM
         },
+        quorum = quorum,
         aiStrengths = aiStrengths,
         votingStrengths = votingStrengthMap,
         votes = votes,
@@ -159,7 +160,6 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
                     proposal = proposal,
                     quorum = ProposalQuorum(assessmentData.quorum.generic()),
                     votingStrengthMap = strengthTrails,
-                    ai = proposal.ai,
                     votes = votes,
                 )
             },
