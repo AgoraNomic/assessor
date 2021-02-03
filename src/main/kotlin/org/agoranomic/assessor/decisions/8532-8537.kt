@@ -420,5 +420,14 @@ Repeal Rule 2479 (Official Injustice).""")
             FOR on 8536
             FOR on 8537
         }
+
+        votes(Trigon) {
+            FOR on 8532
+            FOR on 8533
+            FOR on 8534
+            FOR on 8535
+            FOR on 8536
+            PRESENT on 8537
+        }
     }
 }
