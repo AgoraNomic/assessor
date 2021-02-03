@@ -389,5 +389,9 @@ Repeal Rule 2479 (Official Injustice).""")
             PRESENT on 8536
             PRESENT on 8537
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
