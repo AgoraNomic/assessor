@@ -368,4 +368,7 @@ Amend Rule 2555 (Blots) to read in full.
 Repeal Rule 2479 (Official Injustice).""")
         }
     }
+
+    voting {
+    }
 }
