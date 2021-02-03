@@ -1,0 +1,704 @@
+{
+    "metadata": {
+        "name": "8530-8531",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-January/014578.html"
+    },
+    "proposals": [
+        {
+            "version": "3",
+            "number": 8530,
+            "ai": "1.0",
+            "title": "No Honour",
+            "author": "nix",
+            "coauthors": [
+                "Jason"
+            ],
+            "text": "Repeal R2510, \"Such is Karma\".\n\n[Karma gets rare, sporadic usage and I'd prefer not to maintain it if\nit's not going to be used. I'm also open to supporting efforts to revive\nit, but I don't have the time/interest to write such proposals myself\nright now.]"
+        },
+        {
+            "version": "3",
+            "number": 8531,
+            "ai": "1.5",
+            "title": "Patent Title Restoration v2",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 649 by replacing \"A Patent Title is a legal title given to a\nperson in recognition of the person's distinction\" with \"A Patent Title\nis a legal title held by an entity in recognition of eir distinction\".\n\n[The current version could plausibly be read to strip patent titles when\nan entity ceases to be a person. This makes it so that patent titles can\nbe held by all entities, but can only be awarded to persons. The\nrequirement on personhood/citizenship is explicit for most awarding\nmethods (including the Herald's general method), while the other methods\nrequire 2 Agoran consent, which should be enough to prevent them going\nto non-persons if we don't want them to as a group. There's not really\nan easy place to put an explicit restriction, because some of the 2\nAgoran consent methods are at Power 3, while the patent titles rule is\nat Power 1.5.]\n\nAward all Patent Titles to eir former holders that were lost solely due\nto the entity not being a person (under any current or former definition\nof \"person\"), other than Hero of Agora Nomic or Grand Hero of Agora Nomic.\n\n[Don't try to award HAN/GHAN because it seems unlikely they were ever\nstripped and because this proposal doesn't have high enough AI to do so.]"
+        }
+    ],
+    "quorum": 2,
+    "resolutions": [
+        {
+            "proposal": 8530,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 28,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "JTAC",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Conditional resolved: Herald is FOR",
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: Herald is FOR"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Noah",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of nix",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "Cuddle Beam",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 1 for holding Speaker",
+                                "kind": "office_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Speaker's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Herald's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Herald"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "ATMunn",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Prime Minister's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "PrimeMinister"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Rulekeepor's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Rulekeepor"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                }
+            ]
+        },
+        {
+            "proposal": 8531,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 36,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "JTAC",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of nix",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of non-voter G.",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "readable": "Inextricable",
+                                "kind": "inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Noah",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "Cuddle Beam",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 1 for holding Speaker",
+                                "kind": "office_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Speaker's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Speaker"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Herald's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Herald"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "ATMunn",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Prime Minister's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "PrimeMinister"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bonus of 2 for Rulekeepor's interest in Legacy",
+                                "kind": "ministry_bonus",
+                                "parameters": [
+                                    {
+                                        "name": "office",
+                                        "value": "Rulekeepor"
+                                    },
+                                    {
+                                        "name": "interest",
+                                        "value": "Legacy"
+                                    },
+                                    {
+                                        "name": "amount",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                }
+            ]
+        }
+    ]
+}
