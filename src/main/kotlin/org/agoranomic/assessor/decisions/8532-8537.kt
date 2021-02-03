@@ -429,5 +429,14 @@ Repeal Rule 2479 (Official Injustice).""")
             FOR on 8536
             PRESENT on 8537
         }
+
+        votes(Falsifian) {
+            endorse(G) on 8532
+            endorse(G) on 8533
+            endorse(Aris) on 8534
+            endorse(Aris) on 8535
+            endorse(Aris) on 8536
+            endorse(G) on 8537
+        }
     }
 }
