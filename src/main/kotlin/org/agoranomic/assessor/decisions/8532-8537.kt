@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
@@ -392,6 +393,15 @@ Repeal Rule 2479 (Official Injustice).""")
 
         votes(G) {
             FOR on all
+        }
+
+        votes(Jason) {
+            endorse(G) on 8532
+            FOR on 8533
+            FOR on 8534
+            PRESENT on 8535
+            FOR on 8536
+            PRESENT on 8537
         }
     }
 }
