@@ -384,7 +384,7 @@ Repeal Rule 2479 (Official Injustice).""")
         votes(nix) {
             PRESENT on 8532
             FOR on 8533
-            // TODO resolve conditional vote on 8534: FOR if G. and Jason unconditionally FOR, else PRESENT
+            FOR on 8534 comment conditional("G. and Jason voted conditionally FOR")
             PRESENT on 8535
             PRESENT on 8536
             PRESENT on 8537
