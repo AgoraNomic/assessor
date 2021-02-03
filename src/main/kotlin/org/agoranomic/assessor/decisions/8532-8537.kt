@@ -10,6 +10,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.proposal.MinistryV2.Compliance
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8532to8537() = assessment {
@@ -370,5 +372,13 @@ Repeal Rule 2479 (Official Injustice).""")
     }
 
     voting {
+        votes(Aris) {
+            PRESENT on 8532
+            FOR on 8533
+            FOR on 8534
+            FOR on 8535
+            FOR on 8536
+            PRESENT on 8537
+        }
     }
 }
