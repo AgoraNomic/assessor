@@ -438,5 +438,14 @@ Repeal Rule 2479 (Official Injustice).""")
             endorse(Aris) on 8536
             endorse(G) on 8537
         }
+
+        votes(Murphy) {
+            FOR on 8532
+            FOR on 8533
+            PRESENT on 8534
+            FOR on 8535
+            PRESENT on 8536
+            FOR on 8537
+        }
     }
 }
