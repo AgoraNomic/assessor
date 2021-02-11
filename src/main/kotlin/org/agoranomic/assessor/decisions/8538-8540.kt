@@ -331,5 +331,9 @@ the following text:
             FOR on 8539
             FOR on 8540
         }
+
+        votes(ATMunn) {
+            FOR on all
+        }
     }
 }
