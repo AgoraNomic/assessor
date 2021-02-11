@@ -346,5 +346,11 @@ the following text:
             FOR on 8539
             AGAINST on 8540
         }
+
+        votes(Murphy) {
+            FOR on 8538
+            FOR on 8539
+            FOR on 8540
+        }
     }
 }
