@@ -306,4 +306,7 @@ the following text:
   unresolved.""")
         }
     }
+
+    voting {
+    }
 }
