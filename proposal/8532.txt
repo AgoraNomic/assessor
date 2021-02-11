@@ -1,0 +1,87 @@
+PROPOSAL 8532 (Turn Undead v2)
+AUTHOR: G.
+CLASS: DEMOCRATIC
+SPONSORED: YES
+FOR (7): ATMunn, Falsifian, G., Gaelan, Jason, Murphy, Trigon
+AGAINST (0): 
+PRESENT (2): Aris, nix
+BALLOTS: 9
+AI (F/A): 21/0 (AI=3.0)
+POPULARITY: 0.778
+OUTCOME: ADOPTED
+[
+Falsifian: Endorsement of G.
+Jason: Endorsement of G.
+]
+
+ID: 8532
+Title: Turn Undead v2
+Adoption index: 3.0
+Author: G.
+Co-authors: 
+
+
+[
+diffs from proto:
+ - Made activity switchable in both directions at will.
+ - Defined two verbs.
+ - Adjusted time limits as suggested.
+ - Added inactivity as a cfj recusal reason.
+diffs from v1:
+ - Made emailing a deregistree a SHOULD, but changed the method to
+   w/o three objections, with the idea that if there's question
+   about the email headers or whatever, objections can pragmatically
+   handle the issue.
+]
+
+Create the following Rule, Activity:
+
+  Activity is a player switch tracked by the Registrar, with values
+  Active (default) and Inactive.  To flip a player's activity to
+  active (inactive) is to activate (deactivate) em.  The date on
+  which each player's activity was last changed is part of the
+  Registrar's weekly report.
+
+  A player CAN activate or deactivate emself by announcement.
+
+  Any player CAN, with notice, make a player who has not made a
+  public announcement in the past 30 days inactive.
+
+  If a player has been inactive continuously for the past 60 days,
+  then any player CAN deregister em without 3 objections. The
+  Registrar SHOULD attempt to deregister players who meet this
+  condition. The publication of intent for such a deregistration
+  SHOULD be sent to the inactive player's registered email address
+  at the same time that it is published.
+
+
+Every player's activity is flipped to active [unneeded I think due
+to default behavior, but precautionary?]
+
+
+Amend Rule 2492 (Recusal) by appending the following text to the
+second paragraph:
+  The Arbitor CAN recuse an inactive or deregistered judge from a
+  case by announcement.
+
+Repeal Rule 2532 (Zombies).
+Repeal Rule 2574 (Zombie Life Cycle).
+Repeal Rule 2639 (Zombie Phase-Out).
+Repeal Rule 1885 (Zombie Auctions).
+
+Amend Rule 2472 (Office Incompatibilities) by deleting:
+  A zombie is Overpowered if e holds one or more offices.
+
+Amend Rule 2531 (Defendant's Rights) by deleting:
+  (10) it attempts to levy a fine on a zombie for an action that
+       its master performed on its behalf.
+
+Amend Rule 2621 (VP Wins) by replacing "non-zombie"  with "active".
+
+Amend Rule 2581 (Official Patent Titles) by deleting:
+  - Necromancer, awardable by the Registrar to any player who makes
+    such sufficient persistent legal use of zombies that rules need
+    to be amended to prevent such practices.
+
+[Checked all the other uses of "active" and "inactive" pertaining to
+players, looked like all would work fine under this version]
