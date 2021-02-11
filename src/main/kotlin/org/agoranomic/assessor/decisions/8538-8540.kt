@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.ministries.officeMapOf
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -14,6 +15,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.*
 @UseAssessment
 fun assessment8538to8540() = assessment {
     name("8538-8540")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-February/014637.html")
     quorum(6)
 
     val offices = officeMapOf(
