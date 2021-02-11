@@ -9,8 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8538to8540() = assessment {
@@ -340,6 +339,12 @@ the following text:
             FOR on 8538
             FOR on 8539
             FOR on 8540
+        }
+
+        votes(Trigon) {
+            FOR on 8538
+            FOR on 8539
+            AGAINST on 8540
         }
     }
 }
