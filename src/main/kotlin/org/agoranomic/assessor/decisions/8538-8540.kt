@@ -335,5 +335,11 @@ the following text:
         votes(ATMunn) {
             FOR on all
         }
+
+        votes(Falsifian) {
+            FOR on 8538
+            FOR on 8539
+            FOR on 8540
+        }
     }
 }
