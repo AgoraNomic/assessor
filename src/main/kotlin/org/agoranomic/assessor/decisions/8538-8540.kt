@@ -9,6 +9,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.addToHolder
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8538to8540() = assessment {
@@ -308,5 +309,8 @@ the following text:
     }
 
     voting {
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
