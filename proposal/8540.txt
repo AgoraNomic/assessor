@@ -1,0 +1,100 @@
+PROPOSAL 8540 (Strengthening Extra Votes v2.1)
+AUTHOR: nix
+CLASS: DEMOCRATIC
+SPONSORED: YES
+FOR (6): ATMunn, Cuddle Beam$, Falsifian, Jason, Murphy, nix
+AGAINST (1): Trigon
+PRESENT (1): Aris
+BALLOTS: 8
+AI (F/A): 19/3 (AI=3.0)
+POPULARITY: 0.625
+OUTCOME: ADOPTED
+
+ID: 8540
+Title: Strengthening Extra Votes v2.1
+Adoption index: 3.0
+Author: nix
+Co-authors: Aris, Jason
+
+
+[
+This proposal does three things:
+
+* Removes all passive Voting Strength bonuses. They rarely make a
+   difference, which makes them uninteresting complexity. That also means
+   I'm removing chambers, since they no longer do anything.
+
+* Strengthens Extra Votes. Now they apply to all decisions within a
+   voting period. This just makes them feel nicer to use. Also the Buying
+   Strength cap is gone.
+
+* Adds a weekly reward for having the highest strength. So there's
+   incentive to consider using them even when you're not trying to force
+   through/sink a proposal.
+
+* Removes the Economy focus. Since EVs will give a cash reward, they
+   fill the same niche as this focus but in a more interesting way.
+   Additionally, removing one focus makes the others more competitive.
+]
+
+Amend R2422, "Voting Strength", by replacing:
+
+  A player CAN Buy Strength by paying 1 Extra Vote and specifying a
+  current Agoran decision on which e is a voter. For each time a
+  player has Bought Strength on a decision, eir voting strength is 1
+  greater on that decision. If the decision is on a proposal, and
+  the proposal's chamber and the player's focus are the same value,
+  then eir voting strength is instead 2 greater on that decision. A
+  player CANNOT Buy Strength for the same decision more than 3
+  times.
+
+with:
+
+  A player CAN Buy Strength by paying a fee of 1 Extra Vote. A
+  player's Voting Strength on an ordinary referendum is 1 greater
+  for every time e Bought Strength during that decision's voting
+  period.
+
+Amend R2645, "The Stones", by replacing:
+
+  - Power Stone (weekly, 40%): A specified player hereby buys
+    strength 3 times on a specified unresolved Agoran decision.
+
+with:
+
+  - Power Stone (weekly, 40%): A specified player hereby Buys
+    Strength 3 times.
+
+Repeal R2637, "Office Interests".
+
+Repeal R2607, "Proposal Chambers".
+
+Amend R1607, "Distribution", by replacing "the text, author, coauthors,
+class and (if applicable) chamber" with "the text, author, coauthors,
+and class".
+
+Amend R2350, "Proposals", by removing:
+
+  * A chamber to which the proposal shall be assigned upon its
+    creation.
+
+Amend R103, "The Speaker", by removing:
+
+  The Speaker has voting strength one greater than e would have if
+  e did not hold the office.
+
+Amend R2624, "Card Administration, by removing:
+
+  Ministry of Economy: 50 boatloads of coins divided by X, rounded
+  up; where X is the number of players with their Ministry Focus set
+  to Economy. The Ministor SHALL report this value in a timely
+  manner after the beginning of the month.
+
+Enact a new Power 1 rule titled "Vocal Voter Verification Award" with
+the following text:
+
+  The sole player, if any, who had the highest voting strength among
+  all votes cast on all decisions resolved in the last 7 days CAN
+  once grant emself 7 boatloads of coins by announcement, provided
+  that no referenda initiated in the same message as it remain
+  unresolved.
