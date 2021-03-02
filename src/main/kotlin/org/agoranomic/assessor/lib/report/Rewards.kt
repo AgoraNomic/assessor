@@ -81,6 +81,10 @@ private fun Proposal.isRewardable(): Boolean {
         override fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3): Boolean {
             return versionedData.sponsored
         }
+
+        override fun visitV4(commonData: ProposalCommonData, versionedData: ProposalDataV4): Boolean {
+            return versionedData.sponsored
+        }
     })
 }
 

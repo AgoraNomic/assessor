@@ -75,7 +75,7 @@ private data class ResolvedEndorseOrElseResolvingVote(
 
     override val currentStepDescription: VoteStepDescription
         get() =
-            if (resolution == null)
+            if (resolution != null)
                 VoteStepDescription.None
             else
                 VoteStepDescription.WithReadable(
