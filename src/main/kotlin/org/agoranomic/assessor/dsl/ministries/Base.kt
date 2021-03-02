@@ -61,10 +61,6 @@ private fun <Ministry : AnyMinistry> ProposalVotingStrengthReceiver.updateVoting
     }
 }
 
-private fun GlobalVotingStrengthReceiver.ministriesProposalV0() {
-    /* do nothing */
-}
-
 private fun <Ministry : AnyMinistry> GlobalVotingStrengthReceiver.ministriesChambered(
     officeMap: Map<OfficeID, Person>,
     officeMinistries: Map<OfficeID, List<Ministry>>,
@@ -117,7 +113,7 @@ private fun <Office, Ministry : AnyMinistry> GlobalVotingStrengthReceiver.minist
     for (currentProposal in proposals) {
         currentProposal.accept(object : ProposalChamberedVisitor() {
             override fun visitUnchambered(commonData: ProposalCommonData) {
-                ministriesProposalV0()
+                // Proposals without chambers have no ministries
             }
 
             override fun visitChamberedV1(commonData: ProposalCommonData, classAndChamber: ProposalClassAndChamberV1) {
