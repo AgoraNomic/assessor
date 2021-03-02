@@ -156,5 +156,11 @@ Amend Rule 2621 "VP Wins" to read, in whole:
             endorse(Jason) on 8542
             endorse(Jason) on 8543
         }
+
+        votes(Murphy) {
+            FOR on 8541
+            FOR on 8542
+            FOR on 8543
+        }
     }
 }
