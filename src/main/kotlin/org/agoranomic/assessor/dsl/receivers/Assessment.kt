@@ -23,12 +23,14 @@ interface AssessmentReceiver {
     val v1 get() = org.agoranomic.assessor.dsl.v1
     val v2 get() = org.agoranomic.assessor.dsl.v2
     val v3 get() = org.agoranomic.assessor.dsl.v3
+    val v4 get() = org.agoranomic.assessor.dsl.v4
 
     fun proposals(block: ProposalsReceiverAddOnlyInit)
     fun proposals(v0: Version0, block: ProposalsReceiverV0Init)
     fun proposals(v1: Version1, block: ProposalsReceiverV1Init)
     fun proposals(v2: Version2, block: ProposalsReceiverV2Init)
     fun proposals(v3: Version3, block: ProposalsReceiverV3Init)
+    fun proposals(v4: Version4, block: ProposalsReceiverV4Init)
 }
 
 typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
@@ -46,6 +48,7 @@ private class DefaultAssessmentReceiver(
     val proposalsCompilerV1: ProposalsCompilerV1 = DefaultProposalsCompilerV1(),
     val proposalsCompilerV2: ProposalsCompilerV2 = DefaultProposalsCompilerV2(),
     val proposalsCompilerV3: ProposalsCompilerV3 = DefaultProposalsCompilerV3(),
+    val proposalsCompilerV4: ProposalsCompilerV4 = DefaultProposalsCompilerV4(),
     val multiPersonVotesCompiler: MultiPersonVotesCompiler = DefaultMultiPersonVotesCompiler(),
     val globalVotingStrengthCompiler: GlobalVotingStrengthCompiler = DefaultGlobalVotingStrengthCompiler(),
 ) : AssessmentReceiver {
@@ -83,6 +86,11 @@ private class DefaultAssessmentReceiver(
     override fun proposals(v3: Version3, block: ProposalsReceiverV3Init) {
         @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
         proposalsBlockValue.set({ proposalsCompilerV3.compile(block) })
+    }
+
+    override fun proposals(v4: Version4, block: ProposalsReceiverV4Init) {
+        @Suppress("MoveLambdaOutsideParentheses") // Lambda is the value, so it should be in parentheses
+        proposalsBlockValue.set({ proposalsCompilerV4.compile(block) })
     }
 
     override fun voting(block: MultiPersonVotesReceiverInit) {

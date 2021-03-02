@@ -92,6 +92,13 @@ private fun <Chamber : AnyMinistry> renderClassAndChamberHeader(
     })
 }
 
+private fun renderClassHeader(proposalClass: ProposalClassV3): String {
+    return when (proposalClass) {
+        ProposalClassV3.ORDINARY -> "CLASS: ORDINARY\n"
+        ProposalClassV3.DEMOCRATIC -> "CLASS: DEMOCRATIC\n"
+    }
+}
+
 private fun renderSponsoredHeader(sponsored: Boolean): String {
     return "SPONSORED: ${if (sponsored) "YES" else "NO"}\n"
 }
@@ -107,6 +114,8 @@ private fun renderProposalV3Header(data: ProposalDataV3) = buildString {
     append(renderClassAndChamberHeader(data.classAndChamber))
     append(renderSponsoredHeader(data.sponsored))
 }
+
+private fun renderProposalV4Header(data: ProposalDataV4) = renderClassHeader(data.proposalClass)
 
 private fun renderProposalHeader(config: ReadableProposalReportConfig, proposal: Proposal) = buildString {
     appendLine("PROPOSAL ${proposal.number} (${proposal.title})")
@@ -127,6 +136,10 @@ private fun renderProposalHeader(config: ReadableProposalReportConfig, proposal:
 
         override fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3) {
             append(renderProposalV3Header(versionedData))
+        }
+
+        override fun visitV4(commonData: ProposalCommonData, versionedData: ProposalDataV4) {
+            append(renderProposalV4Header(versionedData))
         }
     })
 }

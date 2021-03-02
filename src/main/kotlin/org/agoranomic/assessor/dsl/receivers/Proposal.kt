@@ -80,6 +80,16 @@ interface ProposalReceiverV3 : ProposalCommonReceiver, ProposalClassAndChamberV2
 typealias ProposalReceiverV3Init = DslInit<ProposalReceiverV3>
 typealias ProposalCompilerV3 = ProposalCompiler<ProposalReceiverV3>
 
+interface ProposalClassV3Receiver {
+    fun democratic()
+    fun ordinary()
+}
+
+@AssessmentDsl
+interface ProposalReceiverV4 : ProposalCommonReceiver, ProposalClassV3Receiver, ProposalSponsoredReceiver
+
+typealias ProposalReceiverV4Init = DslInit<ProposalReceiverV4>
+typealias ProposalCompilerV4 = ProposalCompiler<ProposalReceiverV4>
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
@@ -188,6 +198,23 @@ private class ProposalClassAndChamberV2ReceiverImpl(val number: ProposalNumber) 
     }
 }
 
+private class ProposalClassV3ReceiverImpl(val number: ProposalNumber) : ProposalClassV3Receiver {
+    private val classAndChamberValue =
+        SetOnce.namedOf<ProposalClassV3>("class of proposal $number")
+
+    override fun democratic() {
+        classAndChamberValue.set(ProposalClassV3.DEMOCRATIC)
+    }
+
+    override fun ordinary() {
+        classAndChamberValue.set(ProposalClassV3.ORDINARY)
+    }
+
+    fun compile(): ProposalClassV3 {
+        return classAndChamberValue.get()
+    }
+}
+
 @AssessmentDsl
 private class DefaultProposalReceiverV1(
     number: ProposalNumber,
@@ -263,5 +290,34 @@ private class DefaultProposalReceiverV3(
 class DefaultProposalCompilerV3 : ProposalCompilerV3 {
     override fun compile(number: ProposalNumber, init: DslInit<ProposalReceiverV3>): Proposal {
         return DefaultProposalReceiverV3(number).also(init).compile()
+    }
+}
+
+@AssessmentDsl
+private class DefaultProposalReceiverV4(
+    number: ProposalNumber,
+    val commonImpl: ProposalCommonReceiverImpl = ProposalCommonReceiverImpl(number),
+    val classImpl: ProposalClassV3ReceiverImpl = ProposalClassV3ReceiverImpl(number),
+) : ProposalReceiverV4, ProposalCommonReceiver by commonImpl, ProposalClassV3Receiver by classImpl {
+    private val sponsoredFuse = SetOnceFuse.named("sponsored")
+
+    override fun sponsored() {
+        sponsoredFuse.blow()
+    }
+
+    fun compile(): Proposal {
+        return Proposal(
+            commonData = commonImpl.compile(),
+            versionedData = ProposalDataV4(
+                proposalClass = classImpl.compile(),
+                sponsored = sponsoredFuse.isBlown()
+            )
+        )
+    }
+}
+
+class DefaultProposalCompilerV4 : ProposalCompilerV4 {
+    override fun compile(number: ProposalNumber, init: DslInit<ProposalReceiverV4>): Proposal {
+        return DefaultProposalReceiverV4(number).also(init).compile()
     }
 }

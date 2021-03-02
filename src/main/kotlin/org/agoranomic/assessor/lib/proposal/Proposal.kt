@@ -67,6 +67,15 @@ interface ProposalClassAndChamberV2Data {
     val classAndChamber: ProposalClassAndChamberV2
 }
 
+enum class ProposalClassV3 {
+    ORDINARY,
+    DEMOCRATIC,
+}
+
+interface ProposalClassV3Data {
+    val proposalClass: ProposalClassV3
+}
+
 interface ProposalSponsoredData {
     val sponsored: Boolean
 }
@@ -112,11 +121,24 @@ data class ProposalDataV3(
     }
 }
 
+data class ProposalDataV4(
+    override val proposalClass: ProposalClassV3,
+    override val sponsored: Boolean,
+) : ProposalVersionedData(), ProposalClassV3Data, ProposalSponsoredData {
+    override val version: ProposalVersionNumber
+        get() = ProposalVersionNumber(4)
+
+    override fun <R> accept(mapper: ProposalMapper<R>, commonData: ProposalCommonData): R {
+        return mapper.visitV4(commonData, this)
+    }
+}
+
 interface ProposalMapper<R> {
     fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0): R
     fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1): R
     fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2): R
     fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3): R
+    fun visitV4(commonData: ProposalCommonData, versionedData: ProposalDataV4): R
 }
 
 typealias ProposalVisitor = ProposalMapper<Unit>
@@ -145,6 +167,9 @@ abstract class ProposalChamberedMapper<R> : ProposalMapper<R> {
 
     final override fun visitV3(commonData: ProposalCommonData, versionedData: ProposalDataV3): R =
         visitChamberedV2(commonData, versionedData.classAndChamber)
+
+    override fun visitV4(commonData: ProposalCommonData, versionedData: ProposalDataV4): R =
+        visitUnchambered(commonData)
 }
 
 typealias ProposalChamberedVisitor = ProposalChamberedMapper<Unit>
