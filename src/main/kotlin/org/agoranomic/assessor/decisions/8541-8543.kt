@@ -122,4 +122,7 @@ Amend Rule 2621 "VP Wins" to read, in whole:
             )
         }
     }
+
+    voting {
+    }
 }
