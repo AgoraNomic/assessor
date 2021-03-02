@@ -143,5 +143,11 @@ Amend Rule 2621 "VP Wins" to read, in whole:
             FOR on 8542
             FOR on 8543
         }
+
+        votes(Jason) {
+            FOR on 8541
+            FOR on 8542
+            FOR on 8543
+        }
     }
 }
