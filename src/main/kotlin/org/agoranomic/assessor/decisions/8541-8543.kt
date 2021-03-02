@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8541to8543() = assessment {
@@ -124,5 +125,10 @@ Amend Rule 2621 "VP Wins" to read, in whole:
     }
 
     voting {
+        votes(Trigon) {
+            FOR on 8541
+            FOR on 8542
+            FOR on 8543
+        }
     }
 }
