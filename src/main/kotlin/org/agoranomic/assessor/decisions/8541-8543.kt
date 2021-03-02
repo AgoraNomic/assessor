@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -128,6 +129,12 @@ Amend Rule 2621 "VP Wins" to read, in whole:
         votes(Trigon) {
             FOR on 8541
             FOR on 8542
+            FOR on 8543
+        }
+
+        votes(Aris) {
+            FOR on 8541
+            endorseOrElse(Jason, FOR) on 8542
             FOR on 8543
         }
     }
