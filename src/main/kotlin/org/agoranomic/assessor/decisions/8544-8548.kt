@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.ResolvedVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 import org.agoranomic.assessor.lib.vote.commented
@@ -333,6 +334,14 @@ Stone." works and grants the wielder coins.]"""
             FOR on 8546
             FOR on 8547
             FOR on 8548
+        }
+
+        votes(Falsifian) {
+            FOR on 8544
+            endorse(Aris) on 8545
+            endorse(G) on 8546
+            endorse(Jason) on 8547
+            endorse(Jason) on 8548
         }
     }
 }
