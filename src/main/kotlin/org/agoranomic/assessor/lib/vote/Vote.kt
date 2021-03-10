@@ -100,6 +100,8 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
         )
 }
 
+fun ResolvingVote.commented(comment: String) = CommentedResolvingVote(comment = comment, nextVote = this)
+
 data class TaggedResolvingVote(val tag: String, val nextVote: ResolvingVote) : ResolvingVote {
     override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
         return VoteStepResolution.Continue(nextVote)
