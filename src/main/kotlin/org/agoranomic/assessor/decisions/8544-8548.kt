@@ -359,5 +359,13 @@ Stone." works and grants the wielder coins.]"""
             PRESENT on 8547
             FOR on 8548
         }
+
+        votes(Murphy) {
+            FOR on 8544
+            FOR on 8545
+            FOR on 8546
+            FOR on 8547
+            PRESENT on 8548
+        }
     }
 }
