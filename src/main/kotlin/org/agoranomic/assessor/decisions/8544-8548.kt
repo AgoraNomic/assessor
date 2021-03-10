@@ -307,4 +307,7 @@ Stone." works and grants the wielder coins.]"""
             )
         }
     }
+
+    voting {
+    }
 }
