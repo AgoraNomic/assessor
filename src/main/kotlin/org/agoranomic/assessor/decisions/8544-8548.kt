@@ -5,8 +5,11 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.ResolvedVote
+import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.commented
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment8544to8548() = assessment {
@@ -313,6 +316,19 @@ Stone." works and grants the wielder coins.]"""
     voting {
         votes(Aris) {
             PRESENT on 8544
+            FOR on 8545
+            FOR on 8546
+            FOR on 8547
+            FOR on 8548
+        }
+
+        votes(Jason) {
+            function { ctx ->
+                if (ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted == FOR)
+                    ResolvedVote(FOR).commented(conditional("G. voted FOR"))
+                else
+                    ResolvedVote(AGAINST).commented(conditional("G. did not vote FOR"))
+            } on 8544
             FOR on 8545
             FOR on 8546
             FOR on 8547
