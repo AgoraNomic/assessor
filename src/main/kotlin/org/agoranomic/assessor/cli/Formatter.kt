@@ -68,7 +68,7 @@ data class ProposalsReadableFormatter(
                                 proposal,
                                 resolution.resolutionOf(proposal.number),
                                 resolution.votingStrengthsFor(proposal.number),
-                            )
+                            ) + "\nResolved at: ${resolution.metadata.url}\n"
                         } +
                         "\n" +
                         renderProposalText(proposal)
