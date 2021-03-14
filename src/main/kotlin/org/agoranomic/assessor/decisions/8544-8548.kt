@@ -367,5 +367,10 @@ Stone." works and grants the wielder coins.]"""
             FOR on 8547
             PRESENT on 8548
         }
+
+        votes(Trigon) {
+            // Cast after resolution of everything but 8544, which failed quorum when the rest were resolved.
+            PRESENT on 8544
+        }
     }
 }
