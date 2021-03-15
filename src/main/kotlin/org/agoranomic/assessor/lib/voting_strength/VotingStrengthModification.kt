@@ -32,7 +32,7 @@ interface VotingStrengthModification {
     fun transform(old: VotingStrength): VotingStrength
 }
 
-class AdditiveVotingStrengthModification(
+data class AdditiveVotingStrengthModification(
     private val addend: VotingStrengthDifference,
     override val description: VotingStrengthModificationDescription
 ) : VotingStrengthModification {
@@ -53,7 +53,7 @@ class AdditiveVotingStrengthModification(
     }
 }
 
-class ClampVotingStrengthModification(
+data class ClampVotingStrengthModification(
     private val minValue: VotingStrength?,
     private val maxValue: VotingStrength?
 ) : VotingStrengthModification {
