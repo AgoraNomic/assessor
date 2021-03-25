@@ -1,0 +1,553 @@
+{
+    "metadata": {
+        "name": "8544-8548",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-March/014711.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-March/014726.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8544,
+            "ai": "3.0",
+            "title": "Clarify dependent actions",
+            "author": "Murphy",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2595 (Performing a Dependent Action) to read:\n\n  A rule that purports to allow a person (the performer) to perform\n  an action by a set of one or more dependent actions thereby allows\n  em to perform the action by announcement if all of the following\n  are true:\n\n  1. A person (the initiator) published an announcement of intent\n    that unambiguously, clearly, conspicuously, and without\n    obfuscation specified the action intended to be taken and the\n    method(s) to be used, including these values if relevant:\n\n      * If the action is to be taken with T notice, then the value\n        of T.\n\n      * If the action is to be taken without N objections, with N\n        support, or with N Agoran Consent, and N is not equal to 1,\n        then the value of N.\n\n  2. The time between the announcement of intent and the action is\n    at most 14 days. In addition:\n\n      * If the action is to be taken without N objections or with N\n        Agoran consent, then it is at least 4 days.\n\n      * If the action is to be taken with T notice, then it is at\n        least T (minimum of 4 days).\n\n  3. At least one of the following is true:\n\n      * The performer is the initiator.\n\n      * The initiator was authorized to perform the action due to\n        holding a rule-defined position now held by the performer.\n\n      * The initiator is authorized to perform the action, the\n        action depends on support, the performer has supported the\n        intent, and the rule authorizing the performance does not\n        explicitly prohibit supporters from performing it.\n\n  4. Agora is Satisfied with the announced intent, as defined by\n    other Rules.\n\n  5. If the announcement of intent stated any conditions, then those\n    conditions are all met.\n\n  If the action is to be taken with N Agoran consent, then the\n  performer SHOULD publish a list of supporters and objectors.\n\nAmend Rule 2124 (Agoran Satisfaction) to read:\n\n  A Supporter of an intent to perform an action is an eligible\n  entity who has publicly posted (and not withdrawn) support for an\n  announcement of that intent.\n\n  An Objector to an intent to perform an action is an eligible\n  entity who has publicly posted (and not withdrawn) an objection to\n  the announcement of that intent.\n\n  The entities eligible to support or object to an intent to perform\n  an action are, by default, all players, subject to modification by\n  the document authorizing the dependent action. However, the\n  previous sentence notwithstanding, the initiator of the intent is\n  not eligible to support it, and a person CANNOT support or object\n  to an announcement of intent before the intent is announced, or\n  after e has withdrawn the same type of response.\n\n  Agora is Satisfied with an intent to perform a specific action\n  unless at least one of the following is true:\n\n  1. The action is to be performed without N objections, and there\n    are at least N Objectors to that intent.\n\n  2. The action is to be performed with N support, and there are\n    fewer than than N Supporters of that intent.\n\n  3. The action is to be performed with N Agoran consent, and the\n    number of Supporters of that intent is less than or equal to N\n    times the number of Objectors to that intent.\n\n  4. The action is to be performed without N objections or with N\n    Agora consent, and an objection to that intent was withdrawn\n    within the past 24 hours.\n\n  5. The Speaker objected to that intent within the past 48 hours."
+        },
+        {
+            "version": "4",
+            "number": 8545,
+            "ai": "3.0",
+            "title": "Uncanny Fixes",
+            "author": "Aris",
+            "coauthors": [
+                "Murphy"
+            ],
+            "text": "[CAN requires a method, but there are a bunch of places it occurs\nwithout a method or is otherwise used incorrectly. For instance,\nall caps CAN is used in a bunch of places where its narrow, technical\nmeaning doesn't quite seem to apply.]\n\n\nAmend Rule 2505, \"Random Choices\", by replacing:\n\n  The choice CAN be made using any physical or computational process\n  whose probability distribution among the possible outcomes is\n  reasonably close to that required by the Rules, and for which the\n  final choice is not trivially predictable by the selecting person\n  in advance.\n\nwith:\n\n  The choice can be made using any physical or computational process\n  whose probability distribution among the possible outcomes is\n  reasonably close to that required by the Rules, and for which the\n  final choice is not trivially predictable by the selecting person\n  in advance.\n\n\nAmend Rule 2619, \"Indictment\", by replacing:\n\n  When an investigator has issued an Indictment, the perpetrator CAN\n  state a defence.\n\nwith:\n\n  When an investigator has issued an Indictment, the perpetrator may\n  state a defence.\n\nAmend Rule 591, \"Delivering Judgements\", by replacing:\n\n  A CFJ judged as INSUFFICIENT CAN and SHOULD be\n  submitted again with sufficient arguments/evidence.\n\nwith:\n\n  A CFJ judged as INSUFFICIENT SHOULD be submitted again with\n  sufficient arguments/evidence.\n\n\nAmend Rule 2634, \"Buoyancy Control\", by replacing:\n\n  The Treasuror CAN and MAY exercise reasonable judgement in\n  calculating the Total Buoyancy. The Total Buoyancy will be deemed\n  set so long as the value chosen by the Treasuror is not obviously\n  and grossly incorrect. The Treasuror CAN and MAY set the Total\n  Buoyancy more than once a month, but SHOULD NOT do so unless there\n  is reason to believe eir previous setting of the value failed.\n\nwith:\n\n  The Treasuror may exercise reasonable judgement in\n  calculating the Total Buoyancy. The Total Buoyancy will be deemed\n  set so long as the value chosen by the Treasuror is not obviously\n  and grossly incorrect. The Treasuror may set the Total\n  Buoyancy more than once a month, but SHOULD NOT do so unless there\n  is reason to believe eir previous setting of the value failed.\n\n\nAmend Rule 2231, \"Order of the Hero of Agora Nomic\", by replacing:\n\n  Grand Hero of Agora Nomic (GHAN) -- This title CAN be awarded to\n  any person obviously and directly responsible for the existence of\n  Agora and/or Nomic in general. As this title is the highest honour\n  that Agora may bestow, a Bearer of this title OUGHT to be treated\n  right good forever.\n\n  Hero of Agora Nomic (HAN) -- This title CAN be awarded to any\n  person for outstanding meritorious service to Agora above and\n  beyond the call of duty.\n\nwith:\n\n  Grand Hero of Agora Nomic (GHAN) -- This title may be awarded to\n  any person obviously and directly responsible for the existence of\n  Agora and/or Nomic in general. As this title is the highest honour\n  that Agora may bestow, a Bearer of this title OUGHT to be treated\n  right good forever.\n\n  Hero of Agora Nomic (HAN) -- This title may be awarded to any\n  person for outstanding meritorious service to Agora above and\n  beyond the call of duty.\n\n\n[Unless there's an objection, just going to yank this. No reason for\nfree tournaments to be treated differently than other kinds of tournament.]\n\nAmend Rule 2566, \"Free Tournaments\", by removing:\n\n  Rules to the contrary notwithstanding, only players CAN win the game\n  via a free tournament.\n\nAmend Rule 2614, \"Eclipse Light\", by replacing:\n\n  Emergency Regulations CAN:\n\nwith:\n\n  Emergency Regulations CAN, as part of their effect:\n\n\nAmend Rule 107, \"Initiating Agoran Decisions\", by replacing:\n\n  The vote collector for a decision with less than two options\n  CAN and SHALL end the voting period by announcement, if it has not\n  ended already, and provided that e resolves the decision in the\n  same message.\n\nwith:\n\n  The vote collector for a decision with less than two options\n  CAN end the voting period by announcement, if it has not\n  ended already, and provided that e resolves the decision in the\n  same message.\n\nAmend Rule 2573, \"Impeachment\", by replacing:\n\n  A player CAN be expelled (impeached) from a specified elected\n  office which e holds with 2 Agoran consent.\n\nwith:\n\n  Any player CAN, with 2 Agoran consent, expel (impeach) the\n  holder of a specified elected office."
+        },
+        {
+            "version": "4",
+            "number": 8546,
+            "ai": "3.0",
+            "title": "Talisn't",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2575 (The Distributor) by replacing:\n  Rules to the contrary notwithstanding, the talisman for the\n  Distributor is possessed by emself (and is transferred to em if it\n  ever is not), and e CANNOT deregister or be deregistered.\nwith:\n  Rules to the contrary notwithstanding, the\n  Distributor CANNOT deregister or be deregistered."
+        },
+        {
+            "version": "4",
+            "number": 8547,
+            "ai": "3.0",
+            "title": "ER office restriction",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2614 (\"Eclipse Light\") by replacing \"Appoint or remove\nofficeholders.\" with \"Appoint or remove officeholders, other than Prime\nMinister or Speaker.\""
+        },
+        {
+            "version": "4",
+            "number": 8548,
+            "ai": "3.0",
+            "title": "Stone defaults",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2645 (The Stones) by replacing each instance of \"A specified\nplayer\" with \"A specified player (defaulting to the wielder if not\nspecified)\".\n\n[This makes it unambiguous that, for example, \"I wield the Wealth\nStone.\" works and grants the wielder coins.]"
+        }
+    ],
+    "quorum": 5,
+    "resolutions": [
+        {
+            "proposal": 8544,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 6,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "readable": "Conditional resolved: G. did not vote FOR",
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: G. did not vote FOR"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        },
+        {
+            "proposal": 8545,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of Aris",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        },
+        {
+            "proposal": 8546,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of non-voter G.",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "readable": "Inextricable",
+                                "kind": "inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        },
+        {
+            "proposal": 8547,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of Jason",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        },
+        {
+            "proposal": 8548,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of Jason",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        }
+    ]
+}
