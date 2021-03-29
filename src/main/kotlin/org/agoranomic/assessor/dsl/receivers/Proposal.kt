@@ -19,19 +19,13 @@ interface ProposalCommonReceiver {
     fun author(value: Person)
     fun coauthors(persons: Persons)
 
-    fun adoption_index(value: ProposalAI)
+    // Stands for "adoption index"
+    fun ai(value: ProposalAI)
 }
 
 fun ProposalCommonReceiver.coauthors(vararg people: Person) = coauthors(personsOf(*people))
 
-fun ProposalCommonReceiver.adoption_index(value: BigDecimal) = adoption_index(ProposalAI(value))
-fun ProposalCommonReceiver.adoption_index(value: String) = adoption_index(BigDecimal(value))
-fun ProposalCommonReceiver.adoption_index(value: Int) = adoption_index(value.toBigDecimal())
-
-fun ProposalCommonReceiver.ai(value: ProposalAI) = adoption_index(value)
-fun ProposalCommonReceiver.ai(value: BigDecimal) = adoption_index(value)
-fun ProposalCommonReceiver.ai(value: String) = adoption_index(value)
-fun ProposalCommonReceiver.ai(value: Int) = adoption_index(value)
+fun ProposalCommonReceiver.ai(value: String) = ai(ProposalAI(BigDecimal(value)))
 
 interface ProposalCompiler<Receiver : ProposalCommonReceiver> {
     fun compile(number: ProposalNumber, init: DslInit<Receiver>): Proposal
@@ -115,7 +109,7 @@ private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : P
         coauthorsValue.set(persons)
     }
 
-    override fun adoption_index(value: ProposalAI) {
+    override fun ai(value: ProposalAI) {
         aiValue.set(value)
     }
 
