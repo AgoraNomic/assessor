@@ -1,6 +1,6 @@
 package org.agoranomic.assessor.test
 
-import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.resolve.AIStrengths
 import org.agoranomic.assessor.lib.resolve.isAIAdopted
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
@@ -13,7 +13,7 @@ class AITest {
         assertEquals(
             expected,
             isAIAdopted(
-                ProposalAI(ai),
+                DecisionAI(ai),
                 AIStrengths(
                     strengthFor = VotingStrength(strengthFor),
                     strengthAgainst = VotingStrength(strengthAgainst)

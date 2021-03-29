@@ -19,13 +19,18 @@ interface ProposalCommonReceiver {
     fun author(value: Person)
     fun coauthors(persons: Persons)
 
-    // Stands for "adoption index"
-    fun ai(value: ProposalAI)
+    fun decisionAI(value: DecisionAI)
+    fun proposalAI(value: ProposalAI)
 }
 
 fun ProposalCommonReceiver.coauthors(vararg people: Person) = coauthors(personsOf(*people))
 
-fun ProposalCommonReceiver.ai(value: String) = ai(ProposalAI(BigDecimal(value)))
+fun ProposalCommonReceiver.ai(value: String) {
+    val parsedAI = BigDecimal(value)
+
+    decisionAI(DecisionAI(parsedAI))
+    proposalAI(ProposalAI(parsedAI))
+}
 
 interface ProposalCompiler<Receiver : ProposalCommonReceiver> {
     fun compile(number: ProposalNumber, init: DslInit<Receiver>): Proposal
@@ -89,7 +94,8 @@ typealias ProposalCompilerV4 = ProposalCompiler<ProposalReceiverV4>
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
     private val titleValue = SetOnce.namedOf<String>("title of proposal $number")
     private val textValue = SetOnce.namedOf<String>("text of proposal $number")
-    private val aiValue = SetOnce.namedOf<ProposalAI>("AI of proposal $number")
+    private val proposalAIValue = SetOnce.namedOf<ProposalAI>("AI of proposal $number")
+    private val decisionAIValue = SetOnce.namedOf<DecisionAI>("AI of decision on proposal $number")
     private val authorValue = SetOnce.namedOf<Person>("author of proposal $number")
     private val coauthorsValue = SetOnce.namedOf<Persons>("coauthors of proposal $number")
 
@@ -109,24 +115,30 @@ private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : P
         coauthorsValue.set(persons)
     }
 
-    override fun ai(value: ProposalAI) {
-        aiValue.set(value)
+    override fun proposalAI(value: ProposalAI) {
+        proposalAIValue.set(value)
+    }
+
+    override fun decisionAI(value: DecisionAI) {
+        decisionAIValue.set(value)
     }
 
     fun compile(): ProposalCommonData {
-        val ai = aiValue.get()
+        val proposalAI = proposalAIValue.get()
+        val decisionAI = decisionAIValue.get()
         val title = titleValue.get()
         val author = authorValue.get()
         val coauthors = coauthorsValue.getOrDefault(emptyPersons())
         val text = textValue.get()
 
         return ProposalCommonData(
-            number,
-            ai,
-            title,
-            author,
-            coauthors,
-            text.trim()
+            number = number,
+            proposalAI = proposalAI,
+            decisionAI = decisionAI,
+            title = title,
+            author = author,
+            coauthors = coauthors,
+            text = text.trim()
         )
     }
 }

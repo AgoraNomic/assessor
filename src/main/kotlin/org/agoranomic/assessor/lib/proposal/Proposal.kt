@@ -18,11 +18,15 @@ inline class ProposalNumber(val raw: RawProposalNumber) : Comparable<ProposalNum
     override fun toString(): String = raw.toString()
 }
 
-typealias RawProposalAI = BigDecimal
+typealias RawAdoptionIndex = BigDecimal
 
-inline class ProposalAI(val raw: RawProposalAI) {
+inline class ProposalAI(val raw: RawAdoptionIndex) {
     constructor(raw: Int) : this(raw.toBigDecimal())
 
+    override fun toString(): String = raw.toString()
+}
+
+inline class DecisionAI(val raw: RawAdoptionIndex) {
     override fun toString(): String = raw.toString()
 }
 
@@ -32,7 +36,8 @@ inline class ProposalAI(val raw: RawProposalAI) {
  */
 private interface ProposalCommonInterface {
     val number: ProposalNumber
-    val ai: ProposalAI
+    val proposalAI: ProposalAI
+    val decisionAI: DecisionAI
     val title: String
     val author: Person
     val coauthors: Persons
@@ -41,7 +46,8 @@ private interface ProposalCommonInterface {
 
 data class ProposalCommonData(
     override val number: ProposalNumber,
-    override val ai: ProposalAI,
+    override val proposalAI: ProposalAI,
+    override val decisionAI: DecisionAI,
     override val title: String,
     override val author: Person,
     override val coauthors: Persons,
@@ -178,26 +184,6 @@ data class Proposal(
     val commonData: ProposalCommonData,
     val versionedData: ProposalVersionedData
 ) : ProposalCommonInterface by commonData {
-    constructor(
-        number: ProposalNumber,
-        ai: ProposalAI,
-        title: String,
-        author: Person,
-        coauthors: Persons,
-        text: String,
-        versionedData: ProposalVersionedData
-    ) : this(
-        ProposalCommonData(
-            number = number,
-            ai = ai,
-            title = title,
-            author = author,
-            coauthors = coauthors,
-            text = text
-        ),
-        versionedData
-    )
-
     val version get() = versionedData.version
 
     fun <R> accept(mapper: ProposalMapper<R>): R {

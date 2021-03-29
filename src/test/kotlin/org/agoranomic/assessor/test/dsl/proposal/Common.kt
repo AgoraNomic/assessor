@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.emptyPersons
+import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
 import org.agoranomic.assessor.test.test_objects.*
 import kotlin.test.Test
@@ -18,13 +19,15 @@ interface ProposalCommonCompilerTestBase<R : ProposalCommonReceiver> : ProposalC
         specifyText: Boolean = true,
         specifyAuthor: Boolean = true,
         specifyCoauthors: Boolean = true,
-        specifyAI: Boolean = true
+        specifyProposalAI: Boolean = true,
+        specifyDecisionAI: Boolean = true,
     ) {
         if (specifyTitle) title(firstTestProposalTitle())
         if (specifyText) text(firstTestProposalText())
         if (specifyAuthor) author(firstTestProposalAuthor())
         if (specifyCoauthors) coauthors(firstTestProposalCoauthors())
-        if (specifyAI) ai(firstTestProposalAI())
+        if (specifyProposalAI) proposalAI(ProposalAI(firstTestAI()))
+        if (specifyDecisionAI) decisionAI(DecisionAI(firstTestAI()))
     }
 
     fun R.setupExceptCommon()
@@ -34,14 +37,16 @@ interface ProposalCommonCompilerTestBase<R : ProposalCommonReceiver> : ProposalC
         specifyText: Boolean = true,
         specifyAuthor: Boolean = true,
         specifyCoauthors: Boolean = true,
-        specifyAI: Boolean = true
+        specifyProposalAI: Boolean = true,
+        specifyDecisionAI: Boolean = true,
     ) {
         setupOnlyCommon(
             specifyTitle = specifyTitle,
             specifyText = specifyText,
             specifyAuthor = specifyAuthor,
             specifyCoauthors = specifyCoauthors,
-            specifyAI = specifyAI
+            specifyProposalAI = specifyProposalAI,
+            specifyDecisionAI = specifyDecisionAI,
         )
 
         setupExceptCommon()
@@ -215,58 +220,104 @@ interface ProposalCommonCompilerCoauthorTest<R : ProposalCommonReceiver> : Propo
     }
 }
 
-interface ProposalCommonCompilerAITest<R : ProposalCommonReceiver> : ProposalCommonCompilerTestBase<R> {
-    private fun R.setupForAI() = setupForCommonTests(specifyAI = false)
+interface ProposalCommonCompilerProposalAITest<R : ProposalCommonReceiver> : ProposalCommonCompilerTestBase<R> {
+    private fun R.setupForProposalAI() = setupForCommonTests(specifyProposalAI = false)
 
     @Test
-    fun `fails when AI not specified`() {
+    fun `fails when proposal AI not specified`() {
         assertFails {
             compile {
-                setupForAI()
+                setupForProposalAI()
                 // Don't set AI
             }
         }
     }
 
     @Test
-    fun `fails when AI specified twice`() {
-        val aiToSet = firstTestProposalAI()
+    fun `fails when proposal AI specified twice`() {
+        val aiToSet = ProposalAI(firstTestAI())
 
         assertFails {
             compile {
-                setupForAI()
-                ai(aiToSet)
-                ai(aiToSet)
+                setupForProposalAI()
+                proposalAI(aiToSet)
+                proposalAI(aiToSet)
             }
         }
     }
 
     @Test
-    fun `returns expected AI`() {
-        val expectedAI = firstTestProposalAI()
+    fun `returns expected proposal AI`() {
+        val expectedAI = ProposalAI(firstTestAI())
 
         val proposal = compile {
-            setupForAI()
-            ai(expectedAI)
+            setupForProposalAI()
+            proposalAI(expectedAI)
         }
 
-        assertEquals(expectedAI, proposal.ai)
+        assertEquals(expectedAI, proposal.proposalAI)
+    }
+}
+
+interface ProposalCommonCompilerDecisionAITest<R : ProposalCommonReceiver> : ProposalCommonCompilerTestBase<R> {
+    private fun R.setupForDecisionAI() = setupForCommonTests(specifyDecisionAI = false)
+
+    @Test
+    fun `fails when decision AI not specified`() {
+        assertFails {
+            compile {
+                setupForDecisionAI()
+                // Don't set AI
+            }
+        }
     }
 
+    @Test
+    fun `fails when decision AI specified twice`() {
+        val aiToSet = DecisionAI(firstTestAI())
+
+        assertFails {
+            compile {
+                setupForDecisionAI()
+                decisionAI(aiToSet)
+                decisionAI(aiToSet)
+            }
+        }
+    }
+
+    @Test
+    fun `returns decision proposal AI`() {
+        val expectedAI = DecisionAI(firstTestAI())
+
+        val proposal = compile {
+            setupForDecisionAI()
+            decisionAI(expectedAI)
+        }
+
+        assertEquals(expectedAI, proposal.decisionAI)
+    }
+}
+
+interface ProposalCommonCompilerTotalAITest<R : ProposalCommonReceiver> : ProposalCommonCompilerTestBase<R> {
     @Test
     fun `string to AI conversion works`() {
         for (integerPart in (0..3).map { it.toString() }) {
             for (decimalPart in (0..9).map { it.toString() }) {
                 val aiString = "$integerPart.$decimalPart"
 
-                val expectedAI = ProposalAI(aiString.toBigDecimal())
+                val expectedAI = aiString.toBigDecimal()
 
                 val proposal = compile {
-                    setupForAI()
+                    setupForCommonTests(
+                        specifyProposalAI = false,
+                        specifyDecisionAI = false,
+                    )
+
                     ai(aiString)
                 }
 
-                assertEquals(expectedAI, proposal.ai)
+                assertEquals(ProposalAI(expectedAI), proposal.proposalAI)
+                assertEquals(DecisionAI(expectedAI), proposal.decisionAI)
             }
         }
     }
@@ -277,4 +328,6 @@ interface ProposalCommonCompilerTest<R : ProposalCommonReceiver> :
     ProposalCommonCompilerTextTest<R>,
     ProposalCommonCompilerAuthorTest<R>,
     ProposalCommonCompilerCoauthorTest<R>,
-    ProposalCommonCompilerAITest<R>
+    ProposalCommonCompilerProposalAITest<R>,
+    ProposalCommonCompilerDecisionAITest<R>,
+    ProposalCommonCompilerTotalAITest<R>

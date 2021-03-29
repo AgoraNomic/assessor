@@ -46,7 +46,7 @@ fun resolve(
     return ResolutionData(
         proposal = proposal,
         result = if (meetsQuorum(votes, quorum)) {
-            if (isAIAdopted(proposal.ai, aiStrengths))
+            if (isAIAdopted(proposal.decisionAI, aiStrengths))
                 ProposalResult.ADOPTED
             else
                 ProposalResult.REJECTED

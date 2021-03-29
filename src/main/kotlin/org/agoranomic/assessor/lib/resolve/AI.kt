@@ -2,7 +2,7 @@ package org.agoranomic.assessor.lib.resolve
 
 import io.github.random_internet_cat.util.compareTo
 import io.github.random_internet_cat.util.times
-import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
 import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.strengthWithVote
@@ -12,7 +12,7 @@ import org.agoranomic.assessor.lib.voting_strength.compareTo
 
 data class AIStrengths(val strengthFor: VotingStrength, val strengthAgainst: VotingStrength)
 
-fun isAIAdopted(ai: ProposalAI, aiStrengths: AIStrengths): Boolean {
+fun isAIAdopted(ai: DecisionAI, aiStrengths: AIStrengths): Boolean {
     val strengthFor = aiStrengths.strengthFor
     val strengthAgainst = aiStrengths.strengthAgainst
 

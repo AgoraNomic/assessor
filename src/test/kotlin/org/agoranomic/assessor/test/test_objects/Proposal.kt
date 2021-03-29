@@ -5,14 +5,15 @@ import io.github.random_internet_cat.util.rem
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.proposal.*
+import java.math.BigDecimal
 
 fun testProposalNumber(num: TestNumber): ProposalNumber = ProposalNumber(num)
 fun firstTestProposalNumber() = testFirst(::testProposalNumber)
 fun secondTestProposalNumber() = testSecond(::testProposalNumber)
 
-fun testProposalAI(num: TestNumber): ProposalAI = ProposalAI(((num % 100) / 10).toBigDecimal())
-fun firstTestProposalAI() = testFirst(::testProposalAI)
-fun secondTestProposalAI() = testSecond(::testProposalAI)
+fun testAI(num: TestNumber): BigDecimal = ((num % 100) / 10).toBigDecimal()
+fun firstTestAI() = testFirst(::testAI)
+fun secondTestProposalAI() = testSecond(::testAI)
 
 fun testProposalTitle(num: TestNumber): String = testString(subReqNum(num), type = "Proposal Title")
 fun firstTestProposalTitle() = testFirst(::testProposalTitle)
@@ -64,7 +65,8 @@ fun secondTestProposalChamber() = testSecond(::testProposalChamber)
 
 fun testProposalCommonData(num: TestNumber) = ProposalCommonData(
     number = testProposalNumber(subReqNum(num)),
-    ai = testProposalAI(subReqNum(num)),
+    proposalAI = ProposalAI(testAI(subReqNum(num))),
+    decisionAI = DecisionAI(testAI(subReqNum(num))),
     title = testProposalTitle(subReqNum(num)),
     author = testProposalAuthor(subReqNum(num)),
     coauthors = testProposalCoauthors(subReqNum(num)),

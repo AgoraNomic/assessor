@@ -42,7 +42,7 @@ data class ProposalRewardData(
     val author: Person,
     val voteCountFor: BigInteger,
     val voteCountAgainst: BigInteger,
-    val ai: ProposalAI,
+    val proposalAI: ProposalAI,
 ) {
     val unroundedReward
         get() =
@@ -97,13 +97,13 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
                 val proposalVotes = resolutionMap.resolutionOf(proposal.number).votes
                 val voteCountFor = proposalVotes.votersFor().size.toBigInteger()
                 val voteCountAgainst = proposalVotes.votersAgainst().size.toBigInteger()
-                val ai = proposal.ai
+                val proposalAI = proposal.proposalAI
 
                 val rewardData = ProposalRewardData(
                     author = proposal.author,
                     voteCountFor = voteCountFor,
                     voteCountAgainst = voteCountAgainst,
-                    ai = ai
+                    proposalAI = proposalAI,
                 )
 
                 proposal.number to rewardData

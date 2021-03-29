@@ -190,7 +190,7 @@ private fun renderProposalVotes(
     appendVoteKind(VoteKind.PRESENT)
 }
 
-private fun renderProposalAI(resolutionData: ResolutionData, ai: ProposalAI) =
+private fun renderDecisionAI(resolutionData: ResolutionData, ai: DecisionAI) =
     "AI (F/A): ${resolutionData.aiStrengths.strengthFor}/${resolutionData.aiStrengths.strengthAgainst} (AI=$ai)"
 
 private fun popularityOf(votes: SimplifiedSingleProposalVoteMap): Double {
@@ -247,7 +247,7 @@ private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
 fun renderProposalText(proposal: Proposal): String = buildString {
     appendLine("ID: ${proposal.number}")
     appendLine("Title: ${proposal.title}")
-    appendLine("Adoption index: ${proposal.ai}")
+    appendLine("Adoption index: ${proposal.proposalAI}")
     appendLine("Author: ${proposal.author.name}")
     appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
     appendLine()
@@ -348,7 +348,7 @@ fun renderReadableProposalResolution(
     )
 
     if (config.totalBallotCount) appendLine("BALLOTS: ${resolution.votes.voteCount}")
-    appendLine(renderProposalAI(resolution, proposal.ai))
+    appendLine(renderDecisionAI(resolution, proposal.decisionAI))
     if (config.popularity) appendLine(renderProposalPopularity(resolution.votes))
     appendLine(renderProposalOutcome(resolution))
     if (config.voteComments) append(renderVoteComments(resolution))
