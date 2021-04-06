@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -56,6 +57,10 @@ players focused on Legacy.]"""
 
         votes(Trigon) {
             FOR on 8556
+        }
+
+        votes(G) {
+            AGAINST on 8556
         }
     }
 }
