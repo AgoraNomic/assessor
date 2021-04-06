@@ -42,4 +42,7 @@ players focused on Legacy.]"""
             )
         }
     }
+
+    voting {
+    }
 }
