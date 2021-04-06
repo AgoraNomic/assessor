@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
@@ -44,5 +45,8 @@ players focused on Legacy.]"""
     }
 
     voting {
+        votes(Jason) {
+            endorse(nix) on 8556
+        }
     }
 }
