@@ -53,5 +53,9 @@ players focused on Legacy.]"""
         votes(ATMunn) {
             FOR on 8556
         }
+
+        votes(Trigon) {
+            FOR on 8556
+        }
     }
 }
