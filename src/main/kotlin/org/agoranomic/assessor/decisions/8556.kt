@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8556() = assessment {
@@ -64,6 +65,10 @@ players focused on Legacy.]"""
 
         votes(nix) {
             FOR on 8556
+        }
+
+        votes(Murphy) {
+            PRESENT on 8556
         }
     }
 }
