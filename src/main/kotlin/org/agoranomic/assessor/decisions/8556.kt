@@ -57,5 +57,9 @@ players focused on Legacy.]"""
         votes(Trigon) {
             FOR on 8556
         }
+
+        votes(Falsifian) {
+            endorse(Jason) on 8556
+        }
     }
 }
