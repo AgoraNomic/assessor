@@ -162,7 +162,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             AGAINST on 8552
             FOR on 8553
             FOR on 8554
-            // TODO resolve conditional vote on 8555: FOR if highest unique voting strength, else AGAINST
+            AGAINST on 8555 comment conditional("not highest unique voting strenght")
         }
 
         votes(Murphy) {
