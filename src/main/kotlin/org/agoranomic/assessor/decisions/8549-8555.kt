@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -170,6 +171,14 @@ highest is 14, and no one else is at 14, the 14 wins]."""
 
         votes(CuddleBeam) {
             FOR on all
+        }
+
+        votes(Falsifian) {
+            endorse(Aris) on 8549
+            AGAINST on 8552
+            PRESENT on 8553
+            endorse(Aris) on 8554
+            AGAINST on 8555
         }
     }
 }
