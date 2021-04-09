@@ -192,5 +192,13 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             FOR on 8554
             FOR on 8555
         }
+
+        votes(RLee) {
+            AGAINST on 8549 comment conditional("adds text to the ruleset")
+            PRESENT on 8552 comment conditional("does not add text to the ruleset")
+            AGAINST on 8553 comment conditional("adds text to the ruleset")
+            AGAINST on 8554 comment conditional("adds text to the ruleset")
+            PRESENT on 8555 comment conditional("does not add text to the ruleset")
+        }
     }
 }
