@@ -213,5 +213,9 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             FOR on 8554
             AGAINST on 8555
         }
+
+        votes(G) {
+            AGAINST on all
+        }
     }
 }
