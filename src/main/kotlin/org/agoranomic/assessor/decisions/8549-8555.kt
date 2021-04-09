@@ -7,7 +7,10 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import java.math.BigDecimal
 
 @UseAssessment
 fun assessment8549to8555() = assessment {
@@ -55,7 +58,8 @@ the text:
 
         proposal(8552) {
             title("Apathy for all")
-            ai("1.0")
+            proposalAI(ProposalAI(BigDecimal("1.0")))
+            decisionAI(DecisionAI(BigDecimal("2.0")))
             author(Jason)
             coauthors(ais523)
             ordinary()
