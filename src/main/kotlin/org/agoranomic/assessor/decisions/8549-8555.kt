@@ -184,5 +184,13 @@ highest is 14, and no one else is at 14, the 14 wins]."""
         votes(cuddlybanana) {
             FOR on all
         }
+
+        votes(Trigon) {
+            FOR on 8549
+            PRESENT on 8552
+            AGAINST on 8553
+            FOR on 8554
+            FOR on 8555
+        }
     }
 }
