@@ -159,5 +159,13 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             FOR on 8554
             // TODO resolve conditional vote on 8555: FOR if highest unique voting strength, else AGAINST
         }
+
+        votes(Murphy) {
+            FOR on 8549
+            FOR on 8552
+            FOR on 8553
+            FOR on 8554
+            FOR on 8555
+        }
     }
 }
