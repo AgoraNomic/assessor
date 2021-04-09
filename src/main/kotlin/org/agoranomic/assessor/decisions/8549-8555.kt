@@ -4,11 +4,22 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
 fun assessment8549to8555() = assessment {
     name("8549-8555")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        blotPenalty(RLee, 7 / 3)
+        powerStone(Jason, 3)
+    }
 
     proposals(v4) {
         proposal(8549) {
