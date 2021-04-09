@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8549to8555() = assessment {
@@ -135,5 +136,12 @@ highest is 14, and no one else is at 14, the 14 wins]."""
     }
 
     voting {
+        votes(Aris) {
+            FOR on 8549
+            AGAINST on 8552
+            AGAINST on 8553
+            FOR on 8554
+            PRESENT on 8555
+        }
     }
 }
