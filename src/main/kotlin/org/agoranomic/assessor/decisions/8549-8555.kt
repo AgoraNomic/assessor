@@ -205,5 +205,13 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             AGAINST on 8552
             FOR on others
         }
+
+        votes(ATMunn) {
+            FOR on 8549
+            PRESENT on 8552
+            PRESENT on 8553
+            FOR on 8554
+            AGAINST on 8555
+        }
     }
 }
