@@ -167,5 +167,9 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             FOR on 8554
             FOR on 8555
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
