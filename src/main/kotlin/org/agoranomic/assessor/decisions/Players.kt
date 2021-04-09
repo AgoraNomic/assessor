@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.lib.Person
 
 val ais523 = Person("ais523")
+val Aenet = Person("Aenet")
 val Alexis = Person("Alexis")
 val Aris = Person("Aris")
 val ATMunn = Person("ATMunn")
