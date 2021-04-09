@@ -180,5 +180,9 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             endorse(Aris) on 8554
             AGAINST on 8555
         }
+
+        votes(cuddlybanana) {
+            FOR on all
+        }
     }
 }
