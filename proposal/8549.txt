@@ -1,0 +1,40 @@
+PROPOSAL 8549 (You Can Only Stack Turtles So High)
+AUTHOR: Aris
+CLASS: ORDINARY
+FOR (10): ATMunn, Aenet, Aris, Cuddle Beam, Falsifian, Gaelan, Jason^, Murphy, Trigon, cuddlybanana
+AGAINST (2): G., R. Lee!
+PRESENT (0): 
+BALLOTS: 12
+AI (F/A): 33/4 (AI=2.2)
+POPULARITY: 0.667
+OUTCOME: ADOPTED
+[
+Falsifian: Endorsement of Aris
+R. Lee: Conditional resolved: adds text to the ruleset
+]
+
+Resolved at: null
+
+ID: 8549
+Title: You Can Only Stack Turtles So High
+Adoption index: 2.2
+Author: Aris
+Co-authors: Gaelan, G.
+
+
+[This fixes G.'s scam, which would otherwise allow indeterminacy to be
+created through infinite promise loops.]
+
+Amend Rule 2618, "Promises", by inserting, after the text:
+
+  A promise's bearer CAN, by announcement, cash the promise,
+  provided that any conditions for cashing it specified by its text
+  are unambiguously met. By doing so, e acts on the creator of the
+  promise's behalf, causing the creator to act as if e published the
+  promise's text, and destroys the promise.
+
+the text:
+
+  However, to limit recursion, no promise can be cashed during the execution
+  of another promise unless it existed before the execution of that promise
+  began.

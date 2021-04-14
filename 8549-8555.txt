@@ -1,0 +1,184 @@
+RESOLUTION OF PROPOSALS 8549-8555
+=================================
+
+ID    Title                               Result  
+--------------------------------------------------
+8549  You Can Only Stack Turtles So High  ADOPTED 
+8552  Apathy for all                      REJECTED
+8553  Slightly less apathetic             ADOPTED 
+8554  I Want My Promise Back!             ADOPTED 
+8555  something to vote on                ADOPTED 
+
+I hereby resolve the Agoran decisions to adopt the below proposals.
+
+The quorum for all below decisions was 3.
+
+The following sponsored adopted proposals have the highest popularity (0.667): 8549 (by Aris), 8554 (by Aris).
+
+VOTING STRENGTHS
+================
+
+Strength is 3 unless otherwise noted.
+!: player has voting strength 1
+^: player has voting strength 6
+
+PROPOSALS
+=========
+
+PROPOSAL 8549 (You Can Only Stack Turtles So High)
+AUTHOR: Aris
+CLASS: ORDINARY
+FOR (10): ATMunn, Aenet, Aris, Cuddle Beam, Falsifian, Gaelan, Jason^, Murphy, Trigon, cuddlybanana
+AGAINST (2): G., R. Lee!
+PRESENT (0): 
+BALLOTS: 12
+AI (F/A): 33/4 (AI=2.2)
+POPULARITY: 0.667
+OUTCOME: ADOPTED
+[
+Falsifian: Endorsement of Aris
+R. Lee: Conditional resolved: adds text to the ruleset
+]
+
+PROPOSAL 8552 (Apathy for all)
+AUTHOR: Jason
+CLASS: ORDINARY
+FOR (4): Cuddle Beam, Jason^, Murphy, cuddlybanana
+AGAINST (5): Aenet, Aris, Falsifian, G., Gaelan
+PRESENT (3): ATMunn, R. Lee!, Trigon
+BALLOTS: 12
+AI (F/A): 15/15 (AI=2.0)
+POPULARITY: -0.083
+OUTCOME: REJECTED
+[
+R. Lee: Conditional resolved: does not add text to the ruleset
+]
+
+PROPOSAL 8553 (Slightly less apathetic)
+AUTHOR: Jason
+CLASS: ORDINARY
+FOR (6): Aenet, Cuddle Beam, Gaelan, Jason^, Murphy, cuddlybanana
+AGAINST (4): Aris, G., R. Lee!, Trigon
+PRESENT (2): ATMunn, Falsifian
+BALLOTS: 12
+AI (F/A): 21/10 (AI=1.0)
+POPULARITY: 0.167
+OUTCOME: ADOPTED
+[
+R. Lee: Conditional resolved: adds text to the ruleset
+]
+
+PROPOSAL 8554 (I Want My Promise Back!)
+AUTHOR: Aris
+CLASS: ORDINARY
+FOR (10): ATMunn, Aenet, Aris, Cuddle Beam, Falsifian, Gaelan, Jason^, Murphy, Trigon, cuddlybanana
+AGAINST (2): G., R. Lee!
+PRESENT (0): 
+BALLOTS: 12
+AI (F/A): 33/4 (AI=2.2)
+POPULARITY: 0.667
+OUTCOME: ADOPTED
+[
+Falsifian: Endorsement of Aris
+R. Lee: Conditional resolved: adds text to the ruleset
+]
+
+PROPOSAL 8555 (something to vote on)
+AUTHOR: G.
+CLASS: ORDINARY
+FOR (6): Aenet, Cuddle Beam, Jason^, Murphy, Trigon, cuddlybanana
+AGAINST (4): ATMunn, Falsifian, G., Gaelan
+PRESENT (2): Aris, R. Lee!
+BALLOTS: 12
+AI (F/A): 21/12 (AI=1.0)
+POPULARITY: 0.167
+OUTCOME: ADOPTED
+[
+Gaelan: Conditional resolved: not highest unique voting strenght
+R. Lee: Conditional resolved: does not add text to the ruleset
+]
+
+The full text of each ADOPTED proposal is included below:
+
+//////////////////////////////////////////////////////////////////////
+ID: 8549
+Title: You Can Only Stack Turtles So High
+Adoption index: 2.2
+Author: Aris
+Co-authors: Gaelan, G.
+
+
+[This fixes G.'s scam, which would otherwise allow indeterminacy to be
+created through infinite promise loops.]
+
+Amend Rule 2618, "Promises", by inserting, after the text:
+
+  A promise's bearer CAN, by announcement, cash the promise,
+  provided that any conditions for cashing it specified by its text
+  are unambiguously met. By doing so, e acts on the creator of the
+  promise's behalf, causing the creator to act as if e published the
+  promise's text, and destroys the promise.
+
+the text:
+
+  However, to limit recursion, no promise can be cashed during the execution
+  of another promise unless it existed before the execution of that promise
+  began.
+
+//////////////////////////////////////////////////////////////////////
+ID: 8553
+Title: Slightly less apathetic
+Adoption index: 1.0
+Author: Jason
+Co-authors: 
+
+
+Amend Rule 2465, "Victory by Apathy", by replacing the final "."
+character with the following: ", except for those who have won the game
+through this Rule in the past 14 days."
+
+//////////////////////////////////////////////////////////////////////
+ID: 8554
+Title: I Want My Promise Back!
+Adoption index: 2.2
+Author: Aris
+Co-authors: nix
+
+
+[This is intended to remove the need to put in a special provision
+to a promise allow the creator to destroy a promise in the possession of
+the Library. Since that's usually what's wanted, this makes it the
+default behavior, while still allowing the creator to override it.]
+
+Amend Rule 2618, "Promises", by inserting, after the text:
+
+  The Library is an entity and CAN own promises. Any player CAN take
+  a specified promise from the Library by announcement, provided e
+  cashes the promise in the same message.
+
+the text:
+
+  The creator of a promise CAN take or revoke it from the Library by
+  announcement, unless the promise's text unambiguously designates
+  it as irrevocable.
+
+//////////////////////////////////////////////////////////////////////
+ID: 8555
+Title: something to vote on
+Adoption index: 1.0
+Author: G.
+Co-authors: 
+
+
+The player who voted unambiguously FOR, and had the highest
+unique[*] voting strength (at the end of the voting period) on,
+the decision to adopt this proposal
+
+                      is hereby granted
+
+                  ****  1 Victory Card   *****
+
+[* "Highest unique" means if the top two are 15 and the next
+highest is 14, and no one else is at 14, the 14 wins].
+
+//////////////////////////////////////////////////////////////////////
