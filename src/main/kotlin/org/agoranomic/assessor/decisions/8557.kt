@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8557() = assessment {
@@ -112,6 +113,10 @@ with:
 
         votes(Falsifian) {
             FOR on 8557
+        }
+
+        votes(Jason) {
+            PRESENT on 8557
         }
     }
 }
