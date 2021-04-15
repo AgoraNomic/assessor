@@ -105,5 +105,9 @@ with:
         votes(Trigon) {
             FOR on 8557
         }
+
+        votes(Aris) {
+            FOR on 8557
+        }
     }
 }
