@@ -4,11 +4,20 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.blotPenalty
 
 @UseAssessment
 fun assessment8557() = assessment {
     name("8557")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        blotPenalty(RLee, 7 / 3)
+    }
 
     proposals(v4) {
         proposal(8557) {
