@@ -70,5 +70,9 @@ the following text:
         votes(Falsifian) {
             endorse(Aris) on 8558
         }
+
+        votes(Aris) {
+            FOR on 8558
+        }
     }
 }
