@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8558() = assessment {
@@ -56,6 +57,10 @@ the following text:
     voting {
         votes(Murphy) {
             endorse(seventeenMachine) on 8558
+        }
+
+        votes(Jason) {
+            FOR on 8558
         }
     }
 }
