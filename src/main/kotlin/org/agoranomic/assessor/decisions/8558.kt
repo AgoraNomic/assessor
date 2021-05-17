@@ -66,5 +66,9 @@ the following text:
         votes(ATMunn) {
             endorse(Aris) on 8558
         }
+
+        votes(Falsifian) {
+            endorse(Aris) on 8558
+        }
     }
 }
