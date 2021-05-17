@@ -51,4 +51,7 @@ the following text:
             )
         }
     }
+
+    voting {
+    }
 }
