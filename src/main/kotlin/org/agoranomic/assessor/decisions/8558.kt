@@ -62,5 +62,9 @@ the following text:
         votes(Jason) {
             FOR on 8558
         }
+
+        votes(ATMunn) {
+            endorse(Aris) on 8558
+        }
     }
 }
