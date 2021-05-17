@@ -3,11 +3,22 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
 fun assessment8558() = assessment {
     name("8558")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        blotPenalty(RLee, 7 / 3)
+        powerStone(Jason, 3)
+    }
 
     proposals(v4) {
         proposal(8558) {
