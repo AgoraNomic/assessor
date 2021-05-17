@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
@@ -53,5 +54,8 @@ the following text:
     }
 
     voting {
+        votes(Murphy) {
+            endorse(seventeenMachine) on 8558
+        }
     }
 }
