@@ -1,0 +1,102 @@
+{
+    "metadata": {
+        "name": "8557"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8557,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Archimedes' Principle",
+            "author": "Aris",
+            "coauthors": [
+                "Trigon",
+                "nix"
+            ],
+            "text": "[Changes:\n  -The Treasuror sets a target for the Total Buoyancy every week;\n   the most recent target takes effect at the beginning of the month\n  -The Unit of Floatation is now rounded, so people can actually remember\n   it (unlike the draft, I'm rounding up, to deal with cases\n   where it's evenly between two integers)\n  -The Treasuror no longer has a monthly report, and is instead\n   just encouraged to make sure the Total Buoyancy and Unit of Floatation\n   are published\n]\n\nAmend Rule 2634, \"Buoyancy Control\", by changing it to read in full:\n\n  The Total Buoyancy and Buoyancy Target are singleton\n  integer switches, tracked by the Treasuror in eir weekly report.\n\n  The Treasuror CAN, by announcement, set the Buoyancy Target\n  to a specified value approximately equal to the sum of all coin\n  balances at a specified point within the last week,\n  and SHALL do so each time e publishes eir weekly report.\n\n  The Treasuror may exercise reasonable judgement in calculating the\n  Buoyancy Target. The Buoyancy Target will be deemed set so long as\n  the value chosen by the Treasuror is not obviously and grossly\n  incorrect. However, the Treasuror SHALL NOT deliberately introduce\n  error into the Buoyancy Target.\n\n  At the beginning of each month, the Total Buoyancy is flipped to\n  the Buoyancy Target.\n\nAmend Rule 2635, \"Floating Rate Fleet\", by changing it to read in full:\n\n  The Unit of Flotation is equal to 1/2500 times the Total Buoyancy,\n  rounded up, and is tracked in the Treasuror's weekly report.\n  A boatload of something is a quantity of that thing equal\n  in count to the Unit of Floatation.\n\n  The Treasuror is ENCOURAGED to arrange for the new Total Buoyancy\n  and Unit of Flotation to be published as close as possible\n  to the beginning of the month.\n\n\n[No clue why this should be secured — granting assets isn't secured.\nThe reason I'm amending this is to make the payday happen\nafter the boatload value update; I'm open to other phrasings.]\n\nAmend Rule 2559, \"Paydays\", by replacing:\n\n  The occurrence of Paydays is secured. At the beginning of each\n  month, a Payday occurs.\n\nwith:\n\n  At the beginning of each month, after all other events that\n  take place at the beginning of the month, a Payday occurs.\n\n\n  Amend Rule 2559, \"Paydays\", by replacing:\n\n    The occurrence of Paydays is secured. At the beginning of each\n    month, a Payday occurs.\n\n  with:\n\n    At the beginning of each month, after all other events that\n    take place at the beginning of the month, a Payday occurs."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8557,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        }
+    ]
+}
