@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8559() = assessment {
@@ -49,6 +50,10 @@ Amend Rule 1742 "Contracts" by appending the following:
 
         votes(Jason) {
             endorse(ATMunn) on 8559
+        }
+
+        votes(ATMunn) {
+            FOR on 8559
         }
     }
 }
