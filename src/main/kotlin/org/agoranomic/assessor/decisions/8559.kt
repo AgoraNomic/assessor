@@ -46,5 +46,9 @@ Amend Rule 1742 "Contracts" by appending the following:
         votes(Falsifian) {
             endorse(ATMunn) on 8559
         }
+
+        votes(Jason) {
+            endorse(ATMunn) on 8559
+        }
     }
 }
