@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
@@ -42,5 +43,8 @@ Amend Rule 1742 "Contracts" by appending the following:
     }
 
     voting {
+        votes(Falsifian) {
+            endorse(ATMunn) on 8559
+        }
     }
 }
