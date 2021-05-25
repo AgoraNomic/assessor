@@ -40,4 +40,7 @@ Amend Rule 1742 "Contracts" by appending the following:
             )
         }
     }
+
+    voting {
+    }
 }
