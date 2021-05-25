@@ -55,5 +55,9 @@ Amend Rule 1742 "Contracts" by appending the following:
         votes(ATMunn) {
             FOR on 8559
         }
+
+        votes(Murphy) {
+            FOR on 8559
+        }
     }
 }
