@@ -1,0 +1,186 @@
+{
+    "metadata": {
+        "name": "8558",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-May/014916.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8558,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Silver Quill 2020",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "[This enables me to award the Silver Quill, and is necessary\nbecause one of the proposals was selected after the official deadline.\nI set it up as a temporary rule because I still want to do the\nbig announcement where I actually award the title.]\n\nEnact a power 2.0 rule, entitled \"Silver Quill 2020\", with\nthe following text:\n\n  The Promotor CAN once, by announcement, award the patent title\n  Silver Quill 2020 to nix for eir authorship of Proposal 8408,\n  \"Sets v1.4\".\n\n  The Promotor CAN once, by announcement, award the patent title\n  Silver Quill 2020 to Aris for eir authorship of Proposal 8514,\n  \"The Buoyant Economy\".\n\n  The Promotor CAN cause this rule to repeal itself by announcement,\n  and SHALL do so in a timely fashion after its enactment."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8558,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of non-voter seventeenMachine",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "seventeenMachine"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "readable": "Inextricable",
+                                "kind": "inextricable",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of Aris",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "readable": "Endorsement of Aris",
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aris"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                }
+            ]
+        }
+    ]
+}
