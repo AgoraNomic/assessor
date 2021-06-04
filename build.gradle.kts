@@ -1,6 +1,7 @@
 plugins {
     java
     kotlin("jvm") version "1.5.0"
+    kotlin("plugin.serialization") version "1.5.0"
 }
 
 group = "org.agoranomic"
@@ -17,7 +18,7 @@ dependencies {
 
     implementation(kotlin("reflect"))
     implementation(kotlinx("collections-immutable", "0.3.4"))
-    implementation(kotlinx("serialization-runtime", "0.13.0"))
+    implementation(kotlinx("serialization-json", "1.2.1"))
     implementation("commons-cli:commons-cli:1.4")
     implementation("io.github.classgraph:classgraph:4.8.46")
     implementation("org.randomcat:kotlin-utils:2.0.1")

@@ -1,7 +1,6 @@
 package org.agoranomic.assessor.lib.report
 
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.json.JsonObject
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
@@ -418,8 +417,9 @@ fun readableReport(
 }
 
 fun jsonReport(resolutionMap: ProposalResolutionMap): String {
-    val out = json(resolutionMap)
-    val json = Json(JsonConfiguration.Stable.copy(prettyPrint = true))
+    val json = Json {
+        prettyPrint = true
+    }
 
-    return json.stringify(JsonObject.serializer(), out)
+    return json.encodeToString(JsonObject.serializer(), toJson(resolutionMap))
 }
