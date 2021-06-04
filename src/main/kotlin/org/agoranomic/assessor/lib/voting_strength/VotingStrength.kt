@@ -4,7 +4,8 @@ import java.math.BigInteger
 
 typealias RawVotingStrength = BigInteger
 
-inline class VotingStrength(val raw: RawVotingStrength) {
+@JvmInline
+value class VotingStrength(val raw: RawVotingStrength) {
     companion object {
         fun zero() = VotingStrength(0)
     }
@@ -16,7 +17,8 @@ inline class VotingStrength(val raw: RawVotingStrength) {
     val absoluteValue get() = VotingStrengthDifference(raw)
 }
 
-inline class VotingStrengthDifference(val raw: RawVotingStrength) {
+@JvmInline
+value class VotingStrengthDifference(val raw: RawVotingStrength) {
     companion object {
         fun zero() = VotingStrengthDifference(0)
     }

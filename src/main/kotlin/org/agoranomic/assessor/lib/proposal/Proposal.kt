@@ -7,7 +7,8 @@ import java.math.BigInteger
 
 typealias RawProposalNumber = BigInteger
 
-inline class ProposalNumber(val raw: RawProposalNumber) : Comparable<ProposalNumber> {
+@JvmInline
+value class ProposalNumber(val raw: RawProposalNumber) : Comparable<ProposalNumber> {
     constructor(raw: Int) : this(raw.toBigInteger())
     constructor(raw: Long) : this(raw.toBigInteger())
 
@@ -20,13 +21,15 @@ inline class ProposalNumber(val raw: RawProposalNumber) : Comparable<ProposalNum
 
 typealias RawAdoptionIndex = BigDecimal
 
-inline class ProposalAI(val raw: RawAdoptionIndex) {
+@JvmInline
+value class ProposalAI(val raw: RawAdoptionIndex) {
     constructor(raw: Int) : this(raw.toBigDecimal())
 
     override fun toString(): String = raw.toString()
 }
 
-inline class DecisionAI(val raw: RawAdoptionIndex) {
+@JvmInline
+value class DecisionAI(val raw: RawAdoptionIndex) {
     override fun toString(): String = raw.toString()
 }
 
@@ -56,7 +59,8 @@ data class ProposalCommonData(
 
 typealias RawProposalVersionNumber = BigDecimal
 
-inline class ProposalVersionNumber(val raw: RawProposalVersionNumber) {
+@JvmInline
+value class ProposalVersionNumber(val raw: RawProposalVersionNumber) {
     constructor(raw: Int) : this(raw.toBigDecimal())
 }
 

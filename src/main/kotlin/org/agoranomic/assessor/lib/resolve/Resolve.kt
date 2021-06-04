@@ -108,7 +108,8 @@ data class ProposalResolutionMap(
 
 fun ProposalResolutionMap.adoptedProposals() = proposalsWithResult(ProposalResult.ADOPTED)
 
-inline class AssessmentUrl(val raw: String) {
+@JvmInline
+value class AssessmentUrl(val raw: String) {
     override fun toString(): String = raw
 }
 

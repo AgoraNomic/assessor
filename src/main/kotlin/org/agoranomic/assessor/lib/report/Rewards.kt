@@ -15,13 +15,15 @@ import java.math.BigInteger
 
 typealias RawProposalUnroundedReward = BigDecimal
 
-inline class ProposalUnroundedReward(val raw: RawProposalUnroundedReward) {
+@JvmInline
+value class ProposalUnroundedReward(val raw: RawProposalUnroundedReward) {
     override fun toString(): String = raw.toString()
 }
 
 typealias RawProposalRoundedReward = BigInteger
 
-inline class ProposalRoundedReward(val raw: RawProposalRoundedReward) {
+@JvmInline
+value class ProposalRoundedReward(val raw: RawProposalRoundedReward) {
     override fun toString(): String = raw.toString()
 }
 

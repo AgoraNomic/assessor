@@ -88,7 +88,7 @@ private fun <Chamber : AnyMinistry> renderClassAndChamberHeader(
         override fun visitDemocratic() = "CLASS: DEMOCRATIC\n"
 
         override fun visitOrdinary(chamber: Chamber) =
-            "CLASS: ORDINARY\nCHAMBER: ${chamber.readableName.toUpperCase()}\n"
+            "CLASS: ORDINARY\nCHAMBER: ${chamber.readableName.uppercase()}\n"
     })
 }
 

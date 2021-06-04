@@ -21,8 +21,9 @@ class ProposalSetTest {
     private operator fun CreateProposalSetFunc.invoke(vararg proposals: Proposal) = this(proposals)
 
     companion object {
+        // This has to be public in order for JUnit to find it, apparently
         @JvmStatic
-        private fun createProposalSetFuncs(): List<CreateProposalSetFunc> {
+        public fun createProposalSetFuncs(): List<CreateProposalSetFunc> {
             return listOf(::proposalSetOf, ::mutableProposalSetOf)
         }
     }
@@ -216,8 +217,9 @@ class MutableProposalSetTest {
     private operator fun CreateMutableProposalSetFunc.invoke(vararg proposals: Proposal) = this(proposals)
 
     companion object {
+        // This has to be public in order for JUnit to find it, apparently
         @JvmStatic
-        private fun createProposalSetFuncs(): List<CreateMutableProposalSetFunc> {
+        public fun createProposalSetFuncs(): List<CreateMutableProposalSetFunc> {
             return listOf(::mutableProposalSetOf)
         }
     }

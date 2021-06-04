@@ -16,8 +16,9 @@ import kotlin.test.assertTrue
 @DisplayName("endorse test")
 class EndorseTest {
     companion object {
+        // This has to be public in order for JUnit to find it, apparently
         @JvmStatic
-        private fun testingVotes(): List<ResolvingVote> {
+        fun testingVotes(): List<ResolvingVote> {
             return listOf(ResolvedVote(VoteKind.FOR), ResolvedVote(VoteKind.AGAINST), InextricableResolvingVote)
         }
     }

@@ -6,7 +6,8 @@ import java.math.BigInteger
 
 typealias RawQuorum = BigInteger
 
-inline class Quorum(private val raw: RawQuorum) {
+@JvmInline
+value class Quorum(private val raw: RawQuorum) {
     constructor(raw: Int) : this(raw.toBigInteger())
 
     override fun toString(): String = raw.toString()
@@ -18,7 +19,8 @@ operator fun Quorum.compareTo(other: Quorum) = (this.count()).compareTo(other.co
 
 typealias RawProposalQuorum = Quorum
 
-inline class ProposalQuorum(private val raw: RawProposalQuorum) {
+@JvmInline
+value class ProposalQuorum(private val raw: RawProposalQuorum) {
     constructor(raw: Int) : this(Quorum(raw))
 
     override fun toString(): String = raw.toString()
@@ -29,7 +31,8 @@ inline class ProposalQuorum(private val raw: RawProposalQuorum) {
 
 typealias RawAssessmentQuorum = Quorum
 
-inline class AssessmentQuorum(private val raw: RawAssessmentQuorum) {
+@JvmInline
+value class AssessmentQuorum(private val raw: RawAssessmentQuorum) {
     constructor(raw: Int) : this(Quorum(raw))
 
     override fun toString(): String = raw.toString()

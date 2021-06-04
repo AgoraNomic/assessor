@@ -1,6 +1,6 @@
 plugins {
     java
-    kotlin("jvm") version "1.4.0"
+    kotlin("jvm") version "1.5.0"
 }
 
 group = "org.agoranomic"
