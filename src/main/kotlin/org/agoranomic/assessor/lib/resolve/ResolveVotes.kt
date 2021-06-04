@@ -8,35 +8,15 @@ import org.agoranomic.assessor.lib.vote.*
 
 private fun resolveSingleVote(
     allVotes: MultiPersonPendingVoteMap,
-    lookupProposalFunc: LookupProposalFunc,
     proposalNumber: ProposalNumber,
     voter: Person,
-    alreadySeen: List<Pair<ProposalNumber, Person>> = emptyList(),
 ): ResolvingVote? {
-    if (alreadySeen.contains(Pair(proposalNumber, voter))) return InextricableResolvingVote
-
     if (!allVotes.hasVotesFor(voter)) return null
 
     val personVotes = allVotes.votesFor(voter)
     if (!personVotes.hasVoteFor(proposalNumber)) return null
 
-    val proposalVote = personVotes.voteFor(proposalNumber)
-
-    val proposal = lookupProposalFunc(proposalNumber)
-
-    val nextAlreadySeen = alreadySeen + Pair(proposalNumber, voter)
-
-    val nextResolve: ResolveFunc = { nextProposal, nextVoter ->
-        resolveSingleVote(
-            allVotes = allVotes,
-            lookupProposalFunc = lookupProposalFunc,
-            proposalNumber = nextProposal.number,
-            voter = nextVoter,
-            alreadySeen = nextAlreadySeen
-        )
-    }
-
-    return proposalVote
+    return personVotes.voteFor(proposalNumber)
 }
 
 private fun makeVoteContext(
@@ -44,7 +24,7 @@ private fun makeVoteContext(
     lookupProposalFunc: LookupProposalFunc,
 ): VoteContext {
     return StandardVoteContext(resolveFunc = { proposal: Proposal, voter: Person ->
-        resolveSingleVote(allVotes, lookupProposalFunc, proposal.number, voter, alreadySeen = emptyList())
+        resolveSingleVote(allVotes, proposal.number, voter)
     }, lookupProposalFunc = lookupProposalFunc)
 }
 
@@ -62,7 +42,6 @@ private fun resolveVotes(
                 .associateWith { voter ->
                     resolveSingleVote(
                         allVotes = votes,
-                        lookupProposalFunc = lookupProposalFunc,
                         proposalNumber = proposalNumber,
                         voter = voter
                     ) ?: AbstentionResolvingVote
