@@ -1,0 +1,162 @@
+{
+    "metadata": {
+        "name": "8559",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-May/014927.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8559,
+            "proposal_ai": "2.5",
+            "decision_ai": "2.5",
+            "title": "Paper Shredding",
+            "author": "ATMunn",
+            "coauthors": [
+                "G.",
+                "Aris"
+            ],
+            "text": "Amend Rule 1742 \"Contracts\" by appending the following:\n\n  Any player CAN cause a contract to be terminated (syn. \"shred\")\n  without 2 objections. This SHOULD only be done to remove unused\n  contracts or contracts deemed detrimental to the game as a whole."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8559,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "ATMunn"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of ATMunn"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "ATMunn"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of ATMunn"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                }
+            ]
+        }
+    ]
+}
