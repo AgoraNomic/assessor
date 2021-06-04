@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
@@ -13,6 +14,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 fun assessment8559() = assessment {
     name("8559")
     quorum(3)
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-May/014927.html")
 
     strengths {
         default(3)
