@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.lib.proposal
 
-import io.github.random_internet_cat.util.compareTo
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.randomcat.util.compareTo
 import java.math.BigInteger
 
 typealias RawQuorum = BigInteger

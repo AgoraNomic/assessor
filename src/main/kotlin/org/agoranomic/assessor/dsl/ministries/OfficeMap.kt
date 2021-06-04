@@ -1,14 +1,14 @@
 package org.agoranomic.assessor.dsl.ministries
 
-import io.github.random_internet_cat.util.ExhaustiveEnumMap
-import io.github.random_internet_cat.util.requireAllAreDistinctBy
-import io.github.random_internet_cat.util.requireExhaustive
-import io.github.random_internet_cat.util.toExhaustiveEnumMap
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.vote.CommentedResolvingVote
 import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.ResolvingVote
+import org.randomcat.util.ExhaustiveEnumMap
+import org.randomcat.util.requireDistinctBy
+import org.randomcat.util.requireExhaustive
+import org.randomcat.util.toExhaustiveEnumMap
 import kotlin.reflect.KClass
 
 /**
@@ -116,7 +116,7 @@ private constructor(private val data: ExhaustiveEnumMap<Office, OfficeState>) : 
 fun <Office : Enum<Office>> Iterable<Pair<Office, OfficeState>>.toOfficeMap(officeClass: KClass<Office>): OfficeMap<Office> {
     val thisList = this.toList()
 
-    thisList.requireAllAreDistinctBy { it.first }
+    thisList.requireDistinctBy { it.first }
     thisList.map { it.first }.requireExhaustive(officeClass)
 
     val uncheckedOfficeMap = thisList.toMap().toExhaustiveEnumMap(officeClass)
@@ -161,7 +161,7 @@ fun <Office : Enum<Office>> officeMapOf(
 ): OfficeMap<Office> {
     val pairsList = pairs.asList()
 
-    pairsList.requireAllAreDistinctBy { it.first }
+    pairsList.requireDistinctBy { it.first }
     pairsList.map { it.first }.requireExhaustive(officeClass)
 
     val officeStatePairs = pairsList.map { (office, person) ->

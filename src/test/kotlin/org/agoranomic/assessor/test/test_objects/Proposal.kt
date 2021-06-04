@@ -1,10 +1,10 @@
 package org.agoranomic.assessor.test.test_objects
 
-import io.github.random_internet_cat.util.div
-import io.github.random_internet_cat.util.rem
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.proposal.*
+import org.randomcat.util.div
+import org.randomcat.util.rem
 import java.math.BigDecimal
 
 fun testProposalNumber(num: TestNumber): ProposalNumber = ProposalNumber(num)

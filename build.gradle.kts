@@ -20,7 +20,7 @@ dependencies {
     implementation(kotlinx("serialization-runtime", "0.13.0"))
     implementation("commons-cli:commons-cli:1.4")
     implementation("io.github.classgraph:classgraph:4.8.46")
-    implementation("io.github.random-internet-cat:kotlin-utils:1.1.0")
+    implementation("org.randomcat:kotlin-utils:2.0.1")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))

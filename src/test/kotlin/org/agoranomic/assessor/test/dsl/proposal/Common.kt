@@ -1,6 +1,5 @@
 package org.agoranomic.assessor.test.dsl.proposal
 
-import io.github.random_internet_cat.util.toSetCheckingDistinct
 import org.agoranomic.assessor.dsl.receivers.ProposalCommonReceiver
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
@@ -9,6 +8,7 @@ import org.agoranomic.assessor.lib.emptyPersons
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
 import org.agoranomic.assessor.test.test_objects.*
+import org.randomcat.util.requireDistinct
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFails
@@ -216,7 +216,7 @@ interface ProposalCommonCompilerCoauthorTest<R : ProposalCommonReceiver> : Propo
             coauthors(*coauthorsToSet)
         }
 
-        assertEquals(Persons(coauthorsToSet.asIterable().toSetCheckingDistinct()), proposal.coauthors)
+        assertEquals(Persons(coauthorsToSet.asIterable().requireDistinct()), proposal.coauthors)
     }
 }
 

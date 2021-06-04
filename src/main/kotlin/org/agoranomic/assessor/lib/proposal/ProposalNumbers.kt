@@ -1,8 +1,8 @@
 package org.agoranomic.assessor.lib.proposal
 
-import io.github.random_internet_cat.util.toSetCheckingDistinct
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.toImmutableSet
+import org.randomcat.util.requireDistinct
 
 /**
  * A [Collection] that contains a set of distinct ProposalNumbers.
@@ -35,4 +35,4 @@ fun emptyProposalNumbers() = ProposalNumbers(emptySet())
 // Yes, this is hacky, but blame Kotlin.
 @Suppress("FINAL_UPPER_BOUND")
 fun <_ProposalNumber : ProposalNumber> proposalNumbersOf(vararg numbers: _ProposalNumber) =
-    ProposalNumbers(numbers.asList().toSetCheckingDistinct())
+    ProposalNumbers(numbers.asList().requireDistinct())

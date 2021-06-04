@@ -1,9 +1,9 @@
 package org.agoranomic.assessor.lib.proposal.proposal_set
 
-import io.github.random_internet_cat.util.toSetCheckingDistinct
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.ProposalDataMismatchException
 import org.agoranomic.assessor.lib.proposal.ProposalNumbers
+import org.randomcat.util.requireDistinct
 
 abstract class AbstractProposalSet : ProposalSet {
     companion object {
@@ -32,7 +32,7 @@ abstract class AbstractProposalSet : ProposalSet {
     }
 
     override fun numbers(): ProposalNumbers {
-        val numbersSet = map { it.number }.toSetCheckingDistinct()
+        val numbersSet = map { it.number }.requireDistinct()
         return ProposalNumbers(numbersSet)
     }
 
