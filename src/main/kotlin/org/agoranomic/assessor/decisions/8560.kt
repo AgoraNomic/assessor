@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -58,6 +59,10 @@ still limited by Defendant's Rights.
     voting {
         votes(Jason) {
             FOR on 8560
+        }
+
+        votes(Falsifian) {
+            endorse(G) on 8560
         }
     }
 }
