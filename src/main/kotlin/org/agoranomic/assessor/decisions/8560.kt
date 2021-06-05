@@ -68,5 +68,9 @@ still limited by Defendant's Rights.
         votes(CuddleBeam) {
             FOR on all
         }
+
+        votes(Murphy) {
+            endorse(Aenet) on 8560
+        }
     }
 }
