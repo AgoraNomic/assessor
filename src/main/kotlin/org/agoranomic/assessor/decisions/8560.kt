@@ -64,5 +64,9 @@ still limited by Defendant's Rights.
         votes(Falsifian) {
             endorse(G) on 8560
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
