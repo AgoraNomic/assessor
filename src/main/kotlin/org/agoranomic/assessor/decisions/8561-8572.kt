@@ -475,5 +475,15 @@ otherwise)."""")
         votes(CuddleBeam) {
             FOR on all
         }
+
+        votes(G) {
+            FOR on 8561
+            FOR on 8562
+            AGAINST on 8563
+
+            for (proposal in 8564..8572) {
+                PRESENT on proposal
+            }
+        }
     }
 }
