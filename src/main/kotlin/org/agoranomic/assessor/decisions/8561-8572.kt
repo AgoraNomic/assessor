@@ -441,5 +441,20 @@ otherwise)."""")
             FOR on 8571
             FOR on 8572
         }
+
+        votes(Jason) {
+            FOR on 8561
+            FOR on 8562
+            AGAINST on 8563
+            PRESENT on 8564
+            FOR on 8565
+            FOR on 8566
+            AGAINST on 8567
+            FOR on 8568
+            FOR on 8569
+            FOR on 8570
+            FOR on 8571
+            FOR on 8572
+        }
     }
 }
