@@ -4,11 +4,31 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.extraVotes
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+
+private const val ASSETLESS_FEE_SPECIFICATION_WORKED = false
 
 @UseAssessment
 fun assessment8561to8572() = assessment {
     name("8561-8572")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        onOrdinaryProposals {
+            if (ASSETLESS_FEE_SPECIFICATION_WORKED) {
+                extraVotes(Aris, 12)
+                extraVotes(Trigon, 11)
+            }
+
+            extraVotes(G, 5)
+            extraVotes(Aris, 10)
+        }
+    }
 
     proposals(v4) {
         proposal(8561) {
