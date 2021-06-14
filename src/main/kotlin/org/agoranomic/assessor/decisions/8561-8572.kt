@@ -4,8 +4,10 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 private const val ASSETLESS_FEE_SPECIFICATION_WORKED = false
 
@@ -425,5 +427,19 @@ otherwise)."""")
     }
 
     voting {
+        votes(Aris) {
+            PRESENT on 8561
+            PRESENT on 8562
+            PRESENT on 8563
+            FOR on 8564
+            FOR on 8565
+            FOR on 8566
+            endorse(Jason) on 8567
+            FOR on 8568
+            AGAINST on 8569
+            FOR on 8570
+            FOR on 8571
+            FOR on 8572
+        }
     }
 }
