@@ -423,4 +423,7 @@ Manipulation, where N is the class specified in the auction method (or 2
 otherwise)."""")
         }
     }
+
+    voting {
+    }
 }
