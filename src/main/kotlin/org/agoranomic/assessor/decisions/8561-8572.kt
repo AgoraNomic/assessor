@@ -491,7 +491,7 @@ otherwise)."""")
         }
 
         votes(Falsifian) {
-            AGAINST on 8561
+            endorse(G) on 8561
             AGAINST on 8562
             AGAINST on 8563
             FOR on 8564
