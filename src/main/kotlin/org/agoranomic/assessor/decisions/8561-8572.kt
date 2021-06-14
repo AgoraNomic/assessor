@@ -485,5 +485,9 @@ otherwise)."""")
                 PRESENT on proposal
             }
         }
+
+        votes(cuddlybanana) {
+            FOR on all
+        }
     }
 }
