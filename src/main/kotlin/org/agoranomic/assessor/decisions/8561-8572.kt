@@ -504,5 +504,20 @@ otherwise)."""")
             endorse(Jason) on 8571
             endorse(Jason) on 8572
         }
+
+        votes(ATMunn) {
+            FOR on 8561
+            FOR on 8562
+            AGAINST on 8563
+            FOR on 8564
+            AGAINST on 8565
+            endorse(Jason) on 8566
+            FOR on 8567
+            FOR on 8568
+            endorse(Jason) on 8569
+            FOR on 8570
+            PRESENT on 8571
+            FOR on 8572
+        }
     }
 }
