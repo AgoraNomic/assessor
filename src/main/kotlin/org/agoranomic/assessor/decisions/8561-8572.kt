@@ -482,8 +482,12 @@ otherwise)."""")
             AGAINST on 8563
 
             for (proposal in 8564..8572) {
-                PRESENT on proposal
+                if (proposal != 8565) {
+                    PRESENT on proposal
+                }
             }
+
+            endorse(Murphy) on 8565
         }
 
         votes(cuddlybanana) {
