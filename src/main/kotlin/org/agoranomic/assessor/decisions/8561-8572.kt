@@ -430,7 +430,7 @@ otherwise)."""")
         votes(Aris) {
             PRESENT on 8561
             PRESENT on 8562
-            PRESENT on 8563
+            FOR on 8563
             FOR on 8564
             FOR on 8565
             FOR on 8566
