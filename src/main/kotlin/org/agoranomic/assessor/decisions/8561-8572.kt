@@ -471,5 +471,9 @@ otherwise)."""")
             FOR on 8571
             FOR on 8572
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
