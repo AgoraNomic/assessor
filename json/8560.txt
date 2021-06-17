@@ -1,0 +1,178 @@
+{
+    "metadata": {
+        "name": "8560",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-June/014954.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8560,
+            "proposal_ai": "1.7",
+            "decision_ai": "1.7",
+            "title": "simplify indictments",
+            "author": "G.",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "Repeal Rule 2619 (Indictment).\n\nAmend Rule 2557 (Sentencing Guidelines) by appending the following paragraph:\n\n  When the rules authorize an investigator to issue an Indictment\n  for a violation, e CAN do so by levying a fine on the perp, with\n  1.5 Agoran Consent, provided that levying the fine would be\n  otherwise LEGAL and EFFECTIVE.\n\n[\nTurns indictment into a simple \"if we want to apply a punishment outside\nthe 1...2xBase violation range (either higher or lower), we do so with 1.5\nConsent and call that an indictment.\"  The 1.5 level was chosen to match\nthe AI of the current indictment proposals.\n\nThe \"otherwise LEGAL and EFFECTIVE\" clause is so that this ability is\nstill limited by Defendant's Rights.\n]"
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8560,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 9,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ],
+                                "readable": "Endorsement of non-voter G."
+                            },
+                            {
+                                "kind": "inextricable",
+                                "parameters": [
+                                ],
+                                "readable": "Inextricable"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aenet"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ],
+                                "readable": "Endorsement of non-voter Aenet"
+                            },
+                            {
+                                "kind": "inextricable",
+                                "parameters": [
+                                ],
+                                "readable": "Inextricable"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "R. Lee",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                }
+            ]
+        }
+    ]
+}
