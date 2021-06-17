@@ -1,0 +1,1697 @@
+{
+    "metadata": {
+        "name": "8561-8572"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8561,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Election Cycle",
+            "author": "G.",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "Create a power=2 rule, \"The Election Cycle\", with the following text:\n\n  A holder of an elected office who did not become its holder by\n  winning an election, and has not won an election for that office\n  since, is an interim holder. An elected office that is either\n  vacant or has an interim holder is an interim office.\n\n  An office is term-limited if the most recent election for that\n  office was resolved more than the length of that office's term\n  prior. The term for the office of Prime Minister is 90 days. The\n  term for all other elected offices is 180 days.\n\n  A player CAN initiate an election for a specified elected office:\n\n  a) with 2 support, if either the office is interim or term-\n     limited, and provided that the initiator becomes a candidate\n     in the same message.\n\n  b) By announcement, if e is the ADoP (or, if the office is the\n     ADoP, if e is the Assessor) and the office is interim, or if\n     e is the holder of that office.\n\n  Once per quarter, the ADoP CAN and SHALL publish a Notice of\n  Election specifying between 2-4 term-limited offices (if there\n  fewer than 2 term-limited offices, the ADoP MUST instead list\n  all of them).  Such a notice initiates elections for the\n  specified offices.  The ADoP SHOULD prioritize offices that\n  have gone longest since their last elections.\n\n  The above notwithstanding, an election for an office CANNOT be\n  initiated if one is already in progress.\n\n\n[Delete this section added to the previous rule - better gathers\nelection procedure rules in one place].\n\nAmend Rule 1006 (Offices) by removing:\n  A holder of an elected office who did not become its holder by\n  winning an election, and has not won an election for that office\n  since, is an interim holder. An elected office that is either\n  vacant or has an interim holder is an interim office.\n\n\n[For the below rule, remove text placed in the new rule above,\nand add the Assessor as the vote collector for ADoP elections].\n\nAmend Rule 2154 (Election Procedure) to read in full:\n\n  When an election is initiated, it enters the nomination period,\n  which lasts for 4 days. After an election is initiated and until\n  nominations close, any player CAN become a candidate by\n  announcement. A candidate ceases to be a candidate if e ceases to\n  be a player during the election or if holding the office would\n  make em Overpowered. During the nomination period, a candidate CAN\n  cease to be a candidate by announcement if there is at least one\n  other candidate.\n\n  An election whose nomination period is complete is contested if it\n  has two or more candidates, and uncontested otherwise. Nominations\n  close at the end of the poll's voting period or when the election\n  is ended, whichever comes first.\n\n  After the nomination period ends, the ADoP (or, if the office is\n  the ADoP, the Assessor) CAN and, in a timely fashion, SHALL:\n\n  1) If the election is contested, initiate an Agoran decision to\n     select the winner of the election (the poll). For this\n     decision, the Vote Collector is the ADoP (or, if the office\n     is the ADoP, the Assessor), the valid options are\n     the candidates for that election (including those who become\n     candidates after its initiation), and the voting method is\n     instant runoff. When the poll is resolved, its outcome, if a\n     player, wins the election. If the outcome is not a player, the\n     election ends with no winner.\n\n  2) If POSSIBLE per the following paragraph, end the election\n     immediately.\n\n  If at any point an uncontested election has a single candidate,\n  then any player CAN by announcement declare em the winner of the\n  election, thereby causing em to win the election. If at any point\n  an uncontested election has no candidates, then any player CAN\n  declare the election ended with no winner by announcement.\n\n  When a player wins an election, e is installed into the associated\n  office and the election ends."
+        },
+        {
+            "version": "4",
+            "number": 8562,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Officializing Discord",
+            "author": "ATMunn",
+            "coauthors": [
+                "Aris"
+            ],
+            "text": "The Publicity switch of the Discord server having the ID of\n724077429412331560 and being accessible from the permanent invite link\nof https://discord.gg/tz2u6m7 is hereby flipped to Discussion."
+        },
+        {
+            "version": "4",
+            "number": 8563,
+            "proposal_ai": "1.7",
+            "decision_ai": "1.7",
+            "title": "Determinacy is a Good Thing",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "[Note that Gaelan's win should have been processed by the time\nthis is adopted, unless there's an appeal.]\n\nAmend Rule 591, \"Delivering Judgements\", by removing the text:\n\n  * PARADOXICAL, appropriate if the statement is logically\n    undecidable as a result of a paradox or or other irresovable\n    logical situation. PARADOXICAL is not appropriate if IRRELEVANT\n    is appropriate, nor is it appropriate if the undecidability\n    arises from the case itself or in reference to it.\n\nand:\n\n  DISMISS is not appropriate if PARADOXICAL is appropriate.\n\nRepeal Rule 2553, \"Win by Paradox\"."
+        },
+        {
+            "version": "4",
+            "number": 8564,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Sponsorship is not Co-authorship",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "[It's always felt weird to me that pending a proposal now\nmakes you a co-author. That's not what co-authorship\nmeans, IMO. Also, it goes against my mental invariant\nthat proposals are immutable after creation.]\n\nAmend rule 2622, \"Pending Proposals\", by deleting the text:\n\n  If the player did not create the proposal and is not\n  listed in the list of co-authors of the proposal,\n  e is added to the list of co-authors.\n\n[For context, here's the current text of the paragraph:\n\n  Any player CAN pay 1 Pendant to flip the Pended switch of a\n  specified proposal to True. If the player did not create the\n  proposal and is not listed in the list of co-authors of the\n  proposal, e is added to the list of co-authors. When e does so,\n  the proposal becomes sponsored.]"
+        },
+        {
+            "version": "4",
+            "number": 8565,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Popularity Contest",
+            "author": "Aris",
+            "coauthors": [
+            ],
+            "text": "Enact a new power 1.0 Rule entitled \"Popularity Contest\",\nwith the following text:\n\n  Immediately after the adoption of this rule, Aris wins the\n  game. Then, for each person who voted unconditionally FOR the\n  referendum on the proposal that enacted this rule, this\n  rule causes that person to earn a Black Ribbon.\n\n  Aris CAN cause this rule to make a specified player\n  earn a Black Ribbon by announcement. Aris can\n  cause this rule to award a specified player\n  a specified patent title containing the\n  string \"Popular\" by announcement.\n\n  If it has been at least one month since this rule\n  was adopted, any person CAN End the Contest\n  by announcement, causing this rule to repeal itself."
+        },
+        {
+            "version": "4",
+            "number": 8566,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Anti-AI escalation",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend rule 1950 by appending the following to the first paragraph: \" If\na referendum has an adoption index less than the adoption index of its\nassociated proposal, the referendum's adoption index is immediately set\nto that of the associated proposal\".\n\n[Prevents a potential 2->3 power escalation where a Power 2 dictatorship\ncan set the AI of the referendum on an AI 3 proposal to 1, then force it\nthrough at AI 1.]"
+        },
+        {
+            "version": "4",
+            "number": 8567,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "AI voting method clarification",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 1950 by replacing \"For any Agoran decision with an adoption\nindex\" with \"For any Agoran decision with a non-\"none\" adoption index\".\n\n[Legislates the decision in CFJ 3746. All Agoran decisions possess an\nadoption index switch, but some of them have the value \"none\".]"
+        },
+        {
+            "version": "4",
+            "number": 8568,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Supporter/Objector clarification",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2124 by replacing the following:\n\n{\n\n  The above notwithstanding, if an action is to be performed without\n  N objections or with N Agoran consent, and an objection to an\n  intent to perform it has been withdrawn within the past 24 hours,\n  then Agora is not Satisfied with that intent.\n\n  The above notwithstanding, Agora is not satisfied with an intent\n  if the Speaker has objected to it in the last 48 hours.\n\n  A person CANNOT support or object to an announcement of intent\n  before the intent is announced, or after e has withdrawn the same\n  type of response.\n\n}\n\nwith the following:\n\n{\n\n  The above notwithstanding, if an action is to be performed without N\n  objections or with N Agoran consent, and an entity has ceased to be an\n  Objector to that intent within the past 24 hours, then Agora is not\n  Satisfied with that intent.\n\n  The above notwithstanding, Agora is not Satisfied with an intent if the\n  Speaker has become an Objector to it in the last 48 hours.\n\n  An entity is not considered a Supporter or Objector to an intent solely\n  due to a purported support or objection made before the intent was\n  announced. An entity is not considered a Supporter to an intent if e has\n  previously ceased to be a Supporter, and e is not considered an Objector\n  to an intent if e has previously ceased to be an Objector.\n\n}\n\n[In each paragraph, use Objector/Supportor status instead of evaluating\nwhether objections were withdrawn. For instance, it has been previously\npointed out (in private conversation) that the Speaker could potentially\ncompletely block an intent by objecting multiple times. Additionally, in\nthe third paragraph, extend the restrictions to entities instead of just\npersons (since the definition of Supporter/Objector applies to entities,\nrather than persons).]"
+        },
+        {
+            "version": "4",
+            "number": 8569,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Fixing Festivals",
+            "author": "Jason",
+            "coauthors": [
+                "Aris",
+                "Murphy"
+            ],
+            "text": "Amend Rule 2124 by replacing the following text:\n\n{\n\n  The entities eligible to support or object to an intent to perform\n  an action are, by default, all players, subject to modification by\n  the document authorizing the dependent action.\n\n}\n\nwith the following text:\n\n{\n\n  A document that authorizes a dependent action, by default, implicitly\n  asserts that all players are eligible to support or object to an intent\n  to perform that action; if the document is a rule, conflicts about\n  eligibility (including conflicts with such an implicit assertion) are\n  resolved using the normal procedures.\n\n}\n\n\nSet the power of Rule 2480 (Festivals) to 3.1.\n\nSet the power of Rule 2481 (Festival Restrictions) to 3.1.\n\n\nAmend Rule 2481 (Festival Restrictions) by replacing \"Non-Festive\nplayers are never considered Supporters of a dependent action\" with\n\"Rules to the contrary notwithstanding, non-Festive players are not\neligible to support a dependent action\".\n\n\n[Currently, eligibility to object/support to a dependent action is\ndefined wholly by the rule defining the action. This breaks the festival\nrule that non-festive players are not considered supporters. This\nproposal changes the definition of eligibility so that it uses the\nnormal precedence rules, then raises the power of Festivals so that it\napplies to the highest-power dependent action (emergency regulation\nchanges).]"
+        },
+        {
+            "version": "4",
+            "number": 8570,
+            "proposal_ai": "3.1",
+            "decision_ai": "3.1",
+            "title": "Emergency Regulation Clarification",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2614 by replacing \"Award Patent Titles not mentioned in any\nRule and Badges\" with \"Award Patent Titles that are either Badges or are\nnot mentioned in any Rule\".\n\n[Just a minor wording tweak, this has always looked weird to me.]"
+        },
+        {
+            "version": "4",
+            "number": 8571,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Gauntlet announcement patch",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2644 (The Gauntlet) to read, in whole:\n\n{\n\n  A player CAN, by announcement, Notice the Gauntlet, specifying a single\n  player that owns 5 or more stones. When e does, the specified player\n  Wields the Gauntlet.\n\n  When a player Wields the Gauntlet, e wins the game, then all existing\n  stones are transferred to Agora.\n\n}\n\n[This removes the possibility of accidentally causing someone to Wield\nthe Gauntlet by changing the \"correct announcement\" to a specific\naction. For instance, I am concerned that a Stonemason's weekly report\nmight be considered such an announcement.]"
+        },
+        {
+            "version": "4",
+            "number": 8572,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Thou shalt not disobey Trigon",
+            "author": "Jason",
+            "coauthors": [
+                "Trigon"
+            ],
+            "text": "Amend Rule 2545 by appending the following to the paragraph beginning\n\"When the rules authorize\": \"Persons who voluntarily participate in an\nauction (including the auctioneer) SHALL NOT violate requirements that\nauction's method that are clearly intended to be punishable as rules\nviolations; doing so is the Class N Crime of Auction\nManipulation, where N is the class specified in the auction method (or 2\notherwise).\""
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8561,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 26,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of G."
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 5 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "5"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        }
+                    ],
+                    "final": 8
+                },
+                {
+                    "person": "Aris",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 10 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "10"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        }
+                    ],
+                    "final": 13
+                }
+            ]
+        },
+        {
+            "proposal": 8562,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 24,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8563,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 21,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8564,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 31,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 5 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "5"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        }
+                    ],
+                    "final": 8
+                },
+                {
+                    "person": "Aris",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 10 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "10"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        }
+                    ],
+                    "final": 13
+                }
+            ]
+        },
+        {
+            "proposal": 8565,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 39,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Murphy"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Murphy"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 5 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "5"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        }
+                    ],
+                    "final": 8
+                },
+                {
+                    "person": "Aris",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 10 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "10"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        }
+                    ],
+                    "final": 13
+                }
+            ]
+        },
+        {
+            "proposal": 8566,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 27,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8567,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 12,
+                "strength_against": 12,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8568,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 15,
+                "strength_against": 9,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8569,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 24,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8570,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 27,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8571,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 31,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 5 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "5"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        }
+                    ],
+                    "final": 8
+                },
+                {
+                    "person": "Aris",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 10 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "10"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        }
+                    ],
+                    "final": 13
+                }
+            ]
+        },
+        {
+            "proposal": 8572,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 37,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Aris",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Cuddle Beam",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "cuddlybanana",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Gaelan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 5 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "5"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        }
+                    ],
+                    "final": 8
+                },
+                {
+                    "person": "Aris",
+                    "initial": 3,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Bought Strength 10 times",
+                                "kind": "bought_strength",
+                                "parameters": [
+                                    {
+                                        "name": "extra_votes",
+                                        "value": "10"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 13
+                        }
+                    ],
+                    "final": 13
+                }
+            ]
+        }
+    ]
+}
