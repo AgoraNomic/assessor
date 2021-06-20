@@ -4,11 +4,24 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.extraVotes
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 
 @UseAssessment
 fun assessment8573() = assessment {
     name("8573")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        onOrdinaryProposals {
+            extraVotes(G, 5)
+            extraVotes(Aris, 10)
+        }
+    }
 
     proposals(v4) {
         proposal(8573) {
