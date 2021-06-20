@@ -120,5 +120,9 @@ An election for Mad Engineer is initiated.
         votes(Murphy) {
             FOR on 8573
         }
+
+        votes(G) {
+            FOR on 8573
+        }
     }
 }
