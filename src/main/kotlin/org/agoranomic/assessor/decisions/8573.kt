@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -105,6 +106,10 @@ An election for Mad Engineer is initiated.
 
         votes(RLee) {
             FOR on 8573
+        }
+
+        votes(Trigon) {
+            endorse(G) on 8573
         }
     }
 }
