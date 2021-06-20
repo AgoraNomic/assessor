@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
@@ -14,6 +15,7 @@ private const val ASSETLESS_FEE_SPECIFICATION_WORKED = false
 @UseAssessment
 fun assessment8561to8572() = assessment {
     name("8561-8572")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-June/014992.html")
     quorum(3)
 
     strengths {
