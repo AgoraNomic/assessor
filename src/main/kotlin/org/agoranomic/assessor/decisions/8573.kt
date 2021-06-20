@@ -116,5 +116,9 @@ An election for Mad Engineer is initiated.
         votes(Falsifian) {
             AGAINST on 8573
         }
+
+        votes(Murphy) {
+            FOR on 8573
+        }
     }
 }
