@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8573() = assessment {
@@ -98,5 +99,8 @@ An election for Mad Engineer is initiated.
     }
 
     voting {
+        votes(Jason) {
+            FOR on 8573
+        }
     }
 }
