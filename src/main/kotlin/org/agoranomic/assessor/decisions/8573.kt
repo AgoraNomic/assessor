@@ -96,4 +96,7 @@ An election for Mad Engineer is initiated.
             )
         }
     }
+
+    voting {
+    }
 }
