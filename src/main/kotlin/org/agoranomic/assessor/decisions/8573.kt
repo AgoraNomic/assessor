@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.extraVotes
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -110,6 +111,10 @@ An election for Mad Engineer is initiated.
 
         votes(Trigon) {
             endorse(G) on 8573
+        }
+
+        votes(Falsifian) {
+            AGAINST on 8573
         }
     }
 }
