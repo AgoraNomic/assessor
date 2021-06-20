@@ -102,5 +102,9 @@ An election for Mad Engineer is initiated.
         votes(Jason) {
             FOR on 8573
         }
+
+        votes(RLee) {
+            FOR on 8573
+        }
     }
 }
