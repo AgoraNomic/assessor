@@ -4,8 +4,10 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8574to9593() = assessment {
@@ -578,5 +580,26 @@ document take place.""")
     }
 
     voting {
+        votes(Trigon) {
+            FOR on 8574
+            FOR on 8575
+            endorse(Jason) on 8576
+            FOR on 8577
+            FOR on 8578
+            FOR on 8579
+            FOR on 8580
+            FOR on 8581
+            PRESENT on 8582
+            PRESENT on 8583
+            PRESENT on 8584
+            PRESENT on 8585
+            PRESENT on 8586
+            PRESENT on 8587
+            AGAINST on 8588
+            FOR on 8589
+            FOR on 8590
+            FOR on 8591
+            FOR on 8592
+        }
     }
 }
