@@ -669,7 +669,7 @@ document take place.""")
             FOR on 8574
             FOR on 8575
             endorse(G) on 8576
-            FOR on 8577
+            AGAINST on 8577
             FOR on 8578
             FOR on 8579
             FOR on 8580
