@@ -708,5 +708,27 @@ document take place.""")
             AGAINST on 8591
             AGAINST on 8592
         }
+
+        votes(Falsifian) {
+            endorse(Trigon) on 8574
+            endorse(Jason) on 8575
+            endorse(Jason) on 8576
+            endorse(Jason) on 8577
+            endorse(Jason) on 8578
+            endorse(Jason) on 8579
+            endorse(Jason) on 8580
+            endorse(Aris) on 8581
+            endorse(Aris) on 8582
+            endorse(Murphy) on 8583
+            endorse(Murphy) on 8584
+            endorse(Murphy) on 8585
+            AGAINST on 8586
+            endorse(Murphy) on 8587
+            endorse(Murphy) on 8588
+            AGAINST on 8589
+            AGAINST on 8590
+            AGAINST on 8591
+            AGAINST on 8592
+        }
     }
 }
