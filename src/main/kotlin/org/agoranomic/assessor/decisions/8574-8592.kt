@@ -752,5 +752,9 @@ document take place.""")
             FOR on 8591
             FOR on 8592
         }
+
+        votes(G) {
+            AGAINST on 8577
+        }
     }
 }
