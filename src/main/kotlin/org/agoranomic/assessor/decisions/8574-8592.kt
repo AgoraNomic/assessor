@@ -730,5 +730,27 @@ document take place.""")
             AGAINST on 8591
             AGAINST on 8592
         }
+
+        votes(Murphy) {
+            FOR on 8574
+            PRESENT on 8575
+            FOR on 8576
+            FOR on 8577
+            FOR on 8578
+            FOR on 8579
+            FOR on 8580
+            FOR on 8581
+            FOR on 8582
+            FOR on 8583
+            FOR on 8584
+            FOR on 8585
+            FOR on 8586
+            FOR on 8587
+            FOR on 8588
+            FOR on 8589
+            FOR on 8590
+            FOR on 8591
+            FOR on 8592
+        }
     }
 }
