@@ -576,4 +576,7 @@ the enactment of this proposal, then the effects described in that
 document take place.""")
         }
     }
+
+    voting {
+    }
 }
