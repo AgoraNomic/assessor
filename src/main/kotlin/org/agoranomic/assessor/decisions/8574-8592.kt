@@ -678,7 +678,7 @@ document take place.""")
             FOR on 8583
             FOR on 8584
             FOR on 8585
-            FOR on 8586
+            AGAINST on 8586
             AGAINST on 8587
             FOR on 8588
             AGAINST on 8589
