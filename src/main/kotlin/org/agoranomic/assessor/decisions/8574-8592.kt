@@ -636,7 +636,7 @@ document take place.""")
             FOR on 8585
             FOR on 8586
             endorse(Aris) on 8587
-            FOR on 8588
+            AGAINST on 8588
 
             for (proposal in listOf(8589, 8590, 8591, 8592)) {
                 FOR on proposal
