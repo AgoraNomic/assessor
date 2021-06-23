@@ -620,5 +620,11 @@ document take place.""")
             PRESENT on 8588
             // No vote on 8589-8592
         }
+
+        votes(RLee) {
+            for (proposal in listOf(8589, 8590, 8591, 8592)) {
+                FOR on proposal
+            }
+        }
     }
 }
