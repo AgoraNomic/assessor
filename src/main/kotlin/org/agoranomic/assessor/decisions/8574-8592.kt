@@ -601,5 +601,24 @@ document take place.""")
             FOR on 8591
             FOR on 8592
         }
+
+        votes(nix) {
+            FOR on 8574
+            PRESENT on 8575
+            endorse(G) on 8576
+            PRESENT on 8577
+            PRESENT on 8578
+            PRESENT on 8579
+            FOR on 8580
+            AGAINST on 8581
+            PRESENT on 8582
+            PRESENT on 8583
+            // TODO resolve conditional vote on 8584: ENDORSE G. and AIS523 if equal, else AGAINST
+            PRESENT on 8585
+            PRESENT on 8586
+            PRESENT on 8587
+            PRESENT on 8588
+            // No vote on 8589-8592
+        }
     }
 }
