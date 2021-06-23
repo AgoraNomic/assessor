@@ -754,7 +754,25 @@ document take place.""")
         }
 
         votes(G) {
+            FOR on 8574
+            FOR on 8575
+            FOR on 8576
             AGAINST on 8577
+            FOR on 8578
+            FOR on 8579
+            FOR on 8580
+            FOR on 8581
+            FOR on 8582
+            FOR on 8583
+            // NO VOTE on 8584
+            FOR on 8585
+            // NO VOTE on 8586
+            AGAINST on 8587
+            FOR on 8588
+            PRESENT on 8589
+            FOR on 8590
+            AGAINST on 8591
+            PRESENT on 8592
         }
     }
 }
