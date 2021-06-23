@@ -686,5 +686,27 @@ document take place.""")
             AGAINST on 8591
             AGAINST on 8592
         }
+
+        votes(ais523) {
+            FOR on 8574
+            FOR on 8575
+            FOR on 8576
+            FOR on 8577
+            endorse(G) on 8578
+            FOR on 8579
+            FOR on 8580
+            AGAINST on 8581
+            PRESENT on 8582
+            FOR on 8583
+            AGAINST on 8584
+            FOR on 8585
+            FOR on 8586
+            PRESENT on 8587
+            AGAINST on 8588
+            AGAINST on 8589
+            AGAINST on 8590
+            AGAINST on 8591
+            AGAINST on 8592
+        }
     }
 }
