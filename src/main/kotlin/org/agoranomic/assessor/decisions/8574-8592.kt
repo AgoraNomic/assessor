@@ -622,9 +622,47 @@ document take place.""")
         }
 
         votes(RLee) {
+            FOR on 8574
+            FOR on 8575
+            AGAINST on 8576
+            FOR on 8577
+            AGAINST on 8578
+            AGAINST on 8579
+            FOR on 8580
+            AGAINST on 8581
+            FOR on 8582
+            FOR on 8583
+            endorse(Aris) on 8584
+            FOR on 8585
+            FOR on 8586
+            endorse(Aris) on 8587
+            FOR on 8588
+
             for (proposal in listOf(8589, 8590, 8591, 8592)) {
                 FOR on proposal
             }
+        }
+
+        votes(Telnaior) {
+            FOR on 8574
+            FOR on 8575
+            FOR on 8576
+            FOR on 8577
+            FOR on 8578
+            FOR on 8579
+            PRESENT on 8580
+            AGAINST on 8581
+            PRESENT on 8582
+            FOR on 8583
+            PRESENT on 8584
+            FOR on 8585
+            FOR on 8586
+            FOR on 8587
+            AGAINST on 8588
+            AGAINST on 8589
+            AGAINST on 8590
+            AGAINST on 8591
+            AGAINST on 8592
         }
     }
 }
