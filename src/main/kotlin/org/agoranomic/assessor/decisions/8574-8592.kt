@@ -764,9 +764,9 @@ document take place.""")
             FOR on 8581
             FOR on 8582
             FOR on 8583
-            // NO VOTE on 8584
+            endorse(ais523) on 8584
             FOR on 8585
-            // NO VOTE on 8586
+            FOR on 8586
             AGAINST on 8587
             FOR on 8588
             PRESENT on 8589
