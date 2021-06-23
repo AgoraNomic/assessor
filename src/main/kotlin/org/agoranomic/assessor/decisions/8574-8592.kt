@@ -700,7 +700,7 @@ document take place.""")
             FOR on 8583
             AGAINST on 8584
             FOR on 8585
-            FOR on 8586
+            AGAINST on 8586
             PRESENT on 8587
             AGAINST on 8588
             AGAINST on 8589
