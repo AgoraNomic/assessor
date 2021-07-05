@@ -92,7 +92,7 @@ associated with the Ministry of Economy."""")
             FOR on 8489
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             endorse(Aris) on all
         }
 

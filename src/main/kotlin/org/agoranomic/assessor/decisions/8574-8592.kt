@@ -645,7 +645,7 @@ document take place.""")
             }
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             FOR on 8574
             FOR on 8575
             FOR on 8576

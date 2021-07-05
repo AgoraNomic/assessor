@@ -36,7 +36,7 @@ fun assessment8188to8195() = assessment {
             FOR on 8195
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             match(G) on all
         }
 

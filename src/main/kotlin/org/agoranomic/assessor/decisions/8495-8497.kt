@@ -91,7 +91,7 @@ grant a Pendant to the player that pended the proposal."""")
             AGAINST on 8497
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             endorse(Aris) on all
         }
 

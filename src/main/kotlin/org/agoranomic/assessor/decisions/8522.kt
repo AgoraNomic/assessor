@@ -127,7 +127,7 @@ master performed on its behalf.
             FOR on 8522
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             endorse(Aris) on all
         }
 

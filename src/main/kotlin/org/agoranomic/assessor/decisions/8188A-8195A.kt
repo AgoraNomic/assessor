@@ -119,7 +119,7 @@ fun assessment8188Ato8195A() = assessment {
             AGAINST on 8195
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             match(G) on all
         }
 

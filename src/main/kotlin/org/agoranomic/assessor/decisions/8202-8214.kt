@@ -459,7 +459,7 @@ following:
             FOR on 8214
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             match(G) on all
         }
 

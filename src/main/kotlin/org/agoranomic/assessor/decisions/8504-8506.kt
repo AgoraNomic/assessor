@@ -150,7 +150,7 @@ FOR.""")
             AGAINST on 8506
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             endorse(Aris) on all
         }
 

@@ -208,7 +208,7 @@ with:
             FOR on 8503
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             endorse(Aris) on all
         }
 

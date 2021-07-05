@@ -80,7 +80,7 @@ fun assessment8215to8234() = assessment {
             endorse(G) on 8224 comment "Final non-conditional ballot"
             endorse(Falsifian) on 8227 comment "Final non-conditional ballot"
             endorse(G) on 8228 comment "Final non-conditional ballot"
-            endorse(Telnaior) on 8229 comment "Final non-conditional ballot"
+            endorse(Telna) on 8229 comment "Final non-conditional ballot"
             endorse(G) on 8230 comment "Final non-conditional ballot"
             endorse(G) on 8231 comment "Final non-conditional ballot"
             endorse(G) on 8232 comment "Final non-conditional ballot"
@@ -125,7 +125,7 @@ fun assessment8215to8234() = assessment {
             FOR on 8234
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             match(G) on all
         }
     }

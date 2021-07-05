@@ -56,7 +56,7 @@ of coins".
         proposal(8517) {
             title("Phasing Out Zombies")
             ai("3.0")
-            author(Telnaior)
+            author(Telna)
             coauthors(Jason, Trigon)
             democratic()
             sponsored()

@@ -212,7 +212,7 @@ the following list, to read in full:
             AGAINST on 8201
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             match(G) on all
         }
         votes(Tarhulindur) {

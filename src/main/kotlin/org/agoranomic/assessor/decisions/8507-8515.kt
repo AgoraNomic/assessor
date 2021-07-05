@@ -447,7 +447,7 @@ see.)""")
             FOR on 8515
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             endorse(Aris) on all
         }
 

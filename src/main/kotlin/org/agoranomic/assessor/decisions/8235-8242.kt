@@ -74,7 +74,7 @@ fun assessment8235to8242() = assessment {
             PRESENT on all
         }
 
-        votes(Telnaior) {
+        votes(Telna) {
             PRESENT on all
         }
 
