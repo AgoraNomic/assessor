@@ -85,7 +85,7 @@
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
             "title": "Our Heroic Distributor",
-            "author": "Aris",
+            "author": "Aspen",
             "coauthors": [
             ],
             "text": "WHEREAS, since 2003, omd has served as Distributor, hosting and maintaining\nthe Agoran lists and website;\n\nWHEREAS the period of eir Distributorship comprises the majority of Agoran\nhistory;\n\nWHEREAS e has been diligent about keeping the technical underpinnings of Agoran\nplay running through good times and bad, even when e was not active within\nthe game itself; and\n\nWHEREAS eir service, a substantial portion of which was performed without\nofficial recognition under the rules, has been well above and beyond the\ncall of duty:\n\nBE IT HEREBY ENACTED BY THE PLAYERS OF AGORA that omd is\nNOW AND FOREVERMORE a Hero of Agora Nomic, and that e is granted the\nPatent Title recognizing such."
@@ -96,7 +96,7 @@
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
             "title": "The Buoyant Economy",
-            "author": "Aris",
+            "author": "Aspen",
             "coauthors": [
                 "nix",
                 "Trigon",
@@ -115,7 +115,7 @@
             "author": "nix",
             "coauthors": [
                 "Trigon",
-                "Aris"
+                "Aspen"
             ],
             "text": "Amend R2605, \"Ministries\", to read in full:\n\n  A Ministry is an entity defined as such by this rule. Each\n  Ministry has a goal. The Ministries of Agora, and their goals,\n  are as follows:\n\n  A. Ministry of Compliance: Ensure players follow rules and\n  voluntary agreements and receive appropriate sanctions when they\n  do not.\n  B. Ministry of Legislation: Enable and encourage gameplay\n  related to the rules themselves.\n  C. Ministry of Economy: Enable and encourage gameplay related to\n  assets and currencies.\n  D. Ministry of Legacy: Track and reward great Agoran\n  achievements\n  E. Ministry of Participation: Track information about the\n  participation of people in Agora.\n\n(Reworked the list to hopefully have a better distribution in offices\nand proposals)\n\nEnact a new Power=1 rule titled \"The Ministor\" with the following text:\n\n  The Ministor is an office, tasked with overseeing gameplay\n  related to Ministries. The Ministor SHALL publish eir monthly\n  report in a timely manner from the beginning of the month.\n\nNix assumes the office of Ministor.\n\n(New office with a special time sensitive monthly report, to ensure\nthese things are easy for players to keep up on)\n\nEnact a new Power=2 rule titled \"Office Interests\" with the following\ntext:\n\n  Ministry Interest (or just Interest) is a secured office switch,\n  tracked by the Ministor in eir monthly report, whose possible\n  values are lists of ministries, defaulting to the empty list. The\n  Ministor CAN flip an office's Ministry Interests without\n  objection.\n\n  For each item of each office's Ministry Interest, that office's\n  holder's voting strength is increased by 2 on proposals whose\n  Ministry Impact is set to that Ministry.\n\n(Note that this moves a duty that used to belong to ADoP to Ministor.\nIt just makes a bit more sense here.)\n\nWhen this proposal passes flip the Ministry Interest switch of every\noffice to the value of that office's Interest switch immediately before\nthis proposal passed with the following changes, applied in order:\n\n* replace every instance of \"justice\" with \"compliance\"\n* replace every instance of \"efficiency\" with \"participation\"\n\n(This will ensure that every office still has at least one interest,\nbut it will also change some switches in undesirable ways. I'll, as\nMinistor, separately intend to fix a bunch of these offices' interests\nto better match the new categories)\n\nEnact a new Power=2 rule titled \"Player Focuses\" with the following\ntext:\n\n  Ministry Focus (or just Focus) is a secured active player switch,\n  tracked by the Ministor in eir monthly report, with possible values\n  Unfocused (the default) and any Ministry.\n\n  An active player CAN Plan to Flip eir own Ministry Focus,\n  specifying any valid value for eir Ministry Focus, by\n  announcement. At the beginning of a month, every active player's\n  Ministry Focus is set to the value e mostly recently specified by\n  Planning to Flip. If a player did not Plan to Flip eir Ministry\n  Focus switch in the last month, it is not flipped.\n\n(This, combined with the below rule, will take over the card grants\nthat offices used to get, making it less gerontocratic and more\nstrategic.)\n\nAmend R2624, \"Card Administration\", to be titled \"Focus Grants\" and to\nread in full:\n\n  Each of the following Ministries has a Grant, listed below.\n\n  Ministry of Compliance: 1 Justice Card\n  Ministry of Legislation: 1 Legislative Card\n  Ministry of Participation: 1 Voting Card\n  Ministry of Economy: 50 coins divided by X, rounded up; where X\n  is the number of players with their Ministry Focus set to\n  Economy. The Ministor SHALL report this value in a timely manner\n  after the beginning of the month.\n\n  A player CAN once a month grant eir Ministry Focus' Grant to a\n  specified player by announcement.\n\n  The Ministor CAN, once a month and by announcement, and SHALL, in\n  a timely manner from the beginning of the month, grant 1 Victory\n  Card to a random player whose Ministry Focus is Legacy and 1\n  Victory Point to every other player whose Ministry Focus is\n  Legacy.\n\n(This system replaces officer grants, in a way that involves a lot more\nplanning and strategy.)\n\nAmend R2422, \"Voting Strength\", by replacing the last paragraph with:\n\n  A player CAN Buy Strength by paying 1 Extra Vote and specifying a\n  current Agoran decision on which e is a voter. For each time a\n  player has Bought Strength on a decision, eir voting strength is\n  1 greater on that decision. If the decision is on a proposal, and\n  the proposal's chamber and the player's focus are the same value,\n  then eir voting strength is instead 2 greater on that decision.\n  A player CANNOT Buy Strength for the same decision more than 3\n  times.\n\n(Added a clause where if Focus=Chamber, you get 2 strength instead of\n1. Flavorful, and potentially makes Extra Votes more useful. We'll\nsee.)"
         }
@@ -130,13 +130,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -149,14 +149,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -774,13 +774,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -793,14 +793,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -1296,13 +1296,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -1315,14 +1315,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -1631,13 +1631,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -1650,14 +1650,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -1732,14 +1732,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -2103,7 +2103,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aris",
+                    "person": "Aspen",
                     "initial": 3,
                     "modifications": [
                         {
@@ -2157,13 +2157,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -2176,14 +2176,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -2801,7 +2801,7 @@
                 "strength_against": 33,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "AGAINST",
                         "comments": [
                             {
@@ -2821,7 +2821,7 @@
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "AGAINST",
                         "comments": [
                             {
@@ -2834,14 +2834,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -3131,13 +3131,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3150,14 +3150,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -3175,14 +3175,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -3306,14 +3306,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -3466,13 +3466,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3485,14 +3485,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -3510,14 +3510,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
@@ -3801,13 +3801,13 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "Aris",
+                        "voter": "Aspen",
                         "vote": "FOR",
                         "comments": [
                         ]
                     },
                     {
-                        "voter": "Telnaior",
+                        "voter": "Telna",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3820,14 +3820,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Aris"
+                                        "value": "Aspen"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Aris"
+                                "readable": "Endorsement of Aspen"
                             }
                         ]
                     },
