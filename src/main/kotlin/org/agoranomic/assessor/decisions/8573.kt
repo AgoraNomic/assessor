@@ -24,7 +24,7 @@ fun assessment8573() = assessment {
 
         onOrdinaryProposals {
             extraVotes(G, 5)
-            extraVotes(Aris, 10)
+            extraVotes(Aspen, 10)
         }
     }
 

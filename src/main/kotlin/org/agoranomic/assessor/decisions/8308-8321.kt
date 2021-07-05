@@ -33,7 +33,7 @@ fun assessment8308to8321() = assessment {
         Herald to Alexis,
         Notary to Gaelan,
         PrimeMinister to Alexis,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -242,7 +242,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
         proposal(8314) {
             title("Finite Gifting")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             chamber(Economy)
 
             text(
@@ -413,7 +413,7 @@ Enact a new power-2 rule entitled "Zombie Voting" reading as follows:
         proposal(8317) {
             title("Zombie trade")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             chamber(Economy)
 
             text(
@@ -480,7 +480,7 @@ Create a new power-2 Rule entitled "Zombie Trusts":
         proposal(8318) {
             title("Notorial Economy")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -492,7 +492,7 @@ If the Notary's Interest is the empty set, change it to [Economy]."""
         proposal(8319) {
             title("Sergeant-at-Arms")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Legislation)
 
             text(
@@ -516,7 +516,7 @@ dictatorship. The others are secured out of an abundance of caution.]"""
         proposal(8320) {
             title("Promotorial Assignment")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Legislation)
 
             text(
@@ -531,7 +531,7 @@ of the last paragraph."""
         proposal(8321) {
             title("Untying Quorum")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Legislation)
 
             text(
@@ -546,7 +546,7 @@ least one proposal).]"""
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8308
             AGAINST on 8309
             PRESENT on 8310
@@ -608,10 +608,10 @@ least one proposal).]"""
             AGAINST on 8315
             AGAINST on 8316
             AGAINST on 8317
-            endorse(Aris) on 8318 comment NO_VETO
-            endorse(Aris) on 8319
-            endorse(Aris) on 8320
-            endorse(Aris) on 8321
+            endorse(Aspen) on 8318 comment NO_VETO
+            endorse(Aspen) on 8319
+            endorse(Aspen) on 8320
+            endorse(Aspen) on 8321
         }
 
         votes(twg) {
@@ -621,14 +621,14 @@ least one proposal).]"""
             FOR on 8311
             AGAINST on 8312
             AGAINST on 8313
-            endorse(Aris) on 8314
+            endorse(Aspen) on 8314
             AGAINST on 8315 comment conditional("No such proposal was submitted")
             AGAINST on 8316
             endorse(Alexis) on 8317
-            endorse(Aris) on 8318
-            endorse(Aris) on 8319
-            endorse(Aris) on 8320
-            endorse(Aris) on 8321
+            endorse(Aspen) on 8318
+            endorse(Aspen) on 8319
+            endorse(Aspen) on 8320
+            endorse(Aspen) on 8321
         }
 
         votes(Bernie) {

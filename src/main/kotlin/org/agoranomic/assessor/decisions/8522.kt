@@ -123,12 +123,12 @@ master performed on its behalf.
             PRESENT on 8522
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8522
         }
 
         votes(Telna) {
-            endorse(Aris) on all
+            endorse(Aspen) on all
         }
 
         votes(G) {

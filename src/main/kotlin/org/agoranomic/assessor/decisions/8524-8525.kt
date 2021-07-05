@@ -31,7 +31,7 @@ fun assessment8524to8525() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -90,7 +90,7 @@ with:
         proposal(8525) {
             title("Expungement for R. Lee")
             ai("1.7")
-            author(Aris)
+            author(Aspen)
             chamber(Compliance)
             sponsored()
 
@@ -123,7 +123,7 @@ Expunge 72 of R. Lee's blots.""")
             FOR on all
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             PRESENT on 8524
             FOR on 8525
         }

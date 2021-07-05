@@ -135,7 +135,7 @@ Proposal Pool."""
             FOR on 8247 comment NO_VETO
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8243
             FOR on 8244
             FOR on 8245
@@ -154,7 +154,7 @@ Proposal Pool."""
         votes(twg) {
             AGAINST on 8243
             PRESENT on 8244
-            endorse(Aris) on 8245
+            endorse(Aspen) on 8245
             endorse(Jason) on 8246
             FOR on 8247
         }
@@ -174,7 +174,7 @@ Proposal Pool."""
         votes(G) {
             AGAINST on 8243
             FOR on 8244
-            endorse(Aris) on 8245
+            endorse(Aspen) on 8245
             FOR on 8246
             AGAINST on 8247
         }

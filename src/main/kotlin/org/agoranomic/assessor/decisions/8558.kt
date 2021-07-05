@@ -28,7 +28,7 @@ fun assessment8558() = assessment {
         proposal(8558) {
             title("Silver Quill 2020")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             ordinary()
             sponsored()
 
@@ -66,14 +66,14 @@ the following text:
         }
 
         votes(ATMunn) {
-            endorse(Aris) on 8558
+            endorse(Aspen) on 8558
         }
 
         votes(Falsifian) {
-            endorse(Aris) on 8558
+            endorse(Aspen) on 8558
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8558
         }
     }

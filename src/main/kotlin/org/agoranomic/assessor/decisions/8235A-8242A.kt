@@ -31,7 +31,7 @@ fun assessment8235Ato8242A() = assessment {
             FOR on 8235
             FOR on 8236
             AGAINST on 8237
-            endorse(Aris) on 8238
+            endorse(Aspen) on 8238
             FOR on 8239
             FOR on 8240
             FOR on 8241
@@ -91,7 +91,7 @@ fun assessment8235Ato8242A() = assessment {
             endorse(Falsifian) on all
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8235
             FOR on 8236
             AGAINST on 8237
@@ -108,7 +108,7 @@ fun assessment8235Ato8242A() = assessment {
             AGAINST on 8237
             AGAINST on 8238
             AGAINST on 8239
-            endorse(Aris) on 8240
+            endorse(Aspen) on 8240
             PRESENT on 8241
             AGAINST on 8242
         }

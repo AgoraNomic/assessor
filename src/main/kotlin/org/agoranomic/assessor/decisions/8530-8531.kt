@@ -30,7 +30,7 @@ fun assessment8530to8531() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -103,7 +103,7 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8530
             FOR on 8531
         }

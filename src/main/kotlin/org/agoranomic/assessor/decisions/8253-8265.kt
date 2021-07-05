@@ -219,7 +219,7 @@ and Cool and help spread the workload and reduce consolidation."""
             title("")
             ai("3.0")
             author(twg)
-            coauthors(Murphy, Aris, Jason)
+            coauthors(Murphy, Aspen, Jason)
 
             text(
                 """
@@ -255,7 +255,7 @@ Enact a new Rule of Power 3.0 with the text:
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8253
             FOR on 8254
             FOR on 8255

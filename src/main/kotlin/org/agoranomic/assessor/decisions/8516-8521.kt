@@ -72,7 +72,7 @@ text:
         proposal(8518) {
             title("Asset Rounding")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Falsifian, nix)
             democratic()
             sponsored()
@@ -139,7 +139,7 @@ Amend the final item in Rule 2438, "Ribbons" to read as follows: {
             title("Stones")
             ai("2.0")
             author(Jason)
-            coauthors(G, Aris, nix, Trigon, Gaelan, Falsifian)
+            coauthors(G, Aspen, nix, Trigon, Gaelan, Falsifian)
             chamber(Economy)
             sponsored()
 
@@ -304,7 +304,7 @@ Jason hereby becomes the Stonemason.""")
         votes(Gaelan) {
             endorse(nix) on 8516
             InextricableResolvingVote on 8517 comment "two zombie votes: sukil FOR and D. Margaux PRESENT"
-            endorse(Aris) on 8518
+            endorse(Aspen) on 8518
             AGAINST on 8519
             AGAINST on 8520
             endorse(Jason) on 8521

@@ -29,7 +29,7 @@ fun assessment8322to8341() = assessment {
         Herald to Alexis,
         Notary to null,
         PrimeMinister to twg,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -440,7 +440,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8322
             FOR on 8323
             FOR on 8324

@@ -29,8 +29,8 @@ fun assessment8368to8372() = assessment {
         Distributor to omd,
         Herald to Alexis,
         Notary to Gaelan,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -88,7 +88,7 @@ with:
         proposal(8369) {
             title("Emergency Termination Notice")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             democratic()
 
             text(
@@ -108,7 +108,7 @@ to read
         proposal(8370) {
             title("Announced Petitions")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -125,7 +125,7 @@ in a timely fashion."""
         proposal(8371) {
             title("Petitio Exitus")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -259,7 +259,7 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8368
             FOR on 8369
             FOR on 8370
@@ -297,7 +297,7 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
 
         votes(Falsifian) {
             FOR on 8368
-            endorse(Aris) on 8369
+            endorse(Aspen) on 8369
             PRESENT on 8370
             PRESENT on 8371
             FOR on 8372

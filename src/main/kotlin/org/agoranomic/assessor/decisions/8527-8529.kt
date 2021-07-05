@@ -29,7 +29,7 @@ fun assessment8527to8529() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -57,7 +57,7 @@ fun assessment8527to8529() = assessment {
             title("Specified Crime not Rule")
             ai("1.7")
             author(PSS)
-            coauthors(nix, Aris)
+            coauthors(nix, Aspen)
             chamber(Compliance)
             sponsored()
 
@@ -78,7 +78,7 @@ regarding unnecessary or archaic provisions.]""")
         proposal(8528) {
             title("Gaining Assets")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Gaelan)
             democratic()
             sponsored()
@@ -132,7 +132,7 @@ Repeal rule 2633, "Rulebending."""")
             AGAINST on 8529
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8527
             FOR on 8528
         }

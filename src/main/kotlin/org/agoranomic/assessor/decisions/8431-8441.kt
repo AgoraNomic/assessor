@@ -27,8 +27,8 @@ fun assessment8431to8441() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -51,7 +51,7 @@ fun assessment8431to8441() = assessment {
         proposal(8431) {
             title("Proposal Reward Trimming")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             coauthors(ais523)
             chamber(Legislation)
 
@@ -83,7 +83,7 @@ with:
         proposal(8432) {
             title("The Administrative State")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Alexis, Falsifian)
             democratic()
 
@@ -129,7 +129,7 @@ following text:
         proposal(8433) {
             title("Simpler Heraldry")
             ai("1.5")
-            author(Aris)
+            author(Aspen)
             coauthors(Alexis, Jason, PSS)
             chamber(Participation)
 
@@ -145,7 +145,7 @@ Amend Rule 649, "Patent Titles", by appending to the last paragraph:
         proposal(8434) {
             title("Majoritarian Confidence")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -166,7 +166,7 @@ with:
         proposal(8435) {
             title("No Confidence Isn't Personal")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -180,7 +180,7 @@ Amend Rule 2463, "Motion of No Confidence", by appending:
         proposal(8436) {
             title("Stately Officiation")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -275,7 +275,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8431
             FOR on 8432
             FOR on 8433
@@ -396,9 +396,9 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
         }
 
         votes(Falsifian) {
-            endorse(Aris) on 8431
+            endorse(Aspen) on 8431
             PRESENT on 8432
-            endorse(Aris) on 8433 comment conditional("8432 will not be adopted")
+            endorse(Aspen) on 8433 comment conditional("8432 will not be adopted")
             PRESENT on 8434
             PRESENT on 8435
             FOR on 8436

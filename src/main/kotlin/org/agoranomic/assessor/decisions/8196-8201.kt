@@ -96,7 +96,7 @@ Amend the first paragraph of Rule 2450 ("Pledges") to read:
         proposal(8200) {
             title("Sane AI Defaulting")
             ai("3")
-            author(Aris)
+            author(Aspen)
             text(
                 """
 Amend Rule 1950 (Decisions with Adoption Indices) by replacing:
@@ -116,7 +116,7 @@ with:
         proposal(8201) {
             title("Just Make Them Write It Out")
             ai("3")
-            author(Aris)
+            author(Aspen)
             text(
                 """
 [It's terribly confusing for everyone to leave out a proposal title. Leaving
@@ -164,7 +164,7 @@ the following list, to read in full:
             PRESENT on 8201
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             PRESENT on 8196
             FOR on 8198
             FOR on 8199
@@ -185,7 +185,7 @@ the following list, to read in full:
             endorse(Jason) on 8198
             endorse(Jason) on 8199
             endorse(G) on 8200
-            endorse(Aris) on 8201
+            endorse(Aspen) on 8201
         }
 
         votes(Falsifian) {

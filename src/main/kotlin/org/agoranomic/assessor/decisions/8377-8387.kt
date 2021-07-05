@@ -28,8 +28,8 @@ fun assessment8377to8387() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to RLee,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -229,7 +229,7 @@ with:
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             AGAINST on 8377
             AGAINST on 8378
             PRESENT on 8379
@@ -289,7 +289,7 @@ with:
             PRESENT on 8377
             PRESENT on 8378
             FOR on 8379
-            endorse(Aris) on 8380
+            endorse(Aspen) on 8380
             FOR on 8381
             // endorse(nch) on 8382
             PRESENT on 8383

@@ -123,7 +123,7 @@ with:
             title("Interesting Chambers v3.1")
             ai("3.0")
             author(Bernie)
-            coauthors(Trigon, Aris, Gaelan, G, Jason, twg)
+            coauthors(Trigon, Aspen, Gaelan, G, Jason, twg)
 
             text(
                 """
@@ -400,7 +400,7 @@ Amend Rule 2602 ("Glitter") to read:
         proposal(8296) {
             title("Divergence")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             coauthors(G)
 
             text(
@@ -432,7 +432,7 @@ to read
         proposal(8297) {
             title("Imminent Failure")
             ai("2.1")
-            author(Aris)
+            author(Aspen)
 
             text(
                 """
@@ -450,7 +450,7 @@ and renumbering the list accordingly."""
         proposal(8298) {
             title("Administrative Adjudication v3")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Gaelan, twg, G, Jason, Alexis)
 
             text(
@@ -487,7 +487,7 @@ Treasuror - Assets
         proposal(8299) {
             title("The Reset Button v2")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(G)
 
             text(
@@ -513,7 +513,7 @@ Create the following power 3.0 rule entitled "The Reset Button":
         proposal(8300) {
             title("Patches")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
 
             text(
                 """
@@ -538,7 +538,7 @@ Create the following power 3.0 rule entitled "Patches":
         proposal(8301) {
             title("Consolidated Regulatory Recordkeeping v2")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Jason)
 
             text(
@@ -560,7 +560,7 @@ to read
         proposal(8302) {
             title("Generic Petitions")
             ai("1.5")
-            author(Aris)
+            author(Aspen)
 
             text(
                 """
@@ -588,7 +588,7 @@ applied to regulations and memoranda, for instance.]"""
         proposal(8303) {
             title("Contract Patency v3")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Gaelan, Jason, Falsifian)
 
             text(
@@ -779,12 +779,12 @@ Flip the Citizenship of the following player to Unregistered:
             PRESENT on 8294
             FOR on 8295
             PRESENT on 8296
-            endorse(Aris) on 8297
+            endorse(Aspen) on 8297
             FOR on 8298
             AGAINST on 8299
-            endorse(Aris) on 8300
+            endorse(Aspen) on 8300
             endorse(Jason) on 8301
-            endorse(Aris) on 8302
+            endorse(Aspen) on 8302
             PRESENT on 8303
             FOR on 8304
             endorse(Alexis) on 8305
@@ -796,7 +796,7 @@ Flip the Citizenship of the following player to Unregistered:
             endorse(twg) on all
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             PRESENT on 8287
             FOR on 8288
             AGAINST on 8289
@@ -855,13 +855,13 @@ Flip the Citizenship of the following player to Unregistered:
             AGAINST on 8294
             endorse(twg) on 8295 comment conditional("None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST")
             AGAINST on 8296
-            endorse(Aris) on 8297
-            endorse(Aris) on 8298
+            endorse(Aspen) on 8297
+            endorse(Aspen) on 8298
             AGAINST on 8299
-            endorse(Aris) on 8300
+            endorse(Aspen) on 8300
             endorse(Jason) on 8301 comment "Jason is the Rulekeepor"
-            endorse(Aris) on 8302
-            endorse(Aris) on 8303
+            endorse(Aspen) on 8302
+            endorse(Aspen) on 8303
             endorse(twg) on 8304
             endorse(Alexis) on 8305
             AGAINST on 8306
@@ -880,9 +880,9 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8295
             PRESENT on 8296
             FOR on 8297
-            endorse(Aris) on 8298
-            endorse(Aris) on 8299
-            endorse(Aris) on 8300
+            endorse(Aspen) on 8298
+            endorse(Aspen) on 8299
+            endorse(Aspen) on 8300
             FOR on 8301
             FOR on 8302
             FOR on 8303

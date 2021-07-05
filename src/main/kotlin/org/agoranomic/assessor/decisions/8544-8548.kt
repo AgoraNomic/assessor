@@ -128,7 +128,7 @@ Amend Rule 2124 (Agoran Satisfaction) to read:
         proposal(8545) {
             title("Uncanny Fixes")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Murphy)
             democratic()
             sponsored()
@@ -317,7 +317,7 @@ Stone." works and grants the wielder coins.]"""
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             PRESENT on 8544
             FOR on 8545
             FOR on 8546
@@ -340,7 +340,7 @@ Stone." works and grants the wielder coins.]"""
 
         votes(Falsifian) {
             FOR on 8544
-            endorse(Aris) on 8545
+            endorse(Aspen) on 8545
             endorse(G) on 8546
             endorse(Jason) on 8547
             endorse(Jason) on 8548

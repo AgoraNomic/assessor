@@ -30,7 +30,7 @@ fun assessment8549to8555() = assessment {
         proposal(8549) {
             title("You Can Only Stack Turtles So High")
             ai("2.2")
-            author(Aris)
+            author(Aspen)
             coauthors(Gaelan, G)
             ordinary()
             sponsored()
@@ -91,7 +91,7 @@ through this Rule in the past 14 days.""""
         proposal(8554) {
             title("I Want My Promise Back!")
             ai("2.2")
-            author(Aris)
+            author(Aspen)
             coauthors(nix)
             ordinary()
             sponsored()
@@ -141,7 +141,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8549
             AGAINST on 8552
             AGAINST on 8553
@@ -178,10 +178,10 @@ highest is 14, and no one else is at 14, the 14 wins]."""
         }
 
         votes(Falsifian) {
-            endorse(Aris) on 8549
+            endorse(Aspen) on 8549
             AGAINST on 8552
             PRESENT on 8553
-            endorse(Aris) on 8554
+            endorse(Aspen) on 8554
             AGAINST on 8555
         }
 

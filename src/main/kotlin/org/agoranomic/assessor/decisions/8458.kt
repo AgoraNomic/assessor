@@ -27,7 +27,7 @@ fun assessment8458() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -55,7 +55,7 @@ fun assessment8458() = assessment {
         proposal(8458) {
             title("Welcome Package Patch")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             chamber(MinistryV1.Economy)
 
             text(
@@ -97,7 +97,7 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
             FOR on 8458
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8458
         }
 

@@ -27,8 +27,8 @@ fun assessment8349to8356() = assessment {
         Distributor to omd,
         Herald to Alexis,
         Notary to Gaelan,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -150,7 +150,7 @@ with this text:
             title("Statutory Instrumentation")
             ai("3.0")
             author(Alexis)
-            coauthors(Murphy, Aris, Gaelan)
+            coauthors(Murphy, Aspen, Gaelan)
             democratic()
 
             text(
@@ -474,7 +474,7 @@ repeal of a helper rule. It must be explicit.]"""
         proposal(8356) {
             title("Less Democracy Means More Fun")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Legislation)
 
             text(
@@ -496,7 +496,7 @@ to read
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8349
             FOR on 8350
             FOR on 8351

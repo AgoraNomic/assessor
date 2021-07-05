@@ -320,7 +320,7 @@ with this text:
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8266
             FOR on 8267
             FOR on 8268
@@ -373,7 +373,7 @@ with this text:
             FOR on 8266
             FOR on 8267
             FOR on 8268
-            endorse(Aris) on 8269
+            endorse(Aspen) on 8269
             FOR on 8270
             FOR on 8271
             FOR on 8272

@@ -27,7 +27,7 @@ fun assessment8494to8495() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,

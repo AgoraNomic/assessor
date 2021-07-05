@@ -31,7 +31,7 @@ fun assessment8500to8503() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -97,7 +97,7 @@ instrument in that body of law."""")
             title("Timely reminders")
             ai("1.0")
             author(Jason)
-            coauthors(Aris)
+            coauthors(Aspen)
             chamber(Legislation)
             sponsored()
 
@@ -109,7 +109,7 @@ the text "Within four days of such an occurrence"""")
         proposal(8503) {
             title("Assorted Obligatory Patches")
             ai("2.2")
-            author(Aris)
+            author(Aspen)
             coauthors(G, nix, Jason)
             chamber(Justice)
             sponsored()
@@ -201,7 +201,7 @@ with:
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8500
             PRESENT on 8501
             FOR on 8502
@@ -209,7 +209,7 @@ with:
         }
 
         votes(Telna) {
-            endorse(Aris) on all
+            endorse(Aspen) on all
         }
 
         votes(Murphy) {

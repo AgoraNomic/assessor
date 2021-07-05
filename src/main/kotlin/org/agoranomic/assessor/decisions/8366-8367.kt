@@ -27,8 +27,8 @@ fun assesssment8366to8367() = assessment {
         Distributor to omd,
         Herald to Alexis,
         Notary to Gaelan,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -53,7 +53,7 @@ fun assesssment8366to8367() = assessment {
         proposal(8366) {
             title("Asset Determinacy")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(twg)
             democratic()
 
@@ -120,7 +120,7 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
         }
 
         votes(Falsifian) {
-            endorse(Aris) on 8366
+            endorse(Aspen) on 8366
             FOR on 8367
         }
     }

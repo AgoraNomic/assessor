@@ -32,8 +32,8 @@ fun assessment8388to8404() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to RLee,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -172,7 +172,7 @@ not prohibit the action, even if it was illegal at the time it occurred.]"""
         proposal(8393) {
             title("Elections Aren't Over Till They End")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -365,7 +365,7 @@ Repeal rule 2597, "Line-item Veto""""
         proposal(8401) {
             title("Defense Against the Dark Arts")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             coauthors(PSS)
             chamber(Justice)
 
@@ -396,7 +396,7 @@ following text:
         proposal(8402) {
             title("Promises")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Falsifian)
             democratic()
 
@@ -695,7 +695,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             AGAINST on 8390
             AGAINST on 8391
             endorse(Jason) on 8392
-            endorse(Aris) on 8393
+            endorse(Aspen) on 8393
             endorse(Jason) on 8394
             endorse(Jason) on 8395
             FOR on 8396 comment NO_VETO
@@ -704,7 +704,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             endorse(RLee) on 8399 comment NO_VETO
             endorse(G) on 8400 comment NO_VETO
             PRESENT on 8401 comment NO_VETO
-            endorse(Aris) on 8402
+            endorse(Aspen) on 8402
             AGAINST on 8403
             PRESENT on 8404
         }
@@ -729,7 +729,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             FOR on 8404
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8388
             FOR on 8389
             AGAINST on 8390

@@ -231,7 +231,7 @@ any proposal has been vetoed." to the final paragraph."""
         proposal(8286) {
             title("I Forbid Vetos!")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
 
             text(
                 """
@@ -258,7 +258,7 @@ Repeal Rule 2597, "Line-item Veto"."""
             endorse(Alexis) on 8283
             AGAINST on 8284
             AGAINST on 8285
-            endorse(Aris) on 8286
+            endorse(Aspen) on 8286
         }
 
         votes(Jason) {
@@ -281,7 +281,7 @@ Repeal Rule 2597, "Line-item Veto"."""
             FOR on 8286
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             AGAINST on 8280
             FOR on 8281 comment NO_VETO
             PRESENT on 8282 comment NO_VETO

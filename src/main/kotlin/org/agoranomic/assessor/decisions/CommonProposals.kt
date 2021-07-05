@@ -121,7 +121,7 @@ debt"].
 
     proposal(8195) {
         title("Timeline Control Ordnance v2")
-        author(Aris)
+        author(Aspen)
         coauthors(omd, Jason)
         ai("3.0")
         text(
@@ -276,7 +276,7 @@ with the text
         title("Usage de-capitalization")
         ai("3.0")
         author(Jason)
-        coauthors(Aris)
+        coauthors(Aspen)
 
         text(
             """
@@ -497,7 +497,7 @@ Set each player's Fame to 0."""
         title("Three-dimensional space v1.1")
         ai("1.0")
         author(Murphy)
-        coauthors(Aris)
+        coauthors(Aspen)
 
         text(
             """
@@ -762,7 +762,7 @@ not exceeding 2) on em"."""
         title("Definition de-capitalization")
         ai("3.0")
         author(Jason)
-        coauthors(Aris)
+        coauthors(Aspen)
 
         text(
             """
@@ -900,7 +900,7 @@ item to the unnumbered list in between the two previously existing items:
         title("The Editor (v2.0.1)")
         ai("1.0")
         author(Jason)
-        coauthors(G, Aris, Trigon)
+        coauthors(G, Aspen, Trigon)
 
         text(
             """

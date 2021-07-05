@@ -27,7 +27,7 @@ fun assessment8538to8540() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -53,7 +53,7 @@ fun assessment8538to8540() = assessment {
         proposal(8538) {
             title("All Good Things Must Come to an End")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Jason)
             democratic()
 
@@ -71,7 +71,7 @@ following text:
         proposal(8539) {
             title("The Great Rollback")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(G)
             democratic()
             sponsored()
@@ -221,7 +221,7 @@ earlier in this proposal.""")
             title("Strengthening Extra Votes v2.1")
             ai("3.0")
             author(nix)
-            coauthors(Aris, Jason)
+            coauthors(Aspen, Jason)
             democratic()
             sponsored()
 
@@ -315,7 +315,7 @@ the following text:
             FOR on all
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8538
             FOR on 8539
             PRESENT on 8540

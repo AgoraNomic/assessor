@@ -29,8 +29,8 @@ fun assessment8342to8348() = assessment {
         Distributor to omd,
         Herald to Alexis,
         Notary to Gaelan,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -53,7 +53,7 @@ fun assessment8342to8348() = assessment {
             title("Calls with Memoranda")
             ai("2.0")
             author(Gaelan)
-            coauthors(Aris, G, Alexis)
+            coauthors(Aspen, G, Alexis)
             chamber(Justice)
 
             text(

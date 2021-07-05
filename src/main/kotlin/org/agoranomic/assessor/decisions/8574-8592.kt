@@ -31,7 +31,7 @@ fun assessment8574to9593() = assessment {
             title("mending the quill")
             ai("1.0")
             author(Trigon)
-            coauthors(Jason, Aris)
+            coauthors(Jason, Aspen)
             ordinary()
             sponsored()
 
@@ -96,7 +96,7 @@ power.]""")
             title("\"By announcement\" loosening")
             ai("3.0")
             author(Jason)
-            coauthors(Aris, Murphy)
+            coauthors(Aspen, Murphy)
             democratic()
             sponsored()
 
@@ -245,7 +245,7 @@ well-defined but clunky "referendum on an ordinary proposal".]""")
         proposal(8581) {
             title("Grants on Resets")
             ai("1.0")
-            author(Aris)
+            author(Aspen)
             ordinary()
             sponsored()
 
@@ -266,7 +266,7 @@ with:
         proposal(8582) {
             title("The Artistry Lies in the Art")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             ordinary()
             sponsored()
 
@@ -634,10 +634,10 @@ document take place.""")
             AGAINST on 8581
             FOR on 8582
             FOR on 8583
-            endorse(Aris) on 8584
+            endorse(Aspen) on 8584
             FOR on 8585
             FOR on 8586
-            endorse(Aris) on 8587
+            endorse(Aspen) on 8587
             AGAINST on 8588
 
             for (proposal in listOf(8589, 8590, 8591, 8592)) {
@@ -719,8 +719,8 @@ document take place.""")
             endorse(Jason) on 8578
             endorse(Jason) on 8579
             endorse(Jason) on 8580
-            endorse(Aris) on 8581
-            endorse(Aris) on 8582
+            endorse(Aspen) on 8581
+            endorse(Aspen) on 8582
             endorse(Murphy) on 8583
             endorse(Murphy) on 8584
             endorse(Murphy) on 8585

@@ -31,7 +31,7 @@ fun assessment8507to8515() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -183,7 +183,7 @@ Amend Rule 2621 to read in whole:
         proposal(8513) {
             title("Our Heroic Distributor")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             democratic()
             sponsored()
 
@@ -210,7 +210,7 @@ Patent Title recognizing such.""")
         proposal(8514) {
             title("The Buoyant Economy")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(nix, Trigon, G, Jason, ATMunn)
             democratic()
             sponsored()
@@ -309,7 +309,7 @@ Amend Rule 2585, "Birthday Gifts", by replacing each instance of "coins" with
             title("adMinistration v1.1")
             ai("2.0")
             author(nix)
-            coauthors(Trigon, Aris)
+            coauthors(Trigon, Aspen)
             chamber(Economy)
             sponsored()
 
@@ -435,7 +435,7 @@ see.)""")
     }
 
     voting {
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8507
             FOR on 8508
             FOR on 8509
@@ -448,7 +448,7 @@ see.)""")
         }
 
         votes(Telna) {
-            endorse(Aris) on all
+            endorse(Aspen) on all
         }
 
         votes(Gaelan) {
@@ -488,7 +488,7 @@ see.)""")
             FOR on 8507
             FOR on 8508
             FOR on 8509
-            endorse(Aris) on 8510
+            endorse(Aspen) on 8510
             FOR on 8511
             AGAINST on 8512
             FOR on 8513
@@ -547,7 +547,7 @@ see.)""")
             endorse(Jason) on 8510
             endorse(Jason) on 8511
             AGAINST on 8512
-            endorse(Aris) on 8513
+            endorse(Aspen) on 8513
 
             function { context ->
                 if (
@@ -559,7 +559,7 @@ see.)""")
                 ) {
                     endorse(Trigon) // TODO: annotate conditional somehow
                 } else {
-                    endorse(Aris) // TODO: annotate conditional somehow
+                    endorse(Aspen) // TODO: annotate conditional somehow
                 }
             } on 8514
 

@@ -30,7 +30,7 @@ fun assessment8248to8249() = assessment {
             title("Publishing definition")
             ai("3.0")
             author(Jason)
-            coauthors(Aris)
+            coauthors(Aspen)
 
             text(
                 """
@@ -108,7 +108,7 @@ allowed.]"""
             endorse(Falsifian) on all
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8248
             PRESENT on 8249 comment NO_VETO
         }

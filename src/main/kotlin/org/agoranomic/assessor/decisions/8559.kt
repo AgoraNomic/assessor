@@ -30,7 +30,7 @@ fun assessment8559() = assessment {
             title("Paper Shredding")
             ai("2.5")
             author(ATMunn)
-            coauthors(G, Aris)
+            coauthors(G, Aspen)
             democratic()
             sponsored()
 

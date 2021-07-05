@@ -28,7 +28,7 @@ fun assessment8442to8457() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Rulekeepor to Jason,
         Registrar to Falsifian,
@@ -129,7 +129,7 @@ for 60 or more of the 90 days prior to the election's initiation."""
         proposal(8444) {
             title("Sedate Officiation")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             chamber(Efficiency)
 
             text(
@@ -147,7 +147,7 @@ to read "in a sedate fashion"."""
         proposal(8445) {
             title("Easier Retitling")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             democratic()
 
             text(
@@ -214,7 +214,7 @@ Enact the following rule "Rule Infancy":
         proposal(8448) {
             title("Populist Administration")
             ai("3.0")
-            author(Aris)
+            author(Aspen)
             coauthors(Alexis, Falsifian)
             democratic()
 
@@ -242,7 +242,7 @@ following text:
         proposal(8449) {
             title("Simpler Heraldry")
             ai("1.5")
-            author(Aris)
+            author(Aspen)
             coauthors(Alexis, Jason, PSS)
             chamber(Participation)
 
@@ -450,7 +450,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
         votes(PSS) {
             FOR on 8442
             AGAINST on 8443
-            endorse(Aris) on 8444
+            endorse(Aspen) on 8444
             FOR on 8445
             FOR on 8446
             AGAINST on 8447
@@ -553,7 +553,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8445
             FOR on 8446
             AGAINST on 8447
-            endorse(Aris) on 8448
+            endorse(Aspen) on 8448
             PRESENT on 8449
             FOR on 8450
             AGAINST on 8451
@@ -588,10 +588,10 @@ Create a power 2 rule called "Excess Proposals" with the text'
             PRESENT on 8442
             AGAINST on 8443
             PRESENT on 8444
-            endorse(Aris) on 8445
+            endorse(Aspen) on 8445
             endorse(G) on 8446
             PRESENT on 8447
-            endorse(Aris) on 8448
+            endorse(Aspen) on 8448
             AGAINST on 8449
             endorse(G) on 8450
             AGAINST on 8451

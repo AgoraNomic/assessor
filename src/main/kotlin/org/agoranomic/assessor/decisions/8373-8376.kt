@@ -30,8 +30,8 @@ fun assessment8373to8376() = assessment {
         Distributor to omd,
         Herald to null,
         Notary to RLee,
-        PrimeMinister to Aris,
-        Promotor to Aris,
+        PrimeMinister to Aspen,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -56,7 +56,7 @@ fun assessment8373to8376() = assessment {
             title("Auction resolution fixes")
             ai("1.0")
             author(Jason)
-            coauthors(Aris)
+            coauthors(Aspen)
             chamber(Economy)
 
             text(
@@ -169,7 +169,7 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             FOR on 8376
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8373
             endorse(G) on 8374
             endorse(G) on 8375

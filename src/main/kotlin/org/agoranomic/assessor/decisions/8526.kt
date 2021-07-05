@@ -33,7 +33,7 @@ fun assessment8526() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to null,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -92,7 +92,7 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
             } on 8526
         }
 
-        votes(Aris) {
+        votes(Aspen) {
             FOR on 8526
         }
 

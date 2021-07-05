@@ -30,7 +30,7 @@ fun assessment8523() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aris,
+        Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Jason,
@@ -55,7 +55,7 @@ fun assessment8523() = assessment {
         proposal(8523) {
             title("Emergency Economy Unbreaking")
             ai("2.0")
-            author(Aris)
+            author(Aspen)
             coauthors(nix, Jason)
             chamber(Economy)
             sponsored()
