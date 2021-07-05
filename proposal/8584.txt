@@ -1,0 +1,82 @@
+PROPOSAL 8584 (Effective deference)
+AUTHOR: Murphy
+CLASS: DEMOCRATIC
+FOR (3): Falsifian, Jason, Murphy
+AGAINST (3): G., ais523, nix
+PRESENT (3): R. Lee, Telnaior, Trigon
+BALLOTS: 9
+AI (F/A): 9/9 (AI=3.0)
+POPULARITY: 0.000
+OUTCOME: REJECTED
+[
+Falsifian: Endorsement of Murphy
+G.: Endorsement of ais523
+R. Lee: Endorsement of non-voter Aris: Inextricable
+nix: Conditional resolved: G. and ais523 both AGAINST
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-June/015044.html
+
+ID: 8584
+Title: Effective deference
+Adoption index: 3.0
+Author: Murphy
+Co-authors: 
+
+
+[Consider these hypothetical rules:
+
+  Rule 9001 (Power=1) There are four lights.
+
+  Rule 9002a (Power=2) There are five lights, unless another rule says
+    otherwise.
+
+  This successfully avoids conflict with Rule 9001.
+
+  Rule 9002b (Power=2) There are five lights. This rule defers to other
+    rules saying otherwise.
+
+  This doesn't, because Power is checked first. But it should, so let's
+    check it first. Also does some general minor cleanup.]
+
+Amend Rule 1030 (Precedence between Rules) to read:
+
+   In a conflict between Rules, the conflict shall be resolved by
+   performing the following comparisons in the sequence written in
+   this rule, until the conflict is resolved.
+
+   - If at least one of the Rules in conflict explicitly says of
+     itself that it defers to another Rule (or type of Rule), and
+     such provisions would resolve the conflict without
+     contradictions, then they shall be used to do so.
+
+   - In a conflict between Rules with different Power, the Rule with
+     the higher Power takes precedence over the Rule with the lower
+     Power.
+
+   - If all of the Rules in conflict explicitly say that their
+     precedence relations are determined by some other Rule for
+     determining precedence relations, then the determinations of the
+     precedence-determining Rule shall be used to do so.
+
+   - If at least one of the Rules in conflict explicitly says of
+     itself that it takes precedence over another Rule (or type of
+     Rule), and such provisions would resolve the conflict without
+     contradictions, then they shall be used to do so.
+
+   - If any of the rules in conflict have ID numbers, then the Rule
+     with the lowest ID number takes precedence.
+
+   - The Rule enacted earliest takes precedence.
+
+   Clauses in any other rule that broadly claim precedence or
+   deference (e.g. over or to "all rules" of a certain class) shall
+   be, prima facie, considered to be limited claims of precedence or
+   deference that are applicable only when such claims are evaluated
+   as described within the above sequence.
+
+   No change to the ruleset can occur that would cause a Rule to
+   directly claim precedence over this Rule as a means of determining
+   precedence. This applies to changes by the enactment or amendment
+   of a Rule, or of any other form. This Rule takes precedence over
+   any Rule that would permit such a change to the ruleset.
