@@ -11,6 +11,12 @@ fun assessment8575() = assessment {
     name("8575")
     quorum(5)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8575) {
             title("Nicer Definitions")
