@@ -61,4 +61,7 @@ terms of art, but it looks awful. This proposal means that it becomes
 parenthetical.]""")
         }
     }
+
+    voting {
+    }
 }
