@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 // Due to a mishap, there are two Proposal 8575s. This should eventually be renumbered to have a unique number assigned
 // by the Promotor.
@@ -63,5 +64,8 @@ parenthetical.]""")
     }
 
     voting {
+        votes(Murphy) {
+            FOR on 8575
+        }
     }
 }
