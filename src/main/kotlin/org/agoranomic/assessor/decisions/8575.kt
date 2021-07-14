@@ -67,5 +67,9 @@ parenthetical.]""")
         votes(Murphy) {
             FOR on 8575
         }
+
+        votes(Gaelan) {
+            FOR on 8575
+        }
     }
 }
