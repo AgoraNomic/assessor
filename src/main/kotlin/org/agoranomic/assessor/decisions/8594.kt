@@ -8,11 +8,9 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
-// Due to a mishap, there are two Proposal 8575s. This should eventually be renumbered to have a unique number assigned
-// by the Promotor.
 @UseAssessment
-fun assessment8575() = assessment {
-    name("8575")
+fun assessment8594() = assessment {
+    name("8594")
     url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-July/015106.html")
     quorum(5)
 
@@ -23,7 +21,7 @@ fun assessment8575() = assessment {
     }
 
     proposals(v4) {
-        proposal(8575) {
+        proposal(8594) {
             title("Nicer Definitions")
             ai("3.0")
             author(RLee)
@@ -69,27 +67,27 @@ parenthetical.]""")
 
     voting {
         votes(Murphy) {
-            FOR on 8575
+            FOR on 8594
         }
 
         votes(Gaelan) {
-            FOR on 8575
+            FOR on 8594
         }
 
         votes(RLee) {
-            FOR on 8575
+            FOR on 8594
         }
 
         votes(Falsifian) {
-            endorse(RLee) on 8575
+            endorse(RLee) on 8594
         }
 
         votes(Jason) {
-            PRESENT on 8575
+            PRESENT on 8594
         }
 
         votes(ATMunn) {
-            FOR on 8575
+            FOR on 8594
         }
     }
 }
