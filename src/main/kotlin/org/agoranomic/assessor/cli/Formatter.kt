@@ -4,18 +4,28 @@ import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.report.*
+import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
+import org.agoranomic.assessor.lib.resolve.resolve
 
 data class AssessmentFormatOutput(val outputsByName: ImmutableMap<String, String>) {
     constructor(outputsByName: Map<String, String>) : this(outputsByName = outputsByName.toImmutableMap())
 }
 
 interface AssessmentFormatter {
-    fun formatBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput
+    fun formatBatch(assessments: List<AssessmentData>): AssessmentFormatOutput
 }
 
-abstract class AssessmentIndependentFormatter : AssessmentFormatter {
-    final override fun formatBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
+abstract class ResolvedAssessmentFormatter : AssessmentFormatter {
+    final override fun formatBatch(assessments: List<AssessmentData>): AssessmentFormatOutput {
+        return formatResolvedBatch(assessments.associate { it.metadata.name to resolve(it) })
+    }
+
+    protected abstract fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput
+}
+
+abstract class AssessmentIndependentFormatter : ResolvedAssessmentFormatter() {
+    final override fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
         return AssessmentFormatOutput(assessments.mapValues { (_, v) -> formatSingle(v) })
     }
 
@@ -48,8 +58,8 @@ object StrengthAuditFormatter : AssessmentIndependentFormatter() {
 
 data class ProposalsReadableFormatter(
     private val reportConfig: ReadableProposalReportConfig,
-) : AssessmentFormatter {
-    override fun formatBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
+) : ResolvedAssessmentFormatter() {
+    override fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
         val allResolutions = assessments.values
         val allProposals = allResolutions.flatMap { it.proposals }.toProposalSet()
 

@@ -1,7 +1,6 @@
 package org.agoranomic.assessor.cli
 
 import org.agoranomic.assessor.decisions.findAssessments
-import org.agoranomic.assessor.lib.resolve.resolve
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) {
@@ -29,7 +28,5 @@ fun main(args: Array<String>) {
         return
     }
 
-    programConfig.destination.outputAssessments(
-        programConfig.formatter.formatBatch(toAssess.associate { it.metadata.name to resolve(it) })
-    )
+    programConfig.destination.outputAssessments(programConfig.formatter.formatBatch(toAssess))
 }
