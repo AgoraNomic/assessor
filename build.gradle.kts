@@ -23,10 +23,8 @@ dependencies {
     implementation("org.randomcat:kotlin-utils:2.0.1")
 
     // Dependencies for statistics
-    implementation("org.jetbrains.lets-plot:lets-plot-batik:2.0.0")
-    implementation("org.jetbrains.lets-plot:lets-plot-image-export:2.0.0")
-    api("org.jetbrains.lets-plot:lets-plot-common:2.0.0")
-    api("org.jetbrains.lets-plot-kotlin:lets-plot-kotlin-api:1.2.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-batik:2.0.4")
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:3.0.1")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))

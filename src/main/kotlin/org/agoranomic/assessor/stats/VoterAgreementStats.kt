@@ -1,12 +1,12 @@
 package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.bistro.corr.CorrPlot
-import jetbrains.letsPlot.geom.geom_tile
+import jetbrains.letsPlot.geom.geomTile
 import jetbrains.letsPlot.ggsize
-import jetbrains.letsPlot.lets_plot
-import jetbrains.letsPlot.scale.scale_fill_gradient2
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_discrete
+import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.scale.scaleFillGradient2
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYDiscrete
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.resolve.ResolutionData
@@ -55,8 +55,8 @@ fun buildVoterAuthorAgreementStats(
 
     yieldGraph(
         "voter_author_agreement_rates",
-        lets_plot() +
-                geom_tile(
+        letsPlot() +
+                geomTile(
                     data = mapOf(
                         "voter" to voterDataList.map { it.name },
                         "author" to authorDataList.map { it.name },
@@ -68,18 +68,18 @@ fun buildVoterAuthorAgreementStats(
                     y = "voter"
                     fill = "rate"
                 } +
-                scale_fill_gradient2(
+                scaleFillGradient2(
                     name = "Agreement",
                     low = "#B3412C",
                     mid = "#EDEDED",
                     high = "#326C81",
                     limits = -1.0 to +1.0,
                 ) +
-                scale_x_discrete(
+                scaleXDiscrete(
                     name = "Author",
                     limits = authors.map { it.name },
                 ) +
-                scale_y_discrete(
+                scaleYDiscrete(
                     name = "Voter",
                     limits = voterDataList.distinct().sortedBy { votesByVoter.getValue(it) }.map { it.name },
                 ) +

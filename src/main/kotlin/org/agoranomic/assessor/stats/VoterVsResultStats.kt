@@ -1,14 +1,14 @@
 package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geom_bar
+import jetbrains.letsPlot.geom.geomBar
 import jetbrains.letsPlot.ggsize
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.lets_plot
-import jetbrains.letsPlot.sampling.sampling_none
-import jetbrains.letsPlot.scale.scale_fill_discrete
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_continuous
+import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.sampling.samplingNone
+import jetbrains.letsPlot.scale.scaleFillDiscrete
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
@@ -66,7 +66,7 @@ fun buildVoterResultStats(
 
     yieldGraph(
         "voter_result_agreement",
-        lets_plot(
+        letsPlot(
             data = mapOf(
                 "voter" to voters.flatMap {
                     listOf(it.name, it.name)
@@ -79,15 +79,15 @@ fun buildVoterResultStats(
                 },
             )
         ) +
-                geom_bar(stat = Stat.identity, sampling = sampling_none) {
+                geomBar(stat = Stat.identity, sampling = samplingNone) {
                     x = "voter"
                     y = "count"
                     fill = "kind"
                 } +
                 ggtitle("Voter vs. result") +
-                scale_x_discrete(name = "Voter") +
-                scale_y_continuous(name = "Count") +
-                scale_fill_discrete(name = "Kind") +
+                scaleXDiscrete(name = "Voter") +
+                scaleYContinuous(name = "Count") +
+                scaleFillDiscrete(name = "Kind") +
                 ggsize(
                     voters.size * 30 + 10,
                     1000,

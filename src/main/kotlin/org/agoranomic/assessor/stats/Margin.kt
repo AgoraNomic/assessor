@@ -1,14 +1,14 @@
 package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geom_bar
-import jetbrains.letsPlot.geom.geom_boxplot
+import jetbrains.letsPlot.geom.geomBar
+import jetbrains.letsPlot.geom.geomBoxplot
 import jetbrains.letsPlot.ggsize
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.lets_plot
-import jetbrains.letsPlot.sampling.sampling_none
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_continuous
+import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.sampling.samplingNone
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
@@ -16,7 +16,7 @@ import java.math.BigDecimal
 
 private fun marginOf(it: ResolutionData): BigDecimal {
     return it.aiStrengths.strengthFor.raw.toBigDecimal() -
-            it.aiStrengths.strengthAgainst.raw.toBigDecimal() * it.proposal.ai.raw
+            it.aiStrengths.strengthAgainst.raw.toBigDecimal() * it.proposal.decisionAI.raw
 }
 
 private fun calculateMarginStats(data: List<ResolutionData>): List<BigDecimal> {
@@ -109,17 +109,17 @@ private fun StatisticsBuilderScope.yieldMarginGraphs(
 
     yieldGraph(
         name,
-        lets_plot(mapOf(
+        letsPlot(mapOf(
             "author" to marginAverageEntries.map { it.authorName },
             "margin" to marginAverageEntries.map { it.averageMargin },
         )) +
-                geom_bar(stat = Stat.identity, sampling = sampling_none) {
+                geomBar(stat = Stat.identity, sampling = samplingNone) {
                     x = "author"
                     y = "margin"
                 } +
                 ggsize(marginsByAuthor.keys.size * 60 + 60, 1000) +
-                scale_x_discrete(name = "Author", limits = authors.map { it.name }) +
-                scale_y_continuous(name = "Average margin") +
+                scaleXDiscrete(name = "Author", limits = authors.map { it.name }) +
+                scaleYContinuous(name = "Average margin") +
                 ggtitle(barGraphTitle)
     )
 
@@ -129,17 +129,17 @@ private fun StatisticsBuilderScope.yieldMarginGraphs(
 
     yieldGraph(
         name + "_box_plot",
-        lets_plot(mapOf(
+        letsPlot(mapOf(
             "author" to boxPlotData.map { it.first },
             "margin" to boxPlotData.map { it.second },
         )) +
-                geom_boxplot(sampling = sampling_none) {
+                geomBoxplot(sampling = samplingNone) {
                     x = "author"
                     y = "margin"
                 } +
                 ggsize(marginsByAuthor.keys.size * 60 + 60, 1000) +
-                scale_x_discrete(name = "Author", limits = authors.map { it.name }) +
-                scale_y_continuous(name = "Margin") +
+                scaleXDiscrete(name = "Author", limits = authors.map { it.name }) +
+                scaleYContinuous(name = "Margin") +
                 ggtitle(boxPlotTitle)
     )
 }

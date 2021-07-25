@@ -1,12 +1,12 @@
 package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geom_histogram
+import jetbrains.letsPlot.geom.geomHistogram
 import jetbrains.letsPlot.ggplot
 import jetbrains.letsPlot.ggsize
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.scale.scale_fill_discrete
-import jetbrains.letsPlot.scale.scale_x_continuous
+import jetbrains.letsPlot.scale.scaleFillDiscrete
+import jetbrains.letsPlot.scale.scaleXContinuous
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
@@ -27,7 +27,7 @@ fun buildLengthStats(
     yieldGraph(
         name = "proposal_length_bins",
         ggplot() +
-                geom_histogram(
+                geomHistogram(
                     data = mapOf(
                         "words" to proposalEntries.map { it.words },
                         "adopted" to proposalEntries.map { it.adopted }.map { if (it) "ADOPTED" else "NON-ADOPTED" },
@@ -37,8 +37,8 @@ fun buildLengthStats(
                     x = "words"
                     fill = "adopted"
                 } +
-                scale_x_continuous(name = "Proposal words", limits = 0 to null) +
-                scale_fill_discrete(name = "Adopted?") +
+                scaleXContinuous(name = "Proposal words", limits = 0 to null) +
+                scaleFillDiscrete(name = "Adopted?") +
                 ggtitle("Count by proposal words") +
                 ggsize(1200, 800)
     )

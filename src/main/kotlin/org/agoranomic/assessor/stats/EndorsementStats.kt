@@ -2,17 +2,17 @@ package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.Pos
 import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geom_bar
-import jetbrains.letsPlot.geom.geom_text
-import jetbrains.letsPlot.geom.geom_tile
+import jetbrains.letsPlot.geom.geomBar
+import jetbrains.letsPlot.geom.geomText
+import jetbrains.letsPlot.geom.geomTile
 import jetbrains.letsPlot.ggsize
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.lets_plot
-import jetbrains.letsPlot.sampling.sampling_none
-import jetbrains.letsPlot.scale.scale_fill_gradient
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_continuous
-import jetbrains.letsPlot.scale.scale_y_discrete
+import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.sampling.samplingNone
+import jetbrains.letsPlot.scale.scaleFillGradient
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYContinuous
+import jetbrains.letsPlot.scale.scaleYDiscrete
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
@@ -122,34 +122,34 @@ private fun StatisticsBuilderScope.yieldEndorsementsGraph(
 
     yieldGraph(
         "endorsement_counts_${tag}",
-        lets_plot(
+        letsPlot(
             data = mapOf(
                 "endorser" to endorserData,
                 "endorsee" to endorseeData,
                 "count" to countData,
-            )
+            ),
         ) {
             x = "endorsee"
             y = "endorser"
         } +
-                geom_tile(
+                geomTile(
                     showLegend = true,
                 ) {
                     fill = "count"
                 } +
-                geom_text {
+                geomText {
                     label = "count"
                 } +
-                scale_fill_gradient(
+                scaleFillGradient(
                     low = "#EDEDED",
                     high = "#326C81",
                 ) +
                 ggtitle("Endorsement counts") +
-                scale_x_discrete(
+                scaleXDiscrete(
                     name = "Endorsee",
                     limits = voterNames,
                 ) +
-                scale_y_discrete(
+                scaleYDiscrete(
                     name = "Endorser",
                     limits = voterNames.reversed(),
                 ) +
@@ -187,21 +187,21 @@ private fun StatisticsBuilderScope.yieldEndorseeVsEndorserGraph(
 
     yieldGraph(
         "endorsee_endorser_${tag}",
-        lets_plot(
+        letsPlot(
             data = mapOf(
                 "person" to allEntries.map { it.person },
                 "count" to allEntries.map { it.count },
                 "kind" to allEntries.map { it.kind },
             ),
         ) +
-                geom_bar(stat = Stat.identity, position = Pos.dodge, sampling = sampling_none) {
+                geomBar(stat = Stat.identity, position = Pos.dodge, sampling = samplingNone) {
                     x = "person"
                     y = "count"
                     fill = "kind"
                 } +
                 ggtitle("Endorsements") +
-                scale_x_discrete("Person") +
-                scale_y_continuous("Count") +
+                scaleXDiscrete("Person") +
+                scaleYContinuous("Count") +
                 ggsize(endorsementTotals.persons.size * 60 + 60, 1000),
     )
 }

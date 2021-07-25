@@ -1,13 +1,13 @@
 package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.*
-import jetbrains.letsPlot.geom.geom_bar
-import jetbrains.letsPlot.geom.geom_hline
+import jetbrains.letsPlot.geom.geomBar
+import jetbrains.letsPlot.geom.geomHLine
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.sampling.sampling_none
-import jetbrains.letsPlot.scale.scale_fill_discrete
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_continuous
+import jetbrains.letsPlot.sampling.samplingNone
+import jetbrains.letsPlot.scale.scaleFillDiscrete
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.resolve.ResolutionData
 import org.agoranomic.assessor.lib.vote.VoteKind
@@ -86,10 +86,10 @@ private fun StatisticsBuilderScope.yieldVoteKindsByVoterGraph(
 
     yieldGraph(
         "vote_kinds",
-        lets_plot(voterKindData) +
-                geom_bar(
+        letsPlot(voterKindData) +
+                geomBar(
                     stat = Stat.identity,
-                    sampling = sampling_none,
+                    sampling = samplingNone,
                     position = Pos.stack,
                 ) {
                     x = "voter"
@@ -97,21 +97,20 @@ private fun StatisticsBuilderScope.yieldVoteKindsByVoterGraph(
                     fill = "kind"
                 } +
                 ggsize(width = voters.size * 45 + 10, height = 500) +
-                scale_fill_discrete(
-                    name = "Vote Kind",
+                scaleFillDiscrete(name = "Vote Kind",
                     limits = listOf("FOR", "AGAINST", "PRESENT")
                 ) +
                 ggtitle("Votes by voter") +
-                scale_x_discrete(
+                scaleXDiscrete(
                     name = "Voter",
                     limits = voters.map { it.name },
                 ) +
-                scale_y_continuous(
+                scaleYContinuous(
                     name = "Votes",
                     limits = 0 to proposalResolutionsCount,
                 ) +
-                theme().legendPosition_top() +
-                geom_hline(yintercept = proposalResolutionsCount, linetype = "dashed", color = "red"),
+                theme().legendPositionTop() +
+                geomHLine(yintercept = proposalResolutionsCount, linetype = "dashed", color = "red"),
     )
 }
 

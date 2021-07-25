@@ -4,13 +4,13 @@
 package org.agoranomic.assessor.stats
 
 import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geom_bar
+import jetbrains.letsPlot.geom.geomBar
 import jetbrains.letsPlot.ggsize
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.lets_plot
-import jetbrains.letsPlot.sampling.sampling_none
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_continuous
+import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.sampling.samplingNone
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
 import java.math.BigInteger
 
@@ -52,7 +52,7 @@ fun buildAuthorStats(
 
     yieldGraph(
         "author_written",
-        lets_plot(data = mapOf(
+        letsPlot(data = mapOf<String, List<Any>>(
             "author" to authors.flatMap { listOf(it.name, it.name) },
             "count" to authors.flatMap {
                 val adoptedCount = adoptedCountsByAuthor.getOrDefault(it, 0)
@@ -61,14 +61,14 @@ fun buildAuthorStats(
             },
             "kind" to authors.flatMap { listOf("ADOPTED", "NON-ADOPTED") }
         )) +
-                geom_bar(stat = Stat.identity, sampling = sampling_none) {
+                geomBar(stat = Stat.identity, sampling = samplingNone) {
                     x = "author"
                     y = "count"
                     fill = "kind"
                 } +
                 ggtitle("Adopted proposals by author") +
-                scale_x_discrete(name = "Author", limits = authors.map { it.name }) +
-                scale_y_continuous(name = "Proposals") +
+                scaleXDiscrete(name = "Author", limits = authors.map { it.name }) +
+                scaleYContinuous(name = "Proposals") +
                 ggsize(authors.size * 60 + 60, 1000),
     )
 
@@ -80,17 +80,17 @@ fun buildAuthorStats(
 
     yieldGraph(
         "author_adopted_words",
-        lets_plot(data = mapOf(
+        letsPlot(data = mapOf<String, List<Any>>(
             "author" to adoptedWordsEntries.map { it.authorName },
             "count" to adoptedWordsEntries.map { it.totalWords },
         )) +
-                geom_bar(stat = Stat.identity, sampling = sampling_none) {
+                geomBar(stat = Stat.identity, sampling = samplingNone) {
                     x = "author"
                     y = "count"
                 } +
                 ggtitle("Adopted proposal words by author") +
-                scale_x_discrete(name = "Author", limits = authors.map { it.name }) +
-                scale_y_continuous(name = "Adopted proposal words") +
+                scaleXDiscrete(name = "Author", limits = authors.map { it.name }) +
+                scaleYContinuous(name = "Adopted proposal words") +
                 ggsize(authors.size * 60 + 60, 1000),
     )
 }

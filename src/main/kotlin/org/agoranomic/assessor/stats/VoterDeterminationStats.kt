@@ -1,15 +1,14 @@
 package org.agoranomic.assessor.stats
 
-import io.github.random_internet_cat.util.requireAllAreDistinct
 import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geom_bar
+import jetbrains.letsPlot.geom.geomBar
 import jetbrains.letsPlot.ggsize
 import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.lets_plot
-import jetbrains.letsPlot.sampling.sampling_none
-import jetbrains.letsPlot.scale.scale_fill_discrete
-import jetbrains.letsPlot.scale.scale_x_discrete
-import jetbrains.letsPlot.scale.scale_y_continuous
+import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.sampling.samplingNone
+import jetbrains.letsPlot.scale.scaleFillDiscrete
+import jetbrains.letsPlot.scale.scaleXDiscrete
+import jetbrains.letsPlot.scale.scaleYContinuous
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toPersistentMap
@@ -22,6 +21,7 @@ import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.ResolvedVote
 import org.agoranomic.assessor.lib.vote.SinglePersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.VoteKind
+import org.randomcat.util.requireDistinct
 
 private data class VoterDeterminationCounts(
     val decisiveCount: Int,
@@ -138,7 +138,7 @@ fun buildVoterDeterminationStats(
     }
 
     // Don't want to deal with the case where a voter is determinative on the same proposal twice
-    determinativeDataMap.values.forEach { it.determinativeResolutions.requireAllAreDistinct() }
+    determinativeDataMap.values.forEach { it.determinativeResolutions.requireDistinct() }
 
     yield(
         Statistic.KeyValuePairs(
@@ -191,7 +191,7 @@ fun buildVoterDeterminationStats(
     // Order is safe because determinativeDataMap preserves iteration order by contract
     yieldGraph(
         "voter_determination_counts",
-        lets_plot(data = mapOf(
+        letsPlot(data = mapOf(
             "voter" to determinativeDataMap.flatMap { listOf(it.key.name, it.key.name) },
             "kind" to determinativeDataMap.flatMap { listOf("DETERMINATIVE", "NON-DETERMINATIVE") },
             "count" to determinativeDataMap.flatMap {
@@ -201,15 +201,15 @@ fun buildVoterDeterminationStats(
                 )
             }
         )) +
-                geom_bar(stat = Stat.identity, sampling = sampling_none) {
+                geomBar(stat = Stat.identity, sampling = samplingNone) {
                     x = "voter"
                     y = "count"
                     fill = "kind"
                 } +
                 ggsize(voters.size * 60 + 60, 1000) +
                 ggtitle("Determinative votes by voter") +
-                scale_x_discrete(name = "Voter", limits = voters.map { it.name }) +
-                scale_y_continuous(name = "Count") +
-                scale_fill_discrete(name = "Kind")
+                scaleXDiscrete(name = "Voter", limits = voters.map { it.name }) +
+                scaleYContinuous(name = "Count") +
+                scaleFillDiscrete(name = "Kind")
     )
 }
