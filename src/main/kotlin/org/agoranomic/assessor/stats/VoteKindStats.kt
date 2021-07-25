@@ -31,7 +31,7 @@ private fun StatisticsBuilderScope.yieldVoteKindCountsStat(
 ) {
     for (voteKind in voteKinds) {
         yieldData(
-            "voter_votes_${voteKind.name.toLowerCase()}",
+            "voter_votes_${voteKind.name.uppercase()}",
             voters.associateWith { voteCountsByVoterByVoteKind.getValue(voteKind).getValue(it) }.also {},
         )
     }
@@ -46,7 +46,7 @@ private fun StatisticsBuilderScope.yieldVoteKindRatesStat(
         // Must use also {} to satisfy type inference.
         @Suppress("ControlFlowWithEmptyBody")
         yieldData(
-            "voter_votes_${voteKind.name.toLowerCase()}_rate",
+            "voter_votes_${voteKind.name.uppercase()}_rate",
             voters.associateWith { voteCountRatesByVoterByVoteKind.getValue(voteKind).getValue(it) }.also {},
         )
     }

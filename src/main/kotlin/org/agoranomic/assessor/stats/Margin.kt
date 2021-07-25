@@ -77,8 +77,8 @@ private fun StatisticsBuilderScope.yieldSingleMarginStat(
         authors,
         orderedMarginsByAuthor,
         name = "author_avg_${kind}_strength_margin",
-        barGraphTitle = "Average ${kind.toUpperCase()} voting strength margin by author",
-        boxPlotTitle = "${kind.toUpperCase()} strength margins by author",
+        barGraphTitle = "Average ${kind.uppercase()} voting strength margin by author",
+        boxPlotTitle = "${kind.uppercase()} strength margins by author",
     )
 
     val averageMarginByAuthor = orderedMarginsByAuthor.mapValues { (_, v) ->
