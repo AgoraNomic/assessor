@@ -8,8 +8,34 @@ import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.resolve
 
-data class AssessmentFormatOutput(val outputsByName: ImmutableMap<String, String>) {
-    constructor(outputsByName: Map<String, String>) : this(outputsByName = outputsByName.toImmutableMap())
+sealed class AssessmentOutputData {
+    data class Text(val data: String) : AssessmentOutputData()
+
+    class Bytes(data: ByteArray) : AssessmentOutputData() {
+        private val data: ByteArray = data.copyOf()
+
+        fun bytes(): ByteArray {
+            return data.copyOf()
+        }
+
+        override fun equals(other: Any?): Boolean {
+            if (other !is Bytes) return false
+
+            return this.data contentEquals other.data
+        }
+
+        override fun hashCode(): Int {
+            return this.data.contentHashCode()
+        }
+
+        override fun toString(): String {
+            return this.data.contentToString()
+        }
+    }
+}
+
+data class AssessmentFormatOutput(val outputsByName: ImmutableMap<String, AssessmentOutputData>) {
+    constructor(outputsByName: Map<String, AssessmentOutputData>) : this(outputsByName = outputsByName.toImmutableMap())
 }
 
 interface AssessmentFormatter {
@@ -24,33 +50,33 @@ abstract class ResolvedAssessmentFormatter : AssessmentFormatter {
     protected abstract fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput
 }
 
-abstract class AssessmentIndependentFormatter : ResolvedAssessmentFormatter() {
+abstract class AssessmentIndependentTextFormatter : ResolvedAssessmentFormatter() {
     final override fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
-        return AssessmentFormatOutput(assessments.mapValues { (_, v) -> formatSingle(v) })
+        return AssessmentFormatOutput(assessments.mapValues { (_, v) -> AssessmentOutputData.Text(formatSingle(v)) })
     }
 
     abstract fun formatSingle(assessment: ProposalResolutionMap): String
 }
 
-data class HumanReadableFormatter(val config: ReadableReportConfig) : AssessmentIndependentFormatter() {
+data class HumanReadableFormatter(val config: ReadableReportConfig) : AssessmentIndependentTextFormatter() {
     override fun formatSingle(assessment: ProposalResolutionMap): String {
         return readableReport(assessment, config)
     }
 }
 
-object JsonFormatter : AssessmentIndependentFormatter() {
+object JsonFormatter : AssessmentIndependentTextFormatter() {
     override fun formatSingle(assessment: ProposalResolutionMap): String {
         return jsonReport(assessment)
     }
 }
 
-object RewardsFormatter : AssessmentIndependentFormatter() {
+object RewardsFormatter : AssessmentIndependentTextFormatter() {
     override fun formatSingle(assessment: ProposalResolutionMap): String {
         return rewardsReport(calculateRewards(assessment))
     }
 }
 
-object StrengthAuditFormatter : AssessmentIndependentFormatter() {
+object StrengthAuditFormatter : AssessmentIndependentTextFormatter() {
     override fun formatSingle(assessment: ProposalResolutionMap): String {
         return strengthAuditReport(assessment)
     }
@@ -71,17 +97,20 @@ data class ProposalsReadableFormatter(
 
         return AssessmentFormatOutput(
             resolutionsByProposal.asIterable().associate { (proposal, resolutions) ->
-                proposal.number.toString() to
-                        resolutions.joinToString("\n") { resolution ->
-                            renderReadableProposalResolution(
-                                reportConfig,
-                                proposal,
-                                resolution.resolutionOf(proposal.number),
-                                resolution.votingStrengthsFor(proposal.number),
-                            ) + "\nResolved at: ${resolution.metadata.url}\n"
-                        } +
-                        "\n" +
-                        renderProposalText(proposal)
+                val text = run {
+                    val resolutionsText = resolutions.joinToString("\n") { resolution ->
+                        renderReadableProposalResolution(
+                            reportConfig,
+                            proposal,
+                            resolution.resolutionOf(proposal.number),
+                            resolution.votingStrengthsFor(proposal.number),
+                        ) + "\nResolved at: ${resolution.metadata.url}\n"
+                    }
+
+                    resolutionsText + "\n" + renderProposalText(proposal)
+                }
+
+                proposal.number.toString() to AssessmentOutputData.Text(text)
             }
         )
     }
