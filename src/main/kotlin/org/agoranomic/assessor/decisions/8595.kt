@@ -54,4 +54,7 @@ be able to though because it does nothing. N+1 becomes N/2 because Glitter
 is currently the most powerful way to get coins, by far. ]""")
         }
     }
+
+    voting {
+    }
 }
