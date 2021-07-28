@@ -1,5 +1,9 @@
 package org.agoranomic.assessor.cli
 
+import jetbrains.datalore.plot.PlotSvgExport
+import jetbrains.letsPlot.GGBunch
+import jetbrains.letsPlot.intern.Plot
+import jetbrains.letsPlot.intern.toSpec
 import org.agoranomic.assessor.decisions.findAssessments
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
@@ -126,6 +130,36 @@ private fun buildAllStats(assessments: List<AssessmentData>): List<Statistic> {
     addStatistics(buildLengthStats(resolutionsByProposal = dataWithCache.resolutionsByProposal))
 
     return allStatistics
+}
+
+object StatisticsFormatter : AssessmentFormatter {
+    override fun formatBatch(assessments: List<AssessmentData>): AssessmentFormatOutput {
+        val allStatistics = buildAllStats(assessments)
+
+        return AssessmentFormatOutput(
+            allStatistics.associate { statistic ->
+                when (statistic) {
+                    is Statistic.KeyValuePairs -> {
+                        statistic.name to formatKeyValuePairs(
+                            statistic = statistic.data,
+                            keyName = statistic.keyName,
+                            valueName = statistic.valueName,
+                        )
+                    }
+
+                    is Statistic.Graph -> {
+                        ("graphs/" + statistic.name) to PlotSvgExport.buildSvgImageFromRawSpecs(
+                            when (val plot = statistic.plot) {
+                                is Plot -> plot.toSpec()
+                                is GGBunch -> plot.toSpec()
+                                else -> error("Unknown plot type")
+                            },
+                        )
+                    }
+                }.let { it.first to AssessmentOutputData.Text(it.second) }
+            },
+        )
+    }
 }
 
 fun main() {

@@ -8,7 +8,7 @@ import java.nio.file.StandardOpenOption
 
 private val FILE_CHARSET = Charsets.UTF_8
 
-private fun formatTable(
+fun formatKeyValuePairs(
     statistic: List<Pair<String, String>>,
     keyName: String,
     valueName: String,
@@ -48,7 +48,7 @@ fun saveKeyValuePairs(
 
     Files.writeString(
         Path.of("tables").also { Files.createDirectories(it) }.resolve("$name.txt"),
-        formatTable(statistic = statistic, keyName = keyName, valueName = valueName),
+        formatKeyValuePairs(statistic = statistic, keyName = keyName, valueName = valueName),
         FILE_CHARSET,
         StandardOpenOption.CREATE,
         StandardOpenOption.TRUNCATE_EXISTING,

@@ -23,6 +23,7 @@ private const val FORM_LONG = "long"
 private const val FORM_SHORT = "short"
 private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
+private const val FORM_STATISTICS = "statistics"
 private const val FORM_STRENGTH_AUDIT = "strength-audit"
 private const val FORM_PROPOSALS = "proposals"
 
@@ -122,10 +123,19 @@ private fun formOptionGroup(): OptionGroup {
     val optFormShort = Option.builder().longOpt(FORM_SHORT).desc("Generally short form").build()
     val optFormJson = Option.builder().longOpt(FORM_JSON).desc("Machine-readable JSON form").build()
     val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
+    val optFormStatistics = Option.builder().longOpt(FORM_STATISTICS).desc("Statistics and graphs").build()
     val optFormStrengthAudit = Option.builder().longOpt(FORM_STRENGTH_AUDIT).desc("Voting strength audit").build()
     val optFormProposals = Option.builder().longOpt(FORM_PROPOSALS).desc("Proposals output").build()
 
-    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards, optFormStrengthAudit, optFormProposals)
+    return optionGroupOf(
+        optFormLong,
+        optFormShort,
+        optFormJson,
+        optFormRewards,
+        optFormStatistics,
+        optFormStrengthAudit,
+        optFormProposals,
+    )
 }
 
 private fun cliOptions(): Options {
@@ -225,6 +235,7 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
         commandLine.hasOption(FORM_SHORT) -> HumanReadableFormatter(withOverrides(commandLine, CONFIG_SHORT))
         commandLine.hasOption(FORM_JSON) -> JsonFormatter
         commandLine.hasOption(FORM_REWARDS) -> RewardsFormatter
+        commandLine.hasOption(FORM_STATISTICS) -> StatisticsFormatter
         commandLine.hasOption(FORM_STRENGTH_AUDIT) -> StrengthAuditFormatter
         commandLine.hasOption(FORM_PROPOSALS) ->
             ProposalsReadableFormatter(withOverrides(commandLine, CONFIG_LONG).proposalConfig)
