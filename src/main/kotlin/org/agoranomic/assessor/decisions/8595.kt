@@ -10,6 +10,12 @@ fun assessment8595() = assessment {
     name("8595")
     quorum(4)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v3) {
         proposal(8595) {
             title("It's a gray, gray world.")
