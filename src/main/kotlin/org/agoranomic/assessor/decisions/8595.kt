@@ -81,5 +81,9 @@ is currently the most powerful way to get coins, by far. ]""")
         votes(G) {
             AGAINST on 8595
         }
+
+        votes(cuddlybanana) {
+            FOR on 8595
+        }
     }
 }
