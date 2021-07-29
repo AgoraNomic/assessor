@@ -18,7 +18,7 @@ fun assessment8595() = assessment {
         max(15)
     }
 
-    proposals(v3) {
+    proposals(v4) {
         proposal(8595) {
             title("It's a gray, gray world.")
             ai("3.0")
