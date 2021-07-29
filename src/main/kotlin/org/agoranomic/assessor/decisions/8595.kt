@@ -65,5 +65,9 @@ is currently the most powerful way to get coins, by far. ]""")
         votes(ais523) {
             PRESENT on 8595
         }
+
+        votes(Trigon) {
+            endorse(RLee) on 8595
+        }
     }
 }
