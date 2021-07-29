@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8595() = assessment {
@@ -77,6 +76,10 @@ is currently the most powerful way to get coins, by far. ]""")
 
         votes(RLee) {
             FOR on 8595
+        }
+
+        votes(G) {
+            AGAINST on 8595
         }
     }
 }
