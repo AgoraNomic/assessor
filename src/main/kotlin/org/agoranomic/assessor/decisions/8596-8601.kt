@@ -266,5 +266,13 @@ targeting situations like:
         votes(CuddleBeam) {
             FOR on all
         }
+
+        votes(Telna) {
+            AGAINST on 8597
+            FOR on 8598
+            FOR on 8599
+            FOR on 8600
+            FOR on 8601
+        }
     }
 }
