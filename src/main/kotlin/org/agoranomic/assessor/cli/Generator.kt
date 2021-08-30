@@ -94,10 +94,19 @@ private fun distributionToDSL(rawDistribution: String): String {
                 val id = lines[ID_LINE_INDEX].afterExpected("ID: ").toInt()
 
                 appendScope("proposal($id)") {
-                    val title = lines[TITLE_LINE_INDEX].afterExpected("Title: ")
-                    val quotedTitle = title.escapedAndQuoted()
+                    val title = run {
+                        val titleLine = lines[TITLE_LINE_INDEX]
 
-                    appendDecl("title($quotedTitle)")
+                        if (titleLine == "Title:") {
+                            null
+                        } else {
+                            titleLine.afterExpected("Title: ")
+                        }
+                    }
+
+                    val codeTitle = title?.escapedAndQuoted() ?: "null"
+
+                    appendDecl("title($codeTitle)")
 
                     val ai = lines[AI_LINE_INDEX].afterExpected("Adoption index: ").toBigDecimal()
 
