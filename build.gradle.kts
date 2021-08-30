@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.5.0"
-    kotlin("plugin.serialization") version "1.5.0"
+    kotlin("jvm") version "1.5.30"
+    kotlin("plugin.serialization") version "1.5.30"
 }
 
 group = "org.agoranomic"
@@ -50,10 +50,6 @@ tasks.create<Jar>("fatJar") {
 tasks.compileKotlin {
     sourceCompatibility = "11"
     kotlinOptions.jvmTarget = "11"
-
-    kotlinOptions {
-        freeCompilerArgs += listOf("-Xinline-classes")
-    }
 }
 
 tasks.compileTestKotlin {
