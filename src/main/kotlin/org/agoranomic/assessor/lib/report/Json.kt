@@ -37,7 +37,7 @@ private data class ProposalDto(
     val number: Long,
     @SerialName("proposal_ai") val proposalAi: String,
     @SerialName("decision_ai") val decisionAI: String,
-    val title: String,
+    val title: String?,
     @SerialName("author") val authorName: String,
     @SerialName("coauthors") val coauthorNames: List<String>,
     val text: String,

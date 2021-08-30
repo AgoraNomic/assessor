@@ -14,7 +14,7 @@ import java.math.BigDecimal
 
 @AssessmentDsl
 interface ProposalCommonReceiver {
-    fun title(str: String)
+    fun title(str: String?)
     fun text(str: String)
     fun author(value: Person)
     fun coauthors(persons: Persons)
@@ -92,14 +92,14 @@ typealias ProposalCompilerV4 = ProposalCompiler<ProposalReceiverV4>
 
 @AssessmentDsl
 private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : ProposalCommonReceiver {
-    private val titleValue = SetOnce.namedOf<String>("title of proposal $number")
+    private val titleValue = SetOnce.namedOf<String?>("title of proposal $number")
     private val textValue = SetOnce.namedOf<String>("text of proposal $number")
     private val proposalAIValue = SetOnce.namedOf<ProposalAI>("AI of proposal $number")
     private val decisionAIValue = SetOnce.namedOf<DecisionAI>("AI of decision on proposal $number")
     private val authorValue = SetOnce.namedOf<Person>("author of proposal $number")
     private val coauthorsValue = SetOnce.namedOf<Persons>("coauthors of proposal $number")
 
-    override fun title(str: String) {
+    override fun title(str: String?) {
         titleValue.set(str)
     }
 

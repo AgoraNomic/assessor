@@ -42,7 +42,7 @@ private fun renderSummaryTable(resolutionMap: ProposalResolutionMap): String {
     val columnNames = listOf("ID", "Title", "Result")
 
     val dataRows = resolutionMap.proposals.map {
-        listOf(it.number.toString(), it.title, resolutionMap.resolutionOf(it.number).result.readableName)
+        listOf(it.number.toString(), it.title ?: "", resolutionMap.resolutionOf(it.number).result.readableName)
     }
 
     return renderTable(columnNames, dataRows)
@@ -117,7 +117,7 @@ private fun renderProposalV3Header(data: ProposalDataV3) = buildString {
 private fun renderProposalV4Header(data: ProposalDataV4) = renderClassHeader(data.proposalClass)
 
 private fun renderProposalHeader(config: ReadableProposalReportConfig, proposal: Proposal) = buildString {
-    appendLine("PROPOSAL ${proposal.number} (${proposal.title})")
+    appendLine("PROPOSAL ${proposal.number}${proposal.title?.let { " ($it)" } ?: ""}")
     if (config.authorLine) appendLine("AUTHOR: ${proposal.author.name}")
 
     proposal.accept(object : ProposalVisitor {
@@ -245,7 +245,7 @@ private fun renderVoteComments(resolutionData: ResolutionData) = buildString {
 
 fun renderProposalText(proposal: Proposal): String = buildString {
     appendLine("ID: ${proposal.number}")
-    appendLine("Title: ${proposal.title}")
+    appendLine("Title: ${proposal.title ?: ""}")
     appendLine("Adoption index: ${proposal.proposalAI}")
     appendLine("Author: ${proposal.author.name}")
     appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")

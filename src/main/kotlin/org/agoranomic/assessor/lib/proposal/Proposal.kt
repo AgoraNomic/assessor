@@ -41,7 +41,7 @@ private interface ProposalCommonInterface {
     val number: ProposalNumber
     val proposalAI: ProposalAI
     val decisionAI: DecisionAI
-    val title: String
+    val title: String?
     val author: Person
     val coauthors: Persons
     val text: String
@@ -51,7 +51,7 @@ data class ProposalCommonData(
     override val number: ProposalNumber,
     override val proposalAI: ProposalAI,
     override val decisionAI: DecisionAI,
-    override val title: String,
+    override val title: String?,
     override val author: Person,
     override val coauthors: Persons,
     override val text: String
