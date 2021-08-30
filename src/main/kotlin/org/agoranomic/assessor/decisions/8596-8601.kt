@@ -262,5 +262,9 @@ targeting situations like:
             FOR on 8600
             FOR on 8601
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
