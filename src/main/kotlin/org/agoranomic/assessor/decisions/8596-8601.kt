@@ -11,19 +11,19 @@ fun assessment8596to8601() = assessment {
     quorum(6)
 
     proposals(v4) {
-        proposal(8596) {
-            title("decimation times 9")
-            ai("1.0")
-            author(RLee)
-            ordinary()
-            sponsored()
-
-            text("""
-Create a power 1 rule called "temporary inflation reduction" with the text
-"At the end of the month this rule was adopted, each entity's coin balance
-is divided by 10, rounded to the nearest whole number. This rule then
-automatically repeals itself."""")
-        }
+//        proposal(8596) {
+//            title("decimation times 9")
+//            ai("1.0")
+//            author(RLee)
+//            ordinary()
+//            sponsored()
+//
+//            text("""
+//Create a power 1 rule called "temporary inflation reduction" with the text
+//"At the end of the month this rule was adopted, each entity's coin balance
+//is divided by 10, rounded to the nearest whole number. This rule then
+//automatically repeals itself."""")
+//        }
 
         proposal(8597) {
             title(null)
