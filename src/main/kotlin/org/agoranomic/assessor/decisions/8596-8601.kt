@@ -10,6 +10,12 @@ fun assessment8596to8601() = assessment {
     name("8596-8601")
     quorum(6)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
 //        proposal(8596) {
 //            title("decimation times 9")
