@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8596to8601() = assessment {
@@ -207,5 +209,13 @@ targeting situations like:
     }
 
     voting {
+        votes(ais523) {
+            // AGAINST on 8596
+            AGAINST on 8597
+            PRESENT on 8598
+            FOR on 8599
+            endorse(G) on 8600
+            FOR on 8601
+        }
     }
 }
