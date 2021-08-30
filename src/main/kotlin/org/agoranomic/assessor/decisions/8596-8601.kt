@@ -226,5 +226,14 @@ targeting situations like:
             endorse(Jason) on 8600
             FOR on 8601
         }
+
+        votes(Jason) {
+            // AGAINST on 8596
+            AGAINST on 8597
+            AGAINST on 8598
+            FOR on 8599
+            FOR on 8600
+            endorse(Telna) on 8601
+        }
     }
 }
