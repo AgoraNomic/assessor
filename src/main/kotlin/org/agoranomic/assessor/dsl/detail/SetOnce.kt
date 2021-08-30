@@ -7,8 +7,9 @@ package org.agoranomic.assessor.dsl.detail
  * @param T the type of the value
  */
 class SetOnce<T> private constructor(private val name: String?) {
-    private var currentValue: T? = null
-    private var isInitialized: Boolean = false
+    private object Uninitialized
+
+    private var currentValue: Any? = Uninitialized
 
     companion object {
         fun <T> namedOf(name: String): SetOnce<T> = SetOnce<T>(name)
@@ -19,7 +20,7 @@ class SetOnce<T> private constructor(private val name: String?) {
     /**
      * Returns `true` if the value has been set, and `false` otherwise.
      */
-    fun hasValue(): Boolean = isInitialized
+    fun hasValue(): Boolean = currentValue !== Uninitialized
 
     /**
      * Sets the value. Fails if the value has already been set.
@@ -38,7 +39,6 @@ class SetOnce<T> private constructor(private val name: String?) {
         }
 
         currentValue = value
-        isInitialized = true
     }
 
     /**
