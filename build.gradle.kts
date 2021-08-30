@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.5.30"
     kotlin("plugin.serialization") version "1.5.30"
+    application
 }
 
 group = "org.agoranomic"
@@ -34,17 +35,9 @@ tasks.test {
     }
 }
 
-tasks.create<Jar>("fatJar") {
-    manifest {
-        attributes["Implementation-Title"] = "Agora Assessor"
-        attributes["Implementation-Version"] = project.version
-        attributes["Main-Class"] = "org.agoranomic.assessor.cli.RunnerKt"
-    }
-
-    archiveFileName.set("assessor.jar")
-
-    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
-    with(tasks["jar"] as CopySpec)
+application {
+    applicationName = "assessor"
+    mainClass.set("org.agoranomic.assessor.cli.RunnerKt")
 }
 
 tasks.compileKotlin {

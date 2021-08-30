@@ -28,14 +28,14 @@ jobs:
       - name: Run the tests
         run: ./gradlew check
 
-      - name: Create fat jar
-        run: ./gradlew fatjar
+      - name: Build application distribution
+        run: ./gradlew installDist
 
-      - name: Upload fat jar
+      - name: Upload application distribution
         uses: actions/upload-artifact@v2
         with:
-          name: fat_jar
-          path: build/libs/assessor.jar
+          name: assessor_dist
+          path: build/install/assessor
 
   reports_generate:
     needs: build
@@ -47,17 +47,18 @@ jobs:
         with:
           java-version: 1.11
 
-      - name: Fetch fat jar
+      - name: Fetch distribution
         uses: actions/download-artifact@v2
         with:
-          name: fat_jar
-          path: artifacts
+          name: assessor_dist
+          path: dist
 
       - name: Generate reports
         run: |
-          java -jar artifacts/assessor.jar all --long --dir reports
-          java -jar artifacts/assessor.jar all --json --dir reports/json
-          java -jar artifacts/assessor.jar all --proposals --dir reports/proposal
+          chmod +x dist/bin/assessor
+          dist/bin/assessor all --long --dir reports
+          dist/bin/assessor all --json --dir reports/json
+          dist/bin/assessor all --proposals --dir reports/proposal
 
       - name: Generate index.md
         run: |
