@@ -253,5 +253,14 @@ targeting situations like:
             FOR on 8600
             FOR on 8601
         }
+
+        votes(RLee) {
+            // AGAINST on 8596
+            FOR on 8597
+            FOR on 8598
+            FOR on 8599
+            FOR on 8600
+            FOR on 8601
+        }
     }
 }
