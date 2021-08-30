@@ -217,5 +217,14 @@ targeting situations like:
             endorse(G) on 8600
             FOR on 8601
         }
+
+        votes(Aspen) {
+            // AGAINST on 8596
+            FOR on 8597
+            FOR on 8598
+            FOR on 8599
+            endorse(Jason) on 8600
+            FOR on 8601
+        }
     }
 }
