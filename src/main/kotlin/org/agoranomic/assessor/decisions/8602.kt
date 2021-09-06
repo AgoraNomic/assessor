@@ -3,8 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8602() = assessment {
@@ -68,6 +67,10 @@ destroyed this way, gain 7 products of your choice"""")
 
         votes(Jason) {
             FOR on 8602
+        }
+
+        votes(G) {
+            AGAINST on 8602
         }
     }
 }
