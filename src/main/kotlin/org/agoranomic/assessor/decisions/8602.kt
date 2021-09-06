@@ -84,5 +84,9 @@ destroyed this way, gain 7 products of your choice"""")
         votes(ATMunn) {
             PRESENT on 8602
         }
+
+        votes(Falsifian) {
+            AGAINST on 8602
+        }
     }
 }
