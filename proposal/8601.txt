@@ -1,0 +1,43 @@
+PROPOSAL 8601 (Adjust late recusal)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (8): Aspen, Cuddle Beam, G., Jason, R. Lee, Telna, Trigon, ais523
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 24/0 (AI=1.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+[
+Jason: Endorsement of Telna
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-August/015251.html
+
+ID: 8601
+Title: Adjust late recusal
+Adoption index: 1.0
+Author: Murphy
+Co-authors: Telna
+
+
+Amend Rule 2492 (Recusal) by replacing this text:
+
+  If a judge is recused from a case 4+ days after being assigned to
+  it, e SHOULD NOT be assigned as a judge until e has apologised and
+  or reasonably explained eir actions.
+
+with this text:
+
+  If a judge is recused from a case that was continuously open and
+  assigned to em for at least the past 4 days, e SHOULD NOT be
+  assigned as a judge until e has apologised and/or reasonably
+  explained eir actions.
+
+[Not that it affects CFJ 3922, but this would prevent the rule from
+targeting situations like:
+   * Aug 22, player is assigned to a case
+   * Aug 23, player judges the case
+   * Aug 27, other players move to reconsider the case
+   * Aug 28, player recuses emself: only 1 day after e was last assigned,
+       but 6 days after e was originally assigned]
