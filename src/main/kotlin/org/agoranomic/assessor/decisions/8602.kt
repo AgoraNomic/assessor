@@ -76,5 +76,9 @@ destroyed this way, gain 7 products of your choice"""")
         votes(RLee) {
             FOR on 8602
         }
+
+        votes(ais523) {
+            AGAINST on 8602
+        }
     }
 }
