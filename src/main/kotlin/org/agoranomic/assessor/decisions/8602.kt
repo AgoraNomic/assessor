@@ -80,5 +80,9 @@ destroyed this way, gain 7 products of your choice"""")
         votes(ais523) {
             AGAINST on 8602
         }
+
+        votes(ATMunn) {
+            PRESENT on 8602
+        }
     }
 }
