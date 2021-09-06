@@ -66,7 +66,7 @@ destroyed this way, gain 7 products of your choice"""")
         }
 
         votes(Jason) {
-            FOR on 8602
+            PRESENT on 8602
         }
 
         votes(G) {
