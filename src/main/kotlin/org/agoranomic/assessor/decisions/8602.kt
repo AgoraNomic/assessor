@@ -58,4 +58,7 @@ Alchemy Stone (weekly, 70%): Destroy four cards you own. If four cards were
 destroyed this way, gain 7 products of your choice"""")
         }
     }
+
+    voting {
+    }
 }
