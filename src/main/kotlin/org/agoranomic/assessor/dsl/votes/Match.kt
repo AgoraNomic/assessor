@@ -11,7 +11,7 @@ fun match(other: Person): ResolvingVote {
             )
         }
 
-        override val currentStepDescription: VoteStepDescription
-            get() = VoteStepDescription.None
+        override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+            VoteStepDescription.None
     }
 }

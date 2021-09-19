@@ -73,7 +73,7 @@ data class ResolvingVoteResolvedVote(
 
 interface ResolvingVote {
     fun resolveStep(context: ProposalVoteContext): VoteStepResolution
-    val currentStepDescription: VoteStepDescription
+    fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription
 }
 
 data class ResolvedVote(val value: VoteKind) : ResolvingVote {
@@ -81,8 +81,8 @@ data class ResolvedVote(val value: VoteKind) : ResolvingVote {
         return VoteStepResolution.Resolved.Voted(value)
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.None
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.None
 }
 
 data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVote) : ResolvingVote {
@@ -90,8 +90,8 @@ data class CommentedResolvingVote(val comment: String, val nextVote: ResolvingVo
         return VoteStepResolution.Continue(nextVote)
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.WithReadable(
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.WithReadable(
             readable = comment,
             machine = VoteStepMachineDescription(
                 kind = "commented",
@@ -107,8 +107,8 @@ data class TaggedResolvingVote(val tag: String, val nextVote: ResolvingVote) : R
         return VoteStepResolution.Continue(nextVote)
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.tagOnly(tag)
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.tagOnly(tag)
 }
 
 object InextricableResolvingVote : ResolvingVote {
@@ -116,8 +116,8 @@ object InextricableResolvingVote : ResolvingVote {
         return VoteStepResolution.Continue(ResolvedVote(VoteKind.PRESENT))
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.WithReadable(
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.WithReadable(
             readable = "Inextricable",
             machine = VoteStepMachineDescription(
                 kind = "inextricable",
@@ -131,8 +131,8 @@ object AbstentionResolvingVote : ResolvingVote {
         return VoteStepResolution.Resolved.Abstained
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.None
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.None
 }
 
 tailrec fun ResolvingVote.finalResolution(voteContext: ProposalVoteContext): VoteStepResolution.Resolved {
@@ -148,7 +148,7 @@ fun ResolvingVote.resolveDescriptions(voteContext: ProposalVoteContext): List<Vo
             is VoteStepResolution.Continue -> resolution.nextVote
             is VoteStepResolution.Resolved -> null
         }
-    }.map { it.currentStepDescription }.toList()
+    }.map { it.currentStepDescription(voteContext) }.toList()
 }
 
 data class MultiProposalVoteMap(private val data: ImmutableMap<ProposalNumber, SimplifiedSingleProposalVoteMap>) {

@@ -11,8 +11,8 @@ private data class ResolvedEndorsementResolvingVote(val endorsee: Person, val re
             VoteStepResolution.Continue(InextricableResolvingVote)
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.WithReadable(
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.WithReadable(
             readable = if (resolution != null)
                 "Endorsement of ${endorsee.name}"
             else
@@ -40,8 +40,7 @@ private data class EndorsementResolvingVote(val endorsee: Person) : ResolvingVot
         )
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.None
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription = VoteStepDescription.None
 }
 
 fun endorse(person: Person): ResolvingVote = EndorsementResolvingVote(person)
@@ -53,8 +52,8 @@ private object AuthorEndorsementResolvingVote : ResolvingVote {
         return VoteStepResolution.Continue(EndorsementResolvingVote(context.currentProposal.author))
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.tagOnly("author_endorsement")
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        VoteStepDescription.tagOnly("author_endorsement")
 }
 
 // author parameter exists for overloading, so it is kept
@@ -73,21 +72,20 @@ private data class ResolvedEndorseOrElseResolvingVote(
             VoteStepResolution.Resolved.Voted(default)
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() =
-            if (resolution != null)
-                VoteStepDescription.None
-            else
-                VoteStepDescription.WithReadable(
-                    readable = "${endorsee.name} would have been endorsed, but eir vote was inextricable",
-                    machine = VoteStepMachineDescription(
-                        kind = "endorsement_default",
-                        parameters = mapOf(
-                            "endorsee" to endorsee.name,
-                            "default" to default.name,
-                        ),
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
+        if (resolution != null)
+            VoteStepDescription.None
+        else
+            VoteStepDescription.WithReadable(
+                readable = "${endorsee.name} would have been endorsed, but eir vote was inextricable",
+                machine = VoteStepMachineDescription(
+                    kind = "endorsement_default",
+                    parameters = mapOf(
+                        "endorsee" to endorsee.name,
+                        "default" to default.name,
                     ),
-                )
+                ),
+            )
 }
 
 // Similar to EndorsementVote above
@@ -102,8 +100,7 @@ private data class EndorseOrElseResolvingVote(val endorsee: Person, val default:
         )
     }
 
-    override val currentStepDescription: VoteStepDescription
-        get() = VoteStepDescription.None
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription = VoteStepDescription.None
 }
 
 fun endorseOrElse(endorsee: Person, default: VoteKind): ResolvingVote =
