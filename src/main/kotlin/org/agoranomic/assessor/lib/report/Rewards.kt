@@ -41,7 +41,7 @@ private fun calculateReward(
 }
 
 data class ProposalRewardData(
-    val author: Person,
+    val author: Person?,
     val voteCountFor: BigInteger,
     val voteCountAgainst: BigInteger,
     val proposalAI: ProposalAI,
@@ -114,21 +114,24 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
 }
 
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
-    return rewardsMap.proposals.joinToString("\n") { proposal ->
-        val rewardData = rewardsMap[proposal]
+    return rewardsMap
+        .proposals
+        .mapNotNull { proposal ->
+            val rewardData = rewardsMap[proposal]
 
-        val author = rewardData.author
-        val voteCountFor = rewardData.voteCountFor
-        val voteCountAgainst = rewardData.voteCountAgainst
-        val unroundedReward = rewardData.unroundedReward
-        val roundedReward = rewardData.roundedReward
+            val author = rewardData.author ?: return@mapNotNull null
+            val voteCountFor = rewardData.voteCountFor
+            val voteCountAgainst = rewardData.voteCountAgainst
+            val unroundedReward = rewardData.unroundedReward
+            val roundedReward = rewardData.roundedReward
 
-        val amountString =
-            if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
-                roundedReward.toString()
-            else
-                "$unroundedReward -> $roundedReward"
+            val amountString =
+                if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
+                    roundedReward.toString()
+                else
+                    "$unroundedReward -> $roundedReward"
 
-        "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins."
-    }
+            "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins."
+        }
+        .joinToString("\n")
 }

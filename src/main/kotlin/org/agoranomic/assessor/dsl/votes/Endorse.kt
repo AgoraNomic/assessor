@@ -49,11 +49,31 @@ object AuthorMarker
 
 private object AuthorEndorsementResolvingVote : ResolvingVote {
     override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
-        return VoteStepResolution.Continue(EndorsementResolvingVote(context.currentProposal.author))
+        val currentAuthor = context.currentProposal.author
+
+        return VoteStepResolution.Continue(
+            if (currentAuthor != null)
+                EndorsementResolvingVote(currentAuthor)
+            else
+                InextricableResolvingVote,
+        )
     }
 
-    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription =
-        VoteStepDescription.tagOnly("author_endorsement")
+    override fun currentStepDescription(context: ProposalVoteContext): VoteStepDescription {
+        val currentAuthor = context.currentProposal.author
+
+        return if (currentAuthor != null) {
+            VoteStepDescription.tagOnly("author_endorsement")
+        } else {
+            VoteStepDescription.WithReadable(
+                "Endorsement of author on proposal without author",
+                VoteStepMachineDescription(
+                    "author_endorsement",
+                    mapOf("inextricable" to "true"),
+                )
+            )
+        }
+    }
 }
 
 // author parameter exists for overloading, so it is kept

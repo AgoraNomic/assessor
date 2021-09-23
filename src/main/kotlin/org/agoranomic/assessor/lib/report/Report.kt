@@ -74,7 +74,7 @@ fun renderPopularProposalsInfo(resolutionMap: ProposalResolutionMap): String? {
     return "The following sponsored adopted proposals have the highest popularity " +
             "(${formatPopularity(maxPopularity)}): " +
             maxPopularityProposals.joinToString(separator = ", ", postfix = ".") {
-                "${it.number} (by ${it.author.name})"
+                "${it.number} (by ${it.author?.name ?: "<no person>"})"
             }
 }
 
@@ -118,7 +118,7 @@ private fun renderProposalV4Header(data: ProposalDataV4) = renderClassHeader(dat
 
 private fun renderProposalHeader(config: ReadableProposalReportConfig, proposal: Proposal) = buildString {
     appendLine("PROPOSAL ${proposal.number}${proposal.title?.let { " ($it)" } ?: ""}")
-    if (config.authorLine) appendLine("AUTHOR: ${proposal.author.name}")
+    if (config.authorLine) appendLine("AUTHOR: ${proposal.author?.name ?: "[none]"}")
 
     proposal.accept(object : ProposalVisitor {
         override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0) {
@@ -247,7 +247,7 @@ fun renderProposalText(proposal: Proposal): String = buildString {
     appendLine("ID: ${proposal.number}")
     appendLine("Title: ${proposal.title ?: ""}")
     appendLine("Adoption index: ${proposal.proposalAI}")
-    appendLine("Author: ${proposal.author.name}")
+    appendLine("Author:${proposal.author?.name?.let { " $it" } ?: ""}")
     appendLine("Co-authors: ${proposal.coauthors.joinToString(", ") { it.name }}")
     appendLine()
     appendLine()

@@ -38,7 +38,7 @@ private data class ProposalDto(
     @SerialName("proposal_ai") val proposalAi: String,
     @SerialName("decision_ai") val decisionAI: String,
     val title: String?,
-    @SerialName("author") val authorName: String,
+    @SerialName("author") val authorName: String?,
     @SerialName("coauthors") val coauthorNames: List<String>,
     val text: String,
 ) {
@@ -50,7 +50,7 @@ private data class ProposalDto(
                 proposalAi = proposal.proposalAI.raw.toString(),
                 decisionAI = proposal.decisionAI.raw.toString(),
                 title = proposal.title,
-                authorName = proposal.author.name,
+                authorName = proposal.author?.name,
                 coauthorNames = proposal.coauthors.map { it.name },
                 text = proposal.text,
             )

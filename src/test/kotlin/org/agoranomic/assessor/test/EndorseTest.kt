@@ -93,7 +93,7 @@ class EndorseTest {
     @MethodSource("testingVotes")
     fun `endorse(author) test`(authorVote: ResolvingVote) {
         val proposal = firstTestProposal()
-        val proposalAuthor = proposal.author
+        val proposalAuthor = proposal.author ?: error("proposal should have non-null author")
 
         doTestEndorse(
             endorsement = endorse(AuthorMarker),
