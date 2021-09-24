@@ -16,7 +16,7 @@ import java.math.BigDecimal
 interface ProposalCommonReceiver {
     fun title(str: String?)
     fun text(str: String)
-    fun author(value: Person)
+    fun author(value: Person?)
     fun coauthors(persons: Persons)
 
     fun decisionAI(value: DecisionAI)
@@ -96,7 +96,7 @@ private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : P
     private val textValue = SetOnce.namedOf<String>("text of proposal $number")
     private val proposalAIValue = SetOnce.namedOf<ProposalAI>("AI of proposal $number")
     private val decisionAIValue = SetOnce.namedOf<DecisionAI>("AI of decision on proposal $number")
-    private val authorValue = SetOnce.namedOf<Person>("author of proposal $number")
+    private val authorValue = SetOnce.namedOf<Person?>("author of proposal $number")
     private val coauthorsValue = SetOnce.namedOf<Persons>("coauthors of proposal $number")
 
     override fun title(str: String?) {
@@ -107,7 +107,7 @@ private class ProposalCommonReceiverImpl(private val number: ProposalNumber) : P
         textValue.set(str)
     }
 
-    override fun author(value: Person) {
+    override fun author(value: Person?) {
         authorValue.set(value)
     }
 
