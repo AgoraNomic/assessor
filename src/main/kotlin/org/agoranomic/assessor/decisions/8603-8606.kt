@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8603to8606() = assessment {
@@ -117,5 +119,9 @@ I create a proposal with this sentence as its text, and make it pending.""")
     }
 
     voting {
+        votes(RLee) {
+            AGAINST on 8606
+            FOR on others
+        }
     }
 }
