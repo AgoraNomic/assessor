@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -153,6 +154,13 @@ I create a proposal with this sentence as its text, and make it pending.""")
             PRESENT on 8604
             FOR on 8605
             AGAINST on 8606
+        }
+
+        votes(Falsifian) {
+            endorse(Jason) on 8603
+            endorse(RLee) on 8604
+            endorse(G) on 8605
+            FOR on 8606
         }
     }
 }
