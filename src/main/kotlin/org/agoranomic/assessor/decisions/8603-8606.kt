@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8603to8606() = assessment {
@@ -133,6 +132,13 @@ I create a proposal with this sentence as its text, and make it pending.""")
 
         votes(CuddleBeam) {
             FOR on all
+        }
+
+        votes(G) {
+            FOR on 8603
+            PRESENT on 8604
+            FOR on 8605
+            FOR on 8606
         }
     }
 }
