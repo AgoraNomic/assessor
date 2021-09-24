@@ -115,4 +115,7 @@ with:
 I create a proposal with this sentence as its text, and make it pending.""")
         }
     }
+
+    voting {
+    }
 }
