@@ -123,5 +123,12 @@ I create a proposal with this sentence as its text, and make it pending.""")
             AGAINST on 8606
             FOR on others
         }
+
+        votes(Trigon) {
+            FOR on 8603
+            AGAINST on 8604
+            FOR on 8605
+            FOR on 8606
+        }
     }
 }
