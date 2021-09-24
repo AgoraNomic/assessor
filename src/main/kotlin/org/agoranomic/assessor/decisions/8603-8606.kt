@@ -162,5 +162,12 @@ I create a proposal with this sentence as its text, and make it pending.""")
             endorse(G) on 8605
             FOR on 8606
         }
+
+        votes(ais523) {
+            FOR on 8603
+            PRESENT on 8604
+            PRESENT on 8605
+            PRESENT on 8606
+        }
     }
 }
