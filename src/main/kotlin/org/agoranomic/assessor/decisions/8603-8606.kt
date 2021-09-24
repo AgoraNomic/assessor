@@ -147,5 +147,12 @@ I create a proposal with this sentence as its text, and make it pending.""")
             PRESENT on 8605
             AGAINST on 8606
         }
+
+        votes(Jason) {
+            FOR on 8603
+            PRESENT on 8604
+            FOR on 8605
+            AGAINST on 8606
+        }
     }
 }
