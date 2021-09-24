@@ -130,5 +130,9 @@ I create a proposal with this sentence as its text, and make it pending.""")
             FOR on 8605
             FOR on 8606
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
     }
 }
