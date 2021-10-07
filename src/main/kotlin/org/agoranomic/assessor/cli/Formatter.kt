@@ -41,11 +41,13 @@ sealed class AssessmentOutputData {
             return data.bytes()
         }
     }
+
+    data class Nested(val subData: ImmutableMap<String, AssessmentOutputData>) : AssessmentOutputData() {
+        constructor(subData: Map<String, AssessmentOutputData>) : this(subData.toImmutableMap())
+    }
 }
 
-data class AssessmentFormatOutput(val outputsByName: ImmutableMap<String, AssessmentOutputData>) {
-    constructor(outputsByName: Map<String, AssessmentOutputData>) : this(outputsByName = outputsByName.toImmutableMap())
-}
+data class AssessmentFormatOutput(val outputs: AssessmentOutputData.Nested)
 
 interface AssessmentFormatter {
     fun formatBatch(assessments: List<AssessmentData>): AssessmentFormatOutput
@@ -61,7 +63,11 @@ abstract class ResolvedAssessmentFormatter : AssessmentFormatter {
 
 abstract class AssessmentIndependentTextFormatter : ResolvedAssessmentFormatter() {
     final override fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
-        return AssessmentFormatOutput(assessments.mapValues { (_, v) -> AssessmentOutputData.Text(formatSingle(v)) })
+        return AssessmentFormatOutput(
+            AssessmentOutputData.Nested(
+                assessments.mapValues { (_, v) -> AssessmentOutputData.Text(formatSingle(v)) }
+            ),
+        )
     }
 
     abstract fun formatSingle(assessment: ProposalResolutionMap): String
@@ -105,22 +111,27 @@ data class ProposalsReadableFormatter(
                 .mapValues { (_, v) -> v.sortedBy { it.metadata.name } }
 
         return AssessmentFormatOutput(
-            resolutionsByProposal.asIterable().associate { (proposal, resolutions) ->
-                val text = run {
-                    val resolutionsText = resolutions.joinToString("\n") { resolution ->
-                        renderReadableProposalResolution(
-                            reportConfig,
-                            proposal,
-                            resolution.resolutionOf(proposal.number),
-                            resolution.votingStrengthsFor(proposal.number),
-                        ) + "\nResolved at: ${resolution.metadata.url}\n"
+            resolutionsByProposal
+                .asIterable()
+                .associate { (proposal, resolutions) ->
+                    val text = run {
+                        val resolutionsText = resolutions.joinToString("\n") { resolution ->
+                            renderReadableProposalResolution(
+                                reportConfig,
+                                proposal,
+                                resolution.resolutionOf(proposal.number),
+                                resolution.votingStrengthsFor(proposal.number),
+                            ) + "\nResolved at: ${resolution.metadata.url}\n"
+                        }
+
+                        resolutionsText + "\n" + renderProposalText(proposal)
                     }
 
-                    resolutionsText + "\n" + renderProposalText(proposal)
+                    proposal.number.toString() to AssessmentOutputData.Text(text)
                 }
-
-                proposal.number.toString() to AssessmentOutputData.Text(text)
-            }
+                .let {
+                    AssessmentOutputData.Nested(it)
+                }
         )
     }
 }

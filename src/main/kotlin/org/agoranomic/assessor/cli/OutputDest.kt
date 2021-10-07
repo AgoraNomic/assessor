@@ -12,6 +12,10 @@ sealed class AssessmentDestination {
 
 private fun AssessmentOutputData.toNestedString(): String {
     return when (this) {
+        is AssessmentOutputData.Nested -> {
+            subData.values.joinToString("\n") { it.toNestedString() }
+        }
+
         is AssessmentOutputData.Text -> {
             data
         }
@@ -24,7 +28,7 @@ private fun AssessmentOutputData.toNestedString(): String {
 
 object StdoutDestination : AssessmentDestination() {
     override fun outputAssessments(assessments: AssessmentFormatOutput) {
-        for (assessment in assessments.outputsByName.values) {
+        for (assessment in assessments.outputs.subData.values) {
             println(assessment.toNestedString())
             println()
         }
@@ -35,19 +39,37 @@ data class NamedFileDestination(val file: String) : AssessmentDestination() {
     override fun outputAssessments(assessments: AssessmentFormatOutput) {
         Files.writeString(
             Path.of(file),
-            assessments.outputsByName.values.joinToString("\n") { it.toNestedString() },
+            assessments.outputs.toNestedString(),
             StandardOpenOption.CREATE,
             StandardOpenOption.TRUNCATE_EXISTING
         )
     }
 }
 
-private fun writeOuputData(
+private fun writeOutputNestedDataNoSubDir(
+    parentPath: Path,
+    outputData: AssessmentOutputData.Nested,
+) {
+    for ((subName, subAssessmentData) in outputData.subData) {
+        writeOutputData(
+            parentPath = parentPath,
+            name = subName,
+            outputData = subAssessmentData,
+        )
+    }
+}
+
+private fun writeOutputData(
     parentPath: Path,
     name: String,
     outputData: AssessmentOutputData,
 ) {
     return when (outputData) {
+        is AssessmentOutputData.Nested -> {
+            val subDir = parentPath.resolve(name)
+            writeOutputNestedDataNoSubDir(subDir, outputData)
+        }
+
         is AssessmentOutputData.Text -> {
             parentPath.resolve("$name.txt").writeText(
                 text = outputData.data,
@@ -74,13 +96,10 @@ object UnnamedFileDestination : AssessmentDestination() {
     override fun outputAssessments(assessments: AssessmentFormatOutput) {
         val basePath = Path.of(".").toAbsolutePath()
 
-        for ((name, assessment) in assessments.outputsByName) {
-            writeOuputData(
-                parentPath = basePath,
-                name = name,
-                outputData = assessment,
-            )
-        }
+        writeOutputNestedDataNoSubDir(
+            parentPath = basePath,
+            outputData = assessments.outputs,
+        )
     }
 }
 
@@ -90,13 +109,10 @@ data class NamedDirDestination(val dir: String) : AssessmentDestination() {
 
         Files.createDirectories(dirPath)
 
-        for ((name, assessment) in assessments.outputsByName) {
-            writeOuputData(
-                parentPath = dirPath,
-                name = name,
-                outputData = assessment,
-            )
-        }
+        writeOutputNestedDataNoSubDir(
+            parentPath = dirPath,
+            outputData = assessments.outputs,
+        )
     }
 }
 
