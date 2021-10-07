@@ -4,7 +4,6 @@ import jetbrains.datalore.plot.PlotSvgExport
 import jetbrains.letsPlot.GGBunch
 import jetbrains.letsPlot.intern.Plot
 import jetbrains.letsPlot.intern.toSpec
-import org.agoranomic.assessor.decisions.findAssessments
 import org.agoranomic.assessor.lib.filterKeysNotNull
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.vote.VoteKind
@@ -124,51 +123,39 @@ object StatisticsFormatter : AssessmentFormatter {
     override fun formatBatch(assessments: List<AssessmentData>): AssessmentFormatOutput {
         val allStatistics = buildAllStats(assessments)
 
-        return AssessmentFormatOutput(
-            allStatistics.associate { statistic ->
-                when (statistic) {
-                    is Statistic.KeyValuePairs -> {
-                        statistic.name to formatKeyValuePairs(
-                            statistic = statistic.data,
-                            keyName = statistic.keyName,
-                            valueName = statistic.valueName,
-                        )
+        val overallMap = mutableMapOf<String, AssessmentOutputData>()
+        val graphsMap = mutableMapOf<String, AssessmentOutputData>()
+
+        for (statistic in allStatistics) {
+            @Suppress("UNUSED_VARIABLE")
+            val ensureExhaustive = when (statistic) {
+                is Statistic.KeyValuePairs -> {
+                    overallMap[statistic.name] = formatKeyValuePairs(
+                        statistic = statistic.data,
+                        keyName = statistic.keyName,
+                        valueName = statistic.valueName,
+                    ).let {
+                        AssessmentOutputData.Text(it)
                     }
+                }
 
-                    is Statistic.Graph -> {
-                        ("graphs/" + statistic.name) to PlotSvgExport.buildSvgImageFromRawSpecs(
-                            when (val plot = statistic.plot) {
-                                is Plot -> plot.toSpec()
-                                is GGBunch -> plot.toSpec()
-                                else -> error("Unknown plot type")
-                            },
+                is Statistic.Graph -> {
+                    graphsMap[statistic.name] =
+                        AssessmentOutputData.Bytes(
+                            PlotSvgExport.buildSvgImageFromRawSpecs(
+                                when (val plot = statistic.plot) {
+                                    is Plot -> plot.toSpec()
+                                    is GGBunch -> plot.toSpec()
+                                    else -> error("Unknown plot type")
+                                },
+                            ).toByteArray(Charsets.UTF_8),
+                            "svg",
                         )
-                    }
-                }.let { it.first to AssessmentOutputData.Text(it.second) }
-            },
-        )
-    }
-}
-
-fun main() {
-    val assessmentResolutions = findAssessments()
-
-    val allStatistics = buildAllStats(assessmentResolutions)
-
-    for (statistic in allStatistics) {
-        val ensureExhaustive = when (statistic) {
-            is Statistic.KeyValuePairs -> {
-                saveKeyValuePairs(
-                    name = statistic.name,
-                    statistic = statistic.data,
-                    keyName = statistic.keyName,
-                    valueName = statistic.valueName,
-                )
-            }
-
-            is Statistic.Graph -> {
-                saveGraph(statistic.name, statistic.plot)
+                }
             }
         }
+
+        overallMap["graphs"] = AssessmentOutputData.Nested(graphsMap)
+        return AssessmentFormatOutput(AssessmentOutputData.Nested(overallMap))
     }
 }
