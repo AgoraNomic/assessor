@@ -11,7 +11,7 @@ import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.resolve
 
-private fun ProposalSet.groupByAuthor(): Map<Person, ImmutableProposalSet> {
+private fun ProposalSet.groupByAuthor(): Map<Person?, ImmutableProposalSet> {
     return groupBy { it.author }.mapValues { (_, v) -> v.toImmutableProposalSet() }
 }
 

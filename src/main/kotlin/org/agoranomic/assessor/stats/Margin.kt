@@ -10,6 +10,7 @@ import jetbrains.letsPlot.sampling.samplingNone
 import jetbrains.letsPlot.scale.scaleXDiscrete
 import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.filterKeysNotNull
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
 import java.math.BigDecimal
@@ -28,7 +29,7 @@ private fun Map<Person, List<ResolutionData>>.calculateMargins(): Map<Person, Li
 }
 
 fun buildMarginStats(authors: List<Person>, resolutions: List<ResolutionData>) = buildStatistics {
-    val resolutionsByAuthor = resolutions.groupBy { it.proposal.author }
+    val resolutionsByAuthor = resolutions.groupBy { it.proposal.author }.filterKeysNotNull()
 
     val averageAllMarginByAuthor =
         resolutionsByAuthor

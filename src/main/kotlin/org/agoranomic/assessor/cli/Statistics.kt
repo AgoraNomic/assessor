@@ -5,26 +5,10 @@ import jetbrains.letsPlot.GGBunch
 import jetbrains.letsPlot.intern.Plot
 import jetbrains.letsPlot.intern.toSpec
 import org.agoranomic.assessor.decisions.findAssessments
-import org.agoranomic.assessor.lib.Person
-import org.agoranomic.assessor.lib.proposal.proposal_set.ImmutableProposalSet
-import org.agoranomic.assessor.lib.proposal.proposal_set.ProposalSet
-import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
+import org.agoranomic.assessor.lib.filterKeysNotNull
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.stats.*
-
-private fun ProposalSet.groupByAuthor(): Map<Person, ImmutableProposalSet> {
-    return groupBy { it.author }.mapValues { (_, v) -> v.toImmutableProposalSet() }
-}
-
-private fun ProposalSet.groupByCoauthor(): Map<Person, ImmutableProposalSet> {
-    return this
-        .flatMap { it.coauthors }
-        .toSet()
-        .associateWith { person ->
-            this.filter { it.coauthors.contains(person) }.toImmutableProposalSet()
-        }
-}
 
 private fun <K, V> Iterable<Map.Entry<K, V>>.toMap() = associate { it.toPair() }
 
@@ -32,7 +16,10 @@ private fun buildAllStats(assessments: List<AssessmentData>): List<Statistic> {
     val dataWithCache = AssessmentsDerivedDataCache(assessments)
 
     val sortedAuthors =
-        dataWithCache.allAuthors.sortedByDescending { dataWithCache.allProposalsData.countsByAuthor.getValue(it) }
+        dataWithCache
+            .allAuthors
+            .filterNotNull()
+            .sortedByDescending { dataWithCache.allProposalsData.countsByAuthor.getValue(it) }
 
     val sortedCoauthors =
         dataWithCache.allCoauthors.sortedByDescending { dataWithCache.allProposalsData.countsByCoauthor.getValue(it) }
@@ -48,7 +35,8 @@ private fun buildAllStats(assessments: List<AssessmentData>): List<Statistic> {
     addStatistics(buildStatistics {
         yieldData(
             "author_written",
-            dataWithCache.allProposalsData.countsByAuthor.entries.sortedByDescending { it.value }.toMap(),
+            dataWithCache.allProposalsData.countsByAuthor.entries.sortedByDescending { it.value }.toMap()
+                .filterKeysNotNull(),
         )
 
         yieldData(
