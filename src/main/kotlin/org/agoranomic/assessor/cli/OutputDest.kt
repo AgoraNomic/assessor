@@ -1,17 +1,10 @@
 package org.agoranomic.assessor.cli
 
-import org.agoranomic.assessor.lib.resolve.AssessmentMetadata
 import java.nio.file.Files
-import java.nio.file.OpenOption
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption
 import kotlin.io.path.writeBytes
 import kotlin.io.path.writeText
-
-data class AssessmentPendingOutput(
-    val metadata: AssessmentMetadata,
-    val assessmentText: String,
-)
 
 sealed class AssessmentDestination {
     abstract fun outputAssessments(assessments: AssessmentFormatOutput)
@@ -49,22 +42,29 @@ data class NamedFileDestination(val file: String) : AssessmentDestination() {
     }
 }
 
-private fun Path.writeOuputData(
+private fun writeOuputData(
+    parentPath: Path,
+    name: String,
     outputData: AssessmentOutputData,
-    vararg options: OpenOption,
 ) {
     return when (outputData) {
         is AssessmentOutputData.Text -> {
-            writeText(
+            parentPath.resolve("$name.txt").writeText(
                 text = outputData.data,
-                options = options,
+                options = arrayOf(
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.TRUNCATE_EXISTING,
+                ),
             )
         }
 
         is AssessmentOutputData.Bytes -> {
-            writeBytes(
+            parentPath.resolve(name + "." + outputData.extension).writeBytes(
                 array = outputData.bytes(),
-                options = options,
+                options = arrayOf(
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.TRUNCATE_EXISTING,
+                ),
             )
         }
     }
@@ -72,24 +72,30 @@ private fun Path.writeOuputData(
 
 object UnnamedFileDestination : AssessmentDestination() {
     override fun outputAssessments(assessments: AssessmentFormatOutput) {
-        for ((name, assessment) in assessments.outputsByName) {
-            val path = Path.of("$name.txt")
+        val basePath = Path.of(".").toAbsolutePath()
 
-            path.writeOuputData(assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+        for ((name, assessment) in assessments.outputsByName) {
+            writeOuputData(
+                parentPath = basePath,
+                name = name,
+                outputData = assessment,
+            )
         }
     }
 }
 
 data class NamedDirDestination(val dir: String) : AssessmentDestination() {
     override fun outputAssessments(assessments: AssessmentFormatOutput) {
-        val dirPath = Path.of(dir)!!
+        val dirPath = Path.of(dir)!!.toAbsolutePath()
 
         Files.createDirectories(dirPath)
 
         for ((name, assessment) in assessments.outputsByName) {
-            val filePath = dirPath.resolve("${name}.txt")
-
-            filePath.writeOuputData(assessment, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)
+            writeOuputData(
+                parentPath = dirPath,
+                name = name,
+                outputData = assessment,
+            )
         }
     }
 }

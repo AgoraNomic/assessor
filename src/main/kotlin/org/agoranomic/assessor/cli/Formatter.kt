@@ -8,28 +8,37 @@ import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.resolve
 
+private class BytesHolder(data: ByteArray) {
+    private val data: ByteArray = data.copyOf()
+
+    fun bytes(): ByteArray {
+        return data.copyOf()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (other !is BytesHolder) return false
+
+        return this.data contentEquals other.data
+    }
+
+    override fun hashCode(): Int {
+        return this.data.contentHashCode()
+    }
+
+    override fun toString(): String {
+        return this.data.contentToString()
+    }
+}
+
 sealed class AssessmentOutputData {
     data class Text(val data: String) : AssessmentOutputData()
 
-    class Bytes(data: ByteArray) : AssessmentOutputData() {
-        private val data: ByteArray = data.copyOf()
+    data class Bytes private constructor(private val data: BytesHolder, val extension: String) :
+        AssessmentOutputData() {
+        constructor(data: ByteArray, extension: String) : this(BytesHolder(data), extension)
 
         fun bytes(): ByteArray {
-            return data.copyOf()
-        }
-
-        override fun equals(other: Any?): Boolean {
-            if (other !is Bytes) return false
-
-            return this.data contentEquals other.data
-        }
-
-        override fun hashCode(): Int {
-            return this.data.contentHashCode()
-        }
-
-        override fun toString(): String {
-            return this.data.contentToString()
+            return data.bytes()
         }
     }
 }
