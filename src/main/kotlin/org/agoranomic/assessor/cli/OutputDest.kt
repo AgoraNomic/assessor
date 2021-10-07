@@ -50,6 +50,8 @@ private fun writeOutputNestedDataNoSubDir(
     parentPath: Path,
     outputData: AssessmentOutputData.Nested,
 ) {
+    Files.createDirectories(parentPath)
+
     for ((subName, subAssessmentData) in outputData.subData) {
         writeOutputData(
             parentPath = parentPath,
