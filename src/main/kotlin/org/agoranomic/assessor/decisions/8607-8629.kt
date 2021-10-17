@@ -845,5 +845,25 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8628
             FOR on 8629
         }
+
+        votes(G) {
+            (8607..8610).forEach { FOR on it }
+            AGAINST on 8611
+            AGAINST on 8612
+            (8613..8615).forEach { FOR on it }
+            AGAINST on 8616
+            (8617..8618).forEach { FOR on it }
+            AGAINST on 8619
+            AGAINST on 8620
+            endorse(Aspen) on 8621 comment "Aspen is the Promotor"
+            AGAINST on 8622
+            FOR on 8623
+            endorse(nix) on 8624 comment "nix is the Herald"
+            AGAINST on 8625
+            PRESENT on 8626
+            FOR on 8627
+            FOR on 8628
+            endorse(ais523) on 8629
+        }
     }
 }
