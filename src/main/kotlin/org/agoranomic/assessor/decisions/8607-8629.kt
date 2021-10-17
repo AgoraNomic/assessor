@@ -4,9 +4,11 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.festival
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8607to8629() = assessment {
@@ -766,5 +768,30 @@ functionality stays in the rewrite as per the will of the voters.]""")
     }
 
     voting {
+        votes(Trigon) {
+            FOR on 8607
+            FOR on 8608
+            FOR on 8609
+            FOR on 8610
+            FOR on 8611
+            FOR on 8612
+            FOR on 8613
+            endorse(G) on 8614
+            PRESENT on 8615
+            FOR on 8616
+            FOR on 8617
+            FOR on 8618
+            AGAINST on 8619
+            AGAINST on 8620
+            PRESENT on 8621
+            AGAINST on 8622
+            FOR on 8623
+            FOR on 8624
+            AGAINST on 8625
+            FOR on 8626
+            // NO VOTE on 8627
+            FOR on 8628
+            FOR on 8629
+        }
     }
 }
