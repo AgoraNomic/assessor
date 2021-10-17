@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.festival
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -864,6 +861,32 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8627
             FOR on 8628
             endorse(ais523) on 8629
+        }
+
+        votes(Jason) {
+            FOR on 8607
+            FOR on 8608
+            FOR on 8609
+            FOR on 8610
+            AGAINST on 8611
+            FOR on 8612
+            FOR on 8613
+            FOR on 8614
+            FOR on 8615
+            AGAINST on 8616
+            FOR on 8617
+            FOR on 8618
+            FOR on 8619
+            AGAINST on 8620
+            endorseOrElse(Aspen, AGAINST) on 8621
+            AGAINST on 8622
+            FOR on 8623
+            endorse(nix) on 8624
+            AGAINST on 8625
+            endorse(G) on 8626
+            AGAINST on 8627
+            FOR on 8628
+            endorse(G) on 8629
         }
     }
 }
