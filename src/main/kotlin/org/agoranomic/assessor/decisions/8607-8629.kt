@@ -793,5 +793,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8628
             FOR on 8629
         }
+
+        votes(ShyOwl) {
+            FOR on 8607
+            AGAINST on 8608
+            FOR on 8609
+            FOR on 8610
+            FOR on 8611
+            PRESENT on 8612
+            FOR on 8613
+            FOR on 8614
+            AGAINST on 8615
+            PRESENT on 8616
+            FOR on 8617
+            AGAINST on 8618
+            AGAINST on 8619
+            AGAINST on 8620
+            FOR on 8621
+            FOR on 8622
+            FOR on 8623
+            FOR on 8624
+            FOR on 8625
+            FOR on 8626
+            PRESENT on 8627
+            FOR on 8628
+            FOR on 8629
+        }
     }
 }
