@@ -857,7 +857,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8623
             endorse(nix) on 8624 comment "nix is the Herald"
             AGAINST on 8625
-            PRESENT on 8626
+            AGAINST on 8626
             FOR on 8627
             FOR on 8628
             endorse(ais523) on 8629
