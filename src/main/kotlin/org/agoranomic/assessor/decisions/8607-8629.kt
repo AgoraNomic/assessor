@@ -846,7 +846,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
         votes(G) {
             (8607..8610).forEach { FOR on it }
             AGAINST on 8611
-            AGAINST on 8612
+            FOR on 8612
             (8613..8615).forEach { FOR on it }
             AGAINST on 8616
             (8617..8618).forEach { FOR on it }
