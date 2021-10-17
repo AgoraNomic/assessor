@@ -31,7 +31,7 @@ fun strengthAuditReport(resolutionMap: ProposalResolutionMap): String {
 
                 val rows = noRepeatSteps.map { step ->
                     step.value.toString() to when (step) {
-                        is VotingStrengthStep.Initial -> "Initial"
+                        is VotingStrengthStep.Initial -> step.description?.readable ?: "Initial"
                         is VotingStrengthStep.Modification -> step.modification.description.readable
                     }
                 }

@@ -177,6 +177,7 @@ private data class VotingStrengthTrailModificationEntryDto(
 private data class VotingStrengthTrailForPersonsEntryDto(
     @SerialName("person") val personName: String,
     @SerialName("initial") val initialStrength: Long,
+    @SerialName("initial_description") val initialDescription: VotingStrengthModificationDescriptionDto?,
     val modifications: List<VotingStrengthTrailModificationEntryDto>,
     @SerialName("final") val finalStrength: Long,
 )
@@ -201,6 +202,7 @@ private data class ProposalResolutionEntryDto(
                     VotingStrengthTrailForPersonsEntryDto(
                         personName = person.name,
                         initialStrength = trail.initial.raw.longValueExact(),
+                        initialDescription = trail.initialDescription?.let(VotingStrengthModificationDescriptionDto::from),
                         finalStrength = trail.final.raw.longValueExact(),
                         modifications = trail.modificationsWithValue().map { (modification, strength) ->
                             VotingStrengthTrailModificationEntryDto(

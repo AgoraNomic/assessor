@@ -6,7 +6,10 @@ import org.agoranomic.assessor.lib.Person
 sealed class VotingStrengthStep {
     abstract val value: VotingStrength
 
-    data class Initial(override val value: VotingStrength) : VotingStrengthStep()
+    data class Initial(
+        val description: VotingStrengthModificationDescription?,
+        override val value: VotingStrength,
+    ) : VotingStrengthStep()
 
     data class Modification(
         val modification: VotingStrengthModification,
@@ -16,34 +19,26 @@ sealed class VotingStrengthStep {
 
 data class VotingStrengthTrail(
     val initial: VotingStrength,
+    val initialDescription: VotingStrengthModificationDescription?,
     val modifications: ImmutableList<VotingStrengthModification>,
 ) {
     constructor(
         start: VotingStrength,
+        initialDescription: VotingStrengthModificationDescription?,
         modifications: List<VotingStrengthModification>,
     ) : this(
         start,
+        initialDescription,
         modifications.toImmutableList()
     )
-
-    val modificationDescriptions
-        get() = modifications.map { it.description }
 
     val final
         get() = modifications.fold(initial) { acc, modification -> modification.transform(acc) }
 
-    /**
-     * Returns a list containing each step along with the value at that point. The only value for which the second value
-     * of the pair is null is the first (representing the initial value, which has no description).
-     *
-     * For example, if the initial strength is 3 and the modifications are (+2) and (*4), the result will be the
-     * following:
-     * - (null, 3)
-     * - ((+2), 5)
-     * - ((*4), 20)
-     */
     fun steps(): List<VotingStrengthStep> {
-        return modifications.scan(VotingStrengthStep.Initial(initial) as VotingStrengthStep) { acc, modification ->
+        return modifications.scan(
+            VotingStrengthStep.Initial(initialDescription, initial) as VotingStrengthStep,
+        ) { acc, modification ->
             VotingStrengthStep.Modification(modification, modification.transform(acc.value))
         }
     }
@@ -68,34 +63,48 @@ data class VotingStrengthTrail(
     }
 
     fun withAppended(modification: VotingStrengthModification): VotingStrengthTrail {
-        return VotingStrengthTrail(initial, modifications.toPersistentList().add(modification))
+        return copy(modifications = modifications.toPersistentList().add(modification))
     }
 
     fun withAppended(newModifications: Collection<VotingStrengthModification>): VotingStrengthTrail {
-        return VotingStrengthTrail(initial, modifications.toPersistentList().addAll(newModifications))
+        return copy(modifications = modifications.toPersistentList().addAll(newModifications))
     }
 }
 
 data class VotingStrengthTrailForPersons(
     val default: VotingStrength,
+    val defaultDescription: VotingStrengthModificationDescription?,
     private val override: ImmutableMap<Person, VotingStrengthTrail>,
 ) {
     companion object {
-        fun emptyWithDefault(default: VotingStrength) = VotingStrengthTrailForPersons(default, mapOf())
+        fun emptyWithDefault(
+            default: VotingStrength,
+            defaultDescription: VotingStrengthModificationDescription?,
+        ) = VotingStrengthTrailForPersons(
+            default = default,
+            defaultDescription = defaultDescription,
+            data = mapOf(),
+        )
     }
 
     constructor(
         default: VotingStrength,
+        defaultDescription: VotingStrengthModificationDescription?,
         data: Map<Person, VotingStrengthTrail>,
     ) : this(
         default,
+        defaultDescription,
         data.toImmutableMap()
     )
 
-    private fun defaultTrail() = VotingStrengthTrail(default, emptyList())
+    private fun defaultTrail() = VotingStrengthTrail(default, defaultDescription, emptyList())
 
     val overriddenPersons
         get() = override.keys
+
+    fun hasOverrideFor(person: Person): Boolean {
+        return override.containsKey(person)
+    }
 
     fun trailForPerson(person: Person): VotingStrengthTrail {
         return override.getOrElse(person) { defaultTrail() }
@@ -103,14 +112,12 @@ data class VotingStrengthTrailForPersons(
 
     fun finalStrengthForPerson(person: Person): VotingStrength = trailForPerson(person).final
 
-    fun withAppendedToAll(modification: VotingStrengthModification) = VotingStrengthTrailForPersons(
-        default,
-        override.mapValues { (_, trail) -> trail.withAppended(modification) }
+    fun withAppendedToAll(modification: VotingStrengthModification) = copy(
+        override = override.mapValues { (_, trail) -> trail.withAppended(modification) }.toImmutableMap(),
     )
 
-    fun withAppendedToAll(modifications: Collection<VotingStrengthModification>) = VotingStrengthTrailForPersons(
-        default,
-        override.mapValues { (_, trail) -> trail.withAppended(modifications) }
+    fun withAppendedToAll(modifications: Collection<VotingStrengthModification>) = copy(
+        override = override.mapValues { (_, trail) -> trail.withAppended(modifications) }.toImmutableMap(),
     )
 
     fun overridesMap(): Map<Person, VotingStrengthTrail> = override

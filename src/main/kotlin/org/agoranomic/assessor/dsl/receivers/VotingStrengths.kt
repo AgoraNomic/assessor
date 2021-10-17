@@ -20,6 +20,9 @@ interface GeneralVotingStrengthReceiver {
 
     infix fun Person.subtract(value: VotingStrengthDifference): VotingStrengthDescribable
     infix fun Person.subtract(value: Int) = subtract(VotingStrengthDifference(value))
+
+    infix fun Person.initial(value: VotingStrength): VotingStrengthDescribable
+    infix fun Person.initial(value: Int) = initial(VotingStrength(value))
 }
 
 @AssessmentDsl
@@ -39,9 +42,14 @@ interface ProposalVotingStrengthCompiler {
 }
 
 private class VotingStrengthTrailForPersonsBuilder {
+    private data class MutableInitialStrength(
+        val amount: VotingStrength,
+        var description: VotingStrengthModificationDescription? = null,
+    )
+
     private data class MutableStrengthAddition(
         val amount: VotingStrengthDifference,
-        var description: VotingStrengthModificationDescription? = null
+        var description: VotingStrengthModificationDescription? = null,
     ) {
         fun compile() =
             AdditiveVotingStrengthModification(
@@ -53,14 +61,22 @@ private class VotingStrengthTrailForPersonsBuilder {
             )
     }
 
-    private class VotingStrengthDescribableImpl(private val data: MutableStrengthAddition) : VotingStrengthDescribable {
-        override fun describedAs(description: VotingStrengthModificationDescription) {
-            check(data.description == null)
-            data.description = description
+    private val newInitials = mutableMapOf<Person, MutableInitialStrength>()
+    private val newModifications = mutableMapOf<Person, MutableList<MutableStrengthAddition>>()
+
+    fun setInitialForPerson(person: Person, initial: VotingStrength): VotingStrengthDescribable {
+        require(!newInitials.containsKey(person))
+
+        val initialObject = MutableInitialStrength(initial)
+        newInitials[person] = initialObject
+
+        return object : VotingStrengthDescribable {
+            override fun describedAs(description: VotingStrengthModificationDescription) {
+                check(initialObject.description == null)
+                initialObject.description = description
+            }
         }
     }
-
-    private val newModifications = mutableMapOf<Person, MutableList<MutableStrengthAddition>>()
 
     fun addToPerson(person: Person, value: VotingStrengthDifference): VotingStrengthDescribable {
         val list = newModifications.computeIfAbsent(person) { mutableListOf() }
@@ -68,7 +84,12 @@ private class VotingStrengthTrailForPersonsBuilder {
         val strengthAddition = MutableStrengthAddition(value)
         list.add(strengthAddition)
 
-        return VotingStrengthDescribableImpl(strengthAddition)
+        return object : VotingStrengthDescribable {
+            override fun describedAs(description: VotingStrengthModificationDescription) {
+                check(strengthAddition.description == null)
+                strengthAddition.description = description
+            }
+        }
     }
 
     fun compile(initialTrails: VotingStrengthTrailForPersons): VotingStrengthTrailForPersons {
@@ -76,14 +97,22 @@ private class VotingStrengthTrailForPersonsBuilder {
 
         return VotingStrengthTrailForPersons(
             initialTrails.default,
+            initialTrails.defaultDescription,
             knownPersons.associateWith { person ->
-                initialTrails
-                    .trailForPerson(person)
-                    .withAppended(
-                        newModifications
-                            .getOrElse(person) { mutableListOf() }
-                            .map { modification -> modification.compile() }
-                    )
+                val superTrail = initialTrails.trailForPerson(person)
+
+                val initialTrail = if (newInitials.containsKey(person)) {
+                    val newInitial = newInitials.getValue(person)
+                    superTrail.copy(initial = newInitial.amount, initialDescription = newInitial.description)
+                } else {
+                    superTrail
+                }
+
+                initialTrail.withAppended(
+                    newModifications
+                        .getOrElse(person) { mutableListOf() }
+                        .map { modification -> modification.compile() }
+                )
             }
         )
     }
@@ -100,6 +129,10 @@ private class DefaultProposalVotingStrengthReceiver(
     }
 
     override fun Person.subtract(value: VotingStrengthDifference) = add(-value)
+
+    override fun Person.initial(value: VotingStrength): VotingStrengthDescribable {
+        return builder.setInitialForPerson(this, value)
+    }
 
     fun compile(): VotingStrengthTrailForPersons {
         return builder.compile(globalStrengths)
@@ -125,7 +158,7 @@ interface GlobalVotingStrengthReceiver : GeneralVotingStrengthReceiver {
 
     fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit)
 
-    fun default(strength: VotingStrength)
+    fun default(strength: VotingStrength): VotingStrengthDescribable
     fun default(strength: Int) = default(VotingStrength(strength))
 
     fun min(strength: VotingStrength)
@@ -154,7 +187,7 @@ private class DefaultGlobalVotingStrengthReceiver(
 ) : GlobalVotingStrengthReceiver {
     constructor(
         proposalStrengthCompiler: ProposalVotingStrengthCompiler,
-        proposals: ProposalSet
+        proposals: ProposalSet,
     ) : this(
         proposalStrengthCompiler,
         proposals.toImmutableProposalSet()
@@ -163,6 +196,8 @@ private class DefaultGlobalVotingStrengthReceiver(
     override val allProposals get() = proposals
 
     private val defaultStrength = SetOnce.namedOf<VotingStrength>("default voting strength")
+    private val defaultStrengthDescription =
+        SetOnce.namedOf<VotingStrengthModificationDescription>("default voting strength description")
     private val minStrength = SetOnce.namedOf<VotingStrength>("min voting strength")
     private val maxStrength = SetOnce.namedOf<VotingStrength>("max voting strength")
 
@@ -175,6 +210,10 @@ private class DefaultGlobalVotingStrengthReceiver(
 
     override fun Person.subtract(value: VotingStrengthDifference) = add(-value)
 
+    override fun Person.initial(value: VotingStrength): VotingStrengthDescribable {
+        return globalStrengthBuilder.setInitialForPerson(this, value)
+    }
+
     override fun proposal(number: ProposalNumber, block: ProposalVotingStrengthReceiverInit) {
         // The outer {}s delimit a lambda returning the default value. The inner braces {} delimit the lambda that
         // is the default value.
@@ -186,8 +225,14 @@ private class DefaultGlobalVotingStrengthReceiver(
         }
     }
 
-    override fun default(strength: VotingStrength) {
+    override fun default(strength: VotingStrength): VotingStrengthDescribable {
         defaultStrength.set(strength)
+
+        return object : VotingStrengthDescribable {
+            override fun describedAs(description: VotingStrengthModificationDescription) {
+                defaultStrengthDescription.set(description)
+            }
+        }
     }
 
     override fun min(strength: VotingStrength) {
@@ -203,8 +248,12 @@ private class DefaultGlobalVotingStrengthReceiver(
         val minStrength = minStrength.getOrNull()
         val maxStrength = maxStrength.getOrNull()
 
-        val globalStrengths =
-            globalStrengthBuilder.compile(VotingStrengthTrailForPersons.emptyWithDefault(defaultStrength))
+        val globalStrengths = globalStrengthBuilder.compile(
+            VotingStrengthTrailForPersons.emptyWithDefault(
+                defaultStrength,
+                defaultStrengthDescription.getOrNull(),
+            ),
+        )
 
         return proposals
             .map { it.number }
