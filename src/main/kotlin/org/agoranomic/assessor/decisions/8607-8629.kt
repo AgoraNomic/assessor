@@ -764,4 +764,7 @@ above ensures that if R. Lee's proposal is adopted, the act-on-behalf
 functionality stays in the rewrite as per the will of the voters.]""")
         }
     }
+
+    voting {
+    }
 }
