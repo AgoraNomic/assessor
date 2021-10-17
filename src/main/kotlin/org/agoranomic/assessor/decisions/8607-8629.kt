@@ -819,5 +819,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8628
             FOR on 8629
         }
+
+        votes(ATMunn) {
+            FOR on 8607
+            FOR on 8608
+            FOR on 8609
+            endorse(Jason) on 8610
+            FOR on 8611
+            FOR on 8612
+            FOR on 8613
+            FOR on 8614
+            FOR on 8615
+            PRESENT on 8616
+            FOR on 8617
+            FOR on 8618
+            PRESENT on 8619
+            AGAINST on 8620
+            endorse(Aspen) on 8621
+            PRESENT on 8622
+            FOR on 8623
+            FOR on 8624
+            AGAINST on 8625
+            PRESENT on 8626
+            FOR on 8627
+            FOR on 8628
+            FOR on 8629
+        }
     }
 }
