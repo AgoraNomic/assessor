@@ -1,9 +1,6 @@
 package org.agoranomic.assessor.lib.voting_strength
 
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.collections.immutable.*
 import org.agoranomic.assessor.lib.Person
 
 sealed class VotingStrengthStep {
@@ -71,11 +68,11 @@ data class VotingStrengthTrail(
     }
 
     fun withAppended(modification: VotingStrengthModification): VotingStrengthTrail {
-        return VotingStrengthTrail(initial, modifications + modification)
+        return VotingStrengthTrail(initial, modifications.toPersistentList().add(modification))
     }
 
-    fun withAppended(newModifications: Iterable<VotingStrengthModification>): VotingStrengthTrail {
-        return VotingStrengthTrail(initial, modifications + newModifications)
+    fun withAppended(newModifications: Collection<VotingStrengthModification>): VotingStrengthTrail {
+        return VotingStrengthTrail(initial, modifications.toPersistentList().addAll(newModifications))
     }
 }
 
@@ -111,7 +108,7 @@ data class VotingStrengthTrailForPersons(
         override.mapValues { (_, trail) -> trail.withAppended(modification) }
     )
 
-    fun withAppendedToAll(modifications: Iterable<VotingStrengthModification>) = VotingStrengthTrailForPersons(
+    fun withAppendedToAll(modifications: Collection<VotingStrengthModification>) = VotingStrengthTrailForPersons(
         default,
         override.mapValues { (_, trail) -> trail.withAppended(modifications) }
     )
