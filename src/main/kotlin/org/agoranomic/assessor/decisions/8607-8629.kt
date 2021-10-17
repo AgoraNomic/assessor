@@ -4,11 +4,42 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.festival
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
 fun assessment8607to8629() = assessment {
     name("8607-8629")
     quorum(5)
+
+    strengths {
+        festival(
+            minStrength = 0,
+            maxStrength = 15,
+            festivePlayers = setOf(
+                ais523,
+                Aspen,
+                ATMunn,
+                CuddleBeam,
+                cuddlybanana,
+                Falsifian,
+                G,
+                Gaelan,
+                Jason,
+                Murphy,
+                nix,
+                omd,
+                PSS,
+                Telna,
+                Trigon,
+            )
+        )
+
+        onOrdinaryProposals {
+            powerStone(Jason, 3)
+        }
+    }
 
     proposals(v4) {
         proposal(8607) {
