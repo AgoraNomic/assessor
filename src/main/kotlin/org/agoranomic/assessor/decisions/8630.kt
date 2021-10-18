@@ -72,5 +72,9 @@ from Cuddlebeam.""")
         votes(G) {
             AGAINST on 8630
         }
+
+        votes(Jason) {
+            AGAINST on 8630
+        }
     }
 }
