@@ -96,5 +96,9 @@ from Cuddlebeam.""")
         votes(Telna) {
             FOR on 8630
         }
+
+        votes(Trigon) {
+            AGAINST on 8630
+        }
     }
 }
