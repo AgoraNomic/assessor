@@ -62,7 +62,7 @@ from Cuddlebeam.""")
 
     voting {
         votes(ShyOwl) {
-            AGAINST on 8630
+            FOR on 8630
         }
 
         votes(ATMunn) {
