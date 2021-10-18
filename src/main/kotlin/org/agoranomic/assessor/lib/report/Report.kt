@@ -158,7 +158,8 @@ private val strengthFootnoteMarkerMap = mapOf(
     11 to "/",
     12 to "?",
     13 to "<",
-    14 to ">"
+    14 to ">",
+    15 to "-",
 )
 
 private fun renderProposalVotes(
