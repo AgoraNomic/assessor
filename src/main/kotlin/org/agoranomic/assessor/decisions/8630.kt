@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.festival
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
@@ -78,6 +79,10 @@ from Cuddlebeam.""")
 
         votes(nix) {
             PRESENT on 8630
+        }
+
+        votes(ais523) {
+            endorse(CuddleBeam) on 8630
         }
     }
 }
