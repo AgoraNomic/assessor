@@ -914,5 +914,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8628
             FOR on 8629
         }
+
+        votes(ais523) {
+            FOR on 8607
+            AGAINST on 8608
+            FOR on 8609
+            FOR on 8610
+            PRESENT on 8611
+            PRESENT on 8612
+            AGAINST on 8613
+            FOR on 8614
+            FOR on 8615
+            AGAINST on 8616
+            AGAINST on 8617
+            FOR on 8618
+            AGAINST on 8619
+            // TODO: conditional vote on 8620: if ADOPTED regardless of vote, FOR, else AGAINST
+            PRESENT on 8621
+            AGAINST on 8622
+            FOR on 8623
+            FOR on 8624
+            AGAINST on 8625
+            AGAINST on 8626
+            AGAINST on 8627
+            PRESENT on 8628
+            FOR on 8629
+        }
     }
 }
