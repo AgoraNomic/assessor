@@ -93,7 +93,7 @@ private class VotingStrengthTrailForPersonsBuilder {
     }
 
     fun compile(initialTrails: VotingStrengthTrailForPersons): VotingStrengthTrailForPersons {
-        val knownPersons = initialTrails.overriddenPersons union newModifications.keys
+        val knownPersons = initialTrails.overriddenPersons union newModifications.keys union newInitials.keys
 
         return VotingStrengthTrailForPersons(
             initialTrails.default,
