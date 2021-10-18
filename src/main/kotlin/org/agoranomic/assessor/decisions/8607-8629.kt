@@ -940,5 +940,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             PRESENT on 8628
             FOR on 8629
         }
+
+        votes(Gaelan) {
+            PRESENT on 8607
+            // TODO: resolve conditional vote on 8608: FOR if Rulekeepor and G. FOR, else AGAINST
+            FOR on 8609
+            PRESENT on 8610
+            FOR on 8611
+            FOR on 8612
+            PRESENT on 8613
+            FOR on 8614
+            // TODO: resolve conditional vote on 8615: FOR if Independene Day has not and will not be adopted, else AGAINST
+            AGAINST on 8616
+            PRESENT on 8617
+            FOR on 8618
+            FOR on 8619
+            // TODO: resolve conditional vote on 8620: FOR if proposal would pass if AGAINST, else FOR; if inextricable, AGAINST
+            endorse(Aspen) on 8621 comment "Aspen is the Promotor"
+            // TODO: resolve conditional vote on 8622: FOR if Independence Day has been or will be adopted, else PRESENT
+            FOR on 8623
+            AGAINST on 8624
+            AGAINST on 8625
+            AGAINST on 8626
+            AGAINST on 8627
+            endorse(Trigon) on 8628 comment "Trigon is the Treasuror"
+            FOR on 8629
+        }
     }
 }
