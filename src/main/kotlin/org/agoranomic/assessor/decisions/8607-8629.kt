@@ -888,5 +888,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8628
             endorse(G) on 8629
         }
+
+        votes(nix) {
+            FOR on 8607
+            endorse(ais523) on 8608
+            FOR on 8609
+            FOR on 8610
+            AGAINST on 8611
+            FOR on 8612
+            FOR on 8613
+            PRESENT on 8614
+            AGAINST on 8615
+            FOR on 8616
+            FOR on 8617
+            FOR on 8618
+            PRESENT on 8619
+            PRESENT on 8620
+            FOR on 8621
+            AGAINST on 8622
+            FOR on 8623
+            AGAINST on 8624
+            FOR on 8625
+            // TODO: conditional vote on 8626: endorse(G) if G and Aspen have equivalent votes, else AGAINST
+            AGAINST on 8627
+            FOR on 8628
+            FOR on 8629
+        }
     }
 }
