@@ -1018,5 +1018,13 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8628
             FOR on 8629
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
+
+        votes(cuddlybanana) {
+            FOR on all
+        }
     }
 }
