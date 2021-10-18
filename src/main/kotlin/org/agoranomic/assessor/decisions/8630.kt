@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8630() = assessment {
@@ -59,5 +60,8 @@ from Cuddlebeam.""")
     }
 
     voting {
+        votes(ShyOwl) {
+            FOR on 8630
+        }
     }
 }
