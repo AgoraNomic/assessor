@@ -992,5 +992,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             endorse(G) on 8628
             AGAINST on 8629
         }
+
+        votes(Telna) {
+            FOR on 8607
+            FOR on 8608
+            FOR on 8609
+            PRESENT on 8610
+            PRESENT on 8611
+            FOR on 8612
+            FOR on 8613
+            FOR on 8614
+            PRESENT on 8615
+            AGAINST on 8616
+            FOR on 8617
+            FOR on 8618
+            AGAINST on 8619
+            AGAINST on 8620
+            endorse(Aspen) on 8621 comment "Aspen is the Promotor"
+            AGAINST on 8622
+            PRESENT on 8623
+            AGAINST on 8624
+            AGAINST on 8625
+            AGAINST on 8626
+            AGAINST on 8627
+            FOR on 8628
+            FOR on 8629
+        }
     }
 }
