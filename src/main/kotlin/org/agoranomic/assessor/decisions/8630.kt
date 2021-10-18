@@ -84,5 +84,9 @@ from Cuddlebeam.""")
         votes(ais523) {
             endorse(CuddleBeam) on 8630
         }
+
+        votes(Gaelan) {
+            AGAINST on 8630
+        }
     }
 }
