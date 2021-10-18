@@ -100,5 +100,13 @@ from Cuddlebeam.""")
         votes(Trigon) {
             AGAINST on 8630
         }
+
+        votes(CuddleBeam) {
+            FOR on all
+        }
+
+        votes(cuddlybanana) {
+            FOR on all
+        }
     }
 }
