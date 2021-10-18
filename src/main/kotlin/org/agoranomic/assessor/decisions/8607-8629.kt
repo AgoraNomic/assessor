@@ -786,7 +786,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8624
             AGAINST on 8625
             FOR on 8626
-            // NO VOTE on 8627
+            AGAINST on 8627
             FOR on 8628
             FOR on 8629
         }
