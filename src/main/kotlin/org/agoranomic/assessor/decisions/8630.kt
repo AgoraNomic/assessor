@@ -108,5 +108,9 @@ from Cuddlebeam.""")
         votes(cuddlybanana) {
             FOR on all
         }
+
+        votes(Murphy) {
+            AGAINST on 8630
+        }
     }
 }
