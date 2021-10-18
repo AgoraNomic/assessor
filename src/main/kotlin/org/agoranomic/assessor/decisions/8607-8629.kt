@@ -1026,5 +1026,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
         votes(cuddlybanana) {
             FOR on all
         }
+
+        votes(Murphy) {
+            FOR on 8607
+            AGAINST on 8608
+            FOR on 8609
+            FOR on 8610
+            AGAINST on 8611
+            PRESENT on 8612
+            PRESENT on 8613
+            FOR on 8614
+            PRESENT on 8615
+            PRESENT on 8616
+            PRESENT on 8617
+            FOR on 8618
+            FOR on 8619
+            FOR on 8620
+            FOR on 8621
+            PRESENT on 8622
+            FOR on 8623
+            FOR on 8624
+            PRESENT on 8625
+            AGAINST on 8626
+            AGAINST on 8627
+            PRESENT on 8628
+            PRESENT on 8629
+        }
     }
 }
