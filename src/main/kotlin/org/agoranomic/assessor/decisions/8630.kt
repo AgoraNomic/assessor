@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -66,6 +67,10 @@ from Cuddlebeam.""")
 
         votes(ATMunn) {
             FOR on 8630
+        }
+
+        votes(G) {
+            AGAINST on 8630
         }
     }
 }
