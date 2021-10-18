@@ -61,7 +61,7 @@ from Cuddlebeam.""")
 
     voting {
         votes(ShyOwl) {
-            FOR on 8630
+            // NO VOTE on 8630
         }
 
         votes(ATMunn) {
