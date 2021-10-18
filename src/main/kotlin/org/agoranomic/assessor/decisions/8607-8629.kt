@@ -966,5 +966,31 @@ functionality stays in the rewrite as per the will of the voters.]""")
             endorse(Trigon) on 8628 comment "Trigon is the Treasuror"
             FOR on 8629
         }
+
+        votes(Falsifian) {
+            endorse(Telna) on 8607
+            AGAINST on 8608
+            endorse(Jason) on 8609
+            PRESENT on 8610
+            AGAINST on 8611
+            AGAINST on 8612
+            AGAINST on 8613
+            PRESENT on 8614
+            AGAINST on 8615
+            AGAINST on 8616
+            PRESENT on 8617
+            endorse(nix) on 8618
+            AGAINST on 8619
+            AGAINST on 8620
+            PRESENT on 8621
+            AGAINST on 8622
+            endorse(Trigon) on 8623
+            AGAINST on 8624
+            AGAINST on 8625
+            AGAINST on 8626
+            AGAINST on 8627
+            endorse(G) on 8628
+            AGAINST on 8629
+        }
     }
 }
