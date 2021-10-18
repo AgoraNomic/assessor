@@ -88,5 +88,9 @@ from Cuddlebeam.""")
         votes(Gaelan) {
             AGAINST on 8630
         }
+
+        votes(Falsifian) {
+            AGAINST on 8630
+        }
     }
 }
