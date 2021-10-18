@@ -5,7 +5,11 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.ResolvedVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.commented
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment8607to8629() = assessment {
@@ -909,7 +913,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8623
             AGAINST on 8624
             FOR on 8625
-            // TODO: conditional vote on 8626: endorse(G) if G and Aspen have equivalent votes, else AGAINST
+            AGAINST on 8626 comment conditional("G. and Aspen do not hafe equivalent votes because Aspen did not vote")
             AGAINST on 8627
             FOR on 8628
             FOR on 8629
@@ -929,7 +933,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             AGAINST on 8617
             FOR on 8618
             AGAINST on 8619
-            // TODO: conditional vote on 8620: if ADOPTED regardless of vote, FOR, else AGAINST
+            AGAINST on 8620 comment conditional("it is not true that the proposal would be adopted regardless of vote")
             PRESENT on 8621
             AGAINST on 8622
             FOR on 8623
@@ -943,21 +947,34 @@ functionality stays in the rewrite as per the will of the voters.]""")
 
         votes(Gaelan) {
             PRESENT on 8607
-            // TODO: resolve conditional vote on 8608: FOR if Rulekeepor and G. FOR, else AGAINST
+
+            function { ctx ->
+                val rulekeeporVote = ctx.resolve(ctx.currentProposal, Jason)?.finalResolution(ctx)?.voteIfVoted
+                val gVote = ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted
+
+                val baseVote = if (rulekeeporVote == FOR && gVote == FOR) {
+                    ResolvedVote(FOR).commented(conditional("Jason and G. both voted FOR"))
+                } else {
+                    ResolvedVote(AGAINST).commented(conditional("Jason and G. did not both vote FOR"))
+                }
+
+                baseVote.commented("Jason is the Rulekeepor")
+            } on 8608
+
             FOR on 8609
             PRESENT on 8610
             FOR on 8611
             FOR on 8612
             PRESENT on 8613
             FOR on 8614
-            // TODO: resolve conditional vote on 8615: FOR if Independene Day has not and will not be adopted, else AGAINST
+            FOR on 8615 comment conditional("Independence Day will be adopted")
             AGAINST on 8616
             PRESENT on 8617
             FOR on 8618
             FOR on 8619
-            // TODO: resolve conditional vote on 8620: FOR if proposal would pass if AGAINST, else FOR; if inextricable, AGAINST
+            AGAINST on 8620 comment conditional("proposal would not pass if AGAINST")
             endorse(Aspen) on 8621 comment "Aspen is the Promotor"
-            // TODO: resolve conditional vote on 8622: FOR if Independence Day has been or will be adopted, else PRESENT
+            FOR on 8622 comment conditional("Independence Day will be adopted")
             FOR on 8623
             AGAINST on 8624
             AGAINST on 8625
