@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8630() = assessment {
@@ -75,6 +74,10 @@ from Cuddlebeam.""")
 
         votes(Jason) {
             AGAINST on 8630
+        }
+
+        votes(nix) {
+            PRESENT on 8630
         }
     }
 }
