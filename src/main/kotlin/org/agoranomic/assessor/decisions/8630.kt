@@ -92,5 +92,9 @@ from Cuddlebeam.""")
         votes(Falsifian) {
             AGAINST on 8630
         }
+
+        votes(Telna) {
+            FOR on 8630
+        }
     }
 }
