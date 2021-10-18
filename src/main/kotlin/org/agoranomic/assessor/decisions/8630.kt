@@ -57,4 +57,7 @@ Then, if it is possible to do, revoke the Title of Champion (by Proposal)
 from Cuddlebeam.""")
         }
     }
+
+    voting {
+    }
 }
