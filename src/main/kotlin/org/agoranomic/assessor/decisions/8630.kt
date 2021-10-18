@@ -1,8 +1,9 @@
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
-import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
 
 @UseAssessment
 fun assessment8630() = assessment {
@@ -12,7 +13,8 @@ fun assessment8630() = assessment {
     proposals(v4) {
         proposal(8630) {
             title("A Very Merry Unvictory to Me! ")
-            ai("3.0")
+            proposalAI(ProposalAI("3.0".toBigDecimal()))
+            decisionAI(DecisionAI("3.0".toBigDecimal()))
             author(CuddleBeam)
             democratic()
             sponsored()
