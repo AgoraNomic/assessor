@@ -2,6 +2,7 @@ package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.festival
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
@@ -13,6 +14,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.*
 @UseAssessment
 fun assessment8630() = assessment {
     name("8630")
+    url("https://agoranomic.groups.io/g/main/topic/assessor_resolution_of/86405309")
     quorum(5)
 
     strengths {
