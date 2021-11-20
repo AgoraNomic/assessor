@@ -65,4 +65,7 @@ records), if the consensus is to keep the patent title holders in the
 Scroll].""")
         }
     }
+
+    voting {
+    }
 }
