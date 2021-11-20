@@ -92,5 +92,10 @@ Scroll].""")
             FOR on 8631
             AGAINST on 8632
         }
+
+        votes(G) {
+            FOR on 8631
+            PRESENT on 8632
+        }
     }
 }
