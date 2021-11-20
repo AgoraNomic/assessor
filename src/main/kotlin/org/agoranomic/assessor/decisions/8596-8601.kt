@@ -265,7 +265,7 @@ targeting situations like:
             FOR on 8601
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

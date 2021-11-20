@@ -133,7 +133,7 @@ I create a proposal with this sentence as its text, and make it pending.""")
             FOR on 8606
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

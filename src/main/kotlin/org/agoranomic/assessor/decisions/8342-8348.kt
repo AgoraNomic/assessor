@@ -203,7 +203,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
     }
 
     voting {
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

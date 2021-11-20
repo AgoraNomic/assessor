@@ -67,7 +67,7 @@ still limited by Defendant's Rights.
             endorse(G) on 8560
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

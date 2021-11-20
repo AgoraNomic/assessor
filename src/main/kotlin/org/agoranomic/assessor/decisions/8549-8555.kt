@@ -173,7 +173,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             FOR on 8555
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

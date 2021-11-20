@@ -33,7 +33,7 @@ fun assessment8532to8537() = assessment {
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Jason,
-        Speaker to CuddleBeam,
+        Speaker to Madrid,
         Stonemason to Jason,
         Tailor to null,
         Treasuror to Trigon,

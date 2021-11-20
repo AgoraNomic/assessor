@@ -522,7 +522,7 @@ with:
             endorse(RLee) on all
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

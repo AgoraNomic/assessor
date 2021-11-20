@@ -26,7 +26,7 @@ fun assessment8607to8629() = assessment {
                 ais523,
                 Aspen,
                 ATMunn,
-                CuddleBeam,
+                Madrid,
                 cuddlybanana,
                 Falsifian,
                 G,
@@ -672,7 +672,7 @@ with:
                 Gaelan,
                 Telna,
                 nix,
-                CuddleBeam,
+                Madrid,
                 cuddlybanana,
                 Jason,
             )
@@ -1038,7 +1038,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8629
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

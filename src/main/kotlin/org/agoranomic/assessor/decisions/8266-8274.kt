@@ -344,7 +344,7 @@ with this text:
             AGAINST on 8274
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             AGAINST on 8271
             FOR on others
         }

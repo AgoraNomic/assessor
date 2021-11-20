@@ -200,7 +200,7 @@ Enact the following rule, Victory Auctions:
         proposal(8447) {
             title("Rule Infancy")
             ai("1.0")
-            author(CuddleBeam)
+            author(Madrid)
             chamber(Participation)
 
             text(
@@ -285,7 +285,7 @@ for people who are late without requesting the extension]."""
         proposal(8451) {
             title("HUMBLE AGORAN FARMER WINS THE GAME")
             ai("1.0")
-            author(CuddleBeam)
+            author(Madrid)
             chamber(Participation)
 
             text(

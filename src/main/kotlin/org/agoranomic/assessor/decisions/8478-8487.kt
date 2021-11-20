@@ -252,7 +252,7 @@ specified in that body of text."""
             title("Clarify asset ownership")
             ai("3.0")
             author(Murphy)
-            coauthors(CuddleBeam, Aspen)
+            coauthors(Madrid, Aspen)
             democratic()
             sponsored()
 
@@ -428,7 +428,7 @@ Ribbon Ownership to True."""
             FOR on 8487
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

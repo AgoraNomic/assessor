@@ -474,7 +474,7 @@ otherwise)."""")
             FOR on 8572
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

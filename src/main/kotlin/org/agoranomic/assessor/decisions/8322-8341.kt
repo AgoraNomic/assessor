@@ -647,7 +647,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             match(G) on all
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             for (proposal in listOf(8323, 8325, 8326, 8327, 8328, 8329, 8334, 8340)) {
                 FOR on proposal
             }

@@ -31,7 +31,7 @@ fun assessment8538to8540() = assessment {
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Jason,
-        Speaker to CuddleBeam,
+        Speaker to Madrid,
         Stonemason to Jason,
         Tailor to null,
         Treasuror to Trigon,
@@ -311,7 +311,7 @@ the following text:
     }
 
     voting {
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

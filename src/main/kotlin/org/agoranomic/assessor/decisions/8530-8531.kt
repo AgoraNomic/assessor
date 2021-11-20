@@ -34,7 +34,7 @@ fun assessment8530to8531() = assessment {
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Jason,
-        Speaker to CuddleBeam,
+        Speaker to Madrid,
         Stonemason to Jason,
         Tailor to null,
         Treasuror to Trigon,
@@ -108,7 +108,7 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
             FOR on 8531
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 
