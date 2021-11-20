@@ -87,5 +87,10 @@ Scroll].""")
             FOR on 8631
             PRESENT on 8632
         }
+
+        votes(ais523) {
+            FOR on 8631
+            AGAINST on 8632
+        }
     }
 }
