@@ -95,7 +95,7 @@ Scroll].""")
 
         votes(G) {
             FOR on 8631
-            PRESENT on 8632
+            AGAINST on 8632
         }
     }
 }
