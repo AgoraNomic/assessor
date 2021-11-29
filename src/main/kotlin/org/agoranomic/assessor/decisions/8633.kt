@@ -52,5 +52,9 @@ In Rule 1607 "Distribution", delete the sentence:
         votes(RLee) {
             PRESENT on 8633
         }
+
+        votes(Aspen) {
+            FOR on 8633
+        }
     }
 }
