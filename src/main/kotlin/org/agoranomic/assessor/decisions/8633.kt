@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
@@ -42,6 +43,10 @@ In Rule 1607 "Distribution", delete the sentence:
 
         votes(Falsifian) {
             FOR on 8633
+        }
+
+        votes(Jason) {
+            endorse(Aspen) on 8633
         }
     }
 }
