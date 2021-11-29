@@ -1,0 +1,158 @@
+{
+    "metadata": {
+        "name": "8633",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-November/015506.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8633,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Disbanded distribution",
+            "author": "Falsifian",
+            "coauthors": [
+            ],
+            "text": "In Rule 1607 \"Distribution\", delete the sentence:\n\n  E SHALL then distribute those undistributed proposals the next\n  Agoran week."
+        }
+    ],
+    "quorum": 8,
+    "resolutions": [
+        {
+            "proposal": 8633,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aspen"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Aspen"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Aspen",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Aspen is the Promotor"
+                                    }
+                                ],
+                                "readable": "Aspen is the Promotor"
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aspen"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Aspen"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Madrid",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        }
+    ]
+}
