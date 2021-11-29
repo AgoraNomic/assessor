@@ -1,0 +1,230 @@
+{
+    "metadata": {
+        "name": "8631-8632",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-November/015491.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8631,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "another device defect",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2655 by replacing:\n  responsible for building and maintaining the Device.\nwith:\n  responsible for building, tracking, and maintaining the Device.\n\nand by deleting:\n  This intent announcement counts as the Mad Engineers's\n  weekly report.\n\n[with the reporting duty for the device status added, by default a weekly\nswitch value report, we no longer need this intent to count as a report to\nget the weekly report reward.  The intent is still part of \"weekly duties\"\nbut not the report.]"
+        },
+        {
+            "version": "4",
+            "number": 8632,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Forgiveness is a process",
+            "author": "G.",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "The patent title Fugitive is hereby revoked from every person who\nholds it.\n\nHenceforth, the Herald SHOULD NOT list people as being \"fugitives\" in eir\nreporting.  [covers any \"unofficial\" listees who didn't have patent titles].\n\n[note: this may be slightly more controversial than last time, given that\nwe've uncovered some of those listed actually hold patent titles, and we\ngenerally don't revoke those in order to preserve history. For full\ndisclosure, who actually holds that title could be reconstructed in a\nfairly straightforward manner (I think I found the requisite proposal\nrecords), if the consensus is to keep the patent title holders in the\nScroll]."
+        }
+    ],
+    "quorum": 8,
+    "resolutions": [
+        {
+            "proposal": 8631,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 24,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Aspen",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Madrid",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        },
+        {
+            "proposal": 8632,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 3,
+                "strength_against": 15,
+                "votes": [
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Aspen",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Madrid",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        }
+    ]
+}
