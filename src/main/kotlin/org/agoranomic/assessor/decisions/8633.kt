@@ -48,5 +48,9 @@ In Rule 1607 "Distribution", delete the sentence:
         votes(Jason) {
             endorse(Aspen) on 8633
         }
+
+        votes(RLee) {
+            PRESENT on 8633
+        }
     }
 }
