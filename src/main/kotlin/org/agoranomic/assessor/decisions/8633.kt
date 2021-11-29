@@ -60,5 +60,9 @@ In Rule 1607 "Distribution", delete the sentence:
         votes(ATMunn) {
             PRESENT on 8633
         }
+
+        votes(Trigon) {
+            endorse(Aspen) on 8633 comment "Aspen is the Promotor"
+        }
     }
 }
