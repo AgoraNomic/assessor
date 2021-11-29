@@ -28,6 +28,7 @@ fun assessment8631to8632() = assessment {
             ai("1.0")
             author(G)
             ordinary()
+            sponsored()
 
             text("""
 Amend Rule 2655 by replacing:
@@ -51,6 +52,7 @@ but not the report.]""")
             author(G)
             coauthors(nix)
             ordinary()
+            sponsored()
 
             text("""
 The patent title Fugitive is hereby revoked from every person who

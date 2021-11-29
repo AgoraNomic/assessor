@@ -29,6 +29,7 @@ fun assessment8633() = assessment {
             ai("3.0")
             author(Falsifian)
             democratic()
+            sponsored()
 
             text("""
 In Rule 1607 "Distribution", delete the sentence:
