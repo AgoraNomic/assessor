@@ -56,5 +56,9 @@ In Rule 1607 "Distribution", delete the sentence:
         votes(Aspen) {
             FOR on 8633
         }
+
+        votes(ATMunn) {
+            PRESENT on 8633
+        }
     }
 }
