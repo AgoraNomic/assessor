@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8633() = assessment {
@@ -34,5 +35,8 @@ In Rule 1607 "Distribution", delete the sentence:
     }
 
     voting {
+        votes(Murphy) {
+            PRESENT on 8633
+        }
     }
 }
