@@ -32,4 +32,7 @@ In Rule 1607 "Distribution", delete the sentence:
   Agoran week.""")
         }
     }
+
+    voting {
+    }
 }
