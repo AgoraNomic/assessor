@@ -94,5 +94,9 @@ to the number of existing types of ribbon:
         votes(Jason) {
             FOR on 8634
         }
+
+        votes(RLee) {
+            FOR on 8634
+        }
     }
 }
