@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
@@ -97,6 +98,10 @@ to the number of existing types of ribbon:
 
         votes(RLee) {
             FOR on 8634
+        }
+
+        votes(ATMunn) {
+            endorse(Jason) on 8634
         }
     }
 }
