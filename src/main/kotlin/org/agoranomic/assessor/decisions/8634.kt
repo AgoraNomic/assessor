@@ -90,5 +90,9 @@ to the number of existing types of ribbon:
         votes(ais523) {
             PRESENT on 8634
         }
+
+        votes(Jason) {
+            FOR on 8634
+        }
     }
 }
