@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8634() = assessment {
@@ -81,5 +82,8 @@ to the number of existing types of ribbon:
     }
 
     voting {
+        votes(Trigon) {
+            FOR on 8634
+        }
     }
 }
