@@ -79,4 +79,7 @@ to the number of existing types of ribbon:
 [These are the people who have won by Renaissance.]""")
         }
     }
+
+    voting {
+    }
 }
