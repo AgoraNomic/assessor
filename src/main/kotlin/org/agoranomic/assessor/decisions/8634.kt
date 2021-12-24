@@ -107,5 +107,9 @@ to the number of existing types of ribbon:
         votes(Falsifian) {
             endorse(Jason) on 8634
         }
+
+        votes(Murphy) {
+            FOR on 8634
+        }
     }
 }
