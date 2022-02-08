@@ -132,5 +132,11 @@ iscapped at 4 by R106].
         votes(Madrid) {
             FOR on all
         }
+
+        votes(G) {
+            AGAINST on 8635
+            FOR on 8636
+            FOR on 8637
+        }
     }
 }
