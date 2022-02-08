@@ -128,5 +128,9 @@ iscapped at 4 by R106].
             FOR on 8636
             FOR on 8637
         }
+
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
