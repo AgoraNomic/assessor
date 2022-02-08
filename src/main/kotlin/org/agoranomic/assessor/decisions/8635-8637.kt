@@ -138,5 +138,11 @@ iscapped at 4 by R106].
             FOR on 8636
             FOR on 8637
         }
+
+        votes(Aspen) {
+            AGAINST on 8635
+            FOR on 8636
+            AGAINST on 8637
+        }
     }
 }
