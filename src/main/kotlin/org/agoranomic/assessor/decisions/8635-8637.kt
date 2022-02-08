@@ -104,7 +104,7 @@ iscapped at 4 by R106].
         votes(ais523) {
             AGAINST on 8635
             PRESENT on 8636
-            // TODO: resolve conditional vote on 8637: PRESENT if 8636 has been enacted, else AGAINST
+            PRESENT on 8637 comment conditional("Proposal 8636 has been enacted")
         }
 
         votes(cuddlybanana) {
