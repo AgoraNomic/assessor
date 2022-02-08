@@ -122,5 +122,11 @@ iscapped at 4 by R106].
             PRESENT on 8636
             PRESENT on 8637
         }
+
+        votes(Murphy) {
+            FOR on 8635
+            FOR on 8636
+            FOR on 8637
+        }
     }
 }
