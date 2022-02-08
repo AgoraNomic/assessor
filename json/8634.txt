@@ -1,0 +1,142 @@
+{
+    "metadata": {
+        "name": "8634",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-December/015551.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8634,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Laudability",
+            "author": "Jason",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2438 by appending the following to the paragraph\nbeginning \"For each type of Ribbon\":\n{\n\n  Laudability is a secured person switch with non-negative integer possible\n  values, defaulting to 0, tracked by the Tailor as part of eir monthly\n  report. When a person owns more types of ribbons than eir Laudability,\n  eir Laudability is set to the number of types of ribbons e owns.\n\n}\n\nAmend Rule 2480 by replacing:\n{\n  A player who owns at least N types of Ribbon CAN Start a Rank N\n  Festival, where N is an integer greater than Agora's Festivity,\n  with 4 support from players who own at least N types of Ribbon.\n  Upon doing so, Agora's Festivity is flipped to N. Exception: A\n  player CANNOT do so if Agora's Festivity has had a value greater\n  than or equal to N within the past 21 days.\n\n  A person who owns a number of types of Ribbon equal to or greater\n  than Agora's Festivity is known as Festive. Other persons are not\n  Festive.\n}\nwith:\n{\n\n  A person whose Laudability is greater than or equal to Agora's\n  Festivity is Festive. Any other person is not Festive.\n\n  A player who would be Festive if the Festivity was N CAN Start a\n  Rank N Festival, where N is an integer greater than Agora's\n  Festivity, with 4 support from other players who would be Festive\n  if the Festivity was N, except that a Rank N Festival CANNOT be\n  started if Agora's Festivity has had a value grater than or equal\n  to N in the past 21 days. Upon a Rank N Festival starting, Agora's\n  Festivity is flipped to N.\n\n}\n\nThe Laudability of each of the following persons is hereby flipped\nto the number of existing types of ribbon:\n  * ais523\n  * Alexis\n  * G.\n  * Jason\n  * Murphy\n  * twg\n\n[These are the people who have won by Renaissance.]"
+        }
+    ],
+    "quorum": 5,
+    "resolutions": [
+        {
+            "proposal": 8634,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Trigon",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "R. Lee",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ATMunn",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Falsifian",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Madrid",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                }
+            ]
+        }
+    ]
+}
