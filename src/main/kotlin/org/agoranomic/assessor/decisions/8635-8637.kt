@@ -5,6 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8635to8637() = assessment {
@@ -99,5 +102,10 @@ iscapped at 4 by R106].
     }
 
     voting {
+        votes(ais523) {
+            AGAINST on 8635
+            PRESENT on 8636
+            // TODO: resolve conditional vote on 8637: PRESENT if 8636 has been enacted, else AGAINST
+        }
     }
 }
