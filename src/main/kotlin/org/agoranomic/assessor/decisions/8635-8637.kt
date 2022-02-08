@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -108,6 +109,12 @@ iscapped at 4 by R106].
 
         votes(cuddlybanana) {
             FOR on all
+        }
+
+        votes(Jason) {
+            endorse(ais523) on 8635
+            FOR on 8636
+            PRESENT on 8637
         }
     }
 }
