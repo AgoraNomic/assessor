@@ -97,4 +97,7 @@ iscapped at 4 by R106].
 ]""")
         }
     }
+
+    voting {
+    }
 }
