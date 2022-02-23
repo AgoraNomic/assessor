@@ -198,7 +198,7 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
 
         votes(Secretsnail9) {
             FOR on 8638
-            AGAINST on 8639
+            FOR on 8639
             AGAINST on 8640
             AGAINST on 8641
             FOR on 8642
