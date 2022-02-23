@@ -163,4 +163,7 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
 "repeal that rule, then this one".""")
         }
     }
+
+    voting {
+    }
 }
