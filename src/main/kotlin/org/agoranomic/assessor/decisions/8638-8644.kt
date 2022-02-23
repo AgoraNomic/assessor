@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -171,7 +172,7 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
         votes(ais523) {
             FOR on 8638
             PRESENT on 8639
-            PRESENT on 8640 comment legacyConditionalComment("8640 would not pass regardless of vote")
+            resolvedConditional(PRESENT, "8640 would not pass regardless of vote") on 8640
             AGAINST on 8641
             FOR on 8642
             FOR on 8643
