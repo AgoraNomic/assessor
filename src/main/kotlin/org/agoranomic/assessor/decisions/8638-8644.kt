@@ -5,7 +5,6 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -172,6 +171,16 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
             PRESENT on 8639
             // TODO resolve conditional vote on 8640: AGAINST if it would pass regardless of vote, else PRESENT
             AGAINST on 8641
+            FOR on 8642
+            FOR on 8643
+            FOR on 8644
+        }
+
+        votes(Murphy) {
+            FOR on 8638
+            PRESENT on 8639
+            AGAINST on 8640
+            FOR on 8641
             FOR on 8642
             FOR on 8643
             FOR on 8644
