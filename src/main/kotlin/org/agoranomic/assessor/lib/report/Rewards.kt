@@ -2,12 +2,17 @@ package org.agoranomic.assessor.lib.report
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.dsl.votes.CONDITIONAL_VOTE_TAG
 import org.agoranomic.assessor.lib.Person
+import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
-import org.agoranomic.assessor.lib.resolve.adoptedProposals
+import org.agoranomic.assessor.lib.resolve.ProposalResult
+import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.vote.machineIfPresent
 import org.agoranomic.assessor.lib.vote.votersAgainst
 import org.agoranomic.assessor.lib.vote.votersFor
+import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 import org.randomcat.util.ceil
 import org.randomcat.util.compareTo
 import java.math.BigDecimal
@@ -42,9 +47,13 @@ private fun calculateReward(
 
 data class ProposalRewardData(
     val author: Person?,
+    val coauthors: Persons?,
     val voteCountFor: BigInteger,
     val voteCountAgainst: BigInteger,
     val proposalAI: ProposalAI,
+    val result: ProposalResult,
+    val votingStrengths: VotingStrengthTrailForPersons,
+    val resolvedVotes: SimplifiedSingleProposalVoteMap,
 ) {
     val unroundedReward
         get() =
@@ -93,19 +102,25 @@ private fun Proposal.isRewardable(): Boolean {
 fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
     return ProposalRewardsMap(
         resolutionMap
-            .adoptedProposals()
+            .proposals
             .filter { it.isRewardable() }
             .associate { proposal ->
-                val proposalVotes = resolutionMap.resolutionOf(proposal.number).votes
+                val resolution = resolutionMap.resolutionOf(proposal.number)
+
+                val proposalVotes = resolution.votes
                 val voteCountFor = proposalVotes.votersFor().size.toBigInteger()
                 val voteCountAgainst = proposalVotes.votersAgainst().size.toBigInteger()
                 val proposalAI = proposal.proposalAI
 
                 val rewardData = ProposalRewardData(
                     author = proposal.author,
+                    coauthors = proposal.coauthors,
                     voteCountFor = voteCountFor,
                     voteCountAgainst = voteCountAgainst,
                     proposalAI = proposalAI,
+                    result = resolution.result,
+                    resolvedVotes = proposalVotes,
+                    votingStrengths = resolution.votingStrengths,
                 )
 
                 proposal.number to rewardData
@@ -113,25 +128,67 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
     )
 }
 
+private fun ProposalRewardData.authorRewards(proposalNumber: ProposalNumber): List<String> {
+    if (result != ProposalResult.ADOPTED) return emptyList()
+    if (author == null) return emptyList()
+
+    val amountString =
+        if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
+            roundedReward.toString()
+        else
+            "$unroundedReward -> $roundedReward"
+
+    // Fractional points cannot be awarded
+    val effectivePowerInt = minOf(proposalAI.raw, BigDecimal.valueOf(4)).tryToBigIntegerExact()
+
+    return buildList {
+        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
+
+        if (effectivePowerInt != null) {
+            add("For the adoption of Proposal $proposalNumber, I grant ${author.name} ${effectivePowerInt + BigInteger.ONE} points (author).")
+        } else {
+            add("For the adoption of Proposal $proposalNumber, ${author.name} CANNOT be granted points due to non-integral effective power (author).")
+        }
+    }
+}
+
+private fun ProposalRewardData.coauthorRewards(proposalNumber: ProposalNumber): List<String> {
+    if (result != ProposalResult.ADOPTED) return emptyList()
+    if (coauthors == null) return emptyList()
+
+    return coauthors.map {
+        "For the adoption of Proposal $proposalNumber, I grant ${it.name} 1 point (coauthor)."
+    }
+}
+
+private fun BigDecimal.tryToBigIntegerExact(): BigInteger? {
+    return this.toBigInteger().takeIf { it.toBigDecimal().compareTo(this) == 0 }
+}
+
+private fun ProposalRewardData.opposingVoterRewards(proposalNumber: ProposalNumber): List<String> {
+    if (result != ProposalResult.ADOPTED) return emptyList()
+
+    val unconditionalAgainstVoters = resolvedVotes.votersAgainst().filter {
+        resolvedVotes.voteDescriptionsFor(it).none { it.machineIfPresent?.kind == CONDITIONAL_VOTE_TAG }
+    }
+
+    return unconditionalAgainstVoters.map {
+        "For the adoption of Proposal $proposalNumber, I grant ${it.name} ${votingStrengths.finalStrengthForPerson(it)} points (against vote)."
+    }
+}
+
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
     return rewardsMap
         .proposals
-        .mapNotNull { proposal ->
+        .flatMap { proposal ->
             val rewardData = rewardsMap[proposal]
 
-            val author = rewardData.author ?: return@mapNotNull null
-            val voteCountFor = rewardData.voteCountFor
-            val voteCountAgainst = rewardData.voteCountAgainst
-            val unroundedReward = rewardData.unroundedReward
-            val roundedReward = rewardData.roundedReward
-
-            val amountString =
-                if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
-                    roundedReward.toString()
-                else
-                    "$unroundedReward -> $roundedReward"
-
-            "For the adoption of Proposal $proposal, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins."
+            listOf(
+                rewardData.authorRewards(proposal),
+                rewardData.coauthorRewards(proposal),
+                rewardData.opposingVoterRewards(proposal),
+            )
         }
+        .flatten()
         .joinToString("\n")
 }
