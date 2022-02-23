@@ -513,7 +513,7 @@ with:
             FOR on 8467
             AGAINST on 8468
             FOR on 8469
-            AGAINST on 8470 comment conditional("P8466 was adopted")
+            AGAINST on 8470 comment legacyConditionalComment("P8466 was adopted")
             FOR on 8471
             FOR on 8472
         }
@@ -639,10 +639,10 @@ with:
             PRESENT on 8466
             endorse(Jason) on 8467
             PRESENT on 8468
-            FOR on 8469 comment conditional("Aris not against")
+            FOR on 8469 comment legacyConditionalComment("Aris not against")
             endorse(nix) on 8470
             AGAINST on 8471
-            FOR on 8472 comment conditional("Aris not against")
+            FOR on 8472 comment legacyConditionalComment("Aris not against")
         }
 
         votes(G) {

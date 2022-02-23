@@ -101,7 +101,7 @@ allowed.]"""
 
         votes(Falsifian) {
             endorse(Jason) on 8248
-            FOR on 8249 comment conditional("No veto, twg not AGAINST")
+            FOR on 8249 comment legacyConditionalComment("No veto, twg not AGAINST")
         }
 
         votes(ATMunn) {

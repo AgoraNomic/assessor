@@ -324,7 +324,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
         votes(ATMunn) {
             FOR on 8431
             PRESENT on 8432
-            AGAINST on 8433 comment conditional("8432 will not be adopted")
+            AGAINST on 8433 comment legacyConditionalComment("8432 will not be adopted")
             FOR on 8434
             FOR on 8435
             AGAINST on 8436
@@ -398,7 +398,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
         votes(Falsifian) {
             endorse(Aspen) on 8431
             PRESENT on 8432
-            endorse(Aspen) on 8433 comment conditional("8432 will not be adopted")
+            endorse(Aspen) on 8433 comment legacyConditionalComment("8432 will not be adopted")
             PRESENT on 8434
             PRESENT on 8435
             FOR on 8436

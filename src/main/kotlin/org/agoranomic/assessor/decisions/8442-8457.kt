@@ -516,14 +516,14 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8446
             AGAINST on 8447
             FOR on 8448
-            FOR on 8449 comment conditional("8448 passed")
+            FOR on 8449 comment legacyConditionalComment("8448 passed")
             FOR on 8450
             AGAINST on 8451
             endorse(PSS) on 8452
             FOR on 8453
             PRESENT on 8454
             FOR on 8455
-            endorse(G) on 8456 comment conditional("G. not FOR")
+            endorse(G) on 8456 comment legacyConditionalComment("G. not FOR")
             AGAINST on 8457
         }
 

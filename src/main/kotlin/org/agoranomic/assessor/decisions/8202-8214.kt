@@ -323,9 +323,9 @@ following:
             FOR on 8202
             AGAINST on 8203
             PRESENT on 8204
-            AGAINST on 8205 comment conditional("somebody voted FOR after nch")
+            AGAINST on 8205 comment legacyConditionalComment("somebody voted FOR after nch")
             FOR on 8206
-            AGAINST on 8207 comment conditional("G. did not pledge to give nch a black ribbon")
+            AGAINST on 8207 comment legacyConditionalComment("G. did not pledge to give nch a black ribbon")
             PRESENT on 8208
             FOR on 8209
             AGAINST on 8210
@@ -357,7 +357,7 @@ following:
             FOR on 8204
             PRESENT on 8205
             FOR on 8206
-            AGAINST on 8207 comment conditional("G. did not transfer 766 Coins to Trigon")
+            AGAINST on 8207 comment legacyConditionalComment("G. did not transfer 766 Coins to Trigon")
             FOR on 8208
             AGAINST on 8209
             FOR on 8210
@@ -427,7 +427,7 @@ following:
             endorse(Jason) on 8202
             endorse(Jason) on 8203
             endorse(RLee) on 8204
-            AGAINST on 8205 comment conditional("not last ballot cast to evaluate to FOR")
+            AGAINST on 8205 comment legacyConditionalComment("not last ballot cast to evaluate to FOR")
             endorse(DMargaux) on 8206
             AGAINST on 8207
             endorse(Jason) on 8208
@@ -447,7 +447,7 @@ following:
             FOR on 8202
             FOR on 8203
             FOR on 8204
-            FOR on 8205 comment conditional("\"X=X\" is true")
+            FOR on 8205 comment legacyConditionalComment("\"X=X\" is true")
             FOR on 8206
             FOR on 8207
             PRESENT on 8208

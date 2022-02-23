@@ -345,7 +345,7 @@ to read
             endorse(Alexis) on 8360
             endorse(Aspen) on 8361
             PRESENT on 8362
-            AGAINST on 8363 comment conditional("No document purporting to be a Treasuror's report has been published in the past 7 days")
+            AGAINST on 8363 comment legacyConditionalComment("No document purporting to be a Treasuror's report has been published in the past 7 days")
             endorse(Aspen) on 8364
             endorse(Aspen) on 8365
         }

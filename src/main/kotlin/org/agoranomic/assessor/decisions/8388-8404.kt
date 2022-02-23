@@ -576,12 +576,12 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
                 endorseOfficer(
                     offices,
                     Office_2020_06_03_Webmastor.Comptrollor
-                ) on 8400 comment conditional("Comptrollor is held")
+                ) on 8400 comment legacyConditionalComment("Comptrollor is held")
             else
                 endorseOfficer(
                     offices,
                     Office_2020_06_03_Webmastor.ADoP
-                ) on 8400 comment conditional("Comptrollor is vacant")
+                ) on 8400 comment legacyConditionalComment("Comptrollor is vacant")
 
             FOR on 8401
             FOR on 8402

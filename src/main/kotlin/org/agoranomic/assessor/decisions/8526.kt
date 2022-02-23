@@ -88,7 +88,7 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
                 if (it is OfficeState.Held)
                     endorseOrElse(it.holder, PRESENT)
                 else
-                    CommentedResolvingVote(conditional("Coopor is not held"), ResolvedVote(FOR))
+                    CommentedResolvingVote(legacyConditionalComment("Coopor is not held"), ResolvedVote(FOR))
             } on 8526
         }
 

@@ -829,7 +829,7 @@ Flip the Citizenship of the following player to Unregistered:
             endorse(Falsifian) on 8292 comment "Falsifian was first of (omd, G., Falsifian) to vote on this proposal"
             AGAINST on 8293
             AGAINST on 8294
-            FOR on 8295 comment conditional("8304 is going to be resolved as ADOPTED")
+            FOR on 8295 comment legacyConditionalComment("8304 is going to be resolved as ADOPTED")
             FOR on 8296
             FOR on 8297
             AGAINST on 8298
@@ -853,7 +853,7 @@ Flip the Citizenship of the following player to Unregistered:
             endorse(twg) on 8292
             PRESENT on 8293
             AGAINST on 8294
-            endorse(twg) on 8295 comment conditional("None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST")
+            endorse(twg) on 8295 comment legacyConditionalComment("None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST")
             AGAINST on 8296
             endorse(Aspen) on 8297
             endorse(Aspen) on 8298
@@ -915,7 +915,7 @@ Flip the Citizenship of the following player to Unregistered:
             FOR on 8302
             PRESENT on 8303
             FOR on 8304
-            PRESENT on 8305 comment conditional("G. not AGAINST")
+            PRESENT on 8305 comment legacyConditionalComment("G. not AGAINST")
             AGAINST on 8306
             AGAINST on 8307
         }

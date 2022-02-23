@@ -421,7 +421,7 @@ Ribbon Ownership to True."""
             FOR on 8480
             AGAINST on 8481
             FOR on 8482
-            FOR on 8483 comment conditional("P8483 would be ADOPTED under the specified criteria, with at most omd voting AGAINST")
+            FOR on 8483 comment legacyConditionalComment("P8483 would be ADOPTED under the specified criteria, with at most omd voting AGAINST")
             AGAINST on 8484
             FOR on 8485
             FOR on 8486
@@ -438,7 +438,7 @@ Ribbon Ownership to True."""
             FOR on 8480
             endorse(Aspen) on 8481
             FOR on 8482
-            FOR on 8483 comment conditional("P8483 would be ADOPTED even if all parties to the Foot Draggers Union voted AGAINST")
+            FOR on 8483 comment legacyConditionalComment("P8483 would be ADOPTED even if all parties to the Foot Draggers Union voted AGAINST")
             FOR on 8484
             FOR on 8485
             FOR on 8486
@@ -459,7 +459,7 @@ Ribbon Ownership to True."""
         }
 
         votes(omd) {
-            FOR on 8483 comment conditional("Gaelan did not cast a ballot matching the specified criteria")
+            FOR on 8483 comment legacyConditionalComment("Gaelan did not cast a ballot matching the specified criteria")
         }
 
         votes(G) {

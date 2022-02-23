@@ -915,7 +915,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8623
             AGAINST on 8624
             FOR on 8625
-            AGAINST on 8626 comment conditional("G. and Aspen do not hafe equivalent votes because Aspen did not vote")
+            AGAINST on 8626 comment legacyConditionalComment("G. and Aspen do not hafe equivalent votes because Aspen did not vote")
             AGAINST on 8627
             FOR on 8628
             FOR on 8629
@@ -935,7 +935,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             AGAINST on 8617
             FOR on 8618
             AGAINST on 8619
-            AGAINST on 8620 comment conditional("it is not true that the proposal would be adopted regardless of vote")
+            AGAINST on 8620 comment legacyConditionalComment("it is not true that the proposal would be adopted regardless of vote")
             PRESENT on 8621
             AGAINST on 8622
             FOR on 8623
@@ -955,9 +955,9 @@ functionality stays in the rewrite as per the will of the voters.]""")
                 val gVote = ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted
 
                 val baseVote = if (rulekeeporVote == FOR && gVote == FOR) {
-                    ResolvedVote(FOR).commented(conditional("Jason and G. both voted FOR"))
+                    ResolvedVote(FOR).commented(legacyConditionalComment("Jason and G. both voted FOR"))
                 } else {
-                    ResolvedVote(AGAINST).commented(conditional("Jason and G. did not both vote FOR"))
+                    ResolvedVote(AGAINST).commented(legacyConditionalComment("Jason and G. did not both vote FOR"))
                 }
 
                 baseVote.commented("Jason is the Rulekeepor")
@@ -969,14 +969,14 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8612
             PRESENT on 8613
             FOR on 8614
-            FOR on 8615 comment conditional("Independence Day will be adopted")
+            FOR on 8615 comment legacyConditionalComment("Independence Day will be adopted")
             AGAINST on 8616
             PRESENT on 8617
             FOR on 8618
             FOR on 8619
-            AGAINST on 8620 comment conditional("proposal would not pass if AGAINST")
+            AGAINST on 8620 comment legacyConditionalComment("proposal would not pass if AGAINST")
             endorse(Aspen) on 8621 comment "Aspen is the Promotor"
-            FOR on 8622 comment conditional("Independence Day will be adopted")
+            FOR on 8622 comment legacyConditionalComment("Independence Day will be adopted")
             FOR on 8623
             AGAINST on 8624
             AGAINST on 8625

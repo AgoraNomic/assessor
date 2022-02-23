@@ -252,7 +252,7 @@ with:
             // FOR on 8382
             AGAINST on 8383
             AGAINST on 8384
-            AGAINST on 8385 comment conditional("Aris and Jason voted AGAINST on this proposal")
+            AGAINST on 8385 comment legacyConditionalComment("Aris and Jason voted AGAINST on this proposal")
             FOR on 8386
             // FOR on 8387
         }

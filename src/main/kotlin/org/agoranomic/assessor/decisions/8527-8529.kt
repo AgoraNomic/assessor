@@ -140,7 +140,7 @@ Repeal rule 2633, "Rulebending."""")
         votes(nix) {
             FOR on 8527
             FOR on 8528
-            FOR on 8529 comment conditional("voting ended on the 10th, an even number")
+            FOR on 8529 comment legacyConditionalComment("voting ended on the 10th, an even number")
             // TODO: resolve conditional vote on 8529: FOR if day of month when voting ends is even, else AGAINST
         }
 

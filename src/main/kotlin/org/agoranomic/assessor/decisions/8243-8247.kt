@@ -130,7 +130,7 @@ Proposal Pool."""
         votes(Falsifian) {
             AGAINST on 8243
             endorse(Jason) on 8244
-            FOR on 8245 comment conditional("Aris did not vote AGAINST")
+            FOR on 8245 comment legacyConditionalComment("Aris did not vote AGAINST")
             endorse(Jason) on 8246
             FOR on 8247 comment NO_VETO
         }

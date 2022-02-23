@@ -162,7 +162,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             AGAINST on 8552
             FOR on 8553
             FOR on 8554
-            AGAINST on 8555 comment conditional("not highest unique voting strenght")
+            AGAINST on 8555 comment legacyConditionalComment("not highest unique voting strenght")
         }
 
         votes(Murphy) {
@@ -198,11 +198,11 @@ highest is 14, and no one else is at 14, the 14 wins]."""
         }
 
         votes(RLee) {
-            AGAINST on 8549 comment conditional("adds text to the ruleset")
-            PRESENT on 8552 comment conditional("does not add text to the ruleset")
-            AGAINST on 8553 comment conditional("adds text to the ruleset")
-            AGAINST on 8554 comment conditional("adds text to the ruleset")
-            PRESENT on 8555 comment conditional("does not add text to the ruleset")
+            AGAINST on 8549 comment legacyConditionalComment("adds text to the ruleset")
+            PRESENT on 8552 comment legacyConditionalComment("does not add text to the ruleset")
+            AGAINST on 8553 comment legacyConditionalComment("adds text to the ruleset")
+            AGAINST on 8554 comment legacyConditionalComment("adds text to the ruleset")
+            PRESENT on 8555 comment legacyConditionalComment("does not add text to the ruleset")
         }
 
         votes(Aenet) {

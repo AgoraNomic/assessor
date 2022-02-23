@@ -534,15 +534,15 @@ Amend Rule 2124 (Agoran Satisfaction) by:
 
         votes(twg) {
             endorse(Falsifian) on 8322
-            PRESENT on 8323 comment conditional("Jason did not vote AGAINST")
+            PRESENT on 8323 comment legacyConditionalComment("Jason did not vote AGAINST")
             endorse(Falsifian) on 8324
-            PRESENT on 8325 comment conditional("Falsifian did not vote AGAINST")
+            PRESENT on 8325 comment legacyConditionalComment("Falsifian did not vote AGAINST")
             endorse(Falsifian) on 8326
             endorse(Falsifian) on 8327
             endorse(Falsifian) on 8328
             endorse(Alexis) on 8329
             endorse(G) on 8330
-            PRESENT on 8331 comment conditional("Warrigal did not vote AGAINST")
+            PRESENT on 8331 comment legacyConditionalComment("Warrigal did not vote AGAINST")
             AGAINST on 8332
             AGAINST on 8333
             AGAINST on 8334
@@ -550,7 +550,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             endorse(Jason) on 8336
             AGAINST on 8337
             endorse(Murphy) on 8338
-            PRESENT on 8339 comment conditional("Murphy did not vote AGAINST")
+            PRESENT on 8339 comment legacyConditionalComment("Murphy did not vote AGAINST")
             endorse(Alexis) on 8340
             AGAINST on 8341
         }

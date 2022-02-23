@@ -615,7 +615,7 @@ document take place.""")
             AGAINST on 8581
             PRESENT on 8582
             PRESENT on 8583
-            AGAINST on 8584 comment conditional("G. and ais523 both AGAINST")
+            AGAINST on 8584 comment legacyConditionalComment("G. and ais523 both AGAINST")
             PRESENT on 8585
             PRESENT on 8586
             PRESENT on 8587

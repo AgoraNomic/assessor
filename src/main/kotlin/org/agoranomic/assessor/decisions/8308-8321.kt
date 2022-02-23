@@ -622,7 +622,7 @@ least one proposal).]"""
             AGAINST on 8312
             AGAINST on 8313
             endorse(Aspen) on 8314
-            AGAINST on 8315 comment conditional("No such proposal was submitted")
+            AGAINST on 8315 comment legacyConditionalComment("No such proposal was submitted")
             AGAINST on 8316
             endorse(Alexis) on 8317
             endorse(Aspen) on 8318

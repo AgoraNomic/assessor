@@ -560,7 +560,7 @@ to read
         }
 
         votes(Falsifian) {
-            PRESENT on 8349 comment conditional("Arbitor not AGAINST, and no Notice of Veto was published")
+            PRESENT on 8349 comment legacyConditionalComment("Arbitor not AGAINST, and no Notice of Veto was published")
             endorse(Alexis) on 8350
             endorse(Jason) on 8351
             endorse(G) on 8352
@@ -570,7 +570,7 @@ to read
         }
 
         votes(PSS) {
-            PRESENT on 8349 comment conditional("twg not FOR, but Assessor not AGAINST")
+            PRESENT on 8349 comment legacyConditionalComment("twg not FOR, but Assessor not AGAINST")
             FOR on 8350
             FOR on 8351
             FOR on 8352

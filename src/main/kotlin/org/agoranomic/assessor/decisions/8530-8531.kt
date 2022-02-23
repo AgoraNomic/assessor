@@ -128,7 +128,7 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
         }
 
         votes(Falsifian) {
-            FOR on 8530 comment conditional("Herald is FOR")
+            FOR on 8530 comment legacyConditionalComment("Herald is FOR")
             FOR on 8531
         }
 

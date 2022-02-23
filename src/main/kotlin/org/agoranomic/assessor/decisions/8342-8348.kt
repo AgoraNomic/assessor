@@ -246,13 +246,13 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         }
 
         votes(twg) {
-            PRESENT on 8342 comment conditional("Gaelan did not vote AGAINST")
+            PRESENT on 8342 comment legacyConditionalComment("Gaelan did not vote AGAINST")
             FOR on 8343
-            PRESENT on 8344 comment conditional("Alexis did not vote AGAINST")
+            PRESENT on 8344 comment legacyConditionalComment("Alexis did not vote AGAINST")
             endorse(Jason) on 8345
             endorse(Jason) on 8346
             endorse(Jason) on 8347
-            PRESENT on 8348 comment conditional("Gaelan did not vote AGAINST")
+            PRESENT on 8348 comment legacyConditionalComment("Gaelan did not vote AGAINST")
         }
 
         votes(Bernie) {
@@ -266,7 +266,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             endorse(Jason) on 8345
             endorse(Jason) on 8346
             endorse(Jason) on 8347
-            PRESENT on 8348 comment conditional("Gaelan did not vote AGAINST")
+            PRESENT on 8348 comment legacyConditionalComment("Gaelan did not vote AGAINST")
         }
 
         votes(Gaelan) {

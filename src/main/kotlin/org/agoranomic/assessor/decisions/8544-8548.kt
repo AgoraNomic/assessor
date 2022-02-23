@@ -328,9 +328,9 @@ Stone." works and grants the wielder coins.]"""
         votes(Jason) {
             function { ctx ->
                 if (ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted == FOR)
-                    ResolvedVote(FOR).commented(conditional("G. voted FOR"))
+                    ResolvedVote(FOR).commented(legacyConditionalComment("G. voted FOR"))
                 else
-                    ResolvedVote(AGAINST).commented(conditional("G. did not vote FOR"))
+                    ResolvedVote(AGAINST).commented(legacyConditionalComment("G. did not vote FOR"))
             } on 8544
             FOR on 8545
             FOR on 8546
