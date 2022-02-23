@@ -205,5 +205,15 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
             AGAINST on 8643
             AGAINST on 8644
         }
+
+        votes(G) {
+            AGAINST on 8638
+            FOR on 8639
+            AGAINST on 8640
+            FOR on 8641
+            AGAINST on 8642
+            FOR on 8643
+            FOR on 8644
+        }
     }
 }
