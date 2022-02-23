@@ -1,0 +1,41 @@
+PROPOSAL 8639 (sole quorum)
+AUTHOR: G.
+CLASS: DEMOCRATIC
+FOR (3): G., Jason, Secretsnail9
+AGAINST (0): 
+PRESENT (2): Murphy, ais523
+BALLOTS: 5
+AI (F/A): 9/0 (AI=3.0)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-February/015693.html
+
+ID: 8639
+Title: sole quorum
+Adoption index: 3.0
+Author: G.
+Co-authors: 
+
+
+Amend Rule 879 (Quorum) by changing its power to 3.
+
+[the basic definition of quorum should be power-3 along with the rest of
+voting, right?]
+
+
+Amend Rule 879 (Quorum) by replacing:
+  As an exception to the previous paragraph, the quorum of an
+  Agoran decision can never be less than 2. If the rules would
+  attempt to set the quorum of an Agoran decision to less than 2,
+  it is set to 2 instead.
+with:
+  As an exception to the previous paragraph, the minimum quorum of
+  an Agoran decision is 2, or 1 if there are fewer than 2 players in
+  the game. If the rules would attempt to set the quorum of an Agoran
+  decision to less than the minimum quorum, it is set to the minimum
+  instead.
+
+[If 1 person is the only player, that should be quorum.  Less than 1 is
+game-breaking trouble, so minimum=1 protects extra against the final
+deregistration]

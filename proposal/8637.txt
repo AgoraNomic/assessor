@@ -1,0 +1,52 @@
+PROPOSAL 8637 (Basic Scoring v0.2)
+AUTHOR: G.
+CLASS: ORDINARY
+FOR (4): G., Madrid!, Murphy, cuddlybanana
+AGAINST (1): Aspen
+PRESENT (3): Falsifian, Jason, ais523
+BALLOTS: 8
+AI (F/A): 10/3 (AI=1.0)
+POPULARITY: 0.375
+OUTCOME: ADOPTED
+[
+ais523: Conditional resolved: Proposal 8636 has been enacted
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-February/015651.html
+
+ID: 8637
+Title: Basic Scoring v0.2
+Adoption index: 1.0
+Author: G.
+Co-authors: Jason
+
+
+Create the following rule, "Scoring":
+
+  Each time a player fulfills a scoring condition, the officer
+  associated with the condition CAN once by announcement, and SHALL
+  in an officially timely fashion, add to that player's score the
+  associated amount of points.
+
+  Below is a list of scoring conditions and their associated points
+  and officers.
+
+    * Being the author of a sponsored proposal that takes effect:
+      1 + the power of the proposal when it takes effect (Assessor).
+
+    * Being the coauthor of a sponsored proposal that takes effect:
+      1 (Assessor).
+
+    * Having submitted an unconditional ballot AGAINST a referendum on
+      a sponsored proposal, provided that the ballot is valid at
+      the time the referendum is assessed, and provided that the outcome
+      of that assessment is ADOPTED:  points equal to the voting
+      player's voting strength on the referendum (Assessor).
+
+[note: using "1 + the power of the proposal when it takes effect" instead
+of "the AI of the proposal" because the AI is unlimited while power
+iscapped at 4 by R106].
+
+[v0.2 - specified "add" instead of "change".
+      - change in referendum wording suggested by Jason.
+]

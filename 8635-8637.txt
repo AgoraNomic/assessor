@@ -1,0 +1,129 @@
+RESOLUTION OF PROPOSALS 8635-8637
+=================================
+
+THIS IS AN AUTOMATICALLY GENERATED REPORT.
+SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.
+THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.
+
+The official historical report is located at https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-February/015651.html
+
+ID    Title               Result  
+----------------------------------
+8635  Outside assistance  REJECTED
+8636  Points              ADOPTED 
+8637  Basic Scoring v0.2  ADOPTED 
+
+I hereby resolve the Agoran decisions to adopt the below proposals.
+
+The quorum for all below decisions was 5.
+
+The following sponsored adopted proposals have the highest popularity (0.750): 8636 (by G.).
+
+VOTING STRENGTHS
+================
+
+Strength is 3 unless otherwise noted.
+!: player has voting strength 1
+@: player has voting strength 2
+
+PROPOSALS
+=========
+
+PROPOSAL 8635 (Outside assistance)
+AUTHOR: Murphy
+CLASS: DEMOCRATIC
+FOR (3): Madrid!, Murphy, cuddlybanana
+AGAINST (5): Aspen, Falsifian, G., Jason, ais523
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 7/15 (AI=4.0)
+POPULARITY: -0.250
+OUTCOME: REJECTED
+[
+Jason: Endorsement of ais523
+]
+
+PROPOSAL 8636 (Points)
+AUTHOR: G.
+CLASS: ORDINARY
+FOR (6): Aspen, G., Jason, Madrid!, Murphy, cuddlybanana
+AGAINST (0): 
+PRESENT (2): Falsifian, ais523
+BALLOTS: 8
+AI (F/A): 16/0 (AI=1.5)
+POPULARITY: 0.750
+OUTCOME: ADOPTED
+
+PROPOSAL 8637 (Basic Scoring v0.2)
+AUTHOR: G.
+CLASS: ORDINARY
+FOR (4): G., Madrid!, Murphy, cuddlybanana
+AGAINST (1): Aspen
+PRESENT (3): Falsifian, Jason, ais523
+BALLOTS: 8
+AI (F/A): 10/3 (AI=1.0)
+POPULARITY: 0.375
+OUTCOME: ADOPTED
+[
+ais523: Conditional resolved: Proposal 8636 has been enacted
+]
+
+The full text of each ADOPTED proposal is included below:
+
+//////////////////////////////////////////////////////////////////////
+ID: 8636
+Title: Points
+Adoption index: 1.5
+Author: G.
+Co-authors: 
+
+
+Create the following power=1.5 rule, Points:
+
+  A player's Score, indicated in Points, is an integer player switch
+  defaulting to 0, tracked by the Herald.
+
+  Upon a correct announcement from a player that one or more players
+  have a score of 100+ points, all players meeting this condition
+  win the game.  If a least one player wins the game via such an
+  announcement, all players' scores are set to their default.
+
+//////////////////////////////////////////////////////////////////////
+ID: 8637
+Title: Basic Scoring v0.2
+Adoption index: 1.0
+Author: G.
+Co-authors: Jason
+
+
+Create the following rule, "Scoring":
+
+  Each time a player fulfills a scoring condition, the officer
+  associated with the condition CAN once by announcement, and SHALL
+  in an officially timely fashion, add to that player's score the
+  associated amount of points.
+
+  Below is a list of scoring conditions and their associated points
+  and officers.
+
+    * Being the author of a sponsored proposal that takes effect:
+      1 + the power of the proposal when it takes effect (Assessor).
+
+    * Being the coauthor of a sponsored proposal that takes effect:
+      1 (Assessor).
+
+    * Having submitted an unconditional ballot AGAINST a referendum on
+      a sponsored proposal, provided that the ballot is valid at
+      the time the referendum is assessed, and provided that the outcome
+      of that assessment is ADOPTED:  points equal to the voting
+      player's voting strength on the referendum (Assessor).
+
+[note: using "1 + the power of the proposal when it takes effect" instead
+of "the AI of the proposal" because the AI is unlimited while power
+iscapped at 4 by R106].
+
+[v0.2 - specified "add" instead of "change".
+      - change in referendum wording suggested by Jason.
+]
+
+//////////////////////////////////////////////////////////////////////
