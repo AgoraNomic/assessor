@@ -169,7 +169,7 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
         votes(ais523) {
             FOR on 8638
             PRESENT on 8639
-            // TODO resolve conditional vote on 8640: AGAINST if it would pass regardless of vote, else PRESENT
+            PRESENT on 8640 comment conditional("8640 would not pass regardless of vote")
             AGAINST on 8641
             FOR on 8642
             FOR on 8643
