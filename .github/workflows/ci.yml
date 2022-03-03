@@ -64,11 +64,12 @@ jobs:
         run: |
           REPORTS_DIR=reports
           shopt -s nullglob
-          REPORTS=($REPORTS_DIR/*.txt)
-          IFS=$'\n'
-          REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
+          REPORTS=("$REPORTS_DIR"/*.txt)
+          IFS=$'\n' REPORTS=($(sort -n -r -t $'-' -k 1 <<<"${REPORTS[*]}"))
+          unset IFS
 
-          INDEX_FILE=$REPORTS_DIR/index.md
+          LATEST_REPORT_DEST="$REPORTS_DIR/latest.txt"
+          INDEX_FILE="$REPORTS_DIR/index.md"
           touch $INDEX_FILE
 
           echo "Reports: ${REPORTS[*]}"
@@ -82,6 +83,8 @@ jobs:
             REPORT_FILENAME=$(basename "$report")
             echo "* [$REPORT_FILENAME]($REPORT_FILENAME)" >> $INDEX_FILE;
           done;
+
+          cp -- "${REPORTS[0]}" "$LATEST_REPORT_DEST"
 
       - name: Upload reports artifacts
         uses: actions/upload-artifact@v2
