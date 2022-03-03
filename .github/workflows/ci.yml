@@ -24,12 +24,12 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assemble
+        run: ./gradlew assemble --no-daemon --no-watch-fs
       - name: Run the tests
-        run: ./gradlew check
+        run: ./gradlew check --no-daemon --no-watch-fs
 
       - name: Build application distribution
-        run: ./gradlew installDist
+        run: ./gradlew installDist --no-daemon --no-watch-fs
 
       - name: Upload application distribution
         uses: actions/upload-artifact@v2
