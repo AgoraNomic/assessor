@@ -1,0 +1,210 @@
+RESOLUTION OF PROPOSALS 8638-8644
+=================================
+
+THIS IS AN AUTOMATICALLY GENERATED REPORT.
+SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.
+THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.
+
+The official historical report is located at https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-February/015693.html
+
+ID    Title                    Result  
+---------------------------------------
+8638  Cyan Ribbon Patch        ADOPTED 
+8639  sole quorum              ADOPTED 
+8640  Minor ruleset edits      REJECTED
+8641  Degrees are for persons  REJECTED
+8642  Hot Potato patch v2      ADOPTED 
+8643  Firing Judge Dredd       ADOPTED 
+8644  Device repeal patch      ADOPTED 
+
+I hereby resolve the Agoran decisions to adopt the below proposals.
+
+The quorum for all below decisions was 5.
+
+The following sponsored adopted proposals have the highest popularity (1.000): 8638 (by Secretsnail9).
+
+VOTING STRENGTHS
+================
+
+Strength is 3 unless otherwise noted.
+!: player has voting strength 1
+@: player has voting strength 2
+
+PROPOSALS
+=========
+
+PROPOSAL 8638 (Cyan Ribbon Patch)
+AUTHOR: Secretsnail9
+CLASS: DEMOCRATIC
+FOR (5): G., Jason, Murphy, Secretsnail9, ais523
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 5
+AI (F/A): 15/0 (AI=3.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+
+PROPOSAL 8639 (sole quorum)
+AUTHOR: G.
+CLASS: DEMOCRATIC
+FOR (3): G., Jason, Secretsnail9
+AGAINST (0): 
+PRESENT (2): Murphy, ais523
+BALLOTS: 5
+AI (F/A): 9/0 (AI=3.0)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
+
+PROPOSAL 8640 (Minor ruleset edits)
+AUTHOR: R. Lee
+CLASS: ORDINARY
+FOR (0): 
+AGAINST (4): G., Jason, Murphy, Secretsnail9
+PRESENT (1): ais523
+BALLOTS: 5
+AI (F/A): 0/12 (AI=2.0)
+POPULARITY: -0.800
+OUTCOME: REJECTED
+[
+ais523: Conditional resolved: 8640 would not pass regardless of vote
+]
+
+PROPOSAL 8641 (Degrees are for persons)
+AUTHOR: Jason
+CLASS: ORDINARY
+FOR (3): G., Jason, Murphy
+AGAINST (2): Secretsnail9, ais523
+PRESENT (0): 
+BALLOTS: 5
+AI (F/A): 9/6 (AI=2.0)
+POPULARITY: 0.200
+OUTCOME: REJECTED
+
+PROPOSAL 8642 (Hot Potato patch v2)
+AUTHOR: Jason
+CLASS: ORDINARY
+FOR (4): Jason, Murphy, Secretsnail9, ais523
+AGAINST (1): G.
+PRESENT (0): 
+BALLOTS: 5
+AI (F/A): 12/3 (AI=2.0)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
+
+PROPOSAL 8643 (Firing Judge Dredd)
+AUTHOR: G.
+CLASS: ORDINARY
+FOR (4): G., Jason, Murphy, ais523
+AGAINST (1): Secretsnail9
+PRESENT (0): 
+BALLOTS: 5
+AI (F/A): 12/3 (AI=1.7)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
+
+PROPOSAL 8644 (Device repeal patch)
+AUTHOR: Jason
+CLASS: ORDINARY
+FOR (4): G., Jason, Murphy, ais523
+AGAINST (1): Secretsnail9
+PRESENT (0): 
+BALLOTS: 5
+AI (F/A): 12/3 (AI=1.0)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
+
+The full text of each ADOPTED proposal is included below:
+
+//////////////////////////////////////////////////////////////////////
+ID: 8638
+Title: Cyan Ribbon Patch
+Adoption index: 3.0
+Author: Secretsnail9
+Co-authors: 
+
+
+Amend Rule 2438 (Ribbons) by replacing "Cyan (C): When a person
+deputises for an office, that person earns a Cyan Ribbon" with
+"Cyan (C): When a person deputises for an office, and that person has not
+held or deputized for that office within the past 7 days, that person earns
+a Cyan Ribbon".
+
+[Fixes an issue which lets a player repeatedly deputize for an office and
+award emself up to 5 cyan glitter.]
+
+//////////////////////////////////////////////////////////////////////
+ID: 8639
+Title: sole quorum
+Adoption index: 3.0
+Author: G.
+Co-authors: 
+
+
+Amend Rule 879 (Quorum) by changing its power to 3.
+
+[the basic definition of quorum should be power-3 along with the rest of
+voting, right?]
+
+
+Amend Rule 879 (Quorum) by replacing:
+  As an exception to the previous paragraph, the quorum of an
+  Agoran decision can never be less than 2. If the rules would
+  attempt to set the quorum of an Agoran decision to less than 2,
+  it is set to 2 instead.
+with:
+  As an exception to the previous paragraph, the minimum quorum of
+  an Agoran decision is 2, or 1 if there are fewer than 2 players in
+  the game. If the rules would attempt to set the quorum of an Agoran
+  decision to less than the minimum quorum, it is set to the minimum
+  instead.
+
+[If 1 person is the only player, that should be quorum.  Less than 1 is
+game-breaking trouble, so minimum=1 protects extra against the final
+deregistration]
+
+//////////////////////////////////////////////////////////////////////
+ID: 8642
+Title: Hot Potato patch v2
+Adoption index: 2.0
+Author: Jason
+Co-authors: Oerjan
+
+
+Amend Rule 2645 (The Stones) by replacing "This stone cannot otherwise
+be transferred" with "If this stone is not owned by Agora, it cannot
+otherwise be transferred".
+
+[Allows transferring the Hot Potato stone from Agora in order to allow
+it to actually be auctioned off.]
+
+//////////////////////////////////////////////////////////////////////
+ID: 8643
+Title: Firing Judge Dredd
+Adoption index: 1.7
+Author: G.
+Co-authors: 
+
+
+Amend Rule 2478 (Vigilante Justice) by replacing:
+  The above notwithstanding, the investigator CANNOT resolve a
+  Finger Pointing for which e is the perp.
+with:
+  The above notwithstanding, the investigator CANNOT resolve a
+  Finger Pointing for which e is the perp or the finger-pointer.
+
+
+[if referee is vacant, someone could point a finger and deputise to
+resolve it in the same message - independence needed].
+
+//////////////////////////////////////////////////////////////////////
+ID: 8644
+Title: Device repeal patch
+Adoption index: 1.0
+Author: Jason
+Co-authors: ais523
+
+
+Amend Rule 2655 by replacing "repeal both that rule and this one" with
+"repeal that rule, then this one".
+
+//////////////////////////////////////////////////////////////////////
