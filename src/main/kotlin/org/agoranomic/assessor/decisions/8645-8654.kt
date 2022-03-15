@@ -520,5 +520,18 @@ with:
             AGAINST on 8653
             FOR on 8654
         }
+
+        votes(Jason) {
+            FOR on 8645
+            FOR on 8646
+            AGAINST on 8647
+            FOR on 8648
+            AGAINST on 8649
+            FOR on 8650
+            FOR on 8651
+            AGAINST on 8652
+            endorse(ais523) on 8653
+            FOR on 8654
+        }
     }
 }
