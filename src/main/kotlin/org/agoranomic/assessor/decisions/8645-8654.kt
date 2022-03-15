@@ -533,5 +533,18 @@ with:
             endorse(ais523) on 8653
             FOR on 8654
         }
+
+        votes(Trigon) {
+            FOR on 8645
+            FOR on 8646
+            FOR on 8647
+            FOR on 8648
+            PRESENT on 8649
+            FOR on 8650
+            PRESENT on 8651
+            FOR on 8652
+            FOR on 8653
+            FOR on 8654
+        }
     }
 }
