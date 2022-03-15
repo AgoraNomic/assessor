@@ -576,5 +576,18 @@ with:
         votes(Madrid) {
             FOR on all
         }
+
+        votes(G) {
+            FOR on 8645
+            FOR on 8646
+            AGAINST on 8647
+            FOR on 8648
+            AGAINST on 8649
+            AGAINST on 8650
+            FOR on 8651
+            AGAINST on 8652
+            AGAINST on 8653
+            FOR on 8654
+        }
     }
 }
