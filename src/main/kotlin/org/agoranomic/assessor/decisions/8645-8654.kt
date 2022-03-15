@@ -580,7 +580,7 @@ with:
         votes(G) {
             FOR on 8645
             FOR on 8646
-            AGAINST on 8647
+            FOR on 8647
             FOR on 8648
             AGAINST on 8649
             AGAINST on 8650
