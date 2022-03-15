@@ -602,5 +602,18 @@ with:
             FOR on 8653
             AGAINST on 8654
         }
+
+        votes(Secretsnail9) {
+            AGAINST on 8645
+            AGAINST on 8646
+            FOR on 8647
+            FOR on 8648
+            AGAINST on 8649
+            AGAINST on 8650
+            AGAINST on 8651
+            FOR on 8652
+            AGAINST on 8653
+            // NO VOTE on 8654
+        }
     }
 }
