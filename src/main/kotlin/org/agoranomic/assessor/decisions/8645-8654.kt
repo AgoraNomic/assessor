@@ -572,5 +572,9 @@ with:
             FOR on 8653
             FOR on 8654
         }
+
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
