@@ -589,5 +589,18 @@ with:
             AGAINST on 8653
             FOR on 8654
         }
+
+        votes(Aspen) {
+            endorse(Jason) on 8645 comment "Jason is the Rulekeepor"
+            endorse(G) on 8646
+            AGAINST on 8647
+            FOR on 8648
+            endorse(ais523) on 8649
+            FOR on 8650
+            FOR on 8651
+            AGAINST on 8652
+            FOR on 8653
+            AGAINST on 8654
+        }
     }
 }
