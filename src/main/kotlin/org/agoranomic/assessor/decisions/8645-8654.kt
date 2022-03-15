@@ -559,5 +559,18 @@ with:
             FOR on 8653
             FOR on 8654
         }
+
+        votes(Murphy) {
+            FOR on 8645
+            FOR on 8646
+            FOR on 8647
+            FOR on 8648
+            FOR on 8649
+            FOR on 8650
+            FOR on 8651
+            FOR on 8652
+            FOR on 8653
+            FOR on 8654
+        }
     }
 }
