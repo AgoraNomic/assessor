@@ -4,11 +4,33 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.votives
 
 @UseAssessment
 fun assessment8645to8654() = assessment {
     name("8645-8654")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        blotPenalty(Madrid, 7 / 3)
+        blotPenalty(Trigon, 4 / 3)
+        blotPenalty(nix, 4 / 3)
+        blotPenalty(cuddlybanana, 3 / 3)
+
+        onOrdinaryProposals {
+            powerStone(Jason, 3)
+            powerStone(Jason, 3)
+            votives(Secretsnail9, 10)
+            votives(Jason, 6)
+        }
+    }
 
     proposals(v4) {
         proposal(8645) {
@@ -485,5 +507,8 @@ with:
   in a Warning, Indictment, or Cold Hand of Justice, CAN once
   grant emself a Justice Card by announcement.""")
         }
+    }
+
+    voting {
     }
 }
