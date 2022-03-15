@@ -17,6 +17,7 @@ import org.randomcat.util.ceil
 import org.randomcat.util.compareTo
 import java.math.BigDecimal
 import java.math.BigInteger
+import java.math.RoundingMode
 
 typealias RawProposalUnroundedReward = BigDecimal
 
@@ -139,16 +140,12 @@ private fun ProposalRewardData.authorRewards(proposalNumber: ProposalNumber): Li
             "$unroundedReward -> $roundedReward"
 
     // Fractional points cannot be awarded
-    val effectivePowerInt = minOf(proposalAI.raw, BigDecimal.valueOf(4)).tryToBigIntegerExact()
+    val effectivePowerInt =
+        minOf(proposalAI.raw, BigDecimal.valueOf(4)).setScale(0, RoundingMode.FLOOR).toBigIntegerExact()
 
     return buildList {
         add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
-
-        if (effectivePowerInt != null) {
-            add("For the adoption of Proposal $proposalNumber, I grant ${author.name} ${effectivePowerInt + BigInteger.ONE} points (author).")
-        } else {
-            add("For the adoption of Proposal $proposalNumber, ${author.name} CANNOT be granted points due to non-integral effective power (author).")
-        }
+        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} ${effectivePowerInt + BigInteger.ONE} points (author).")
     }
 }
 
