@@ -4,10 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.dsl.votes.votives
+import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8645to8654() = assessment {
@@ -510,5 +508,17 @@ with:
     }
 
     voting {
+        votes(nix) {
+            FOR on 8645
+            PRESENT on 8646
+            endorse(Secretsnail9) on 8647
+            FOR on 8648
+            FOR on 8649
+            AGAINST on 8650
+            endorse(G) on 8651
+            endorse(Secretsnail9) on 8652
+            AGAINST on 8653
+            FOR on 8654
+        }
     }
 }
