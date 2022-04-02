@@ -1,0 +1,55 @@
+PROPOSAL 8652 (Geometry v3)
+AUTHOR: Secretsnail9
+CLASS: ORDINARY
+FOR (5): Madrid!, Murphy, Secretsnail9<, Trigon@, nix@
+AGAINST (4): Aspen, G., Jason-, ais523
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 21/24 (AI=1.0)
+POPULARITY: 0.111
+OUTCOME: REJECTED
+[
+nix: Endorsement of Secretsnail9
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-March/015752.html
+
+ID: 8652
+Title: Geometry v3
+Adoption index: 1.0
+Author: Secretsnail9
+Co-authors: Jason
+
+
+Create a rule with title "Geometry" and text:
+{
+  The Geometor is an office. The Geometor is the recordkeepor for polygons
+  and polyhedra.
+
+  Polygons are a class of asset. Polygons have a corresponding positive
+  integer type. For each integer N >= 3, polygons of type N are a currency.
+  A player CAN grant emself a polygon of type N by specifying a valid type
+  (N) and paying a fee of N^2 boatloads of coins, where N >= 3 and N is an
+  integer.
+
+  At the beginning of each month, each player is granted a polygon of type 3.
+
+  A player CAN once per week conglomerate polygons by announcement,
+  specifying 2 polygons e owns. When a player conglomerates polygons, a
+  new polygon is created in eir possession with type equal to (the sum
+  of the two specified polygons' types) minus one, and then the two
+  specified polygons are destroyed.
+
+  The Geometer CAN and SHALL once, by announcement and in a timely fashion
+  from the end of the month, increase the score of the player(s) who owned
+  a polygon with the largest type among all existing polygons at the end of
+  the month by a number of points equal to that type.
+
+  A player can, with support, propagate a specified polygon they do not own
+  by paying a fee of 1 polygon they own. A propagated polygon is destroyed,
+  causing Agora to be granted a polyhedron with the destroyed polygon's type.
+
+  Polyhedra are an indestructible asset with a positive integer type that
+  can only be owned by Agora. All polyhedra not owned by agora are
+  immediately transferred to Agora.
+}

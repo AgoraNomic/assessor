@@ -1,0 +1,85 @@
+PROPOSAL 8651 (Temporal Incursion Modification and Exclusion Act)
+AUTHOR: Jason
+CLASS: DEMOCRATIC
+FOR (7): Aspen, G., Jason, Madrid!, Murphy, ais523, nix@
+AGAINST (1): Secretsnail9
+PRESENT (1): Trigon@
+BALLOTS: 9
+AI (F/A): 18/3 (AI=3.0)
+POPULARITY: 0.667
+OUTCOME: ADOPTED
+[
+nix: Endorsement of G.
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-March/015752.html
+
+ID: 8651
+Title: Temporal Incursion Modification and Exclusion Act
+Adoption index: 3.0
+Author: Jason
+Co-authors: Aspen, Oerjan
+
+
+Amend Rule 1551 (Ratification) to read, in whole:
+
+{
+
+  A retroactive change is one that changes the game's record of past
+  events. Retroactive changes are secured with power threshold 3.
+
+  When a document or statement (hereafter "document") is to be ratified,
+  the following definitions apply:
+  * The publication time is the instant at which the document to be
+    ratified was published.
+  * The truth time is the instant at which the document specifies that it
+    was true, or the publication time if such an instant is not specified.
+  * The application time is the instant at which the document to be
+    ratified is ratified.
+
+  Ratification CANNOT occur if the truth time would be after the
+  application time, or if the publication time would be after the
+  application time.
+
+  Rules to the contrary notwithstanding, when a document is ratified, the
+  gamestate is modified to what it would be if, at the truth time, the
+  gamestate had been minimally modified to make the ratified document as
+  true and accurate as possible.
+
+  Ratification CANNOT occur if it would add inconsistencies between the
+  gamestate and the rules.
+
+  Ratification CANNOT occur if the required modification to the gamestate
+  is not possible or if multiple substantially distinct possible
+  modifications would be equally appropriate.
+
+  If the minimal modification would include past or present rule changes,
+  they are instead excluded unless the ratified document explicitly and
+  unambiguously recites either the changes or the resulting properties of
+  the rule(s).
+
+  An internally inconsistent document generally CANNOT be ratified;
+  however, if such a document can be divided into a summary section and a
+  main section, where the only purpose of the summary section is to
+  summarize information in the main section, and the main section is
+  internally consistent, ratification of the document proceeds as if it
+  contained only the main section.
+
+  Text purportedly about previous instances of ratification (e.g. a
+  report's date of last ratification) is excluded from ratification. The
+  rules may define additional information that is considered to be part of
+  the document for the purposes of ratification; such definitions are
+  secured with power threshold 3.
+
+  Ratification is secured with power threshold 3.
+
+}
+
+
+[This is mostly intended to be a clarification; it shouldn't change how
+ratification is supposed to work, except that it explicitly excludes
+silent rule changes from the modification (it's currently ambiguous
+whether they're excluded or make the whole ratification fail). This also
+secures all retroactive changes, where retroactive changes are defined
+as altering the game's record of the past. This mirrors the way that
+Falsifian found ratification works in eir law thesis.]
