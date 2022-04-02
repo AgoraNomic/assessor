@@ -1,0 +1,52 @@
+package org.agoranomic.assessor.decisions
+
+import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.coauthors
+import org.agoranomic.assessor.dsl.receivers.quorum
+
+@UseAssessment
+fun assessment8655to8656() = assessment {
+    name("8655-8656")
+    quorum(5)
+
+    proposals(v4) {
+        proposal(8655) {
+            title("Restricted Petitions")
+            ai("1.0")
+            author(Jason)
+            coauthors(nix)
+            ordinary()
+            sponsored()
+
+            text("""
+Amend Rule 2143 by replacing the final paragraph with the following
+paragraph:
+
+{
+
+  A player CAN, by announcement, petition a specified non-vacant office to
+  take a specific action. The holder of that office SHALL publicly respond
+  to that petition in a timely fashion.
+
+}
+
+
+[Amend away all possible ambiguity about whether petitioning vacant
+offices works, and ensure that the duty moves with the office, rather
+than attaching to a specific person.]""")
+        }
+
+        proposal(8656) {
+            title("Mathematical de-notation")
+            ai("1.0")
+            author(Jason)
+            ordinary()
+            sponsored()
+
+            text("""
+Amend Rule 2657 by replacing "the floor of the associated amount of
+points" with "the associated amount of points, rounded down".""")
+        }
+    }
+}
