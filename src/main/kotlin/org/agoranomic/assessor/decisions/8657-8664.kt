@@ -594,7 +594,14 @@ Amend Rule 2657 (Scoring) by deleting the text:
 
     voting {
         votes(juan) {
-            // TODO: resolve conditional vote on all: FOR if simple strict majority of all votes resolve to FOR, else present
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8657
+            resolvedConditional(PRESENT, "A majority of other votes were not FOR") on 8658
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8659
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8660
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8661
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8662
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8663
+            resolvedConditional(FOR, "A majority of other votes were FOR") on 8664
         }
 
         votes(nix) {
