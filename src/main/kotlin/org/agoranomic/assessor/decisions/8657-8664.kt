@@ -590,4 +590,8 @@ Amend Rule 2657 (Scoring) by deleting the text:
 }""")
         }
     }
+
+    voting {
+
+    }
 }
