@@ -602,7 +602,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
             FOR on 8657
             FOR on 8658
             FOR on 8659
-            FOR on 8660
+            PRESENT on 8660
             FOR on 8661
             FOR on 8662
             AGAINST on 8663
