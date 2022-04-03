@@ -4,11 +4,10 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment8657to8664() = assessment {
@@ -662,6 +661,28 @@ Amend Rule 2657 (Scoring) by deleting the text:
             PRESENT on 8662
             AGAINST on 8663
             PRESENT on 8664
+        }
+
+        votes(ais523) {
+            FOR on 8657
+
+            function { ctx ->
+                if (
+                    ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted == FOR &&
+                    ctx.resolve(ctx.currentProposal, Murphy)?.finalResolution(ctx)?.voteIfVoted == FOR
+                ) {
+                    resolvedConditional(FOR, "G. and Murphy both voted FOR")
+                } else {
+                    resolvedConditional(AGAINST, "G. and Murphy did not both vote FOR")
+                }
+            } on 8658
+
+            PRESENT on 8659
+            AGAINST on 8660
+            PRESENT on 8661
+            FOR on 8662
+            AGAINST on 8663
+            FOR on 8664
         }
     }
 }
