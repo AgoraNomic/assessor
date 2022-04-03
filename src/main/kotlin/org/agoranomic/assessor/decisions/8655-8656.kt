@@ -65,4 +65,7 @@ Amend Rule 2657 by replacing "the floor of the associated amount of
 points" with "the associated amount of points, rounded down".""")
         }
     }
+
+    voting {
+    }
 }
