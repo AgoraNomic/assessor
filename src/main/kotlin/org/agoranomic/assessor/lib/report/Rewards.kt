@@ -2,14 +2,12 @@ package org.agoranomic.assessor.lib.report
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
-import org.agoranomic.assessor.dsl.votes.CONDITIONAL_VOTE_TAG
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
-import org.agoranomic.assessor.lib.vote.machineIfPresent
 import org.agoranomic.assessor.lib.vote.votersAgainst
 import org.agoranomic.assessor.lib.vote.votersFor
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
@@ -158,22 +156,6 @@ private fun ProposalRewardData.coauthorRewards(proposalNumber: ProposalNumber): 
     }
 }
 
-private fun BigDecimal.tryToBigIntegerExact(): BigInteger? {
-    return this.toBigInteger().takeIf { it.toBigDecimal().compareTo(this) == 0 }
-}
-
-private fun ProposalRewardData.opposingVoterRewards(proposalNumber: ProposalNumber): List<String> {
-    if (result != ProposalResult.ADOPTED) return emptyList()
-
-    val unconditionalAgainstVoters = resolvedVotes.votersAgainst().filter {
-        resolvedVotes.voteDescriptionsFor(it).none { it.machineIfPresent?.kind == CONDITIONAL_VOTE_TAG }
-    }
-
-    return unconditionalAgainstVoters.map {
-        "For the adoption of Proposal $proposalNumber, I grant ${it.name} ${votingStrengths.finalStrengthForPerson(it)} points (against vote)."
-    }
-}
-
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
     return rewardsMap
         .proposals
@@ -183,7 +165,6 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
             listOf(
                 rewardData.authorRewards(proposal),
                 rewardData.coauthorRewards(proposal),
-                rewardData.opposingVoterRewards(proposal),
             )
         }
         .flatten()
