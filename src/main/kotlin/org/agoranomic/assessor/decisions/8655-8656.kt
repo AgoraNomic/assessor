@@ -90,5 +90,9 @@ points" with "the associated amount of points, rounded down".""")
         votes(Trigon) {
             FOR on all
         }
+
+        votes(nix) {
+            // TODO: resolve conditional vote on all: "unconditional" AGAINST if any unconditional AGAINST votes, else FOR
+        }
     }
 }
