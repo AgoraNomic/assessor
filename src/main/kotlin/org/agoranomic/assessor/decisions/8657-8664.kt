@@ -630,5 +630,16 @@ Amend Rule 2657 (Scoring) by deleting the text:
             AGAINST on 8663
             FOR on 8664
         }
+
+        votes(Secretsnail9) {
+            endorse(Murphy) on 8657
+            endorse(Aspen) on 8658
+            endorse(nix) on 8659
+            endorse(nix) on 8660
+            endorse(nix) on 8661
+            FOR on 8662
+            AGAINST on 8663
+            FOR on 8664
+        }
     }
 }
