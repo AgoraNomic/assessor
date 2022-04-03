@@ -592,6 +592,8 @@ Amend Rule 2657 (Scoring) by deleting the text:
     }
 
     voting {
-
+        votes(juan) {
+            // TODO: resolve conditional vote on all: FOR if simple strict majority of all votes resolve to FOR, else present
+        }
     }
 }
