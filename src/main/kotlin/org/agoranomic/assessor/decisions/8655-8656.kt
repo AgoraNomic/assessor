@@ -86,5 +86,9 @@ points" with "the associated amount of points, rounded down".""")
         votes(juan) {
             FOR on all
         }
+
+        votes(Trigon) {
+            FOR on all
+        }
     }
 }
