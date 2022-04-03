@@ -82,5 +82,9 @@ points" with "the associated amount of points, rounded down".""")
             AGAINST on 8655
             AGAINST on 8656
         }
+
+        votes(juan) {
+            FOR on all
+        }
     }
 }
