@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -92,7 +93,7 @@ points" with "the associated amount of points, rounded down".""")
         }
 
         votes(nix) {
-            // TODO: resolve conditional vote on all: AGAINST if any unconditional AGAINST votes, else FOR
+            resolvedConditional(AGAINST, "An unconditional AGAINST vote was cast") on all
         }
 
         votes(ais523) {
