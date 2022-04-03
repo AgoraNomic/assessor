@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8657to8664() = assessment {
@@ -608,6 +607,17 @@ Amend Rule 2657 (Scoring) by deleting the text:
             FOR on 8662
             AGAINST on 8663
             endorse(Secretsnail9) on 8664
+        }
+
+        votes(G) {
+            AGAINST on 8657
+            AGAINST on 8658
+            FOR on 8659
+            AGAINST on 8660
+            FOR on 8661
+            PRESENT on 8662
+            AGAINST on 8663
+            AGAINST on 8664
         }
     }
 }
