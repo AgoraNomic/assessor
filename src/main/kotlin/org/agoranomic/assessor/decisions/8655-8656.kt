@@ -92,7 +92,7 @@ points" with "the associated amount of points, rounded down".""")
         }
 
         votes(nix) {
-            // TODO: resolve conditional vote on all: "unconditional" AGAINST if any unconditional AGAINST votes, else FOR
+            // TODO: resolve conditional vote on all: AGAINST if any unconditional AGAINST votes, else FOR
         }
 
         votes(ais523) {
