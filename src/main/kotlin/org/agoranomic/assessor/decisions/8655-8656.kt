@@ -71,5 +71,10 @@ points" with "the associated amount of points, rounded down".""")
         votes(Jason) {
             FOR on all
         }
+
+        votes(Murphy) {
+            FOR on 8655
+            FOR on 8656
+        }
     }
 }
