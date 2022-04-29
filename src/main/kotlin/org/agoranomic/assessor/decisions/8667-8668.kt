@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -86,7 +87,11 @@ Repeal Rule 2617 (Defense Against the Dark Arts).""")
 
         votes(G) {
             FOR on 8667
-            // TODO resolve conditional vote on 8668: PRESENT if proposal to amend R2617 submitted, else AGAINST
+
+            resolvedConditional(
+                FOR,
+                "No proposal that would amend R2617 has been submitted since the ballot was cost",
+            ) on 8668
         }
     }
 }
