@@ -1,0 +1,540 @@
+{
+    "metadata": {
+        "name": "8665-8666",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-April/015898.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8665,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Promise Expirations 1.1",
+            "author": "nix",
+            "coauthors": [
+                "Jason",
+                "ais523"
+            ],
+            "text": "Amend 2618 by replacing:\n\n  The Library is an entity and CAN own promises. Any player CAN take\n  a specified promise from the Library by announcement, provided e\n  cashes the promise in the same message. The creator of a promise\n  CAN take or revoke it from the Library by announcement, unless the\n  promise's text unambiguously designates it as irrevocable. Any\n  player CAN revoke a specified promise from the Library without\n  objection.\n\nwith:\n\n  The Library is an entity and CAN own promises. Any player CAN take\n  a specified promise from the Library by announcement, provided e\n  cashes the promise in the same message.\n\n  The creator of a promise CAN take or revoke it from the Library by\n  announcement, unless the promise's text unambiguously designates\n  it as irrevocable. Any player CAN revoke a specified promise from\n  the Library without objection. If a promise specifies expiration\n  conditions then any player CAN by announcement destroy it while\n  the expiration conditions are unambiguously met."
+        },
+        {
+            "version": "4",
+            "number": 8666,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "The Secretarybird",
+            "author": "Secretsnail9",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "Amend Rule 2665 (The Birds) by appending the list item:\n{\n\n  - Secretarybird: The playmate gains 1 stamp with the type of a\n    specified active player.\n\n}"
+        }
+    ],
+    "quorum": 5,
+    "resolutions": [
+        {
+            "proposal": 8665,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 22,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Aspen",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Trigon",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                },
+                {
+                    "person": "cuddlybanana",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                }
+            ]
+        },
+        {
+            "proposal": 8666,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 9,
+                "votes": [
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Aspen",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of G."
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Trigon",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 2 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 1
+                        }
+                    ],
+                    "final": 1
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                },
+                {
+                    "person": "cuddlybanana",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                },
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                }
+            ]
+        }
+    ]
+}
