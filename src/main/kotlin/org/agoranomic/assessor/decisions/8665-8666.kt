@@ -117,5 +117,10 @@ Amend Rule 2665 (The Birds) by appending the list item:
             FOR on 8665
             endorse(G) on 8666
         }
+
+        votes(juan) {
+            FOR on 8665
+            AGAINST on 8666
+        }
     }
 }
