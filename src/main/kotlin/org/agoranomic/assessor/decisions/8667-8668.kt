@@ -83,5 +83,10 @@ Repeal Rule 2617 (Defense Against the Dark Arts).""")
             FOR on 8667
             AGAINST on 8668
         }
+
+        votes(G) {
+            FOR on 8667
+            // TODO resolve conditional vote on 8668: PRESENT if proposal to amend R2617 submitted, else AGAINST
+        }
     }
 }
