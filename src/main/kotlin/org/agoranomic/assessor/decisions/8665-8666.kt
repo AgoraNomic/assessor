@@ -80,4 +80,7 @@ Amend Rule 2665 (The Birds) by appending the list item:
 }""")
         }
     }
+
+    voting {
+    }
 }
