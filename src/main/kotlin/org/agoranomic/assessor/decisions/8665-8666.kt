@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8665to8666() = assessment {
@@ -86,6 +87,11 @@ Amend Rule 2665 (The Birds) by appending the list item:
         votes(Murphy) {
             FOR on 8665
             FOR on 8666
+        }
+
+        votes(Jason) {
+            FOR on 8665
+            PRESENT on 8666
         }
     }
 }
