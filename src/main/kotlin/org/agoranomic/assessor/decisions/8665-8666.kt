@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8665to8666() = assessment {
@@ -110,7 +109,13 @@ Amend Rule 2665 (The Birds) by appending the list item:
         }
 
         votes(G) {
-            FOR on all
+            AGAINST on 8666
+            FOR on others
+        }
+
+        votes(Aspen) {
+            FOR on 8665
+            endorse(G) on 8666
         }
     }
 }
