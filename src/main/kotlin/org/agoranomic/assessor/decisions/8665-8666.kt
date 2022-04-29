@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -102,6 +103,10 @@ Amend Rule 2665 (The Birds) by appending the list item:
         votes(Secretsnail9) {
             FOR on 8665
             FOR on 8666
+        }
+
+        votes(nix) {
+            endorse(Jason) on all
         }
     }
 }
