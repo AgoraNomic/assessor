@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8667to8668() = assessment {
@@ -55,5 +56,8 @@ Repeal Rule 2617 (Defense Against the Dark Arts).""")
     }
 
     voting {
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
