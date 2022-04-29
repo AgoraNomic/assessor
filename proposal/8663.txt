@@ -1,0 +1,131 @@
+PROPOSAL 8663 (The Hexeract)
+AUTHOR: Secretsnail9
+CLASS: ORDINARY
+FOR (0): 
+AGAINST (7): Aspen, G., Jason*, Murphy, Secretsnail9@, ais523, nix@
+PRESENT (1): juan
+BALLOTS: 8
+AI (F/A): 0/24 (AI=1.0)
+POPULARITY: -0.875
+OUTCOME: REJECTED
+[
+Murphy: Endorsement of Secretsnail9
+juan: Conditional resolved: A majority of other votes were not FOR
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-April/015802.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-April/015806.html
+
+ID: 8663
+Title: The Hexeract
+Adoption index: 1.0
+Author: Secretsnail9
+Co-authors: 
+
+
+Create a rule with title "Grids" and the following text:
+{
+
+  A grid has D dimensions, where D is a positive integer, and where its 1st
+  through Dth dimensions are defined in the rules. Each finite dimension has
+  a width of W, where W is a positive integer. A dimension is either wrapping
+  (syn. wrapped) or not wrapping (default). A dimension is either infinite or
+  finite (default).
+
+  A location on a grid is a vector with D dimensions, where D is the number
+  of dimensions the grid has, with each dimension having a value as an entry,
+  whose Dth entry is a non-negative integer less than the Dth dimension's
+  width if the Dth dimension is neither infinite nor wrapping. All entries
+  for a given wrapping dimension are equal modulo that dimension's width. For
+  example, in a grid 2 Dimensions of widths 2 then 3, [1,2] would be a valid
+  location and [2,1] would not be.
+
+  A grid has a space for each location on that grid, and that space has that
+  location as a location.
+
+  A space has a location. A space (A) is adjacent to another space in the
+  same grid (B) if you could add 1 or subtract 1 from a single entry in B's
+  location to get A's location. For example, on a grid with 2 dimensions of
+  widths 2 then 3, [1,2] would be adjacent to [1,0] if the grid was wrapping,
+  and not adjacent if it is not wrapping.)
+
+}
+
+Create a rule with title "The Hexeract" and the following text:
+{
+
+  The Hexeract is a grid with 6 dimensions. The 1st-6th dimensions all have a
+  width of 3.
+
+  Each space on The Hexeract has a list of persons that own a fence on it,
+  which is initially empty. A person "owns a fence on" a space if e is in the
+  list of persons that own a fence on that space. A space on The Hexeract can
+  be referred to by its location.
+
+  PlayerSpace is a secured Player switch tracked by the Hexor with possible
+  values from the set on all spaces on The Hexeract, defaulting to
+  [1,1,1,1,1,1]. For a player to move to a space is to change eir PlayerSpace
+  value to that space. A player is on a space if their PlayerSpace value is
+  that space.
+
+  Fencehops, Fences, and Movies are each a currency, tracked by the Hexor.
+
+  Whenever a payday occurs, each active player gains 1 Fencehop, 1 Fence, and
+  1 Movie.
+
+  A player CAN once a month grant 1 Fencehop, 1 Fence, or 1 Movie to
+  specified player by announcement.
+
+  A player CAN, if e has not already done any of the below this week:
+
+     * move to a specified non-fenced space adjacent to the one e is on by
+       announcement.
+
+     * move to a specified fenced space adjacent to the one e is on by
+       announcement, provided e owns a fence on that space.
+
+     * move to a specified fenced space adjacent to the one e is on without
+       objection from any Player who owns a fence on that space.
+
+     * move to a specified fenced space adjacent to the one e is on by paying
+       a fee of 1 Fencehop.
+
+     * move to a specified fenced space e owns a fence on by paying a fee of
+       3 Fencehops.
+
+  A player CAN Build a Fence by paying a fee of 1 Fence, provided e doesn't
+  already own a fence on the space e is on. When e does so, e is added to the
+  list of players who own a fence on that space.
+
+  A player CAN Build a Huge Fence by paying a fee of 5 Fences. When e does
+  so, e is added to the list of players who own a fence on each space
+  adjacent to the one e is on.
+
+  A player CAN move to a specified non-fenced space adjacent to the one e is
+  on by paying a fee of 1 Movie.
+
+  A player CAN swap the locations of two specified spaces by paying a fee of
+  5 Movies.
+
+  A mountain has a name, defaulting to the location of the space it is on.
+  Each space on The Hexeract with the form [A,B,C,D,E,F], where A, B, C, D,
+  E, and F are each either 0 or 2 (the 64 corners of the grid) starts out
+  with a mountain on it when created.
+
+  Vertokens are an indestructible fixed asset tracked by the Hexor, with a
+  specific mountain as a type. There is a distinct type for each mountain
+  that currently exists on a space on The Hexeract.
+
+  A player CAN Climb by announcement, provided e is on a space with a
+  mountain on it. When e does so, e gains a Vertoken with that mountain as a
+  type, unless e already owns one with that type. When a player Climbs, e can
+  optionally specify a name for the mountain. If e does so, the mountain on
+  the space e is on is renamed to the specified name.
+
+  If a player has exactly 64 Vertokens, e CAN See the Truth by announcement,
+  specifying a set of no more than 3 players, provided no person has won the
+  game by doing so in the past 30 days. When e does so, the specified players
+  win the game. Four days after such a win occurs, all Fencehops, Fences,
+  Movies, and Vertokens are destroyed, all spaces are destroyed and replaced
+  with new spaces, and all Players move to [1,1,1,1,1,1].
+
+}
