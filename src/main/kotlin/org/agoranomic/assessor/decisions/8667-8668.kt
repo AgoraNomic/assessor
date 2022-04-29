@@ -53,4 +53,7 @@ with:
 Repeal Rule 2617 (Defense Against the Dark Arts).""")
         }
     }
+
+    voting {
+    }
 }
