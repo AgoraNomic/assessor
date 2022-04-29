@@ -93,5 +93,10 @@ Amend Rule 2665 (The Birds) by appending the list item:
             FOR on 8665
             PRESENT on 8666
         }
+
+        votes(ais523) {
+            FOR on 8665
+            FOR on 8666
+        }
     }
 }
