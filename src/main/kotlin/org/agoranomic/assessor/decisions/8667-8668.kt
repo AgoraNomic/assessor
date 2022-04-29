@@ -59,5 +59,10 @@ Repeal Rule 2617 (Defense Against the Dark Arts).""")
         votes(Madrid) {
             FOR on all
         }
+
+        votes(Jason) {
+            FOR on 8667
+            FOR on 8668
+        }
     }
 }
