@@ -108,5 +108,9 @@ Amend Rule 2665 (The Birds) by appending the list item:
         votes(nix) {
             endorse(Jason) on all
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
