@@ -125,5 +125,9 @@ Finger".""")
             FOR on 8670
             PRESENT on 8671
         }
+
+        votes(nix) {
+            FOR on all
+        }
     }
 }
