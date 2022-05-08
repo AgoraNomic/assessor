@@ -119,5 +119,11 @@ Finger".""")
             PRESENT on 8670
             FOR on 8671
         }
+
+        votes(Murphy) {
+            FOR on 8669
+            FOR on 8670
+            PRESENT on 8671
+        }
     }
 }
