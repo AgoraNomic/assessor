@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8669to8671() = assessment {
@@ -109,6 +108,10 @@ Finger".""")
             PRESENT on 8669
             PRESENT on 8670
             AGAINST on 8671
+        }
+
+        votes(G) {
+            FOR on all
         }
     }
 }
