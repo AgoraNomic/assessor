@@ -101,4 +101,7 @@ Finger" with "A player, acting as emself, CAN by announcement Point eir
 Finger".""")
         }
     }
+
+    voting {
+    }
 }
