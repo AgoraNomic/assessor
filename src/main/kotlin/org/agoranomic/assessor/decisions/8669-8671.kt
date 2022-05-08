@@ -129,5 +129,9 @@ Finger".""")
         votes(nix) {
             FOR on all
         }
+
+        votes(Secretsnail9) {
+            FOR on all
+        }
     }
 }
