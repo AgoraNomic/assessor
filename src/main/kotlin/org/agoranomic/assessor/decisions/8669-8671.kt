@@ -113,5 +113,11 @@ Finger".""")
         votes(G) {
             FOR on all
         }
+
+        votes(Jason) {
+            FOR on 8669
+            PRESENT on 8670
+            FOR on 8671
+        }
     }
 }
