@@ -92,5 +92,11 @@ with:
         votes(ais523) {
             PRESENT on all
         }
+
+        votes(G) {
+            AGAINST on 8672
+            FOR on 8673
+            FOR on 8674
+        }
     }
 }
