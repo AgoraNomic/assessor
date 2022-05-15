@@ -4,8 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8672to8674() = assessment {
@@ -88,6 +87,10 @@ with:
             FOR on 8672
             AGAINST on 8673
             FOR on 8674
+        }
+
+        votes(ais523) {
+            PRESENT on all
         }
     }
 }
