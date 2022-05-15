@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 
 @UseAssessment
 fun assessment8672to8674() = assessment {
@@ -76,5 +77,10 @@ with:
     }
 
     voting {
+        votes(juan) {
+            AGAINST on 8672
+            AGAINST on 8673
+            AGAINST on 8674
+        }
     }
 }
