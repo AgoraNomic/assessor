@@ -98,5 +98,9 @@ with:
             FOR on 8673
             FOR on 8674
         }
+
+        votes(Murphy) {
+            FOR on all
+        }
     }
 }
