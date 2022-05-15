@@ -74,4 +74,7 @@ with:
         * 1 Stamp of eir own type""")
         }
     }
+
+    voting {
+    }
 }
