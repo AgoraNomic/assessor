@@ -69,4 +69,7 @@ Create the following power=1 rule, titled Buyout:
      this rule is repealed.""")
         }
     }
+
+    voting {
+    }
 }
