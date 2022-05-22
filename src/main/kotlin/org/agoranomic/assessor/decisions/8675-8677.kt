@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8675to8677() = assessment {
@@ -71,5 +73,10 @@ Create the following power=1 rule, titled Buyout:
     }
 
     voting {
+        votes(ais523) {
+            AGAINST on 8675
+            FOR on 8676
+            AGAINST on 8677
+        }
     }
 }
