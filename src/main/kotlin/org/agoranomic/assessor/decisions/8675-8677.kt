@@ -90,5 +90,11 @@ Create the following power=1 rule, titled Buyout:
             PRESENT on 8676
             endorse(ais523) on 8677
         }
+
+        votes(G) {
+            AGAINST on 8675
+            FOR on 8676
+            endorse(Secretsnail9) on 8677 comment "Secretsnail9 is the Treasuror"
+        }
     }
 }
