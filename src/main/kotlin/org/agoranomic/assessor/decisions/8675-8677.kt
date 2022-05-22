@@ -100,5 +100,11 @@ Create the following power=1 rule, titled Buyout:
         votes(Madrid) {
             FOR on all
         }
+
+        votes(Secretsnail9) {
+            FOR on 8675
+            FOR on 8676
+            AGAINST on 8677
+        }
     }
 }
