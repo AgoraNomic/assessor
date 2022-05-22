@@ -96,5 +96,9 @@ Create the following power=1 rule, titled Buyout:
             FOR on 8676
             endorse(Secretsnail9) on 8677 comment "Secretsnail9 is the Treasuror"
         }
+
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
