@@ -78,5 +78,11 @@ Create the following power=1 rule, titled Buyout:
             FOR on 8676
             AGAINST on 8677
         }
+
+        votes(juan) {
+            AGAINST on 8675
+            FOR on 8676
+            FOR on 8677
+        }
     }
 }
