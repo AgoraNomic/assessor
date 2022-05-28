@@ -171,5 +171,12 @@ the gamestate so that we know exactly what auctions are ongoing.]""")
             FOR on 8680
             FOR on 8681
         }
+
+        votes(Secretsnail9) {
+            AGAINST on 8678
+            FOR on 8679
+            FOR on 8680
+            PRESENT on 8681
+        }
     }
 }
