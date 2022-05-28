@@ -1,0 +1,383 @@
+{
+    "metadata": {
+        "name": "8675-8677",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-May/015979.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8675,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Let's make it clear",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2621 (VP Wins) by replacing \"If a player has at least 20 more\nWinsomes than any other player\" with \"If a player has at least 20 more\nWinsomes than all other players\"."
+        },
+        {
+            "version": "4",
+            "number": 8676,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Let's make it entirely clear",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2621 (VP Wins) by replacing \"If a player has at least 20 more\nWinsomes than any other player\" with \"If a player has at least 20 more\nWinsomes than each other player\"."
+        },
+        {
+            "version": "4",
+            "number": 8677,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Endgame",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Create the following power=1 rule, titled Buyout:\n\n     Any player who has not taken over the economy in the last 30\n     days CAN pay a fee of N Winsomes to create 500 times N coins\n     in eir possession, provided e does so unconditionally and\n     without disclaimers, acting as emself, in a message body\n     containing no other actions or other action attempts, and explicitly\n     specifies N in the message (i.e. without indirect references such\n     as \"all\").\n\n     One week after this rule first takes effect, the winds die down.\n\n     Immediately after Rule 2658 (The Winds Die Down) is repealed,\n     this rule is repealed."
+        }
+    ],
+    "quorum": 4,
+    "resolutions": [
+        {
+            "proposal": 8675,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 6,
+                "strength_against": 15,
+                "votes": [
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "cuddlybanana",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                }
+            ]
+        },
+        {
+            "proposal": 8676,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "cuddlybanana",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                }
+            ]
+        },
+        {
+            "proposal": 8677,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 12,
+                "votes": [
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "ais523"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of ais523"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Secretsnail9 is the Treasuror"
+                                    }
+                                ],
+                                "readable": "Secretsnail9 is the Treasuror"
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Secretsnail9"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Secretsnail9"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "cuddlybanana",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Decreased by 1 due to blots",
+                                "kind": "blots",
+                                "parameters": [
+                                    {
+                                        "name": "penalty",
+                                        "value": "1"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 2
+                        }
+                    ],
+                    "final": 2
+                }
+            ]
+        }
+    ]
+}
