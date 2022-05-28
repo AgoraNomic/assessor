@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8678to8681() = assessment {
@@ -154,6 +153,13 @@ the gamestate so that we know exactly what auctions are ongoing.]""")
     voting {
         votes(ais523) {
             AGAINST on 8678
+            FOR on 8679
+            FOR on 8680
+            FOR on 8681
+        }
+
+        votes(nix) {
+            PRESENT on 8678
             FOR on 8679
             FOR on 8680
             FOR on 8681
