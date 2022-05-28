@@ -148,4 +148,7 @@ All ongoing L&FD Auctions hereby terminate.
 the gamestate so that we know exactly what auctions are ongoing.]""")
         }
     }
+
+    voting {
+    }
 }
