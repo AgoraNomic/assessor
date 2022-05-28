@@ -164,5 +164,12 @@ the gamestate so that we know exactly what auctions are ongoing.]""")
             FOR on 8680
             FOR on 8681
         }
+
+        votes(Murphy) {
+            AGAINST on 8678
+            FOR on 8679
+            FOR on 8680
+            FOR on 8681
+        }
     }
 }
