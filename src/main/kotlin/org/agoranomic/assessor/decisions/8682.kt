@@ -59,5 +59,9 @@ the next week.""")
         votes(ais523) {
             AGAINST on 8682
         }
+
+        votes(Secretsnail9) {
+            FOR on 8682
+        }
     }
 }
