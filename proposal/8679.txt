@@ -1,0 +1,65 @@
+PROPOSAL 8679 (Properly Decriminalizing Lateness)
+AUTHOR: nix
+CLASS: ORDINARY
+FOR (6): Jason, Murphy, Secretsnail9, ais523, juan, nix
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 6
+AI (F/A): 18/0 (AI=2.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-May/015997.html
+
+ID: 8679
+Title: Properly Decriminalizing Lateness
+Adoption index: 2.0
+Author: nix
+Co-authors: G., Jason, Secretsnail9, Murphy
+
+
+Amend R2557, "Sentencing Guidelines" by replacing:
+
+    When the rules authorize an investigator to issue a Warning for a
+    violation, e CAN do so by announcement if the violation is described
+    by the rules as a "Class N Crime" where N is 0 or an expression that
+    evaluates to 0.
+
+with:
+
+    When the rules authorize an investigator to issue a Warning for a
+    violation, e CAN do so by announcement if:
+
+    * the violation is a crime of class 0, OR
+    * the violation is a crime of class 1 and e has not done so for the
+      same player for the same crime this month.
+
+Amend R2143, "Official Reports and Duties" by replacing:
+
+    Failure of a person to perform any duty required of em within the
+    allotted time is the Class 2 Crime of Tardiness.
+
+with:
+
+    Failure of a person to perform any weekly duty required of em within
+    the allotted time is the Class 1+N Crime of Weekly Tardiness, where
+    N is the number of times e has previously committed the crime in the
+    last month.
+
+    Failure of a person to perform any monthly duty required of em
+    within the allotted time is the Class 3 Crime of Monthly Tardiness.
+
+Amend R2138 "The Associate Director of Personnel" by appending:
+
+      4. For filled offices with a weekly report, the number of weeks in
+         scope, and the number and percent of those weeks during which
+         the officeholder published its weekly report.
+
+      5. For filled offices with a monthly report, the number of months
+         in scope, and the number and percent of those months during
+         which the officeholder published its monthly report.
+
+      For this purpose, the 13 most recent complete weeks and 3 most
+      recent complete months are in scope, but only those for which the
+      officeholder held that office continuously since it started; and
+      percentages of 0/0 are to be reported as n/a.
