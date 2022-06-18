@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8682() = assessment {
@@ -35,5 +36,8 @@ the next week.""")
     }
 
     voting {
+        votes(Murphy) {
+            FOR on 8682
+        }
     }
 }
