@@ -48,5 +48,9 @@ the next week.""")
         votes(Madrid) {
             FOR on all
         }
+
+        votes(Jason) {
+            PRESENT on 8682
+        }
     }
 }
