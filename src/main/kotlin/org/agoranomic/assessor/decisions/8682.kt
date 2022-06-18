@@ -55,5 +55,9 @@ the next week.""")
         votes(G) {
             AGAINST on 8682
         }
+
+        votes(ais523) {
+            AGAINST on 8682
+        }
     }
 }
