@@ -33,4 +33,7 @@ Call for Judgement is extended by 1 day if it would otherwise expire within
 the next week.""")
         }
     }
+
+    voting {
+    }
 }
