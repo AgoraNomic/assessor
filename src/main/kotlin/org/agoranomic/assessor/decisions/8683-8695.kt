@@ -424,14 +424,14 @@ Each player gains 50000 coins.""")
             PRESENT on 8684
             FOR on 8685
             PRESENT on 8686
-            FOR on 8687
+            AGAINST on 8687
             AGAINST on 8688
             AGAINST on 8689
-            FOR on 8690
-            FOR on 8691
-            FOR on 8692
+            AGAINST on 8690
+            AGAINST on 8691
+            AGAINST on 8692
             AGAINST on 8693
-            FOR on 8694
+            AGAINST on 8694
             AGAINST on 8695
         }
 
