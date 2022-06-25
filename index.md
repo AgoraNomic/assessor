@@ -1,9 +1,10 @@
 # Assessor's Archive
 
-[Latest Assessment](8678-8681.txt)
+[Latest Assessment](8682.txt)
 
 List of assessments:
 
+* [8682.txt](8682.txt)
 * [8678-8681.txt](8678-8681.txt)
 * [8675-8677.txt](8675-8677.txt)
 * [8672-8674.txt](8672-8674.txt)
