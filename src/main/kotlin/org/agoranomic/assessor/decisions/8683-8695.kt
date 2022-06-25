@@ -400,7 +400,7 @@ Each player gains 50000 coins.""")
         }
 
         votes(nix) {
-            endorse(ais523) on 8683
+            AGAINST on 8683
             FOR on 8684
             PRESENT on 8685
             endorse(Jason) on 8686
