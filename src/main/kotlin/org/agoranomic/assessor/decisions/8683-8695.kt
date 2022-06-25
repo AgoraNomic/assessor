@@ -331,4 +331,7 @@ Each and every single coin is destroyed.""")
 Each player gains 50000 coins.""")
         }
     }
+
+    voting {
+    }
 }
