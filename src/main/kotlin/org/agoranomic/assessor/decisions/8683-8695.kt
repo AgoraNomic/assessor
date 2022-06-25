@@ -4,7 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -350,6 +350,22 @@ Each player gains 50000 coins.""")
             FOR on 8693
             AGAINST on 8694
             FOR on 8695
+        }
+
+        votes(Jason) {
+            AGAINST on 8683
+            FOR on 8684
+            FOR on 8685
+            endorse(G) on 8686
+            AGAINST on 8687
+            AGAINST on 8688
+            AGAINST on 8689
+            AGAINST on 8690
+            AGAINST on 8691
+            AGAINST on 8692
+            AGAINST on 8693
+            AGAINST on 8694
+            AGAINST on 8695
         }
     }
 }
