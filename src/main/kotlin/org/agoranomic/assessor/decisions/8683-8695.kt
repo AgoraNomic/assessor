@@ -5,8 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8683to8695() = assessment {
@@ -370,6 +370,22 @@ Each player gains 50000 coins.""")
 
         votes(Forest) {
             FOR on 8693
+        }
+
+        votes(nix) {
+            endorse(ais523) on 8683
+            FOR on 8684
+            PRESENT on 8685
+            endorse(Jason) on 8686
+            FOR on 8687
+            AGAINST on 8688
+            AGAINST on 8689
+            PRESENT on 8690
+            PRESENT on 8691
+            PRESENT on 8692
+            AGAINST on 8693
+            // TODO: resolve conditional vote on 8694: "FOR if I have less coins than half of all players and Jason thinks that's a reasonable thing to determine when resolving the vote; otherwise AGAINST"
+            FOR on 8695
         }
     }
 }
