@@ -4,6 +4,9 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8683to8695() = assessment {
@@ -333,5 +336,20 @@ Each player gains 50000 coins.""")
     }
 
     voting {
+        votes(Secretsnail9) {
+            // TODO: resolve conditional vote on 8683: FOR if at least 4 unconditional 4 votes, else AGAINST
+            AGAINST on 8684
+            FOR on 8685
+            FOR on 8686
+            FOR on 8687
+            FOR on 8688
+            FOR on 8689
+            FOR on 8690
+            FOR on 8691
+            FOR on 8692
+            FOR on 8693
+            AGAINST on 8694
+            FOR on 8695
+        }
     }
 }
