@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -336,7 +338,7 @@ Each player gains 50000 coins.""")
 
     voting {
         votes(Secretsnail9) {
-            // TODO: resolve conditional vote on 8683: FOR if at least 4 unconditional 4 votes, else AGAINST
+            resolvedConditional(AGAINST, "There are 3 unconditional FOR votes on 8683") on 8683
             AGAINST on 8684
             FOR on 8685
             FOR on 8686
@@ -411,7 +413,7 @@ Each player gains 50000 coins.""")
             PRESENT on 8691
             PRESENT on 8692
             AGAINST on 8693
-            // TODO: resolve conditional vote on 8694: "I withdraw this vote and change it to: FOR if I have less coins than half of all players at the end of the voting period and Jason things that's a reasonable thing to determine; otherwise AGAINST"
+            InextricableResolvingVote on 8694 comment "Whether Jason thinks something is indeterminate"
             FOR on 8695
         }
 
