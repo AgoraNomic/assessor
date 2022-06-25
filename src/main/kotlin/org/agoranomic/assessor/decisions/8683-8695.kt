@@ -434,5 +434,21 @@ Each player gains 50000 coins.""")
             FOR on 8694
             AGAINST on 8695
         }
+
+        votes(ais523) {
+            FOR on 8683
+            FOR on 8684
+            FOR on 8685
+            FOR on 8686
+            AGAINST on 8687
+            AGAINST on 8688
+            AGAINST on 8689
+            PRESENT on 8690
+            AGAINST on 8691
+            PRESENT on 8692
+            AGAINST on 8693
+            AGAINST on 8694
+            AGAINST on 8695
+        }
     }
 }
