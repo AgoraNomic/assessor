@@ -402,5 +402,9 @@ Each player gains 50000 coins.""")
             // TODO: resolve conditional vote on 8694: "I withdraw this vote and change it to: FOR if I have less coins than half of all players at the end of the voting period and Jason things that's a reasonable thing to determine; otherwise AGAINST"
             FOR on 8695
         }
+
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
