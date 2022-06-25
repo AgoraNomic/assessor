@@ -384,7 +384,19 @@ Each player gains 50000 coins.""")
         }
 
         votes(Forest) {
-            FOR on 8693
+            FOR on 8683
+            FOR on 8684
+            FOR on 8685
+            AGAINST on 8686
+            FOR on 8687
+            FOR on 8688
+            FOR on 8689
+            FOR on 8690
+            FOR on 8691
+            FOR on 8692
+            AGAINST on 8693
+            FOR on 8694
+            AGAINST on 8695
         }
 
         votes(nix) {
