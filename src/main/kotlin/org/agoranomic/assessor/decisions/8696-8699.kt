@@ -96,5 +96,11 @@ Amend Rule 2665 "The Birds" by:
         votes(Jason) {
             AGAINST on all
         }
+
+        votes(nix) {
+            AGAINST on 8696
+            AGAINST on 8698
+            AGAINST on 8699
+        }
     }
 }
