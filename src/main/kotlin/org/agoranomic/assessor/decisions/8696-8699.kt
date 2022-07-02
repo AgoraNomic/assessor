@@ -82,6 +82,8 @@ Amend Rule 2665 "The Birds" by:
   with
   "Nothing happens."""")
         }
+    }
 
+    voting {
     }
 }
