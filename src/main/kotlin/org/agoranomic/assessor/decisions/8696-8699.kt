@@ -103,5 +103,9 @@ Amend Rule 2665 "The Birds" by:
             AGAINST on 8698
             AGAINST on 8699
         }
+
+        votes(Forest) {
+            FOR on all
+        }
     }
 }
