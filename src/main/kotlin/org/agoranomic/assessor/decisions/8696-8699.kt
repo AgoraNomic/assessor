@@ -121,5 +121,12 @@ Amend Rule 2665 "The Birds" by:
             AGAINST on 8698
             PRESENT on 8699
         }
+
+        votes(Murphy) {
+            AGAINST on 8696
+            // FOR on 8697
+            AGAINST on 8698
+            FOR on 8699
+        }
     }
 }
