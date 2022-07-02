@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8696to8699() = assessment {
@@ -85,5 +87,10 @@ Amend Rule 2665 "The Birds" by:
     }
 
     voting {
+        votes(juan) {
+            AGAINST on 8696
+            // PRESENT on 8697
+            FOR on 8698
+        }
     }
 }
