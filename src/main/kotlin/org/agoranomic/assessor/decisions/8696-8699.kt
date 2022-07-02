@@ -10,6 +10,12 @@ fun assessment8696to8699() = assessment {
     name("8696-8699")
     quorum(4)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8696) {
             title("I just win in this too")
