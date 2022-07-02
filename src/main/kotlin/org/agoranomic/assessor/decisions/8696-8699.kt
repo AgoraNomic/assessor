@@ -107,5 +107,9 @@ Amend Rule 2665 "The Birds" by:
         votes(Forest) {
             FOR on all
         }
+
+        votes(Secretsnail9) {
+            FOR on all
+        }
     }
 }
