@@ -1,0 +1,1070 @@
+{
+    "metadata": {
+        "name": "8683-8695",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-June/016085.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8683,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Weekly privileges",
+            "author": "Murphy",
+            "coauthors": [
+                "ais523"
+            ],
+            "text": "[Loosely based on the old Ergs system, basically a currency that was\nreset weekly. Repeals or otherwise cleans up some loose ends overlooked\nby R2658. Change from proto: Keeps proposal distribution limited.]\n\nCreate a rule titled \"Proposal Sponsorship\" with this text:\n\n      Sponsorship is an untracked proposal switch with values\n      unsponsored (default), sponsored, and disinterested.\n\n      The Promotor CAN, with 2+X support, flip a proposal in the\n      Proposal Pool from unsponsored to disinterested. For this, X is\n      equal to the number of times e has done so in the past 7 days.\n\n      Any player CAN, without objection, flip a proposal in the Proposal\n      Pool from unsponsored to disinterested.\n\nCreate a rule titled \"Weekly Privileges\" with Power 2 and this text:\n\n      Each player CAN do one of the following by announcement, provided\n      that e has not already done any of them during the same week.\n\n        * Cause a specified person (or emself if no one is specified) to\n          Stuff the Ballot Box. A player's Voting Strength on a\n          referendum on an ordinary proposal is 1 greater for each time\n          e Stuffed the Ballot Box during that decision's voting period.\n\n        * Expunge a blot from a specified person (or emself if no one is\n          specified).\n\n        * Cause a specified proposal to become sponsored.\n\n        * Gain an Iridium Star. Iridium Stars are a fixed currency with\n          ownership restricted to players. If a player has at least 10\n          more Iridium Stars than each other player, and no person has\n          won the game this way in the past 30 days, then e CAN Buy the\n          Town by announcement. When a player Buys the Town, e wins the\n          game, then all Iridium Stars are destroyed.\n\nThe winds die down, as defined by Rule 2658 (The Winds Die Down).\n\n[\nR2658 then repeals, in this order:\n* 2620 (Cards and Sets)\n* 2623 (Popular Proposal Proposer Privilege)\n* 2629 (Victory Auctions)\n* 2624 (Card Administration)\n* 2622 (Pending Proposals)\n* 2651 (Proposal Recycling)\n* 2653 (Buying Strength)\n* All clauses delimited ~>like this<~, in rule number order\n* itself\n]\n\nRepeal these rules, in this order:\n* 2621 (VP Wins)\n* 2636 (The Ministor)\n* 2638 (Player Focuses)\n\nAmend Rule 1607 (Distribution) by replacing this text:\n\n      The Promotor CAN distribute a proposal which is in the Proposal\n      Pool at any time.\n\nwith this text:\n\n      The Promotor CAN distribute a proposal which is in the Proposal\n      Pool at any time, but SHALL NOT do so if it is unsponsored.\n\n[replacing the ~> <~ clause removed by R2658]\n\nAmend Rule 2645 (The Stones) by removing the definition of the\nConcentration Stone.\n\nAmend Rule 2654 (The Device) by removing each bullet point containing\n\"Ministry Focus\".\n\nAmend Rule 2665 (The Birds) by replacing the definitions of the Owl,\nPigeon, Penguin, and Jay with the following:\n\n      - Owl: A specified person (or emself if no one is specified)\n        Stuffs the Ballot Box, as defined by other rules.\n\n      - Pigeon: A specified person (or emself if no one is specified)\n        has one blot expunged.\n\n      - Penguin: The playmate gains an Iridium Star.\n\n      - Jay: A specified proposal becomes sponsored."
+        },
+        {
+            "version": "4",
+            "number": 8684,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Score Gameplay Expansion",
+            "author": "nix",
+            "coauthors": [
+            ],
+            "text": "[This proposal imagines score as a sort of contribution competition.\nEvery quarter scores decay and awards are given to the leaders. If a\nplayer can gain 100 score, e wins. Score is awarded for participating\nin the core mechanics of Agora.]\n\nSet all scores to half their current value rounded up.\n\nAmend 2656 by adding the following paragraphs to the end:\n\n      The Herald CAN once each, by announcement, grant 15, 10, and 5\n      boatloads of coins to the players who had the most, second most,\n      and third most points (respectively) at the end of the previous\n      quarter. E SHALL do so in a timely manner after the beginning\n      of the quarter.\n\n      At the start of every quarter, all Scores are set to half their\n      current value rounded down.\n\nAmend 2657 by replacing:\n\n      Below is a list of scoring conditions and their associated points\n      and officers.\n\n        * Being the author of a sponsored proposal that takes effect:\n          1 + the power of the proposal when it takes effect (Assessor).\n\n        * Being the coauthor of a sponsored proposal that takes effect:\n          1 (Assessor).\n\nwith:\n\n      Below is a list of scoring conditions and their associated points\n      and officers.\n\n        * Being the author of a proposal that takes effect: 5\n          (Assessor).\n\n        * Being a coauthor of a proposal that takes effect: 1\n          (Assessor).\n\n        * Casting an unconditional AGAINST vote on a resolved proposal\n          that takes effect, or casting an unconditional FOR vote on a\n          resolved proposal that does not take effect: 1 (Assessor)\n\n        * Having an Agoran Birthday: 15 (Herald).\n\n        * Receiving any patent title: 10 (Herald).\n\n        * Receiving a ribbon: 5 (Tailor)."
+        },
+        {
+            "version": "4",
+            "number": 8685,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "auto-birthday",
+            "author": "G.",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2585 (Birthday Gifts) by replacing:\n\n      During a player's Agoran Birthday and the 7 days following, each\n      other player CAN once grant em X boatloads of coins by\n      announcement, where X is 3 if it is actually the day of the\n      player's birthday, and 2 otherwise.\n\nwith:\n\n      During a player's Agoran Birthday and the 7 days following, each\n      other player CAN once acknowledge that person's birthday by\n      announcement.  Doing so grants the birthday player 3 boatloads of\n      coins if it is actually the day of the player's birthday, and 2\n      otherwise.\n\n[Makes the coins automatic without having to know if it's 3 or 2.\n\"Acknowledge\" is the phrase used for Magenta ribbons]."
+        },
+        {
+            "version": "4",
+            "number": 8686,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Put a sock in it",
+            "author": "Murphy",
+            "coauthors": [
+            ],
+            "text": "The following rules are repealed in order: R2620 \"Cards & Sets\",\nR2623 \"Popular Proposal Proposer Privilege\", R2629 \"Victory\nAuctions\", R2624 \"Card Administration\", R2622 \"Pending\nProposals\", R2651 \"Proposal Recycling\", and R2653 \"Buying\nStrength\".\n\nAll rules including the text \"~>\" and \"<~\" are amended in\nascending numerical order by removing all text between and\nincluding each \"~>\" and the first following \"<~\".\n\nRule 2658 (The Winds Die Down) is repealed.\n\n[Some or all of this may have already occurred, see CFJs 3965\n through 3967. Possibly only rules numbered higher than 2658\n still contain ~> <~ delimited text.]"
+        },
+        {
+            "version": "4",
+            "number": 8687,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Might as well",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Enact a new rule with title \"snail wins\" and text:"
+        },
+        {
+            "version": "4",
+            "number": 8688,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Totally Normal Rule",
+            "author": "Secretsnail9",
+            "coauthors": [
+                "Madrid"
+            ],
+            "text": "Enact a new rule with title \"Totally normal Rule\" and the text:\n\nCualquier jugador puede ganar el juego pagando una tarifa de 100000 monedas."
+        },
+        {
+            "version": "4",
+            "number": 8689,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Exceptional",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "All players that do not have a black ribbon earn a black ribbon.\nAll players that do have a black ribbon have their scores increased by 10."
+        },
+        {
+            "version": "4",
+            "number": 8690,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Actual Bird Fix",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2664 (One with Nature) by replacing \"player that owns 10 or more\nbirds\" with \"player that owns at least 90% of all birds\"."
+        },
+        {
+            "version": "4",
+            "number": 8691,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Budgie",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2665 (The Birds) by appending this paragraph to the list of\nbirds:\n\n       - Budgie: The playmate succumbs."
+        },
+        {
+            "version": "4",
+            "number": 8692,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Canary and Crow",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2665 (The Birds) by appending these paragraphs to the list of\nbirds:\n\n       - Canary: The score of a specified player is decreased by 2.\n\n       - Crow: The score of a specified player (defaulting to the playmate\nif not specified) is increased by 2."
+        },
+        {
+            "version": "4",
+            "number": 8693,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "I just win in this one",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Enact a new rule with title \"Very fair rule\" and the text:\n\nThe player secretsnail CAN win the game by announcement."
+        },
+        {
+            "version": "4",
+            "number": 8694,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Destruction",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Each and every single coin is destroyed."
+        },
+        {
+            "version": "4",
+            "number": 8695,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Creation",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Each player gains 50000 coins."
+        }
+    ],
+    "quorum": 4,
+    "resolutions": [
+        {
+            "proposal": 8683,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 12,
+                "strength_against": 12,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: There are 3 unconditional FOR votes on 8683"
+                                    }
+                                ],
+                                "readable": "Conditional resolved: There are 3 unconditional FOR votes on 8683"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8684,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8685,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 21,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8686,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "G."
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of G."
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8687,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 12,
+                "strength_against": 12,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8688,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 15,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8689,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 12,
+                "strength_against": 12,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8690,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8691,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 9,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8692,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8693,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 6,
+                "strength_against": 18,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8694,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 12,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Whether Jason thinks something is indeterminate"
+                                    }
+                                ],
+                                "readable": "Whether Jason thinks something is indeterminate"
+                            },
+                            {
+                                "kind": "inextricable",
+                                "parameters": [
+                                ],
+                                "readable": "Inextricable"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8695,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 15,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        }
+    ]
+}

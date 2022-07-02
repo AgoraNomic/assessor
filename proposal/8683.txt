@@ -1,0 +1,111 @@
+PROPOSAL 8683 (Weekly privileges)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (4): 4st, Madrid, ais523, juan
+AGAINST (4): G., Jason, Secretsnail9, nix
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 12/12 (AI=3.0)
+POPULARITY: 0.000
+OUTCOME: REJECTED
+[
+Secretsnail9: Conditional resolved: There are 3 unconditional FOR votes on 8683
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-June/016085.html
+
+ID: 8683
+Title: Weekly privileges
+Adoption index: 3.0
+Author: Murphy
+Co-authors: ais523
+
+
+[Loosely based on the old Ergs system, basically a currency that was
+reset weekly. Repeals or otherwise cleans up some loose ends overlooked
+by R2658. Change from proto: Keeps proposal distribution limited.]
+
+Create a rule titled "Proposal Sponsorship" with this text:
+
+      Sponsorship is an untracked proposal switch with values
+      unsponsored (default), sponsored, and disinterested.
+
+      The Promotor CAN, with 2+X support, flip a proposal in the
+      Proposal Pool from unsponsored to disinterested. For this, X is
+      equal to the number of times e has done so in the past 7 days.
+
+      Any player CAN, without objection, flip a proposal in the Proposal
+      Pool from unsponsored to disinterested.
+
+Create a rule titled "Weekly Privileges" with Power 2 and this text:
+
+      Each player CAN do one of the following by announcement, provided
+      that e has not already done any of them during the same week.
+
+        * Cause a specified person (or emself if no one is specified) to
+          Stuff the Ballot Box. A player's Voting Strength on a
+          referendum on an ordinary proposal is 1 greater for each time
+          e Stuffed the Ballot Box during that decision's voting period.
+
+        * Expunge a blot from a specified person (or emself if no one is
+          specified).
+
+        * Cause a specified proposal to become sponsored.
+
+        * Gain an Iridium Star. Iridium Stars are a fixed currency with
+          ownership restricted to players. If a player has at least 10
+          more Iridium Stars than each other player, and no person has
+          won the game this way in the past 30 days, then e CAN Buy the
+          Town by announcement. When a player Buys the Town, e wins the
+          game, then all Iridium Stars are destroyed.
+
+The winds die down, as defined by Rule 2658 (The Winds Die Down).
+
+[
+R2658 then repeals, in this order:
+* 2620 (Cards and Sets)
+* 2623 (Popular Proposal Proposer Privilege)
+* 2629 (Victory Auctions)
+* 2624 (Card Administration)
+* 2622 (Pending Proposals)
+* 2651 (Proposal Recycling)
+* 2653 (Buying Strength)
+* All clauses delimited ~>like this<~, in rule number order
+* itself
+]
+
+Repeal these rules, in this order:
+* 2621 (VP Wins)
+* 2636 (The Ministor)
+* 2638 (Player Focuses)
+
+Amend Rule 1607 (Distribution) by replacing this text:
+
+      The Promotor CAN distribute a proposal which is in the Proposal
+      Pool at any time.
+
+with this text:
+
+      The Promotor CAN distribute a proposal which is in the Proposal
+      Pool at any time, but SHALL NOT do so if it is unsponsored.
+
+[replacing the ~> <~ clause removed by R2658]
+
+Amend Rule 2645 (The Stones) by removing the definition of the
+Concentration Stone.
+
+Amend Rule 2654 (The Device) by removing each bullet point containing
+"Ministry Focus".
+
+Amend Rule 2665 (The Birds) by replacing the definitions of the Owl,
+Pigeon, Penguin, and Jay with the following:
+
+      - Owl: A specified person (or emself if no one is specified)
+        Stuffs the Ballot Box, as defined by other rules.
+
+      - Pigeon: A specified person (or emself if no one is specified)
+        has one blot expunged.
+
+      - Penguin: The playmate gains an Iridium Star.
+
+      - Jay: A specified proposal becomes sponsored.
