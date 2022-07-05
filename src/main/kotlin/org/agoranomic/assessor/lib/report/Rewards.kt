@@ -2,20 +2,18 @@ package org.agoranomic.assessor.lib.report
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.dsl.votes.CONDITIONAL_VOTE_TAG
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.ProposalResult
-import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
-import org.agoranomic.assessor.lib.vote.votersAgainst
-import org.agoranomic.assessor.lib.vote.votersFor
+import org.agoranomic.assessor.lib.vote.*
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 import org.randomcat.util.ceil
 import org.randomcat.util.compareTo
 import java.math.BigDecimal
 import java.math.BigInteger
-import java.math.RoundingMode
 
 typealias RawProposalUnroundedReward = BigDecimal
 
@@ -53,15 +51,16 @@ data class ProposalRewardData(
     val result: ProposalResult,
     val votingStrengths: VotingStrengthTrailForPersons,
     val resolvedVotes: SimplifiedSingleProposalVoteMap,
+    val sponsored: Boolean,
 ) {
-    val unroundedReward
+    val unroundedCoinReward
         get() =
             calculateReward(
                 voteCountFor = voteCountFor,
                 voteCountAgainst = voteCountAgainst
             )
 
-    val roundedReward get() = unroundedReward.rounded()
+    val roundedCoinReward get() = unroundedCoinReward.rounded()
 }
 
 data class ProposalRewardsMap(
@@ -74,14 +73,14 @@ data class ProposalRewardsMap(
     operator fun get(proposal: ProposalNumber) = data.getValue(proposal)
 }
 
-private fun Proposal.isRewardable(): Boolean {
+private fun Proposal.isSponsored(): Boolean {
     return accept(object : ProposalMapper<Boolean> {
         override fun visitV0(commonData: ProposalCommonData, versionedData: ProposalDataV0): Boolean {
-            return true
+            return false
         }
 
         override fun visitV1(commonData: ProposalCommonData, versionedData: ProposalDataV1): Boolean {
-            return true
+            return false
         }
 
         override fun visitV2(commonData: ProposalCommonData, versionedData: ProposalDataV2): Boolean {
@@ -102,7 +101,6 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
     return ProposalRewardsMap(
         resolutionMap
             .proposals
-            .filter { it.isRewardable() }
             .associate { proposal ->
                 val resolution = resolutionMap.resolutionOf(proposal.number)
 
@@ -120,6 +118,7 @@ fun calculateRewards(resolutionMap: ProposalResolutionMap): ProposalRewardsMap {
                     result = resolution.result,
                     resolvedVotes = proposalVotes,
                     votingStrengths = resolution.votingStrengths,
+                    sponsored = proposal.isSponsored(),
                 )
 
                 proposal.number to rewardData
@@ -132,18 +131,14 @@ private fun ProposalRewardData.authorRewards(proposalNumber: ProposalNumber): Li
     if (author == null) return emptyList()
 
     val amountString =
-        if ((unroundedReward.raw).compareTo(roundedReward.raw) == 0)
-            roundedReward.toString()
+        if ((unroundedCoinReward.raw).compareTo(roundedCoinReward.raw) == 0)
+            roundedCoinReward.toString()
         else
-            "$unroundedReward -> $roundedReward"
-
-    // Fractional points cannot be awarded
-    val effectivePowerInt =
-        minOf(proposalAI.raw, BigDecimal.valueOf(4)).setScale(0, RoundingMode.FLOOR).toBigIntegerExact()
+            "$unroundedCoinReward -> $roundedCoinReward"
 
     return buildList {
-        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
-        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} ${effectivePowerInt + BigInteger.ONE} points (author).")
+        if (sponsored) add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
+        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} 5 points (author).")
     }
 }
 
@@ -156,6 +151,22 @@ private fun ProposalRewardData.coauthorRewards(proposalNumber: ProposalNumber): 
     }
 }
 
+private fun ProposalRewardData.opposingVoterRewards(proposalNumber: ProposalNumber): List<String> {
+    val rewardedVote = when (result) {
+        ProposalResult.ADOPTED -> VoteKind.AGAINST
+        ProposalResult.REJECTED -> VoteKind.FOR
+        else -> return emptyList()
+    }
+
+    val rewardedVoters = resolvedVotes.personsWithVote(rewardedVote).filter { person ->
+        resolvedVotes.voteDescriptionsFor(person).none { step -> step.machineIfPresent?.kind == CONDITIONAL_VOTE_TAG }
+    }
+
+    return rewardedVoters.map {
+        "For the adoption of Proposal $proposalNumber, I grant ${it.name} 1 point (contrary vote)."
+    }
+}
+
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
     return rewardsMap
         .proposals
@@ -165,6 +176,7 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
             listOf(
                 rewardData.authorRewards(proposal),
                 rewardData.coauthorRewards(proposal),
+                rewardData.opposingVoterRewards(proposal),
             )
         }
         .flatten()
