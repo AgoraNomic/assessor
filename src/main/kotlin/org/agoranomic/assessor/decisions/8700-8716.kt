@@ -4,8 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8700to8716() = assessment {
@@ -441,6 +440,26 @@ based on that player's Mindset:
             FOR on 8713
             FOR on 8714
             FOR on 8715
+            FOR on 8716
+        }
+
+        votes(Forest) {
+            FOR on 8700
+            FOR on 8701
+            FOR on 8702
+            FOR on 8703
+            FOR on 8704
+            AGAINST on 8705
+            FOR on 8706
+            FOR on 8707
+            FOR on 8708
+            AGAINST on 8709
+            FOR on 8710
+            AGAINST on 8711
+            PRESENT on 8712
+            FOR on 8713
+            FOR on 8714
+            AGAINST on 8715
             FOR on 8716
         }
     }
