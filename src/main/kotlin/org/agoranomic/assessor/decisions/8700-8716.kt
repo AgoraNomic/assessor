@@ -486,5 +486,25 @@ based on that player's Mindset:
             AGAINST on 8715
             PRESENT on 8716
         }
+
+        votes(Jason) {
+            AGAINST on 8700
+            AGAINST on 8701
+            AGAINST on 8702
+            AGAINST on 8703
+            PRESENT on 8704
+            AGAINST on 8705
+            PRESENT on 8706
+            AGAINST on 8707
+            FOR on 8708
+            FOR on 8709
+            FOR on 8710
+            FOR on 8711
+            AGAINST on 8712
+            AGAINST on 8713
+            FOR on 8714
+            FOR on 8715
+            AGAINST on 8716
+        }
     }
 }
