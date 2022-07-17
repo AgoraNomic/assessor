@@ -462,5 +462,9 @@ based on that player's Mindset:
             AGAINST on 8715
             FOR on 8716
         }
+
+        votes(G) {
+            AGAINST on all
+        }
     }
 }
