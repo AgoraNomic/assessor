@@ -10,6 +10,12 @@ fun assessment8700to8716() = assessment {
     name("8700-8716")
     quorum(5)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8700) {
             title("Well, it's not doing anything.")
