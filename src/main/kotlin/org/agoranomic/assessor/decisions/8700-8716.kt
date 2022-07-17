@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -468,7 +469,8 @@ based on that player's Mindset:
         }
 
         votes(ais523) {
-            // TODO: resolve conditional vote on 8700 AGAINST if REJECTED if this vote is AGAINST with half strength, else PRESENT
+            resolvedConditional(AGAINST,
+                "Proposal 8700 would be resolved as AGAINST if ais523 voted AGAINST with half strength") on 8700
             PRESENT on 8701
             AGAINST on 8702
             FOR on 8703
@@ -481,7 +483,7 @@ based on that player's Mindset:
             FOR on 8710
             FOR on 8711
             AGAINST on 8712
-            // TODO: resolve conditional vote on 8713 PRESENT if 8712 enacted, else AGAINST
+            resolvedConditional(AGAINST, "Proposal 8712 has not been enacted (as of end of voting period)") on 8713
             PRESENT on 8714
             AGAINST on 8715
             PRESENT on 8716
