@@ -420,4 +420,7 @@ based on that player's Mindset:
 - Dream of Power: Eir Voting Strength is 2 greater.""")
         }
     }
+
+    voting {
+    }
 }
