@@ -12,6 +12,7 @@ private fun playerName(player: String): String {
         "Corona" -> "Corona"
         "D. Margaux", "D Margaux" -> "DMargaux"
         "Falsifian" -> "Falsifian"
+        "4st" -> "Forest"
         "G." -> "G"
         "Gaelan" -> "Gaelan"
         "grok" -> "grok"
@@ -24,8 +25,9 @@ private fun playerName(player: String): String {
         "Telnaior" -> "Telnaior"
         "Trigon" -> "Trigon"
         "twg" -> "twg"
-        "Walker" -> "Walker"
         "Tarhulinder" -> "Tarhulinder"
+        "secretsnail" -> "Secretsnail9"
+        "Walker" -> "Walker"
         "Jacob Arduino" -> "JacobArduino"
         else -> "unknown_player(\"$player\")"
     }
@@ -118,7 +120,7 @@ private fun distributionToDSL(rawDistribution: String): String {
 
                     val coauthorsString =
                         lines[COAUTHORS_LINE_INDEX]
-                            .afterExpected(Regex("Co-author(s|\\(s\\)):"))
+                            .afterExpected(Regex("Co-[aA]uthor(s|\\(s\\)):"))
                             .trim()
 
                     val coauthorFullNames = coauthorsString.split(", ").filter { it.isNotBlank() }
