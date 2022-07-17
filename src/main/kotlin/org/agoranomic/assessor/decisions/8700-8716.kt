@@ -503,7 +503,7 @@ based on that player's Mindset:
             AGAINST on 8712
             AGAINST on 8713
             FOR on 8714
-            FOR on 8715
+            AGAINST on 8715
             AGAINST on 8716
         }
     }
