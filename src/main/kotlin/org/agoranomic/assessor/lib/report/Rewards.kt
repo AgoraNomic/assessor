@@ -162,8 +162,14 @@ private fun ProposalRewardData.opposingVoterRewards(proposalNumber: ProposalNumb
         resolvedVotes.voteDescriptionsFor(person).none { step -> step.machineIfPresent?.kind == CONDITIONAL_VOTE_TAG }
     }
 
+    val resolutionType = when (result) {
+        ProposalResult.ADOPTED -> "adoption"
+        ProposalResult.REJECTED -> "rejection"
+        else -> error("Unexpected type")
+    }
+
     return rewardedVoters.map {
-        "For the adoption of Proposal $proposalNumber, I grant ${it.name} 1 point (contrary vote)."
+        "For the $resolutionType of Proposal $proposalNumber, I grant ${it.name} 1 point (contrary vote)."
     }
 }
 
