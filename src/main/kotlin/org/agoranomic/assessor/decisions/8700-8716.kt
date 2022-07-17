@@ -466,5 +466,25 @@ based on that player's Mindset:
         votes(G) {
             AGAINST on all
         }
+
+        votes(ais523) {
+            // TODO: resolve conditional vote on 8700 AGAINST if REJECTED if this vote is AGAINST with half strength, else PRESENT
+            PRESENT on 8701
+            AGAINST on 8702
+            FOR on 8703
+            PRESENT on 8704
+            AGAINST on 8705
+            FOR on 8706
+            AGAINST on 8707
+            FOR on 8708
+            FOR on 8709
+            FOR on 8710
+            FOR on 8711
+            AGAINST on 8712
+            // TODO: resolve conditional vote on 8713 PRESENT if 8712 enacted, else AGAINST
+            PRESENT on 8714
+            AGAINST on 8715
+            PRESENT on 8716
+        }
     }
 }
