@@ -1,0 +1,55 @@
+PROPOSAL 8712 (Stacking Stones v1.1)
+AUTHOR: Secretsnail9
+CLASS: ORDINARY
+FOR (1): Murphy
+AGAINST (3): G., Jason, ais523
+PRESENT (1): 4st
+BALLOTS: 5
+AI (F/A): 3/9 (AI=1.0)
+POPULARITY: -0.400
+OUTCOME: REJECTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-July/016147.html
+
+ID: 8712
+Title: Stacking Stones v1.1
+Adoption index: 1.0
+Author: Secretsnail9
+Co-authors: 
+
+
+Enact a new rule with title "Balancing Act" and the following text:
+{
+
+"Stone Above" is a stone switch tracked by the Stonemason with possible
+values
+of any stone and none (default).
+
+A stone's props are any stones that have that stone or any of that stone's
+props as a their value of Stone Above.
+
+If a stone's Stone Above is ever one of its props, its Stone Above is set
+to
+none.
+
+A stone that has 3 or more props is immune.
+
+When a stone is wielded, the wielder CAN cascade one of that stone's props
+by
+announcement in the same message, specifying any values needed to interpret
+the
+prop's effects.
+
+When a stone is cascaded, the Rule defining that stone applies the effects
+in
+that stone's scroll.
+
+A player CAN set the Stone Above of a stone they own to another stone they
+own,
+with 13 days notice, provided e has not set a Stone Above switch in the
+past 14
+days.
+
+[Note intents expire after 14 days.]
+
+}
