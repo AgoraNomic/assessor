@@ -269,5 +269,16 @@ the given order by replacing every instance of the word "crime" with
             PRESENT on 8723
             PRESENT on 8811
         }
+
+        votes(nix) {
+            AGAINST on 8717
+            FOR on 8718
+            FOR on 8719
+            FOR on 8720
+            AGAINST on 8721
+            AGAINST on 8722
+            AGAINST on 8723
+            FOR on 8811
+        }
     }
 }
