@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8717to8811() = assessment {
@@ -258,6 +257,17 @@ the given order by replacing every instance of the word "crime" with
             FOR on 8722
             AGAINST on 8723
             endorse(nix) on 8811
+        }
+
+        votes(juan) {
+            PRESENT on 8717
+            PRESENT on 8718
+            PRESENT on 8719
+            PRESENT on 8720
+            PRESENT on 8721
+            PRESENT on 8722
+            PRESENT on 8723
+            PRESENT on 8811
         }
     }
 }
