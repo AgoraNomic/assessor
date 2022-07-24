@@ -10,6 +10,12 @@ fun assessment8717to8811() = assessment {
     name("8717-8811")
     quorum(5)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8717) {
             title("Normalize ribbons")
