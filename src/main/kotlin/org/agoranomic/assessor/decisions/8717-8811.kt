@@ -291,5 +291,16 @@ the given order by replacing every instance of the word "crime" with
             AGAINST on 8723
             FOR on 8811
         }
+
+        votes(Secretsnail9) {
+            FOR on 8717
+            AGAINST on 8718
+            AGAINST on 8719
+            AGAINST on 8720
+            FOR on 8721
+            FOR on 8722
+            FOR on 8723
+            AGAINST on 8811
+        }
     }
 }
