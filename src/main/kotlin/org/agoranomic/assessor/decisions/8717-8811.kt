@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -246,6 +247,17 @@ the given order by replacing every instance of the word "crime" with
             AGAINST on 8722
             FOR on 8723
             FOR on 8811
+        }
+
+        votes(G) {
+            AGAINST on 8717
+            FOR on 8718
+            FOR on 8719
+            FOR on 8720
+            AGAINST on 8721
+            FOR on 8722
+            AGAINST on 8723
+            endorse(nix) on 8811
         }
     }
 }
