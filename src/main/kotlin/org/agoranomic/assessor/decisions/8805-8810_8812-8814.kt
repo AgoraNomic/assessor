@@ -9,6 +9,12 @@ fun assessment8805to8810and8812to8814() = assessment {
     name("8805-8810, 8812-8814")
     quorum(3)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8805) {
             title("Removal of vote points v2")
