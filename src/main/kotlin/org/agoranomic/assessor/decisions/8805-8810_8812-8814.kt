@@ -116,5 +116,17 @@ Citizenship is secured at power 3.]""")
 
             FOR on 8814
         }
+
+        votes(Murphy) {
+            PRESENT on 8805
+            AGAINST on 8806
+            AGAINST on 8807
+            AGAINST on 8808
+            FOR on 8809
+            AGAINST on 8810
+            AGAINST on 8812
+            PRESENT on 8813
+            FOR on 8814
+        }
     }
 }
