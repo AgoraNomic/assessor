@@ -128,5 +128,13 @@ Citizenship is secured at power 3.]""")
             PRESENT on 8813
             FOR on 8814
         }
+
+        votes(Secretsnail9) {
+            FOR on 8805
+            for (i in 8806..8810) AGAINST on i
+            FOR on 8812
+            FOR on 8813
+            PRESENT on 8814
+        }
     }
 }
