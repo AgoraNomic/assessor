@@ -137,7 +137,7 @@ private fun ProposalRewardData.authorRewards(proposalNumber: ProposalNumber): Li
             "$unroundedCoinReward -> $roundedCoinReward"
 
     return buildList {
-        if (sponsored) add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
+        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
         add("For the adoption of Proposal $proposalNumber, I grant ${author.name} 5 points (author).")
     }
 }
