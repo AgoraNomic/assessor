@@ -3,8 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8805to8810and8812to8814() = assessment {
@@ -85,6 +84,14 @@ Citizenship is secured at power 3.]""")
             for (i in 8806..8810) AGAINST on i
             AGAINST on 8812
             FOR on 8813
+            FOR on 8814
+        }
+
+        votes(Jason) {
+            FOR on 8805
+            for (i in 8806..8810) PRESENT on i
+            AGAINST on 8812
+            PRESENT on 8813
             FOR on 8814
         }
     }
