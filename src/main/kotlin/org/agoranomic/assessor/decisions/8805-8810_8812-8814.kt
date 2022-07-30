@@ -76,4 +76,7 @@ Set the power of Rule 2646 (Activity) to 3.
 Citizenship is secured at power 3.]""")
         }
     }
+
+    voting {
+    }
 }
