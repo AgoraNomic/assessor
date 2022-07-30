@@ -2,13 +2,14 @@ package org.agoranomic.assessor.lib.report
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
-import org.agoranomic.assessor.dsl.votes.CONDITIONAL_VOTE_TAG
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.Persons
 import org.agoranomic.assessor.lib.proposal.*
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.ProposalResult
-import org.agoranomic.assessor.lib.vote.*
+import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.vote.votersAgainst
+import org.agoranomic.assessor.lib.vote.votersFor
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 import org.randomcat.util.ceil
 import org.randomcat.util.compareTo
@@ -151,28 +152,6 @@ private fun ProposalRewardData.coauthorRewards(proposalNumber: ProposalNumber): 
     }
 }
 
-private fun ProposalRewardData.opposingVoterRewards(proposalNumber: ProposalNumber): List<String> {
-    val rewardedVote = when (result) {
-        ProposalResult.ADOPTED -> VoteKind.AGAINST
-        ProposalResult.REJECTED -> VoteKind.FOR
-        else -> return emptyList()
-    }
-
-    val rewardedVoters = resolvedVotes.personsWithVote(rewardedVote).filter { person ->
-        resolvedVotes.voteDescriptionsFor(person).none { step -> step.machineIfPresent?.kind == CONDITIONAL_VOTE_TAG }
-    }
-
-    val resolutionType = when (result) {
-        ProposalResult.ADOPTED -> "adoption"
-        ProposalResult.REJECTED -> "rejection"
-        else -> error("Unexpected type")
-    }
-
-    return rewardedVoters.map {
-        "For the $resolutionType of Proposal $proposalNumber, I grant ${it.name} 1 point (contrary vote)."
-    }
-}
-
 fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
     return rewardsMap
         .proposals
@@ -182,7 +161,6 @@ fun rewardsReport(rewardsMap: ProposalRewardsMap): String {
             listOf(
                 rewardData.authorRewards(proposal),
                 rewardData.coauthorRewards(proposal),
-                rewardData.opposingVoterRewards(proposal),
             )
         }
         .flatten()
