@@ -207,5 +207,15 @@ with:
             endorse(ais523) on 8820
             AGAINST on 8821
         }
+
+        votes(Murphy) {
+            FOR on 8815
+            // TODO: resolve conditional vote on 8816: AGAINST if 8817 was adopted, else PRESENT
+            // TODO: resolve conditional vote on 8817: AGAINST if 8816 was adopted, else PRESENT
+            PRESENT on 8818
+            PRESENT on 8819
+            FOR on 8820
+            PRESENT on 8821
+        }
     }
 }
