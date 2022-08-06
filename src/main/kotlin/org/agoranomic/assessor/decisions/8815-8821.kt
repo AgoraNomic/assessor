@@ -217,5 +217,11 @@ with:
             FOR on 8820
             PRESENT on 8821
         }
+
+        votes(nix) {
+            FOR on 8815
+            FOR on 8818
+            FOR on 8821
+        }
     }
 }
