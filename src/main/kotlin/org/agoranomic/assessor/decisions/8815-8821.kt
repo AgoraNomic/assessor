@@ -169,8 +169,8 @@ with:
             FOR on 8816
             FOR on 8817
             PRESENT on 8818
-            FOR on 8819
-            FOR on 8820
+            AGAINST on 8819
+            AGAINST on 8820
             FOR on 8821
         }
 
