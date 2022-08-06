@@ -186,5 +186,15 @@ with:
         votes(Forest) {
             AGAINST on all
         }
+
+        votes(ais523) {
+            FOR on 8815
+            AGAINST on 8816
+            AGAINST on 8817
+            FOR on 8818
+            FOR on 8819
+            // TODO: resolve conditional vote on 8820: AGAINST if 8819 has passed or would pass, else FOR
+            PRESENT on 8821
+        }
     }
 }
