@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -194,7 +195,7 @@ with:
             AGAINST on 8817
             FOR on 8818
             FOR on 8819
-            // TODO: resolve conditional vote on 8820: AGAINST if 8819 has passed or would pass, else FOR
+            resolvedConditional(AGAINST, "Proposal 8819 has not passed and would not pass") on 8820
             PRESENT on 8821
         }
 
@@ -210,8 +211,8 @@ with:
 
         votes(Murphy) {
             FOR on 8815
-            // TODO: resolve conditional vote on 8816: AGAINST if 8817 was adopted, else PRESENT
-            // TODO: resolve conditional vote on 8817: AGAINST if 8816 was adopted, else PRESENT
+            resolvedConditional(PRESENT, "Proposal 8817 has not been adopted") on 8816
+            resolvedConditional(PRESENT, "Proposal 8816 has not been adopted") on 8817
             PRESENT on 8818
             PRESENT on 8819
             FOR on 8820
