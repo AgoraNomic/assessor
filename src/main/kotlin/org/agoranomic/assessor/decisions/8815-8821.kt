@@ -10,6 +10,12 @@ fun assessment8815to8821() = assessment {
     name("8815-8821")
     quorum(5)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8815) {
             title("Proposal terminology fix")
