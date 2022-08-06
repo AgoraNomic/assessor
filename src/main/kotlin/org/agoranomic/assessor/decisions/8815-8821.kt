@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -195,6 +196,16 @@ with:
             FOR on 8819
             // TODO: resolve conditional vote on 8820: AGAINST if 8819 has passed or would pass, else FOR
             PRESENT on 8821
+        }
+
+        votes(Jason) {
+            FOR on 8815
+            AGAINST on 8816
+            AGAINST on 8817
+            FOR on 8818
+            FOR on 8819
+            endorse(ais523) on 8820
+            AGAINST on 8821
         }
     }
 }
