@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8815to8821() = assessment {
@@ -162,5 +164,14 @@ with:
     }
 
     voting {
+        votes(Secretsnail9) {
+            FOR on 8815
+            FOR on 8816
+            FOR on 8817
+            PRESENT on 8818
+            FOR on 8819
+            FOR on 8820
+            FOR on 8821
+        }
     }
 }
