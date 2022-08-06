@@ -182,5 +182,9 @@ with:
             PRESENT on 8820
             AGAINST on 8821
         }
+
+        votes(Forest) {
+            AGAINST on all
+        }
     }
 }
