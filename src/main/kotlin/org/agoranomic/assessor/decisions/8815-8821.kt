@@ -4,8 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8815to8821() = assessment {
@@ -172,6 +171,16 @@ with:
             FOR on 8819
             FOR on 8820
             FOR on 8821
+        }
+
+        votes(G) {
+            FOR on 8815
+            AGAINST on 8816
+            AGAINST on 8817
+            FOR on 8818
+            PRESENT on 8819
+            PRESENT on 8820
+            AGAINST on 8821
         }
     }
 }
