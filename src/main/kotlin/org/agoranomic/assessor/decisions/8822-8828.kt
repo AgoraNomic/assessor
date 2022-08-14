@@ -562,5 +562,15 @@ After this is done for the fourth time, a player is no longer bespeckled.
             AGAINST on 8827
             AGAINST on 8828
         }
+
+        votes(Murphy) {
+            FOR on 8822
+            PRESENT on 8823
+            FOR on 8824
+            FOR on 8825
+            FOR on 8826
+            FOR on 8827
+            AGAINST on 8828
+        }
     }
 }
