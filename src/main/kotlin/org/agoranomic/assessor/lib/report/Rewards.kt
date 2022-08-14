@@ -139,7 +139,7 @@ private fun ProposalRewardData.authorRewards(proposalNumber: ProposalNumber): Li
 
     return buildList {
         add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
-        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} 5 points (author).")
+        add("For the adoption of Proposal $proposalNumber, I increase the score of ${author.name} by 5 points (author).")
     }
 }
 
