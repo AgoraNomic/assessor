@@ -512,4 +512,7 @@ After this is done for the fourth time, a player is no longer bespeckled.
             )
         }
     }
+
+    voting {
+    }
 }
