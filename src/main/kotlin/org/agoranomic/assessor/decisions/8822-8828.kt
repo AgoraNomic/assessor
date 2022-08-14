@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8822to8828() = assessment {
@@ -514,5 +515,14 @@ After this is done for the fourth time, a player is no longer bespeckled.
     }
 
     voting {
+        votes(Secretsnail9) {
+            FOR on 8822
+            FOR on 8823
+            FOR on 8824
+            FOR on 8825
+            FOR on 8826
+            PRESENT on 8827
+            AGAINST on 8828
+        }
     }
 }
