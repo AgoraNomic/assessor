@@ -343,7 +343,7 @@ Repeal Rule 2621 (VP Wins)."""
 
         proposal(8825) {
             title("Ticking Stone")
-            ai("2.0")
+            ai("1.0")
             author(Secretsnail9)
             coauthors(Forest)
             ordinary()
