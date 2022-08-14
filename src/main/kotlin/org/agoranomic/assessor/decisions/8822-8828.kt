@@ -542,5 +542,15 @@ After this is done for the fourth time, a player is no longer bespeckled.
         votes(Madrid) {
             FOR on all
         }
+
+        votes(Jason) {
+            AGAINST on 8822
+            PRESENT on 8823
+            FOR on 8824
+            AGAINST on 8825
+            AGAINST on 8826
+            AGAINST on 8827
+            AGAINST on 8828
+        }
     }
 }
