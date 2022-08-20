@@ -367,5 +367,9 @@ enacted because the race won't begin anew when that happens.]"""
             PRESENT on 8835
             PRESENT on 8836
         }
+
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
