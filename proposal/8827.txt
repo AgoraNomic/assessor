@@ -1,0 +1,51 @@
+PROPOSAL 8827 (Speckles)
+AUTHOR: 4st
+CLASS: ORDINARY
+FOR (3): Madrid, Murphy, juan
+AGAINST (2): Jason, ais523
+PRESENT (1): Secretsnail9
+BALLOTS: 6
+AI (F/A): 9/6 (AI=2.0)
+POPULARITY: 0.167
+OUTCOME: REJECTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-August/016232.html
+
+ID: 8827
+Title: Speckles
+Adoption index: 2.0
+Author: 4st
+Co-authors: nix
+
+
+Enact a new rule titled "Speckles" with power=2
+with the text:
+{
+Speckles are an indestructible fixed currency with ownership
+restricted to persons. A person with 1 or more speckles is Impure,
+a person with 0 speckles is Pure.
+The Referee is an office, and the recordkeepor for speckles.
+
+To erase a speckle is to destroy it. Destroying speckles is secured
+with a Power Threshold of 1.7.
+
+A person CAN, by announcement, create a specified number of speckles
+in eir possession.
+
+At the beginning of each month, half (rounded up) of each
+player's speckles are destroyed.
+
+For entity A to take N speckles from entity B is to
+simultaneously
+1. erase N speckles in entity B's possession
+2. and create N speckles in entity A's possession.
+
+Speckles can be taken by announcement by clearly and unambiguously
+stating the entity to take from and the amount of speckles.
+
+If a player is to take speckles that do not exist,
+create those speckles in that player's possession.
+
+Prior to paying a fee of N speckles,
+2*N speckles are first created in that player's possession.
+}

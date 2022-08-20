@@ -1,0 +1,467 @@
+{
+    "metadata": {
+        "name": "8822-8828",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-August/016232.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8822,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Horse Racing",
+            "author": "Secretsnail9",
+            "coauthors": [
+                "Murphy"
+            ],
+            "text": "Enact a new rule with title \"Horses\" and the following text:\n\n{\n\nHorses are indestructible assets, ownable only by players and Agora. Any\nhorses owned by the lost and found department are immediately transferred\nto Agora.\n\nAlexia, Baxter, Cannon, Destructor, Fargo, Nacho, Rubert, and Sugar are\neach a horse. These are their names.\n\nDollaries (singular: dollary) are a fixed currency. Hooves (singular: hoof)\nare a fixed currency.\n\nThe Horsened is an office and the recordkeepor of dollaries, hooves, and\nhorses.\n\nRace Position is a Horse switch with possible values of the integers from 0\n(default) to 16, tracked by the Horsened.\n\nRace Place is a Horse switch with possible values of first, second, third,\nand none (default), tracked by the Horsened.\n\nA horse is Running if it has a Race Place of none.\n\nWhen the race starts anew, each horse's Race Position is set to 0, each\nhorse's Race Place is set to none, all horses are transfered to Agora, all\ndollaries and hooves are destroyed, and each player receives 10 dollaries.\n\n}\n\n\nEnact a new rule with title \"The Horses Run\" and the following text:\n\n{\n\nThe horses Run at the start of each week, unless the horses were not\nmotivated within the last week.\n\nWhen the horses run, each player gains 1 hoof, movement resolves, and then\nif any horses have a Race Position of 16 and a Race Place of none, those\nhorses cross the finish line in alphabetical order of their names.\n\nWhen a horse crosses the finish line:\n\n* If no horse has a Race Place of first, the horse's Race Place is set to\nfirst.\n\n* Otherwise, if no horse has a Race Place of second, the horse's Race Place\nis set to second.\n\n* Otherwise, the horse's Race Place is set to third and the race ends, and\nno horse can cross the finish line until the horses are next motivated.\n\n}\n\n\nEnact a new rule with title \"Horse Victory\" and the following text:\n\n{\n\nWhen the race ends, the following happen, in order:\n\n* the player that owns the horse with a Race Place of first gains 50\ndollaries.\n\n* the player that owns the horse with a Race Place of second gains 30\ndollaries.\n\n* the player that owns the horse with a Race Place of third gains 15\ndollaries.\n\n* For each horse, each player that got both a jersey and a helmet for that\nhorse since the last time the race started anew gains 5 dollaries.\n\n* For each horse, each player gains a number of dollaries equal to that\nhorse's current multiplier * the number of dollaries e bet on that horse\nsince the last time the race started anew.\n\n* The score of the player that has the most dollaries is increased by 15.\nIn the event of a tie, instead, no score change occurs.\n\n* The race starts anew.\n\n}\n\n\nEnact a new rule with title \"Horse Multiplier\" and the following text:\n\n{\n\nA horse's current multiplier is based on the following chart:\n\n1, 2, 3: The horse's Race Place is first, second, or third, respectively.\nO: The horse's Race Place is none and Race Position is 12 or more.\nX: The horse's Race Place is none and Race Position is less than 12.\n\n\nHORSE           1 2 3 O X\n--------------------\nAlexia          5 4 3 1 0\nBaxter          5 4 3 1 0\nCannon          6 5 4 1 0\nDestructor      6 5 4 1 0\nFargo           7 6 5 1 0\nNacho           7 6 5 1 0\nRubert          9 8 7 1 0\nSugar           9 8 7 1 0\n\n}\n\n\nEnact a new rule with title \"Weekly Race Actions\" and the following text:\n\n{\n\nEach player CAN take one of the following actions (weekly race actions) if\nthey have not already taken one this week:\n\n* bet 1, 2, or 3 dollaries on a specified horse by paying a fee of 1, 2, or\n3 dollaries respectively.\n\n* get a jersey for a specified horse, also specifying a horse to be added\nto that horse's pull, by paying 1 hoof.\n\n* get a helmet for a specified horse by paying 1 hoof.\n\n* transfer a specified horse owned by Agora to emself by paying a fee equal\nto the horse's cost.\n\n* increase or decrease a specified Running horse's Race Position by 1,\ntwice, by paying 3 hooves.\n\n* take an action defined as a weekly power of a horse e owns by the rules.\n\n* gain 4 dollaries by announcement.\n\nA player CANNOT bet on a horse with a Race Position of 12 or higher unless\ne got a helmet for that horse since the race last started anew.\n\nA player CANNOT get a jersey for a horse e has already gotten a jersey for\nsince the race last started anew.\n\nA player CANNOT get a helmet for a horse e has already gotten a helmet for\nsince the race last started anew.\n\nThe Horsened's weekly report includes, since the race last started anew,\nwhich horses each player has gotten helmets and jerseys for.\n\n}\n\n\nEnact a new rule with title \"Motivating Horses\" and the following text:\n\n{\n\nAny player CAN, by announcement if no player has done so yet this week,\nmotivate the horses, specifying a random horse (the galloper) and a random\nnumber choice of 1, 2, or 3. When movement resolves, the galloper's Race\nPosition is increased by 1 a number of times equal to the random number\nchoice, and then each of the galloper's pulls have their Race Position\nincreased by 1 in alphabetical order of their names.\n\nThe horsened SHALL NOT let a week go by without the horses having been\nmotivated.\n\nEach horse has an associated non-repeating set of horses, their \"pulls\",\ntracked by the Horsened.\n\nWhen the race begins anew, the horse's pulls are set to the following:\n\nHORSE           PULLS\n------------------------\nAlexia          Nacho\nBaxter          Fargo\nCannon          Alexia\nDestructor      Baxter\nFargo           Alexia, Destructor\nNacho           Baxter, Cannon\nRubert          Alexia, Cannon\nSugar           Baxter, Destructor\n\n}\n\n\nEnact a new rule with title \"Horse Powers\" and the following text:\n\n{\n\nEach horse has a power which applies only to the player that owns it (the\nowner), and a cost (in dollaries). They are listed below.\n\nHORSE           COST (dollaries)\n--------------------\nAlexia          10\nBaxter          10\nCannon          8\nDestructor      8\nFargo           6\nNacho           6\nRubert          4\nSugar           4\n\nAlexia's power: Once per month, the owner CAN take a weekly race action, so\nlong as e specifies it's via this power in the same message.\n\nBaxter's power: Whenever Baxter moves forward because of being chosen as\nthe galloper, the owner gains 2 dollaries.\n\nCannon's power: Once per month, the owner CAN increase Cannon's Race\nPosition by 1 by announcement, if Cannon is Running.\n\nDestructor's power: Once per month, the owner CAN decrease a specified\nRunning horse's Race Position by 1, twice, by announcement.\n\nFargo's power: (WEEKLY POWER)  * get a helmet for and bet 2 dollaries on a\nspecified horse, by paying 1 hoof.\n\nNacho's power: (WEEKLY POWER)  * get a jersey for a specified horse, also\nspecifying a horse to be added to another specified horse's pull, by paying\n1 hoof.\n\nRubert's power: (WEEKLY POWER)  * bet 1, 2, or 3 dollaries on a specified\nhorse, and if the horse has the lowest race position or is tied for the\nlowest race position, increase its race position by 1, 3 times, by paying a\nfee of 1, 2, or 3 dollaries respectively.\n\nSugar's power: (WEEKLY POWER)  * get a helmet for and increase the Race\nPosition of a specified horse by 1, by paying 1 hoof.\n\n}"
+        },
+        {
+            "version": "4",
+            "number": 8823,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Bird Overhaul",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "[Getting rid of terms in the bird scrolls that no longer make sense, and\nreplacing them with new powers.]\n\nAmend Rule 2665 (The Birds) by replacing\n\n\"Owl: A specified player (defaulting to the playmate if not\n\n        specified) gains the Grant associated with a specified Ministry.\"\n\nwith\n\n\"Owl: A specified bird cannot be played with until next month, rules to\n\n the contrary notwithstanding.\",\n\nreplacing\n\n\"Pigeon: The playmate gains 2 blots and 1 Blot-B-Gone.\"\n\nwith\n\n\"Pigeon: The playmate gains 2 blots.\",\n\nreplacing\n\n\"Penguin: If the playmate is Beast Permitted, e gains\n        1 Winsome, 1 Blot-B-Gone, 1 Pendant, and 1 Votive. Otherwise,\n        the playmate gains 1 blot, 1 Pendant, and 1 Votive.\"\n\nwith\n\n\"Penguin: If the playmate is Beast Permitted, e gains\n        6 boatloads of coins. Otherwise,\n        the playmate gains 1 blot and 3 boatloads of coins.\",\n\nreplacing\n\n\"Cockatiel: A specified player that is not the playmate gains a\n        specified Product.\"\n\nwith\n\n\"Cockatiel: A specified player that is not the playmate buys bird food\n2 times.\",\n\nand replacing\n\n\"Jay: The Pended switch of a specified proposal is set to True,\n        and that proposal becomes sponsored. The playmate then gains 1\n        Votive.\"\n\nwith\n\n\"Jay: The voting strength of the playmate on a specified referendum is\nincreased by 3.\""
+        },
+        {
+            "version": "4",
+            "number": 8824,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Cleaning Sets Remnants",
+            "author": "Secretsnail9",
+            "coauthors": [
+            ],
+            "text": "Repeal Rule 2636 (The Ministor).\n\nRepeal Rule 2621 (VP Wins)."
+        },
+        {
+            "version": "4",
+            "number": 8825,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Ticking Stone",
+            "author": "Secretsnail9",
+            "coauthors": [
+                "4st"
+            ],
+            "text": "Amend Rule 2645 (The Stones) by adding another paragraph:\n\"- Ticking Stone (Monthly, 70%): In the same message as which e wields this\nstone, the wielder CAN Flip the Device On or Off by announcement. In the\nsame message as which e wields this stone, the wielder CAN act on behalf of\nthe device, by announcement, to take any action the device CAN take by\nannouncement.\"\n\nThen, create the Ticking Stone under the ownership of Agora."
+        },
+        {
+            "version": "4",
+            "number": 8826,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Dream of Wandering",
+            "author": "Secretsnail9",
+            "coauthors": [
+                "4st",
+                "nix",
+                "Madrid",
+                "Jason"
+            ],
+            "text": "Enact a new rule with the title \"Dream of Wandering\" and the following text:\n\n{{\n\nThe Dreamor is an office; its holder is responsible for keeping track of\nthe dreams of all active players.\n\nMindset is a secured active player switch,\ntracked by the Dreamor in eir monthly report,\nwith possible values Dream of Wandering (the default) and any Dream.\n\nAn active player CAN Plan to Flip eir own Mindset,\nspecifying any valid value for eir Mindset, by announcement.\nWhen the rules state that the wandering occurs,\nevery active player's Mindset is set to the value e most\nrecently specified by Planning to Flip. If a player did not Plan to Flip\neir Mindset switch since the last wandering, it not Flipped.\n\nThe wandering occurs at the beginning of each month.\n\nAt any time, each active player is either a Sleeping Dreamer (Default), a\nNew Dreamer, or a Recurring Dreamer. The state of each player is included\nin the Dreamor's monthly report, which SHALL be published in a timely\nfashion from the beginning of the month.\n\nIf an active player's Mindset is flipped when the wandering occurs, e\nbecomes a New Dreamer; otherwise, e becomes a Recurring dreamer.\n\nThe following rules apply to each active player\nbased on that player's Mindset:\n- Dream of Victory:\n  Upon a correct announcement of being the only player with eir Mindset\n  Flipped to Dream of Victories, e wins the game. Upon winning the game,\n  e has eir Mindset immediately Flipped to the Dream of Wandering and\n  becomes a Sleeping Dreamer.\n  While e is a New Dreamer, e CAN, once by announcement, gain 10 points,\n  then become a Sleeping Dreamer.\n- Dream of Wealth:\n  While e is a New or Recurring Dreamer, e CAN,\n  once by announcement, grant 5 stamps of eir own type to emself,\n  then become a Sleeping Dreamer.\n- Dream of Justice:\n  While e is a New or Recurring Dreamer, e CAN,\n  once by announcement, expunge up to 4 blots from emself,\n  then become a Sleeping Dreamer.\n- Dream of Wandering:\n  While e is a Recurring Dreamer, e CAN, once by announcement,\n  set eir mindset to a specified Dream, and become a New Dreamer.\n- Dream of Machines:\n  E CAN Flip the Device to either on or off with Agoran Consent.\n  E CAN act on behalf of the device to take any\n  action the device CAN take by announcement with 1 support.\n- Dream of Beasts:\n  E CAN buy bird food by paying a fee of 3 boatloads of coins.\n  E CAN buy a Beast Permit by paying a fee of 40 boatloads of coins.\n  E CAN renew a Beast Permit by paying a fee of 20 boatloads of coins.\n- Dream of Gardens:\n  While E is a New or Recurring Dreamer, E CAN once pay a fee of N stamps,\n  specifying one stone e owns, and that stone has its escape chance\n  reduced by N*5%, to a minimum of 0%, where N is a positive integer,\n  then become a Sleeping Dreamer.\n  This reduction can only apply to one stone e owns.\n  This reduction is removed after\n  the Stonemason publishes a collection notice.\n- Dream of Power: Eir Voting Strength is 2 greater.\n\n}}"
+        },
+        {
+            "version": "4",
+            "number": 8827,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Speckles",
+            "author": "4st",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "Enact a new rule titled \"Speckles\" with power=2\nwith the text:\n{\nSpeckles are an indestructible fixed currency with ownership\nrestricted to persons. A person with 1 or more speckles is Impure,\na person with 0 speckles is Pure.\nThe Referee is an office, and the recordkeepor for speckles.\n\nTo erase a speckle is to destroy it. Destroying speckles is secured\nwith a Power Threshold of 1.7.\n\nA person CAN, by announcement, create a specified number of speckles\nin eir possession.\n\nAt the beginning of each month, half (rounded up) of each\nplayer's speckles are destroyed.\n\nFor entity A to take N speckles from entity B is to\nsimultaneously\n1. erase N speckles in entity B's possession\n2. and create N speckles in entity A's possession.\n\nSpeckles can be taken by announcement by clearly and unambiguously\nstating the entity to take from and the amount of speckles.\n\nIf a player is to take speckles that do not exist,\ncreate those speckles in that player's possession.\n\nPrior to paying a fee of N speckles,\n2*N speckles are first created in that player's possession.\n}"
+        },
+        {
+            "version": "4",
+            "number": 8828,
+            "proposal_ai": "1.7",
+            "decision_ai": "1.7",
+            "title": "Speckle Penalty",
+            "author": "4st",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "Enact a new rule titled \"Speckle Penalty\" with power=1.7\nwith the text:\n{\nAt the beginning of the month, after speckles are erased, the player(s)\nwith both:\n1. nonzero speckles and\n2. the most speckles\neach earn 4 blots.For up to two weeks after these blots are awarded to\nthe players, these players are bespeckled. After those two weeks, they are\nno\nlonger bespeckled.\n\nIf a player is bespeckled, they may, by announcement and up to 4 times,\n1. pay a fee of 1 boatload of coins or\n2. pay a fee of 1 point\nto expunge a blot that is in eir possession.\nAfter this is done for the fourth time, a player is no longer bespeckled.\n}"
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8822,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8823,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8824,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8825,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8826,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8827,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8828,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 3,
+                "strength_against": 15,
+                "votes": [
+                    {
+                        "voter": "Secretsnail9",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Madrid",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        }
+    ]
+}
