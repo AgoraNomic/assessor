@@ -110,7 +110,7 @@ private fun distributionToDSL(rawDistribution: String): String {
 
                     appendDecl("title($codeTitle)")
 
-                    val ai = lines[AI_LINE_INDEX].afterExpected("Adoption index: ").toBigDecimal()
+                    val ai = lines[AI_LINE_INDEX].afterExpected(Regex("Adoption [iI]ndex: ")).toBigDecimal()
 
                     appendDecl("ai(${ai.toString().escapedAndQuoted()})")
 
@@ -120,7 +120,7 @@ private fun distributionToDSL(rawDistribution: String): String {
 
                     val coauthorsString =
                         lines[COAUTHORS_LINE_INDEX]
-                            .afterExpected(Regex("Co-[aA]uthor(s|\\(s\\)):"))
+                            .afterExpected(Regex("Co-?[aA]uthor(s|\\(s\\))?:"))
                             .trim()
 
                     val coauthorFullNames = coauthorsString.split(", ").filter { it.isNotBlank() }
