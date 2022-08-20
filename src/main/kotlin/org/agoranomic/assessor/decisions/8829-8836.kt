@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -332,6 +333,17 @@ enacted because the race won't begin anew when that happens.]"""
             FOR on 8834
             AGAINST on 8835
             AGAINST on 8836
+        }
+
+        votes(nix) {
+            FOR on 8829
+            FOR on 8830
+            FOR on 8831
+            FOR on 8832
+            FOR on 8833
+            FOR on 8834
+            AGAINST on 8835
+            endorse(Secretsnail9) on 8836
         }
     }
 }
