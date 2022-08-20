@@ -356,5 +356,16 @@ enacted because the race won't begin anew when that happens.]"""
             PRESENT on 8835
             FOR on 8836
         }
+
+        votes(juan) {
+            AGAINST on 8829
+            PRESENT on 8830
+            PRESENT on 8831
+            FOR on 8832
+            FOR on 8833
+            FOR on 8834
+            PRESENT on 8835
+            PRESENT on 8836
+        }
     }
 }
