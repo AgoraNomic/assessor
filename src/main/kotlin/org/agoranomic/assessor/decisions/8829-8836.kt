@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8829to8836() = assessment {
@@ -311,5 +312,15 @@ enacted because the race won't begin anew when that happens.]"""
     }
 
     voting {
+        votes(Secretsnail9) {
+            PRESENT on 8829
+            FOR on 8830
+            AGAINST on 8831
+            FOR on 8832
+            FOR on 8833
+            PRESENT on 8834
+            FOR on 8835
+            FOR on 8836
+        }
     }
 }
