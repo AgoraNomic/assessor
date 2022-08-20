@@ -371,5 +371,16 @@ enacted because the race won't begin anew when that happens.]"""
         votes(Madrid) {
             FOR on all
         }
+
+        votes(Jason) {
+            PRESENT on 8829
+            FOR on 8830
+            FOR on 8831
+            FOR on 8832
+            FOR on 8833
+            FOR on 8834
+            AGAINST on 8835
+            AGAINST on 8836
+        }
     }
 }
