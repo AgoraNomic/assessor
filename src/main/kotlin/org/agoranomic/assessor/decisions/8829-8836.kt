@@ -402,5 +402,16 @@ enacted because the race won't begin anew when that happens.]"""
             AGAINST on 8835
             FOR on 8836
         }
+
+        votes(G) {
+            endorse(Maud) on 8829
+            FOR on 8830
+            AGAINST on 8831
+            AGAINST on 8832
+            PRESENT on 8833
+            FOR on 8834
+            AGAINST on 8835
+            PRESENT on 8836
+        }
     }
 }
