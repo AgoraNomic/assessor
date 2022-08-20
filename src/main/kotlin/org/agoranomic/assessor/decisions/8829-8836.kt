@@ -382,5 +382,14 @@ enacted because the race won't begin anew when that happens.]"""
             AGAINST on 8835
             PRESENT on 8836
         }
+
+        votes(RLee) {
+            PRESENT on 8829
+            FOR on 8830
+            FOR on 8831
+            PRESENT on 8832
+            AGAINST on 8833
+            FOR on 8834
+        }
     }
 }
