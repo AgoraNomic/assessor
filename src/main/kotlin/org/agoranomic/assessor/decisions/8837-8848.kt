@@ -452,5 +452,9 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             AGAINST on 8847
             AGAINST on 8848
         }
+
+        votes(Madrid) {
+            FOR on 8837
+        }
     }
 }
