@@ -37,6 +37,7 @@ val Oerjan = Person("Oerjan") // Not a player, just a watcher
 val omd = Person("omd")
 val Pat = Person("Pat")
 val pikhq = Person("pikhq")
+val Pilgore = Person("Pilgore")
 val PSS = Person("Publius Scribonius Scholasticus")
 val RLee = Person("R. Lee")
 val Secretsnail9 = Person("Secretsnail9")
