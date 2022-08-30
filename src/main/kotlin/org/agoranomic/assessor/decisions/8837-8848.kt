@@ -337,4 +337,7 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             )
         }
     }
+
+    voting {
+    }
 }
