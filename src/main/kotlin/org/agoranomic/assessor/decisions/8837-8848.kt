@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8837to8848() = assessment {
@@ -354,6 +353,21 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             FOR on 8846
             FOR on 8847
             AGAINST on 8848
+        }
+
+        votes(Forest) {
+            FOR on 8837
+            FOR on 8838
+            FOR on 8839
+            FOR on 8840
+            FOR on 8841
+            endorse(Jason) on 8842
+            PRESENT on 8843
+            FOR on 8844
+            endorse(nix) on 8845
+            endorse(G) on 8846
+            endorse(G) on 8847
+            FOR on 8848
         }
     }
 }
