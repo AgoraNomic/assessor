@@ -4,6 +4,9 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8837to8848() = assessment {
@@ -339,5 +342,18 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
     }
 
     voting {
+        votes(Secretsnail9) {
+            AGAINST on 8838
+            endorse(Jason) on 8839
+            endorse(G) on 8840
+            endorse(Murphy) on 8841
+            FOR on 8842
+            endorse(nix) on 8843
+            FOR on 8844
+            FOR on 8845
+            FOR on 8846
+            FOR on 8847
+            AGAINST on 8848
+        }
     }
 }
