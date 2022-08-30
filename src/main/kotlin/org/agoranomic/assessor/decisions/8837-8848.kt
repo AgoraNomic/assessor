@@ -433,5 +433,9 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             PRESENT on 8847
             FOR on 8848
         }
+
+        votes(RLee) {
+            AGAINST on 8841
+        }
     }
 }
