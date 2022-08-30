@@ -1,0 +1,51 @@
+PROPOSAL 8834 (Karma Revival (fixed))
+AUTHOR: nix
+CLASS: ORDINARY
+FOR (9): 4st, G., Gaelan, Jason, Madrid, Murphy, R. Lee, juan, nix
+AGAINST (1): ais523
+PRESENT (1): Secretsnail9
+BALLOTS: 11
+AI (F/A): 27/3 (AI=1.0)
+POPULARITY: 0.727
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-August/016256.html
+
+ID: 8834
+Title: Karma Revival (fixed)
+Adoption index: 1.0
+Author: nix
+Co-authors: Jason, G.
+
+
+Reenact R2510, "Such is Karma", at P=1 with the following text:
+
+         Karma is an Agora and player integer switch tracked by the Herald
+         in eir Weekly Report.
+
+         A player CAN publish a Notice of Honour. For a Notice of Honour
+         to be valid, it must:
+
+         1. Be clear that it is a Notice of Honour, and be the first valid
+            Notice of Honour that player has published in the current
+            week;
+
+         2. Specify any other active player or Agora to gain karma, and
+            provide a reason for specifying that player; and
+
+         3. Specify any active player or Agora to lose karma, and provide
+            a reason for specifying that player.
+
+         4. Not result in Agora's karma moving farther away from 0.
+
+         When a valid Notice of Honour is published, the entity specified
+         to gain karma has eir karma increased by one, and the entity
+         specified to lose karma has eir karma decreased by one.
+
+         - The player with the highest karma (if any) is the Paragon.
+
+         - The player with the lowest karma (if any) is the Renegade.
+
+         At the beginning of each quarter, every player's Karma is set to
+         half of its current value, rounded towards 0. Agora's Karma is
+         then set to zero minus the sum of all player karma values.
