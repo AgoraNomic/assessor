@@ -404,5 +404,20 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             AGAINST on 8847
             AGAINST on 8848
         }
+
+        votes(Pilgore) {
+            AGAINST on 8837
+            AGAINST on 8838
+            AGAINST on 8839
+            PRESENT on 8840
+            PRESENT on 8841
+            FOR on 8842
+            AGAINST on 8843
+            FOR on 8844
+            AGAINST on 8845
+            FOR on 8846
+            PRESENT on 8847
+            AGAINST on 8848
+        }
     }
 }
