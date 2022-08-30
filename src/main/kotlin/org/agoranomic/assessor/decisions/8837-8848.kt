@@ -389,5 +389,20 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             PRESENT on 8847
             FOR on 8848
         }
+
+        votes(Jason) {
+            // NO VOTE on 8837
+            PRESENT on 8838
+            AGAINST on 8839
+            FOR on 8840
+            FOR on 8841
+            FOR on 8842
+            FOR on 8843
+            AGAINST on 8844
+            AGAINST on 8845
+            AGAINST on 8846
+            AGAINST on 8847
+            AGAINST on 8848
+        }
     }
 }
