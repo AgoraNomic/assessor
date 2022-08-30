@@ -358,17 +358,6 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
 
         votes(Forest) {
             FOR on 8837
-            FOR on 8838
-            FOR on 8839
-            FOR on 8840
-            FOR on 8841
-            endorse(Jason) on 8842
-            PRESENT on 8843
-            FOR on 8844
-            endorse(nix) on 8845
-            endorse(G) on 8846
-            endorse(G) on 8847
-            FOR on 8848
         }
 
         votes(Gaelan) {
