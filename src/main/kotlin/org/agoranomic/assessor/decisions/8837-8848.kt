@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -368,6 +369,21 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             endorse(G) on 8846
             endorse(G) on 8847
             FOR on 8848
+        }
+
+        votes(Gaelan) {
+            AGAINST on 8837
+            endorseOrElse(Secretsnail9, FOR) on 8838 comment "Secretsnail9 is the Horsened"
+            AGAINST on 8839
+            FOR on 8840
+            FOR on 8841
+            FOR on 8842
+            endorse(G) on 8843
+            FOR on 8844
+            AGAINST on 8845
+            FOR on 8846
+            FOR on 8847
+            PRESENT on 8848
         }
     }
 }
