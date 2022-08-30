@@ -391,7 +391,7 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
         }
 
         votes(Jason) {
-            // NO VOTE on 8837
+            AGAINST on 8837
             PRESENT on 8838
             AGAINST on 8839
             FOR on 8840
