@@ -10,6 +10,12 @@ fun assessment8837to8848() = assessment {
     name("8837-8848")
     quorum(7)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8837) {
             title("Is this a hard decision?")
