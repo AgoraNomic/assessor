@@ -4,7 +4,6 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -176,6 +175,15 @@ Grant Madrid 200 blots."""
             // TODO: resolve conditional vote on 8854: AGAINST if 8853 not passed, else PRESENT
             AGAINST on 8855
             PRESENT on 8856
+        }
+
+        votes(Jason) {
+            AGAINST on 8851
+            FOR on 8852
+            FOR on 8853
+            FOR on 8854
+            FOR on 8855
+            FOR on 8856
         }
     }
 }
