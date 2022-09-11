@@ -184,7 +184,7 @@ Grant Madrid 200 blots."""
             FOR on 8853
             FOR on 8854
             FOR on 8855
-            FOR on 8856
+            endorse(G) on 8856
         }
 
         votes(Forest) {
