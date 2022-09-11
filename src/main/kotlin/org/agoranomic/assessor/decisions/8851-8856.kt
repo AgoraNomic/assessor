@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -173,7 +175,7 @@ Grant Madrid 200 blots."""
             AGAINST on 8851
             FOR on 8852
             AGAINST on 8853
-            // TODO: resolve conditional vote on 8854: AGAINST if 8853 not passed, else PRESENT
+            resolvedConditional(PRESENT, "Proposal 8853 has passed") on 8854
             AGAINST on 8855
             PRESENT on 8856
         }
@@ -204,8 +206,13 @@ Grant Madrid 200 blots."""
             endorse(Jason) on 8852 comment "Jason is the Arbitor"
             FOR on 8853
             FOR on 8854
-            // TODO resolve conditional vote on 8855: FOR unless >= 3 players take an action under bird rules after vote cast
-            // TODO resolve conditional vote on 8856: FOR if 8853 or 8854 failed, else AGAINST
+
+            resolvedConditional(
+                InextricableResolvingVote,
+                "At least 3 players have taken an action under the bird rules since the casting of the vote",
+            ) on 8855
+
+            resolvedConditional(AGAINST, "Neither proposal 8853 nor proposal 8854 has failed") on 8856
         }
 
         votes(juan) {
@@ -232,7 +239,7 @@ Grant Madrid 200 blots."""
             FOR on 8853
             // NO VOTE on 8854
             FOR on 8855
-            // TODO: resolve conditional vote on 8856: AGAINST if 8853 and 8854 both have passed/will pass, else FOR if 8854 has passed/will pass, else PRESENT
+            resolvedConditional(AGAINST, "Both proposals 8853 and 8854 have passed") on 8856
         }
 
         votes(G) {
