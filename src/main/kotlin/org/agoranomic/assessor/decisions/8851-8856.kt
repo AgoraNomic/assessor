@@ -207,5 +207,14 @@ Grant Madrid 200 blots."""
             // TODO resolve conditional vote on 8855: FOR unless >= 3 players take an action under bird rules after vote cast
             // TODO resolve conditional vote on 8856: FOR if 8853 or 8854 failed, else AGAINST
         }
+
+        votes(juan) {
+            AGAINST on 8851
+            FOR on 8852
+            FOR on 8853
+            FOR on 8854
+            AGAINST on 8855
+            FOR on 8856
+        }
     }
 }
