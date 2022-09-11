@@ -193,5 +193,9 @@ Grant Madrid 200 blots."""
         votes(Madrid) {
             FOR on all
         }
+
+        votes(cuddlybanana) {
+            FOR on all
+        }
     }
 }
