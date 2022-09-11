@@ -189,5 +189,9 @@ Grant Madrid 200 blots."""
         votes(Forest) {
             FOR on all
         }
+
+        votes(Madrid) {
+            FOR on all
+        }
     }
 }
