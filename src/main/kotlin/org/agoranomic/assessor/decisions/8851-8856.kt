@@ -165,4 +165,7 @@ Grant Madrid 200 blots."""
             )
         }
     }
+
+    voting {
+    }
 }
