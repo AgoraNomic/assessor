@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8851to8856() = assessment {
@@ -167,5 +169,13 @@ Grant Madrid 200 blots."""
     }
 
     voting {
+        votes(Secretsnail9) {
+            AGAINST on 8851
+            FOR on 8852
+            AGAINST on 8853
+            // TODO: resolve conditional vote on 8854: AGAINST if 8853 not passed, else PRESENT
+            AGAINST on 8855
+            PRESENT on 8856
+        }
     }
 }
