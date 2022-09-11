@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -196,6 +197,15 @@ Grant Madrid 200 blots."""
 
         votes(cuddlybanana) {
             FOR on all
+        }
+
+        votes(Gaelan) {
+            AGAINST on 8851
+            endorse(Jason) on 8852 comment "Jason is the Arbitor"
+            FOR on 8853
+            FOR on 8854
+            // TODO resolve conditional vote on 8855: FOR unless >= 3 players take an action under bird rules after vote cast
+            // TODO resolve conditional vote on 8856: FOR if 8853 or 8854 failed, else AGAINST
         }
     }
 }
