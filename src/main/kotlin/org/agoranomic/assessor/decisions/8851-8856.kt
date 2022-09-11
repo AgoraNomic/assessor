@@ -225,5 +225,14 @@ Grant Madrid 200 blots."""
             endorse(Secretsnail9) on 8855 comment "Secretsnail9 is the Avicultor"
             endorse(Madrid) on 8856
         }
+
+        votes(ais523) {
+            AGAINST on 8851
+            FOR on 8852
+            FOR on 8853
+            // NO VOTE on 8854
+            FOR on 8855
+            // TODO: resolve conditional vote on 8856: AGAINST if 8853 and 8854 both have passed/will pass, else FOR if 8854 has passed/will pass, else PRESENT
+        }
     }
 }
