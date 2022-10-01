@@ -85,5 +85,9 @@ with:
             AGAINST on 8857
             FOR on 8858
         }
+
+        votes(ziproot) {
+            FOR on all
+        }
     }
 }
