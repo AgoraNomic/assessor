@@ -103,5 +103,10 @@ with:
             AGAINST on 8857
             PRESENT on 8858
         }
+
+        votes(Murphy) {
+            PRESENT on 8857
+            FOR on 8858
+        }
     }
 }
