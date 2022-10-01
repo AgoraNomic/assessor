@@ -98,5 +98,10 @@ with:
             AGAINST on 8857
             PRESENT on 8858
         }
+
+        votes(ais523) {
+            AGAINST on 8857
+            PRESENT on 8858
+        }
     }
 }
