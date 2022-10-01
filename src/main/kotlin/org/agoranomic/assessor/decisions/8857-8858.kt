@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import java.math.BigDecimal
 
 @UseAssessment
@@ -79,5 +81,9 @@ with:
     }
 
     voting {
+        votes(Secretsnail9) {
+            AGAINST on 8857
+            FOR on 8858
+        }
     }
 }
