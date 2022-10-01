@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 import java.math.BigDecimal
 
 @UseAssessment
@@ -88,6 +87,11 @@ with:
 
         votes(ziproot) {
             FOR on all
+        }
+
+        votes(juan) {
+            AGAINST on 8857
+            PRESENT on 8858
         }
     }
 }
