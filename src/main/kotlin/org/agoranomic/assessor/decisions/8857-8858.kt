@@ -3,6 +3,9 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
+import java.math.BigDecimal
 
 @UseAssessment
 fun assessment8857to8858() = assessment {
@@ -18,7 +21,8 @@ fun assessment8857to8858() = assessment {
     proposals(v4) {
         proposal(8857) {
             title("Voter Protection 3.0")
-            ai("3.0")
+            proposalAI(ProposalAI(BigDecimal("3.0")))
+            decisionAI(DecisionAI(BigDecimal("4.0")))
             author(ziproot)
             democratic()
 
