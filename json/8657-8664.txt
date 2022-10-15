@@ -35,7 +35,7 @@
             "author": "nix",
             "coauthors": [
                 "G.",
-                "Secretsnail9"
+                "snail"
             ],
             "text": "[Reword welcome packages to unambiguously make \"grant\" work and also add\na keyword for \"cashing in\" sets, to fix some clunky language.]\n\nAmend R2577 \"Asset Actions\" by replacing:\n\n  To grant an entity an asset is to create it in eir possession.\n\nwith:\n\n  To grant an entity an asset is to create it in eir possession. To\n  grant an entity a set of assets is to create each asset in the set\n  in eir possession.\n\nAmend R2499 \"Welcome Packages\" to read in full:\n\n  A Welcome Package is a set of assets containing:\n\n     * 10 boatloads of coins, AND\n     * 1 of each type of card defined in the rules.\n\n  Any player CAN grant a Welcome Package to any player if the grantee\n  has neither received one since e last registered nor in the last 30\n  days.\n\nRatify that all current players have received a Welcome Package since\nthey last registered.\n\nAmend R2620 \"Cards & Sets\" by replacing:\n\n  A player CAN pay a 'set' of X Cards of the same type\n\nwith:\n\n  A player CAN pay a 'set' of (syn: \"cash in\") X Cards of the same\n  type"
         },
@@ -49,7 +49,7 @@
             "coauthors": [
                 "G.",
                 "Jason",
-                "Secretsnail9"
+                "snail"
             ],
             "text": "Amend R2621 \"VP Wins\" by replacing:\n\n  Then, the winds change, following which each active player gains 1\n  card of each type and eir grant (if any).\n\nwith:\n\n  Then, the winds die down.\n\nAdd a new Power=3 rule titled \"The Winds Die Down\" with the following\ntext:\n\n  When the wind dies down, the following happen in order:\n\n  * The following rules are repealed in order: R2620 \"Cards & Sets\",\n    R2623 \"Popular Proposal Proposer Privilege\", R2629 \"Victory\n    Auctions\", R2624 \"Card Administration\", R2622 \"Pending Proposals\",\n    R2651 \"Proposal Recycling\", and R2653 \"Buying Strength\".\n\n  * All rules including the text \"~>\" and \"<~\" are amended in\n    ascending numerical order by removing all text between and\n    including each \"~>\" and the first following \"<~\".\n\n  * This rule is repealed.\n\nAmend R2478 \"Vigilante Justice\" to replace:\n\n  The player who initiated the most Finger Pointings that resulted in\n  a Warning, Indictment, or Cold Hand of Justice in the previous\n  Agoran Week CAN once grant emself a Justice Card by announcement.\n\nwith:\n\n  ~>The player who initiated the most Finger Pointings that resulted\n  in a Warning, Indictment, or Cold Hand of Justice in the previous\n  Agoran Week CAN once grant emself a Justice Card by announcement.<~\n\nAmend R2499 \"Welcome Packages\" to replace:\n\n  * 10 boatloads of coins, AND\n  * 1 of each type of card defined in the rules.\n\nwith:\n\n  * 10 boatloads of coins~>, AND<~\n  ~>* 1 of each type of card defined in the rules.<~\n\nAmend 2645 \"The Stones\" by replacing:\n\n  - Alchemy Stone (weekly, 70%): Destroy four cards you own. If four\n    cards were destroyed this way, gain 7 products of your choice.\n\nwith:\n\n  ~>- Alchemy Stone (weekly, 70%): Destroy four cards you own. If four\n      cards were destroyed this way, gain 7 products of your choice.<~\n\nAmend R1607 \"Distribution\" by replacing:\n\n  The Promotor CAN distribute a proposal which is in the Proposal Pool\n  at any time, but SHALL NOT do so unless it is pending.\n\n  In a given Agoran week, the Promotor SHALL distribute each proposal\n  that was in the Proposal Pool and pending at the beginning of that\n  week, except for those excepted from automatic distribution by other\n  rules, or those that are otherwise removed from the Pool. If there\n  are ten or more pending undistributed proposals in the proposal\n  pool, the promotor MAY refrain from distributing the most recently\n  added 5 proposals if e distributes each other pending proposal in\n  that Agoran week.\n\n  If a proposal has been in the proposal pool for more than 7 days and\n  is not pending, the Promotor CAN and SHOULD remove it from the Pool\n  by announcement.\n\nwith:\n\n  The Promotor CAN distribute a proposal which is in the Proposal Pool\n  at any time~>, but SHALL NOT do so unless it is pending<~.\n\n  In a given Agoran week, the Promotor SHALL distribute each proposal\n  that was in the Proposal Pool ~>and pending<~ at the beginning of\n  that week, except for those excepted from automatic distribution by\n  other rules, or those that are otherwise removed from the Pool. If\n  there are ten or more ~>pending<~ undistributed proposals in the\n  proposal pool, the promotor MAY refrain from distributing the most\n  recently added 5 proposals if e distributes each other ~>pending<~\n  proposal in that Agoran week.\n\n  ~>If a proposal has been in the proposal pool for more than 7 days\n  and is not pending, the Promotor CAN and SHOULD remove it from the\n  Pool by announcement.<~\n\nAmend R2481 \"Festival Restrictions\" by replacing:\n\n  4. Non-Festive players CANNOT cause proposals to become Pended.\n\nwith:\n\n  ~>4. Non-Festive players CANNOT cause proposals to become Pended.<~\n\nAmend R2555 \"Blots\" by replacing:\n\n  Any player CAN expunge a blot from a specified person (or emself if\n  no one is specified) by paying a fee of one Blot-B-Gone.\n\n  Any player CAN levy a fine of one blot on a specified person by\n  paying a fee of two Blot-B-Gones, provided the specified person has\n  not already gained two blots or more in the current week.\n\nwith:\n\n  ~>Any player CAN expunge a blot from a specified person (or emself\n  if no one is specified) by paying a fee of one Blot-B-Gone.<~\n\n  ~>Any player CAN levy a fine of one blot on a specified person by\n  paying a fee of two Blot-B-Gones, provided the specified person has\n  not already gained two blots or more in the current week.<~\n\n  Any player who has not expunged a blot by this method this week CAN\n  expunge 1 blot from a specified player who has not gained a blot\n  this week, by announcement ~>unless either of them is a player<~."
         },
@@ -73,7 +73,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Birds! v2",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
                 "Jason",
                 "Telna"
@@ -86,7 +86,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "The Hexeract",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Create a rule with title \"Grids\" and the following text:\n{\n\n  A grid has D dimensions, where D is a positive integer, and where its 1st\n  through Dth dimensions are defined in the rules. Each finite dimension has\n  a width of W, where W is a positive integer. A dimension is either wrapping\n  (syn. wrapped) or not wrapping (default). A dimension is either infinite or\n  finite (default).\n\n  A location on a grid is a vector with D dimensions, where D is the number\n  of dimensions the grid has, with each dimension having a value as an entry,\n  whose Dth entry is a non-negative integer less than the Dth dimension's\n  width if the Dth dimension is neither infinite nor wrapping. All entries\n  for a given wrapping dimension are equal modulo that dimension's width. For\n  example, in a grid 2 Dimensions of widths 2 then 3, [1,2] would be a valid\n  location and [2,1] would not be.\n\n  A grid has a space for each location on that grid, and that space has that\n  location as a location.\n\n  A space has a location. A space (A) is adjacent to another space in the\n  same grid (B) if you could add 1 or subtract 1 from a single entry in B's\n  location to get A's location. For example, on a grid with 2 dimensions of\n  widths 2 then 3, [1,2] would be adjacent to [1,0] if the grid was wrapping,\n  and not adjacent if it is not wrapping.)\n\n}\n\nCreate a rule with title \"The Hexeract\" and the following text:\n{\n\n  The Hexeract is a grid with 6 dimensions. The 1st-6th dimensions all have a\n  width of 3.\n\n  Each space on The Hexeract has a list of persons that own a fence on it,\n  which is initially empty. A person \"owns a fence on\" a space if e is in the\n  list of persons that own a fence on that space. A space on The Hexeract can\n  be referred to by its location.\n\n  PlayerSpace is a secured Player switch tracked by the Hexor with possible\n  values from the set on all spaces on The Hexeract, defaulting to\n  [1,1,1,1,1,1]. For a player to move to a space is to change eir PlayerSpace\n  value to that space. A player is on a space if their PlayerSpace value is\n  that space.\n\n  Fencehops, Fences, and Movies are each a currency, tracked by the Hexor.\n\n  Whenever a payday occurs, each active player gains 1 Fencehop, 1 Fence, and\n  1 Movie.\n\n  A player CAN once a month grant 1 Fencehop, 1 Fence, or 1 Movie to\n  specified player by announcement.\n\n  A player CAN, if e has not already done any of the below this week:\n\n     * move to a specified non-fenced space adjacent to the one e is on by\n       announcement.\n\n     * move to a specified fenced space adjacent to the one e is on by\n       announcement, provided e owns a fence on that space.\n\n     * move to a specified fenced space adjacent to the one e is on without\n       objection from any Player who owns a fence on that space.\n\n     * move to a specified fenced space adjacent to the one e is on by paying\n       a fee of 1 Fencehop.\n\n     * move to a specified fenced space e owns a fence on by paying a fee of\n       3 Fencehops.\n\n  A player CAN Build a Fence by paying a fee of 1 Fence, provided e doesn't\n  already own a fence on the space e is on. When e does so, e is added to the\n  list of players who own a fence on that space.\n\n  A player CAN Build a Huge Fence by paying a fee of 5 Fences. When e does\n  so, e is added to the list of players who own a fence on each space\n  adjacent to the one e is on.\n\n  A player CAN move to a specified non-fenced space adjacent to the one e is\n  on by paying a fee of 1 Movie.\n\n  A player CAN swap the locations of two specified spaces by paying a fee of\n  5 Movies.\n\n  A mountain has a name, defaulting to the location of the space it is on.\n  Each space on The Hexeract with the form [A,B,C,D,E,F], where A, B, C, D,\n  E, and F are each either 0 or 2 (the 64 corners of the grid) starts out\n  with a mountain on it when created.\n\n  Vertokens are an indestructible fixed asset tracked by the Hexor, with a\n  specific mountain as a type. There is a distinct type for each mountain\n  that currently exists on a space on The Hexeract.\n\n  A player CAN Climb by announcement, provided e is on a space with a\n  mountain on it. When e does so, e gains a Vertoken with that mountain as a\n  type, unless e already owns one with that type. When a player Climbs, e can\n  optionally specify a name for the mountain. If e does so, the mountain on\n  the space e is on is renamed to the specified name.\n\n  If a player has exactly 64 Vertokens, e CAN See the Truth by announcement,\n  specifying a set of no more than 3 players, provided no person has won the\n  game by doing so in the past 30 days. When e does so, the specified players\n  win the game. Four days after such a win occurs, all Fencehops, Fences,\n  Movies, and Vertokens are destroyed, all spaces are destroyed and replaced\n  with new spaces, and all Players move to [1,1,1,1,1,1].\n\n}"
@@ -97,7 +97,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Away with the massive points",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Amend Rule 2657 (Scoring) by deleting the text:\n{\n\n  * Having submitted an unconditional ballot AGAINST a referendum\n    on a sponsored proposal, provided that the ballot is valid at\n    the time the referendum is assessed, and provided that the\n    outcome of that assessment is ADOPTED:  points equal to the\n    voting player's voting strength on the referendum (Assessor).\n\n}"
@@ -152,7 +152,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -350,7 +350,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -474,7 +474,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -687,7 +687,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -811,7 +811,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -1009,7 +1009,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -1133,7 +1133,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -1331,7 +1331,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -1455,7 +1455,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -1653,7 +1653,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -1803,7 +1803,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1982,7 +1982,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -2132,7 +2132,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -2151,14 +2151,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Secretsnail9"
+                                        "value": "snail"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Secretsnail9"
+                                "readable": "Endorsement of snail"
                             }
                         ]
                     },
@@ -2330,7 +2330,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -2475,14 +2475,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Secretsnail9"
+                                        "value": "snail"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Secretsnail9"
+                                "readable": "Endorsement of snail"
                             }
                         ]
                     },
@@ -2499,7 +2499,7 @@
                         ]
                     },
                     {
-                        "voter": "Secretsnail9",
+                        "voter": "snail",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2678,7 +2678,7 @@
                     "final": 2
                 },
                 {
-                    "person": "Secretsnail9",
+                    "person": "snail",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [

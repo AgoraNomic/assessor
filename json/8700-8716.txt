@@ -65,7 +65,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Fixing Unfortunate Timing",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Add 9 to secretsnail's score.\nAdd 7 to Jason's score.\nAdd 7 to nix's score.\nAdd 7 to G.'s score.\nAdd 2 to Murphy's score.\nAdd 1 to ais523's score.\nAdd 1 to Aspen's score.\n\n[This should rectify the double-halving of points. The values equal *half*\n(rounded up) of the points lost to the *first* halving, which is\nappropriate instead of the full value because of the halving that will\nhappen at the end of the quarter, before this would pass. I also subtracted\n5 from the value I would receive to negate the points from this proposal\npassing.]"
@@ -76,7 +76,7 @@
             "proposal_ai": "1.5",
             "decision_ai": "1.5",
             "title": "Let them have points",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Amend Rule 2656 \"Points\" by replacing\n\n      \"wins the game via such an\n      announcement, all players' scores are set to their default.\"\n\nwith\n\n      \"wins the game via such an announcement, the scores of the winning\nplayers are set to their default, and then all other players' scores are\nset to half their current value rounded down.\""
@@ -100,7 +100,7 @@
             "title": "Has Beens",
             "author": "nix",
             "coauthors": [
-                "Secretsnail9",
+                "snail",
                 "G.",
                 "Madrid",
                 "4st",
@@ -114,7 +114,7 @@
             "proposal_ai": "2.2",
             "decision_ai": "2.2",
             "title": "Promises Any vs Each",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Amend Rule 2618 (Promises) by replacing \"provided that any conditions for\ncashing it specified by its text are unambiguously met\" with \"provided that\neach condition for cashing it specified by its text is unambiguously met\"\n\n[prevents a reading of only some of the cashing conditions needing to be\nmet\nsince that would be \"any\" conditions]"
@@ -127,7 +127,7 @@
             "title": "Tabled action clarification",
             "author": "Jason",
             "coauthors": [
-                "Secretsnail9"
+                "snail"
             ],
             "text": "Amend Rule 1728 (\"Tabled Actions\") by replacing \"An action is a Tabled\nAction if it is performed with one of the following methods\" with \"An\naction is a Tabled Action if the Rules purport to authorize its\nperformance via one of the following methods\"."
         },
@@ -148,7 +148,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Stacking Stones v1.1",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Enact a new rule with title \"Balancing Act\" and the following text:\n{\n\n\"Stone Above\" is a stone switch tracked by the Stonemason with possible\nvalues\nof any stone and none (default).\n\nA stone's props are any stones that have that stone or any of that stone's\nprops as a their value of Stone Above.\n\nIf a stone's Stone Above is ever one of its props, its Stone Above is set\nto\nnone.\n\nA stone that has 3 or more props is immune.\n\nWhen a stone is wielded, the wielder CAN cascade one of that stone's props\nby\nannouncement in the same message, specifying any values needed to interpret\nthe\nprop's effects.\n\nWhen a stone is cascaded, the Rule defining that stone applies the effects\nin\nthat stone's scroll.\n\nA player CAN set the Stone Above of a stone they own to another stone they\nown,\nwith 13 days notice, provided e has not set a Stone Above switch in the\npast 14\ndays.\n\n[Note intents expire after 14 days.]\n\n}"
@@ -159,7 +159,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Pebble Throwing",
-            "author": "Secretsnail9",
+            "author": "snail",
             "coauthors": [
             ],
             "text": "Enact a new rule with title \"Take Aim\" and the following text:\n{\n\nA player CAN throw a specified stone e owns at another specified stone (the\ntarget) that has at least 1 prop, by announcement. When e does so, the\nthrown\nstone is transferred to Agora, eir score is increased by the number of\nprops\nthe target has, and then all of those props have their Stone Above set to\nnone.\n\n}"
@@ -196,7 +196,7 @@
             "coauthors": [
                 "nix",
                 "Madrid",
-                "Secretsnail9",
+                "snail",
                 "Jason"
             ],
             "text": "Enact a new rule with the title \"Dream of Wandering\":\nMindset is a secured active player switch,\ntracked by the Ministor in eir monthly report,\nwith possible values Dream of Wandering (the default) and any Dream.\n\nAn active player CAN Plan to Flip eir own Mindset,\nspecifying any valid value for eir Mindset, by announcement.\nWhen the rules state that the wandering occurs,\nevery active player's Mindset is set to the value e most\nrecently specified by Planning to Flip. If a player did not Plan to Flip\neir Mindset switch since the last wandering, it not Flipped.\n\nThe wandering occurs at the beginning of each month.\n\nA player becomes a New Dreamer when eir Mindset Flips.\nA player becomes a Recurring Dreamer when a wandering occurs and eir\nMindset is not flipped, and e is not a New Dreamer.\n\nThe following rules apply to each active player\nbased on that player's Mindset:\n- Dream of Victory:\n  Upon a correct announcement of being the only player with eir Mindset\n  Flipped to Dream of Victories, e wins the game. Upon winning the game,\n  e has eir Mindset immediately Flipped to the Dream of Wandering.\n  When e is a New Dreamer, e CAN, once by announcement, gain 10 points,\n  then cease to be a New or Recurring Dreamer.\n- Dream of Wealth:\n  When e is a New or Recurring Dreamer, e CAN,\n  once by announcement, grant 5 stamps of eir own type to emself,\n  then cease to be a New or Recurring Dreamer.\n- Dream of Justice:\n  When e is a New or Recurring Dreamer, e CAN,\n  once by announcement, expunge up to 4 blots from emself,\n  then cease to be a New or Recurring Dreamer.\n- Dream of Wandering:\n  When e is a Recurring Dreamer, when e plans to Flip eir Mindset,\n  it is immediately Flipped to the specified value if possible.\n  E then ceases to be a Recurring Dreamer.\n- Dream of Machines:\n  E can Flip the Device to either on or off with Agoran Consent.\n  E can act on behalf of the device to take any\n  action the device may take by announcement with 1 support.\n- Dream of Beasts:\n  E can buy bird food by paying a fee of 3 boatloads of coins.\n  E can buy a Beast Permit by paying a fee of 40 boatloads of coins.\n  E can renew a Beast Permit by paying a fee of 20 boatloads of coins.\n- Dream of Gardens:\n  When E is a New or Recurring Dreamer, E can pay a fee of N stamps,\n  specifying one stone e owns, and that stone has their escape chance\n  reduced by N*5%, to a minimum of 0%,\n  then E ceases to be a New or Recurring Dreamer.\n  This reduction can only apply to one stone e owns.\n  This reduction is removed after\n  the Stonemason publishes a collection notice.\n- Dream of Power: Eir Voting Strength is 2 greater."
