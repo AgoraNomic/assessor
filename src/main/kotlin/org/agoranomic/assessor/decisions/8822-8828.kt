@@ -23,7 +23,7 @@ fun assessment8822to8828() = assessment {
         proposal(8822) {
             title("Horse Racing")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Murphy)
             ordinary()
 
@@ -266,7 +266,7 @@ Position of a specified horse by 1, by paying 1 hoof.
         proposal(8823) {
             title("Bird Overhaul")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -332,7 +332,7 @@ increased by 3.""""
         proposal(8824) {
             title("Cleaning Sets Remnants")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -346,7 +346,7 @@ Repeal Rule 2621 (VP Wins)."""
         proposal(8825) {
             title("Ticking Stone")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Forest)
             ordinary()
 
@@ -366,7 +366,7 @@ Then, create the Ticking Stone under the ownership of Agora."""
         proposal(8826) {
             title("Dream of Wandering")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Forest, nix, Madrid, Jason)
             ordinary()
 
@@ -517,7 +517,7 @@ After this is done for the fourth time, a player is no longer bespeckled.
     }
 
     voting {
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8822
             FOR on 8823
             FOR on 8824

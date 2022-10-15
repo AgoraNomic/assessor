@@ -105,7 +105,7 @@ with:
             FOR on all
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             PRESENT on 8672
             FOR on 8673
             AGAINST on 8674

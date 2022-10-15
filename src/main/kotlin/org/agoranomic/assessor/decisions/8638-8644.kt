@@ -30,7 +30,7 @@ fun assessment8638to8644() = assessment {
         proposal(8638) {
             title("Cyan Ribbon Patch")
             ai("3.0")
-            author(Secretsnail9)
+            author(snail)
             democratic()
             sponsored()
 
@@ -199,7 +199,7 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
             FOR on 8644
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8638
             FOR on 8639
             AGAINST on 8640

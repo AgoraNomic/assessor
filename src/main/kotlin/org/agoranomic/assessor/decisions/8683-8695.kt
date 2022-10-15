@@ -234,7 +234,7 @@ Rule 2658 (The Winds Die Down) is repealed.
         proposal(8687) {
             title("Might as well")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -244,7 +244,7 @@ Enact a new rule with title "snail wins" and text:""")
         proposal(8688) {
             title("Totally Normal Rule")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Madrid)
             ordinary()
 
@@ -257,7 +257,7 @@ Cualquier jugador puede ganar el juego pagando una tarifa de 100000 monedas.""")
         proposal(8689) {
             title("Exceptional")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -268,7 +268,7 @@ All players that do have a black ribbon have their scores increased by 10.""")
         proposal(8690) {
             title("Actual Bird Fix")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -279,7 +279,7 @@ birds" with "player that owns at least 90% of all birds".""")
         proposal(8691) {
             title("Budgie")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -292,7 +292,7 @@ birds:
         proposal(8692) {
             title("Canary and Crow")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -308,7 +308,7 @@ if not specified) is increased by 2.""")
         proposal(8693) {
             title("I just win in this one")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -320,7 +320,7 @@ The player secretsnail CAN win the game by announcement.""")
         proposal(8694) {
             title("Destruction")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -330,7 +330,7 @@ Each and every single coin is destroyed.""")
         proposal(8695) {
             title("Creation")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -339,7 +339,7 @@ Each player gains 50000 coins.""")
     }
 
     voting {
-        votes(Secretsnail9) {
+        votes(snail) {
             resolvedConditional(AGAINST, "There are 3 unconditional FOR votes on 8683") on 8683
             AGAINST on 8684
             FOR on 8685

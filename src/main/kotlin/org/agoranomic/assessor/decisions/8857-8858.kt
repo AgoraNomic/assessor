@@ -43,7 +43,7 @@ to the third instance of the "}" character."""
         proposal(8858) {
             title("Regulation Regulation")
             ai("2.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -82,7 +82,7 @@ with:
     }
 
     voting {
-        votes(Secretsnail9) {
+        votes(snail) {
             AGAINST on 8857
             FOR on 8858
         }

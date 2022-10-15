@@ -26,7 +26,7 @@ fun assessment8675to8677() = assessment {
         proposal(8675) {
             title("Let's make it clear")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
             sponsored()
 
@@ -39,7 +39,7 @@ Winsomes than all other players".""")
         proposal(8676) {
             title("Let's make it entirely clear")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
             sponsored()
 
@@ -96,14 +96,14 @@ Create the following power=1 rule, titled Buyout:
         votes(G) {
             AGAINST on 8675
             FOR on 8676
-            endorse(Secretsnail9) on 8677 comment "Secretsnail9 is the Treasuror"
+            endorse(snail) on 8677 comment "Secretsnail9 is the Treasuror"
         }
 
         votes(Madrid) {
             FOR on all
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8675
             FOR on 8676
             AGAINST on 8677

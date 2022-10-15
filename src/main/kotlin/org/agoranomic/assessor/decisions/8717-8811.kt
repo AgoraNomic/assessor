@@ -25,7 +25,7 @@ fun assessment8717to8811() = assessment {
             title("Normalize ribbons")
             ai("3.0")
             author(Murphy)
-            coauthors(Secretsnail9)
+            coauthors(snail)
             ordinary()
 
             text("""
@@ -106,7 +106,7 @@ proposal" with "Being the author of an adopted proposal".""")
         proposal(8721) {
             title("Option A")
             ai("2.2")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -116,7 +116,7 @@ Repeal Rule 2618 (Promises).""")
         proposal(8722) {
             title("Option B")
             ai("2.5")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -126,7 +126,7 @@ Repeal Rule 1742 (Contracts).""")
         proposal(8723) {
             title("Option C")
             ai("1.7")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -294,7 +294,7 @@ the given order by replacing every instance of the word "crime" with
             FOR on 8811
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8717
             AGAINST on 8718
             AGAINST on 8719

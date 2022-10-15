@@ -27,7 +27,7 @@ fun assessment8645to8654() = assessment {
         onOrdinaryProposals {
             powerStone(Jason, 3)
             powerStone(Jason, 3)
-            votives(Secretsnail9, 10)
+            votives(snail, 10)
             votives(Jason, 6)
         }
     }
@@ -104,7 +104,7 @@ prevent rapid-fire changes resulting from deputisation fights.]""")
         proposal(8647) {
             title("Birds!")
             ai("2.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Jason, Telna)
             ordinary()
             sponsored()
@@ -265,7 +265,7 @@ Create a rule with title "The Birds", power 1.0, and the following text:
         proposal(8648) {
             title("Scoring Integer Points")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
             sponsored()
 
@@ -404,7 +404,7 @@ Falsifian found ratification works in eir law thesis.]""")
         proposal(8652) {
             title("Geometry v3")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Jason)
             ordinary()
             sponsored()
@@ -513,12 +513,12 @@ with:
         votes(nix) {
             FOR on 8645
             PRESENT on 8646
-            endorse(Secretsnail9) on 8647
+            endorse(snail) on 8647
             FOR on 8648
             FOR on 8649
             AGAINST on 8650
             endorse(G) on 8651
-            endorse(Secretsnail9) on 8652
+            endorse(snail) on 8652
             AGAINST on 8653
             FOR on 8654
         }
@@ -605,7 +605,7 @@ with:
             AGAINST on 8654
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             AGAINST on 8645
             AGAINST on 8646
             FOR on 8647

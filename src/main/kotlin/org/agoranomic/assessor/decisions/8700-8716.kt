@@ -99,7 +99,7 @@ Then, create the Tasty Stone under the ownership of Agora.""")
         proposal(8705) {
             title("Fixing Unfortunate Timing")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -122,7 +122,7 @@ passing.]""")
         proposal(8706) {
             title("Let them have points")
             ai("1.5")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -169,7 +169,7 @@ not to be weakened by judges.]""")
             title("Has Beens")
             ai("3.0")
             author(nix)
-            coauthors(Secretsnail9, G, Madrid, Forest, Jason)
+            coauthors(snail, G, Madrid, Forest, Jason)
             ordinary()
 
             text("""
@@ -211,7 +211,7 @@ G. is the speaker.""")
         proposal(8709) {
             title("Promises Any vs Each")
             ai("2.2")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -228,7 +228,7 @@ since that would be "any" conditions]""")
             title("Tabled action clarification")
             ai("3.0")
             author(Jason)
-            coauthors(Secretsnail9)
+            coauthors(snail)
             ordinary()
 
             text("""
@@ -253,7 +253,7 @@ clearly and unambiguously met".""")
         proposal(8712) {
             title("Stacking Stones v1.1")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -297,7 +297,7 @@ days.
         proposal(8713) {
             title("Pebble Throwing")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -363,7 +363,7 @@ distributed.]""")
             title("Dream of Wandering")
             ai("1.0")
             author(Forest)
-            coauthors(nix, Madrid, Secretsnail9, Jason)
+            coauthors(nix, Madrid, snail, Jason)
             ordinary()
 
             text("""

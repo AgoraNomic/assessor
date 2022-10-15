@@ -48,7 +48,7 @@ This proposal has no effect.""")
         proposal(8812) {
             title("Quorum for all")
             ai("3.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -60,7 +60,7 @@ voters on the Agoran decision that had been most recently resolved".""")
         proposal(8813) {
             title("Spam Blocker")
             ai("3.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -131,7 +131,7 @@ Citizenship is secured at power 3.]""")
             FOR on 8814
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8805
             for (i in 8806..8810) AGAINST on i
             FOR on 8812

@@ -24,7 +24,7 @@ fun assessment8696to8699() = assessment {
             title("I just win in this too")
             ai("1.0")
             author(Forest)
-            coauthors(Secretsnail9)
+            coauthors(snail)
             ordinary()
 
             text("""
@@ -109,7 +109,7 @@ Amend Rule 2665 "The Birds" by:
             FOR on all
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on all
         }
 

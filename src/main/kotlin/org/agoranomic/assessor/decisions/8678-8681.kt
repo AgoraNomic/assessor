@@ -46,7 +46,7 @@ paragraph:
             title("Properly Decriminalizing Lateness")
             ai("2.0")
             author(nix)
-            coauthors(G, Jason, Secretsnail9, Murphy)
+            coauthors(G, Jason, snail, Murphy)
             ordinary()
             sponsored()
 
@@ -175,7 +175,7 @@ the gamestate so that we know exactly what auctions are ongoing.]""")
             FOR on 8681
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             AGAINST on 8678
             FOR on 8679
             FOR on 8680

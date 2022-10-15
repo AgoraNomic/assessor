@@ -46,7 +46,7 @@ current rules aren't clear enough on this issue.]"""
         proposal(8816) {
             title("No Duplication Allowed")
             ai("3.05")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -66,7 +66,7 @@ exists. Thus creating it again?]"""
         proposal(8817) {
             title("No Duplication Allowed")
             ai("3.05")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -148,7 +148,7 @@ with:
             title("More Intuitive Rule Changes")
             ai("3.0")
             author(nix)
-            coauthors(Jason, Secretsnail9)
+            coauthors(Jason, snail)
             ordinary()
 
             text(
@@ -167,7 +167,7 @@ with:
     }
 
     voting {
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8815
             FOR on 8816
             FOR on 8817

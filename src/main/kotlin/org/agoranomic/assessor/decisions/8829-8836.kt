@@ -40,7 +40,7 @@ Marvy."""
             title("Justice & Forgiveness 2.1")
             ai("2.0")
             author(nix)
-            coauthors(Jason, G, Murphy, Secretsnail9)
+            coauthors(Jason, G, Murphy, snail)
             ordinary()
 
             text(
@@ -164,7 +164,7 @@ Repeal R2631"""
             title("Coin Cleaning v2")
             ai("2.0")
             author(nix)
-            coauthors(Secretsnail9, Jason, G)
+            coauthors(snail, Jason, G)
             ordinary()
 
             text(
@@ -271,7 +271,7 @@ Reenact R2510, "Such is Karma", at P=1 with the following text:
         proposal(8835) {
             title("Payday Increase")
             ai("2.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -284,7 +284,7 @@ boatloads of coins"."""
         proposal(8836) {
             title("Horse Fixes")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -315,7 +315,7 @@ enacted because the race won't begin anew when that happens.]"""
     }
 
     voting {
-        votes(Secretsnail9) {
+        votes(snail) {
             PRESENT on 8829
             FOR on 8830
             AGAINST on 8831
@@ -345,7 +345,7 @@ enacted because the race won't begin anew when that happens.]"""
             FOR on 8833
             FOR on 8834
             AGAINST on 8835
-            endorse(Secretsnail9) on 8836
+            endorse(snail) on 8836
         }
 
         votes(Murphy) {
@@ -398,7 +398,7 @@ enacted because the race won't begin anew when that happens.]"""
             FOR on 8829
             FOR on 8830
             AGAINST on 8831
-            endorse(Secretsnail9) on 8832 comment "Secretsnail9 is the Treasuror"
+            endorse(snail) on 8832 comment "Secretsnail9 is the Treasuror"
             FOR on 8833
             FOR on 8834
             AGAINST on 8835

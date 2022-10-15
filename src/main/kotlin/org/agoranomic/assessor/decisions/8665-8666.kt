@@ -69,7 +69,7 @@ with:
         proposal(8666) {
             title("The Secretarybird")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(nix)
             ordinary()
             sponsored()
@@ -101,7 +101,7 @@ Amend Rule 2665 (The Birds) by appending the list item:
             FOR on 8666
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8665
             FOR on 8666
         }

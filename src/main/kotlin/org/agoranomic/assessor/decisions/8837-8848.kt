@@ -229,7 +229,7 @@ For Rule 2675 'Dream of Wandering', change its power to 2."""
         proposal(8845) {
             title("Onicers")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -250,7 +250,7 @@ message.
         proposal(8846) {
             title("The Cheepening")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text(
@@ -293,7 +293,7 @@ get too close.]"""
         proposal(8847) {
             title("Bird Powerup")
             ai("2.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Forest)
             ordinary()
 
@@ -344,7 +344,7 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
     }
 
     voting {
-        votes(Secretsnail9) {
+        votes(snail) {
             AGAINST on 8838
             endorse(Jason) on 8839
             endorse(G) on 8840
@@ -364,7 +364,7 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
 
         votes(Gaelan) {
             AGAINST on 8837
-            endorseOrElse(Secretsnail9, FOR) on 8838 comment "Secretsnail9 is the Horsened"
+            endorseOrElse(snail, FOR) on 8838 comment "Secretsnail9 is the Horsened"
             AGAINST on 8839
             FOR on 8840
             FOR on 8841

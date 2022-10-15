@@ -22,7 +22,7 @@ fun assessment8682() = assessment {
         proposal(8682) {
             title("Temptation")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
             sponsored()
 
@@ -62,7 +62,7 @@ the next week.""")
             AGAINST on 8682
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8682
         }
     }

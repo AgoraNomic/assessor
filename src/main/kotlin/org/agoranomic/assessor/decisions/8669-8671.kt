@@ -49,7 +49,7 @@ with:
             title("Monthly Auctions Revisited")
             ai("1.0")
             author(nix)
-            coauthors(Secretsnail9)
+            coauthors(snail)
             ordinary()
             sponsored()
 
@@ -132,7 +132,7 @@ Finger".""")
             FOR on all
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on all
         }
     }

@@ -81,7 +81,7 @@ points" with "the associated amount of points, rounded down".""")
             FOR on 8656
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             AGAINST on 8655
             AGAINST on 8656
         }

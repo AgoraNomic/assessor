@@ -25,7 +25,7 @@ fun assessment8657to8664() = assessment {
         blotPenalty(Trigon, 6 / 3)
         blotPenalty(nix, 4 / 3)
         blotPenalty(cuddlybanana, 3 / 3)
-        blotPenalty(Secretsnail9, 3 / 3)
+        blotPenalty(snail, 3 / 3)
         blotPenalty(Jason, 3 / 3)
 
         onOrdinaryProposals {
@@ -80,7 +80,7 @@ available here [1].
             title("Speak Like People")
             ai("3.0")
             author(nix)
-            coauthors(G, Secretsnail9)
+            coauthors(G, snail)
             democratic()
             sponsored()
 
@@ -126,7 +126,7 @@ with:
             title("The End of Sets")
             ai("3.0")
             author(nix)
-            coauthors(G, Jason, Secretsnail9)
+            coauthors(G, Jason, snail)
             democratic()
             sponsored()
 
@@ -291,7 +291,7 @@ nix becomes the Collector""")
         proposal(8662) {
             title("Birds! v2")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             coauthors(Jason, Telna)
             ordinary()
             sponsored()
@@ -461,7 +461,7 @@ Create a rule with title "The Birds", power 1.0, and the following text:
         proposal(8663) {
             title("The Hexeract")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -577,7 +577,7 @@ Create a rule with title "The Hexeract" and the following text:
         proposal(8664) {
             title("Away with the massive points")
             ai("1.0")
-            author(Secretsnail9)
+            author(snail)
             ordinary()
 
             text("""
@@ -614,7 +614,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
             FOR on 8661
             FOR on 8662
             AGAINST on 8663
-            endorse(Secretsnail9) on 8664
+            endorse(snail) on 8664
         }
 
         votes(G) {
@@ -639,7 +639,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
             FOR on 8664
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             endorse(Murphy) on 8657
             endorse(Aspen) on 8658
             endorse(nix) on 8659
@@ -657,7 +657,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
             PRESENT on 8660
             FOR on 8661
             FOR on 8662
-            endorse(Secretsnail9) on 8663
+            endorse(snail) on 8663
             PRESENT on 8664
         }
 

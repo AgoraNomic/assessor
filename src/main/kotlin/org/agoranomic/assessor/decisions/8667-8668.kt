@@ -82,7 +82,7 @@ Repeal Rule 2617 (Defense Against the Dark Arts).""")
             FOR on all
         }
 
-        votes(Secretsnail9) {
+        votes(snail) {
             FOR on 8667
             AGAINST on 8668
         }
