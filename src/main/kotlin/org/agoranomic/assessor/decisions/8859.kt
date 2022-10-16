@@ -9,6 +9,12 @@ fun assessment8859() = assessment {
     name("8859")
     quorum(6)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8859) {
             title("Contests")
