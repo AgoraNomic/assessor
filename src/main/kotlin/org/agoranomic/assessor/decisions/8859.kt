@@ -3,8 +3,8 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8859() = assessment {
@@ -62,7 +62,11 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
         }
 
         votes(ziproot) {
-            AGAINST on 8859
+            endorse(Jason) on 8859
+        }
+
+        votes(Murphy) {
+            FOR on 8859
         }
     }
 }
