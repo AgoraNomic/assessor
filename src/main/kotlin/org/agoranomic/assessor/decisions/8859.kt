@@ -68,5 +68,9 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
         votes(Murphy) {
             FOR on 8859
         }
+
+        votes(G) {
+            FOR on 8859
+        }
     }
 }
