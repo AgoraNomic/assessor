@@ -60,5 +60,9 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
         votes(Jason) {
             AGAINST on 8859
         }
+
+        votes(ziproot) {
+            AGAINST on 8859
+        }
     }
 }
