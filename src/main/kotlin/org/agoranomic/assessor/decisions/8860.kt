@@ -49,4 +49,7 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
             )
         }
     }
+
+    voting {
+    }
 }
