@@ -1,0 +1,83 @@
+{
+    "metadata": {
+        "name": "8860",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-October/016464.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8860,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Contests",
+            "author": "Murphy",
+            "coauthors": [
+            ],
+            "text": "Create a rule titled \"Contests\" with this text:\n\n      Tourney Level is a natural switch for contracts, tracked by the\n      Notary, with a default of 0 and a maximum of 10. A contract with\n      nonzero tourney level is called a Contest.\n\n      The Notary CAN flip a contract's tourney level to a non-default\n      value with 3 Agoran consent. Any player CAN flip a contract's\n      tourney level to 0 with Agoran consent.\n\nAmend Rule 2657 (Scoring) by replacing the first paragraph with:\n\n      Each time a player fulfills a scoring condition defined by the\n      rules or a Contest, e earns the associated amount of points,\n      rounded down, and (if defined by a Contest) reduced as needed\n      so that the total points e earned that week from that Contest\n      does not exceed its tourney level.\n\n      When a player earns a non-zero number of points, the officer or\n      other person associated with the condition by the Pointer CAN once\n      by announcement, and SHALL in an officially timely fashion, add\n      that many points to that player's score."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8860,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 3,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ziproot",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Jason"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Jason"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        }
+    ]
+}

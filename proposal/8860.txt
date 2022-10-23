@@ -1,0 +1,45 @@
+PROPOSAL 8860 (Contests)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (1): Murphy
+AGAINST (2): Jason, ziproot
+PRESENT (2): juan, nix
+BALLOTS: 5
+AI (F/A): 3/6 (AI=1.0)
+POPULARITY: -0.200
+OUTCOME: REJECTED
+[
+ziproot: Endorsement of Jason
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-October/016464.html
+
+ID: 8860
+Title: Contests
+Adoption index: 1.0
+Author: Murphy
+Co-authors: 
+
+
+Create a rule titled "Contests" with this text:
+
+      Tourney Level is a natural switch for contracts, tracked by the
+      Notary, with a default of 0 and a maximum of 10. A contract with
+      nonzero tourney level is called a Contest.
+
+      The Notary CAN flip a contract's tourney level to a non-default
+      value with 3 Agoran consent. Any player CAN flip a contract's
+      tourney level to 0 with Agoran consent.
+
+Amend Rule 2657 (Scoring) by replacing the first paragraph with:
+
+      Each time a player fulfills a scoring condition defined by the
+      rules or a Contest, e earns the associated amount of points,
+      rounded down, and (if defined by a Contest) reduced as needed
+      so that the total points e earned that week from that Contest
+      does not exceed its tourney level.
+
+      When a player earns a non-zero number of points, the officer or
+      other person associated with the condition by the Pointer CAN once
+      by announcement, and SHALL in an officially timely fashion, add
+      that many points to that player's score.
