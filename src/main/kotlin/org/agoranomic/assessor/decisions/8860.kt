@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8860() = assessment {
@@ -51,5 +52,8 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
     }
 
     voting {
+        votes(Murphy) {
+            FOR on 8860
+        }
     }
 }
