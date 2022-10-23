@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -62,6 +63,10 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
 
         votes(nix) {
             PRESENT on 8860
+        }
+
+        votes(ziproot) {
+            endorse(Jason) on 8860
         }
     }
 }
