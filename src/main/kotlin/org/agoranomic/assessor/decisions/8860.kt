@@ -3,8 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8860() = assessment {
@@ -59,6 +58,10 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
 
         votes(Jason) {
             AGAINST on 8860
+        }
+
+        votes(nix) {
+            PRESENT on 8860
         }
     }
 }
