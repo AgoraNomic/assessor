@@ -68,5 +68,9 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
         votes(ziproot) {
             endorse(Jason) on 8860
         }
+
+        votes(juan) {
+            PRESENT on 8860
+        }
     }
 }
