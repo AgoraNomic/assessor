@@ -175,7 +175,7 @@ Amend R2645, The Stones to read in full:
 
         votes(ziproot) {
             PRESENT on 8861
-            AGAINST on 8862
+            // TODO: resolve conditional vote on 8862: FOR if all voters pledged to not acquire tasty stone with a time window of 7 days and a class of at least 2, else AGAINST
         }
 
         votes(Jason) {
