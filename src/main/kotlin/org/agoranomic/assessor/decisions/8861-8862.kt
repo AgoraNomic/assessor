@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -175,7 +176,11 @@ Amend R2645, The Stones to read in full:
 
         votes(ziproot) {
             PRESENT on 8861
-            // TODO: resolve conditional vote on 8862: FOR if all voters pledged to not acquire tasty stone with a time window of 7 days and a class of at least 2, else AGAINST
+
+            resolvedConditional(
+                AGAINST,
+                "not all voters on this proposal pledged to not acquire the Tasty Stone with a time window of at least 7 days and a class of at least 2",
+            ) on 8862
         }
 
         votes(Jason) {
