@@ -177,5 +177,10 @@ Amend R2645, The Stones to read in full:
             PRESENT on 8861
             AGAINST on 8862
         }
+
+        votes(Jason) {
+            FOR on 8861
+            PRESENT on 8862
+        }
     }
 }
