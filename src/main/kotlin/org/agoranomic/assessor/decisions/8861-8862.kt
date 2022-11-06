@@ -187,5 +187,10 @@ Amend R2645, The Stones to read in full:
             FOR on 8861
             FOR on 8862
         }
+
+        votes(G) {
+            FOR on 8861
+            AGAINST on 8862
+        }
     }
 }
