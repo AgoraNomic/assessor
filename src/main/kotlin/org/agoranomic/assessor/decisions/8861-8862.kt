@@ -9,6 +9,12 @@ fun assessment8861to8862() = assessment {
     name("8861-8862")
     quorum(3)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+    }
+
     proposals(v4) {
         proposal(8861) {
             title("Finally Removing Arbitrary Limits")
