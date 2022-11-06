@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8861to8862() = assessment {
@@ -162,5 +163,9 @@ Amend R2645, The Stones to read in full:
     }
 
     voting {
+        votes(snail) {
+            FOR on 8861
+            FOR on 8862
+        }
     }
 }
