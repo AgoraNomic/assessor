@@ -112,5 +112,11 @@ and adding, to the end of the rule:
             FOR on 8864
             FOR on 8865
         }
+
+        votes(Murphy) {
+            PRESENT on 8863
+            FOR on 8864
+            PRESENT on 8865
+        }
     }
 }
