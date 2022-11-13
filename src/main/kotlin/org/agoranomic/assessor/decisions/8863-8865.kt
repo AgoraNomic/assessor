@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8863to8865() = assessment {
@@ -98,6 +99,12 @@ and adding, to the end of the rule:
             FOR on 8863
             FOR on 8864
             FOR on 8865
+        }
+
+        votes(juan) {
+            FOR on 8863
+            FOR on 8864
+            PRESENT on 8865
         }
     }
 }
