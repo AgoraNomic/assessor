@@ -1,0 +1,156 @@
+{
+    "metadata": {
+        "name": "8861-8862",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-November/016501.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8861,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Finally Removing Arbitrary Limits",
+            "author": "nix",
+            "coauthors": [
+            ],
+            "text": "Amend R1728, \"Tabled Actions\", by replacing:\n\n       The parameters N and T, if omitted, default to 1 and 4 days,\n       respectively (e.g. \"without objection\" means N=1). If a rule\n       defines N as less than 1 or greater than 8, it is instead treated\n       as 1 or 8, respectively.\n\nwith:\n\n       The parameters N and T, if omitted, default to 1 and 4 days,\n       respectively (e.g. \"without objection\" means N=1). If a rule\n       defines N as less than 1, it is instead treated as 1."
+        },
+        {
+            "version": "4",
+            "number": 8862,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Slippery Stones",
+            "author": "nix",
+            "coauthors": [
+            ],
+            "text": "Amend R2640, \"Stones\", by replacing:\n\n\n     The escape risk of the stone, which must be a percentage between 0%\n     and 100% inclusive;\n\nwith:\n\n     The smoothness of the stone, which is a non-negative integer;\n\nand appending to the end the following paragraphs:\n\n     Mossiness is a Stone switch with values of non-negative integers and a\n     default of 0 tracked by the Stonemason. When a stone is transfered,\n     its Mossiness is set to 0. The mossiest stone(s) in a set of stone\n     is (are) the stone(s) with the highest Mossiness value.\n\n     The Slipperiness of a stone is that stone's smoothness plus its\n     mossiness.\n\nAmend R2641, \"Wielding Stones\", by replacing:\n\n     If a stone has a frequency, then it is IMPOSSIBLE to wield that stone\n     if it has been previously wielded in the same Agoran time interval as\n     indicated by its frequency (e.g. if its frequency is daily, if it has\n     been wielded in the same Agoran day).\n\nwith:\n\n     A stone with a frequency that has been wielded in the corresponding\n     Agoran time interval is Hot for the remainder of the time period\n     (e.g. if the frequency is daily, it is hot for the remainder of the\n     Agoran day it was wielded during).\n\n     While a stone is hot, it is IMPOSSIBLE to wield it or to transfer it\n     by any method besides Collection, other rules notwithstanding.\n\nAmend R2642, \"Distributing Stones\", to be titled \"Gathering Stones\" and\nto read in full:\n\n     A player who has not possessed a stone in the last 30 days CAN, by\n     announcement, transfer the mossiest stone (if there is a tie, then a\n     specified stone tied for mossiest) Agora owns to emself. SHOULD\n     specify the stone when doing so.\n\nAmend R2643, \"Collecting Stones\", to read in full:\n\n     Once per month, the Stonemason CAN publish a Collection Notice by\n     announcement, specifying all necessary information and choices. The\n     Stonemason SHALL publish such a notice in a timely fashion after the\n     beginning of each Agoran month.\n\n     A Collection Notice includes a random numbers between 1 and 6; this is\n     the Escape Minimum.\n\n     When a Collection Notice is published, for each player eir\n     non-immune stone with the highest slipperiness equal to or above the\n     Escape Minimum is transferred to Agora. If there is a tie, the Stone\n     Mason selects which one escapes. If e has no such stones, none of\n     eir stones are transferred to Agora. The mossiness of all stones\n     that are not transferred is incremented by 1.\n\nAmend R2645, The Stones to read in full:\n\n     The following stones are defined, one per paragraph, with the\n     following format: Stone Name (Frequency, Smoothness): Scroll.\n\n     - Power Stone (weekly, 2): A specified player (defaulting to the\n       wielder if not specified) hereby Buys Strength 3 times.\n\n     - Wealth Stone (weekly, 3): A specified player (defaulting to\n       the wielder if not specified) hereby gains 5 boatloads of coins.\n\n     - Soul Stone (weekly, 3): The Soul Stone is hereby transferred\n       to the owner of a different specified non-immune stone, then\n       that stone is transferred to the wielder.\n\n     - Sabotage Stone (weekly, 4): The adoption index of a specified\n       AI-majority Agoran decision is hereby increased by 1.\n\n     - Jockey Stone (monthly, 3): A specified Running horse's Race\n       Position is increased by 1.\n\n     - Protection Stone (monthly, 4): A specified stone is granted\n       immunity.\n\n     - Recursion Stone (Monthly, 4): The recursion stone can be\n       wielded once per month as if it had the power of any other stone of\n       your choice.\n\n     - Hot Potato Stone (Weekly, 5):  When this stone is wielded,\n       the wielder gains 8 boatloads of coins if the wielder, in the\n       same message as the wielding, transfers this stone to a player\n       who has not owned this stone since Agora last owned it. If this\n       stone is not owned by Agora, it cannot otherwise be transferred,\n       other rules notwithstanding. This stone is immune if 3 or more\n       players have wielded it since the most recent collection notice.\n\n     - Blank Stone (Monthly, 0): This stone has no effect.\n\n     - Tasty Stone (Monthly, 4): A specified bird that is owned by a\n       player is transferred to the wielder.\n\n     - Mason's Stone (None, 0): If the Mason's Stone is owned by the\n       Stonemason, its Mossiness is continuously set to 0. If the Mason's\n       Stone is owned by Agora, it is transferred to the Stonemason.\n\n     - Anti-Equatorial Stone (Monthly, 5): The mossiest stone is\n       transferred to the wielder. When this happens, the Anti-Equatorial\n       Stone's mossiness is incremented by 1."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8861,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ziproot",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8862,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ziproot",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Conditional resolved: not all voters on this proposal pledged to not acquire the Tasty Stone with a time window of at least 7 days and a class of at least 2"
+                                    }
+                                ],
+                                "readable": "Conditional resolved: not all voters on this proposal pledged to not acquire the Tasty Stone with a time window of at least 7 days and a class of at least 2"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        }
+    ]
+}

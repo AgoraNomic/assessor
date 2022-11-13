@@ -1,0 +1,32 @@
+PROPOSAL 8861 (Finally Removing Arbitrary Limits)
+AUTHOR: nix
+CLASS: DEMOCRATIC
+FOR (6): G., Jason, Murphy, juan, nix, snail
+AGAINST (0): 
+PRESENT (1): ziproot
+BALLOTS: 7
+AI (F/A): 18/0 (AI=3.0)
+POPULARITY: 0.857
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-November/016501.html
+
+ID: 8861
+Title: Finally Removing Arbitrary Limits
+Adoption index: 3.0
+Author: nix
+Co-authors: 
+
+
+Amend R1728, "Tabled Actions", by replacing:
+
+       The parameters N and T, if omitted, default to 1 and 4 days,
+       respectively (e.g. "without objection" means N=1). If a rule
+       defines N as less than 1 or greater than 8, it is instead treated
+       as 1 or 8, respectively.
+
+with:
+
+       The parameters N and T, if omitted, default to 1 and 4 days,
+       respectively (e.g. "without objection" means N=1). If a rule
+       defines N as less than 1, it is instead treated as 1.
