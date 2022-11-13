@@ -85,4 +85,7 @@ and adding, to the end of the rule:
             )
         }
     }
+
+    voting {
+    }
 }
