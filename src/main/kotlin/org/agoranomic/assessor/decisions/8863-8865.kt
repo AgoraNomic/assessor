@@ -4,11 +4,22 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.powerDream
 
 @UseAssessment
 fun assessment8863to8865() = assessment {
     name("8863-8865")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        // At the end of the voting period, Dream of Power applies to all Agoran decsions
+        powerDream(Jason, 3)
+        powerDream(snail, 3)
+    }
 
     proposals(v4) {
         proposal(8863) {
