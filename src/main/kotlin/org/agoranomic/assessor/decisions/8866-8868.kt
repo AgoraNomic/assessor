@@ -304,4 +304,7 @@ Amend R2645, The Stones to read in full:
             )
         }
     }
+
+    voting {
+    }
 }
