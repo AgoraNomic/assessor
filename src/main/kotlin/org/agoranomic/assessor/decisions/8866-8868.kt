@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8866to8868() = assessment {
@@ -306,5 +308,10 @@ Amend R2645, The Stones to read in full:
     }
 
     voting {
+        votes(nix) {
+            PRESENT on 8866
+            FOR on 8867
+            FOR on 8868
+        }
     }
 }
