@@ -325,5 +325,9 @@ Amend R2645, The Stones to read in full:
             FOR on 8867
             PRESENT on 8868
         }
+
+        votes(juan) {
+            FOR on all
+        }
     }
 }
