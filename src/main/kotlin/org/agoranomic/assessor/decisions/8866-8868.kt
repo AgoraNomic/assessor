@@ -319,5 +319,11 @@ Amend R2645, The Stones to read in full:
             FOR on 8867
             FOR on 8868
         }
+
+        votes(Murphy) {
+            PRESENT on 8866
+            FOR on 8867
+            PRESENT on 8868
+        }
     }
 }
