@@ -329,5 +329,11 @@ Amend R2645, The Stones to read in full:
         votes(juan) {
             FOR on all
         }
+
+        votes(ShyOwl) {
+            FOR on 8866
+            FOR on 8867
+            FOR on 8868
+        }
     }
 }
