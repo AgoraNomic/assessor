@@ -4,11 +4,24 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.powerDream
 
 @UseAssessment
 fun assessment8866to8868() = assessment {
     name("8866-8868")
     quorum(3)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        onOrdinaryProposals {
+            powerDream(Jason, 2)
+            powerDream(snail, 2)
+        }
+    }
 
     proposals(v4) {
         proposal(8866) {
