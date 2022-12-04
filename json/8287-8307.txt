@@ -60,7 +60,7 @@
                 "Aspen",
                 "Gaelan",
                 "G.",
-                "Jason",
+                "Janet",
                 "twg"
             ],
             "text": "[Enact a new Rule of Power 2.0, entitled \"Ministries\", with the following\ntext:\n\n  A Ministry is an entity defined as such by this rule. Each\n  Ministry has a goal. The Ministries of Agora, and their goals, are\n  as follows:\n\n   A. Ministry of Justice: serve justice to rulebreakers\n   B. Ministry of Efficiency: see official duties performed swiftly\n   C. Ministry of Legislation: see votes cast on proposals\n   D. Ministry of Participation: reward players for achievements\n   E. Ministry of Economy: encourage economic activity and contracts\n\n  Interest is an office switch, tracked by the ADoP, whose possible\n  values are lists of ministries, defaulting to the empty list. The\n  ADoP CAN flip an office's interest without objection.\n\n  For each item of each office's interest, that office's holder's\n  voting strength is increased by 2 on proposals whose chamber is\n  set to that ministry.\n\n\nEnact a new Rule of Power 2.0, entitled \"Proposal Classes\", with the\nfollowing text:\n\n  Proposals created since the enactment of this rule have an\n  untracked Class switch with possible values ordinary (the default)\n  and democratic.\n\n  When a proposal with an adoption index greater than 2.0 is\n  created, its class becomes democratic.\n\n  Any player CAN, with 2 Agoran consent, flip an ordinary proposal's\n  class to democratic, provided that it is in the Proposal Pool or\n  that there is an Agoran decision on its adoption whose voting\n  period has not yet ended.\n\n\nEnact a new Rule of Power 2.0, entitled \"Proposal Chambers\", with the\nfollowing text:\n\n  Chamber is an untracked ordinary proposal switch whose possible\n  values include unset (the default) and each of the ministries of\n  Agora.\n\n  A proposal's chamber SHOULD only be decided by which ministry's\n  goals it effects to the greatest degree.\n\n  Any player CAN, with 2 Agoran consent, flip the chamber of an\n  ordinary proposal to any ministry, provided that it is in the\n  Proposal Pool or that there is an Agoran decision on its adoption\n  whose voting period has not yet ended.\n\n\nAmend Rule 1607, \"Distribution\", by changing \"the text, author, and\ncoauthors of the proposal\" to \"the text, author, coauthors, class and\n(if applicable) chamber of the proposal\".\n\n\nAmend Rule 2350, \"Proposals\", by adding the following to the list:\n\n  * A chamber to which the proposal shall be assigned upon its\n    creation.\n\n\nAmend Rule 2422, \"Voting Strength\", by changing \"between 0 and 5\" to\n\"between 0 and 15\".\n\n\n// Move the PM's casting vote to the Speaker, since the PM already gets\n// all ministries:\n\nAmend Rule 2423, \"First Among Equals\", by removing the second paragraph.\n\nAmend Rule 103, \"The Speaker\", by changing \"For an election of the Prime\nMinister, the Speaker\" to \"The Speaker\".\n\n\nSet the ADoP's Interest to [Efficiency].\nSet the Arbitor's Interest to [Justice].\nSet the Assessor's Interest to [Efficiency, Legislation].\nSet the Herald's Interest to [Participation].\nSet the Prime Minister's Interest to [Justice, Efficiency, Legislation,\n  Participation, Economy].\nSet the Promotor's Interest to [Legislation].\nSet the Referee's Interest to [Justice].\nSet the Registrar's Interest to [Efficiency].\nSet the Rulekeepor's Interest to [Legislation, Participation].\nSet the Tailor's Interest to [Participation].\nSet the Treasuror's Interest to [Economy, Economy].\n\n// Some of the above have been slightly rejigged given the new\n// definition of Participation\n\n/* Treasuror is given Economy twice for balance reasons:\n *  - It is a high-complexity office (was given Complexity=3 under\n *    Politics), like Assessor and Rulekeepor; this makes the power\n *    commensurate to the importance, and there is no ministry it really\n *    fits under besides Economy\n *  - It bumps up the number of voting increases issued for Economy\n *    proposals; all other ministries have 2-3 excluding the PM.\n * Not just trying to give myself votes, I swear :P\n */"
@@ -148,7 +148,7 @@
                 "Gaelan",
                 "twg",
                 "G.",
-                "Jason",
+                "Janet",
                 "Alexis"
             ],
             "text": "Enact a new rule, with power 2.0, entitled \"Memoranda\", with the following text:\n\n  Each officer CAN, by announcement, issue a memorandum, consisting of a\n  specified public document. The memorandum is binding as precedent within\n  the officer's official domain, broadly construed, and SHOULD be tracked along\n  with judicial cases. An officer SHALL only issue a memorandum to clear up\n  a matter of urgent concern creating confusion in eir domain;\n  officers are ENCOURAGED to exercise discretion in issuing memoranda.\n\n[Suggested domains of current offices:\nADoP - Officer elections, whether reports were published, who holds what office\nArbitor - The existence and assignment of CFJs, but not their resolution\nAssessor - Votes, resolutions\nComptrollor - Vetos\nDistributor - The operation of the lists\nHerald - Patent titles, honour, the birthday tournament\nNotary (if passed) - Contracts and pledges\nPrime Minister - Anything in the jurisdiction of multiple officers\nPromotor - Proposals in the pool, distributions\nReferee - Fines and criminal law in general\nRegistrar - Registration & deregistration, zombie auctions, etc.\nRulekeepor - The state of the rules (e.g. whether proposals worked)\nSpeaker - Head of State stuff (i.e. nothing)\nTailor - Ribbons\nTreasuror - Assets\n]"
@@ -184,7 +184,7 @@
             "title": "Consolidated Regulatory Recordkeeping v2",
             "author": "Aspen",
             "coauthors": [
-                "Jason"
+                "Janet"
             ],
             "text": "[The Rulekeepor is willing to take on this responsibility, and it\nmakes considerably more sense than making the officer include a random\nsection in their report; instead, it keeps all of the rules and regulations\ntogether in one easily accessible place.]\n\nAmend Rule 2493, Regulations, by changing the text\n\n  \"Regulations are tracked in their Promulgator's weekly report.\"\nto read\n  \"Regulations are tracked by the Rulekeepor as part of eir\n  weekly and monthly reports in a fashion similar to rules.\""
         },
@@ -208,7 +208,7 @@
             "author": "Aspen",
             "coauthors": [
                 "Gaelan",
-                "Jason",
+                "Janet",
                 "Falsifian"
             ],
             "text": "Amend Rule 2519, \"Consent\", to read in full:\n  A person is deemed to have consented to an action if and only if,\n  at the time the action took place:\n\n  1. e, acting as emself, has publicly stated that e agrees to the action\n     and not subsequently publicly withdrawn eir statement;\n  2. e is party to a contract whose body explicitly and unambiguously\n     indicates eir consent; or\n  3. it is reasonably clear from context that e wanted the\n     action to take place or assented to it taking place.\n\nAmend Rule 2124, \"Agoran Satisfaction\", by removing the text '(syn. \"consent\")'.\n\nAmend Rule 1742, \"Contracts\", to read in full:\n\n  Any group of one or more consenting persons (the parties) may\n  publicly make an agreement among themselves with the intention that it be\n  binding upon them and be governed by the rules. Such an agreement\n  is known as a contract. A contract may be modified, including\n  by changing the set of parties, with the consent of all\n  existing parties. A contract may also be terminated with the\n  consent of all parties. A contract automatically terminates if the number of\n  parties to it falls below one. It is IMPOSSIBLE for a person to\n  become a party to a contract without eir consent.\n\n  Parties to a contract governed by the rules SHALL act in\n  accordance with that contract. This obligation is not impaired\n  by contradiction between the contract and any other contract, or\n  between the contract and the rules.\n\n  Rules to the contrary notwithstanding, any change that would cause the full\n  provisions or parties of a contract to become publicly unavailable is canceled\n  and does not take effect.\n\n  The portion of a contract's provisions that can be interpreted\n  with reference only to information that is either publicly or generally\n  available are known as its body; the remainder of the provisions are known\n  as the annex.\n\n  A party to a contract CAN perform any of the following actions as\n  explicitly and unambiguously permitted by the contract's body:\n\n  * Act on behalf of another party to the contract.\n\n  * By announcement, revoke destructible assets from the contract.\n\n  * By announcement, transfer liquid assets from the contract to a specified\n    recipient.\n\nAmend rule 2450, \"Pledges\", by adding at the end of the first paragraph\n\"A pledge ceases to exist at the end of its time window.\"\n\nDestroy every pledge with an expired time window.\n\nEnact a new power 2.0 rule, entitled \"The Notary\", with the following text:\n\n  The Notary is an office.\n\n  The Notary's weekly report contains:\n\n  1. every pledge, along with its title, creator, time window, time of\n     creation, and time of expiry; and\n  2. every contract, with its title, full provisions, and parties.\n\n  If the Notary is required to report a title, but none has been otherwise\n  publicly provided, e CAN select one.\n\n  The transitional period lasts for at least 90 days after this rule comes\n  into force; thereafter, any player CAN end it by announcement.\n  A pledge or contract is invisible if it was created before this rule came\n  into force, and has not been publicly posted since this rule came into force;\n  for a contract, this publication must include its full provisions and list of\n  parties, along with a certification or adequate proof of their accuracy and\n  completeness. During the transitional period, the Notary NEED NOT report\n  any invisible contract or pledge. When the transitional period is ended,\n  each invisible contract or pledge ceases to exist in the order they were\n  created, and then this rule amends itself by deleting this paragraph.\n\nMake Gaelan the Notary."
@@ -222,7 +222,7 @@
             "author": "Bernie",
             "coauthors": [
                 "twg",
-                "Jason"
+                "Janet"
             ],
             "text": "If the proposal titled \"Rewards Reform Act\" has not been adopted, this\nproposal has no effect.\n\nAmend Rule 1023, \"Agoran Time\", by inserting the following top-level\nlist item before the one starting \"2. Agoran epochs:\", and renumbering\nthe rest of the list as appropriate:\n\n2. The phrase \"in an officially timely fashion\" means \"before the\n   end of the next Agoran week\". This time period is set when the\n   requirement is created (i.e. between 7 and 14 days before the\n   period ends).\n\nAmend Rule 2496, \"Rewards\", by replacing \"before the end of the next\nAgoran week\" with \"in an officially timely fashion\".\n\nAmend Rule 2602, \"Glitter\", by replacing \"before the end of the next\nAgoran week\" with \"in an officially timely fashion\"."
         },
@@ -341,7 +341,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -365,14 +365,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -616,7 +616,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -640,14 +640,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -824,7 +824,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -848,14 +848,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -1031,7 +1031,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1055,14 +1055,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -1202,7 +1202,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1226,14 +1226,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -1402,7 +1402,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "PRESENT",
                         "comments": [
                         ]
@@ -1426,14 +1426,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -1571,7 +1571,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1595,14 +1595,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -1769,7 +1769,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -1793,14 +1793,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -1960,7 +1960,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1984,14 +1984,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -2129,7 +2129,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "PRESENT",
                         "comments": [
                         ]
@@ -2153,14 +2153,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -2336,7 +2336,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2360,14 +2360,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -2524,7 +2524,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -2567,14 +2567,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -2731,7 +2731,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "AGAINST",
                         "comments": [
                             {
@@ -2774,14 +2774,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -2957,7 +2957,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3000,14 +3000,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -3104,14 +3104,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -3181,19 +3181,19 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3217,14 +3217,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -3258,14 +3258,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     }
@@ -3429,7 +3429,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3453,14 +3453,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -3600,7 +3600,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3624,14 +3624,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -3771,7 +3771,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3795,14 +3795,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -3978,7 +3978,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "PRESENT",
                         "comments": [
                         ]
@@ -4002,14 +4002,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -4157,7 +4157,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -4181,14 +4181,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
@@ -4376,7 +4376,7 @@
                         ]
                     },
                     {
-                        "voter": "Jason",
+                        "voter": "Janet",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -4400,14 +4400,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "Jason"
+                                        "value": "Janet"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of Jason"
+                                "readable": "Endorsement of Janet"
                             }
                         ]
                     },
