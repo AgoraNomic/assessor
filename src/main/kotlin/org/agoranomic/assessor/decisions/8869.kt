@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -44,6 +45,10 @@ Create one Peter Suber Stamp in possession of the Lost and Found Department."""
 
         votes(ShyOwl) {
             FOR on 8869
+        }
+
+        votes(Janet) {
+            AGAINST on 8869
         }
     }
 }
