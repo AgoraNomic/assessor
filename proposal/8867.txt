@@ -1,0 +1,142 @@
+PROPOSAL 8867 (Expectations, Values, Bans, and Forgiveness)
+AUTHOR: nix
+CLASS: DEMOCRATIC
+FOR (6): Jason, Murphy, Shy Owl, juan, nix, snail
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 6
+AI (F/A): 18/0 (AI=3.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-November/016559.html
+
+ID: 8867
+Title: Expectations, Values, Bans, and Forgiveness
+Adoption index: 3.0
+Author: nix
+Co-authors: Jason, R. Lee, Murphy, G.
+
+
+[
+The goal of this is to expand on our banning system and implement some
+clearly defined values into the rules of Agora. This comprises two main
+changes.
+
+The first removes the "free speech" clause from R478 and replaces it
+with a bill of expectations that largely seek to maximize participation
+while recognizing ways in which that might reasonably be abridged.
+Nothing here is strictly binding.
+
+The second one expands on the banning system largely through guidelines.
+It does not actually add any new mechanisms for banning or unbanning,
+but offers a strongly-worded procedure for what should occur before a
+ban, and what kind of actions might constitute bannable offenses. It
+also adds an official mechanism to attempt to appeal a ban, and what
+should be considered when such an attempt is received.
+
+This is largely informed by Jason's current ban system, Murphy's
+response to Anti-Cleisthenes, R. Lee's values proto, and parallel
+discussions in other spaces. Hopefully I have done justice to everyone's
+viewpoints.
+]
+
+Amend R478 by deleting the following text:
+
+        Freedom of speech being essential for the healthy functioning of
+        any non-Imperial nomic, it is hereby resolved that no Player shall
+        be prohibited from participating in the Fora, nor shall any person
+        create physical or technological obstacles that unduly favor some
+        players' fora access over others.
+
+Enact a new Power=3 rule titled "Expectations of Participation" with the
+following text:
+
+        An "Agoran forum" is a forum with publicity of discussion or
+        public. Players of Agora have the following expectations of agoran
+        fora:
+
+        * Agoran fora allow equal participation for all players, subject
+          to the rules of Agora and the explicitly stated rules of the
+          fora.
+
+        * The rules of participation in public fora are as closely
+          aligned with the rules of Agora itself as possible; a player
+          expects to be able to fully participate in all public fora as
+          long as eir participation is in line with Agora's rules.
+
+        * Agoran fora allow all interested persons, even those that are
+          otherwise restricted in eir participation, to read all messages.
+
+        * Discussion fora moderators may restrict participation subject to
+          eir own clearly stated rules but should only do so to players
+          temporarily and proportional to the harm of the rule breakage.
+
+        * The content of discussion fora should primarily be about Agora
+          itself, or reasonably adjacent topics.
+
+        If an existing Agoran forum is in violation of these expectations,
+        the Agoran community, led by the Registrar, SHOULD remove it or
+        replace it with an appropriate forum as soon as possible.
+
+Amend R869 by deleting the following:
+
+        Banned is a secured negative boolean person switch tracked by the
+        Registrar. A person is unwelcome if e is Banned or if at least one
+        part of em is unwelcome. Rules to the contrary notwithstanding, an
+        unwelcome person CANNOT register or be registered, and e is
+        immediately deregistered if e is ever a player. Designations of
+        unwelcomeness are secured.
+
+        Unwelcomeness is to be used only to make a social statement that
+        the Agoran community no longer wishes to interact with certain
+        persons; in particular, it is not to be used to acquire gameplay
+        advantage. As such, an unwelcome person SHOULD NOT, under any
+        circumstances, attempt to bypass unwelcomeness, and e SHOULD
+        carefully consider the circumstances of eir becoming unwelcome
+        before participating in public or discussion fora.
+
+Enact a new Power=3 rule titled "Restrictions on Participation" with the
+following text:
+
+        Banned is a secured negative boolean person switch tracked by the
+        Registrar. A person is unwelcome if e is Banned or if at least one
+        part of em is unwelcome. Rules to the contrary notwithstanding, an
+        unwelcome person CANNOT register or be registered, and e is
+        immediately deregistered if e is ever a player. Designations of
+        unwelcomeness are secured.
+
+        A Banned switch SHOULD ONLY be flipped by a proposal for the
+        express purpose of flipping Banned switches.
+
+        Flipping a Banned switch to True (banning a player) SHOULD ONLY be
+        done when:
+
+        * the person's actions have been deemed harmful to Agora, to any
+          player of Agora, or the overall community, and
+
+        * the harm has been clearly communicated to the person, and e has
+          been given time to consider and respond, and
+
+        * e has made no attempt to make amends, eir attempt was
+          unsatisfactory, or e has continued to act in harmful ways.
+
+        Actions that are harmful are subject to the discretion of the
+        community of Agora, but may include: any form of identity-based
+        discrimination, personal attacks, disrespect of values or beliefs
+        of any member of the Agoran community, or provocative/bad-faith
+        comments.
+
+        Once a quarter, any unwelcome player may submit a Request for
+        Forgiveness to the Registrar. Such a document SHOULD contain
+        sincere self-reflection including any appropriate apologies and an
+        indication on how e intends to avoid or prevent similar incidents
+        in the future.
+
+        The Registrar SHALL publish any Request for Forgiveness e receives
+        in a timely manner. If the community deems the Request sincere and
+        appropriately reconciliatory, steps should be undertaken to flip
+        the submitter's Banned switch to False.
+
+The Banned switch of any player that was unwelcome before this proposal
+was enacted is flipped to True.

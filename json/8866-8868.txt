@@ -1,0 +1,302 @@
+{
+    "metadata": {
+        "name": "8866-8868",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-November/016559.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8866,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Restricted confederation",
+            "author": "Jason",
+            "coauthors": [
+                "Aspen"
+            ],
+            "text": "Amend Rule 869 by replacing \"Any entity (including a group of\nconfederated entities)\" with \"Any entity (including a group of entities\nconfederated with the intent of forming a single person under this Rule)\".\n\n[Requires intent for the formation of a group person. This prevents a\nrandom group of people confederated for some other purpose (the example\ninitially raised was BlogNomic, or its set of players) from being\ntreated as a group person, unless they also wish to confederate for the\npurposes of Agora.]"
+        },
+        {
+            "version": "4",
+            "number": 8867,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "Expectations, Values, Bans, and Forgiveness",
+            "author": "nix",
+            "coauthors": [
+                "Jason",
+                "R. Lee",
+                "Murphy",
+                "G."
+            ],
+            "text": "[\nThe goal of this is to expand on our banning system and implement some\nclearly defined values into the rules of Agora. This comprises two main\nchanges.\n\nThe first removes the \"free speech\" clause from R478 and replaces it\nwith a bill of expectations that largely seek to maximize participation\nwhile recognizing ways in which that might reasonably be abridged.\nNothing here is strictly binding.\n\nThe second one expands on the banning system largely through guidelines.\nIt does not actually add any new mechanisms for banning or unbanning,\nbut offers a strongly-worded procedure for what should occur before a\nban, and what kind of actions might constitute bannable offenses. It\nalso adds an official mechanism to attempt to appeal a ban, and what\nshould be considered when such an attempt is received.\n\nThis is largely informed by Jason's current ban system, Murphy's\nresponse to Anti-Cleisthenes, R. Lee's values proto, and parallel\ndiscussions in other spaces. Hopefully I have done justice to everyone's\nviewpoints.\n]\n\nAmend R478 by deleting the following text:\n\n        Freedom of speech being essential for the healthy functioning of\n        any non-Imperial nomic, it is hereby resolved that no Player shall\n        be prohibited from participating in the Fora, nor shall any person\n        create physical or technological obstacles that unduly favor some\n        players' fora access over others.\n\nEnact a new Power=3 rule titled \"Expectations of Participation\" with the\nfollowing text:\n\n        An \"Agoran forum\" is a forum with publicity of discussion or\n        public. Players of Agora have the following expectations of agoran\n        fora:\n\n        * Agoran fora allow equal participation for all players, subject\n          to the rules of Agora and the explicitly stated rules of the\n          fora.\n\n        * The rules of participation in public fora are as closely\n          aligned with the rules of Agora itself as possible; a player\n          expects to be able to fully participate in all public fora as\n          long as eir participation is in line with Agora's rules.\n\n        * Agoran fora allow all interested persons, even those that are\n          otherwise restricted in eir participation, to read all messages.\n\n        * Discussion fora moderators may restrict participation subject to\n          eir own clearly stated rules but should only do so to players\n          temporarily and proportional to the harm of the rule breakage.\n\n        * The content of discussion fora should primarily be about Agora\n          itself, or reasonably adjacent topics.\n\n        If an existing Agoran forum is in violation of these expectations,\n        the Agoran community, led by the Registrar, SHOULD remove it or\n        replace it with an appropriate forum as soon as possible.\n\nAmend R869 by deleting the following:\n\n        Banned is a secured negative boolean person switch tracked by the\n        Registrar. A person is unwelcome if e is Banned or if at least one\n        part of em is unwelcome. Rules to the contrary notwithstanding, an\n        unwelcome person CANNOT register or be registered, and e is\n        immediately deregistered if e is ever a player. Designations of\n        unwelcomeness are secured.\n\n        Unwelcomeness is to be used only to make a social statement that\n        the Agoran community no longer wishes to interact with certain\n        persons; in particular, it is not to be used to acquire gameplay\n        advantage. As such, an unwelcome person SHOULD NOT, under any\n        circumstances, attempt to bypass unwelcomeness, and e SHOULD\n        carefully consider the circumstances of eir becoming unwelcome\n        before participating in public or discussion fora.\n\nEnact a new Power=3 rule titled \"Restrictions on Participation\" with the\nfollowing text:\n\n        Banned is a secured negative boolean person switch tracked by the\n        Registrar. A person is unwelcome if e is Banned or if at least one\n        part of em is unwelcome. Rules to the contrary notwithstanding, an\n        unwelcome person CANNOT register or be registered, and e is\n        immediately deregistered if e is ever a player. Designations of\n        unwelcomeness are secured.\n\n        A Banned switch SHOULD ONLY be flipped by a proposal for the\n        express purpose of flipping Banned switches.\n\n        Flipping a Banned switch to True (banning a player) SHOULD ONLY be\n        done when:\n\n        * the person's actions have been deemed harmful to Agora, to any\n          player of Agora, or the overall community, and\n\n        * the harm has been clearly communicated to the person, and e has\n          been given time to consider and respond, and\n\n        * e has made no attempt to make amends, eir attempt was\n          unsatisfactory, or e has continued to act in harmful ways.\n\n        Actions that are harmful are subject to the discretion of the\n        community of Agora, but may include: any form of identity-based\n        discrimination, personal attacks, disrespect of values or beliefs\n        of any member of the Agoran community, or provocative/bad-faith\n        comments.\n\n        Once a quarter, any unwelcome player may submit a Request for\n        Forgiveness to the Registrar. Such a document SHOULD contain\n        sincere self-reflection including any appropriate apologies and an\n        indication on how e intends to avoid or prevent similar incidents\n        in the future.\n\n        The Registrar SHALL publish any Request for Forgiveness e receives\n        in a timely manner. If the community deems the Request sincere and\n        appropriately reconciliatory, steps should be undertaken to flip\n        the submitter's Banned switch to False.\n\nThe Banned switch of any player that was unwelcome before this proposal\nwas enacted is flipped to True."
+        },
+        {
+            "version": "4",
+            "number": 8868,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Slippery Stones v2.1",
+            "author": "nix",
+            "coauthors": [
+                "G.",
+                "ais523",
+                "Jason",
+                "ziproot"
+            ],
+            "text": "Amend R2640, \"Stones\", by replacing:\n\n\n      The escape risk of the stone, which must be a percentage between 0%\n      and 100% inclusive;\n\nwith:\n\n      The smoothness of the stone, which is a non-negative integer;\n\nand appending to the end the following paragraphs:\n\n      Mossiness is a Stone switch with values of non-negative integers\n      and a default of 0 tracked by the Stonemason. When a stone is\n      transfered, its Mossiness is set to 0. The mossiest stone(s) in a\n      set of stone is (are) the stone(s) with the highest Mossiness\n      value.\n\n      The Slipperiness of a stone is that stone's smoothness plus its\n      mossiness.\n\nAmend R2641, \"Wielding Stones\", by replacing:\n\n      If a stone has a frequency, then it is IMPOSSIBLE to wield that\n      stone if it has been previously wielded in the same Agoran time\n      interval as indicated by its frequency (e.g. if its frequency is\n      daily, if it has been wielded in the same Agoran day).\n\nwith:\n\n      A stone with a frequency that has been wielded in the corresponding\n      Agoran time interval is Hot for the remainder of the time period\n      (e.g. if the frequency is daily, it is hot for the remainder of the\n      Agoran day it was wielded during).\n\n      While a stone is hot, it is IMPOSSIBLE to wield it or to transfer\n      it by announcement\n\nAmend R2642, \"Distributing Stones\", to be titled \"Gathering Stones\" and\nto read in full:\n\n      A player who has not possessed a stone in the last 30 days CAN, by\n      announcement, transfer the mossiest stone (if there is a tie, then\n      a specified stone tied for mossiest) Agora owns to emself. E SHOULD\n      specify the stone when doing so.\n\nAmend R2643, \"Collecting Stones\", to read in full:\n\n      Once per month, the Stonemason CAN publish a Collection Notice by\n      announcement, specifying all necessary information and choices. The\n      Stonemason SHALL publish such a notice in a timely fashion after\n      the beginning of each Agoran month.\n\n      A Collection Notice includes a random numbers between 1 and 6; this\n      is the Escape Minimum.\n\n      When a Collection Notice is published, for each player eir\n      non-immune stone with the highest slipperiness equal to or above\n      the Escape Minimum is transferred to Agora. If there is a tie, the\n      Stone Mason selects which one escapes. If e has no such stones,\n      none of eir stones are transferred to Agora. The mossiness of all\n      stones that are not transferred is incremented by 1.\n\nAmend R2645, The Stones to read in full:\n\n      The following stones are defined, one per paragraph, with the\n      following format: Stone Name (Frequency, Smoothness): Scroll.\n\n      - Power Stone (weekly, 2): A specified player (defaulting to the\n        wielder if not specified) is Power Stoned; Power Stoning is\n        secured. A player's voting strength on a referendum on an\n        ordinary proposal is increased by 3 for each time that e was\n        Power Stoned during the referendum's voting period.\n\n      - Soul Stone (weekly, 3): The Soul Stone is hereby transferred\n        to the owner of a different specified non-immune stone, then\n        that stone is transferred to the wielder.\n\n      - Sabotage Stone (weekly, 4): The adoption index of a specified\n        AI-majority Agoran decision is hereby increased by 1.\n\n      - Jockey Stone (monthly, 3): A specified Running horse's Race\n        Position is increased by 1.\n\n      - Protection Stone (monthly, 4): A specified stone is granted\n        immunity.\n\n      - Recursion Stone (Monthly, 4): The recursion stone can be\n        wielded once per month as if it had the power of any other stone\n        of your choice.\n\n      - Hot Potato Stone (Weekly, 5):  When this stone is wielded, the\n        wielder specifies an eligible player and gains 8 points. The\n        stone is transferred to the eligible player. An eligible player\n        is one who has not owned this stone since the last time Agora\n        owned it. If this  stone is not owned by Agora, it cannot\n        otherwise be transferred, other rules notwithstanding. This stone\n        is immune if 3 or more players have wielded it since the most\n        recent collection notice.\n\n      - Blank Stone (Monthly, 0): This stone has no effect.\n\n      - Mason's Stone (None, 0): If the Mason's Stone is owned by the\n        Stonemason, its Mossiness is continuously set to 0. If the\n        Mason's Stone is owned by Agora, it is transferred to the\n        Stonemason.\n\n      - Anti-Equatorial Stone (Monthly, 5): The mossiest stone is\n        transferred to the wielder. When this happens, the\n        Anti-Equatorial Stone's mossiness is incremented by 1.\n\n      - Score Stone (Weekly, 3): A specified player's (defaulting to the\n        wielder if not specified) Score is increased by 3."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8866,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 9,
+                "strength_against": 3,
+                "votes": [
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Shy Owl",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "AGAINST",
+                        "comments": [
+                            {
+                                "kind": "endorsement_default",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Aspen"
+                                    },
+                                    {
+                                        "name": "default",
+                                        "value": "AGAINST"
+                                    }
+                                ],
+                                "readable": "Aspen would have been endorsed, but eir vote was inextricable"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8867,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Shy Owl",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8868,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 19,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Shy Owl",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Jason",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Jason",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                }
+            ]
+        }
+    ]
+}
