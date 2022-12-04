@@ -35,4 +35,7 @@ Create one Peter Suber Stamp in possession of the Lost and Found Department."""
             )
         }
     }
+
+    voting {
+    }
 }
