@@ -40,7 +40,7 @@ Marvy."""
             title("Justice & Forgiveness 2.1")
             ai("2.0")
             author(nix)
-            coauthors(Jason, G, Murphy, snail)
+            coauthors(Janet, G, Murphy, snail)
             ordinary()
 
             text(
@@ -164,7 +164,7 @@ Repeal R2631"""
             title("Coin Cleaning v2")
             ai("2.0")
             author(nix)
-            coauthors(snail, Jason, G)
+            coauthors(snail, Janet, G)
             ordinary()
 
             text(
@@ -229,7 +229,7 @@ Amend R2143, "Official Reports and Duties", by removing:
             title("Karma Revival (fixed)")
             ai("1.0")
             author(nix)
-            coauthors(Jason, G)
+            coauthors(Janet, G)
             ordinary()
 
             text(
@@ -374,7 +374,7 @@ enacted because the race won't begin anew when that happens.]"""
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8829
             FOR on 8830
             FOR on 8831

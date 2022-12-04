@@ -25,10 +25,10 @@ fun assessment8645to8654() = assessment {
         blotPenalty(cuddlybanana, 3 / 3)
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
+            powerStone(Janet, 3)
             votives(snail, 10)
-            votives(Jason, 6)
+            votives(Janet, 6)
         }
     }
 
@@ -61,7 +61,7 @@ corresponding" with "or the corresponding".""")
         proposal(8646) {
             title("Deputisation rewrite")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(G, ais523)
             democratic()
             sponsored()
@@ -105,7 +105,7 @@ prevent rapid-fire changes resulting from deputisation fights.]""")
             title("Birds!")
             ai("2.0")
             author(snail)
-            coauthors(Jason, Telna)
+            coauthors(Janet, Telna)
             ordinary()
             sponsored()
 
@@ -320,7 +320,7 @@ with this text:
         proposal(8650) {
             title("It's an even grayer world.")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -331,7 +331,7 @@ Repeal Rule 2602 (Glitter).""")
         proposal(8651) {
             title("Temporal Incursion Modification and Exclusion Act")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen, Oerjan)
             democratic()
             sponsored()
@@ -405,7 +405,7 @@ Falsifian found ratification works in eir law thesis.]""")
             title("Geometry v3")
             ai("1.0")
             author(snail)
-            coauthors(Jason)
+            coauthors(Janet)
             ordinary()
             sponsored()
 
@@ -523,7 +523,7 @@ with:
             FOR on 8654
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8645
             FOR on 8646
             AGAINST on 8647
@@ -593,7 +593,7 @@ with:
         }
 
         votes(Aspen) {
-            endorse(Jason) on 8645 comment "Jason is the Rulekeepor"
+            endorse(Janet) on 8645 comment "Jason is the Rulekeepor"
             endorse(G) on 8646
             AGAINST on 8647
             FOR on 8648

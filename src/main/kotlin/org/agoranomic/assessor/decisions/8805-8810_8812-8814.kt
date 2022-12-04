@@ -25,7 +25,7 @@ fun assessment8805to8810and8812to8814() = assessment {
         proposal(8805) {
             title("Removal of vote points v2")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -37,7 +37,7 @@ contain the text "AGAINST" or "FOR".""")
             proposal(i) {
                 title("Filler")
                 ai("1.0")
-                author(Jason)
+                author(Janet)
                 ordinary()
 
                 text("""
@@ -72,7 +72,7 @@ by announcement".""")
         proposal(8814) {
             title("Effective activity")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -92,7 +92,7 @@ Citizenship is secured at power 3.]""")
             FOR on 8814
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8805
             for (i in 8806..8810) PRESENT on i
             AGAINST on 8812
@@ -108,7 +108,7 @@ Citizenship is secured at power 3.]""")
             function { ctx ->
                 if (
                     ctx.resolve(ctx.currentProposal, ais523)?.finalResolution(ctx)?.voteIfVoted == FOR &&
-                    ctx.resolve(ctx.currentProposal, Jason)?.finalResolution(ctx)?.voteIfVoted == FOR
+                    ctx.resolve(ctx.currentProposal, Janet)?.finalResolution(ctx)?.voteIfVoted == FOR
                 ) {
                     resolvedConditional(FOR, "Both ais523 and Jason voted FOR")
                 } else {

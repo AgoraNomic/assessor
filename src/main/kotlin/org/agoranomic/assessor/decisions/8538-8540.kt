@@ -21,7 +21,7 @@ fun assessment8538to8540() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to nix,
         Ministor to nix,
@@ -30,9 +30,9 @@ fun assessment8538to8540() = assessment {
         Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Madrid,
-        Stonemason to Jason,
+        Stonemason to Janet,
         Tailor to null,
         Treasuror to Trigon,
         Webmastor to nix,
@@ -54,7 +54,7 @@ fun assessment8538to8540() = assessment {
             title("All Good Things Must Come to an End")
             ai("3.0")
             author(Aspen)
-            coauthors(Jason)
+            coauthors(Janet)
             democratic()
 
             text("""
@@ -221,7 +221,7 @@ earlier in this proposal.""")
             title("Strengthening Extra Votes v2.1")
             ai("3.0")
             author(nix)
-            coauthors(Aspen, Jason)
+            coauthors(Aspen, Janet)
             democratic()
             sponsored()
 
@@ -327,7 +327,7 @@ the following text:
             FOR on 8540
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8538
             FOR on 8539
             FOR on 8540

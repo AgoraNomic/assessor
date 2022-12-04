@@ -23,7 +23,7 @@ fun assessment8490to8492() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -32,7 +32,7 @@ fun assessment8490to8492() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to ATMunn,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -55,7 +55,7 @@ fun assessment8490to8492() = assessment {
         proposal(8490) {
             title("Functional Emergency Regulations")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text("""
@@ -97,7 +97,7 @@ continuously":
         proposal(8492) {
             title("Unscoped RWO")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -119,7 +119,7 @@ public document."""")
             FOR on 8492
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8490
             AGAINST on 8491
             FOR on 8492
@@ -138,13 +138,13 @@ public document."""")
         votes(Falsifian) {
             AGAINST on 8490
             AGAINST on 8491
-            endorse(Jason) on 8492
+            endorse(Janet) on 8492
         }
 
         votes(Gaelan) {
-            endorse(Jason) on 8490
+            endorse(Janet) on 8490
             endorse(ATMunn) on 8491
-            endorse(Jason) on 8492
+            endorse(Janet) on 8492
         }
     }
 }

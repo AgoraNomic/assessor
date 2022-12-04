@@ -46,7 +46,7 @@ paragraph:
             title("Properly Decriminalizing Lateness")
             ai("2.0")
             author(nix)
-            coauthors(G, Jason, snail, Murphy)
+            coauthors(G, Janet, snail, Murphy)
             ordinary()
             sponsored()
 
@@ -101,7 +101,7 @@ Amend R2138 "The Associate Director of Personnel" by appending:
         proposal(8680) {
             title("Auction conduction fix v2")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(G)
             ordinary()
             sponsored()
@@ -137,7 +137,7 @@ stones belonging to Agora for which no other auction is ongoing".""")
         proposal(8681) {
             title("Auction convergence")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -189,7 +189,7 @@ the gamestate so that we know exactly what auctions are ongoing.]""")
             FOR on 8681
         }
 
-        votes(Jason) {
+        votes(Janet) {
             endorse(Murphy) on 8678
             FOR on 8679
             FOR on 8680

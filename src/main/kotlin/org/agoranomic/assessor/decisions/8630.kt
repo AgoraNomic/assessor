@@ -30,7 +30,7 @@ fun assessment8630() = assessment {
                 Falsifian,
                 G,
                 Gaelan,
-                Jason,
+                Janet,
                 Murphy,
                 nix,
                 omd,
@@ -41,7 +41,7 @@ fun assessment8630() = assessment {
         )
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -75,7 +75,7 @@ from Cuddlebeam.""")
             AGAINST on 8630
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8630
         }
 

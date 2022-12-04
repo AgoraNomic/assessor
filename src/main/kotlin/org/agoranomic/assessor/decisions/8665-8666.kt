@@ -25,10 +25,10 @@ fun assessment8665to8666() = assessment {
         blotPenalty(Trigon, 7 / 3)
         blotPenalty(nix, 5 / 3)
         blotPenalty(cuddlybanana, 3 / 3)
-        blotPenalty(Jason, 3 / 3)
+        blotPenalty(Janet, 3 / 3)
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -37,7 +37,7 @@ fun assessment8665to8666() = assessment {
             title("Promise Expirations 1.1")
             ai("3.0")
             author(nix)
-            coauthors(Jason, ais523)
+            coauthors(Janet, ais523)
             democratic()
             sponsored()
 
@@ -91,7 +91,7 @@ Amend Rule 2665 (The Birds) by appending the list item:
             FOR on 8666
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8665
             PRESENT on 8666
         }
@@ -107,7 +107,7 @@ Amend Rule 2665 (The Birds) by appending the list item:
         }
 
         votes(nix) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(G) {

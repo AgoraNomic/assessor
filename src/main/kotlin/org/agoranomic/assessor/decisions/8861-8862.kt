@@ -185,7 +185,7 @@ Amend R2645, The Stones to read in full:
             ) on 8862
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8861
             PRESENT on 8862
         }

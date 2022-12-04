@@ -48,7 +48,7 @@ In Rule 1607 "Distribution", delete the sentence:
             FOR on 8633
         }
 
-        votes(Jason) {
+        votes(Janet) {
             endorse(Aspen) on 8633
         }
 

@@ -21,7 +21,7 @@ fun assessment8558() = assessment {
         max(15)
 
         blotPenalty(RLee, 7 / 3)
-        powerStone(Jason, 3)
+        powerStone(Janet, 3)
     }
 
     proposals(v4) {
@@ -61,7 +61,7 @@ the following text:
             endorse(seventeenMachine) on 8558
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8558
         }
 

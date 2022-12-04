@@ -59,7 +59,7 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
             FOR on 8860
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8860
         }
 
@@ -68,7 +68,7 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
         }
 
         votes(ziproot) {
-            endorse(Jason) on 8860
+            endorse(Janet) on 8860
         }
 
         votes(juan) {

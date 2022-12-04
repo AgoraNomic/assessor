@@ -80,12 +80,12 @@ offices may change hands during the process.]"""
             endorse(Falsifian) on 8250
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8250
         }
 
         votes(Bernie) {
-            endorse(Jason) on 8250
+            endorse(Janet) on 8250
         }
 
         votes(G) {

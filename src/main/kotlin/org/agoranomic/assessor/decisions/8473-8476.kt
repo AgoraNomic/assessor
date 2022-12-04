@@ -23,7 +23,7 @@ fun assessment8473to8476() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -32,7 +32,7 @@ fun assessment8473to8476() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -54,7 +54,7 @@ fun assessment8473to8476() = assessment {
         proposal(8473) {
             title("Plain Old Bribery")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(G)
             chamber(Participation)
             sponsored()
@@ -160,7 +160,7 @@ Enact the following rule, Charities:
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8473
             FOR on 8474
             FOR on 8475

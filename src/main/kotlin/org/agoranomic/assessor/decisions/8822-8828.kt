@@ -367,7 +367,7 @@ Then, create the Ticking Stone under the ownership of Agora."""
             title("Dream of Wandering")
             ai("1.0")
             author(snail)
-            coauthors(Forest, nix, Madrid, Jason)
+            coauthors(Forest, nix, Madrid, Janet)
             ordinary()
 
             text(
@@ -545,7 +545,7 @@ After this is done for the fourth time, a player is no longer bespeckled.
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8822
             PRESENT on 8823
             FOR on 8824

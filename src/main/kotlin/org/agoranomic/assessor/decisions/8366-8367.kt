@@ -22,7 +22,7 @@ fun assesssment8366to8367() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to null,
         Distributor to omd,
         Herald to Alexis,
@@ -31,7 +31,7 @@ fun assesssment8366to8367() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to twg,
         Tailor to twg,
         Treasuror to twg
@@ -110,13 +110,13 @@ Amend Rule 1789 (Cantus Cygneus) by replacing "Registrar's Report" with
             FOR on 8367
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8366
             FOR on 8367
         }
 
         votes(Rance) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Falsifian) {

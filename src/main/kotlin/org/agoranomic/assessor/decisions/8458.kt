@@ -22,7 +22,7 @@ fun assessment8458() = assessment {
     val offices = officeMapOf(
         ADoP to RLee,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
@@ -30,7 +30,7 @@ fun assessment8458() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -81,7 +81,7 @@ Amend Rule 2499, "Welcome Packages", by appending to the first paragraph:
             FOR on 8458
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8458
         }
 

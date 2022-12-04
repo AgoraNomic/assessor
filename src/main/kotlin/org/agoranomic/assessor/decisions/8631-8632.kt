@@ -72,7 +72,7 @@ Scroll].""")
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8631
             FOR on 8632
         }

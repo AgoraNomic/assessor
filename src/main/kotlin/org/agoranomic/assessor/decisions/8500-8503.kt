@@ -25,7 +25,7 @@ fun assessment8500to8503() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -34,7 +34,7 @@ fun assessment8500to8503() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to grok,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -82,7 +82,7 @@ with this text:
         proposal(8501) {
             title("Statutes are Instruments")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Gaelan)
             democratic()
 
@@ -96,7 +96,7 @@ instrument in that body of law."""")
         proposal(8502) {
             title("Timely reminders")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen)
             chamber(Legislation)
             sponsored()
@@ -110,7 +110,7 @@ the text "Within four days of such an occurrence"""")
             title("Assorted Obligatory Patches")
             ai("2.2")
             author(Aspen)
-            coauthors(G, nix, Jason)
+            coauthors(G, nix, Janet)
             chamber(Justice)
             sponsored()
 
@@ -219,7 +219,7 @@ with:
             FOR on 8503
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8500
             FOR on 8501
             FOR on 8502
@@ -227,7 +227,7 @@ with:
         }
 
         votes(BaronVV) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(ATMunn) {
@@ -239,8 +239,8 @@ with:
 
         votes(Falsifian) {
             endorse(Murphy) on 8500
-            endorse(Jason) on 8501
-            endorse(Jason) on 8502
+            endorse(Janet) on 8501
+            endorse(Janet) on 8502
             PRESENT on 8503
         }
     }

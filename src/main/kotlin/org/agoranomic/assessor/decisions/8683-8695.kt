@@ -371,7 +371,7 @@ Each player gains 50000 coins.""")
             AGAINST on 8695
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8683
             FOR on 8684
             FOR on 8685
@@ -407,7 +407,7 @@ Each player gains 50000 coins.""")
             AGAINST on 8683
             FOR on 8684
             PRESENT on 8685
-            endorse(Jason) on 8686
+            endorse(Janet) on 8686
             FOR on 8687
             AGAINST on 8688
             AGAINST on 8689

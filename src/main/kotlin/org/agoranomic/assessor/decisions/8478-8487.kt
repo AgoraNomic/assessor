@@ -24,7 +24,7 @@ fun assessment8478to8487() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -33,8 +33,8 @@ fun assessment8478to8487() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
-        Speaker to Jason,
+        Rulekeepor to Janet,
+        Speaker to Janet,
         Tailor to PSS,
         Treasuror to Trigon,
         Webmastor to nix
@@ -56,7 +56,7 @@ fun assessment8478to8487() = assessment {
         proposal(8478) {
             title("another talismans fix")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(nix, G)
             democratic()
             sponsored()
@@ -118,7 +118,7 @@ called a Warning.]"""
         proposal(8480) {
             title("Generic welcome package fix")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             chamber(Economy)
             sponsored()
 
@@ -300,7 +300,7 @@ with
         proposal(8486) {
             title("Fee-based de-escalation")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(omd)
             democratic()
 
@@ -402,7 +402,7 @@ Ribbon Ownership to True."""
             FOR on 8487
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8478
             PRESENT on 8479
             FOR on 8480

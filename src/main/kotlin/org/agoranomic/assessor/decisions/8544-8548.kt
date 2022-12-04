@@ -287,7 +287,7 @@ with:
         proposal(8547) {
             title("ER office restriction")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -301,7 +301,7 @@ Minister or Speaker.""""
         proposal(8548) {
             title("Stone defaults")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text(
@@ -325,7 +325,7 @@ Stone." works and grants the wielder coins.]"""
             FOR on 8548
         }
 
-        votes(Jason) {
+        votes(Janet) {
             function { ctx ->
                 if (ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted == FOR)
                     ResolvedVote(FOR).commented(legacyConditionalComment("G. voted FOR"))
@@ -342,8 +342,8 @@ Stone." works and grants the wielder coins.]"""
             FOR on 8544
             endorse(Aspen) on 8545
             endorse(G) on 8546
-            endorse(Jason) on 8547
-            endorse(Jason) on 8548
+            endorse(Janet) on 8547
+            endorse(Janet) on 8548
         }
 
         votes(Gaelan) {

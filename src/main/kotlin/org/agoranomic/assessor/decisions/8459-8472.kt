@@ -23,7 +23,7 @@ fun assessment8459to8472() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to G,
         Distributor to omd,
         Herald to PSS,
@@ -32,7 +32,7 @@ fun assessment8459to8472() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -54,7 +54,7 @@ fun assessment8459to8472() = assessment {
         proposal(8459) {
             title("Talismans")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(nix, Falsifian, G)
             democratic()
 
@@ -213,7 +213,7 @@ fine""""
         proposal(8462) {
             title("Fee-based methods")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Falsifian)
             democratic()
 
@@ -261,7 +261,7 @@ actions.]"""
         proposal(8463) {
             title("Future-proofing black ribbons")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -300,7 +300,7 @@ Retitle rule 2626 to "Costly Certification""""
         proposal(8465) {
             title("Public defense")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(PSS)
             chamber(Justice)
 
@@ -329,7 +329,7 @@ Repeal Rule 2626 "Certifiable Patches"."""
         proposal(8467) {
             title("Talismans auction patch")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Trigon)
             chamber(Economy)
 
@@ -348,7 +348,7 @@ this will have no effect.]"""
         proposal(8468) {
             title("Decision resolution patch")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(nix, G)
             democratic()
 
@@ -543,7 +543,7 @@ with:
             FOR on 8472
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8459
             endorse(G) on 8460
             FOR on 8461
@@ -629,15 +629,15 @@ with:
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8459
+            endorse(Janet) on 8459
             endorse(G) on 8460
             endorse(RLee) on 8461
-            endorse(Jason) on 8462
-            endorse(Jason) on 8463
+            endorse(Janet) on 8462
+            endorse(Janet) on 8463
             AGAINST on 8464
-            endorse(Jason) on 8465
+            endorse(Janet) on 8465
             PRESENT on 8466
-            endorse(Jason) on 8467
+            endorse(Janet) on 8467
             PRESENT on 8468
             FOR on 8469 comment legacyConditionalComment("Aris not against")
             endorse(nix) on 8470

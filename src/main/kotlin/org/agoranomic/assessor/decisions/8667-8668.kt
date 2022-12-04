@@ -24,10 +24,10 @@ fun assessment8667to8668() = assessment {
         blotPenalty(Trigon, 7 / 3)
         blotPenalty(nix, 5 / 3)
         blotPenalty(cuddlybanana, 3 / 3)
-        blotPenalty(Jason, 3 / 3)
+        blotPenalty(Janet, 3 / 3)
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -63,7 +63,7 @@ Repeal Rule 2617 (Defense Against the Dark Arts).""")
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8667
             FOR on 8668
         }

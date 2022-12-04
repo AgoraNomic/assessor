@@ -55,7 +55,7 @@ titles to players based on the way they have voted.
             title("Fix infractions")
             ai("2.0")
             author(Forest)
-            coauthors(Jason)
+            coauthors(Janet)
             ordinary()
 
             text(
@@ -70,7 +70,7 @@ with
         proposal(8853) {
             title("Unfortunately")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -97,7 +97,7 @@ of eir becoming unwelcome before participating in public or discussion fora.
         proposal(8854) {
             title("Attainder")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -138,7 +138,7 @@ the author will pursue further proposals to officialize the ban.
         proposal(8855) {
             title("Extermination v1.1")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text(
@@ -182,7 +182,7 @@ Grant Madrid 200 blots."""
             PRESENT on 8856
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8851
             FOR on 8852
             FOR on 8853
@@ -205,7 +205,7 @@ Grant Madrid 200 blots."""
 
         votes(Gaelan) {
             AGAINST on 8851
-            endorse(Jason) on 8852 comment "Jason is the Arbitor"
+            endorse(Janet) on 8852 comment "Jason is the Arbitor"
             FOR on 8853
             FOR on 8854
 

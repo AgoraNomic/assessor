@@ -23,7 +23,7 @@ fun assessment8322to8341() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to Murphy,
         Distributor to omd,
         Herald to Alexis,
@@ -32,8 +32,8 @@ fun assessment8322to8341() = assessment {
         Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
-        Speaker to Jason,
+        Rulekeepor to Janet,
+        Speaker to Janet,
         Treasuror to twg,
         Tailor to twg
     )
@@ -74,7 +74,7 @@ but it's nice to have certainty about the state of the ruleset.]"""
         proposal(8323) {
             title("Secure Ribbons")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -321,7 +321,7 @@ the ADoP wasn't required to do them.]"""
         proposal(8336) {
             title("Define \"publicly\"")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -547,7 +547,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             AGAINST on 8333
             AGAINST on 8334
             AGAINST on 8335
-            endorse(Jason) on 8336
+            endorse(Janet) on 8336
             AGAINST on 8337
             endorse(Murphy) on 8338
             PRESENT on 8339 comment legacyConditionalComment("Murphy did not vote AGAINST")
@@ -582,7 +582,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             PRESENT on 8341
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8322
             FOR on 8323
             FOR on 8324
@@ -606,12 +606,12 @@ Amend Rule 2124 (Agoran Satisfaction) by:
         }
 
         votes(Rance) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Falsifian) {
             FOR on 8322
-            endorse(Jason) on 8323
+            endorse(Janet) on 8323
             FOR on 8324
             FOR on 8325
             FOR on 8326
@@ -624,7 +624,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             endorse(twg) on 8333 comment NO_VETO
             AGAINST on 8334
             PRESENT on 8335
-            endorse(Jason) on 8336
+            endorse(Janet) on 8336
             AGAINST on 8337
             FOR on 8338
             AGAINST on 8339

@@ -21,7 +21,7 @@ fun assessment8863to8865() = assessment {
         max(15)
 
         // At the end of the voting period, Dream of Power applies to all Agoran decsions
-        powerDream(Jason, 3)
+        powerDream(Janet, 3)
         powerDream(snail, 3)
     }
 
@@ -29,7 +29,7 @@ fun assessment8863to8865() = assessment {
         proposal(8863) {
             title("Exiting REM")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text(
@@ -59,7 +59,7 @@ race actions) if e has not already taken one this week""""
             title("Stone Fixes")
             ai("2.0")
             author(nix)
-            coauthors(G, ais523, Jason, ziproot)
+            coauthors(G, ais523, Janet, ziproot)
             ordinary()
 
             text(
@@ -109,7 +109,7 @@ and adding, to the end of the rule:
             PRESENT on 8865
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8863
             FOR on 8864
             FOR on 8865

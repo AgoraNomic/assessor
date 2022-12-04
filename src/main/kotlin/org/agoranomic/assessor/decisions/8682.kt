@@ -50,7 +50,7 @@ the next week.""")
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8682
         }
 

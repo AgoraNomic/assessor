@@ -22,7 +22,7 @@ fun assessment8669to8671() = assessment {
         blotPenalty(Trigon, 7 / 3)
         blotPenalty(nix, 5 / 3)
         blotPenalty(cuddlybanana, 3 / 3)
-        blotPenalty(Jason, 3 / 3)
+        blotPenalty(Janet, 3 / 3)
     }
 
     proposals(v4) {
@@ -94,7 +94,7 @@ gives a greater range of players access to these assets.]""")
         proposal(8671) {
             title("No finger pointing on behalf")
             ai("1.7")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -116,7 +116,7 @@ Finger".""")
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8669
             PRESENT on 8670
             FOR on 8671

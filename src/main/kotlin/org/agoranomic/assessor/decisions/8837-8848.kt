@@ -98,7 +98,7 @@ that it matches the above rule, and set its power to 3."""
         proposal(8840) {
             title("Cleanliness security")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text(
@@ -120,7 +120,7 @@ R2221, but better safe than sorry.]"""
         proposal(8841) {
             title("Spivak Standardization Act v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen, Gaelan)
             democratic()
 
@@ -154,7 +154,7 @@ changing in any way.
             title("Losing Focus")
             ai("2.0")
             author(Pilgore)
-            coauthors(nix, Jason, Madrid)
+            coauthors(nix, Janet, Madrid)
             ordinary()
 
             text(
@@ -179,7 +179,7 @@ Agora becomes the owner of the Jockey Stone."""
             title("Time B Safe")
             ai("4.0")
             author(G)
-            coauthors(Jason, Murphy)
+            coauthors(Janet, Murphy)
             democratic()
 
             text(
@@ -217,7 +217,7 @@ accidentally stopped time or at least couldn't get it started again.
             title("Fix dreams")
             ai("2.0")
             author(Forest)
-            coauthors(Jason)
+            coauthors(Janet)
             ordinary()
 
             text(
@@ -346,7 +346,7 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
     voting {
         votes(snail) {
             AGAINST on 8838
-            endorse(Jason) on 8839
+            endorse(Janet) on 8839
             endorse(G) on 8840
             endorse(Murphy) on 8841
             FOR on 8842
@@ -392,7 +392,7 @@ announcement, change eir Goal. Goals are tracked by the Goalkeepor.
             FOR on 8848
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8837
             PRESENT on 8838
             AGAINST on 8839

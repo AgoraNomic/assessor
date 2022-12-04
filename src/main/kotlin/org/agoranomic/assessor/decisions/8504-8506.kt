@@ -25,8 +25,8 @@ fun assessment8504to8506() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
-        Coopor to Jason,
+        Assessor to Janet,
+        Coopor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
@@ -34,7 +34,7 @@ fun assessment8504to8506() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to grok,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -75,7 +75,7 @@ with:
         proposal(8505) {
             title("Card clarifications")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             chamber(Economy)
             sponsored()
 
@@ -128,14 +128,14 @@ FOR.""")
             endorse(Falsifian) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8504
             FOR on 8505
             endorse(Falsifian) on 8506
         }
 
         votes(BaronVV) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(nix) {
@@ -146,7 +146,7 @@ FOR.""")
 
         votes(Aspen) {
             endorseOrElse(G, FOR) on 8504
-            endorseOrElse(Jason, FOR) on 8505
+            endorseOrElse(Janet, FOR) on 8505
             AGAINST on 8506
         }
 

@@ -65,7 +65,7 @@ Create the following power=1.5 rule, Points:
             title("Basic Scoring v0.2")
             ai("1.0")
             author(G)
-            coauthors(Jason)
+            coauthors(Janet)
             ordinary()
             sponsored()
 
@@ -113,7 +113,7 @@ iscapped at 4 by R106].
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             endorse(ais523) on 8635
             FOR on 8636
             PRESENT on 8637

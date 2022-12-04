@@ -115,7 +115,7 @@ with:
             FOR on 8557
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8557
         }
 

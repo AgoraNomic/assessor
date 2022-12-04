@@ -104,7 +104,7 @@ Retitle rule 2531, "Defendant's Rights" to "Defendants' Rights"""")
         proposal(8641) {
             title("Degrees are for persons")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(G)
             ordinary()
             sponsored()
@@ -120,7 +120,7 @@ than arbitrary entities.]""")
         proposal(8642) {
             title("Hot Potato patch v2")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Oerjan)
             ordinary()
             sponsored()
@@ -157,7 +157,7 @@ resolve it in the same message - independence needed].""")
         proposal(8644) {
             title("Device repeal patch")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(ais523)
             ordinary()
             sponsored()
@@ -189,7 +189,7 @@ Amend Rule 2655 by replacing "repeal both that rule and this one" with
             FOR on 8644
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8638
             FOR on 8639
             AGAINST on 8640

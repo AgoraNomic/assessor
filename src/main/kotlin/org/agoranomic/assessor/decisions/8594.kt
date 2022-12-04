@@ -82,7 +82,7 @@ parenthetical.]""")
             endorse(RLee) on 8594
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8594
         }
 

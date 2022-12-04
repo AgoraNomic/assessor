@@ -103,7 +103,7 @@ An election for Mad Engineer is initiated.
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8573
         }
 

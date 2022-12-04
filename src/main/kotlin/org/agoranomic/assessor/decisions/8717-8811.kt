@@ -41,7 +41,7 @@ that time.""")
         proposal(8718) {
             title("Well, we kind of mean it")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(ais523)
             ordinary()
 
@@ -69,7 +69,7 @@ standard" clause.]""")
         proposal(8719) {
             title("Proposal order clarification")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -95,7 +95,7 @@ order.]""")
         proposal(8720) {
             title("Actually reward proposals")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -283,7 +283,7 @@ the given order by replacing every instance of the word "crime" with
             FOR on 8811
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8717
             FOR on 8718
             FOR on 8719

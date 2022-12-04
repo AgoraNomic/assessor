@@ -25,7 +25,7 @@ fun assessment8373to8376() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to omd,
         Distributor to omd,
         Herald to null,
@@ -34,7 +34,7 @@ fun assessment8373to8376() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to PSS
@@ -55,7 +55,7 @@ fun assessment8373to8376() = assessment {
         proposal(8373) {
             title("Auction resolution fixes")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen)
             chamber(Economy)
 
@@ -176,7 +176,7 @@ Amend Rule 1789 by replacing "subsequent Registrar Reports" with
             FOR on 8376
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8373
             endorse(G) on 8374
             endorse(G) on 8375

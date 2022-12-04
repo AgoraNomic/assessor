@@ -225,11 +225,11 @@ targeting situations like:
             FOR on 8597
             FOR on 8598
             FOR on 8599
-            endorse(Jason) on 8600
+            endorse(Janet) on 8600
             FOR on 8601
         }
 
-        votes(Jason) {
+        votes(Janet) {
             // AGAINST on 8596
             AGAINST on 8597
             AGAINST on 8598

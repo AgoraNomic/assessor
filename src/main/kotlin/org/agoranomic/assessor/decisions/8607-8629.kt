@@ -31,7 +31,7 @@ fun assessment8607to8629() = assessment {
                 Falsifian,
                 G,
                 Gaelan,
-                Jason,
+                Janet,
                 Murphy,
                 nix,
                 omd,
@@ -42,7 +42,7 @@ fun assessment8607to8629() = assessment {
         )
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -67,7 +67,7 @@ report is self-ratifying." with the following:
             title("Powering Up")
             ai("3.0")
             author(Telna)
-            coauthors(Jason, G, RLee, Trigon, ATMunn)
+            coauthors(Janet, G, RLee, Trigon, ATMunn)
             democratic()
             sponsored()
 
@@ -86,7 +86,7 @@ Agora hereby apologises to the Rulekeepor for making em track this mess.""")
         proposal(8609) {
             title("Axiom of Limitations")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -105,7 +105,7 @@ shenanigans and limit the scope of any bugs.]""")
         proposal(8610) {
             title("No Immediate Shenanigans")
             ai("1.7")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -123,7 +123,7 @@ finger pointing contest.]""")
         proposal(8611) {
             title("Reasonably Responsive Reactivation")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(Trigon)
             ordinary()
             sponsored()
@@ -143,7 +143,7 @@ the standard for reactivation in line with the standard for registration.]""")
         proposal(8612) {
             title("Tournament Conclusion Fixes v2")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(G, Oerjan)
             ordinary()
             sponsored()
@@ -184,7 +184,7 @@ concluded (which the rule did not explicitly state).]""")
         proposal(8613) {
             title("The Name of the Win Cards v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Trigon)
             democratic()
             sponsored()
@@ -216,7 +216,7 @@ Card and Victory Card are no longer both VCs.]""")
         proposal(8614) {
             title("Simultaneity Security")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -234,7 +234,7 @@ extreme than a total ban (which G. has exposed disapproval of).]""")
         proposal(8615) {
             title("Supporter/Objector clarification v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -336,7 +336,7 @@ of Agora.""")
             title("Solo Acitivity")
             ai("1.0")
             author(nix)
-            coauthors(Jason)
+            coauthors(Janet)
             ordinary()
             sponsored()
 
@@ -539,7 +539,7 @@ with:
             title("pledge(2)(2)")
             ai("3.0")
             author(Trigon)
-            coauthors(Jason, ais523)
+            coauthors(Janet, ais523)
             democratic()
             sponsored()
 
@@ -674,7 +674,7 @@ with:
                 nix,
                 Madrid,
                 cuddlybanana,
-                Jason,
+                Janet,
             )
             democratic()
             sponsored()
@@ -827,7 +827,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8607
             FOR on 8608
             FOR on 8609
-            endorse(Jason) on 8610
+            endorse(Janet) on 8610
             FOR on 8611
             FOR on 8612
             FOR on 8613
@@ -869,7 +869,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             endorse(ais523) on 8629
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8607
             FOR on 8608
             FOR on 8609
@@ -951,7 +951,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             PRESENT on 8607
 
             function { ctx ->
-                val rulekeeporVote = ctx.resolve(ctx.currentProposal, Jason)?.finalResolution(ctx)?.voteIfVoted
+                val rulekeeporVote = ctx.resolve(ctx.currentProposal, Janet)?.finalResolution(ctx)?.voteIfVoted
                 val gVote = ctx.resolve(ctx.currentProposal, G)?.finalResolution(ctx)?.voteIfVoted
 
                 val baseVote = if (rulekeeporVote == FOR && gVote == FOR) {
@@ -989,7 +989,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
         votes(Falsifian) {
             endorse(Telna) on 8607
             AGAINST on 8608
-            endorse(Jason) on 8609
+            endorse(Janet) on 8609
             PRESENT on 8610
             AGAINST on 8611
             AGAINST on 8612

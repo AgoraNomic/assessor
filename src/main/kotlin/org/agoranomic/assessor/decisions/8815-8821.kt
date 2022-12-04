@@ -86,7 +86,7 @@ exists. Thus creating it again?]"""
         proposal(8818) {
             title("Tabled action condition ambiguity v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text(
@@ -148,7 +148,7 @@ with:
             title("More Intuitive Rule Changes")
             ai("3.0")
             author(nix)
-            coauthors(Jason, snail)
+            coauthors(Janet, snail)
             ordinary()
 
             text(
@@ -201,7 +201,7 @@ with:
             PRESENT on 8821
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8815
             AGAINST on 8816
             AGAINST on 8817

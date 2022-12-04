@@ -27,7 +27,7 @@ fun assessment8308to8321() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to null,
         Distributor to omd,
         Herald to Alexis,
@@ -36,7 +36,7 @@ fun assessment8308to8321() = assessment {
         Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Falsifian,
         Treasuror to twg,
         Tailor to twg
@@ -88,7 +88,7 @@ paragraph."""
         proposal(8310) {
             title("Deputisation timeliness")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Alexis)
             classless()
 
@@ -635,7 +635,7 @@ least one proposal).]"""
             endorse(twg) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8308
             AGAINST on 8309
             AGAINST on 8310
@@ -653,7 +653,7 @@ least one proposal).]"""
         }
 
         votes(Rance) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Alexis) {

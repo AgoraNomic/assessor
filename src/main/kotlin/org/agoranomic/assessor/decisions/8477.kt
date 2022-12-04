@@ -21,7 +21,7 @@ fun assessment8477() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -30,8 +30,8 @@ fun assessment8477() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
-        Speaker to Jason,
+        Rulekeepor to Janet,
+        Speaker to Janet,
         Tailor to PSS,
         Treasuror to Trigon,
         Webmastor to nix
@@ -53,7 +53,7 @@ fun assessment8477() = assessment {
         proposal(8477) {
             title("More officer cards")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             chamber(Economy)
             sponsored()
 
@@ -95,7 +95,7 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
             FOR on 8477
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8477
         }
 

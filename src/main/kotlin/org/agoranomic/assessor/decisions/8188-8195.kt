@@ -40,7 +40,7 @@ fun assessment8188to8195() = assessment {
             match(G) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8188
             FOR on 8189
             FOR on 8190

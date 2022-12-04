@@ -22,7 +22,7 @@ fun assessment8349to8356() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to null,
         Distributor to omd,
         Herald to Alexis,
@@ -31,7 +31,7 @@ fun assessment8349to8356() = assessment {
         Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to twg,
         Tailor to twg,
         Treasuror to twg
@@ -82,7 +82,7 @@ any blots in the current Agoran week"."""
         proposal(8351) {
             title("Double proposal application fix")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -507,7 +507,7 @@ to read
             FOR on 8356
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8349
             FOR on 8350
             FOR on 8351
@@ -519,7 +519,7 @@ to read
         }
 
         votes(Bernie) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Alexis) {
@@ -562,7 +562,7 @@ to read
         votes(Falsifian) {
             PRESENT on 8349 comment legacyConditionalComment("Arbitor not AGAINST, and no Notice of Veto was published")
             endorse(Alexis) on 8350
-            endorse(Jason) on 8351
+            endorse(Janet) on 8351
             endorse(G) on 8352
             endorse(Murphy) on 8353
             PRESENT on 8354

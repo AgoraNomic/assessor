@@ -77,7 +77,7 @@ with:
         proposal(8542) {
             title("Stone Excitement Act")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen)
             ordinary()
             sponsored()
@@ -105,7 +105,7 @@ with the following:
         proposal(8543) {
             title("En Passant v2")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen, nix)
             ordinary()
             sponsored()
@@ -137,7 +137,7 @@ Amend Rule 2621 "VP Wins" to read, in whole:
 
         votes(Aspen) {
             FOR on 8541
-            endorseOrElse(Jason, FOR) on 8542
+            endorseOrElse(Janet, FOR) on 8542
             FOR on 8543
         }
 
@@ -147,7 +147,7 @@ Amend Rule 2621 "VP Wins" to read, in whole:
             FOR on 8543
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8541
             FOR on 8542
             FOR on 8543
@@ -155,8 +155,8 @@ Amend Rule 2621 "VP Wins" to read, in whole:
 
         votes(Falsifian) {
             endorse(Aspen) on 8541
-            endorse(Jason) on 8542
-            endorse(Jason) on 8543
+            endorse(Janet) on 8542
+            endorse(Janet) on 8543
         }
 
         votes(Murphy) {

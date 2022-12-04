@@ -27,7 +27,7 @@ fun assessment8634() = assessment {
         proposal(8634) {
             title("Laudability")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -94,7 +94,7 @@ to the number of existing types of ribbon:
             PRESENT on 8634
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8634
         }
 
@@ -103,11 +103,11 @@ to the number of existing types of ribbon:
         }
 
         votes(ATMunn) {
-            endorse(Jason) on 8634
+            endorse(Janet) on 8634
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8634
+            endorse(Janet) on 8634
         }
 
         votes(Murphy) {

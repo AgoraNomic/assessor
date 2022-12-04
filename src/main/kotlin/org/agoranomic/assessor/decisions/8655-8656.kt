@@ -27,7 +27,7 @@ fun assessment8655to8656() = assessment {
         blotPenalty(Trigon, 4 / 3)
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -35,7 +35,7 @@ fun assessment8655to8656() = assessment {
         proposal(8655) {
             title("Restricted Petitions")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(nix)
             ordinary()
             sponsored()
@@ -61,7 +61,7 @@ than attaching to a specific person.]""")
         proposal(8656) {
             title("Mathematical de-notation")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -72,7 +72,7 @@ points" with "the associated amount of points, rounded down".""")
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on all
         }
 

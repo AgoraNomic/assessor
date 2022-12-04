@@ -59,12 +59,12 @@ Amend Rule 2657 (Scoring) by replacing the first paragraph with:
             PRESENT on 8859
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8859
         }
 
         votes(ziproot) {
-            endorse(Jason) on 8859
+            endorse(Janet) on 8859
         }
 
         votes(Murphy) {

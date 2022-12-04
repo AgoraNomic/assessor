@@ -23,7 +23,7 @@ fun assessment8431to8441() = assessment {
     val offices = officeMapOf(
         ADoP to RLee,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
@@ -31,7 +31,7 @@ fun assessment8431to8441() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -130,7 +130,7 @@ following text:
             title("Simpler Heraldry")
             ai("1.5")
             author(Aspen)
-            coauthors(Alexis, Jason, PSS)
+            coauthors(Alexis, Janet, PSS)
             chamber(Participation)
 
             text(
@@ -381,7 +381,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             FOR on 8441
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8431
             endorse(G) on 8432
             AGAINST on 8433

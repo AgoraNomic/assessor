@@ -26,11 +26,11 @@ fun assessment8657to8664() = assessment {
         blotPenalty(nix, 4 / 3)
         blotPenalty(cuddlybanana, 3 / 3)
         blotPenalty(snail, 3 / 3)
-        blotPenalty(Jason, 3 / 3)
+        blotPenalty(Janet, 3 / 3)
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -126,7 +126,7 @@ with:
             title("The End of Sets")
             ai("3.0")
             author(nix)
-            coauthors(G, Jason, snail)
+            coauthors(G, Janet, snail)
             democratic()
             sponsored()
 
@@ -259,7 +259,7 @@ with:
             title("Stamps v1.2")
             ai("1.0")
             author(nix)
-            coauthors(G, Jason, Trigon)
+            coauthors(G, Janet, Trigon)
             ordinary()
             sponsored()
 
@@ -292,7 +292,7 @@ nix becomes the Collector""")
             title("Birds! v2")
             ai("1.0")
             author(snail)
-            coauthors(Jason, Telna)
+            coauthors(Janet, Telna)
             ordinary()
             sponsored()
 
@@ -628,7 +628,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
             AGAINST on 8664
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8657
             PRESENT on 8658
             FOR on 8659

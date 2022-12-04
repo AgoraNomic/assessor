@@ -20,7 +20,7 @@ fun assessment8672to8674() = assessment {
 
         blotPenalty(nix, 5 / 3)
         blotPenalty(cuddlybanana, 3 / 3)
-        blotPenalty(Jason, 3 / 3)
+        blotPenalty(Janet, 3 / 3)
     }
 
     proposals(v4) {
@@ -85,7 +85,7 @@ with:
             AGAINST on 8674
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8672
             AGAINST on 8673
             FOR on 8674

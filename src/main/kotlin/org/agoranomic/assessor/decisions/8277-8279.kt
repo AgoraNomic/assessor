@@ -186,7 +186,7 @@ a public message.
             AGAINST on 8279
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8277
             AGAINST on 8278
             PRESENT on 8279

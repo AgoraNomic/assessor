@@ -24,7 +24,7 @@ fun assessment8342to8348() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to Murphy,
         Distributor to omd,
         Herald to Alexis,
@@ -33,7 +33,7 @@ fun assessment8342to8348() = assessment {
         Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to twg,
         Tailor to twg,
         Treasuror to twg
@@ -113,7 +113,7 @@ with
         proposal(8345) {
             title("Self-punishment")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             chamber(Justice)
 
             text(
@@ -143,7 +143,7 @@ over their zombies.]"""
         proposal(8346) {
             title("De-secure Black Ribbons v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(ais523)
             democratic()
 
@@ -159,7 +159,7 @@ Ribbon. When this occurs, this Rule awards that person a Black Ribbon."."""
         proposal(8347) {
             title("R2141 power increase v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -231,7 +231,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             FOR on 8348
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8342
             endorseOfficer(offices, Arbitor) on 8343
             PRESENT on 8344
@@ -242,16 +242,16 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         }
 
         votes(Rance) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(twg) {
             PRESENT on 8342 comment legacyConditionalComment("Gaelan did not vote AGAINST")
             FOR on 8343
             PRESENT on 8344 comment legacyConditionalComment("Alexis did not vote AGAINST")
-            endorse(Jason) on 8345
-            endorse(Jason) on 8346
-            endorse(Jason) on 8347
+            endorse(Janet) on 8345
+            endorse(Janet) on 8346
+            endorse(Janet) on 8347
             PRESENT on 8348 comment legacyConditionalComment("Gaelan did not vote AGAINST")
         }
 
@@ -263,9 +263,9 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             endorse(G) on 8342
             AGAINST on 8343
             AGAINST on 8344
-            endorse(Jason) on 8345
-            endorse(Jason) on 8346
-            endorse(Jason) on 8347
+            endorse(Janet) on 8345
+            endorse(Janet) on 8346
+            endorse(Janet) on 8347
             PRESENT on 8348 comment legacyConditionalComment("Gaelan did not vote AGAINST")
         }
 

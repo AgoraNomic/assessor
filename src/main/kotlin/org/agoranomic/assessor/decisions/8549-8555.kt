@@ -23,7 +23,7 @@ fun assessment8549to8555() = assessment {
         max(15)
 
         blotPenalty(RLee, 7 / 3)
-        powerStone(Jason, 3)
+        powerStone(Janet, 3)
     }
 
     proposals(v4) {
@@ -60,7 +60,7 @@ the text:
             title("Apathy for all")
             proposalAI(ProposalAI(BigDecimal("1.0")))
             decisionAI(DecisionAI(BigDecimal("2.0")))
-            author(Jason)
+            author(Janet)
             coauthors(ais523)
             ordinary()
             sponsored()
@@ -76,7 +76,7 @@ players" with "set of persons" and the text "specified players" with
         proposal(8553) {
             title("Slightly less apathetic")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -149,7 +149,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             PRESENT on 8555
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8549
             FOR on 8552
             FOR on 8553

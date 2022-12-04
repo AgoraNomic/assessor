@@ -26,7 +26,7 @@ fun assessment8275to8276() = assessment {
         proposal(8275) {
             title("\"By announcement\" clarification")
             ai("3.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -47,7 +47,7 @@ with the text
         proposal(8276) {
             title("Various Election Fixes v2")
             ai("2.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -74,23 +74,23 @@ Decision for an election after a week passes.]"""
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8275
             FOR on 8276
         }
 
         votes(twg) {
-            endorse(Jason) on 8275
-            endorse(Jason) on 8276
+            endorse(Janet) on 8275
+            endorse(Janet) on 8276
         }
 
         votes(Bernie) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8275
-            endorse(Jason) on 8276
+            endorse(Janet) on 8275
+            endorse(Janet) on 8276
         }
 
         votes(ATMunn) {

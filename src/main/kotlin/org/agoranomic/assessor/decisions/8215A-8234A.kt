@@ -32,9 +32,9 @@ fun assessment8215Ato8234A() = assessment {
             endorse(G) on 8215
             AGAINST on 8216
             endorse(G) on 8217
-            endorse(Jason) on 8218
+            endorse(Janet) on 8218
             PRESENT on 8221
-            endorse(Jason) on 8222
+            endorse(Janet) on 8222
             AGAINST on 8223
             PRESENT on 8224
             AGAINST on 8227
@@ -53,7 +53,7 @@ fun assessment8215Ato8234A() = assessment {
             endorse(G) on 8217
             AGAINST on 8218
             FOR on 8221
-            endorse(Jason) on 8222
+            endorse(Janet) on 8222
             AGAINST on 8223
             AGAINST on 8224
             AGAINST on 8227
@@ -66,7 +66,7 @@ fun assessment8215Ato8234A() = assessment {
             FOR on 8234 comment NO_VETO
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8215
             AGAINST on 8216
             PRESENT on 8217
@@ -89,9 +89,9 @@ fun assessment8215Ato8234A() = assessment {
             endorse(G) on 8215
             AGAINST on 8216
             endorse(G) on 8217
-            endorse(Jason) on 8218
+            endorse(Janet) on 8218
             PRESENT on 8221
-            endorse(Jason) on 8222
+            endorse(Janet) on 8222
             AGAINST on 8223
             AGAINST on 8224
             AGAINST on 8227

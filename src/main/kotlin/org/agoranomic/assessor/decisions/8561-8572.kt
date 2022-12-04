@@ -230,7 +230,7 @@ with the following text:
         proposal(8566) {
             title("Anti-AI escalation")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -248,7 +248,7 @@ through at AI 1.]""")
         proposal(8567) {
             title("AI voting method clarification")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -263,7 +263,7 @@ adoption index switch, but some of them have the value "none".]""")
         proposal(8568) {
             title("Supporter/Objector clarification")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -318,7 +318,7 @@ rather than persons).]""")
         proposal(8569) {
             title("Fixing Festivals")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen, Murphy)
             democratic()
             sponsored()
@@ -370,7 +370,7 @@ changes).]""")
         proposal(8570) {
             title("Emergency Regulation Clarification")
             ai("3.1")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -385,7 +385,7 @@ not mentioned in any Rule".
         proposal(8571) {
             title("Gauntlet announcement patch")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -412,7 +412,7 @@ might be considered such an announcement.]""")
         proposal(8572) {
             title("Thou shalt not disobey Trigon")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Trigon)
             ordinary()
             sponsored()
@@ -436,7 +436,7 @@ otherwise)."""")
             FOR on 8564
             FOR on 8565
             FOR on 8566
-            endorse(Jason) on 8567
+            endorse(Janet) on 8567
             FOR on 8568
             AGAINST on 8569
             FOR on 8570
@@ -444,7 +444,7 @@ otherwise)."""")
             FOR on 8572
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8561
             FOR on 8562
             AGAINST on 8563
@@ -465,10 +465,10 @@ otherwise)."""")
             AGAINST on 8563
             PRESENT on 8564
             FOR on 8565
-            endorse(Jason) on 8566
-            endorse(Jason) on 8567
+            endorse(Janet) on 8566
+            endorse(Janet) on 8567
             FOR on 8568
-            endorse(Jason) on 8569
+            endorse(Janet) on 8569
             FOR on 8570
             FOR on 8571
             FOR on 8572
@@ -502,13 +502,13 @@ otherwise)."""")
             AGAINST on 8563
             FOR on 8564
             AGAINST on 8565
-            endorse(Jason) on 8566
-            endorse(Jason) on 8567
+            endorse(Janet) on 8566
+            endorse(Janet) on 8567
             AGAINST on 8568
-            endorse(Jason) on 8569
-            endorse(Jason) on 8570
-            endorse(Jason) on 8571
-            endorse(Jason) on 8572
+            endorse(Janet) on 8569
+            endorse(Janet) on 8570
+            endorse(Janet) on 8571
+            endorse(Janet) on 8572
         }
 
         votes(ATMunn) {
@@ -517,10 +517,10 @@ otherwise)."""")
             AGAINST on 8563
             FOR on 8564
             FOR on 8565
-            endorse(Jason) on 8566
+            endorse(Janet) on 8566
             FOR on 8567
             FOR on 8568
-            endorse(Jason) on 8569
+            endorse(Janet) on 8569
             FOR on 8570
             PRESENT on 8571
             FOR on 8572

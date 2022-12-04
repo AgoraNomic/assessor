@@ -49,7 +49,7 @@ fun assessment8188Ato8195A() = assessment {
             AGAINST on 8195
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8188
             FOR on 8189
             FOR on 8190

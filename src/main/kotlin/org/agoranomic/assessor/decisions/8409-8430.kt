@@ -22,7 +22,7 @@ fun assessment8409to8430() = assessment {
     val offices = officeMapOf(
         ADoP to RLee,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to null,
@@ -30,7 +30,7 @@ fun assessment8409to8430() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -812,7 +812,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8430
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8409
             FOR on 8410
             PRESENT on 8411

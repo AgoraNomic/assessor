@@ -22,7 +22,7 @@ fun assessment8866to8868() = assessment {
         max(15)
 
         onOrdinaryProposals {
-            powerDream(Jason, 2)
+            powerDream(Janet, 2)
             powerDream(snail, 2)
         }
     }
@@ -31,7 +31,7 @@ fun assessment8866to8868() = assessment {
         proposal(8866) {
             title("Restricted confederation")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen)
             democratic()
 
@@ -53,7 +53,7 @@ purposes of Agora.]"""
             title("Expectations, Values, Bans, and Forgiveness")
             ai("3.0")
             author(nix)
-            coauthors(Jason, RLee, Murphy, G)
+            coauthors(Janet, RLee, Murphy, G)
             democratic()
 
             text(
@@ -187,7 +187,7 @@ was enacted is flipped to True."""
             title("Slippery Stones v2.1")
             ai("2.0")
             author(nix)
-            coauthors(G, ais523, Jason, ziproot)
+            coauthors(G, ais523, Janet, ziproot)
             ordinary()
 
             text(
@@ -338,7 +338,7 @@ Amend R2645, The Stones to read in full:
             FOR on 8868
         }
 
-        votes(Jason) {
+        votes(Janet) {
             endorseOrElse(Aspen, AGAINST) on 8866
             FOR on 8867
             FOR on 8868

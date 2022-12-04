@@ -23,7 +23,7 @@ fun assessment8523() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to G,
         Distributor to omd,
         Herald to PSS,
@@ -33,7 +33,7 @@ fun assessment8523() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -56,7 +56,7 @@ fun assessment8523() = assessment {
             title("Emergency Economy Unbreaking")
             ai("2.0")
             author(Aspen)
-            coauthors(nix, Jason)
+            coauthors(nix, Janet)
             chamber(Economy)
             sponsored()
 
@@ -88,12 +88,12 @@ with:
             FOR on 8523
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8523
         }
 
         votes(BaronVV) {
-            endorse(Jason) on 8523
+            endorse(Janet) on 8523
         }
 
         votes(Falsifian) {

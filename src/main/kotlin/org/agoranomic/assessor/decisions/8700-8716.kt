@@ -141,7 +141,7 @@ set to half their current value rounded down."""")
         proposal(8707) {
             title("No, we really mean it")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -169,7 +169,7 @@ not to be weakened by judges.]""")
             title("Has Beens")
             ai("3.0")
             author(nix)
-            coauthors(snail, G, Madrid, Forest, Jason)
+            coauthors(snail, G, Madrid, Forest, Janet)
             ordinary()
 
             text("""
@@ -227,7 +227,7 @@ since that would be "any" conditions]""")
         proposal(8710) {
             title("Tabled action clarification")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(snail)
             ordinary()
 
@@ -241,7 +241,7 @@ performance via one of the following methods".""")
         proposal(8711) {
             title("Tabled action condition ambiguity")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -318,7 +318,7 @@ none.
         proposal(8714) {
             title("Vote scoring clarification")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -341,7 +341,7 @@ of resolution.]""")
         proposal(8715) {
             title("Proposal protection")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             ordinary()
 
             text("""
@@ -363,7 +363,7 @@ distributed.]""")
             title("Dream of Wandering")
             ai("1.0")
             author(Forest)
-            coauthors(nix, Madrid, snail, Jason)
+            coauthors(nix, Madrid, snail, Janet)
             ordinary()
 
             text("""
@@ -491,7 +491,7 @@ based on that player's Mindset:
             PRESENT on 8716
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8700
             AGAINST on 8701
             AGAINST on 8702

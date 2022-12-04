@@ -23,7 +23,7 @@ fun assessment8357to8365() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to twg,
         Distributor to omd,
         Herald to Alexis,
@@ -32,7 +32,7 @@ fun assessment8357to8365() = assessment {
         Promotor to Aspen,
         Referee to twg,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to twg,
         Tailor to twg,
         Treasuror to twg
@@ -66,7 +66,7 @@ instead, the week of February 24 - March 1" paragraph]."""
         proposal(8358) {
             title("No zombie blot creation v2")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Alexis)
             chamber(Justice)
 
@@ -297,7 +297,7 @@ to read
             FOR on 8365
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8357
             FOR on 8358
             AGAINST on 8359
@@ -310,7 +310,7 @@ to read
         }
 
         votes(Rance) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Murphy) {

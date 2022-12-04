@@ -87,7 +87,7 @@ Create the following power=1 rule, titled Buyout:
             FOR on 8677
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8675
             PRESENT on 8676
             endorse(ais523) on 8677

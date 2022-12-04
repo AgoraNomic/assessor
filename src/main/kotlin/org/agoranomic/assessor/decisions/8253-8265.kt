@@ -29,7 +29,7 @@ fun assessment8253to8265() = assessment {
             title("Clarify salary")
             ai("2.0")
             author(Murphy)
-            coauthors(G, Jason)
+            coauthors(G, Janet)
 
             text(
                 """
@@ -59,7 +59,7 @@ is left as an exercise for future proposal authors.]"""
         proposal(8254) {
             title("Anything is POSSIBLE")
             ai("3.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -74,7 +74,7 @@ defines it.]"""
         proposal(8255) {
             title("Possibly-Indeterminate Switches")
             ai("3.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -121,7 +121,7 @@ Amend Rule 2423 (First Among Equals) by appending this text:
         proposal(8258) {
             title("Elections Fix")
             ai("2.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -219,7 +219,7 @@ and Cool and help spread the workload and reduce consolidation."""
             title("")
             ai("3.0")
             author(twg)
-            coauthors(Murphy, Aspen, Jason)
+            coauthors(Murphy, Aspen, Janet)
 
             text(
                 """
@@ -315,7 +315,7 @@ Enact a new Rule of Power 3.0 with the text:
             match(G) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8253
             FOR on 8254
             FOR on 8255
@@ -362,15 +362,15 @@ Enact a new Rule of Power 3.0 with the text:
         }
 
         votes(Bernie) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(twg) {
             endorse(Murphy) on 8253
-            endorse(Jason) on 8254
-            endorse(Jason) on 8255
+            endorse(Janet) on 8254
+            endorse(Janet) on 8255
             endorse(Murphy) on 8256
-            endorse(Jason) on 8258
+            endorse(Janet) on 8258
             endorse(G) on 8260
             endorse(G) on 8261
             endorse(G) on 8262

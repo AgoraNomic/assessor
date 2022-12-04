@@ -23,14 +23,14 @@ fun assessment8556() = assessment {
         max(15)
 
         blotPenalty(RLee, 7 / 3)
-        powerStone(Jason, 3)
+        powerStone(Janet, 3)
     }
 
     proposals(v4) {
         proposal(8556) {
             title("Ministry Normalization")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             coauthors(nix)
             ordinary()
             sponsored()
@@ -49,7 +49,7 @@ players focused on Legacy.]"""
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             endorse(nix) on 8556
         }
 
@@ -62,7 +62,7 @@ players focused on Legacy.]"""
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8556
+            endorse(Janet) on 8556
         }
 
         votes(nix) {

@@ -22,7 +22,7 @@ fun assessment8560() = assessment {
         max(15)
 
         blotPenalty(RLee, 7 / 3)
-        powerStone(Jason, 3)
+        powerStone(Janet, 3)
     }
 
     proposals(v4) {
@@ -59,7 +59,7 @@ still limited by Defendant's Rights.
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8560
         }
 

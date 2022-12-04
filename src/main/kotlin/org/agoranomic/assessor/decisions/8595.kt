@@ -25,7 +25,7 @@ fun assessment8595() = assessment {
             title("It's a gray, gray world.")
             ai("3.0")
             author(RLee)
-            coauthors(Jason)
+            coauthors(Janet)
             democratic()
             sponsored()
 
@@ -72,7 +72,7 @@ is currently the most powerful way to get coins, by far. ]""")
             endorse(RLee) on 8595
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8595
         }
 

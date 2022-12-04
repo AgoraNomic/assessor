@@ -16,7 +16,7 @@ private fun playerName(player: String): String {
         "G." -> "G"
         "Gaelan" -> "Gaelan"
         "grok" -> "grok"
-        "Jason Cobb", "Jason" -> "Jason"
+        "Jason Cobb", "Jason", "Janet" -> "Janet"
         "Murphy" -> "Murphy"
         "nix" -> "nix"
         "omd" -> "omd"

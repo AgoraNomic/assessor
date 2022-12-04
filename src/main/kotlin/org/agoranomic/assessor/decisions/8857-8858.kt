@@ -96,7 +96,7 @@ with:
             PRESENT on 8858
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8857
             PRESENT on 8858
         }

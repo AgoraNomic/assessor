@@ -47,7 +47,7 @@ definition anyway, but may be useful to have it there]."""
         proposal(8252) {
             title("Blasphemy")
             ai("1.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -59,7 +59,7 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8251
             FOR on 8252
         }
@@ -73,7 +73,7 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
         }
 
         votes(Bernie) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Falsifian) {
@@ -87,7 +87,7 @@ Destroy the contract that is known as the Reformed Church of the Ritual.
 
         votes(Gaelan) {
             endorse(G) on 8251
-            endorse(Jason) on 8252
+            endorse(Janet) on 8252
         }
 
         votes(Murphy) {

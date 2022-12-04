@@ -23,7 +23,7 @@ fun assessment8532to8537() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to nix,
         Ministor to nix,
@@ -32,9 +32,9 @@ fun assessment8532to8537() = assessment {
         Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Madrid,
-        Stonemason to Jason,
+        Stonemason to Janet,
         Tailor to null,
         Treasuror to Trigon,
         Webmastor to nix,
@@ -130,7 +130,7 @@ players, looked like all would work fine under this version]""")
             title("de-dictatorship")
             ai("3.0")
             author(G)
-            coauthors(Jason, nix)
+            coauthors(Janet, nix)
             democratic()
             sponsored()
 
@@ -291,7 +291,7 @@ for We the People".]""")
             title("Justice for All")
             ai("1.7")
             author(Aspen)
-            coauthors(G, Jason)
+            coauthors(G, Janet)
             chamber(Compliance)
             sponsored()
 
@@ -396,7 +396,7 @@ Repeal Rule 2479 (Official Injustice).""")
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             endorse(G) on 8532
             FOR on 8533
             FOR on 8534
