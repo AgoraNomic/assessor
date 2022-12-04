@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8869() = assessment {
@@ -49,6 +48,10 @@ Create one Peter Suber Stamp in possession of the Lost and Found Department."""
 
         votes(Janet) {
             AGAINST on 8869
+        }
+
+        votes(nix) {
+            PRESENT on 8869
         }
     }
 }
