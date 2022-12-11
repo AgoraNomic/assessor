@@ -335,4 +335,7 @@ Amend R2632 (Complexity) by adding the following paragraph to the end:
             )
         }
     }
+
+    voting {
+    }
 }
