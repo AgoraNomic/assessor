@@ -354,5 +354,9 @@ Amend R2632 (Complexity) by adding the following paragraph to the end:
         votes(nix) {
             FOR on all
         }
+
+        votes(juan) {
+            FOR on all
+        }
     }
 }
