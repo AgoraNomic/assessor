@@ -36,13 +36,6 @@ fun ProposalUnroundedReward.rounded(): ProposalRoundedReward {
     return ProposalRoundedReward(ceil(raw))
 }
 
-private fun calculateReward(
-    voteCountFor: BigInteger,
-    voteCountAgainst: BigInteger,
-): ProposalUnroundedReward {
-    return ProposalUnroundedReward((voteCountFor - voteCountAgainst).toBigDecimal())
-}
-
 data class ProposalRewardData(
     val author: Person?,
     val coauthors: Persons?,
@@ -53,16 +46,7 @@ data class ProposalRewardData(
     val votingStrengths: VotingStrengthTrailForPersons,
     val resolvedVotes: SimplifiedSingleProposalVoteMap,
     val sponsored: Boolean,
-) {
-    val unroundedCoinReward
-        get() =
-            calculateReward(
-                voteCountFor = voteCountFor,
-                voteCountAgainst = voteCountAgainst
-            )
-
-    val roundedCoinReward get() = unroundedCoinReward.rounded()
-}
+)
 
 data class ProposalRewardsMap(
     private val data: ImmutableMap<ProposalNumber, ProposalRewardData>,
@@ -131,14 +115,7 @@ private fun ProposalRewardData.authorRewards(proposalNumber: ProposalNumber): Li
     if (result != ProposalResult.ADOPTED) return emptyList()
     if (author == null) return emptyList()
 
-    val amountString =
-        if ((unroundedCoinReward.raw).compareTo(roundedCoinReward.raw) == 0)
-            roundedCoinReward.toString()
-        else
-            "$unroundedCoinReward -> $roundedCoinReward"
-
     return buildList {
-        add("For the adoption of Proposal $proposalNumber, I grant ${author.name} $voteCountFor-$voteCountAgainst=$amountString boatloads of coins (author).")
         add("For the adoption of Proposal $proposalNumber, I increase the score of ${author.name} by 5 points (author).")
     }
 }
@@ -148,7 +125,7 @@ private fun ProposalRewardData.coauthorRewards(proposalNumber: ProposalNumber): 
     if (coauthors == null) return emptyList()
 
     return coauthors.map {
-        "For the adoption of Proposal $proposalNumber, I grant ${it.name} 1 point (coauthor)."
+        "For the adoption of Proposal $proposalNumber, I increase the score of ${it.name} by 1 point (coauthor)."
     }
 }
 
