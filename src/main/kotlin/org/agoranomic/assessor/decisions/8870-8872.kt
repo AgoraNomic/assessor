@@ -358,5 +358,11 @@ Amend R2632 (Complexity) by adding the following paragraph to the end:
         votes(juan) {
             FOR on all
         }
+
+        votes(Janet) {
+            FOR on 8870
+            FOR on 8871
+            FOR on 8872
+        }
     }
 }
