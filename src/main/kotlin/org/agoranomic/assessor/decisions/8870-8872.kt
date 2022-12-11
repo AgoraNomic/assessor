@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8870to8872() = assessment {
@@ -337,5 +338,10 @@ Amend R2632 (Complexity) by adding the following paragraph to the end:
     }
 
     voting {
+        votes(snail) {
+            FOR on 8870
+            FOR on 8871
+            FOR on 8872
+        }
     }
 }
