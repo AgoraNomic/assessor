@@ -350,5 +350,9 @@ Amend R2632 (Complexity) by adding the following paragraph to the end:
             FOR on 8871
             PRESENT on 8872
         }
+
+        votes(nix) {
+            FOR on all
+        }
     }
 }
