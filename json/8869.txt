@@ -1,0 +1,146 @@
+{
+    "metadata": {
+        "name": "8869",
+        "url": "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2022-December/016584.html"
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8869,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Stamp Shenanigans",
+            "author": "Shy Owl",
+            "coauthors": [
+            ],
+            "text": "Create one Peter Suber Stamp in possession of the Lost and Found Department."
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8869,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 9,
+                "strength_against": 11,
+                "votes": [
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Shy Owl",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "Janet",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                }
+            ]
+        }
+    ]
+}
