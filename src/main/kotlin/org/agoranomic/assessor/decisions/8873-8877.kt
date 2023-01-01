@@ -272,5 +272,13 @@ The above notwithstanding, a formal announcement of intent is never a lie.
             endorse(nix) on 8876
             FOR on 8877
         }
+
+        votes(nix) {
+            FOR on 8873
+            endorse(ais523) on 8874
+            AGAINST on 8875
+            FOR on 8876
+            PRESENT on 8877
+        }
     }
 }
