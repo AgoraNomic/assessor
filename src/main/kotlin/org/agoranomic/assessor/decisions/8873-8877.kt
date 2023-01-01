@@ -280,5 +280,13 @@ The above notwithstanding, a formal announcement of intent is never a lie.
             FOR on 8876
             PRESENT on 8877
         }
+
+        votes(juan) {
+            endorse(nix) on 8873 comment "nix is the Collector"
+            PRESENT on 8874
+            PRESENT on 8875
+            FOR on 8876
+            FOR on 8877
+        }
     }
 }
