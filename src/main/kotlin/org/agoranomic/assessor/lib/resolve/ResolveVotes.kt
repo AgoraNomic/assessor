@@ -28,16 +28,16 @@ private fun makeVoteContext(
     }, lookupProposalFunc = lookupProposalFunc)
 }
 
-private fun resolveVotes(
-    votes: MultiPersonPendingVoteMap,
-    lookupProposalFunc: LookupProposalFunc,
-): MultiProposalVoteMap {
+
+fun resolveVotes(votes: MultiPersonPendingVoteMap, proposals: ProposalSet): MultiProposalVoteMap {
+    val lookupProposalFunc = proposals.lookupFunc
     val voteContext = makeVoteContext(votes, lookupProposalFunc)
 
-    return MultiProposalVoteMap(votes.proposalsWithVotes().associateWith { proposalNumber ->
+    return MultiProposalVoteMap(proposals.associate { proposal ->
+        val proposalNumber = proposal.number
         val voters = votes.voters
 
-        SimplifiedSingleProposalVoteMap(
+        proposalNumber to SimplifiedSingleProposalVoteMap(
             voters
                 .associateWith { voter ->
                     resolveSingleVote(
@@ -63,5 +63,3 @@ private fun resolveVotes(
         )
     })
 }
-
-fun resolveVotes(votes: MultiPersonPendingVoteMap, proposals: ProposalSet) = resolveVotes(votes, proposals.lookupFunc)
