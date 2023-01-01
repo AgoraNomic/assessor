@@ -197,7 +197,7 @@ with
         proposal(8876) {
             title("Stamp'a'Wrong")
             ai("1.0")
-            author(snail)
+            author(juan)
             ordinary()
 
             text(
