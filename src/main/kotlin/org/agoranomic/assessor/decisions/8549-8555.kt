@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
@@ -15,6 +16,7 @@ import java.math.BigDecimal
 @UseAssessment
 fun assessment8549to8555() = assessment {
     name("8549-8555")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-April/014796.html")
     quorum(3)
 
     strengths {
