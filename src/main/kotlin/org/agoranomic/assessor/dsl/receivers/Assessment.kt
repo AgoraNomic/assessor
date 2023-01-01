@@ -1,5 +1,7 @@
 package org.agoranomic.assessor.dsl.receivers
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.dsl.*
 import org.agoranomic.assessor.dsl.detail.DslInit
 import org.agoranomic.assessor.dsl.detail.SetOnce
@@ -16,7 +18,7 @@ interface AssessmentReceiver {
     fun voting(block: MultiPersonVotesReceiverInit)
     fun quorum(value: AssessmentQuorum)
     fun name(value: String)
-    fun url(value: AssessmentUrl)
+    fun url(values: List<AssessmentUrl>)
 
     // TODO fix this dirty hack for not adding an import to everywhere that uses this
     val v0 get() = org.agoranomic.assessor.dsl.v0
@@ -36,7 +38,7 @@ interface AssessmentReceiver {
 typealias AssessmentReceiverInit = DslInit<AssessmentReceiver>
 
 fun AssessmentReceiver.quorum(value: Int) = quorum(AssessmentQuorum(value))
-fun AssessmentReceiver.url(value: String) = url(AssessmentUrl(value))
+fun AssessmentReceiver.url(vararg values: String) = url(values.map { AssessmentUrl(it) })
 
 interface AssessmentCompiler {
     fun compile(init: AssessmentReceiverInit): AssessmentData
@@ -57,7 +59,7 @@ private class DefaultAssessmentReceiver(
     private val proposalVotesBlockValue = SetOnce.namedOf<MultiPersonVotesReceiverInit>("voting block")
     private val quorumValue = SetOnce.namedOf<AssessmentQuorum>("assessment quorum")
     private val nameValue = SetOnce.namedOf<String>("assessment name")
-    private val urlValue = SetOnce.namedOf<AssessmentUrl>("assessment url")
+    private val urlValue = SetOnce.namedOf<ImmutableList<AssessmentUrl>>("assessment url")
 
     override fun strengths(block: GlobalVotingStrengthReceiverInit) {
         votingStrengthsBlockValue.set(block)
@@ -105,13 +107,13 @@ private class DefaultAssessmentReceiver(
         nameValue.set(value)
     }
 
-    override fun url(value: AssessmentUrl) {
-        urlValue.set(value)
+    override fun url(values: List<AssessmentUrl>) {
+        urlValue.set(values.toImmutableList())
     }
 
     fun compile(): AssessmentData {
         val name = nameValue.get()
-        val url = urlValue.getOrNull()
+        val urls = urlValue.getOrNull()
         val quorum = quorumValue.get()
 
         val proposalsBlock = proposalsBlockValue.get()
@@ -130,7 +132,7 @@ private class DefaultAssessmentReceiver(
         return AssessmentData(
             AssessmentMetadata(
                 name = name,
-                url = url,
+                urls = urls,
             ),
             quorum,
             votingStrengths,

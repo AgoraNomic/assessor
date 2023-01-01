@@ -116,12 +116,20 @@ data class ProposalsReadableFormatter(
                 .associate { (proposal, resolutions) ->
                     val text = run {
                         val resolutionsText = resolutions.joinToString("\n") { resolution ->
-                            renderReadableProposalResolution(
+                            val resolutionText = renderReadableProposalResolution(
                                 reportConfig,
                                 proposal,
                                 resolution.resolutionOf(proposal.number),
                                 resolution.votingStrengthsFor(proposal.number),
-                            ) + "\nResolved at: ${resolution.metadata.url}\n"
+                            )
+
+                            val metadataText = if (resolution.metadata.urls != null) {
+                                "\nResolved at: ${resolution.metadata.urls.joinToString(" and ")}\n"
+                            } else {
+                                ""
+                            }
+
+                            resolutionText + metadataText
                         }
 
                         resolutionsText + "\n" + renderProposalText(proposal)
