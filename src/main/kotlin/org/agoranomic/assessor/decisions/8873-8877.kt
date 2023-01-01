@@ -288,5 +288,13 @@ The above notwithstanding, a formal announcement of intent is never a lie.
             FOR on 8876
             FOR on 8877
         }
+
+        votes(Murphy) {
+            endorse(Marb) on 8873
+            FOR on 8874
+            FOR on 8875
+            FOR on 8876
+            FOR on 8877
+        }
     }
 }
