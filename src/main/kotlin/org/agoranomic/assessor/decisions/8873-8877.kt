@@ -4,6 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8873to8877() = assessment {
@@ -251,6 +253,16 @@ The above notwithstanding, a formal announcement of intent is never a lie.
 
 }"""
             )
+        }
+    }
+
+    voting {
+        votes(snail) {
+            FOR on 8873
+            FOR on 8874
+            FOR on 8875
+            FOR on 8876
+            PRESENT on 8877
         }
     }
 }
