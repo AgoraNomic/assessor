@@ -4,12 +4,17 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8873to8877() = assessment {
     name("8873-8877")
+    url(
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-January/016647.html",
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-January/016653.html",
+    )
     quorum(3)
 
     strengths {
