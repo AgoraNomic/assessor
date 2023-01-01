@@ -16,7 +16,10 @@ import org.agoranomic.assessor.lib.vote.voteIfVoted
 @UseAssessment
 fun assessment8544to8548() = assessment {
     name("8544-8548")
-    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-March/014711.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-March/014726.html")
+    url(
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-March/014711.html",
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-March/014726.html",
+    )
     quorum(5)
 
     strengths {
