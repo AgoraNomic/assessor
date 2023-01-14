@@ -1,0 +1,397 @@
+{
+    "metadata": {
+        "name": "8873-8877",
+        "urls": [
+            "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-January/016647.html",
+            "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-January/016653.html"
+        ]
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8873,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Back from the void",
+            "author": "snail",
+            "coauthors": [
+            ],
+            "text": "Grant Marb 1 Marb stamp.\n\n[E lost the stamp in eir welcome package.]"
+        },
+        {
+            "version": "4",
+            "number": 8874,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "The Big Horse Fix",
+            "author": "snail",
+            "coauthors": [
+            ],
+            "text": "[== This first section is mostly small fixes.==]\n\nAmend Rule 2668 (Horses) by replacing \"Dollaries (singular: dollary) are a\nfixed currency. Hooves (singular: hoof) are a fixed currency.\" with\n\"Dollaries (singular: dollary) are a fixed currency. Hooves (singular:\nhoof) are a fixed currency. Any Dollaries or Hooves in abeyance or not\nowned by a player are immediately destroyed.\"\n\n[Clears hooves and dollaries from the L&FD, where they are currently\nunauctionable.]\n\nAmend Rule 2672 (Weekly Race Action) by replacing \"bet 1, 2, or 3 dollaries\non a specified horse by paying a fee of 1, 2, or 3 dollaries respectively.\"\nwith \"bet 1, 2, or 3 dollaries on a specified Running horse by paying a fee\nof 1, 2, or 3 dollaries respectively.\"\n\n[It would be silly to bet on horses that have already finished in the race!]\n\nAmend Rule 2673 (Motivating Horses) by replacing {\n\nEach horse has an associated non-repeating set of horses, their \"pulls\",\ntracked by the Horsened.\n\n}\n\nwith {\n\nPulls (syn. pull) is a Horse switch, tracked by the Horsened. It has\npossible values of any set of horses.\n\n}\n\n[Make pulls a switch instead of the nonsense from before.]\n\nAmend Rule 2674 (Horse Powers) by replacing {\n\nFargo's power: (WEEKLY POWER)  * get a helmet for and bet 2\n      dollaries on a specified horse, by paying 1 hoof.\n\n}\n\nwith {\n\nFargo's power: (WEEKLY POWER)  * get a helmet for and then bet 2\n      dollaries on a specified horse, by paying 1 hoof.\n\n}\n\nand by replacing {\n\nSugar's power: (WEEKLY POWER)  * get a helmet for and increase the\n      Race Position of a specified horse by 1, by paying 1 hoof.\n\n}\n\nwith {\n\nSugar's power: (WEEKLY POWER)  * get a helmet for and then increase the\n      Race Position of a specified horse by 1, by paying 1 hoof.\n}\n\n[This should make it so you can't use these powers on horses you already\ngot a helmet for.]\n\n\n[==These next changes have a larger mechanical impact.==]\n\nAmend Rule 2672 (Weekly Race Action) by replacing\n\n{\n* gain 4 dollaries by announcement.\n}\n\nwith\n\n{\n* gain 5 dollaries by paying 3 hooves.\n\n* gain 1 hoof by announcement.\n}\n\n[This makes dollaries more scarce, and hooves a more important resource to\nmanage.]\n\nAmend Rule 2499 (Welcome packages) by replacing\n\n{\n  * 1 Stamp of eir own type\n}\n\nwith\n\n{\n  * 1 Stamp of eir own type\n  * the number of hooves the player(s) with the most hooves has\n}\n\n[New players aren't behind in the hooves this way.]\n\nAmend Rule 2670 (Horse Victory) by replacing\n\n{\n      * the player that owns the horse with a Race Place of first gains\n        50 dollaries.\n\n      * the player that owns the horse with a Race Place of second gains\n        30 dollaries.\n\n      * the player that owns the horse with a Race Place of third gains\n        15 dollaries.\n}\n\nwith\n\n{\n      * the player that owns the horse with a Race Place of first gains\n        30 dollaries.\n\n      * the player that owns the horse with a Race Place of second gains\n        20 dollaries.\n\n      * the player that owns the horse with a Race Place of third gains\n        15 dollaries.\n}\n\n[This should balance horse ownership a bit more, and is especially needed\nif dollary generation is being decreased.]"
+        },
+        {
+            "version": "4",
+            "number": 8875,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "All Warmed Up",
+            "author": "snail",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2670 (Horse Victory) by replacing\n\n* The score of the player that has the most dollaries is increased\n        by 15.  In the event of a tie, instead, no score change occurs.\n\nwith\n\n* The score of the player that has the most dollaries is increased\n        by 50.  In the event of an N-way tie, instead, each tied\n        player's score is increased by 50/N points, rounded down."
+        },
+        {
+            "version": "4",
+            "number": 8876,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Stamp'a'Wrong",
+            "author": "juan",
+            "coauthors": [
+            ],
+            "text": "[This is fixing a mishap where my stamps got mistaken out of\n    existence. See the discussion in quote.]\n\n    Create in juan's possession:\n\n    * 1 juan stamp\n    * 1 Madrid stamp\n    * 1 Murphy stamp"
+        },
+        {
+            "version": "4",
+            "number": 8877,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Fake fixes",
+            "author": "Janet",
+            "coauthors": [
+                "Murphy"
+            ],
+            "text": "Amend Rule 2471 (\"No Faking\") to read, in whole:\n\n{\n\nA person SHALL NOT make a public statement that is a lie.\n\nA public statement is falsy if any of the following was true at the time of\npublication:\n* The statement was not true and the author knew or should have known\nthat it was not true.\n* The author believed the statement to be not true.\n\nA public statement is a lie if it is falsy and any of the following is true:\n* The author made the statement with intent to mislead.\n* The author, in the same message, declared the statement to be made\n\"under penalty of No Faking\" (or similar).\n\nFor the purposes of this rule, an attempt to perform an action by\npublishing certain text constitutes an implicit statement that the\naction was EFFECTIVE.\n\nMerely quoting a statement or attempt does not constitute making it for\nthe purposes of this rule. Any disclaimer, conditional clause, or other\nqualifier attached to a statement or attempt constitutes part of the\nstatement or attempt for the purposes of this rule; the truth or falsity\nof the whole is what is significant.\n\nThe above notwithstanding, a formal announcement of intent is never a lie.\n\n}"
+        }
+    ],
+    "quorum": 3,
+    "resolutions": [
+        {
+            "proposal": 8873,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 12,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of nix"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "nix is the Collector"
+                                    }
+                                ],
+                                "readable": "nix is the Collector"
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of nix"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Marb"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ],
+                                "readable": "Endorsement of non-voter Marb"
+                            },
+                            {
+                                "kind": "inextricable",
+                                "parameters": [
+                                ],
+                                "readable": "Inextricable"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8874,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 6,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "ais523"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "true"
+                                    }
+                                ],
+                                "readable": "Endorsement of non-voter ais523"
+                            },
+                            {
+                                "kind": "inextricable",
+                                "parameters": [
+                                ],
+                                "readable": "Inextricable"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8875,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 6,
+                "strength_against": 6,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8876,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 15,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of nix"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8877,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 9,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        }
+    ]
+}
