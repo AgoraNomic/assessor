@@ -3,11 +3,13 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8878to8884() = assessment {
     name("8878-8884")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-January/016684.html")
     quorum(3)
 
     strengths {
