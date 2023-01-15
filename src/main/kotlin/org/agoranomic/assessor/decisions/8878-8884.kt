@@ -9,6 +9,14 @@ fun assessment8878to8884() = assessment {
     name("8878-8884")
     quorum(3)
 
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        // Note: R2632's attempted strength changes are ineffective at power 1.
+    }
+
     proposals(v4) {
         proposal(8878) {
             title("Clearer Dream Text")
