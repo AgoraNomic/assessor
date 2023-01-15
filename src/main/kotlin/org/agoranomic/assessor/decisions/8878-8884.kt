@@ -238,5 +238,15 @@ with
             FOR on 8883
             FOR on 8884
         }
+
+        votes(juan) {
+            FOR on 8878
+            PRESENT on 8879
+            FOR on 8880
+            FOR on 8881
+            FOR on 8882
+            PRESENT on 8883
+            PRESENT on 8884
+        }
     }
 }
