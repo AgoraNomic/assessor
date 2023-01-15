@@ -248,5 +248,15 @@ with
             PRESENT on 8883
             PRESENT on 8884
         }
+
+        votes(Janet) {
+            FOR on 8878
+            FOR on 8879
+            FOR on 8880
+            FOR on 8881
+            FOR on 8882
+            FOR on 8883
+            AGAINST on 8884
+        }
     }
 }
