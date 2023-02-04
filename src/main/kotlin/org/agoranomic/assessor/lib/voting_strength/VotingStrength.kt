@@ -14,7 +14,7 @@ value class VotingStrength(val raw: RawVotingStrength) : Comparable<VotingStreng
 
     override fun toString(): String = raw.toString()
 
-    val absoluteValue get() = VotingStrengthDifference(raw)
+    fun asDifference() = VotingStrengthDifference(raw)
 
     override fun compareTo(other: VotingStrength): Int {
         return (this.raw).compareTo(other.raw)
