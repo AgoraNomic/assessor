@@ -6,7 +6,6 @@ import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.strengthWithVote
 import org.agoranomic.assessor.lib.voting_strength.VotingStrength
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
-import org.agoranomic.assessor.lib.voting_strength.compareTo
 import org.randomcat.util.compareTo
 import org.randomcat.util.times
 
@@ -33,4 +32,3 @@ fun aiStrengthsFor(votes: SimplifiedSingleProposalVoteMap, strengths: VotingStre
         )
     )
 }
-
