@@ -143,7 +143,7 @@ with this text:
         }
 
         votes(nix) {
-            endorse(Janet) on 8885 comment "Janet is the Stonemason"
+            AGAINST on 8885 comment "Janet is the Stonemason"
             endorse(Janet) on 8886 comment "Janet is the Stonemason"
             PRESENT on 8887
         }
