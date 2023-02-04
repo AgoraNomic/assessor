@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -139,6 +140,12 @@ with this text:
 
         votes(juan) {
             PRESENT on all
+        }
+
+        votes(nix) {
+            endorse(Janet) on 8885 comment "Janet is the Stonemason"
+            endorse(Janet) on 8886 comment "Janet is the Stonemason"
+            PRESENT on 8887
         }
     }
 }
