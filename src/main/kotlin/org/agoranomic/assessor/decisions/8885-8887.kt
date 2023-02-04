@@ -128,4 +128,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
