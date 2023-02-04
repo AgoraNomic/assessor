@@ -153,5 +153,11 @@ with this text:
             FOR on 8886
             PRESENT on 8887
         }
+
+        votes(Murphy) {
+            AGAINST on 8885
+            FOR on 8886
+            FOR on 8887
+        }
     }
 }
