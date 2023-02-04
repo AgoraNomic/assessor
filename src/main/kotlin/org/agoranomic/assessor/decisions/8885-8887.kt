@@ -147,5 +147,11 @@ with this text:
             endorse(Janet) on 8886 comment "Janet is the Stonemason"
             PRESENT on 8887
         }
+
+        votes(Janet) {
+            FOR on 8885
+            FOR on 8886
+            PRESENT on 8887
+        }
     }
 }
