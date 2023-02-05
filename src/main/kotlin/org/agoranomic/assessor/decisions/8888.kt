@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8888() = assessment {
@@ -116,7 +115,7 @@ with:
         }
 
         votes(snail) {
-            FOR on 8888
+            AGAINST on 8888
         }
 
         votes(Murphy) {
