@@ -113,5 +113,9 @@ with:
         votes(Janet) {
             endorse(nix) on 8888
         }
+
+        votes(snail) {
+            FOR on 8888
+        }
     }
 }
