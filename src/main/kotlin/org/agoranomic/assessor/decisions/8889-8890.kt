@@ -106,5 +106,9 @@ with this text:
             AGAINST on 8889
             PRESENT on 8890
         }
+
+        votes(juan) {
+            PRESENT on all
+        }
     }
 }
