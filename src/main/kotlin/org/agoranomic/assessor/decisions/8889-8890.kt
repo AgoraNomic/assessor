@@ -110,5 +110,10 @@ with this text:
         votes(juan) {
             PRESENT on all
         }
+
+        votes(Forest) {
+            FOR on 8889
+            FOR on 8890
+        }
     }
 }
