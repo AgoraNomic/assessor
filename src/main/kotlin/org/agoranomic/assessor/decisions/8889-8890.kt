@@ -97,5 +97,10 @@ with this text:
             PRESENT on 8889
             FOR on 8890
         }
+
+        votes(nix) {
+            PRESENT on 8889
+            FOR on 8890
+        }
     }
 }
