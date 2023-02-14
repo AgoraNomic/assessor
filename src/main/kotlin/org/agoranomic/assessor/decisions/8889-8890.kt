@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -113,6 +114,11 @@ with this text:
 
         votes(Forest) {
             FOR on 8889
+            FOR on 8890
+        }
+
+        votes(ais523) {
+            endorse(Janet) on 8889 comment "Janet is the Mad Engineer"
             FOR on 8890
         }
     }
