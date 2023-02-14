@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8889to8890() = assessment {
@@ -86,5 +87,9 @@ with this text:
     }
 
     voting {
+        votes(Murphy) {
+            FOR on 8889
+            FOR on 8890
+        }
     }
 }
