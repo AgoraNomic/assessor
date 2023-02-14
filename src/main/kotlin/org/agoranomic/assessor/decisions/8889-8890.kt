@@ -121,5 +121,9 @@ with this text:
             endorse(Janet) on 8889 comment "Janet is the Mad Engineer"
             FOR on 8890
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
