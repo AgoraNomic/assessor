@@ -84,4 +84,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
