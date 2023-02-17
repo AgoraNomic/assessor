@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -308,6 +305,18 @@ by replacing "by 1, 3 times" with "by 3"."""
             FOR on 8897
             FOR on 8898
             PRESENT on 8899
+        }
+
+        votes(Forest) {
+            FOR on 8891
+            FOR on 8892
+            FOR on 8893
+            FOR on 8894
+            endorse(Janet) on 8895
+            FOR on 8896
+            endorse(Janet) on 8897
+            endorse(Janet) on 8898
+            endorse(Janet) on 8899
         }
     }
 }
