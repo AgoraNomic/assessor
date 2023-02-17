@@ -10,7 +10,7 @@ import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 import java.math.BigDecimal
 
 @UseAssessment
@@ -278,6 +278,18 @@ by replacing "by 1, 3 times" with "by 3"."""
             FOR on 8895
             FOR on 8896
             FOR on 8897
+            FOR on 8898
+            FOR on 8899
+        }
+
+        votes(Janet) {
+            AGAINST on 8891
+            AGAINST on 8892
+            AGAINST on 8893
+            FOR on 8894
+            PRESENT on 8895
+            AGAINST on 8896
+            AGAINST on 8897
             FOR on 8898
             FOR on 8899
         }
