@@ -293,6 +293,7 @@ by replacing "by 1, 3 times" with "by 3"."""
 
         votes(G) {
             AGAINST on 8895
+            AGAINST on others
         }
 
         votes(nix) {
