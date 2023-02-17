@@ -293,5 +293,9 @@ by replacing "by 1, 3 times" with "by 3"."""
             FOR on 8898
             FOR on 8899
         }
+
+        votes(G) {
+            AGAINST on 8895
+        }
     }
 }
