@@ -267,4 +267,7 @@ by replacing "by 1, 3 times" with "by 3"."""
             )
         }
     }
+
+    voting {
+    }
 }
