@@ -319,5 +319,17 @@ by replacing "by 1, 3 times" with "by 3"."""
             endorse(Janet) on 8898
             endorse(Janet) on 8899
         }
+
+        votes(Murphy) {
+            AGAINST on 8891
+            AGAINST on 8892
+            FOR on 8893
+            FOR on 8894
+            AGAINST on 8895
+            FOR on 8896
+            FOR on 8897
+            FOR on 8898
+            FOR on 8899
+        }
     }
 }
