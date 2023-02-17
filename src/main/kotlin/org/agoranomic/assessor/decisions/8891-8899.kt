@@ -8,6 +8,9 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
+import java.math.BigDecimal
 
 @UseAssessment
 fun assessment8891to8899() = assessment {
@@ -227,7 +230,8 @@ with "- Gardens" with:
 
         proposal(8899) {
             title("3rd Time's not the charm")
-            ai("1.0")
+            proposalAI(ProposalAI(BigDecimal("1.0")))
+            decisionAI(DecisionAI(BigDecimal("2.0")))
             author(snail)
             coauthors(Janet)
             ordinary()
