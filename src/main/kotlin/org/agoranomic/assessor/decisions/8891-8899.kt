@@ -343,5 +343,11 @@ by replacing "by 1, 3 times" with "by 3"."""
             endorse(Janet) on 8898
             endorse(Janet) on 8899
         }
+
+        votes(juan) {
+            FOR on 8891
+            FOR on 8892
+            PRESENT on others
+        }
     }
 }
