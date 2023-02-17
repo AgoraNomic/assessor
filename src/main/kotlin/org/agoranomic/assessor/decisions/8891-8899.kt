@@ -321,7 +321,7 @@ by replacing "by 1, 3 times" with "by 3"."""
         }
 
         votes(Murphy) {
-            AGAINST on 8891
+            endorse(snail) on 8891
             AGAINST on 8892
             FOR on 8893
             FOR on 8894
