@@ -297,5 +297,17 @@ by replacing "by 1, 3 times" with "by 3"."""
         votes(G) {
             AGAINST on 8895
         }
+
+        votes(nix) {
+            PRESENT on 8891
+            PRESENT on 8892
+            PRESENT on 8893
+            FOR on 8894
+            AGAINST on 8895
+            AGAINST on 8896
+            FOR on 8897
+            FOR on 8898
+            PRESENT on 8899
+        }
     }
 }
