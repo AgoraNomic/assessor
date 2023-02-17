@@ -349,5 +349,17 @@ by replacing "by 1, 3 times" with "by 3"."""
             FOR on 8892
             PRESENT on others
         }
+
+        votes(ais523) {
+            FOR on 8891
+            PRESENT on 8892
+            PRESENT on 8893
+            FOR on 8894
+            AGAINST on 8895
+            AGAINST on 8896
+            FOR on 8897
+            PRESENT on 8898
+            FOR on 8899
+        }
     }
 }
