@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
@@ -13,6 +14,12 @@ import java.math.BigDecimal
 @UseAssessment
 fun assessment8891to8899() = assessment {
     name("8891-8899")
+
+    url(
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-February/016790.html",
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-February/016795.html",
+    )
+
     quorum(3)
 
     strengths {
