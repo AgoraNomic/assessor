@@ -43,7 +43,7 @@ fun assessment8891to8899() = assessment {
                 "Notary"(2) heldBy snail
                 "Prime Minister"(0) heldBy null
                 "Promotor"(3) heldBy snail
-                "Referee"(2) heldBy null
+                "Referee"(2) heldBy Forest
                 "Registrar"(1) heldBy juan
                 "Rulekeepor"(3) heldBy Janet
                 "Speaker"(0) heldBy Murphy
