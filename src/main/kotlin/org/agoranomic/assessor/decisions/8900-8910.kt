@@ -468,5 +468,19 @@ transfers.]"""
             endorse(Murphy) on 8909
             endorseOrElse(nix, AGAINST) on 8910
         }
+
+        votes(RLee) {
+            AGAINST on 8900
+            PRESENT on 8901
+            AGAINST on 8902
+            FOR on 8903
+            FOR on 8904
+            AGAINST on 8905
+            AGAINST on 8906
+            FOR on 8907
+            AGAINST on 8908
+            FOR on 8909
+            PRESENT on 8910
+        }
     }
 }
