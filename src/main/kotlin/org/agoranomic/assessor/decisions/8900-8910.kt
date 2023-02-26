@@ -5,8 +5,11 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8900to8910() = assessment {
@@ -385,5 +388,18 @@ transfers.]"""
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 8900
+            FOR on 8901
+            FOR on 8902
+            FOR on 8903
+            FOR on 8904
+            AGAINST on 8905
+            FOR on 8906
+            FOR on 8907
+            endorse(Janet) on 8908
+            FOR on 8909
+            FOR on 8910
+        }
     }
 }
