@@ -429,5 +429,19 @@ transfers.]"""
             FOR on 8909
             PRESENT on 8910
         }
+
+        votes(juan) {
+            PRESENT on 8900
+            PRESENT on 8901
+            PRESENT on 8902
+            FOR on 8903
+            FOR on 8904
+            FOR on 8905
+            PRESENT on 8906
+            PRESENT on 8907
+            FOR on 8908
+            PRESENT on 8909
+            PRESENT on 8910
+        }
     }
 }
