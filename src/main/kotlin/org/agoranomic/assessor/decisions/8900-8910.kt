@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -400,6 +401,20 @@ transfers.]"""
             endorse(Janet) on 8908
             FOR on 8909
             FOR on 8910
+        }
+
+        votes(Forest) {
+            endorse(nix) on 8900
+            endorse(ais523) on 8901
+            endorse(Murphy) on 8902
+            InextricableResolvingVote on 8903 comment "Endorsement of self"
+            endorse(Janet) on 8904
+            endorse(juan) on 8905
+            endorse(snail) on 8906
+            endorse(RLee) on 8907
+            AGAINST on 8908
+            endorse(Aspen) on 8909
+            endorse(G) on 8910
         }
     }
 }
