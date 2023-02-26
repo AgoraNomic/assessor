@@ -383,4 +383,7 @@ transfers.]"""
             )
         }
     }
+
+    voting {
+    }
 }
