@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -456,6 +453,20 @@ transfers.]"""
             AGAINST on 8908
             endorse(Murphy) on 8909
             FOR on 8910
+        }
+
+        votes(Janet) {
+            FOR on 8900
+            FOR on 8901
+            FOR on 8902
+            FOR on 8903
+            FOR on 8904
+            FOR on 8905
+            FOR on 8906
+            FOR on 8907
+            AGAINST on 8908
+            endorse(Murphy) on 8909
+            endorseOrElse(nix, AGAINST) on 8910
         }
     }
 }
