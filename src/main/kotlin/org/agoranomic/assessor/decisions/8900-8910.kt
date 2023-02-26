@@ -9,8 +9,7 @@ import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8900to8910() = assessment {
@@ -415,6 +414,20 @@ transfers.]"""
             AGAINST on 8908
             endorse(Aspen) on 8909
             endorse(G) on 8910
+        }
+
+        votes(Murphy) {
+            PRESENT on 8900
+            FOR on 8901
+            FOR on 8902
+            FOR on 8903
+            FOR on 8904
+            PRESENT on 8905
+            PRESENT on 8906
+            PRESENT on 8907
+            FOR on 8908
+            FOR on 8909
+            PRESENT on 8910
         }
     }
 }
