@@ -443,5 +443,19 @@ transfers.]"""
             PRESENT on 8909
             PRESENT on 8910
         }
+
+        votes(nix) {
+            FOR on 8900
+            PRESENT on 8901
+            PRESENT on 8902
+            FOR on 8903
+            FOR on 8904
+            PRESENT on 8905
+            FOR on 8906
+            FOR on 8907
+            AGAINST on 8908
+            endorse(Murphy) on 8909
+            FOR on 8910
+        }
     }
 }
