@@ -7,6 +7,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8911to8913() = assessment {
@@ -134,5 +136,10 @@ Amend Rule 2466 (Acting on Behalf) by appending the following paragraph:
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 8911
+            FOR on 8912
+            FOR on 8913
+        }
     }
 }
