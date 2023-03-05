@@ -132,4 +132,7 @@ Amend Rule 2466 (Acting on Behalf) by appending the following paragraph:
             )
         }
     }
+
+    voting {
+    }
 }
