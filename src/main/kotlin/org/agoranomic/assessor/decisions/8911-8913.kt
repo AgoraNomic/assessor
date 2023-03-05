@@ -5,10 +5,10 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8911to8913() = assessment {
@@ -140,6 +140,12 @@ Amend Rule 2466 (Acting on Behalf) by appending the following paragraph:
             AGAINST on 8911
             FOR on 8912
             FOR on 8913
+        }
+
+        votes(Janet) {
+            AGAINST on 8911
+            PRESENT on 8912
+            endorse(G) on 8913
         }
     }
 }
