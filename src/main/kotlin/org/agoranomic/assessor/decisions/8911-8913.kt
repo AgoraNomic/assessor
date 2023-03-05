@@ -165,5 +165,11 @@ Amend Rule 2466 (Acting on Behalf) by appending the following paragraph:
             FOR on 8912
             FOR on 8913
         }
+
+        votes(ais523) {
+            AGAINST on 8911
+            FOR on 8912
+            FOR on 8913
+        }
     }
 }
