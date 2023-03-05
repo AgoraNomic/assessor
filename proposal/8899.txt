@@ -1,0 +1,50 @@
+PROPOSAL 8899 (3rd Time's not the charm)
+AUTHOR: snail
+CLASS: ORDINARY
+FOR (6): 4st*, Aspen, Janet^, Murphy*, ais523, snail>
+AGAINST (1): G.&
+PRESENT (2): juan$, nix^
+BALLOTS: 9
+AI (F/A): 42/7 (AI=2.0)
+POPULARITY: 0.556
+OUTCOME: ADOPTED
+[
+4st: Endorsement of Janet
+Aspen: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-February/016790.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-February/016795.html
+
+ID: 8899
+Title: 3rd Time's not the charm
+Adoption index: 1.0
+Author: snail
+Co-authors: Janet
+
+
+Amend Rule 2668 (Horses) by replacing
+
+{
+Race Position is a Horse switch with possible values of the
+integers from 0 (default) to 16, tracked by the Horsened.
+}
+
+with
+
+{
+Race Position is a Horse switch with non-negative integer
+possible values, defaulting to 0, tracked by the Horsened.
+}
+
+
+Amend Rule 2669 (The Horses Run) by replacing "if any horses have a Race
+Position of 16" with "if any horses have a Race Position of 16 or more".
+
+Amend Rule 2672 (Weekly Race Action) by replacing "by 1, twice" with "by 2".
+
+Amend Rule 2673 (Motivating Horses) by replacing "increased by 1 a number
+of times equal to the random number choice" with "increased by the random
+number choice".
+
+Amend Rule 2674 (Horse Powers) by replacing "by 1, twice" with "by 2" and
+by replacing "by 1, 3 times" with "by 3".

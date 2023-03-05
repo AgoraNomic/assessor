@@ -1,0 +1,60 @@
+PROPOSAL 8908 (The Crystal)
+AUTHOR: 4st
+CLASS: ORDINARY
+FOR (2): Murphy%, juan$
+AGAINST (5): 4st*, Janet^, R. Lee, nix^, snail^
+PRESENT (0): 
+BALLOTS: 7
+AI (F/A): 9/29 (AI=1.0)
+POPULARITY: -0.429
+OUTCOME: REJECTED
+[
+snail: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-February/016817.html
+
+ID: 8908
+Title: The Crystal
+Adoption index: 1.0
+Author: 4st
+Co-authors: 
+
+
+I have yearned for the days of Clork, putting things into knip,
+and all of the nonsense that once existed as part of Nomic,
+or general self-referential, rule-changing games.
+ALAS, this nonsense caused instability in the very foundations of Agora,
+AND it was grand.
+
+AND SO, I seek to shaketh the foundations upon which we lie,
+upending the system of power and thusly encourage legislative play.
+
+THUSLY, enact a rule entitled "The Crystal" with power=1.0 and the text:
+{
+The Geologist is the office that tracks crystals.
+Each crystal is a liquid asset.
+Each crystal has two secured natural integer switches,
+one of which is the size, and the other is its identity.
+The default size of a crystal is 1.
+Each Quarter, the size is reduced by 1 of all crystals with
+identifiers that match any rule number in the current ruleset.
+
+Whenever a proposal amends or repeals a rule:
+- If a crystal with an identity equal to the number of that rule exists,
+  transfer it to the author of the proposal, and increase its size by 1.
+- Otherwise, grant the author of the proposal a crystal with the identity
+  equal to the number of that rule.
+
+A player CAN, by announcement, Shatter the System, specifying one or more
+crystallized entities, provided that no entity has won the game by doing so
+in the past 30 days. An entity is crystallized if it owns crystals with a
+total
+size greater than or equal to the number of rules in the current ruleset.
+
+When the System is Shattered, the specified entities win the game. If an
+entity
+won the game in this manner 4 or more days ago, any player CAN repeal this
+rule
+by announcement.
+}
