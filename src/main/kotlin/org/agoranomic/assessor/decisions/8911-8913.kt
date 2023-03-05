@@ -153,5 +153,11 @@ Amend Rule 2466 (Acting on Behalf) by appending the following paragraph:
             endorse(G) on 8912
             endorse(juan) on 8913
         }
+
+        votes(juan) {
+            FOR on 8911
+            PRESENT on 8912
+            endorse(G) on 8913
+        }
     }
 }
