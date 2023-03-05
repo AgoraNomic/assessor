@@ -147,5 +147,11 @@ Amend Rule 2466 (Acting on Behalf) by appending the following paragraph:
             PRESENT on 8912
             endorse(G) on 8913
         }
+
+        votes(Forest) {
+            AGAINST on 8911
+            endorse(G) on 8912
+            endorse(juan) on 8913
+        }
     }
 }
