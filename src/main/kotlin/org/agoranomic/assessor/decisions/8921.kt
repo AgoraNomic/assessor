@@ -79,5 +79,9 @@ with:
         votes(Forest) {
             FOR on 8921
         }
+
+        votes(nix) {
+            FOR on 8921
+        }
     }
 }
