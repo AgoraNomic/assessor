@@ -83,5 +83,9 @@ with:
         votes(nix) {
             FOR on 8921
         }
+
+        votes(Janet) {
+            FOR on 8921
+        }
     }
 }
