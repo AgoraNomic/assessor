@@ -345,5 +345,15 @@ Decrease the score of the author of this proposal by 5 points.
             endorse(Janet) on 8919
             AGAINST on 8920
         }
+
+        votes(juan) {
+            FOR on 8914
+            AGAINST on 8915
+            FOR on 8916
+            FOR on 8917
+            FOR on 8918
+            FOR on 8919
+            FOR on 8920
+        }
     }
 }
