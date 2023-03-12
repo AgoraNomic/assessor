@@ -389,5 +389,15 @@ Decrease the score of the author of this proposal by 5 points.
             FOR on 8919
             FOR on 8920
         }
+
+        votes(Murphy) {
+            endorse(nix) on 8914 comment "nix is the Herald"
+            FOR on 8915
+            AGAINST on 8916
+            FOR on 8917
+            FOR on 8918
+            FOR on 8919
+            FOR on 8920
+        }
     }
 }
