@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
 fun assessment8914to8920() = assessment {
@@ -22,6 +23,8 @@ fun assessment8914to8920() = assessment {
             powerDream(Forest, 2)
             powerDream(G, 2)
 
+            powerStone(snail, 3)
+
             complexityBonuses {
                 maxBonus(3)
 
@@ -35,12 +38,12 @@ fun assessment8914to8920() = assessment {
                 "Horsened"(1) heldBy snail
                 "Mad Engineer"(1) heldBy Janet
                 "Notary"(2) heldBy snail
-                "Prime Minister"(0) heldBy null
+                "Prime Minister"(0) heldBy nix
                 "Promotor"(3) heldBy snail
                 "Referee"(2) heldBy Forest
                 "Registrar"(1) heldBy juan
                 "Rulekeepor"(3) heldBy Janet
-                "Speaker"(0) heldBy Murphy
+                "Speaker"(0) heldBy snail
                 "Stonemason"(1) heldBy Janet
                 "Tailor"(1) heldBy Murphy
                 "Webmastor"(1) heldBy Forest
@@ -322,5 +325,8 @@ Decrease the score of the author of this proposal by 5 points.
 [These were all my mistakes; I don't deserve points for fixing them.]"""
             )
         }
+    }
+
+    voting {
     }
 }
