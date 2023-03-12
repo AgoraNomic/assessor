@@ -375,5 +375,9 @@ Decrease the score of the author of this proposal by 5 points.
             PRESENT on 8919
             FOR on 8920
         }
+
+        votes(cuddlybanana) {
+            FOR on all
+        }
     }
 }
