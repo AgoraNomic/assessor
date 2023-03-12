@@ -87,5 +87,9 @@ with:
         votes(Janet) {
             FOR on 8921
         }
+
+        votes(Murphy) {
+            FOR on 8921
+        }
     }
 }
