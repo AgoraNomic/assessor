@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -337,6 +334,16 @@ Decrease the score of the author of this proposal by 5 points.
             PRESENT on 8918
             PRESENT on 8919
             FOR on 8920
+        }
+
+        votes(Forest) {
+            endorse(juan) on 8914
+            endorse(G) on 8915
+            FOR on 8916
+            endorse(Murphy) on 8917
+            endorse(snail) on 8918
+            endorse(Janet) on 8919
+            AGAINST on 8920
         }
     }
 }
