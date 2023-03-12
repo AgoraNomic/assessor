@@ -96,5 +96,9 @@ with:
         votes(G) {
             PRESENT on 8921
         }
+
+        votes(juan) {
+            PRESENT on 8921
+        }
     }
 }
