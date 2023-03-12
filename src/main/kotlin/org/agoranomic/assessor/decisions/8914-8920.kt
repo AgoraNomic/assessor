@@ -365,5 +365,15 @@ Decrease the score of the author of this proposal by 5 points.
             FOR on 8919
             FOR on 8920
         }
+
+        votes(Janet) {
+            FOR on 8914
+            AGAINST on 8915
+            AGAINST on 8916
+            FOR on 8917
+            AGAINST on 8918
+            PRESENT on 8919
+            FOR on 8920
+        }
     }
 }
