@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8921() = assessment {
@@ -90,6 +91,10 @@ with:
 
         votes(Murphy) {
             FOR on 8921
+        }
+
+        votes(G) {
+            PRESENT on 8921
         }
     }
 }
