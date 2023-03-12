@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8914to8920() = assessment {
@@ -328,5 +329,14 @@ Decrease the score of the author of this proposal by 5 points.
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 8914
+            AGAINST on 8915
+            AGAINST on 8916
+            FOR on 8917
+            PRESENT on 8918
+            PRESENT on 8919
+            FOR on 8920
+        }
     }
 }
