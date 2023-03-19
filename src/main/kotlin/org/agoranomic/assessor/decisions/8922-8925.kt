@@ -8,6 +8,8 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8922to8925() = assessment {
@@ -138,5 +140,11 @@ Amend Rule 2518 (Determinacy) by appending the following paragraph:
     }
 
     voting {
+        votes(snail) {
+            FOR on 8922
+            FOR on 8923
+            AGAINST on 8924
+            FOR on 8925
+        }
     }
 }
