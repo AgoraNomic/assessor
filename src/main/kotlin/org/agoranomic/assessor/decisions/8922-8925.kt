@@ -174,5 +174,12 @@ Amend Rule 2518 (Determinacy) by appending the following paragraph:
             AGAINST on 8924
             FOR on 8925
         }
+
+        votes(Murphy) {
+            FOR on 8922
+            FOR on 8923
+            FOR on 8924
+            FOR on 8925
+        }
     }
 }
