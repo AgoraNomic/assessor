@@ -136,4 +136,7 @@ Amend Rule 2518 (Determinacy) by appending the following paragraph:
             )
         }
     }
+
+    voting {
+    }
 }
