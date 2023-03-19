@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -149,6 +146,13 @@ Amend Rule 2518 (Determinacy) by appending the following paragraph:
 
         votes(G) {
             FOR on all
+        }
+
+        votes(Forest) {
+            endorse(cuddlybanana) on 8922
+            endorse(snail) on 8923
+            endorse(Murphy) on 8924
+            endorse(G) on 8925
         }
     }
 }
