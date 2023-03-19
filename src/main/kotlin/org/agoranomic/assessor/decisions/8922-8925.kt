@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8922to8925() = assessment {
@@ -160,6 +159,13 @@ Amend Rule 2518 (Determinacy) by appending the following paragraph:
             FOR on 8923
             FOR on 8924
             FOR on 8925
+        }
+
+        votes(juan) {
+            FOR on 8922
+            AGAINST on 8923
+            AGAINST on 8924
+            PRESENT on 8925
         }
     }
 }
