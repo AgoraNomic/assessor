@@ -278,5 +278,16 @@ that the ritual number was declared.""""
             FOR on 8932
             FOR on 8933
         }
+
+        votes(nix) {
+            PRESENT on 8926
+            PRESENT on 8927
+            PRESENT on 8928
+            FOR on 8929
+            FOR on 8930
+            AGAINST on 8931
+            FOR on 8932
+            PRESENT on 8933
+        }
     }
 }
