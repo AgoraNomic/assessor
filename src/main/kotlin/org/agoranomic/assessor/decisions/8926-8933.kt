@@ -256,5 +256,16 @@ that the ritual number was declared.""""
             FOR on 8932
             PRESENT on 8933
         }
+
+        votes(snail) {
+            FOR on 8926
+            FOR on 8927
+            FOR on 8928
+            PRESENT on 8929
+            FOR on 8930
+            endorse(Janet) on 8931
+            AGAINST on 8932
+            FOR on 8933
+        }
     }
 }
