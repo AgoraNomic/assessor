@@ -5,7 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8926to8933() = assessment {
@@ -244,6 +244,17 @@ that the ritual number was declared.""""
             FOR on 8931
             endorse(RLee) on 8932
             endorse(snail) on 8933
+        }
+
+        votes(juan) {
+            AGAINST on 8926
+            AGAINST on 8927
+            FOR on 8928
+            FOR on 8929
+            FOR on 8930
+            AGAINST on 8931
+            FOR on 8932
+            PRESENT on 8933
         }
     }
 }
