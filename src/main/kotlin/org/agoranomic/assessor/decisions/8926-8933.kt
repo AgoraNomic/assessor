@@ -267,5 +267,16 @@ that the ritual number was declared.""""
             AGAINST on 8932
             FOR on 8933
         }
+
+        votes(G) {
+            AGAINST on 8926
+            AGAINST on 8927
+            FOR on 8928
+            FOR on 8929
+            FOR on 8930
+            AGAINST on 8931
+            FOR on 8932
+            FOR on 8933
+        }
     }
 }
