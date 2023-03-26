@@ -300,5 +300,9 @@ that the ritual number was declared.""""
             FOR on 8932
             endorse(G) on 8933
         }
+
+        votes(Aspen) {
+            endorse(Janet) on all
+        }
     }
 }
