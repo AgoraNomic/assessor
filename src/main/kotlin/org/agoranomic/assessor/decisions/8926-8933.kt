@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 
 @UseAssessment
 fun assessment8926to8933() = assessment {
@@ -18,6 +15,8 @@ fun assessment8926to8933() = assessment {
         default(3)
         min(0)
         max(15)
+
+        blotPenalty(Janet, 3 / 3)
 
         onOrdinaryProposals {
             powerDream(Forest, 2)
@@ -232,5 +231,8 @@ is a self-ratifying attestation that such attempt was successful and
 that the ritual number was declared.""""
             )
         }
+    }
+
+    voting {
     }
 }
