@@ -112,5 +112,11 @@ Amend Rule 2423 ("First Among Equals") by replacing
             FOR on 8935
             PRESENT on 8936
         }
+
+        votes(nix) {
+            AGAINST on 8934
+            FOR on 8935
+            FOR on 8936
+        }
     }
 }
