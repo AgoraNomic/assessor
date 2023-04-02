@@ -141,5 +141,11 @@ Amend Rule 2423 ("First Among Equals") by replacing
         votes(G) {
             FOR on all
         }
+
+        votes(ais523) {
+            AGAINST on 8934
+            FOR on 8935
+            FOR on 8936
+        }
     }
 }
