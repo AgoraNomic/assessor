@@ -137,5 +137,9 @@ Amend Rule 2423 ("First Among Equals") by replacing
             endorse(Murphy) on 8935
             endorse(cuddlybanana) on 8936
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
