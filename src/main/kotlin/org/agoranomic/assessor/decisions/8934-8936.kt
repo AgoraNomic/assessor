@@ -4,11 +4,52 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.*
 
 @UseAssessment
 fun assessment8934to8936() = assessment {
     name("8934-8936")
     quorum(5)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        blotPenalty(Janet, 3 / 3)
+
+        onOrdinaryProposals {
+            powerDream(Forest, 2)
+            powerDream(G, 2)
+            powerDream(Aspen, 2)
+
+            powerStone(Janet, 3)
+
+            complexityBonuses {
+                maxBonus(3)
+
+                "ADoP"(1) heldBy Murphy
+                "Arbitor"(2) heldBy G
+                "Assessor"(3) heldBy Janet
+                "Collector"(1) heldBy nix
+                "Distributor"(0) heldBy omd
+                "Dream Keeper"(1) heldBy snail
+                "Herald"(2) heldBy nix
+                "Horsened"(1) heldBy snail
+                "Mad Engineer"(1) heldBy Janet
+                "Notary"(2) heldBy snail
+                "Prime Minister"(0) heldBy nix
+                "Promotor"(3) heldBy snail
+                "Referee"(2) heldBy Forest
+                "Registrar"(1) heldBy juan
+                "Rulekeepor"(3) heldBy Janet
+                "Speaker"(0) heldBy Janet
+                "Stonemason"(1) heldBy Janet
+                "Tailor"(1) heldBy Murphy
+                "Webmastor"(1) heldBy Forest
+            }
+        }
+    }
 
     proposals(v4) {
         proposal(8934) {
