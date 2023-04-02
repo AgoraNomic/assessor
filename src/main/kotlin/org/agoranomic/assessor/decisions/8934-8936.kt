@@ -120,6 +120,7 @@ Amend Rule 2423 ("First Among Equals") by replacing
         }
 
         votes(Yachay) {
+            FOR on 8934
             FOR on 8935
             // Second attempted vote of PRESENT on 8935 fails due to not withdrawing
             FOR on 8936
