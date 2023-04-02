@@ -124,5 +124,11 @@ Amend Rule 2423 ("First Among Equals") by replacing
             // Second attempted vote of PRESENT on 8935 fails due to not withdrawing
             FOR on 8936
         }
+
+        votes(juan) {
+            AGAINST on 8934
+            AGAINST on 8935
+            FOR on 8936
+        }
     }
 }
