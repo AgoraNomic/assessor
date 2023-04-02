@@ -104,4 +104,7 @@ Amend Rule 2423 ("First Among Equals") by replacing
             )
         }
     }
+
+    voting {
+    }
 }
