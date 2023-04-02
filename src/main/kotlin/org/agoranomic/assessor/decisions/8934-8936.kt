@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8934to8936() = assessment {
@@ -106,5 +107,10 @@ Amend Rule 2423 ("First Among Equals") by replacing
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 8934
+            FOR on 8935
+            PRESENT on 8936
+        }
     }
 }
