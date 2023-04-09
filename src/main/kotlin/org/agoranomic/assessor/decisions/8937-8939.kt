@@ -158,5 +158,11 @@ with:
             AGAINST on 8938
             FOR on 8939
         }
+
+        votes(nix) {
+            endorse(Janet) on 8937 comment "Janet is the Mad Engineer"
+            AGAINST on 8938
+            FOR on 8939
+        }
     }
 }
