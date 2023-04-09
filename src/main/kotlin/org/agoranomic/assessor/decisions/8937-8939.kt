@@ -141,5 +141,11 @@ with:
             AGAINST on 8938
             endorse(nix) on 8939
         }
+
+        votes(juan) {
+            AGAINST on 8937
+            AGAINST on 8938
+            endorse(nix) on 8939
+        }
     }
 }
