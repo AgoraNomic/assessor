@@ -147,5 +147,11 @@ with:
             AGAINST on 8938
             endorse(nix) on 8939
         }
+
+        votes(Forest) {
+            // Attempted: FOR on 8936
+            FOR on 8937
+            endorse(ais523) on 8938
+        }
     }
 }
