@@ -1,9 +1,10 @@
 # Assessor's Archive
 
-[Latest Assessment](8934-8936.txt)
+[Latest Assessment](8937-8939.txt)
 
 List of assessments:
 
+* [8937-8939.txt](8937-8939.txt)
 * [8934-8936.txt](8934-8936.txt)
 * [8926-8933.txt](8926-8933.txt)
 * [8922-8925.txt](8922-8925.txt)

@@ -1,0 +1,48 @@
+PROPOSAL 8939 (Simpler Charity Distribution Calculation)
+AUTHOR: nix
+CLASS: ORDINARY
+FOR (5): Janet/, ais523, juan$, nix*, snail*
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 5
+AI (F/A): 34/0 (AI=2.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+[
+Janet: Endorsement of nix
+juan: Endorsement of nix
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-April/016949.html
+
+ID: 8939
+Title: Simpler Charity Distribution Calculation
+Adoption index: 2.0
+Author: nix
+Co-authors: 
+
+
+[The current calculations are needlessly complex. These calculations are
+simpler and hopefully still fair.]
+
+Amend R2675 by replacing:
+
+       - Charity: A Charity Stamp is a stamp of the type that the L&FD
+         owns the most of (if there is a tie, the first the L&FD owned,
+         and if still tied, the first alphabetically). Immediately after
+         a wandering, for each Charity Dreamer, in reverse order of when
+         eir Dream was last flipped (and in reverse order of registration
+         if tied), one Charity Stamp is transferred from the L&FD to em.
+         If the number of Stamps the L&FD owned during the last wandering
+         is greater than 10, this process happens a second time. If it is
+         more than 20, this process happens a third time.
+
+with:
+
+         - Charity: Immediately after a wandering, one stamp (chosen by
+         most-to-least owned by the L&FD at time of transfer, tie-broken
+         alphabetically) is transferred to each Charity Dreamer (in order
+         from least-to-most stamps owned, tie-broken alphabetically) from
+         the L&FD. If the number of Stamps the L&FD owned during the last
+         wandering is greater than 10, this process happens a second
+         time. If it is more than 20, this process happens a third time.
