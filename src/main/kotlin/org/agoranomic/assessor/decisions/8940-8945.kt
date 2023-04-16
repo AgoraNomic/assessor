@@ -263,5 +263,14 @@ with a Power of 1.9 or less has its power increased by 0.1.
             endorse(nix) on 8944 comment "nix is the Herald"
             PRESENT on 8945
         }
+
+        votes(nix) {
+            PRESENT on 8940
+            AGAINST on 8941
+            PRESENT on 8942
+            PRESENT on 8943
+            PRESENT on 8944
+            PRESENT on 8945
+        }
     }
 }
