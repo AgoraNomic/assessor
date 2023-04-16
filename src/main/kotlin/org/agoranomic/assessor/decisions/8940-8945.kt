@@ -215,4 +215,7 @@ with a Power of 1.9 or less has its power increased by 0.1.
             )
         }
     }
+
+    voting {
+    }
 }
