@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8940to8945() = assessment {
@@ -245,6 +244,15 @@ with a Power of 1.9 or less has its power increased by 0.1.
             AGAINST on 8943
             AGAINST on 8944
             FOR on 8945
+        }
+
+        votes(Janet) {
+            AGAINST on 8940
+            PRESENT on 8941
+            PRESENT on 8942
+            FOR on 8943
+            FOR on 8944
+            AGAINST on 8945
         }
     }
 }
