@@ -237,5 +237,14 @@ with a Power of 1.9 or less has its power increased by 0.1.
             FOR on 8944
             AGAINST on 8945
         }
+
+        votes(Forest) {
+            endorse(Yachay) on 8940
+            endorse(G) on 8941
+            endorse(nix) on 8942
+            AGAINST on 8943
+            AGAINST on 8944
+            FOR on 8945
+        }
     }
 }
