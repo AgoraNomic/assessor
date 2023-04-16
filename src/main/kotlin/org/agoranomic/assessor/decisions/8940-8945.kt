@@ -248,7 +248,7 @@ with a Power of 1.9 or less has its power increased by 0.1.
 
         votes(Janet) {
             AGAINST on 8940
-            PRESENT on 8941
+            endorse(G) on 8941
             PRESENT on 8942
             FOR on 8943
             FOR on 8944
