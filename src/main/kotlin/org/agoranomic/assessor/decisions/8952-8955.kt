@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -185,6 +186,13 @@ Amend Rule 2451 (Executive Orders) by deleting:
             FOR on 8953
             FOR on 8954
             FOR on 8955
+        }
+
+        votes(Murphy) {
+            FOR on 8952
+            FOR on 8953
+            endorse(snail) on 8954 comment "snail is the Horsened"
+            InextricableResolvingVote on 8955 comment "Mad Engineer is vacant"
         }
     }
 }
