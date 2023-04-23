@@ -348,9 +348,9 @@ and appending (to the end):
 
         votes(nix) {
             FOR on 8946
-            AGAINST on 8947
-            AGAINST on 8948
-            PRESENT on 8949
+            FOR on 8947
+            FOR on 8948
+            FOR on 8949
             FOR on 8950
             AGAINST on 8951
         }
