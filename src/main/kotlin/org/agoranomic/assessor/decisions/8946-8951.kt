@@ -381,7 +381,7 @@ and appending (to the end):
             AGAINST on 8946
             AGAINST on 8947
             endorse(Janet) on 8948 comment "Janet is the Stonemason"
-            // TODO: resolve conditional on 8949: FOR if (Janet has pledge to vote FOR on the first proposal that only turns juan's Emerald Ribbon Ownership to true, or if Janet has acted on eir own behalf to award juan a white ribbon), else AGAINST
+            FOR on 8949
             AGAINST on 8950
             PRESENT on 8951
         }
