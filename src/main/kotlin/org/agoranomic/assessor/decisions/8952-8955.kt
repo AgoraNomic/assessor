@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8952to8955() = assessment {
@@ -168,6 +167,13 @@ Amend Rule 2451 (Executive Orders) by deleting:
             FOR on 8953
             FOR on 8954
             FOR on 8955
+        }
+
+        votes(Yachay) {
+            // TODO: resolve conditional vote on 8952: "AGAINST, but FOR instead if its author pledges or already is bound to a pledge to not claim the Radiance they'd get from this Proposal passing" on 8952
+            AGAINST on 8953
+            // TODO: resolve conditional vote on 8954: "AGAINST, but FOR instead if its author pledges or already is bound to a pledge to not claim the Radiance they'd get from this Proposal passing" on 8954
+            // TODO: resolve conditional vote on 8955: "AGAINST, but FOR instead if its author pledges or already is bound to a pledge to not claim the Radiance they'd get from this Proposal passing" on 8955
         }
     }
 }
