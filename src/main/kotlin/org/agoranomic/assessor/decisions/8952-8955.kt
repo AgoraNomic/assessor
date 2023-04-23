@@ -179,5 +179,12 @@ Amend Rule 2451 (Executive Orders) by deleting:
             FOR on 8954
             FOR on 8955
         }
+
+        votes(juan) {
+            FOR on 8952
+            FOR on 8953
+            FOR on 8954
+            FOR on 8955
+        }
     }
 }
