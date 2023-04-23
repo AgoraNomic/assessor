@@ -7,6 +7,8 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment8952to8955() = assessment {
@@ -143,5 +145,11 @@ Amend Rule 2451 (Executive Orders) by deleting:
     }
 
     voting {
+        votes(snail) {
+            FOR on 8952
+            FOR on 8953
+            PRESENT on 8954
+            FOR on 8955
+        }
     }
 }
