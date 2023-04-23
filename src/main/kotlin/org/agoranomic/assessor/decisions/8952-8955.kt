@@ -168,10 +168,22 @@ Amend Rule 2451 (Executive Orders) by deleting:
         }
 
         votes(Yachay) {
-            // TODO: resolve conditional vote on 8952: "AGAINST, but FOR instead if its author pledges or already is bound to a pledge to not claim the Radiance they'd get from this Proposal passing" on 8952
+            resolvedConditional(
+                AGAINST,
+                "The author has not pledged and was not bound to a pledge to not claim radiance e would get from proposal 8952 passing",
+            ) on 8952
+
             AGAINST on 8953
-            // TODO: resolve conditional vote on 8954: "AGAINST, but FOR instead if its author pledges or already is bound to a pledge to not claim the Radiance they'd get from this Proposal passing" on 8954
-            // TODO: resolve conditional vote on 8955: "AGAINST, but FOR instead if its author pledges or already is bound to a pledge to not claim the Radiance they'd get from this Proposal passing" on 8955
+
+            resolvedConditional(
+                AGAINST,
+                "The author has not pledged and was not bound to a pledge to not claim radiance e would get from proposal 8954 passing",
+            ) on 8954
+
+            resolvedConditional(
+                AGAINST,
+                "The author has not pledged and was not bound to a pledge to not claim radiance e would get from proposal 8955 passing",
+            ) on 8955
         }
 
         votes(Janet) {
