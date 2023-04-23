@@ -388,7 +388,12 @@ and appending (to the end):
 
         votes(Yachay) {
             AGAINST on 8946
-            // TODO: resolve conditional vote on 8947: "AGAINST, but FOR instead if its author pledges not to collect the Radiance they'd be eligible to claim from this Proposal passing"
+
+            resolvedConditional(
+                FOR,
+                "Janet has pledged not to collect the Radiance e would be eligible to claim from the proposal passing"
+            ) on 8947
+
             AGAINST on 8948
             AGAINST on 8949
             AGAINST on 8950
