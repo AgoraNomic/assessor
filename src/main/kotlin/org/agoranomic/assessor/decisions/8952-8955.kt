@@ -155,5 +155,12 @@ Amend Rule 2451 (Executive Orders) by deleting:
         votes(G) {
             FOR on all
         }
+
+        votes(Forest) {
+            PRESENT on 8952
+            PRESENT on 8953
+            FOR on 8954
+            FOR on 8955
+        }
     }
 }
