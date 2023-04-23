@@ -385,5 +385,14 @@ and appending (to the end):
             AGAINST on 8950
             PRESENT on 8951
         }
+
+        votes(Yachay) {
+            AGAINST on 8946
+            AGAINST on 8947
+            AGAINST on 8948
+            AGAINST on 8949
+            AGAINST on 8950
+            AGAINST on 8951
+        }
     }
 }
