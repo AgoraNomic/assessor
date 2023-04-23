@@ -151,5 +151,9 @@ Amend Rule 2451 (Executive Orders) by deleting:
             PRESENT on 8954
             FOR on 8955
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
