@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -338,6 +335,15 @@ and appending (to the end):
             PRESENT on 8949
             FOR on 8950
             AGAINST on 8951
+        }
+
+        votes(Forest) {
+            FOR on 8946
+            endorse(nix) on 8947
+            FOR on 8948
+            endorse(nix) on 8949
+            endorse(ais523) on 8950
+            endorse(juan) on 8951
         }
     }
 }
