@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8946to8951() = assessment {
@@ -330,5 +331,13 @@ and appending (to the end):
     }
 
     voting {
+        votes(Janet) {
+            AGAINST on 8946
+            FOR on 8947
+            AGAINST on 8948
+            PRESENT on 8949
+            FOR on 8950
+            AGAINST on 8951
+        }
     }
 }
