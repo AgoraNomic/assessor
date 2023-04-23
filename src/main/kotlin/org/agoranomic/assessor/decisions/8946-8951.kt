@@ -372,5 +372,9 @@ and appending (to the end):
             AGAINST on 8950
             PRESENT on 8951
         }
+
+        votes(G) {
+            AGAINST on all
+        }
     }
 }
