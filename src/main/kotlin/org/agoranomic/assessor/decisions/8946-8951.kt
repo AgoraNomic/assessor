@@ -345,5 +345,14 @@ and appending (to the end):
             endorse(ais523) on 8950
             endorse(juan) on 8951
         }
+
+        votes(nix) {
+            FOR on 8946
+            AGAINST on 8947
+            AGAINST on 8948
+            PRESENT on 8949
+            FOR on 8950
+            AGAINST on 8951
+        }
     }
 }
