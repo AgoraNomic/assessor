@@ -363,5 +363,14 @@ and appending (to the end):
             FOR on 8950
             AGAINST on 8951
         }
+
+        votes(ais523) {
+            AGAINST on 8946
+            AGAINST on 8947
+            PRESENT on 8948
+            FOR on 8949
+            AGAINST on 8950
+            PRESENT on 8951
+        }
     }
 }
