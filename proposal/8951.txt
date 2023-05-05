@@ -1,0 +1,131 @@
+PROPOSAL 8951 (Gathering Stone Power v3)
+AUTHOR: nix
+CLASS: ORDINARY
+FOR (0): 
+AGAINST (5): G.&, Janet/, Yachay Wayllukuq, nix%, snail^
+PRESENT (3): 4st*, ais523, juan$
+BALLOTS: 8
+AI (F/A): 0/32 (AI=2.0)
+POPULARITY: -0.625
+OUTCOME: REJECTED
+[
+4st: Endorsement of juan
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-April/016981.html
+
+ID: 8951
+Title: Gathering Stone Power v3
+Adoption index: 2.0
+Author: nix
+Co-authors: 4st, Janet
+
+
+[This proposal simplifies and overhauls stones. Players have Gathering
+Power, which goes up by 1 every week (+1 more for Garden Dreamers). At
+4 Gathering Power, a player can grab a stone from Agora. Stones are
+overdue if they have been away from Agora for 8-X weeks, where X is
+smoothness. The Stonemason collects overdue stones once a month.]
+
+[
+v2 changes:
+- fix typo from 'decreased by 1' to 'decreased by 4'.
+v3 changes:
+- reintroduce hot (almost got rid of frequencies by accident, ty 4st)
+- method to collect (oops, ty 4st)
+]
+
+[Remove mossiness and slipperiness. These aren't used in the
+new system.]
+
+Amend R2640 by removing:
+
+       Mossiness is a Stone switch with values of non-negative integers
+       and a default of 0 tracked by the Stonemason. When a stone is
+       transferred from Agora to a player or from a player to Agora, its
+       Mossiness is set to 0. The mossiest stone(s) in a set of stone is
+       (are) the stone(s) with the highest Mossiness value.
+
+       The Slipperiness of a stone is that stone's smoothness plus its
+       mossiness.
+
+[Allow freely transferring hot stones, since that's not particularly
+exploitable in this paradigm.]
+
+Amend R2641 by removing "or to transfer it by announcement".
+
+[Now stones are gathered by having 4+ Gathering Power. Gathering Power
+goes up weekly.]
+
+Amend R2642 to read in full:
+
+       Gathering Power is an active player switch, with values of
+       positive integers and defaulting to 0, tracked by the Stonemason.
+
+       At the beginning of each week, every active player's Gathering
+       Power is increased by 1.
+
+       A player with Gathering Power of 4 or more CAN, by announcement,
+       transfer any stone from Agora to emself. When e does so, eir
+       Gathering Power is decreased by 4.
+
+Amend R2675 by replacing:
+
+       - Gardens: Immediately after a wandering, the Base Rockiness of
+         each Gardens Dreamer is increased by 1.
+
+with:
+
+       - Gardens: Immediately after a wandering, the Gathering Power of
+         each Gardens Dreamer is increased by 1.
+
+Amend R2499 by adding, after the bulleted list:
+
+       When a player receives a Welcome Package, set eir Gathering Power
+       to 4.
+
+[Collection is now just on a timer, no more randomness.]
+
+Amend R2643 to read in full:
+
+       A stone that has not been owned by Agora in the last 8-X weeks,
+       where X is its smoothness, is overdue.
+
+       Once a month, the Stonemason CAN "collect" all non-immune overdue
+       stones by announcement. E SHALL do so in a timely fashion after
+       the start of the month. When e does so, they are transferred to
+       Agora.
+
+Enact a new, P=2 rule titled "Stone Keywords":
+
+       A stone is "immune" if (and only if) it has been granted immunity
+       since the last time the Stonemason collected stones or it is owned
+       by Agora. Granting immunity is secured.
+
+       To "drop" a stone is to transfer it to Agora.
+
+[Finally, some stone changes. Cairn to replace Anti-Equatorial, Toggle
+and Distracting to play with the new mechanics.]
+
+Amend R2645 by removing:
+
+       - Anti-Equatorial Stone (Monthly, 5): When wielded, the mossiest
+         non-immune stone is transferred to the wielder. If more than one
+         such stone is tied for mossiest, a specified one is transferred.
+         When this happens, the Anti-Equatorial Stone's mossiness is
+         incremented by 1.
+
+and appending (to the end):
+
+       - Cairn Stone (Monthly, 3): When wielded, two specified stones
+         owned by the wielder are dropped, and one specified non-immune
+         stone is transferred to the wielder.
+
+       - Toggle Stone (Monthly, 6): When wielded, a specified stone is
+         dropped then transferred back to its owner, and then this stone
+         is dropped.
+
+       - Distracting Stone (Weekly, 4): When wielded, reduce the
+         Gathering Power of the wielder and a specified player by X,
+         where X is a specified positive integer equal to or less than
+         the wielder's current Gathering Power.
