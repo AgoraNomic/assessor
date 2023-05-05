@@ -125,4 +125,7 @@ the Herald's report when the Herald has 100 radiance.]"""
             )
         }
     }
+
+    voting {
+    }
 }
