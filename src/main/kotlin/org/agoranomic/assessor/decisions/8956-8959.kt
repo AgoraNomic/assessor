@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8956to8959() = assessment {
@@ -134,6 +133,13 @@ the Herald's report when the Herald has 100 radiance.]"""
             FOR on 8956
             FOR on 8957
             AGAINST on 8959
+        }
+
+        votes(Forest) {
+            FOR on 8956
+            FOR on 8957
+            // NO VOTE on 8958
+            PRESENT on 8959
         }
     }
 }
