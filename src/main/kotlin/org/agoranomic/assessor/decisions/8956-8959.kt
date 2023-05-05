@@ -141,5 +141,12 @@ the Herald's report when the Herald has 100 radiance.]"""
             // NO VOTE on 8958
             PRESENT on 8959
         }
+
+        votes(Yachay) {
+            FOR on 8956
+            FOR on 8957
+            PRESENT on 8958
+            FOR on 8959
+        }
     }
 }
