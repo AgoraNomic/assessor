@@ -148,5 +148,12 @@ the Herald's report when the Herald has 100 radiance.]"""
             PRESENT on 8958
             FOR on 8959
         }
+
+        votes(Janet) {
+            AGAINST on 8956
+            AGAINST on 8957
+            FOR on 8958
+            AGAINST on 8959
+        }
     }
 }
