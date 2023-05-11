@@ -1,0 +1,41 @@
+PROPOSAL 8959 (Noncompetitive Radiance)
+AUTHOR: ais523
+CLASS: ORDINARY
+FOR (2): Yachay Wayllukuq, juan$
+AGAINST (3): G.&, Janet=, snail^
+PRESENT (1): 4st&
+BALLOTS: 6
+AI (F/A): 7/23 (AI=1.5)
+POPULARITY: -0.167
+OUTCOME: REJECTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-May/017015.html
+
+ID: 8959
+Title: Noncompetitive Radiance
+Adoption index: 1.5
+Author: ais523
+Co-authors: 
+
+
+In rule 2656, amend
+{{{
+     Upon a correct announcement from a player that eir radiance is 100
+     or more (correctly specifying the amount), e wins the game. Then,
+     eir radiance is set to 0, and all other players' radiance are set
+     to half their current value rounded down.
+}}}
+to
+{{{
+     A player whose radiance is 100 or more CAN by announcement Become
+     Radiant, as long as e correctly specifies the amount of eir
+     Radiance in the same message. When a player Becomes Radiant, e
+     wins the game; and when a player wins the game by this mechanism,
+     eir Radiance is flipped to 0.
+}}}
+
+[Removes the reset on radiance; see my recent these for arguments on
+why I think this is beneficial. There are also two bugfixes: one that
+handles the situation where a higher-powered rule blocks the win, and
+one that prevents radiance wins being accidentally triggered by, e.g.,
+the Herald's report when the Herald has 100 radiance.]
