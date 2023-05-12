@@ -180,5 +180,13 @@ stamp of eir own type.
             AGAINST on 8963
             // TODO: resolve conditional vote on 8964: FOR if snail voted unconditionally FOR on 8960, else AGAINST
         }
+
+        votes(Murphy) {
+            PRESENT on 8960
+            FOR on 8961
+            AGAINST on 8962
+            FOR on 8963
+            FOR on 8964
+        }
     }
 }
