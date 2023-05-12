@@ -193,5 +193,9 @@ stamp of eir own type.
             AGAINST on 8963
             endorse(nix) on 8964
         }
+
+        votes(G) {
+            FOR on all
+        }
     }
 }
