@@ -146,4 +146,7 @@ stamp of eir own type.
             )
         }
     }
+
+    voting {
+    }
 }
