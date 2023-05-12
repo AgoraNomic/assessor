@@ -164,7 +164,7 @@ stamp of eir own type.
 
         votes(nix) {
             FOR on 8960
-            PRESENT on 8961
+            FOR on 8961
             AGAINST on 8962
             AGAINST on 8963
             FOR on 8964
