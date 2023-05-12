@@ -195,7 +195,7 @@ stamp of eir own type.
         }
 
         votes(G) {
-            AGAINST on 8962
+            // TODO: resolve conditional vote on 8962: FOR if Yachay's votes on this batch are all unconditional, else AGAINST
             FOR on others
         }
 
