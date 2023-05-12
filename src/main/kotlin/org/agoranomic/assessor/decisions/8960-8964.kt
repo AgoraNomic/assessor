@@ -157,5 +157,13 @@ stamp of eir own type.
             AGAINST on 8963
             FOR on 8964
         }
+
+        votes(Forest) {
+            // NO VOTE on 8960
+            FOR on 8961
+            FOR on 8962
+            FOR on 8963
+            AGAINST on 8964
+        }
     }
 }
