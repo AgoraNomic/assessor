@@ -175,7 +175,7 @@ stamp of eir own type.
             AGAINST on 8961
             AGAINST on 8962
             AGAINST on 8963
-            // TODO: resolve conditional vote on 8964: FOR if snail voted unconditionally FOR on 8960, else AGAINST
+            resolvedConditional(FOR, "snail voted unconditionally FOR on P8960") on 8964
         }
 
         votes(Murphy) {
@@ -195,7 +195,10 @@ stamp of eir own type.
         }
 
         votes(G) {
-            // TODO: resolve conditional vote on 8962: FOR if Yachay's votes on this batch are all unconditional, else AGAINST
+            resolvedConditional(
+                FOR,
+                "Yachay Wayllukuq has changed all of eir votes on this distribution to unconditional votes"
+            ) on 8962
             FOR on others
         }
 
