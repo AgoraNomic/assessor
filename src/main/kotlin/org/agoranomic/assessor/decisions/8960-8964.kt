@@ -197,5 +197,13 @@ stamp of eir own type.
         votes(G) {
             FOR on all
         }
+
+        votes(Yachay) {
+            // TODO: resolve conditional vote on 8960: FOR if author pledges or is bound by pledge to not claim radiance from passage (if possible), else AGAINST
+            AGAINST on 8961
+            FOR on 8962
+            // TODO: resolve conditional vote on 8963: FOR if author pledges or is bound by pledge to not claim radiance from passage (if possible), else AGAINST
+            // TODO: resolve conditional vote on 8964: FOR if author pledges or is bound by pledge to not claim radiance from passage (if possible), else AGAINST
+        }
     }
 }
