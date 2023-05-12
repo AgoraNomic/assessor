@@ -3,10 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -187,6 +184,14 @@ stamp of eir own type.
             AGAINST on 8962
             FOR on 8963
             FOR on 8964
+        }
+
+        votes(Janet) {
+            FOR on 8960
+            endorse(G) on 8961
+            AGAINST on 8962
+            AGAINST on 8963
+            endorse(nix) on 8964
         }
     }
 }
