@@ -147,7 +147,7 @@ stamp of eir own type.
 
     voting {
         votes(snail) {
-            // TODO: resolve conditional vote on 8960: FOR if proposal 8956 passed, else AGAINST
+            FOR on 8960
             AGAINST on 8961
             AGAINST on 8962
             AGAINST on 8963
