@@ -7,6 +7,8 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8960to8964() = assessment {
@@ -148,5 +150,12 @@ stamp of eir own type.
     }
 
     voting {
+        votes(snail) {
+            // TODO: resolve conditional vote on 8960: FOR if proposal 8956 passed, else AGAINST
+            AGAINST on 8961
+            AGAINST on 8962
+            AGAINST on 8963
+            FOR on 8964
+        }
     }
 }
