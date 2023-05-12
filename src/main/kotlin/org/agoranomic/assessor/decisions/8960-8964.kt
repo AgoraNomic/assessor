@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8960to8964() = assessment {
@@ -164,6 +163,14 @@ stamp of eir own type.
             FOR on 8962
             FOR on 8963
             AGAINST on 8964
+        }
+
+        votes(nix) {
+            FOR on 8960
+            PRESENT on 8961
+            AGAINST on 8962
+            AGAINST on 8963
+            FOR on 8964
         }
     }
 }
