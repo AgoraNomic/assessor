@@ -195,7 +195,8 @@ stamp of eir own type.
         }
 
         votes(G) {
-            FOR on all
+            AGAINST on 8962
+            FOR on others
         }
 
         votes(Yachay) {
