@@ -25,6 +25,7 @@ dependencies {
     implementation("commons-cli:commons-cli:1.4")
     implementation("io.github.classgraph:classgraph:4.8.154")
     implementation("org.randomcat:kotlin-utils:2.0.1")
+    implementation("org.snakeyaml:snakeyaml-engine:2.6")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
