@@ -25,6 +25,7 @@ private const val FORM_JSON = "json"
 private const val FORM_REWARDS = "rewards"
 private const val FORM_STRENGTH_AUDIT = "strength-audit"
 private const val FORM_PROPOSALS = "proposals"
+private const val FORM_PROPOSALS_RULEKEEPOR = "proposals-rulekeepor"
 
 val CONFIG_LONG = ReadableReportConfig(
     proposalConfig = ReadableProposalReportConfig(
@@ -124,8 +125,18 @@ private fun formOptionGroup(): OptionGroup {
     val optFormRewards = Option.builder().longOpt(FORM_REWARDS).desc("Rewards for proposal adoption").build()
     val optFormStrengthAudit = Option.builder().longOpt(FORM_STRENGTH_AUDIT).desc("Voting strength audit").build()
     val optFormProposals = Option.builder().longOpt(FORM_PROPOSALS).desc("Proposals output").build()
+    val optFormProposalsRulekeepor =
+        Option.builder().longOpt(FORM_PROPOSALS_RULEKEEPOR).desc("Rulekeepor proposal YAML output").build()
 
-    return optionGroupOf(optFormLong, optFormShort, optFormJson, optFormRewards, optFormStrengthAudit, optFormProposals)
+    return optionGroupOf(
+        optFormLong,
+        optFormShort,
+        optFormJson,
+        optFormRewards,
+        optFormStrengthAudit,
+        optFormProposals,
+        optFormProposalsRulekeepor,
+    )
 }
 
 private fun cliOptions(): Options {
@@ -228,6 +239,8 @@ private fun readFormatter(commandLine: CommandLine): AssessmentFormatter? {
         commandLine.hasOption(FORM_STRENGTH_AUDIT) -> StrengthAuditFormatter
         commandLine.hasOption(FORM_PROPOSALS) ->
             ProposalsReadableFormatter(withOverrides(commandLine, CONFIG_LONG).proposalConfig)
+
+        commandLine.hasOption(FORM_PROPOSALS_RULEKEEPOR) -> ProposalsRulekeeporDataFormatter
 
         else -> null
     }
