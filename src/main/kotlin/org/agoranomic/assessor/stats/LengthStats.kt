@@ -1,15 +1,15 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geomHistogram
-import jetbrains.letsPlot.ggplot
-import jetbrains.letsPlot.ggsize
-import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.scale.scaleFillDiscrete
-import jetbrains.letsPlot.scale.scaleXContinuous
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
+import org.jetbrains.letsPlot.Stat
+import org.jetbrains.letsPlot.geom.geomHistogram
+import org.jetbrains.letsPlot.ggplot
+import org.jetbrains.letsPlot.ggsize
+import org.jetbrains.letsPlot.label.ggtitle
+import org.jetbrains.letsPlot.scale.scaleFillDiscrete
+import org.jetbrains.letsPlot.scale.scaleXContinuous
 
 fun buildLengthStats(
     resolutionsByProposal: Map<Proposal, List<ResolutionData>>,

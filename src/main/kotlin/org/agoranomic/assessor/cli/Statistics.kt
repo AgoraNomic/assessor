@@ -1,13 +1,13 @@
 package org.agoranomic.assessor.cli
 
 import jetbrains.datalore.plot.PlotSvgExport
-import jetbrains.letsPlot.GGBunch
-import jetbrains.letsPlot.intern.Plot
-import jetbrains.letsPlot.intern.toSpec
 import org.agoranomic.assessor.lib.filterKeysNotNull
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.stats.*
+import org.jetbrains.letsPlot.GGBunch
+import org.jetbrains.letsPlot.intern.Plot
+import org.jetbrains.letsPlot.intern.toSpec
 
 private fun <K, V> Iterable<Map.Entry<K, V>>.toMap() = associate { it.toPair() }
 

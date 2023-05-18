@@ -1,18 +1,18 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geomBar
-import jetbrains.letsPlot.geom.geomBoxplot
-import jetbrains.letsPlot.ggsize
-import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.letsPlot
-import jetbrains.letsPlot.sampling.samplingNone
-import jetbrains.letsPlot.scale.scaleXDiscrete
-import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.filterKeysNotNull
 import org.agoranomic.assessor.lib.resolve.ProposalResult
 import org.agoranomic.assessor.lib.resolve.ResolutionData
+import org.jetbrains.letsPlot.Stat
+import org.jetbrains.letsPlot.geom.geomBar
+import org.jetbrains.letsPlot.geom.geomBoxplot
+import org.jetbrains.letsPlot.ggsize
+import org.jetbrains.letsPlot.label.ggtitle
+import org.jetbrains.letsPlot.letsPlot
+import org.jetbrains.letsPlot.sampling.samplingNone
+import org.jetbrains.letsPlot.scale.scaleXDiscrete
+import org.jetbrains.letsPlot.scale.scaleYContinuous
 import java.math.BigDecimal
 
 private fun marginOf(it: ResolutionData): BigDecimal {

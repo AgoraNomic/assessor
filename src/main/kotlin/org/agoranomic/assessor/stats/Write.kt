@@ -1,7 +1,7 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.Figure
-import jetbrains.letsPlot.export.ggsave
+import org.jetbrains.letsPlot.Figure
+import org.jetbrains.letsPlot.export.ggsave
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardOpenOption

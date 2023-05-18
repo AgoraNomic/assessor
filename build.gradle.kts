@@ -28,8 +28,8 @@ dependencies {
     implementation("org.snakeyaml:snakeyaml-engine:2.6")
 
     // Dependencies for statistics
-    implementation("org.jetbrains.lets-plot:lets-plot-batik:2.2.0")
-    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:3.1.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-batik:3.2.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:4.4.1")
 
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))

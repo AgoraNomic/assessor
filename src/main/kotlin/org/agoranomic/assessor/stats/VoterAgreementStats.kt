@@ -1,16 +1,16 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.bistro.corr.CorrPlot
-import jetbrains.letsPlot.geom.geomTile
-import jetbrains.letsPlot.ggsize
-import jetbrains.letsPlot.letsPlot
-import jetbrains.letsPlot.scale.scaleFillGradient2
-import jetbrains.letsPlot.scale.scaleXDiscrete
-import jetbrains.letsPlot.scale.scaleYDiscrete
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.resolve.ResolutionData
 import org.agoranomic.assessor.lib.vote.VoteKind
+import org.jetbrains.letsPlot.bistro.corr.CorrPlot
+import org.jetbrains.letsPlot.geom.geomTile
+import org.jetbrains.letsPlot.ggsize
+import org.jetbrains.letsPlot.letsPlot
+import org.jetbrains.letsPlot.scale.scaleFillGradient2
+import org.jetbrains.letsPlot.scale.scaleXDiscrete
+import org.jetbrains.letsPlot.scale.scaleYDiscrete
 
 fun buildVoterAuthorAgreementStats(
     voters: List<Person>,

@@ -1,9 +1,9 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.Figure
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import org.agoranomic.assessor.lib.Person
+import org.jetbrains.letsPlot.Figure
 import java.math.BigDecimal
 import java.math.BigInteger
 import java.math.RoundingMode

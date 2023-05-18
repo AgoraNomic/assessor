@@ -1,23 +1,23 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.Pos
-import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geomBar
-import jetbrains.letsPlot.geom.geomText
-import jetbrains.letsPlot.geom.geomTile
-import jetbrains.letsPlot.ggsize
-import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.letsPlot
-import jetbrains.letsPlot.sampling.samplingNone
-import jetbrains.letsPlot.scale.scaleFillGradient
-import jetbrains.letsPlot.scale.scaleXDiscrete
-import jetbrains.letsPlot.scale.scaleYContinuous
-import jetbrains.letsPlot.scale.scaleYDiscrete
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.resolve.ResolutionData
 import org.agoranomic.assessor.lib.vote.machineIfPresent
+import org.jetbrains.letsPlot.Stat
+import org.jetbrains.letsPlot.geom.geomBar
+import org.jetbrains.letsPlot.geom.geomText
+import org.jetbrains.letsPlot.geom.geomTile
+import org.jetbrains.letsPlot.ggsize
+import org.jetbrains.letsPlot.label.ggtitle
+import org.jetbrains.letsPlot.letsPlot
+import org.jetbrains.letsPlot.pos.positionDodge
+import org.jetbrains.letsPlot.sampling.samplingNone
+import org.jetbrains.letsPlot.scale.scaleFillGradient
+import org.jetbrains.letsPlot.scale.scaleXDiscrete
+import org.jetbrains.letsPlot.scale.scaleYContinuous
+import org.jetbrains.letsPlot.scale.scaleYDiscrete
 
 private data class EndorsementCountSpecification(
     val endorser: String,
@@ -194,7 +194,7 @@ private fun StatisticsBuilderScope.yieldEndorseeVsEndorserGraph(
                 "kind" to allEntries.map { it.kind },
             ),
         ) +
-                geomBar(stat = Stat.identity, position = Pos.dodge, sampling = samplingNone) {
+                geomBar(stat = Stat.identity, position = positionDodge(), sampling = samplingNone) {
                     x = "person"
                     y = "count"
                     fill = "kind"

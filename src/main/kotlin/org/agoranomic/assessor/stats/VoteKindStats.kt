@@ -1,16 +1,20 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.*
-import jetbrains.letsPlot.geom.geomBar
-import jetbrains.letsPlot.geom.geomHLine
-import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.sampling.samplingNone
-import jetbrains.letsPlot.scale.scaleFillDiscrete
-import jetbrains.letsPlot.scale.scaleXDiscrete
-import jetbrains.letsPlot.scale.scaleYContinuous
 import org.agoranomic.assessor.lib.Person
 import org.agoranomic.assessor.lib.resolve.ResolutionData
 import org.agoranomic.assessor.lib.vote.VoteKind
+import org.jetbrains.letsPlot.Stat
+import org.jetbrains.letsPlot.geom.geomBar
+import org.jetbrains.letsPlot.geom.geomHLine
+import org.jetbrains.letsPlot.ggsize
+import org.jetbrains.letsPlot.label.ggtitle
+import org.jetbrains.letsPlot.letsPlot
+import org.jetbrains.letsPlot.pos.positionStack
+import org.jetbrains.letsPlot.sampling.samplingNone
+import org.jetbrains.letsPlot.scale.scaleFillDiscrete
+import org.jetbrains.letsPlot.scale.scaleXDiscrete
+import org.jetbrains.letsPlot.scale.scaleYContinuous
+import org.jetbrains.letsPlot.themes.theme
 
 private fun countVotesOfKindByVoter(
     voteKind: VoteKind,
@@ -90,7 +94,7 @@ private fun StatisticsBuilderScope.yieldVoteKindsByVoterGraph(
                 geomBar(
                     stat = Stat.identity,
                     sampling = samplingNone,
-                    position = Pos.stack,
+                    position = positionStack(),
                 ) {
                     x = "voter"
                     y = "count"

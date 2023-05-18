@@ -1,14 +1,5 @@
 package org.agoranomic.assessor.stats
 
-import jetbrains.letsPlot.Stat
-import jetbrains.letsPlot.geom.geomBar
-import jetbrains.letsPlot.ggsize
-import jetbrains.letsPlot.label.ggtitle
-import jetbrains.letsPlot.letsPlot
-import jetbrains.letsPlot.sampling.samplingNone
-import jetbrains.letsPlot.scale.scaleFillDiscrete
-import jetbrains.letsPlot.scale.scaleXDiscrete
-import jetbrains.letsPlot.scale.scaleYContinuous
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toPersistentMap
@@ -21,6 +12,15 @@ import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.ResolvedVote
 import org.agoranomic.assessor.lib.vote.SinglePersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.VoteKind
+import org.jetbrains.letsPlot.Stat
+import org.jetbrains.letsPlot.geom.geomBar
+import org.jetbrains.letsPlot.ggsize
+import org.jetbrains.letsPlot.label.ggtitle
+import org.jetbrains.letsPlot.letsPlot
+import org.jetbrains.letsPlot.sampling.samplingNone
+import org.jetbrains.letsPlot.scale.scaleFillDiscrete
+import org.jetbrains.letsPlot.scale.scaleXDiscrete
+import org.jetbrains.letsPlot.scale.scaleYContinuous
 import org.randomcat.util.requireDistinct
 
 private data class VoterDeterminationCounts(
