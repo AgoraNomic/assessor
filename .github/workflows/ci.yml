@@ -61,6 +61,7 @@ jobs:
           dist/bin/assessor all --long --dir reports
           dist/bin/assessor all --json --dir reports/json
           dist/bin/assessor all --proposals --dir reports/proposal
+          dist/bin/assessor all --statistics --dir reports/statistics
 
       - name: Generate index.md
         run: |
