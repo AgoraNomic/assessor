@@ -114,13 +114,26 @@ jobs:
         run: "cp -R artifacts/reports/* generation/gh-pages"
 
       - name: Deploy reports to Github Pages
-        uses: crazy-max/ghaction-github-pages@v2.0.0
-        with:
-          target_branch: gh-pages
-          keep_history: true
-          allow_empty_commit: false
-          build_dir: "generation/gh-pages"
-          author: "ci-build <ci-build@agoranomic.org>"
-          commit_message: "[skip ci] CI Updates"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Set Git committer identity
+          git config user.name "ci-build"
+          git config user.email "ci-build@agoranomic.org"
+          
+          # Clear the index
+          EMPTY_TREE="$(git hash-object -t tree /dev/null)"
+          git read-tree -- "$EMPTY_TREE"
+          
+          # Add site data to index
+          git add generation/gh-pages
+          
+          git fetch origin gh-pages
+          ORIG_SITE_TREE="$(git rev-parse origin/gh-pages^{tree})"
+          NEW_SITE_TREE="$(git write-tree --prefix=generation/gh-pages)"                    
+          
+          if [ "$ORIG_SITE_TREE" != "$NEW_SITE_TREE" ]; then
+            SITE_COMMIT="$(git commit-tree -p origin/gh-pages -m "[skip ci] CI Updates" -- "$NEW_SITE_TREE")"
+            echo Updating GitHub pages site to commit "$SITE_COMMIT"
+            git push origin "$SITE_COMMIT":gh-pages
+          else
+            echo Not updating GitHub pages site
+          fi
