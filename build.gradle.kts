@@ -27,6 +27,10 @@ dependencies {
     implementation("org.randomcat:kotlin-utils:2.0.1")
     implementation("org.snakeyaml:snakeyaml-engine:2.6")
 
+    // Dependencies for statistics
+    implementation("org.jetbrains.lets-plot:lets-plot-batik:3.2.0")
+    implementation("org.jetbrains.lets-plot:lets-plot-kotlin-jvm:4.4.1")
+
     testImplementation(kotlin("test"))
     testImplementation(kotlin("test-junit5"))
     testImplementation(group = "org.junit.jupiter", name = "junit-jupiter", version = "5.9.2")
