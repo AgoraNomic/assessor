@@ -382,15 +382,15 @@ fun readableReport(
         appendWithDelimiter("RESOLUTION OF PROPOSALS ${resolutionMap.metadata.name}")
 
         run {
-            val url = resolutionMap.metadata.url
+            val urls = resolutionMap.metadata.urls
 
-            if (url != null) {
+            if (urls != null) {
                 appendLine()
                 appendLine("THIS IS AN AUTOMATICALLY GENERATED REPORT.")
                 appendLine("SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.")
                 appendLine("THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.")
                 appendLine()
-                appendLine("The official historical report is located at $url")
+                appendLine("The official historical report is located at ${urls.joinToString(" and ")}")
             }
         }
 

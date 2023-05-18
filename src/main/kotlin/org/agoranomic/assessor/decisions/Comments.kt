@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.decisions
 
-fun conditional(message: String) = "Conditional resolved: $message"
+// DO NOT USE IN NEW ASSESSMENTS. Use resolvedConditional instead, which integrates into the vote resolution system.
+fun legacyConditionalComment(message: String) = "Conditional resolved: $message"
 
-val NO_VETO = conditional("no Notice of Veto was published")
+val NO_VETO = legacyConditionalComment("no Notice of Veto was published")

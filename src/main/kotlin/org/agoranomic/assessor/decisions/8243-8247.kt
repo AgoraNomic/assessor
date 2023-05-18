@@ -29,7 +29,7 @@ fun assessment8243to8247() = assessment {
         proposal(8243) {
             title("Self-ratifying regulations")
             ai("3.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -43,7 +43,7 @@ report is self-ratifying."."""
         proposal(8244) {
             title("Crime Cleanup")
             ai("3.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -96,7 +96,7 @@ I distribute" emails are less needed, and e can time stuff.]"""
         proposal(8246) {
             title("Tracking of Master")
             ai("2.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -129,9 +129,9 @@ Proposal Pool."""
     voting {
         votes(Falsifian) {
             AGAINST on 8243
-            endorse(Jason) on 8244
-            FOR on 8245 comment conditional("Aris did not vote AGAINST")
-            endorse(Jason) on 8246
+            endorse(Janet) on 8244
+            FOR on 8245 comment legacyConditionalComment("Aris did not vote AGAINST")
+            endorse(Janet) on 8246
             FOR on 8247 comment NO_VETO
         }
 
@@ -143,7 +143,7 @@ Proposal Pool."""
             PRESENT on 8247 comment NO_VETO
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8243
             FOR on 8244
             endorse(G) on 8245
@@ -155,7 +155,7 @@ Proposal Pool."""
             AGAINST on 8243
             PRESENT on 8244
             endorse(Aspen) on 8245
-            endorse(Jason) on 8246
+            endorse(Janet) on 8246
             FOR on 8247
         }
 

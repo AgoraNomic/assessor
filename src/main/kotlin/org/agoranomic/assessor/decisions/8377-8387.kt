@@ -23,7 +23,7 @@ fun assessment8377to8387() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to omd,
         Distributor to omd,
         Herald to PSS,
@@ -32,7 +32,7 @@ fun assessment8377to8387() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to Trigon
@@ -182,7 +182,7 @@ Create a new rule entitled "Criminal Ossification" with Power 1 that reads:
         proposal(8385) {
             title("Slaying the dragon")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             chamber(Economy)
 
             text(
@@ -252,7 +252,7 @@ with:
             // FOR on 8382
             AGAINST on 8383
             AGAINST on 8384
-            AGAINST on 8385 comment conditional("Aris and Jason voted AGAINST on this proposal")
+            AGAINST on 8385 comment legacyConditionalComment("Aris and Jason voted AGAINST on this proposal")
             FOR on 8386
             // FOR on 8387
         }
@@ -285,7 +285,7 @@ with:
             // NO VOTE on 8387
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8377
             PRESENT on 8378
             FOR on 8379
@@ -300,7 +300,7 @@ with:
         }
 
         votes(ATMunn) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(G) {

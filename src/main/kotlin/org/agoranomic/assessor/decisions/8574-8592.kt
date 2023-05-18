@@ -31,7 +31,7 @@ fun assessment8574to9593() = assessment {
             title("mending the quill")
             ai("1.0")
             author(Trigon)
-            coauthors(Jason, Aspen)
+            coauthors(Janet, Aspen)
             ordinary()
             sponsored()
 
@@ -65,7 +65,7 @@ with:
         proposal(8575) {
             title("Stone Win Delay v2")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Gaelan)
             ordinary()
             sponsored()
@@ -95,7 +95,7 @@ power.]""")
         proposal(8576) {
             title("\"By announcement\" loosening")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen, Murphy)
             democratic()
             sponsored()
@@ -137,7 +137,7 @@ that "sets forth intent".]""")
         proposal(8577) {
             title("Festival intent eligibility")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
             sponsored()
 
@@ -166,7 +166,7 @@ don't want scammers to be able to RWO using festivals.]""")
         proposal(8578) {
             title("Auction limitation")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Trigon)
             ordinary()
             sponsored()
@@ -189,7 +189,7 @@ Amend Rule 2545 by appending the following to the paragraph beginning
         proposal(8579) {
             title("AI voting method clarification v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Trigon)
             democratic()
             sponsored()
@@ -208,7 +208,7 @@ less ambiguous quotation marks!]""")
         proposal(8580) {
             title("Strength Buying Separation v2")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(ais523, Trigon)
             democratic()
             sponsored()
@@ -585,7 +585,7 @@ document take place.""")
         votes(Trigon) {
             FOR on 8574
             FOR on 8575
-            endorse(Jason) on 8576
+            endorse(Janet) on 8576
             FOR on 8577
             FOR on 8578
             FOR on 8579
@@ -615,7 +615,7 @@ document take place.""")
             AGAINST on 8581
             PRESENT on 8582
             PRESENT on 8583
-            AGAINST on 8584 comment conditional("G. and ais523 both AGAINST")
+            AGAINST on 8584 comment legacyConditionalComment("G. and ais523 both AGAINST")
             PRESENT on 8585
             PRESENT on 8586
             PRESENT on 8587
@@ -667,7 +667,7 @@ document take place.""")
             AGAINST on 8592
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8574
             FOR on 8575
             endorse(G) on 8576
@@ -713,12 +713,12 @@ document take place.""")
 
         votes(Falsifian) {
             endorse(Trigon) on 8574
-            endorse(Jason) on 8575
-            endorse(Jason) on 8576
-            endorse(Jason) on 8577
-            endorse(Jason) on 8578
-            endorse(Jason) on 8579
-            endorse(Jason) on 8580
+            endorse(Janet) on 8575
+            endorse(Janet) on 8576
+            endorse(Janet) on 8577
+            endorse(Janet) on 8578
+            endorse(Janet) on 8579
+            endorse(Janet) on 8580
             endorse(Aspen) on 8581
             endorse(Aspen) on 8582
             endorse(Murphy) on 8583

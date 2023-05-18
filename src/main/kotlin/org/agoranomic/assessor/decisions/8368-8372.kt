@@ -24,7 +24,7 @@ fun assessment8368to8372() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to null,
         Distributor to omd,
         Herald to Alexis,
@@ -33,7 +33,7 @@ fun assessment8368to8372() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to twg,
         Tailor to PSS,
         Treasuror to twg
@@ -311,7 +311,7 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
             AGAINST on 8372
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8368
             FOR on 8369
             FOR on 8370
@@ -320,7 +320,7 @@ Amend Rule 2532 (Zombies) by replacing {bid in a zombie auction;} with
         }
 
         votes(Rance) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Murphy) {

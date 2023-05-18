@@ -33,7 +33,7 @@ fun assessment8202to8214() = assessment {
             title("Police Power")
             ai("1.7")
             author(Falsifian)
-            coauthors(Jason)
+            coauthors(Janet)
 
             text(
                 """
@@ -63,7 +63,7 @@ current form. I don't know exactly what happened there.]"""
         proposal(8203) {
             title("Fixing Summary Judgement")
             ai("2.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -106,7 +106,7 @@ adoption of this proposal to the last person to vote FOR this proposal."""
         proposal(8206) {
             title("Rule 2472 Simplification")
             ai("2.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -137,7 +137,7 @@ Create the following Rule, "Supreme Power", Power=4:
         proposal(8208) {
             title("Regulated actions reform (v2)")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen, omd, G, Falsifian)
 
             text(
@@ -195,7 +195,7 @@ Set the power of Rule 2125 to 3.1."""
             title("AFK Reform Act v1.1")
             ai("2.0")
             author(DMargaux)
-            coauthors(G, Jason)
+            coauthors(G, Janet)
 
             text(
                 """
@@ -218,7 +218,7 @@ Immediately following this sentence:
         proposal(8210) {
             title("Single-party Contracts")
             ai("2.5")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -251,7 +251,7 @@ of J.N."""
         proposal(8212) {
             title("Rule Recreation Reversal")
             ai("3.0")
-            author(Jason)
+            author(Janet)
 
             text(
                 """
@@ -323,9 +323,9 @@ following:
             FOR on 8202
             AGAINST on 8203
             PRESENT on 8204
-            AGAINST on 8205 comment conditional("somebody voted FOR after nch")
+            AGAINST on 8205 comment legacyConditionalComment("somebody voted FOR after nch")
             FOR on 8206
-            AGAINST on 8207 comment conditional("G. did not pledge to give nch a black ribbon")
+            AGAINST on 8207 comment legacyConditionalComment("G. did not pledge to give nch a black ribbon")
             PRESENT on 8208
             FOR on 8209
             AGAINST on 8210
@@ -335,7 +335,7 @@ following:
             FOR on 8214
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8202
             FOR on 8203
             FOR on 8204
@@ -357,7 +357,7 @@ following:
             FOR on 8204
             PRESENT on 8205
             FOR on 8206
-            AGAINST on 8207 comment conditional("G. did not transfer 766 Coins to Trigon")
+            AGAINST on 8207 comment legacyConditionalComment("G. did not transfer 766 Coins to Trigon")
             FOR on 8208
             AGAINST on 8209
             FOR on 8210
@@ -424,17 +424,17 @@ following:
         }
 
         votes(twg) {
-            endorse(Jason) on 8202
-            endorse(Jason) on 8203
+            endorse(Janet) on 8202
+            endorse(Janet) on 8203
             endorse(RLee) on 8204
-            AGAINST on 8205 comment conditional("not last ballot cast to evaluate to FOR")
+            AGAINST on 8205 comment legacyConditionalComment("not last ballot cast to evaluate to FOR")
             endorse(DMargaux) on 8206
             AGAINST on 8207
-            endorse(Jason) on 8208
+            endorse(Janet) on 8208
             AGAINST on 8209
             AGAINST on 8210
             endorse(G) on 8211
-            endorse(Jason) on 8212
+            endorse(Janet) on 8212
             endorse(nix) on 8213
             endorse(nix) on 8214
         }
@@ -447,7 +447,7 @@ following:
             FOR on 8202
             FOR on 8203
             FOR on 8204
-            FOR on 8205 comment conditional("\"X=X\" is true")
+            FOR on 8205 comment legacyConditionalComment("\"X=X\" is true")
             FOR on 8206
             FOR on 8207
             PRESENT on 8208

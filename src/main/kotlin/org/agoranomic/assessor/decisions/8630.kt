@@ -25,12 +25,12 @@ fun assessment8630() = assessment {
                 ais523,
                 Aspen,
                 ATMunn,
-                CuddleBeam,
+                Madrid,
                 cuddlybanana,
                 Falsifian,
                 G,
                 Gaelan,
-                Jason,
+                Janet,
                 Murphy,
                 nix,
                 omd,
@@ -41,7 +41,7 @@ fun assessment8630() = assessment {
         )
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -50,7 +50,7 @@ fun assessment8630() = assessment {
             title("A Very Merry Unvictory to Me! ")
             proposalAI(ProposalAI("3.0".toBigDecimal()))
             decisionAI(DecisionAI("3.0".toBigDecimal()))
-            author(CuddleBeam)
+            author(Madrid)
             democratic()
             sponsored()
 
@@ -75,7 +75,7 @@ from Cuddlebeam.""")
             AGAINST on 8630
         }
 
-        votes(Jason) {
+        votes(Janet) {
             AGAINST on 8630
         }
 
@@ -84,7 +84,7 @@ from Cuddlebeam.""")
         }
 
         votes(ais523) {
-            endorse(CuddleBeam) on 8630
+            endorse(Madrid) on 8630
         }
 
         votes(Gaelan) {
@@ -103,7 +103,7 @@ from Cuddlebeam.""")
             AGAINST on 8630
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 

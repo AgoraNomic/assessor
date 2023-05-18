@@ -23,7 +23,7 @@ fun assessment8527to8529() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to nix,
         Ministor to nix,
@@ -32,9 +32,9 @@ fun assessment8527to8529() = assessment {
         Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
-        Stonemason to Jason,
+        Stonemason to Janet,
         Tailor to null,
         Treasuror to Trigon,
         Webmastor to nix,
@@ -126,7 +126,7 @@ Repeal rule 2633, "Rulebending."""")
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8527
             FOR on 8528
             AGAINST on 8529
@@ -140,7 +140,7 @@ Repeal rule 2633, "Rulebending."""")
         votes(nix) {
             FOR on 8527
             FOR on 8528
-            FOR on 8529 comment conditional("voting ended on the 10th, an even number")
+            FOR on 8529 comment legacyConditionalComment("voting ended on the 10th, an even number")
             // TODO: resolve conditional vote on 8529: FOR if day of month when voting ends is even, else AGAINST
         }
 

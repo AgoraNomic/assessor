@@ -23,7 +23,7 @@ with
 
     proposal(8189) {
         title("Rule 2479 Cleanup (v1.2)")
-        author(Jason)
+        author(Janet)
         ai("1.7")
         text(
             """
@@ -122,7 +122,7 @@ debt"].
     proposal(8195) {
         title("Timeline Control Ordnance v2")
         author(Aspen)
-        coauthors(omd, Jason)
+        coauthors(omd, Janet)
         ai("3.0")
         text(
             """
@@ -256,7 +256,7 @@ with:
     proposal(8218) {
         title("No, you didn't publish that")
         ai("3.0")
-        author(Jason)
+        author(Janet)
 
         text(
             """
@@ -275,7 +275,7 @@ with the text
     proposal(8221) {
         title("Usage de-capitalization")
         ai("3.0")
-        author(Jason)
+        author(Janet)
         coauthors(Aspen)
 
         text(
@@ -354,7 +354,7 @@ text "with 2 Agoran consent"."""
     proposal(8222) {
         title("Fixing Summary Judgement (v2)")
         ai("2.0")
-        author(Jason)
+        author(Janet)
 
         text(
             """
@@ -434,7 +434,7 @@ the time e would otherwise be able to register again.]"""
         title("Active Officers")
         ai("3.0")
         author(G)
-        coauthors(Jason)
+        coauthors(Janet)
 
         text(
             """
@@ -553,7 +553,7 @@ Move spaceships to Sectors as follows, based on their owners:
         title("Increased transparency v1.1")
         ai("3.0")
         author(Murphy)
-        coauthors(Jason, twg)
+        coauthors(Janet, twg)
 
         text(
             """
@@ -717,7 +717,7 @@ with this text:
         title("auto-balance")
         ai("1.0")
         author(G)
-        coauthors(Jason)
+        coauthors(Janet)
 
         text(
             """
@@ -735,7 +735,7 @@ fun proposals8235to8242() = compileProposals(v0) {
     proposal(8235) {
         title("Unified fine creation syntax")
         ai("3.0")
-        author(Jason)
+        author(Janet)
 
         text(
             """
@@ -761,7 +761,7 @@ not exceeding 2) on em"."""
     proposal(8236) {
         title("Definition de-capitalization")
         ai("3.0")
-        author(Jason)
+        author(Janet)
         coauthors(Aspen)
 
         text(
@@ -829,8 +829,8 @@ Amend the only list in Rule 2124 ("Agoran Satisfaction") to read:
     proposal(8237) {
         title("Repairing Defeated Spaceships v3")
         ai("3.0")
-        author(Jason)
-        coauthors(twg, Jason)
+        author(Janet)
+        coauthors(twg, Janet)
 
         text(
             """
@@ -899,7 +899,7 @@ item to the unnumbered list in between the two previously existing items:
     proposal(8239) {
         title("The Editor (v2.0.1)")
         ai("1.0")
-        author(Jason)
+        author(Janet)
         coauthors(G, Aspen, Trigon)
 
         text(
@@ -939,7 +939,7 @@ Enact a new Rule with power 1, title "The Editor", and text as follows:
     proposal(8240) {
         title("Regulation clarification")
         ai("3.0")
-        author(Jason)
+        author(Janet)
 
         text(
             """
@@ -959,7 +959,7 @@ Amend Rule 2493 ("Regulations") as follows:
     proposal(8241) {
         title("Secured switches (v2.0)")
         ai("3.0")
-        author(Jason)
+        author(Janet)
         coauthors(Falsifian)
 
         text(

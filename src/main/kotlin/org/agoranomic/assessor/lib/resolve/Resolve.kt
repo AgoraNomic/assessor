@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.lib.resolve
 
+import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableMap
@@ -115,7 +116,7 @@ value class AssessmentUrl(val raw: String) {
 
 data class AssessmentMetadata(
     val name: String,
-    val url: AssessmentUrl?,
+    val urls: ImmutableList<AssessmentUrl>?,
 )
 
 data class AssessmentData(

@@ -2,11 +2,16 @@ package org.agoranomic.assessor.cli
 
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.toImmutableMap
+import org.agoranomic.assessor.lib.proposal.Proposal
 import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.report.*
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.ProposalResolutionMap
 import org.agoranomic.assessor.lib.resolve.resolve
+import org.snakeyaml.engine.v2.api.Dump
+import org.snakeyaml.engine.v2.api.DumpSettings
+import org.snakeyaml.engine.v2.common.FlowStyle
+import java.math.BigDecimal
 
 private class BytesHolder(data: ByteArray) {
     private val data: ByteArray = data.copyOf()
@@ -116,12 +121,20 @@ data class ProposalsReadableFormatter(
                 .associate { (proposal, resolutions) ->
                     val text = run {
                         val resolutionsText = resolutions.joinToString("\n") { resolution ->
-                            renderReadableProposalResolution(
+                            val resolutionText = renderReadableProposalResolution(
                                 reportConfig,
                                 proposal,
                                 resolution.resolutionOf(proposal.number),
                                 resolution.votingStrengthsFor(proposal.number),
-                            ) + "\nResolved at: ${resolution.metadata.url}\n"
+                            )
+
+                            val metadataText = if (resolution.metadata.urls != null) {
+                                "\nResolved at: ${resolution.metadata.urls.joinToString(" and ")}\n"
+                            } else {
+                                ""
+                            }
+
+                            resolutionText + metadataText
                         }
 
                         resolutionsText + "\n" + renderProposalText(proposal)
@@ -132,6 +145,41 @@ data class ProposalsReadableFormatter(
                 .let {
                     AssessmentOutputData.Nested(it)
                 }
+        )
+    }
+}
+
+object ProposalsRulekeeporDataFormatter : ResolvedAssessmentFormatter() {
+    private fun Proposal.toYamlMap(): Map<String, Any> {
+        val map = mutableMapOf<String, Any>()
+
+        map["id"] = number.toString()
+
+        title?.let { map["title"] = it }
+        author?.name?.let { map["author"] = it }
+
+        if (coauthors.isNotEmpty()) {
+            map["coauthors"] = coauthors.map { it.name }
+        }
+
+        map["power"] = proposalAI.toString()
+        map["omnipotent"] = proposalAI.raw >= BigDecimal.valueOf(3)
+
+        return map
+    }
+
+    override fun formatResolvedBatch(assessments: Map<String, ProposalResolutionMap>): AssessmentFormatOutput {
+        val proposals = assessments.values.flatMap { it.proposals }.toProposalSet()
+        val settings = DumpSettings.builder().setDefaultFlowStyle(FlowStyle.BLOCK).build()
+
+        return AssessmentFormatOutput(
+            AssessmentOutputData.Nested(
+                proposals.associate {
+                    it.number.toString() to AssessmentOutputData.Text(
+                        Dump(settings).dumpToString(it.toYamlMap()),
+                    )
+                }
+            )
         )
     }
 }

@@ -43,5 +43,5 @@ fun strengthWithVote(
     return votes
         .personsWithVote(targetVote)
         .map { strengths.finalStrengthForPerson(it) }
-        .fold(VotingStrength.zero()) { acc, next -> (acc.absoluteValue) + next }
+        .fold(VotingStrength.zero()) { acc, next -> (acc.asDifference()) + next }
 }

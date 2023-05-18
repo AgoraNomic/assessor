@@ -25,7 +25,7 @@ fun assessment8488Ato8489A() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -34,7 +34,7 @@ fun assessment8488Ato8489A() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to grok,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -58,7 +58,7 @@ fun assessment8488Ato8489A() = assessment {
             title("Empty the escalator v1")
             ai("3.0")
             author(Falsifian)
-            coauthors(Jason, omd)
+            coauthors(Janet, omd)
             democratic()
             sponsored()
 
@@ -75,7 +75,7 @@ Amend Rule 2579 by deleting the paragraph that ends with "0 or empty fee".""")
         proposal(8489) {
             title("Interesting economics")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             chamber(Economy)
             sponsored()
 
@@ -96,13 +96,13 @@ associated with the Ministry of Economy."""")
             endorse(Aspen) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8488
             FOR on 8489
         }
 
         votes(BaronVV) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Trigon) {

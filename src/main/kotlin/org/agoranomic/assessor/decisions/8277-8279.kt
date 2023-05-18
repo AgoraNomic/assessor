@@ -154,7 +154,7 @@ a public message.
         votes(Murphy) {
             FOR on 8277
             FOR on 8278
-            FOR on 8279 comment conditional("Proposal 8278 does not have sufficient votes to be adopted")
+            FOR on 8279 comment legacyConditionalComment("Proposal 8278 does not have sufficient votes to be adopted")
         }
 
         votes(Aspen) {
@@ -186,7 +186,7 @@ a public message.
             AGAINST on 8279
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8277
             AGAINST on 8278
             PRESENT on 8279

@@ -22,7 +22,7 @@ fun assessment8559() = assessment {
         max(15)
 
         blotPenalty(RLee, 7 / 3)
-        powerStone(Jason, 3)
+        powerStone(Janet, 3)
     }
 
     proposals(v4) {
@@ -50,7 +50,7 @@ Amend Rule 1742 "Contracts" by appending the following:
             endorse(ATMunn) on 8559
         }
 
-        votes(Jason) {
+        votes(Janet) {
             endorse(ATMunn) on 8559
         }
 

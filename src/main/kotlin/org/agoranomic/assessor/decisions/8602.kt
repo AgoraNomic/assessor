@@ -67,7 +67,7 @@ destroyed this way, gain 7 products of your choice"""")
             PRESENT on 8602
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8602
         }
 

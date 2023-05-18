@@ -23,14 +23,14 @@ fun assessment8442to8457() = assessment {
     val offices = officeMapOf(
         ADoP to null,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
         Promotor to Aspen,
         Referee to PSS,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Registrar to Falsifian,
         Speaker to G,
         Tailor to PSS,
@@ -200,7 +200,7 @@ Enact the following rule, Victory Auctions:
         proposal(8447) {
             title("Rule Infancy")
             ai("1.0")
-            author(CuddleBeam)
+            author(Madrid)
             chamber(Participation)
 
             text(
@@ -243,7 +243,7 @@ following text:
             title("Simpler Heraldry")
             ai("1.5")
             author(Aspen)
-            coauthors(Alexis, Jason, PSS)
+            coauthors(Alexis, Janet, PSS)
             chamber(Participation)
 
             text(
@@ -285,7 +285,7 @@ for people who are late without requesting the extension]."""
         proposal(8451) {
             title("HUMBLE AGORAN FARMER WINS THE GAME")
             ai("1.0")
-            author(CuddleBeam)
+            author(Madrid)
             chamber(Participation)
 
             text(
@@ -299,7 +299,7 @@ Agoran Moral Tripwire” is destroyed."""
             title("Indictment Fixes")
             ai("1.0")
             author(PSS)
-            coauthors(Jason, Trigon)
+            coauthors(Janet, Trigon)
             chamber(Justice)
 
             text(
@@ -344,7 +344,7 @@ Tournaments, and Apathy are indirect already]"""
             title("Judicial non-person fixes")
             ai("2.0")
             author(G)
-            coauthors(Jason, PSS)
+            coauthors(Janet, PSS)
             chamber(Justice)
 
             text(
@@ -387,7 +387,7 @@ blotting if it happens]"""
             title("old judgements are good judgements")
             ai("2.0")
             author(G)
-            coauthors(Jason, PSS)
+            coauthors(Janet, PSS)
             chamber(Justice)
 
             text(
@@ -466,7 +466,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8457
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8442
             AGAINST on 8443
             PRESENT on 8444
@@ -516,14 +516,14 @@ Create a power 2 rule called "Excess Proposals" with the text'
             FOR on 8446
             AGAINST on 8447
             FOR on 8448
-            FOR on 8449 comment conditional("8448 passed")
+            FOR on 8449 comment legacyConditionalComment("8448 passed")
             FOR on 8450
             AGAINST on 8451
             endorse(PSS) on 8452
             FOR on 8453
             PRESENT on 8454
             FOR on 8455
-            endorse(G) on 8456 comment conditional("G. not FOR")
+            endorse(G) on 8456 comment legacyConditionalComment("G. not FOR")
             AGAINST on 8457
         }
 

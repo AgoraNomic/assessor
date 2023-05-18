@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.powerStone
@@ -15,6 +16,7 @@ import java.math.BigDecimal
 @UseAssessment
 fun assessment8549to8555() = assessment {
     name("8549-8555")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2021-April/014796.html")
     quorum(3)
 
     strengths {
@@ -23,7 +25,7 @@ fun assessment8549to8555() = assessment {
         max(15)
 
         blotPenalty(RLee, 7 / 3)
-        powerStone(Jason, 3)
+        powerStone(Janet, 3)
     }
 
     proposals(v4) {
@@ -60,7 +62,7 @@ the text:
             title("Apathy for all")
             proposalAI(ProposalAI(BigDecimal("1.0")))
             decisionAI(DecisionAI(BigDecimal("2.0")))
-            author(Jason)
+            author(Janet)
             coauthors(ais523)
             ordinary()
             sponsored()
@@ -76,7 +78,7 @@ players" with "set of persons" and the text "specified players" with
         proposal(8553) {
             title("Slightly less apathetic")
             ai("1.0")
-            author(Jason)
+            author(Janet)
             ordinary()
             sponsored()
 
@@ -149,7 +151,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             PRESENT on 8555
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8549
             FOR on 8552
             FOR on 8553
@@ -162,7 +164,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             AGAINST on 8552
             FOR on 8553
             FOR on 8554
-            AGAINST on 8555 comment conditional("not highest unique voting strenght")
+            AGAINST on 8555 comment legacyConditionalComment("not highest unique voting strenght")
         }
 
         votes(Murphy) {
@@ -173,7 +175,7 @@ highest is 14, and no one else is at 14, the 14 wins]."""
             FOR on 8555
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 
@@ -198,11 +200,11 @@ highest is 14, and no one else is at 14, the 14 wins]."""
         }
 
         votes(RLee) {
-            AGAINST on 8549 comment conditional("adds text to the ruleset")
-            PRESENT on 8552 comment conditional("does not add text to the ruleset")
-            AGAINST on 8553 comment conditional("adds text to the ruleset")
-            AGAINST on 8554 comment conditional("adds text to the ruleset")
-            PRESENT on 8555 comment conditional("does not add text to the ruleset")
+            AGAINST on 8549 comment legacyConditionalComment("adds text to the ruleset")
+            PRESENT on 8552 comment legacyConditionalComment("does not add text to the ruleset")
+            AGAINST on 8553 comment legacyConditionalComment("adds text to the ruleset")
+            AGAINST on 8554 comment legacyConditionalComment("adds text to the ruleset")
+            PRESENT on 8555 comment legacyConditionalComment("does not add text to the ruleset")
         }
 
         votes(Aenet) {

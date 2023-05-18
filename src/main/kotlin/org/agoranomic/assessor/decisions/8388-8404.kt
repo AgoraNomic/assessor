@@ -27,7 +27,7 @@ fun assessment8388to8404() = assessment {
     val officesInitial = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Comptrollor to null,
         Distributor to omd,
         Herald to PSS,
@@ -36,7 +36,7 @@ fun assessment8388to8404() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to Trigon
@@ -150,7 +150,7 @@ Amend rules 2608 and 2450, and also any other rule that contains the text
         proposal(8392) {
             title("Prior violations")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             chamber(Justice)
 
             text(
@@ -202,7 +202,7 @@ to read:
         proposal(8394) {
             title("8228 retry")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             chamber(Efficiency)
 
             text(
@@ -223,7 +223,7 @@ holds":
         proposal(8395) {
             title("Editorial what?")
             ai("1.1")
-            author(Jason)
+            author(Janet)
             chamber(Legislation)
 
             text(
@@ -504,7 +504,7 @@ with:
             title("High Crimes and Treason")
             ai("1.7")
             author(PSS)
-            coauthors(G, Jason, Murphy)
+            coauthors(G, Janet, Murphy)
             chamber(Justice)
 
             text(
@@ -576,12 +576,12 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
                 endorseOfficer(
                     offices,
                     Office_2020_06_03_Webmastor.Comptrollor
-                ) on 8400 comment conditional("Comptrollor is held")
+                ) on 8400 comment legacyConditionalComment("Comptrollor is held")
             else
                 endorseOfficer(
                     offices,
                     Office_2020_06_03_Webmastor.ADoP
-                ) on 8400 comment conditional("Comptrollor is vacant")
+                ) on 8400 comment legacyConditionalComment("Comptrollor is vacant")
 
             FOR on 8401
             FOR on 8402
@@ -649,7 +649,7 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             AGAINST on 8404
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8388
             FOR on 8389
             endorseOfficer(offices, Office_2020_06_03_Webmastor.Registrar) on 8390
@@ -694,10 +694,10 @@ Create a new AI-1.7 rule, "Indictment", with the following text:
             endorse(G) on 8389
             AGAINST on 8390
             AGAINST on 8391
-            endorse(Jason) on 8392
+            endorse(Janet) on 8392
             endorse(Aspen) on 8393
-            endorse(Jason) on 8394
-            endorse(Jason) on 8395
+            endorse(Janet) on 8394
+            endorse(Janet) on 8395
             FOR on 8396 comment NO_VETO
             endorse(PSS) on 8397
             PRESENT on 8398

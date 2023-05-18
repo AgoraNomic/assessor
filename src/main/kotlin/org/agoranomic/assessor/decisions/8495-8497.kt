@@ -24,7 +24,7 @@ fun assessment8495to8497() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -33,7 +33,7 @@ fun assessment8495to8497() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to grok,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -95,14 +95,14 @@ grant a Pendant to the player that pended the proposal."""")
             endorse(Aspen) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8499
             // FOR on 8496
             FOR on 8497
         }
 
         votes(BaronVV) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Trigon) {

@@ -27,7 +27,7 @@ fun assessment8235Ato8242A() = assessment {
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8235
             FOR on 8236
             AGAINST on 8237
@@ -39,7 +39,7 @@ fun assessment8235Ato8242A() = assessment {
         }
 
         votes(Bernie) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Trigon) {
@@ -82,8 +82,8 @@ fun assessment8235Ato8242A() = assessment {
             AGAINST on 8237
             AGAINST on 8238
             PRESENT on 8239
-            endorse(Jason) on 8240
-            endorse(Jason) on 8241
+            endorse(Janet) on 8240
+            endorse(Janet) on 8241
             FOR on 8242
         }
 

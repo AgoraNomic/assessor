@@ -23,7 +23,7 @@ fun assessment8405to8408() = assessment {
     val offices = officeMapOf(
         ADoP to RLee,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to RLee,
@@ -31,7 +31,7 @@ fun assessment8405to8408() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to Trigon,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -51,7 +51,7 @@ fun assessment8405to8408() = assessment {
         proposal(8405) {
             title("Generic private assets")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             democratic()
 
             text(
@@ -139,7 +139,7 @@ Amend Rule 2545 (Auctions) to read in full:
             title("Sets v1.4")
             ai("3.0")
             author(nix)
-            coauthors(Trigon, Falsifian, PSS, Jason, Aspen, G, ais523)
+            coauthors(Trigon, Falsifian, PSS, Janet, Aspen, G, ais523)
             democratic()
 
             text(
@@ -372,7 +372,7 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             FOR on 8408
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8405
             AGAINST on 8406
             FOR on 8407
@@ -380,7 +380,7 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8405
+            endorse(Janet) on 8405
             AGAINST on 8406
             endorse(G) on 8407
             endorse(nix) on 8408

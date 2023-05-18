@@ -33,9 +33,13 @@ private data class ResolvedEndorsementResolvingVote(val endorsee: Person, val re
 private data class EndorsementResolvingVote(val endorsee: Person) : ResolvingVote {
     override fun resolveStep(context: ProposalVoteContext): VoteStepResolution {
         return VoteStepResolution.Continue(
-            ResolvedEndorsementResolvingVote(
-                endorsee,
-                context.resolve(context.currentProposal, endorsee)?.finalResolution(context)?.voteIfVoted,
+            TaggedResolvingVote(
+                tag = CONDITIONAL_VOTE_TAG, // Endorsements are legally conditional votes and should be marked as such
+                nextVote = ResolvedEndorsementResolvingVote(
+                    endorsee = endorsee,
+                    resolution = context.resolve(context.currentProposal, endorsee)
+                        ?.finalResolution(context)?.voteIfVoted,
+                ),
             ),
         )
     }

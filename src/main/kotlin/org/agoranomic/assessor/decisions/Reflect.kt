@@ -14,7 +14,7 @@ fun findAssessments(): List<AssessmentData> {
     val packageName = "org.agoranomic.assessor.decisions"
     val annotationName = UseAssessment::class.jvmName
 
-    val classGraph = ClassGraph().enableAllInfo().whitelistPackages(packageName)
+    val classGraph = ClassGraph().enableAllInfo().acceptPackages(packageName)
 
     return classGraph.scan().use { result ->
         result.getClassesWithMethodAnnotation(annotationName).flatMap { classInfo ->

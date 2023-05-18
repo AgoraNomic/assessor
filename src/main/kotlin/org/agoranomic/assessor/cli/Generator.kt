@@ -12,10 +12,12 @@ private fun playerName(player: String): String {
         "Corona" -> "Corona"
         "D. Margaux", "D Margaux" -> "DMargaux"
         "Falsifian" -> "Falsifian"
+        "4st" -> "Forest"
         "G." -> "G"
         "Gaelan" -> "Gaelan"
         "grok" -> "grok"
-        "Jason Cobb", "Jason" -> "Jason"
+        "Jason Cobb", "Jason", "Janet" -> "Janet"
+        "juan" -> "juan"
         "Murphy" -> "Murphy"
         "nix" -> "nix"
         "omd" -> "omd"
@@ -24,8 +26,9 @@ private fun playerName(player: String): String {
         "Telnaior" -> "Telnaior"
         "Trigon" -> "Trigon"
         "twg" -> "twg"
-        "Walker" -> "Walker"
         "Tarhulinder" -> "Tarhulinder"
+        "secretsnail", "snail", "Secretsnail9" -> "snail"
+        "Walker" -> "Walker"
         "Jacob Arduino" -> "JacobArduino"
         else -> "unknown_player(\"$player\")"
     }
@@ -108,7 +111,7 @@ private fun distributionToDSL(rawDistribution: String): String {
 
                     appendDecl("title($codeTitle)")
 
-                    val ai = lines[AI_LINE_INDEX].afterExpected("Adoption index: ").toBigDecimal()
+                    val ai = lines[AI_LINE_INDEX].afterExpected(Regex("Adoption [iI]ndex: ")).toBigDecimal()
 
                     appendDecl("ai(${ai.toString().escapedAndQuoted()})")
 
@@ -118,7 +121,7 @@ private fun distributionToDSL(rawDistribution: String): String {
 
                     val coauthorsString =
                         lines[COAUTHORS_LINE_INDEX]
-                            .afterExpected(Regex("Co-author(s|\\(s\\)):"))
+                            .afterExpected(Regex("Co-?[aA]uthor(s|\\(s\\))?:"))
                             .trim()
 
                     val coauthorFullNames = coauthorsString.split(", ").filter { it.isNotBlank() }

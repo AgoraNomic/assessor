@@ -26,7 +26,7 @@ fun assessment8526() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to null,
         Distributor to omd,
         Herald to null,
@@ -36,7 +36,7 @@ fun assessment8526() = assessment {
         Promotor to Aspen,
         Referee to null,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         // Stonemason to Jason,
         Tailor to null,
@@ -71,7 +71,7 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8526
         }
 
@@ -88,7 +88,7 @@ Repeal Rule 2628 (Bargains on the Barrel).""")
                 if (it is OfficeState.Held)
                     endorseOrElse(it.holder, PRESENT)
                 else
-                    CommentedResolvingVote(conditional("Coopor is not held"), ResolvedVote(FOR))
+                    CommentedResolvingVote(legacyConditionalComment("Coopor is not held"), ResolvedVote(FOR))
             } on 8526
         }
 

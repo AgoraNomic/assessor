@@ -15,13 +15,16 @@ import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 @UseAssessment
 fun assessment8494to8495() = assessment {
     name("8494-8495")
-    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014195.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014196.html")
+    url(
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014195.html",
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2020-September/014196.html",
+    )
     quorum(3)
 
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to RLee,
         Distributor to omd,
         Herald to PSS,
@@ -30,7 +33,7 @@ fun assessment8494to8495() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to grok,
         Tailor to PSS,
         Treasuror to Trigon,

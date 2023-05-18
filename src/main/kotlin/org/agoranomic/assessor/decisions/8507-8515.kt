@@ -25,7 +25,7 @@ fun assessment8507to8515() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Coopor to G,
         Distributor to omd,
         Herald to PSS,
@@ -34,7 +34,7 @@ fun assessment8507to8515() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -98,7 +98,7 @@ none exist by the time e gets around to starting an auction.]""")
             title("Dependent De-escalation")
             ai("3.0")
             author(BaronVV)
-            coauthors(Jason, Trigon)
+            coauthors(Janet, Trigon)
             democratic()
             sponsored()
 
@@ -114,7 +114,7 @@ objection anything it wants, which is certainly enough to get to power 3.]""")
             title("Festival Pending")
             ai("2.1")
             author(BaronVV)
-            coauthors(Jason, Trigon)
+            coauthors(Janet, Trigon)
             chamber(Legislation)
             sponsored()
 
@@ -131,7 +131,7 @@ Amend Rule 2481 by adding the following item to the sole list:
             title("VP Win indirection")
             ai("1.0")
             author(BaronVV)
-            coauthors(Jason, Trigon)
+            coauthors(Janet, Trigon)
             chamber(Participation)
             sponsored()
 
@@ -170,7 +170,7 @@ Amend Rule 2621 to read in whole:
             title("Lime Debait")
             ai("3.0")
             author(Gaelan)
-            coauthors(Jason)
+            coauthors(Janet)
             democratic()
             sponsored()
 
@@ -211,7 +211,7 @@ Patent Title recognizing such.""")
             title("The Buoyant Economy")
             ai("3.0")
             author(Aspen)
-            coauthors(nix, Trigon, G, Jason, ATMunn)
+            coauthors(nix, Trigon, G, Janet, ATMunn)
             democratic()
             sponsored()
 
@@ -512,7 +512,7 @@ see.)""")
             endorse(G) on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8507
             FOR on 8508
             FOR on 8509
@@ -525,7 +525,7 @@ see.)""")
         }
 
         votes(BaronVV) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(nix) {
@@ -543,9 +543,9 @@ see.)""")
         votes(Falsifian) {
             endorse(ATMunn) on 8507
             FOR on 8508
-            endorse(Jason) on 8509
-            endorse(Jason) on 8510
-            endorse(Jason) on 8511
+            endorse(Janet) on 8509
+            endorse(Janet) on 8510
+            endorse(Janet) on 8511
             AGAINST on 8512
             endorse(Aspen) on 8513
 

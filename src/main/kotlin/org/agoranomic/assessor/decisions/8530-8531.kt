@@ -24,7 +24,7 @@ fun assessment8530to8531() = assessment {
     val offices = officeMapOf(
         ADoP to Murphy,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to nix,
         Ministor to nix,
@@ -33,9 +33,9 @@ fun assessment8530to8531() = assessment {
         Promotor to Aspen,
         Referee to JTAC,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
-        Speaker to CuddleBeam,
-        Stonemason to Jason,
+        Rulekeepor to Janet,
+        Speaker to Madrid,
+        Stonemason to Janet,
         Tailor to null,
         Treasuror to Trigon,
         Webmastor to nix,
@@ -57,7 +57,7 @@ fun assessment8530to8531() = assessment {
             title("No Honour")
             ai("1.0")
             author(nix)
-            coauthors(Jason)
+            coauthors(Janet)
             chamber(Legacy)
             sponsored()
 
@@ -73,7 +73,7 @@ right now.]""")
         proposal(8531) {
             title("Patent Title Restoration v2")
             ai("1.5")
-            author(Jason)
+            author(Janet)
             chamber(Legacy)
             sponsored()
 
@@ -108,11 +108,11 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
             FOR on 8531
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8530
             FOR on 8531
         }
@@ -128,7 +128,7 @@ stripped and because this proposal doesn't have high enough AI to do so.]""")
         }
 
         votes(Falsifian) {
-            FOR on 8530 comment conditional("Herald is FOR")
+            FOR on 8530 comment legacyConditionalComment("Herald is FOR")
             FOR on 8531
         }
 

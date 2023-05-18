@@ -22,7 +22,7 @@ fun assessment8603to8606() = assessment {
         max(15)
 
         onOrdinaryProposals {
-            powerStone(Jason, 3)
+            powerStone(Janet, 3)
         }
     }
 
@@ -30,7 +30,7 @@ fun assessment8603to8606() = assessment {
         proposal(8603) {
             title("Buying Strength Eligibility")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(Bucky)
             ordinary()
             sponsored()
@@ -133,7 +133,7 @@ I create a proposal with this sentence as its text, and make it pending.""")
             FOR on 8606
         }
 
-        votes(CuddleBeam) {
+        votes(Madrid) {
             FOR on all
         }
 
@@ -151,7 +151,7 @@ I create a proposal with this sentence as its text, and make it pending.""")
             AGAINST on 8606
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8603
             PRESENT on 8604
             FOR on 8605
@@ -159,7 +159,7 @@ I create a proposal with this sentence as its text, and make it pending.""")
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8603
+            endorse(Janet) on 8603
             endorse(RLee) on 8604
             endorse(G) on 8605
             FOR on 8606

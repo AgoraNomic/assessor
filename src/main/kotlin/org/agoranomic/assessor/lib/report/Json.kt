@@ -19,13 +19,13 @@ import org.agoranomic.assessor.lib.voting_strength.VotingStrengthModificationDes
 @Serializable
 private data class AssessmentMetadataDto(
     val name: String,
-    val url: String? = null,
+    val urls: List<String>? = null,
 ) {
     companion object {
         fun from(metadata: AssessmentMetadata): AssessmentMetadataDto {
             return AssessmentMetadataDto(
                 name = metadata.name,
-                url = metadata.url?.raw,
+                urls = metadata.urls?.map { it.raw },
             )
         }
     }

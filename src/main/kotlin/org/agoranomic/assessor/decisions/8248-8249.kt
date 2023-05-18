@@ -29,7 +29,7 @@ fun assessment8248to8249() = assessment {
         proposal(8248) {
             title("Publishing definition")
             ai("3.0")
-            author(Jason)
+            author(Janet)
             coauthors(Aspen)
 
             text(
@@ -68,13 +68,13 @@ allowed.]"""
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8248
             FOR on 8249
         }
 
         votes(Bernie) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Trigon) {
@@ -100,8 +100,8 @@ allowed.]"""
         }
 
         votes(Falsifian) {
-            endorse(Jason) on 8248
-            FOR on 8249 comment conditional("No veto, twg not AGAINST")
+            endorse(Janet) on 8248
+            FOR on 8249 comment legacyConditionalComment("No veto, twg not AGAINST")
         }
 
         votes(ATMunn) {

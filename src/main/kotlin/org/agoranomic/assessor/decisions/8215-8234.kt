@@ -35,9 +35,9 @@ fun assessment8215to8234() = assessment {
             endorse(G) on 8215
             AGAINST on 8216
             endorse(G) on 8217
-            endorse(Jason) on 8218
+            endorse(Janet) on 8218
             PRESENT on 8221
-            endorse(Jason) on 8222
+            endorse(Janet) on 8222
             AGAINST on 8223
             PRESENT on 8224
             AGAINST on 8227
@@ -87,7 +87,7 @@ fun assessment8215to8234() = assessment {
             endorse(G) on 8234 comment "Final non-conditional ballot"
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8215
             AGAINST on 8216
             PRESENT on 8217

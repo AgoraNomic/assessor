@@ -57,7 +57,7 @@ of coins".
             title("Phasing Out Zombies")
             ai("3.0")
             author(Telna)
-            coauthors(Jason, Trigon)
+            coauthors(Janet, Trigon)
             democratic()
             sponsored()
 
@@ -100,7 +100,7 @@ to the next whole asset."""")
             title("I definitely authored this")
             ai("2.0")
             author(ATMunn)
-            coauthors(Jason)
+            coauthors(Janet)
             chamber(Compliance)
             sponsored()
 
@@ -121,7 +121,7 @@ previous.""")
             title("(untitled)")
             ai("3.0")
             author(PSS)
-            coauthors(Jason)
+            coauthors(Janet)
             democratic()
             sponsored()
 
@@ -138,7 +138,7 @@ Amend the final item in Rule 2438, "Ribbons" to read as follows: {
         proposal(8521) {
             title("Stones")
             ai("2.0")
-            author(Jason)
+            author(Janet)
             coauthors(G, Aspen, nix, Trigon, Gaelan, Falsifian)
             chamber(Economy)
             sponsored()
@@ -270,12 +270,12 @@ Jason hereby becomes the Stonemason.""")
             FOR on 8516
             FOR on 8517
             FOR on 8518
-            endorse(Jason) on 8519
+            endorse(Janet) on 8519
             endorse(PSS) on 8520
             FOR on 8521
         }
 
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8516
             FOR on 8517
             FOR on 8518
@@ -285,14 +285,14 @@ Jason hereby becomes the Stonemason.""")
         }
 
         votes(BaronVV) {
-            endorse(Jason) on all
+            endorse(Janet) on all
         }
 
         votes(Trigon) {
             FOR on 8516
             FOR on 8517
             FOR on 8518
-            endorse(Jason) on 8519
+            endorse(Janet) on 8519
             FOR on 8520
             FOR on 8521
         }
@@ -307,7 +307,7 @@ Jason hereby becomes the Stonemason.""")
             endorse(Aspen) on 8518
             AGAINST on 8519
             AGAINST on 8520
-            endorse(Jason) on 8521
+            endorse(Janet) on 8521
         }
 
         votes(G) {

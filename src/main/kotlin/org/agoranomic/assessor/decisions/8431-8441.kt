@@ -23,7 +23,7 @@ fun assessment8431to8441() = assessment {
     val offices = officeMapOf(
         ADoP to RLee,
         Arbitor to G,
-        Assessor to Jason,
+        Assessor to Janet,
         Distributor to omd,
         Herald to PSS,
         Notary to ATMunn,
@@ -31,7 +31,7 @@ fun assessment8431to8441() = assessment {
         Promotor to Aspen,
         Referee to PSS,
         Registrar to Falsifian,
-        Rulekeepor to Jason,
+        Rulekeepor to Janet,
         Speaker to G,
         Tailor to PSS,
         Treasuror to Trigon,
@@ -130,7 +130,7 @@ following text:
             title("Simpler Heraldry")
             ai("1.5")
             author(Aspen)
-            coauthors(Alexis, Jason, PSS)
+            coauthors(Alexis, Janet, PSS)
             chamber(Participation)
 
             text(
@@ -324,7 +324,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
         votes(ATMunn) {
             FOR on 8431
             PRESENT on 8432
-            AGAINST on 8433 comment conditional("8432 will not be adopted")
+            AGAINST on 8433 comment legacyConditionalComment("8432 will not be adopted")
             FOR on 8434
             FOR on 8435
             AGAINST on 8436
@@ -381,7 +381,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             FOR on 8441
         }
 
-        votes(Jason) {
+        votes(Janet) {
             PRESENT on 8431
             endorse(G) on 8432
             AGAINST on 8433
@@ -398,7 +398,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
         votes(Falsifian) {
             endorse(Aspen) on 8431
             PRESENT on 8432
-            endorse(Aspen) on 8433 comment conditional("8432 will not be adopted")
+            endorse(Aspen) on 8433 comment legacyConditionalComment("8432 will not be adopted")
             PRESENT on 8434
             PRESENT on 8435
             FOR on 8436

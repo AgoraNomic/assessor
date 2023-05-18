@@ -37,7 +37,7 @@ fun assessment8522() = assessment {
             title("Theftn't")
             ai("2.0")
             author(ATMunn)
-            coauthors(Jason)
+            coauthors(Janet)
             chamber(Compliance)
 
             text("""
@@ -95,16 +95,16 @@ master performed on its behalf.
     }
 
     voting {
-        votes(Jason) {
+        votes(Janet) {
             FOR on 8522
         }
 
         votes(BaronVV) {
-            endorse(Jason) on 8522
+            endorse(Janet) on 8522
         }
 
         votes(ATMunn) {
-            endorse(Jason) on 8522
+            endorse(Janet) on 8522
         }
 
         votes(PSS) {
