@@ -257,5 +257,14 @@ Ribbon, grant them 2 Stamps of the Aristotle type instead."""
             FOR on 8969
             FOR on 8970
         }
+
+        votes(Janet) {
+            endorse(juan) on 8965 comment "juan is the Registrar"
+            FOR on 8966
+            PRESENT on 8967
+            endorse(nix) on 8968 comment "nix is the Herald"
+            AGAINST on 8969
+            AGAINST on 8970
+        }
     }
 }
