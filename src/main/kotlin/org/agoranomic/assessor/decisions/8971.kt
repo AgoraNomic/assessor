@@ -79,5 +79,9 @@ fun assessment8971() = assessment {
         votes(G) {
             resolvedConditional(AGAINST, "G. did vote FOR the above proposal") on 8971
         }
+
+        votes(snail) {
+            AGAINST on 8971
+        }
     }
 }
