@@ -217,4 +217,7 @@ Ribbon, grant them 2 Stamps of the Aristotle type instead."""
             )
         }
     }
+
+    voting {
+    }
 }
