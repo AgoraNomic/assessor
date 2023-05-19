@@ -8,6 +8,8 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment8965to8970() = assessment {
@@ -219,5 +221,13 @@ Ribbon, grant them 2 Stamps of the Aristotle type instead."""
     }
 
     voting {
+        votes(snail) {
+            FOR on 8965
+            FOR on 8966
+            FOR on 8967
+            FOR on 8968
+            FOR on 8969
+            AGAINST on 8970
+        }
     }
 }
