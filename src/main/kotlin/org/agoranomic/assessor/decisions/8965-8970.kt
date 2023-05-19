@@ -266,5 +266,14 @@ Ribbon, grant them 2 Stamps of the Aristotle type instead."""
             AGAINST on 8969
             AGAINST on 8970
         }
+
+        votes(juan) {
+            PRESENT on 8965
+            AGAINST on 8966
+            FOR on 8967
+            FOR on 8968
+            FOR on 8969
+            FOR on 8970
+        }
     }
 }
