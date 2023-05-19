@@ -68,7 +68,7 @@ fun assessment8971() = assessment {
         }
 
         votes(Forest) {
-            AGAINST on 8971
+            FOR on 8971
         }
 
         votes(ais523) {
