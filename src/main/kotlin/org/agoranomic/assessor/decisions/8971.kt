@@ -59,4 +59,7 @@ fun assessment8971() = assessment {
             text("Grant each player that did not vote FOR this proposal 2 blots.")
         }
     }
+
+    voting {
+    }
 }
