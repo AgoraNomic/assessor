@@ -74,5 +74,9 @@ fun assessment8971() = assessment {
         votes(ais523) {
             // TODO: resolve conditional vote on 8971: FOR if the outcome of this decision would be ADOPTED even if this vote resolved to AGAINST, or AGAINST in all other cases
         }
+
+        votes(Janet) {
+            AGAINST on 8971
+        }
     }
 }
