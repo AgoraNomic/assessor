@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -250,6 +247,15 @@ Ribbon, grant them 2 Stamps of the Aristotle type instead."""
             FOR on 8968
             AGAINST on 8969
             AGAINST on 8970
+        }
+
+        votes(Murphy) {
+            endorse(juan) on 8965 comment "juan is the Registrar"
+            FOR on 8966
+            FOR on 8967
+            FOR on 8968
+            FOR on 8969
+            FOR on 8970
         }
     }
 }
