@@ -83,5 +83,9 @@ fun assessment8971() = assessment {
         votes(snail) {
             AGAINST on 8971
         }
+
+        votes(Murphy) {
+            FOR on 8971
+        }
     }
 }
