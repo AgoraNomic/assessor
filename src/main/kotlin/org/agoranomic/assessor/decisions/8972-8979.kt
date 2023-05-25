@@ -3,10 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -408,6 +405,16 @@ Otherwise, this Proposal does nothing."""
             FOR on 8977
             FOR on 8978
             FOR on 8979
+        }
+
+        votes(nix) {
+            PRESENT on 8972
+            FOR on 8973
+            PRESENT on 8974
+            PRESENT on 8975
+            // TODO: resolve conditional vote on 8976: FOR if Janet has intended to RWO the ruleset in the last week, otherwise AGAINST.
+            AGAINST on 8977
+            endorse(ais523) on 8978
         }
     }
 }
