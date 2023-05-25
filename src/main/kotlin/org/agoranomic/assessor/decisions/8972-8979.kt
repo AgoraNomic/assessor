@@ -3,12 +3,14 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8972to8979() = assessment {
     name("8972-8979")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-May/017092.html")
     quorum(5)
 
     strengths {
@@ -417,7 +419,7 @@ Otherwise, this Proposal does nothing."""
                 AGAINST,
                 "Janet has not submitted a proposal to ratify the ruleset in the past week"
             ) on 8976
-            
+
             AGAINST on 8977
             endorse(ais523) on 8978
         }
