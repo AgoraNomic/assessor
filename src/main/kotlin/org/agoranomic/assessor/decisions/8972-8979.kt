@@ -362,5 +362,9 @@ Otherwise, this Proposal does nothing."""
             AGAINST on 8978
             FOR on 8979
         }
+
+        votes(Forest) {
+            FOR on 8976
+        }
     }
 }
