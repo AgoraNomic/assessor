@@ -337,4 +337,7 @@ Otherwise, this Proposal does nothing."""
             )
         }
     }
+
+    voting {
+    }
 }
