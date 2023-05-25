@@ -366,5 +366,16 @@ Otherwise, this Proposal does nothing."""
         votes(Forest) {
             FOR on 8976
         }
+
+        votes(Janet) {
+            FOR on 8972
+            FOR on 8973
+            AGAINST on 8974
+            FOR on 8975
+            FOR on 8976
+            AGAINST on 8977
+            FOR on 8978
+            AGAINST on 8979
+        }
     }
 }
