@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8972to8979() = assessment {
@@ -349,6 +348,17 @@ Otherwise, this Proposal does nothing."""
             FOR on 8976
             FOR on 8977
             FOR on 8978
+            FOR on 8979
+        }
+
+        votes(Yachay) {
+            FOR on 8972
+            FOR on 8973
+            PRESENT on 8974
+            FOR on 8975
+            FOR on 8976
+            AGAINST on 8977
+            AGAINST on 8978
             FOR on 8979
         }
     }
