@@ -387,5 +387,16 @@ Otherwise, this Proposal does nothing."""
             FOR on 8978
             PRESENT on 8979
         }
+
+        votes(ais523) {
+            FOR on 8972
+            FOR on 8973
+            AGAINST on 8974
+            FOR on 8975
+            FOR on 8976
+            AGAINST on 8977
+            FOR on 8978
+            PRESENT on 8979
+        }
     }
 }
