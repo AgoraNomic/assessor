@@ -412,7 +412,7 @@ Otherwise, this Proposal does nothing."""
             FOR on 8973
             PRESENT on 8974
             PRESENT on 8975
-            // TODO: resolve conditional vote on 8976: FOR if Janet has intended to RWO the ruleset in the last week, otherwise AGAINST.
+            // TODO: resolve conditional vote on 8976: FOR if Janet has submitted a proposal to ratify the ruleset in the last week, otherwise AGAINST
             AGAINST on 8977
             endorse(ais523) on 8978
         }
