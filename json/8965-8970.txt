@@ -1,0 +1,2797 @@
+{
+    "metadata": {
+        "name": "8965-8970",
+        "urls": [
+            "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-May/017058.html"
+        ]
+    },
+    "proposals": [
+        {
+            "version": "4",
+            "number": 8965,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Registrar Tracks Birthdays",
+            "author": "nix",
+            "coauthors": [
+            ],
+            "text": "[For a while I was both Herald and Registrar, so I kept track of\nbirthdays in the same documents that I kept track of active players.\nSince Registrar was taken over by someone else, I've clearly been much\nworse at tracking them. It makes more sense to put this with the office\nthat already tracks earliest registration dates (which are the\ndefinition of birthdays).\n\nAmend R2585 by replacing:\n\n      In a timely manner after the start of a player's Agoran Birthday,\n      the Herald SHALL announce it.\n\nwith:\n\n      In a timely manner after the start of a player's Agoran Birthday,\n      the Registrar SHALL announce it."
+        },
+        {
+            "version": "4",
+            "number": 8966,
+            "proposal_ai": "3.0",
+            "decision_ai": "3.0",
+            "title": "8639 rerun",
+            "author": "Janet",
+            "coauthors": [
+                "G."
+            ],
+            "text": "Set the power of Rule 879 (\"Quorum\") to 3.\n\n[Proposal 8639 (https://agoranomic.org/assessor/proposal/8639.txt)\nfailed to make this change because it used \"amend\" for a power change.]"
+        },
+        {
+            "version": "4",
+            "number": 8967,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "Campaign Please",
+            "author": "nix",
+            "coauthors": [
+            ],
+            "text": "[This adds text with no real mechanical impact, but may clarify how we\nwould like elections to run for newer players.]\n\nAmend R2154 (Election Procedure) by adding, after the first paragraph:\n\n       Each candidate in an election is ENCOURAGED to campaign by\n       indicating why e would be the best choice, and (if applicable)\n       how e would run the office differently than the previous holder.\n       The ADoP SHOULD remind candidates to campaign."
+        },
+        {
+            "version": "4",
+            "number": 8968,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "April Awards Extension",
+            "author": "snail",
+            "coauthors": [
+                "nix",
+                "Aspen",
+                "G."
+            ],
+            "text": "Amend Rule 2582 (Annual Awards) by replacing:\n{\n      The following Patent Titles CAN be awarded by the indicated\n      Officers with 2 Agoran consent, provided the intent to make\n      the awards is announced during awards month, and the award is\n      made to commemorate acts performed in the previous Agoran year.\n      The full name of each awarded Patent Title is [Title Below] NNNN,\n      where NNNN is the year each act was performed.\n}\nwith\n{\n      The following Patent Titles CAN be awarded by the indicated Officers\nwith 2 Agoran consent. The Patent Titles SHOULD be awarded during Awards\nMonth, and the award SHOULD be made to commemorate acts performed in the\nprevious Agoran year. The full name of each awarded Patent Title is [Title\nBelow] NNNN, where NNNN is the year each act was performed.\n\nThe Herald SHALL announce it is Awards Month in an officially timely\nfashion after it begins. E SHOULD petition officers to award their awards\nif they have not done so by the end of Awards Month.\n}.\n\n[The restriction on making award intents during Awards Month causes more\nproblems than it's worth: this version is more flexible in case deadlines\nare missed and adds herald-induced reminders to get the awards out on time.]"
+        },
+        {
+            "version": "4",
+            "number": 8969,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "The Rice Game",
+            "author": "Yachay Wayllukuq",
+            "coauthors": [
+                "nix"
+            ],
+            "text": "/* Comment: This is intended to be a game that intends to be a very\nsimplified, \"arcade\" version of a nomic that is entirely dominated by the\noverwhelming power of proposals, rather than the rules and subgames they\ncreate. Rice is a stand-in for any sort of point/resource/power/achievement\nscore or tally, Rice Plans are stand-ins for Proposals, Signatures are\nstand-ins for votes. */\n\nCreate a rule called \"The Rice Game\" at Power 1, and the following text:\n{\nThe Ricemastor is an office, in charge of tracking Rice, Rice Plans and\nSignatures. Rice is a fixed asset, ownable only by players. Any active\nplayer can create a Rice Plan by announcement, if e hasn't done so yet in\nthe current week. Rice Plans can have Signatures, and each Signature must\nbe of an active player. A Rice Plan has an active player's Signature as\nlong as that player is consenting to it. An active player can destroy a\nRice Plan that e has created by announcement.\n\nA Harvest occurs at the beginning of each week. When this occurs:\n- If there is only one Rice Plan with the most Signatures, that Rice Plan\nis Harvested.\n- If there is more than one Rice Plan with the most Signatures, the one\nthat was created earliest is Harvested.\n- In all other cases, nothing happens.\nAnd then all Rice Plans are destroyed and the Harvest ends.\n\nRice Plans consist of two lists of players, with each list having no\nrepeated players, and the lists can be empty. One of these lists is its\nRice Up list, and the other is its Rice Down list. When a Rice Plan is\nHarvested, for each player listed in its Rice Up list, if that player is\nactive, e gains 1 Rice; and for each player listed in its Rice Down list,\nif e has at least 1 Rice then e lose 1 Rice.\n\nIf after a Harvest there is a single active player with at least 2 Rice and\nmore Rice than any other player, then that player wins the game, and all\nRice is destroyed. When the game has been won in this manner three times,\nthis rule repeals itself.\n}\n\nYachay becomes the Ricemastor."
+        },
+        {
+            "version": "4",
+            "number": 8970,
+            "proposal_ai": "1.0",
+            "decision_ai": "1.0",
+            "title": "Black Ribbon & Friends",
+            "author": "Yachay Wayllukuq",
+            "coauthors": [
+            ],
+            "text": "For each active player that voted FOR this Proposal, if they don't own a\nBlack Ribbon, award them a Black Ribbon. If they already own a Black\nRibbon, grant them 2 Stamps of the Aristotle type instead."
+        }
+    ],
+    "quorum": 4,
+    "resolutions": [
+        {
+            "proposal": 8965,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 22,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Yachay Wayllukuq",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "juan is the Registrar"
+                                    }
+                                ],
+                                "readable": "juan is the Registrar"
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "juan"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of juan"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "juan is the Registrar"
+                                    }
+                                ],
+                                "readable": "juan is the Registrar"
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "juan"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of juan"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Arbitor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Arbitor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Aspen",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "4st",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Referee",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Referee"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Janet",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Assessor, Rulekeepor, Stonemason; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Assessor,Rulekeepor,Stonemason"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        }
+                    ],
+                    "final": 11
+                },
+                {
+                    "person": "Murphy",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices ADoP, Tailor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "ADoP,Tailor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Collector, Dream Keeper, Notary, Promotor, Speaker; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Collector,Dream Keeper,Notary,Promotor,Speaker"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "omd",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Distributor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Distributor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        }
+                    ],
+                    "final": 3
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Herald, Prime Minister, Webmastor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Herald,Prime Minister,Webmastor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "juan",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Registrar",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Registrar"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        }
+                    ],
+                    "final": 4
+                }
+            ]
+        },
+        {
+            "proposal": 8966,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 12,
+                "strength_against": 9,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Yachay Wayllukuq",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 8967,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 31,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Yachay Wayllukuq",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Arbitor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Arbitor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Aspen",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "4st",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Referee",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Referee"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Janet",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Assessor, Rulekeepor, Stonemason; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Assessor,Rulekeepor,Stonemason"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        }
+                    ],
+                    "final": 11
+                },
+                {
+                    "person": "Murphy",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices ADoP, Tailor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "ADoP,Tailor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Collector, Dream Keeper, Notary, Promotor, Speaker; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Collector,Dream Keeper,Notary,Promotor,Speaker"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "omd",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Distributor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Distributor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        }
+                    ],
+                    "final": 3
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Herald, Prime Minister, Webmastor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Herald,Prime Minister,Webmastor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "juan",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Registrar",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Registrar"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        }
+                    ],
+                    "final": 4
+                }
+            ]
+        },
+        {
+            "proposal": 8968,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 42,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Yachay Wayllukuq",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "FOR",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "nix is the Herald"
+                                    }
+                                ],
+                                "readable": "nix is the Herald"
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "nix"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of nix"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Arbitor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Arbitor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Aspen",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "4st",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Referee",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Referee"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Janet",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Assessor, Rulekeepor, Stonemason; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Assessor,Rulekeepor,Stonemason"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        }
+                    ],
+                    "final": 11
+                },
+                {
+                    "person": "Murphy",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices ADoP, Tailor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "ADoP,Tailor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Collector, Dream Keeper, Notary, Promotor, Speaker; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Collector,Dream Keeper,Notary,Promotor,Speaker"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "omd",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Distributor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Distributor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        }
+                    ],
+                    "final": 3
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Herald, Prime Minister, Webmastor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Herald,Prime Minister,Webmastor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "juan",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Registrar",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Registrar"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        }
+                    ],
+                    "final": 4
+                }
+            ]
+        },
+        {
+            "proposal": 8969,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 18,
+                "strength_against": 17,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Yachay Wayllukuq",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Arbitor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Arbitor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Aspen",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "4st",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Referee",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Referee"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Janet",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Assessor, Rulekeepor, Stonemason; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Assessor,Rulekeepor,Stonemason"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        }
+                    ],
+                    "final": 11
+                },
+                {
+                    "person": "Murphy",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices ADoP, Tailor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "ADoP,Tailor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Collector, Dream Keeper, Notary, Promotor, Speaker; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Collector,Dream Keeper,Notary,Promotor,Speaker"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "omd",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Distributor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Distributor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        }
+                    ],
+                    "final": 3
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Herald, Prime Minister, Webmastor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Herald,Prime Minister,Webmastor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "juan",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Registrar",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Registrar"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        }
+                    ],
+                    "final": 4
+                }
+            ]
+        },
+        {
+            "proposal": 8970,
+            "resolution": {
+                "result": "REJECTED",
+                "strength_for": 12,
+                "strength_against": 30,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "4st",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Yachay Wayllukuq",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "nix",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "G.",
+                        "vote": "AGAINST",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+                {
+                    "person": "G.",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Arbitor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Arbitor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Aspen",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "4st",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Referee",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Referee"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 7
+                        }
+                    ],
+                    "final": 7
+                },
+                {
+                    "person": "Janet",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Increased by 2 due to Dream of Power",
+                                "kind": "power_dream",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "2"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Increased by 3 due to Power Stone",
+                                "kind": "power_stone",
+                                "parameters": [
+                                    {
+                                        "name": "bonus",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 8
+                        },
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Assessor, Rulekeepor, Stonemason; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Assessor,Rulekeepor,Stonemason"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 11
+                        }
+                    ],
+                    "final": 11
+                },
+                {
+                    "person": "Murphy",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices ADoP, Tailor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "ADoP,Tailor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 5
+                        }
+                    ],
+                    "final": 5
+                },
+                {
+                    "person": "snail",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Collector, Dream Keeper, Notary, Promotor, Speaker; clamped to 3",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Collector,Dream Keeper,Notary,Promotor,Speaker"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "omd",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Distributor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Distributor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 3
+                        }
+                    ],
+                    "final": 3
+                },
+                {
+                    "person": "nix",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Herald, Prime Minister, Webmastor",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Herald,Prime Minister,Webmastor"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 6
+                        }
+                    ],
+                    "final": 6
+                },
+                {
+                    "person": "juan",
+                    "initial": 3,
+                    "initial_description": null,
+                    "modifications": [
+                        {
+                            "description": {
+                                "readable": "Complexity bonus for offices Registrar",
+                                "kind": "office_complexity",
+                                "parameters": [
+                                    {
+                                        "name": "offices",
+                                        "value": "Registrar"
+                                    },
+                                    {
+                                        "name": "total_complexity",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "name": "bonus_clamp",
+                                        "value": "3"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        },
+                        {
+                            "description": {
+                                "readable": "Clamped between 0 and 15.",
+                                "kind": "clamp",
+                                "parameters": [
+                                    {
+                                        "name": "min",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "name": "max",
+                                        "value": "15"
+                                    }
+                                ]
+                            },
+                            "current_strength": 4
+                        }
+                    ],
+                    "final": 4
+                }
+            ]
+        }
+    ]
+}
