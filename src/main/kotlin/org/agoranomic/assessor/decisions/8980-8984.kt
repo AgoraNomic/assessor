@@ -8,7 +8,10 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import java.math.BigDecimal
 
 @UseAssessment
 fun assessment8980to8984() = assessment {
@@ -91,7 +94,8 @@ an action is Invocable, if it hasn't been already."""
 
         proposal(8981) {
             title("Stone fixes")
-            ai("2.0")
+            proposalAI(ProposalAI(BigDecimal("2.0")))
+            decisionAI(DecisionAI(BigDecimal("3.0")))
             author(Janet)
             coauthors(nix)
             ordinary()
