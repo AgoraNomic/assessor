@@ -251,5 +251,13 @@ with:
             FOR on 8983
             FOR on 8984
         }
+
+        votes(Murphy) {
+            FOR on 8980
+            PRESENT on 8981
+            FOR on 8982
+            AGAINST on 8983
+            FOR on 8984
+        }
     }
 }
