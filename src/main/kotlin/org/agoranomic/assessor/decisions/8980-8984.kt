@@ -218,5 +218,9 @@ with:
             PRESENT on 8983
             FOR on 8984
         }
+
+        votes(Forest) {
+            AGAINST on 8983
+        }
     }
 }
