@@ -199,5 +199,9 @@ with:
             FOR on 8983
             FOR on 8984
         }
+
+        votes(Beokirby) {
+            FOR on all
+        }
     }
 }
