@@ -238,5 +238,13 @@ with:
             FOR on 8983
             FOR on 8984
         }
+
+        votes(juan) {
+            AGAINST on 8980
+            PRESENT on 8981
+            AGAINST on 8982
+            FOR on 8983
+            FOR on 8984
+        }
     }
 }
