@@ -226,7 +226,6 @@ with:
 
         votes(Forest) {
             AGAINST on 8981
-            PRESENT on 8983
         }
 
         votes(Yachay) {
