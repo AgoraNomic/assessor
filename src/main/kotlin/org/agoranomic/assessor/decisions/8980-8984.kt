@@ -200,7 +200,8 @@ with:
         }
 
         votes(Beokirby) {
-            FOR on all
+            AGAINST on 8981
+            FOR on others
         }
 
         votes(nix) {
