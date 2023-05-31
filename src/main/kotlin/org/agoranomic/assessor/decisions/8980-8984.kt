@@ -205,7 +205,7 @@ with:
 
         votes(nix) {
             AGAINST on 8980
-            FOR on 8981
+            AGAINST on 8981
             AGAINST on 8982
             FOR on 8983
             FOR on 8984
