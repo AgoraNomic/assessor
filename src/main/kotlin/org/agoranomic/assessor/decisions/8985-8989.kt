@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8985to8989() = assessment {
@@ -228,6 +227,14 @@ original rule and the rewrite.]"""
             AGAINST on 8986
             FOR on 8987
             FOR on 8988
+            AGAINST on 8989
+        }
+
+        votes(Beokirby) {
+            AGAINST on 8985
+            AGAINST on 8986
+            FOR on 8987
+            PRESENT on 8988
             AGAINST on 8989
         }
     }
