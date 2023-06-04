@@ -259,5 +259,9 @@ original rule and the rewrite.]"""
             AGAINST on 8986
             FOR on 8987
         }
+
+        votes(Forest) {
+            FOR on 8985
+        }
     }
 }
