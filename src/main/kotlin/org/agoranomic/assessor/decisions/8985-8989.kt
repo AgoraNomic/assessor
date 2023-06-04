@@ -222,5 +222,13 @@ original rule and the rewrite.]"""
             FOR on 8988
             FOR on 8989
         }
+
+        votes(snail) {
+            AGAINST on 8985
+            AGAINST on 8986
+            FOR on 8987
+            FOR on 8988
+            AGAINST on 8989
+        }
     }
 }
