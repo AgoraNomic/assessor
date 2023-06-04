@@ -211,4 +211,7 @@ original rule and the rewrite.]"""
             )
         }
     }
+
+    voting {
+    }
 }
