@@ -263,5 +263,13 @@ original rule and the rewrite.]"""
         votes(Forest) {
             FOR on 8985
         }
+
+        votes(nix) {
+            AGAINST on 8985
+            AGAINST on 8986
+            PRESENT on 8987
+            PRESENT on 8988
+            PRESENT on 8989
+        }
     }
 }
