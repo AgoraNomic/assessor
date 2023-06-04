@@ -1,0 +1,44 @@
+PROPOSAL 8980 (Riding with training wheels)
+AUTHOR: Yachay Wayllukuq
+CLASS: ORDINARY
+FOR (4): Beokirby, Murphy%, Yachay Wayllukuq^, inalienableWright
+AGAINST (5): G.&, Janet/, juan$, nix$, snail^
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 17/32 (AI=1.0)
+POPULARITY: -0.111
+OUTCOME: REJECTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-May/017103.html
+
+ID: 8980
+Title: Riding with training wheels
+Adoption index: 1.0
+Author: Yachay Wayllukuq
+Co-authors: 
+
+
+/* Comment: This is intended to allow players, especially less fluent ones,
+to perform (by proxy) actions that they intend to do when they might mess
+up the exact wording that they'd need to use to do so. Or, at least, it
+adds an explicit flag for review of what they're trying to do and a request
+for notification if they've messed up. It's also intended to be very easy
+to use, you'd just need to add "I invoke" to a message and you're good to
+go.*/
+
+Create the following rule at Power 1 with the title "Invocation":
+
+A player can Invoke by announcement.
+
+When a player Invokes in a message, an attempt to perform an action in that
+message is Invocable if all of the following is true:
+- Such an attempt has failed to perform an action or it would produce an
+effect other than what seems to be its intent.
+- Such an attempt is not older than 24 hours.
+- Nobody has Responded to that Invocation.
+Any player can Respond to the Invocation by acting on the Invoker's behalf
+to perform what reasonably would be the intended action of an Invocable
+attempt to perform an action.
+
+Players are ENCOURAGED to publicly make it known when an attempt to perform
+an action is Invocable, if it hasn't been already.
