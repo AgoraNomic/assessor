@@ -271,5 +271,13 @@ original rule and the rewrite.]"""
             PRESENT on 8988
             PRESENT on 8989
         }
+
+        votes(Murphy) {
+            PRESENT on 8985
+            PRESENT on 8986
+            FOR on 8987
+            FOR on 8988
+            PRESENT on 8989
+        }
     }
 }
