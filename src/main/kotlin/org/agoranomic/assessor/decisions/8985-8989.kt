@@ -253,5 +253,11 @@ original rule and the rewrite.]"""
             PRESENT on 8988
             // TODO: resolve conditional vote on 8989: AGAINST if ais523 has 1 or more rice, else FOR
         }
+
+        votes(G) {
+            AGAINST on 8985
+            AGAINST on 8986
+            FOR on 8987
+        }
     }
 }
