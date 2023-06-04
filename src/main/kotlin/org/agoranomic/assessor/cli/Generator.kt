@@ -5,6 +5,7 @@ import java.nio.file.Path
 
 private fun playerName(player: String): String {
     return when (player) {
+        "ais523" -> "ais523"
         "Alexis" -> "Alexis"
         "Aris" -> "Aris"
         "ATMunn" -> "ATMunn"
@@ -30,6 +31,7 @@ private fun playerName(player: String): String {
         "secretsnail", "snail", "Secretsnail9" -> "snail"
         "Walker" -> "Walker"
         "Jacob Arduino" -> "JacobArduino"
+        "Yachay", "Yachay Wayllukuq" -> "Yachay"
         else -> "unknown_player(\"$player\")"
     }
 }
