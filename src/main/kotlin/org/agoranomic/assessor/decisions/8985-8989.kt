@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -251,7 +248,7 @@ original rule and the rewrite.]"""
             AGAINST on 8986
             FOR on 8987
             PRESENT on 8988
-            // TODO: resolve conditional vote on 8989: AGAINST if ais523 has 1 or more rice, else FOR
+            resolvedConditional(FOR, "ais523 does not have 1 rice") on 8989
         }
 
         votes(G) {
