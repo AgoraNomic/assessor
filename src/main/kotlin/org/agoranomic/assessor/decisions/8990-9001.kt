@@ -492,7 +492,7 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
             FOR on 8998
             AGAINST on 8999
             AGAINST on 9000
-            // TODO: resolve conditional vote on 9001: FOR if 9000 adopted, else AGAINST
+            // TODO: resolve conditional vote on 9001: FOR if 9000 could be or was resolved as ADOPTED, else AGAINST
         }
     }
 }
