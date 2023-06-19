@@ -461,7 +461,7 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
         }
 
         votes(Forest) {
-            // 8992 mistyped
+            FOR on 8992
             FOR on 8993
             FOR on 8994
             FOR on 9000
