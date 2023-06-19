@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -470,7 +467,7 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
 
         votes(Janet) {
             FOR on 8990
-            FOR on 8991
+            endorse(ais523) on 8991
             AGAINST on 8992
             FOR on 8993
             AGAINST on 8994
