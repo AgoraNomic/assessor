@@ -444,5 +444,20 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
             FOR on 9000
             FOR on 9001
         }
+
+        votes(G) {
+            AGAINST on 8990
+            AGAINST on 8991
+            AGAINST on 8992
+            FOR on 8993
+            AGAINST on 8994
+            AGAINST on 8995
+            AGAINST on 8996
+            AGAINST on 8997
+            AGAINST on 8998
+            FOR on 8999
+            AGAINST on 9000
+            AGAINST on 9001
+        }
     }
 }
