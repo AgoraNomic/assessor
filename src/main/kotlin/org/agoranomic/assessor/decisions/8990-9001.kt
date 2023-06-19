@@ -509,5 +509,20 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
             PRESENT on 9000
             PRESENT on 9001
         }
+
+        votes(Murphy) {
+            endorse(Janet) on 8990 comment "${Janet.name} is the Stonemason"
+            endorse(Janet) on 8991 comment "${Janet.name} is the Stonemason"
+            FOR on 8992
+            endorse(Yachay) on 8993 comment "${Yachay.name} is the Ricemastor"
+            FOR on 8994
+            FOR on 8995
+            FOR on 8996
+            FOR on 8997
+            FOR on 8998
+            AGAINST on 8999
+            FOR on 9000
+            FOR on 9001
+        }
     }
 }
