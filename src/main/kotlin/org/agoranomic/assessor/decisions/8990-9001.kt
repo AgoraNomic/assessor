@@ -494,5 +494,20 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
             AGAINST on 9000
             // TODO: resolve conditional vote on 9001: FOR if 9000 could be or was resolved as ADOPTED, else AGAINST
         }
+
+        votes(juan) {
+            PRESENT on 8990
+            PRESENT on 8991
+            FOR on 8992
+            AGAINST on 8993
+            FOR on 8994
+            PRESENT on 8995
+            PRESENT on 8996
+            FOR on 8997
+            AGAINST on 8998
+            AGAINST on 8999
+            PRESENT on 9000
+            PRESENT on 9001
+        }
     }
 }
