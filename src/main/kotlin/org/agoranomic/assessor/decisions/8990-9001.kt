@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment8990to9001() = assessment {
@@ -429,5 +430,19 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
     }
 
     voting {
+        votes(snail) {
+            FOR on 8990
+            FOR on 8991
+            FOR on 8992
+            AGAINST on 8993
+            FOR on 8994
+            PRESENT on 8995
+            PRESENT on 8996
+            FOR on 8997
+            FOR on 8998
+            AGAINST on 8999
+            FOR on 9000
+            FOR on 9001
+        }
     }
 }
