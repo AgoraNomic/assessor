@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.powerStone
 
 @UseAssessment
 fun assessment8990to9001() = assessment {
@@ -23,6 +24,8 @@ fun assessment8990to9001() = assessment {
             powerDream(Aspen, 2)
             powerDream(Forest, 2)
             powerDream(Janet, 2)
+
+            powerStone(ais523, 3)
 
             complexityBonuses {
                 maxBonus(3)
@@ -423,5 +426,8 @@ Outshined the Sun. This bonus SHOULD be compensated if repealed.
 }"""
             )
         }
+    }
+
+    voting {
     }
 }
