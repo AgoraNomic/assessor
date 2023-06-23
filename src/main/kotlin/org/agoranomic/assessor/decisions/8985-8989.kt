@@ -250,7 +250,7 @@ original rule and the rewrite.]"""
             AGAINST on 8986
             FOR on 8987
             PRESENT on 8988
-            resolvedConditional(FOR, "ais523 does not have 1 rice") on 8989
+            resolvedConditional(AGAINST, "ais523 has at least 1 rice") on 8989
         }
 
         votes(G) {
