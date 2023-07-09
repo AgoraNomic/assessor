@@ -1,0 +1,66 @@
+PROPOSAL 8988 (Rice rewrite)
+AUTHOR: Janet
+CLASS: ORDINARY
+FOR (4): Janet*, Murphy%, juan$, snail^
+AGAINST (0): 
+PRESENT (3): Beokirby, ais523^, nix$
+BALLOTS: 7
+AI (F/A): 23/0 (AI=1.0)
+POPULARITY: 0.571
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/017131.html
+
+ID: 8988
+Title: Rice rewrite
+Adoption index: 1.0
+Author: Janet
+Co-authors: snail
+
+
+Amend the rule entitled "The Rice Game" to read, in whole:
+{
+The Ricemastor is an office.
+
+Rice is a fixed asset tracked by the Ricemastor, with ownership wholly
+restricted to players. If a rice would otherwise be in abeyance or is
+owned by the Lost and Found Department, it is destroyed.
+
+An active player CAN create a rice plan by announcement once per week,
+specifying two sets of players (the rice up set and the rice down set).
+When a rice plan is harvested, each active player in the rice up set
+gains one rice, then one rice is revoked from each player in the rice
+down set (if e has any). The Ricemastor's weekly report includes a list
+of rice plans. The creator of a rice plan CAN by announcement destroy
+it, thereby causing it to cease to be a rice plan.
+
+An active player CAN by announcement sign a specified rice plan. An
+active player's signature is on a rice plan if e has signed it or if a
+contract e is party to clearly and unambiguously states that eir
+signature is on it. The Ricemastor's weekly report includes, for each
+rice plan, a list of players with signatures on it.
+
+A harvest occurs at the beginning of each week. When a harvest occurs,
+the following happen in order:
+* The rice plan with the most signatures (breaking ties in favor of the
+earliest created), if any, is harvested.
+* All rice plans are destroyed.
+
+Immediately after a harvest, if a single active player has at least 2
+rice and more rice than any other player, e wins the game, then all rice
+and rice plans are destroyed. If the game has been won in this manner
+three times, this rule immediately repeals itself.
+}
+
+[
+Changes:
+- Generally cleaned up wording
+- Handle rice at Lost and Found
+- Harvesting a plan now grants rice before revoking (handling the case
+where a person is in both the up and down sets)
+- Use "CAN" for enabling
+- Use a by announcement action or contract for signatures, rather than
+"consent"
+- Added a clarity requirement for contract-based signatures
+- Removed Fancy Caps
+]
