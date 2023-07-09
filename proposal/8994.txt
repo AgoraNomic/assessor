@@ -1,0 +1,54 @@
+PROPOSAL 8994 (Not Game Theory)
+AUTHOR: juan
+CLASS: ORDINARY
+FOR (4): 4st*, Murphy%, juan$, snail^
+AGAINST (3): G.&, Janet*, ais523^
+PRESENT (0): 
+BALLOTS: 7
+AI (F/A): 23/21 (AI=1.0)
+POPULARITY: 0.143
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/017166.html
+
+ID: 8994
+Title: Not Game Theory
+Adoption index: 1.0
+Author: juan
+Co-authors: 
+
+
+Create a Power 1.0 rule called “The Button” with text:
+{
+The Buttonmastor is an office.
+
+The Button is a singleton switch tracked by the Buttonmastor with instants
+in time as possible values, defaulting to the instant this rule was created.
+
+Buttonclass is a player switch tracked by the Buttonmastor with possible
+values Red, Orange, Yellow, Green, Blue, Indigo, Violet or None, defaulting
+to None.
+
+A player CAN, once a week, by announcement, press the button.
+
+When a player presses the button, two things happen:
+
+1. The Button is flipped to the instant e did it.
+
+2. That player's Buttonclass is flipped to a value depending on the amount
+of hours passed between the previous value of The Button and the current
+one, as specified below:
+
+* Less than 24: Red;
+* 24 or more, but less than 48: Orange;
+* 48 or more, but less than 72: Yellow;
+* 72 or more, but less than 96: Green;
+* 96 or more, but less than 120: Blue;
+* 120 or more, but less than 144: Indigo;
+* 144 or more: Violet.
+
+If value of The Button is more than 168 hours in the past, this rule
+repeals itself.
+
+Players are ENCOURAGED to brag on their Buttonclass.
+}
