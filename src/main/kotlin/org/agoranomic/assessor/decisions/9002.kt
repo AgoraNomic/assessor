@@ -72,5 +72,9 @@ switch" with "Rockiness is an active player switch"."""
         votes(Murphy) {
             FOR on 9002
         }
+
+        votes(Janet) {
+            FOR on 9002
+        }
     }
 }
