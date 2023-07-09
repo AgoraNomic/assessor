@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9002() = assessment {
@@ -80,6 +79,10 @@ switch" with "Rockiness is an active player switch"."""
 
         votes(juan) {
             PRESENT on 9002
+        }
+
+        votes(Forest) {
+            AGAINST on 9002
         }
     }
 }
