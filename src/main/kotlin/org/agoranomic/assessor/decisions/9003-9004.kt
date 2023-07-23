@@ -176,5 +176,10 @@ to the end of Rule UNDEFINED."""
             endorse(Forest) on 9003
             PRESENT on 9004
         }
+
+        votes(G) {
+            FOR on 9003
+            AGAINST on 9004
+        }
     }
 }
