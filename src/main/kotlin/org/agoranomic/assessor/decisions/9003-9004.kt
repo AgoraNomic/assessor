@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9003to9004() = assessment {
@@ -156,5 +157,9 @@ to the end of Rule UNDEFINED."""
     }
 
     voting {
+        votes(snail) {
+            PRESENT on 9003
+            PRESENT on 9004
+        }
     }
 }
