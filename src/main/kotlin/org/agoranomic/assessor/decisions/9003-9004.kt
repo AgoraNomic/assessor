@@ -181,5 +181,10 @@ to the end of Rule UNDEFINED."""
             FOR on 9003
             AGAINST on 9004
         }
+
+        votes(Murphy) {
+            FOR on 9003
+            endorse(Janet) on 9004 comment "${Janet.name} is the Rulekeepor"
+        }
     }
 }
