@@ -154,4 +154,7 @@ to the end of Rule UNDEFINED."""
             )
         }
     }
+
+    voting {
+    }
 }
