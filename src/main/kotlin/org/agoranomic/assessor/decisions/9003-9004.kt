@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -169,6 +170,11 @@ to the end of Rule UNDEFINED."""
         votes(Janet) {
             FOR on 9003
             AGAINST on 9004
+        }
+
+        votes(juan) {
+            endorse(Forest) on 9003
+            PRESENT on 9004
         }
     }
 }
