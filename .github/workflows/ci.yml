@@ -6,6 +6,8 @@ on:
   pull_request:
     branches-ignore: gh-pages
 
+concurrency: ci-${{ github.ref }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
