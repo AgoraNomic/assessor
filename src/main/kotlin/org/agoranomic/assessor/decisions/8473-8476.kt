@@ -199,7 +199,7 @@ Enact the following rule, Charities:
             FOR on all
         }
 
-        votes(twg) {
+        votes(Kate) {
             FOR on all
         }
 

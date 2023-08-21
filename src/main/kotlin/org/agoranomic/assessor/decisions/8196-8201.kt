@@ -25,7 +25,7 @@ fun assessment8196to8201() = assessment {
         pmBonus(G)
 
         blotPenalty(Corona, 2)
-        blotPenalty(twg, 2)
+        blotPenalty(Kate, 2)
         blotPenalty(PSS, 1)
     }
 
@@ -180,7 +180,7 @@ the following list, to read in full:
             PRESENT on 8201
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Janet) on 8196
             endorse(Janet) on 8198
             endorse(Janet) on 8199

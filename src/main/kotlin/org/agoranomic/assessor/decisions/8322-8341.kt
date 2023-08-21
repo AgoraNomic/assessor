@@ -28,14 +28,14 @@ fun assessment8322to8341() = assessment {
         Distributor to omd,
         Herald to Alexis,
         Notary to null,
-        PrimeMinister to twg,
+        PrimeMinister to Kate,
         Promotor to Aspen,
-        Referee to twg,
+        Referee to Kate,
         Registrar to Falsifian,
         Rulekeepor to Janet,
         Speaker to Janet,
-        Treasuror to twg,
-        Tailor to twg
+        Treasuror to Kate,
+        Tailor to Kate
     )
 
     strengths {
@@ -52,7 +52,7 @@ fun assessment8322to8341() = assessment {
             title("Unrepetition v1.1")
             ai("3.0")
             author(Falsifian)
-            coauthors(Alexis, twg)
+            coauthors(Alexis, Kate)
             democratic()
 
             text(
@@ -532,7 +532,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             AGAINST on 8341
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on 8322
             PRESENT on 8323 comment legacyConditionalComment("Jason did not vote AGAINST")
             endorse(Falsifian) on 8324
@@ -556,7 +556,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
         }
 
         votes(Bernie) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Warrigal) {
@@ -621,7 +621,7 @@ Amend Rule 2124 (Agoran Satisfaction) by:
             FOR on 8330
             FOR on 8331
             PRESENT on 8332 comment NO_VETO
-            endorse(twg) on 8333 comment NO_VETO
+            endorse(Kate) on 8333 comment NO_VETO
             AGAINST on 8334
             PRESENT on 8335
             endorse(Janet) on 8336

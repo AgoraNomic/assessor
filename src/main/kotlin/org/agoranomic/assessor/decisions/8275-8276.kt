@@ -79,7 +79,7 @@ Decision for an election after a week passes.]"""
             FOR on 8276
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Janet) on 8275
             endorse(Janet) on 8276
         }

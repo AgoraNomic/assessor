@@ -29,7 +29,7 @@ fun assessment8250() = assessment {
             title("Finger bending")
             ai("1.7")
             author(Murphy)
-            coauthors(twg)
+            coauthors(Kate)
 
             text(
                 """
@@ -64,7 +64,7 @@ offices may change hands during the process.]"""
             FOR on 8250
         }
 
-        votes(twg) {
+        votes(Kate) {
             FOR on 8250
         }
 

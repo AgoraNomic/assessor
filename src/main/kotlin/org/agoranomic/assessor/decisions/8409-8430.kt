@@ -916,7 +916,7 @@ for eir proposal, "Winning by apathy"."""
             FOR on 8430
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(G) on all
         }
     }

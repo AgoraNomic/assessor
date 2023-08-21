@@ -32,9 +32,9 @@ fun assesssment8366to8367() = assessment {
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
-        Speaker to twg,
-        Tailor to twg,
-        Treasuror to twg
+        Speaker to Kate,
+        Tailor to Kate,
+        Treasuror to Kate
     )
 
     strengths {
@@ -44,7 +44,7 @@ fun assesssment8366to8367() = assessment {
 
         addToHolder(offices, Speaker, 1)
         blotPenalty(Murphy, 1) // 4 Blots
-        blotPenalty(twg, 2) // 6 Blots
+        blotPenalty(Kate, 2) // 6 Blots
 
         ministries_2020_04_02(offices, allProposals)
     }
@@ -54,7 +54,7 @@ fun assesssment8366to8367() = assessment {
             title("Asset Determinacy")
             ai("3.0")
             author(Aspen)
-            coauthors(twg)
+            coauthors(Kate)
             democratic()
 
             text(

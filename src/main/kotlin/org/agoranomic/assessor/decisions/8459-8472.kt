@@ -662,7 +662,7 @@ with:
             FOR on 8472
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(G) on all
         }
 

@@ -31,12 +31,12 @@ fun assessment8342to8348() = assessment {
         Notary to Gaelan,
         PrimeMinister to Aspen,
         Promotor to Aspen,
-        Referee to twg,
+        Referee to Kate,
         Registrar to Falsifian,
         Rulekeepor to Janet,
-        Speaker to twg,
-        Tailor to twg,
-        Treasuror to twg
+        Speaker to Kate,
+        Tailor to Kate,
+        Treasuror to Kate
     )
 
     strengths {
@@ -75,7 +75,7 @@ Create a new Power-2 rule titled “Administrative Opinions”: {
         proposal(8343) {
             title("Judicial Jocularity Act")
             ai("1.7")
-            author(twg)
+            author(Kate)
             chamber(Justice)
 
             text(
@@ -245,7 +245,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
             endorse(Janet) on all
         }
 
-        votes(twg) {
+        votes(Kate) {
             PRESENT on 8342 comment legacyConditionalComment("Gaelan did not vote AGAINST")
             FOR on 8343
             PRESENT on 8344 comment legacyConditionalComment("Alexis did not vote AGAINST")
@@ -256,7 +256,7 @@ thing, that defeats the purpose of having a summary in the first place.]"""
         }
 
         votes(Bernie) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Falsifian) {

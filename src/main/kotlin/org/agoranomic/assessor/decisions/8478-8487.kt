@@ -466,7 +466,7 @@ Ribbon Ownership to True."""
             FOR on 8483
         }
 
-        votes(twg) {
+        votes(Kate) {
             FOR on 8483
         }
 

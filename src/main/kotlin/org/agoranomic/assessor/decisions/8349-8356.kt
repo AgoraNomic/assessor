@@ -29,12 +29,12 @@ fun assessment8349to8356() = assessment {
         Notary to Gaelan,
         PrimeMinister to Aspen,
         Promotor to Aspen,
-        Referee to twg,
+        Referee to Kate,
         Registrar to Falsifian,
         Rulekeepor to Janet,
-        Speaker to twg,
-        Tailor to twg,
-        Treasuror to twg
+        Speaker to Kate,
+        Tailor to Kate,
+        Treasuror to Kate
     )
 
     strengths {
@@ -50,7 +50,7 @@ fun assessment8349to8356() = assessment {
         proposal(8349) {
             title("Temporary CFJ Setup")
             ai("1.0")
-            author(twg)
+            author(Kate)
             chamber(Justice)
 
             text(

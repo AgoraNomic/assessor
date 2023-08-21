@@ -504,7 +504,7 @@ Create a power 2 rule called "Excess Proposals" with the text'
             AGAINST on 8457
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(G) on all
         }
 

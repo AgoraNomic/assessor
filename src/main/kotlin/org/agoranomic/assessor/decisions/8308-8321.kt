@@ -34,12 +34,12 @@ fun assessment8308to8321() = assessment {
         Notary to Gaelan,
         PrimeMinister to Alexis,
         Promotor to Aspen,
-        Referee to twg,
+        Referee to Kate,
         Registrar to Falsifian,
         Rulekeepor to Janet,
         Speaker to Falsifian,
-        Treasuror to twg,
-        Tailor to twg
+        Treasuror to Kate,
+        Tailor to Kate
     )
 
     strengths {
@@ -147,7 +147,7 @@ only kept it for non-interim holders (also per Alexis's suggestion).
         proposal(8311) {
             title("Rewards Patch & Equitable Remedy")
             ai("1.0")
-            author(twg)
+            author(Kate)
             chamber(Economy)
 
             text(
@@ -601,7 +601,7 @@ least one proposal).]"""
             FOR on 8308
             AGAINST on 8309
             AGAINST on 8310
-            endorse(twg) on 8311 comment NO_VETO
+            endorse(Kate) on 8311 comment NO_VETO
             AGAINST on 8312
             endorse(Alexis) on 8313
             FOR on 8314 comment NO_VETO
@@ -614,7 +614,7 @@ least one proposal).]"""
             endorse(Aspen) on 8321
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on 8308
             AGAINST on 8309
             PRESENT on 8310
@@ -632,7 +632,7 @@ least one proposal).]"""
         }
 
         votes(Bernie) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Janet) {

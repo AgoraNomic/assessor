@@ -50,7 +50,7 @@ with the text
             title("No Harm No Foul")
             ai("1.0")
             author(JacobArduino)
-            coauthors(twg)
+            coauthors(Kate)
 
             text(
                 """
@@ -91,12 +91,12 @@ allowed.]"""
             endorse(Murphy) on all
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Murphy) on all
         }
 
         votes(JacobArduino) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Falsifian) {

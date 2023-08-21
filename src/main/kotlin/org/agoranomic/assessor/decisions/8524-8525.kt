@@ -138,7 +138,7 @@ Expunge 72 of R. Lee's blots.""")
             FOR on 8525 comment legacyConditionalComment("R. Lee has at least 72 blots")
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on all
         }
 

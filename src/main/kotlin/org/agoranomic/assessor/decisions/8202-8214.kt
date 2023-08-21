@@ -25,7 +25,7 @@ fun assessment8202to8214() = assessment {
         pmBonus(G)
 
         blotPenalty(Corona, 2)
-        blotPenalty(twg, 1)
+        blotPenalty(Kate, 1)
     }
 
     proposals(v0) {
@@ -423,7 +423,7 @@ following:
             FOR on 8214
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Janet) on 8202
             endorse(Janet) on 8203
             endorse(RLee) on 8204
@@ -440,7 +440,7 @@ following:
         }
 
         votes(JacobArduino) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(G) {

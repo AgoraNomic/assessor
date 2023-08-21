@@ -111,7 +111,7 @@ Amend Rule 2624 (Card Administration) by replacing the final paragraph
             FOR on 8477
         }
 
-        votes(twg) {
+        votes(Kate) {
             FOR on 8477
         }
 

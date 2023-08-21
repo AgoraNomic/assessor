@@ -24,18 +24,18 @@ fun assessment8357to8365() = assessment {
         ADoP to Murphy,
         Arbitor to G,
         Assessor to Janet,
-        Comptrollor to twg,
+        Comptrollor to Kate,
         Distributor to omd,
         Herald to Alexis,
         Notary to Gaelan,
         PrimeMinister to Aspen,
         Promotor to Aspen,
-        Referee to twg,
+        Referee to Kate,
         Registrar to Falsifian,
         Rulekeepor to Janet,
-        Speaker to twg,
-        Tailor to twg,
-        Treasuror to twg
+        Speaker to Kate,
+        Tailor to Kate,
+        Treasuror to Kate
     )
 
     strengths {

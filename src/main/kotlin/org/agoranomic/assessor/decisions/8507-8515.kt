@@ -566,7 +566,7 @@ see.)""")
             endorse(nix) on 8515
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on all
         }
     }

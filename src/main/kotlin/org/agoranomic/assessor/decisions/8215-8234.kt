@@ -27,7 +27,7 @@ fun assessment8215to8234() = assessment {
         pmBonus(G)
 
         blotPenalty(Corona, 2)
-        blotPenalty(twg, 1)
+        blotPenalty(Kate, 1)
     }
 
     voting {

@@ -34,9 +34,9 @@ fun assessment8368to8372() = assessment {
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
-        Speaker to twg,
+        Speaker to Kate,
         Tailor to PSS,
-        Treasuror to twg
+        Treasuror to Kate
     )
 
     strengths {
@@ -45,7 +45,7 @@ fun assessment8368to8372() = assessment {
         max(15)
 
         addToHolder(offices, Speaker, 1)
-        blotPenalty(twg, 2)
+        blotPenalty(Kate, 2)
         blotPenalty(Murphy, 1)
 
         ministries_2020_04_02(offices, allProposals)

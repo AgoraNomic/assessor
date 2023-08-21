@@ -251,7 +251,7 @@ Repeal Rule 2597, "Line-item Veto"."""
             AGAINST on 8286
         }
 
-        votes(twg) {
+        votes(Kate) {
             PRESENT on 8280
             AGAINST on 8281
             PRESENT on 8282

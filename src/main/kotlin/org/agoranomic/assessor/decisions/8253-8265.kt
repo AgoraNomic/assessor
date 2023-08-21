@@ -218,7 +218,7 @@ and Cool and help spread the workload and reduce consolidation."""
         proposal(8265) {
             title("")
             ai("3.0")
-            author(twg)
+            author(Kate)
             coauthors(Murphy, Aspen, Janet)
 
             text(
@@ -365,7 +365,7 @@ Enact a new Rule of Power 3.0 with the text:
             endorse(Janet) on all
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Murphy) on 8253
             endorse(Janet) on 8254
             endorse(Janet) on 8255

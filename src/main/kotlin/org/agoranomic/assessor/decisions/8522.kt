@@ -143,7 +143,7 @@ master performed on its behalf.
             FOR on 8522
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on 8522
         }
 

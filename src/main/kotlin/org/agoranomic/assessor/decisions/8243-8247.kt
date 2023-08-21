@@ -116,7 +116,7 @@ required by the last paragraph of Rule 2139.]"""
             title("Quorum Defailure")
             ai("1.0")
             author(JacobArduino)
-            coauthors(twg)
+            coauthors(Kate)
 
             text(
                 """
@@ -151,7 +151,7 @@ Proposal Pool."""
             FOR on 8247
         }
 
-        votes(twg) {
+        votes(Kate) {
             AGAINST on 8243
             PRESENT on 8244
             endorse(Aspen) on 8245
@@ -160,7 +160,7 @@ Proposal Pool."""
         }
 
         votes(JacobArduino) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Trigon) {

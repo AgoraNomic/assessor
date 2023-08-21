@@ -349,7 +349,7 @@ Enact a new Power=1 rule titled "Transmutation" with the text:
             AGAINST on 8441
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(G) on all
         }
 

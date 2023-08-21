@@ -124,7 +124,7 @@ FOR.""")
             AGAINST on 8506
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on all
         }
 

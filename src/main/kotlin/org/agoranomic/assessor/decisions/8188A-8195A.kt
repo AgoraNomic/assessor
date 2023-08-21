@@ -23,7 +23,7 @@ fun assessment8188Ato8195A() = assessment {
         pmBonus(G)
 
         blotPenalty(Corona, 2)
-        blotPenalty(twg, 1)
+        blotPenalty(Kate, 1)
     }
 
     proposals {
@@ -102,12 +102,12 @@ fun assessment8188Ato8195A() = assessment {
             FOR on 8195
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(author) on all
         }
 
         votes(JacobArduino) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(G) {

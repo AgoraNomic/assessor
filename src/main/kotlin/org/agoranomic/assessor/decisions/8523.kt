@@ -100,7 +100,7 @@ with:
             FOR on 8523
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Falsifian) on 8523
         }
 

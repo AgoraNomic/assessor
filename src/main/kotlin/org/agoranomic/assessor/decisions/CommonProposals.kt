@@ -553,7 +553,7 @@ Move spaceships to Sectors as follows, based on their owners:
         title("Increased transparency v1.1")
         ai("3.0")
         author(Murphy)
-        coauthors(Janet, twg)
+        coauthors(Janet, Kate)
 
         text(
             """
@@ -830,7 +830,7 @@ Amend the only list in Rule 2124 ("Agoran Satisfaction") to read:
         title("Repairing Defeated Spaceships v3")
         ai("3.0")
         author(Janet)
-        coauthors(twg, Janet)
+        coauthors(Kate, Janet)
 
         text(
             """
@@ -859,7 +859,7 @@ increase"]"""
         title("Cancelling Proposals (arr. for violin)")
         ai("3.0")
         author(JacobArduino)
-        coauthors(twg, G)
+        coauthors(Kate, G)
 
         text(
             """

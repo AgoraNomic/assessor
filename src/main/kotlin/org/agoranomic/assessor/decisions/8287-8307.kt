@@ -53,7 +53,7 @@ fun assessment8287to8307() = assessment {
         proposal(8287) {
             title("Blot Stabilisation")
             ai("2.0")
-            author(twg)
+            author(Kate)
 
             text(
                 """
@@ -127,7 +127,7 @@ with:
             title("Interesting Chambers v3.1")
             ai("3.0")
             author(Bernie)
-            coauthors(Trigon, Aspen, Gaelan, G, Janet, twg)
+            coauthors(Trigon, Aspen, Gaelan, G, Janet, Kate)
 
             text(
                 """
@@ -241,7 +241,7 @@ Set the Treasuror's Interest to [Economy, Economy].
             title("Self-Ratification Simplification Act")
             ai("3.0")
             author(Bernie)
-            coauthors(twg)
+            coauthors(Kate)
 
             text(
                 """
@@ -275,7 +275,7 @@ following:
             title("CFJ Bait")
             ai("1.0")
             author(Bernie)
-            coauthors(twg)
+            coauthors(Kate)
 
             text(
                 """
@@ -302,7 +302,7 @@ I vote PRESENT on each Agoran decision whose voting is ongoing."""
             title("Authorial Intent")
             ai("3.0")
             author(Bernie)
-            coauthors(twg)
+            coauthors(Kate)
 
             text(
                 """
@@ -318,7 +318,7 @@ intent," after "past judgements,"."""
             title("Rewards Reform Act")
             ai("3.0")
             author(Bernie)
-            coauthors(twg, Alexis)
+            coauthors(Kate, Alexis)
 
             text(
                 """
@@ -455,7 +455,7 @@ and renumbering the list accordingly."""
             title("Administrative Adjudication v3")
             ai("2.0")
             author(Aspen)
-            coauthors(Gaelan, twg, G, Janet, Alexis)
+            coauthors(Gaelan, Kate, G, Janet, Alexis)
 
             text(
                 """
@@ -683,7 +683,7 @@ Make Gaelan the Notary."""
             title("Rewards Reform Act - v1.1 Patch")
             ai("2.0")
             author(Bernie)
-            coauthors(twg, Janet)
+            coauthors(Kate, Janet)
 
             text(
                 """
@@ -751,7 +751,7 @@ Flip the Citizenship of the following player to Unregistered:
     voting {
         votes(G) {
             AGAINST on 8287
-            endorse(twg) on 8288 comment "twg is Treasuror"
+            endorse(Kate) on 8288 comment "twg is Treasuror"
             AGAINST on 8289
             FOR on 8290
             AGAINST on 8293
@@ -772,7 +772,7 @@ Flip the Citizenship of the following player to Unregistered:
             match(G) on all
         }
 
-        votes(twg) {
+        votes(Kate) {
             FOR on 8287
             endorse(omd) on 8288
             AGAINST on 8289
@@ -797,7 +797,7 @@ Flip the Citizenship of the following player to Unregistered:
         }
 
         votes(Bernie) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Aspen) {
@@ -853,11 +853,11 @@ Flip the Citizenship of the following player to Unregistered:
             endorse(omd) on 8288 comment NO_VETO
             PRESENT on 8289 comment NO_VETO
             endorse(G) on 8290
-            endorse(twg) on 8291
-            endorse(twg) on 8292
+            endorse(Kate) on 8291
+            endorse(Kate) on 8292
             PRESENT on 8293
             AGAINST on 8294
-            endorse(twg) on 8295 comment legacyConditionalComment("None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST")
+            endorse(Kate) on 8295 comment legacyConditionalComment("None of the Assessor, Arbitor, ADoP, and Herald voted AGAINST")
             AGAINST on 8296
             endorse(Aspen) on 8297
             endorse(Aspen) on 8298
@@ -866,7 +866,7 @@ Flip the Citizenship of the following player to Unregistered:
             endorse(Janet) on 8301 comment "Jason is the Rulekeepor"
             endorse(Aspen) on 8302
             endorse(Aspen) on 8303
-            endorse(twg) on 8304
+            endorse(Kate) on 8304
             endorse(Alexis) on 8305
             AGAINST on 8306
             AGAINST on 8307
@@ -902,7 +902,7 @@ Flip the Citizenship of the following player to Unregistered:
 
         votes(Gaelan) {
             PRESENT on 8287
-            endorse(twg) on 8288 comment "twg is the Treasuror"
+            endorse(Kate) on 8288 comment "twg is the Treasuror"
             AGAINST on 8289
             FOR on 8290
             FOR on 8291

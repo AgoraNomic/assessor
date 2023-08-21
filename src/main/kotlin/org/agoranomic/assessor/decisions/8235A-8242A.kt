@@ -68,12 +68,12 @@ fun assessment8235Ato8242A() = assessment {
             endorse(Murphy) on all
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(Murphy) on all
         }
 
         votes(JacobArduino) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Falsifian) {

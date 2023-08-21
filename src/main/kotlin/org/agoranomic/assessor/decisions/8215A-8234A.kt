@@ -85,7 +85,7 @@ fun assessment8215Ato8234A() = assessment {
             FOR on 8234
         }
 
-        votes(twg) {
+        votes(Kate) {
             endorse(G) on 8215
             AGAINST on 8216
             endorse(G) on 8217
@@ -105,7 +105,7 @@ fun assessment8215Ato8234A() = assessment {
         }
 
         votes(JacobArduino) {
-            endorse(twg) on all
+            endorse(Kate) on all
         }
 
         votes(Trigon) {

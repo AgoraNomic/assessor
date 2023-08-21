@@ -46,7 +46,7 @@ fun assessment8373to8376() = assessment {
         max(15)
 
         addToHolder(offices, Speaker, 1)
-        blotPenalty(twg, 1)
+        blotPenalty(Kate, 1)
 
         ministries_2020_04_02(offices, allProposals)
     }
