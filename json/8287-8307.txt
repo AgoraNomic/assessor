@@ -14,7 +14,7 @@
             "proposal_ai": "2.0",
             "decision_ai": "2.0",
             "title": "Blot Stabilisation",
-            "author": "twg",
+            "author": "Kate",
             "coauthors": [
             ],
             "text": "/* Now that people can expunge each others' blots when they feel\n * an appropriate sentence has been served, blots don't tend to\n * stick around for more than a month or two, so there's not much\n * value in the quarterly blot decay.\n */\n\nAmend Rule 2555, \"Blots\", by deleting the following paragraph:\n\n  At the beginning of each quarter, half (rounded down) of each\n  fugitive's blots are destroyed."
@@ -65,7 +65,7 @@
                 "Gaelan",
                 "G.",
                 "Janet",
-                "twg"
+                "Kate"
             ],
             "text": "[Enact a new Rule of Power 2.0, entitled \"Ministries\", with the following\ntext:\n\n  A Ministry is an entity defined as such by this rule. Each\n  Ministry has a goal. The Ministries of Agora, and their goals, are\n  as follows:\n\n   A. Ministry of Justice: serve justice to rulebreakers\n   B. Ministry of Efficiency: see official duties performed swiftly\n   C. Ministry of Legislation: see votes cast on proposals\n   D. Ministry of Participation: reward players for achievements\n   E. Ministry of Economy: encourage economic activity and contracts\n\n  Interest is an office switch, tracked by the ADoP, whose possible\n  values are lists of ministries, defaulting to the empty list. The\n  ADoP CAN flip an office's interest without objection.\n\n  For each item of each office's interest, that office's holder's\n  voting strength is increased by 2 on proposals whose chamber is\n  set to that ministry.\n\n\nEnact a new Rule of Power 2.0, entitled \"Proposal Classes\", with the\nfollowing text:\n\n  Proposals created since the enactment of this rule have an\n  untracked Class switch with possible values ordinary (the default)\n  and democratic.\n\n  When a proposal with an adoption index greater than 2.0 is\n  created, its class becomes democratic.\n\n  Any player CAN, with 2 Agoran consent, flip an ordinary proposal's\n  class to democratic, provided that it is in the Proposal Pool or\n  that there is an Agoran decision on its adoption whose voting\n  period has not yet ended.\n\n\nEnact a new Rule of Power 2.0, entitled \"Proposal Chambers\", with the\nfollowing text:\n\n  Chamber is an untracked ordinary proposal switch whose possible\n  values include unset (the default) and each of the ministries of\n  Agora.\n\n  A proposal's chamber SHOULD only be decided by which ministry's\n  goals it effects to the greatest degree.\n\n  Any player CAN, with 2 Agoran consent, flip the chamber of an\n  ordinary proposal to any ministry, provided that it is in the\n  Proposal Pool or that there is an Agoran decision on its adoption\n  whose voting period has not yet ended.\n\n\nAmend Rule 1607, \"Distribution\", by changing \"the text, author, and\ncoauthors of the proposal\" to \"the text, author, coauthors, class and\n(if applicable) chamber of the proposal\".\n\n\nAmend Rule 2350, \"Proposals\", by adding the following to the list:\n\n  * A chamber to which the proposal shall be assigned upon its\n    creation.\n\n\nAmend Rule 2422, \"Voting Strength\", by changing \"between 0 and 5\" to\n\"between 0 and 15\".\n\n\n// Move the PM's casting vote to the Speaker, since the PM already gets\n// all ministries:\n\nAmend Rule 2423, \"First Among Equals\", by removing the second paragraph.\n\nAmend Rule 103, \"The Speaker\", by changing \"For an election of the Prime\nMinister, the Speaker\" to \"The Speaker\".\n\n\nSet the ADoP's Interest to [Efficiency].\nSet the Arbitor's Interest to [Justice].\nSet the Assessor's Interest to [Efficiency, Legislation].\nSet the Herald's Interest to [Participation].\nSet the Prime Minister's Interest to [Justice, Efficiency, Legislation,\n  Participation, Economy].\nSet the Promotor's Interest to [Legislation].\nSet the Referee's Interest to [Justice].\nSet the Registrar's Interest to [Efficiency].\nSet the Rulekeepor's Interest to [Legislation, Participation].\nSet the Tailor's Interest to [Participation].\nSet the Treasuror's Interest to [Economy, Economy].\n\n// Some of the above have been slightly rejigged given the new\n// definition of Participation\n\n/* Treasuror is given Economy twice for balance reasons:\n *  - It is a high-complexity office (was given Complexity=3 under\n *    Politics), like Assessor and Rulekeepor; this makes the power\n *    commensurate to the importance, and there is no ministry it really\n *    fits under besides Economy\n *  - It bumps up the number of voting increases issued for Economy\n *    proposals; all other ministries have 2-3 excluding the PM.\n * Not just trying to give myself votes, I swear :P\n */"
         },
@@ -77,7 +77,7 @@
             "title": "Self-Ratification Simplification Act",
             "author": "Bernie",
             "coauthors": [
-                "twg"
+                "Kate"
             ],
             "text": "/* I don't recall any instances in modern times where a CFJ has been\n   * used to explicitly doubt a document, and the behaviour is\n   * replicable by citations anyway. So let's get rid of it, as it makes\n   * R2201 significantly longer and also gives it two lists with the\n   * same numbering scheme (always a headache).\n   * This also clarifies that non-players are able to issue CoEs - this\n   * was already possible (and may be useful as a protection against\n   * accidental deregistrations from incorrect Registrar reports) but\n   * was a bit non-obvious.\n   */\n\nAmend Rule 2201, \"Self-Ratification\", by replacing its text from\n\"A doubt is\" to \"cites the claim of error:\" (inclusive) with the\nfollowing:\n\n  Any person CAN by announcement issue a doubt (syn. claim of\n  error), identifying a document and explaining the scope and nature\n  of a perceived error in it (or in a statement it attests to).\n\n  When this happens, the publisher of the original document SHALL\n  (if e was required to publish that document) or SHOULD (otherwise)\n  do one of the following in a timely fashion, in an announcement\n  that clearly cites the claim of error:"
         },
@@ -89,7 +89,7 @@
             "title": "CFJ Bait",
             "author": "Bernie",
             "coauthors": [
-                "twg"
+                "Kate"
             ],
             "text": "I register as a player.\n\nI receive a Welcome Package.\n\nI grant myself 9 coins.\n\nI transfer 2 coins to Agora.\nI transfer 2 coins to Proposal 8777.\nI transfer 2 coins to Trigon.\nI transfer 2 coins to the Lost and Found Department.\n\nNotice of Honour:\n+1 G. (giving twg the inspiration for my creation)\n-1 nch (e's vanished, e doesn't need it)\n\nI vote PRESENT on each Agoran decision whose voting is ongoing."
         },
@@ -101,7 +101,7 @@
             "title": "Authorial Intent",
             "author": "Bernie",
             "coauthors": [
-                "twg"
+                "Kate"
             ],
             "text": "// Not actually expecting this to pass, at least not on first reading,\n// but hopefully it will provoke some discussion.\n\nAmend Rule 217, \"Interpreting the Rules\", by inserting \"authorial\nintent,\" after \"past judgements,\"."
         },
@@ -113,7 +113,7 @@
             "title": "Rewards Reform Act",
             "author": "Bernie",
             "coauthors": [
-                "twg",
+                "Kate",
                 "Alexis"
             ],
             "text": "/* 1. Changes rewards to be issued by relevant officers (mostly ADoP,\n   *    Arbitor) in their weekly reports, instead of calculated and\n   *    claimed by individual players themselves.\n   * 2. Effectively converts Glitter into a reward issued by the Tailor.\n   *    (Players must still claim their Glitter by announcement, but the\n   *    Tailor calculates the coin amounts and awards them all in\n   *    weekly batches.)\n   * 3. Makes all Ribbons (except White, Gray, Black) eligible for\n   *    Glitter.\n   */\n\nAmend Rule 2496 (\"Rewards\") as follows:\n\n  Replace its first two paragraphs with the following:\n\n    Each time a player fulfills a reward condition, the officer\n    associated with the condition CAN once, and SHALL before the end\n    of the next Agoran week, grant the associated set of assets to the\n    player.\n\n    Below is a list of reward conditions and their associated assets\n    and officers.\n\n  Append \"(Assessor)\" to the first list item.\n\n  Append \"(Arbitor)\" to the second list item.\n\n  Append \"(ADoP)\" to the third list item.\n\n  Append \"(ADoP)\" to the fourth list item.\n\n  Append \"(Herald)\" to the fifth list item.\n\n\nAmend Rule 2438 (\"Ribbons\") as follows:\n\n  Replace the paragraph starting \"While a person qualifies...\" with\n  the following:\n\n    A person qualifies for a type of Ribbon if e has earned that type\n    of Ribbon within the preceding 7 days (including earlier in the\n    same message).\n\n  [Removed the Gray and Transparent rephrasings as they were\n   unnecessarily confusing and had minimal effect.]\n\n  Move the list item starting \"Emerald\" so that it falls between the\n  list items starting \"Green\" and \"Cyan\". [This was bothering me.]\n\n  Append the following:\n\n    While a person qualifies for a type of Ribbon:\n\n      - If e has not owned that type of Ribbon within the preceding 7\n        days, any player CAN, by announcement, award em that type of\n        Ribbon.\n\n      - Otherwise, if e has not been awarded that type of Ribbon or\n        the corresponding type of Glitter since e last earned or\n        came to qualify for that type of Ribbon, e CAN, by\n        announcement, award emself that type of Glitter.\n\nAmend Rule 2602 (\"Glitter\") to read:\n\n  For each type of Ribbon, there is a type of Glitter with the same\n  name. An attempt to award Glitter is INEFFECTIVE if the type of\n  Glitter is not specified.\n\n  Each time a player is awarded a type of Glitter, the Tailor CAN\n  once, and SHALL before the end of the next Agoran week, grant the\n  player N+1 coins, where N is the number of players who did not\n  own the corresponding type of Ribbon at the time of the award.\n\n  [If the mechanics of the change are approved, R2602 could later be\n   further simplified by merging the first para into 2438 and the\n   second into R2496]"
@@ -150,7 +150,7 @@
             "author": "Aspen",
             "coauthors": [
                 "Gaelan",
-                "twg",
+                "Kate",
                 "G.",
                 "Janet",
                 "Alexis"
@@ -225,7 +225,7 @@
             "title": "Rewards Reform Act - v1.1 Patch",
             "author": "Bernie",
             "coauthors": [
-                "twg",
+                "Kate",
                 "Janet"
             ],
             "text": "If the proposal titled \"Rewards Reform Act\" has not been adopted, this\nproposal has no effect.\n\nAmend Rule 1023, \"Agoran Time\", by inserting the following top-level\nlist item before the one starting \"2. Agoran epochs:\", and renumbering\nthe rest of the list as appropriate:\n\n2. The phrase \"in an officially timely fashion\" means \"before the\n   end of the next Agoran week\". This time period is set when the\n   requirement is created (i.e. between 7 and 14 days before the\n   period ends).\n\nAmend Rule 2496, \"Rewards\", by replacing \"before the end of the next\nAgoran week\" with \"in an officially timely fashion\".\n\nAmend Rule 2602, \"Glitter\", by replacing \"before the end of the next\nAgoran week\" with \"in an officially timely fashion\"."
@@ -291,7 +291,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -315,14 +315,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -466,14 +466,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -506,19 +506,19 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -561,14 +561,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -679,14 +679,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -764,7 +764,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -788,14 +788,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -943,7 +943,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -986,14 +986,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1133,7 +1133,7 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1157,14 +1157,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1194,14 +1194,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1304,7 +1304,7 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1328,14 +1328,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1394,14 +1394,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1521,7 +1521,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1545,14 +1545,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1719,7 +1719,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "PRESENT",
                         "comments": [
                         ]
@@ -1743,14 +1743,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1871,7 +1871,7 @@
                 "strength_against": 3,
                 "votes": [
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1895,14 +1895,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -1952,14 +1952,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -2079,7 +2079,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "PRESENT",
                         "comments": [
                         ]
@@ -2103,14 +2103,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -2248,7 +2248,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -2291,14 +2291,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -2455,7 +2455,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2479,14 +2479,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -2662,7 +2662,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -2686,14 +2686,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -2869,7 +2869,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -2912,14 +2912,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -3095,7 +3095,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3138,14 +3138,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -3341,7 +3341,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3384,14 +3384,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -3531,7 +3531,7 @@
                 "strength_against": 0,
                 "votes": [
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "PRESENT",
                         "comments": [
                         ]
@@ -3555,14 +3555,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -3702,7 +3702,7 @@
                 "strength_against": 3,
                 "votes": [
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3726,14 +3726,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -3763,14 +3763,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -3890,7 +3890,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "FOR",
                         "comments": [
                             {
@@ -3933,14 +3933,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -4107,7 +4107,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -4131,14 +4131,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
@@ -4301,7 +4301,7 @@
                         ]
                     },
                     {
-                        "voter": "twg",
+                        "voter": "Kate",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -4325,14 +4325,14 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "twg"
+                                        "value": "Kate"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of twg"
+                                "readable": "Endorsement of Kate"
                             }
                         ]
                     },
