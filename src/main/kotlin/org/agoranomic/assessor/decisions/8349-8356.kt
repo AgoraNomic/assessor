@@ -570,7 +570,7 @@ to read
         }
 
         votes(PSS) {
-            PRESENT on 8349 comment legacyConditionalComment("twg not FOR, but Assessor not AGAINST")
+            PRESENT on 8349 comment legacyConditionalComment("${Kate.name} not FOR, but Assessor not AGAINST")
             FOR on 8350
             FOR on 8351
             FOR on 8352

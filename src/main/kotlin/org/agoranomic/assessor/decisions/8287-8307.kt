@@ -751,7 +751,7 @@ Flip the Citizenship of the following player to Unregistered:
     voting {
         votes(G) {
             AGAINST on 8287
-            endorse(Kate) on 8288 comment "twg is Treasuror"
+            endorse(Kate) on 8288 comment "${Kate.name} is Treasuror"
             AGAINST on 8289
             FOR on 8290
             AGAINST on 8293
@@ -902,7 +902,7 @@ Flip the Citizenship of the following player to Unregistered:
 
         votes(Gaelan) {
             PRESENT on 8287
-            endorse(Kate) on 8288 comment "twg is the Treasuror"
+            endorse(Kate) on 8288 comment "${Kate.name} is the Treasuror"
             AGAINST on 8289
             FOR on 8290
             FOR on 8291
