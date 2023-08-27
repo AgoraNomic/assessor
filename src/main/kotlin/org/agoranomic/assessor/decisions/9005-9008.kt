@@ -1,0 +1,84 @@
+package org.agoranomic.assessor.decisions
+
+import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.quorum
+
+@UseAssessment
+fun assessment9005to9008() = assessment {
+    name("9005-9008")
+    quorum(4)
+
+    proposals(v4) {
+        proposal(9005) {
+            title("Unreality stone")
+            ai("2.0")
+            author(Janet)
+            ordinary()
+
+            text(
+                """
+Amend Rule 2643 by replacing the paragraph beginning "A Collection
+Notice includes a random" with the following paragraph:
+
+{
+
+A Collection Notice includes a random integer from 1 to 6; this is the
+Escape Minimum.
+
+}
+
+["Number" means real number by default.]"""
+            )
+        }
+
+        proposal(9006) {
+            title("Freeing Sisyphus")
+            ai("1.0")
+            author(Janet)
+            ordinary()
+
+            text(
+                """
+Repeal Rule 2683 ("The Boulder")."""
+            )
+        }
+
+        proposal(9007) {
+            title("Shining a flashlight")
+            ai("1.0")
+            author(Janet)
+            ordinary()
+
+            text(
+                """
+Repeal Rule 2056 ("Invisibilitating")."""
+            )
+        }
+
+        proposal(9008) {
+            title("Always at risk")
+            ai("1.0")
+            author(snail)
+            ordinary()
+
+            text(
+                """
+Amend Rule 2683 (The Boulder) to read, in full:
+{
+
+      The Absurdor is an office.
+
+      The Boulder's Height is a singleton integer switch defaulting to
+      0, tracked by the Absurdor.
+
+      Each player CAN, once a week, by announcement, push the boulder.
+      When a player pushes the Boulder, its Height is increased by 1.
+      At the beginning of each week, if the boulder was not pushed in the
+previous week, the Boulder's Height is set to 0. The Absurdor SHOULD list
+the largest Height of the Boulder ever reached in eir report.
+}"""
+            )
+        }
+    }
+}
