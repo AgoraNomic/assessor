@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9005to9008() = assessment {
@@ -127,6 +126,13 @@ the largest Height of the Boulder ever reached in eir report.
             FOR on 9005
             AGAINST on 9006
             FOR on 9007
+            FOR on 9008
+        }
+
+        votes(juan) {
+            PRESENT on 9005
+            AGAINST on 9006
+            PRESENT on 9007
             FOR on 9008
         }
     }
