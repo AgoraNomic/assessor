@@ -143,5 +143,12 @@ the largest Height of the Boulder ever reached in eir report.
             FOR on 9007
             endorse(juan) on 9008 comment "${juan.name} is the Absurdor"
         }
+
+        votes(Janet) {
+            FOR on 9005
+            FOR on 9006
+            FOR on 9007
+            AGAINST on 9008
+        }
     }
 }
