@@ -119,4 +119,7 @@ the largest Height of the Boulder ever reached in eir report.
             )
         }
     }
+
+    voting {
+    }
 }
