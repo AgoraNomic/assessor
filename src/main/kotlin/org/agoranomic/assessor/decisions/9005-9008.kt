@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -134,6 +135,13 @@ the largest Height of the Boulder ever reached in eir report.
             AGAINST on 9006
             PRESENT on 9007
             FOR on 9008
+        }
+
+        votes(Murphy) {
+            endorse(Janet) on 9005 comment "${Janet.name} is the Stonemason"
+            endorse(juan) on 9006 comment "${juan.name} is the Absurdor"
+            FOR on 9007
+            endorse(juan) on 9008 comment "${juan.name} is the Absurdor"
         }
     }
 }
