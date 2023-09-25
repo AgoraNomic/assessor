@@ -28,8 +28,8 @@ fun assessment8357to8365() = assessment {
         Distributor to omd,
         Herald to Alexis,
         Notary to Gaelan,
-        PrimeMinister to Aspen,
-        Promotor to Aspen,
+        PrimeMinister to Aris,
+        Promotor to Aris,
         Referee to Kate,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -158,7 +158,7 @@ help us all.]
         proposal(8361) {
             title("Fix Emergencies")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             coauthors(Alexis)
             democratic()
 
@@ -179,7 +179,7 @@ to read
         proposal(8362) {
             title("Recurring Emergencies")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -209,7 +209,7 @@ Enact a power-1 rule titled "A Coin Award":
         proposal(8364) {
             title("Mint Regulations")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -230,7 +230,7 @@ list item in the same format as the rest of the list with the text
         proposal(8365) {
             title("Emergency Termination Notice")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -285,7 +285,7 @@ to read
             FOR on 8365
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8357
             FOR on 8358
             AGAINST on 8359
@@ -343,11 +343,11 @@ to read
             endorseOfficer(offices, Referee) on 8358
             AGAINST on 8359
             endorse(Alexis) on 8360
-            endorse(Aspen) on 8361
+            endorse(Aris) on 8361
             PRESENT on 8362
             AGAINST on 8363 comment legacyConditionalComment("No document purporting to be a Treasuror's report has been published in the past 7 days")
-            endorse(Aspen) on 8364
-            endorse(Aspen) on 8365
+            endorse(Aris) on 8364
+            endorse(Aris) on 8365
         }
     }
 }

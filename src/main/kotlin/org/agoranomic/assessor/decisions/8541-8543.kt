@@ -25,7 +25,7 @@ fun assessment8541to8543() = assessment {
         proposal(8541) {
             title("You CAN, CAN'T You?")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
             sponsored()
 
@@ -78,7 +78,7 @@ with:
             title("Stone Excitement Act")
             ai("2.0")
             author(Janet)
-            coauthors(Aspen)
+            coauthors(Aris)
             ordinary()
             sponsored()
 
@@ -106,7 +106,7 @@ with the following:
             title("En Passant v2")
             ai("1.0")
             author(Janet)
-            coauthors(Aspen, nix)
+            coauthors(Aris, nix)
             ordinary()
             sponsored()
 
@@ -135,7 +135,7 @@ Amend Rule 2621 "VP Wins" to read, in whole:
             FOR on 8543
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8541
             endorseOrElse(Janet, FOR) on 8542
             FOR on 8543
@@ -154,7 +154,7 @@ Amend Rule 2621 "VP Wins" to read, in whole:
         }
 
         votes(Falsifian) {
-            endorse(Aspen) on 8541
+            endorse(Aris) on 8541
             endorse(Janet) on 8542
             endorse(Janet) on 8543
         }

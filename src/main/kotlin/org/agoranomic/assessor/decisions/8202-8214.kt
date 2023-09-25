@@ -138,7 +138,7 @@ Create the following Rule, "Supreme Power", Power=4:
             title("Regulated actions reform (v2)")
             ai("3.0")
             author(Janet)
-            coauthors(Aspen, omd, G, Falsifian)
+            coauthors(Aris, omd, G, Falsifian)
 
             text(
                 """
@@ -303,7 +303,7 @@ following:
     }
 
     voting {
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8202
             PRESENT on 8203
             FOR on 8204

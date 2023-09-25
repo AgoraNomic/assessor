@@ -115,7 +115,7 @@ Amend Rule 2665 (The Birds) by appending the list item:
             FOR on others
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8665
             endorse(G) on 8666
         }

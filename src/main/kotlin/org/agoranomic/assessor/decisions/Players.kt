@@ -5,7 +5,7 @@ import org.agoranomic.assessor.lib.Person
 val ais523 = Person("ais523")
 val Aenet = Person("Aenet")
 val Alexis = Person("Alexis")
-val Aspen = Person("Aspen")
+val Aris = Person("Aris")
 val Astra = Person("the Astrally Forged")
 val ATMunn = Person("ATMunn")
 val Beokirby = Person("Beokirby")

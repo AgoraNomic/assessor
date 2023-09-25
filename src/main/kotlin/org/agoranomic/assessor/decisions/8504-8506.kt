@@ -31,7 +31,7 @@ fun assessment8504to8506() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -144,14 +144,14 @@ FOR.""")
             PRESENT on 8506
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             endorseOrElse(G, FOR) on 8504
             endorseOrElse(Janet, FOR) on 8505
             AGAINST on 8506
         }
 
         votes(Telna) {
-            endorse(Aspen) on all
+            endorse(Aris) on all
         }
 
         votes(ATMunn) {

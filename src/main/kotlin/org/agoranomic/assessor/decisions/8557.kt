@@ -25,7 +25,7 @@ fun assessment8557() = assessment {
         proposal(8557) {
             title("Archimedes' Principle")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             coauthors(Trigon, nix)
             ordinary()
             sponsored()
@@ -107,7 +107,7 @@ with:
             FOR on 8557
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8557
         }
 

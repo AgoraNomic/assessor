@@ -23,7 +23,7 @@ fun assessment8630() = assessment {
             maxStrength = 15,
             festivePlayers = setOf(
                 ais523,
-                Aspen,
+                Aris,
                 ATMunn,
                 Madrid,
                 cuddlybanana,

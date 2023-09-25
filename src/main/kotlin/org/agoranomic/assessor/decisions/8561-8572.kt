@@ -25,12 +25,12 @@ fun assessment8561to8572() = assessment {
 
         onOrdinaryProposals {
             if (ASSETLESS_FEE_SPECIFICATION_WORKED) {
-                extraVotes(Aspen, 12)
+                extraVotes(Aris, 12)
                 extraVotes(Trigon, 11)
             }
 
             extraVotes(G, 5)
-            extraVotes(Aspen, 10)
+            extraVotes(Aris, 10)
         }
     }
 
@@ -136,7 +136,7 @@ Amend Rule 2154 (Election Procedure) to read in full:
             title("Officializing Discord")
             ai("3.0")
             author(ATMunn)
-            coauthors(Aspen)
+            coauthors(Aris)
             democratic()
             sponsored()
 
@@ -149,7 +149,7 @@ of https://discord.gg/tz2u6m7 is hereby flipped to Discussion.""")
         proposal(8563) {
             title("Determinacy is a Good Thing")
             ai("1.7")
-            author(Aspen)
+            author(Aris)
             democratic()
             sponsored()
 
@@ -175,7 +175,7 @@ Repeal Rule 2553, "Win by Paradox".""")
         proposal(8564) {
             title("Sponsorship is not Co-authorship")
             ai("1.0")
-            author(Aspen)
+            author(Aris)
             ordinary()
             sponsored()
 
@@ -203,7 +203,7 @@ Amend rule 2622, "Pending Proposals", by deleting the text:
         proposal(8565) {
             title("Popularity Contest")
             ai("1.0")
-            author(Aspen)
+            author(Aris)
             ordinary()
             sponsored()
 
@@ -319,7 +319,7 @@ rather than persons).]""")
             title("Fixing Festivals")
             ai("3.0")
             author(Janet)
-            coauthors(Aspen, Murphy)
+            coauthors(Aris, Murphy)
             democratic()
             sponsored()
 
@@ -429,7 +429,7 @@ otherwise)."""")
     }
 
     voting {
-        votes(Aspen) {
+        votes(Aris) {
             PRESENT on 8561
             PRESENT on 8562
             FOR on 8563

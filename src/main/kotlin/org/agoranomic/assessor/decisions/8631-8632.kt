@@ -102,7 +102,7 @@ Scroll].""")
             AGAINST on 8632
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8631
             AGAINST on 8632
         }

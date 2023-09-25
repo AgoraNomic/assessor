@@ -124,7 +124,7 @@ R2221, but better safe than sorry.]"""
             title("Spivak Standardization Act v2")
             ai("3.0")
             author(Janet)
-            coauthors(Aspen, Gaelan)
+            coauthors(Aris, Gaelan)
             democratic()
 
             text(

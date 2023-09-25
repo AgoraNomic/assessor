@@ -134,7 +134,7 @@ BUS: PM Candidacy   Jason Cobb
         proposal(8279) {
             title("Equitable Detroubling")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             coauthors(Murphy)
 
             text(
@@ -157,7 +157,7 @@ a public message.
             FOR on 8279 comment legacyConditionalComment("Proposal 8278 does not have sufficient votes to be adopted")
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8277
             AGAINST on 8278
             FOR on 8279

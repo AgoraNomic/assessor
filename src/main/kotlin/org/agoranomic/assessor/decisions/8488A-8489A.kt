@@ -31,7 +31,7 @@ fun assessment8488Ato8489A() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -87,13 +87,13 @@ associated with the Ministry of Economy."""")
     }
 
     voting {
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8488
             FOR on 8489
         }
 
         votes(Telna) {
-            endorse(Aspen) on all
+            endorse(Aris) on all
         }
 
         votes(Janet) {

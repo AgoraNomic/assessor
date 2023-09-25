@@ -24,7 +24,7 @@ fun assessment8607to8629() = assessment {
             maxStrength = 15,
             festivePlayers = setOf(
                 ais523,
-                Aspen,
+                Aris,
                 ATMunn,
                 Madrid,
                 cuddlybanana,
@@ -838,7 +838,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8618
             PRESENT on 8619
             AGAINST on 8620
-            endorse(Aspen) on 8621
+            endorse(Aris) on 8621
             PRESENT on 8622
             FOR on 8623
             FOR on 8624
@@ -858,7 +858,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             (8617..8618).forEach { FOR on it }
             AGAINST on 8619
             AGAINST on 8620
-            endorse(Aspen) on 8621 comment "Aspen is the Promotor"
+            endorse(Aris) on 8621 comment "Aspen is the Promotor"
             AGAINST on 8622
             FOR on 8623
             endorse(nix) on 8624 comment "nix is the Herald"
@@ -884,7 +884,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8618
             FOR on 8619
             AGAINST on 8620
-            endorseOrElse(Aspen, AGAINST) on 8621
+            endorseOrElse(Aris, AGAINST) on 8621
             AGAINST on 8622
             FOR on 8623
             endorse(nix) on 8624
@@ -975,7 +975,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8618
             FOR on 8619
             AGAINST on 8620 comment legacyConditionalComment("proposal would not pass if AGAINST")
-            endorse(Aspen) on 8621 comment "Aspen is the Promotor"
+            endorse(Aris) on 8621 comment "Aspen is the Promotor"
             FOR on 8622 comment legacyConditionalComment("Independence Day will be adopted")
             FOR on 8623
             AGAINST on 8624
@@ -1027,7 +1027,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8618
             AGAINST on 8619
             AGAINST on 8620
-            endorse(Aspen) on 8621 comment "Aspen is the Promotor"
+            endorse(Aris) on 8621 comment "Aspen is the Promotor"
             AGAINST on 8622
             PRESENT on 8623
             AGAINST on 8624

@@ -32,7 +32,7 @@ fun assessment8866to8868() = assessment {
             title("Restricted confederation")
             ai("3.0")
             author(Janet)
-            coauthors(Aspen)
+            coauthors(Aris)
             democratic()
 
             text(
@@ -339,7 +339,7 @@ Amend R2645, The Stones to read in full:
         }
 
         votes(Janet) {
-            endorseOrElse(Aspen, AGAINST) on 8866
+            endorseOrElse(Aris, AGAINST) on 8866
             FOR on 8867
             FOR on 8868
         }

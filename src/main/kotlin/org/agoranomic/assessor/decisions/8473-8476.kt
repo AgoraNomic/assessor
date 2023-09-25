@@ -29,7 +29,7 @@ fun assessment8473to8476() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -115,7 +115,7 @@ overall positivity/negativity over time.]"""
         proposal(8475) {
             title("Saving Sponsorship")
             ai("1.0")
-            author(Aspen)
+            author(Aris)
             chamber(Participation)
 
             text(
@@ -167,7 +167,7 @@ Enact the following rule, Charities:
             FOR on 8476
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8473
             FOR on 8474
             FOR on 8475

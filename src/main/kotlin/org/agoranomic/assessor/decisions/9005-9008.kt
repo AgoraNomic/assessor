@@ -23,7 +23,7 @@ fun assessment9005to9008() = assessment {
 
         onOrdinaryProposals {
             powerDream(G, 2)
-            powerDream(Aspen, 2)
+            powerDream(Aris, 2)
             powerDream(Forest, 2)
 
             complexityBonuses {

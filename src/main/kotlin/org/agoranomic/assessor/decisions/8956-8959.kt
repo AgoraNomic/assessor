@@ -24,7 +24,7 @@ fun assessment8956to8959() = assessment {
 
         onOrdinaryProposals {
             powerDream(G, 2)
-            powerDream(Aspen, 2)
+            powerDream(Aris, 2)
             powerDream(Janet, 2)
             powerDream(Forest, 2)
 

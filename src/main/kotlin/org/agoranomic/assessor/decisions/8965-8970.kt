@@ -21,7 +21,7 @@ fun assessment8965to8970() = assessment {
 
         onOrdinaryProposals {
             powerDream(G, 2)
-            powerDream(Aspen, 2)
+            powerDream(Aris, 2)
             powerDream(Forest, 2)
             powerDream(Janet, 2)
 
@@ -119,7 +119,7 @@ Amend R2154 (Election Procedure) by adding, after the first paragraph:
             title("April Awards Extension")
             ai("1.0")
             author(snail)
-            coauthors(nix, Aspen, G)
+            coauthors(nix, Aris, G)
             ordinary()
 
             text(

@@ -75,7 +75,7 @@ Grant each player a Reified Device."""
             title("Aspen's Idea")
             ai("1.0")
             author(Forest)
-            coauthors(Aspen)
+            coauthors(Aris)
             ordinary()
 
             text(

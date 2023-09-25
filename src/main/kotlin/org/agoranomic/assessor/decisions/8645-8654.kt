@@ -332,7 +332,7 @@ Repeal Rule 2602 (Glitter).""")
             title("Temporal Incursion Modification and Exclusion Act")
             ai("3.0")
             author(Janet)
-            coauthors(Aspen, Oerjan)
+            coauthors(Aris, Oerjan)
             democratic()
             sponsored()
 
@@ -592,7 +592,7 @@ with:
             FOR on 8654
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             endorse(Janet) on 8645 comment "Jason is the Rulekeepor"
             endorse(G) on 8646
             AGAINST on 8647

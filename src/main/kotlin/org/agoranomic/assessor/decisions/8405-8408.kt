@@ -27,8 +27,8 @@ fun assessment8405to8408() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to RLee,
-        PrimeMinister to Aspen,
-        Promotor to Aspen,
+        PrimeMinister to Aris,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -139,7 +139,7 @@ Amend Rule 2545 (Auctions) to read in full:
             title("Sets v1.4")
             ai("3.0")
             author(nix)
-            coauthors(Trigon, Falsifian, PSS, Janet, Aspen, G, ais523)
+            coauthors(Trigon, Falsifian, PSS, Janet, Aris, G, ais523)
             democratic()
 
             text(
@@ -386,7 +386,7 @@ Flip the Pended switch of every proposal in the proposal pool to True."""
             endorse(nix) on 8408
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             PRESENT on 8405
             AGAINST on 8406
             FOR on 8407

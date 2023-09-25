@@ -29,7 +29,7 @@ fun assessment8532to8537() = assessment {
         Ministor to nix,
         Notary to ATMunn,
         PrimeMinister to ATMunn,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to JTAC,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -206,7 +206,7 @@ Amend Rule 2486 (The Royal Parade) by appending the following text:
         proposal(8534) {
             title("Power Up")
             ai("3.3")
-            author(Aspen)
+            author(Aris)
             democratic()
             sponsored()
 
@@ -225,7 +225,7 @@ Change the power of Rule 2614, "Eclipse Light", from 3.01 to 3.1.""")
         proposal(8535) {
             title("We the People")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             coauthors(Trigon, nix, G, Gaelan)
             democratic()
             sponsored()
@@ -290,7 +290,7 @@ for We the People".]""")
         proposal(8536) {
             title("Justice for All")
             ai("1.7")
-            author(Aspen)
+            author(Aris)
             coauthors(G, Janet)
             chamber(Compliance)
             sponsored()
@@ -374,7 +374,7 @@ Repeal Rule 2479 (Official Injustice).""")
     }
 
     voting {
-        votes(Aspen) {
+        votes(Aris) {
             PRESENT on 8532
             FOR on 8533
             FOR on 8534
@@ -409,7 +409,7 @@ Repeal Rule 2479 (Official Injustice).""")
             FOR on 8532
             FOR on 8533
             FOR on 8534
-            endorse(Aspen) on 8535
+            endorse(Aris) on 8535
             FOR on 8536
             FOR on 8537
         }
@@ -435,9 +435,9 @@ Repeal Rule 2479 (Official Injustice).""")
         votes(Falsifian) {
             endorse(G) on 8532
             endorse(G) on 8533
-            endorse(Aspen) on 8534
-            endorse(Aspen) on 8535
-            endorse(Aspen) on 8536
+            endorse(Aris) on 8534
+            endorse(Aris) on 8535
+            endorse(Aris) on 8536
             endorse(G) on 8537
         }
 

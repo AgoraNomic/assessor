@@ -411,7 +411,7 @@ transfers.]"""
             endorse(snail) on 8906
             endorse(RLee) on 8907
             AGAINST on 8908
-            endorse(Aspen) on 8909
+            endorse(Aris) on 8909
             endorse(G) on 8910
         }
 

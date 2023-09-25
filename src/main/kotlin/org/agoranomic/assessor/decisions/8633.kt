@@ -49,14 +49,14 @@ In Rule 1607 "Distribution", delete the sentence:
         }
 
         votes(Janet) {
-            endorse(Aspen) on 8633
+            endorse(Aris) on 8633
         }
 
         votes(RLee) {
             PRESENT on 8633
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8633
         }
 
@@ -65,7 +65,7 @@ In Rule 1607 "Distribution", delete the sentence:
         }
 
         votes(Trigon) {
-            endorse(Aspen) on 8633 comment "Aspen is the Promotor"
+            endorse(Aris) on 8633 comment "Aspen is the Promotor"
         }
 
         votes(G) {

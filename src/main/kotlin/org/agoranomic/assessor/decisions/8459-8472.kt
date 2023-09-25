@@ -29,7 +29,7 @@ fun assessment8459to8472() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -190,7 +190,7 @@ Ultraviolet is hereby removed from G.'s Ribbon Ownership."""
             title("Redoing Adopted Proposals")
             ai("2.0")
             author(RLee)
-            coauthors(Aspen)
+            coauthors(Aris)
             chamber(Legislation)
 
             text(
@@ -377,7 +377,7 @@ CAN) rather than the "announcement".]"""
         proposal(8469) {
             title("Bureaucratic Reengineering")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             coauthors(Alexis, Falsifian, nix, G)
             chamber(Efficiency)
 
@@ -459,7 +459,7 @@ adopted sponsored proposal"."""
             title("Only the PM can be arbitrary!")
             ai("1.7")
             author(RLee)
-            coauthors(Aspen)
+            coauthors(Aris)
             chamber(Justice)
 
             text(
@@ -471,7 +471,7 @@ Repeal Rule 2479/6 "Official Injustice""""
         proposal(8472) {
             title("Welcoming Back Outlaws, etc.")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             chamber(Participation)
 
             text(
@@ -648,7 +648,7 @@ with:
         votes(G) {
             FOR on 8459
             FOR on 8460
-            endorse(Aspen) on 8461
+            endorse(Aris) on 8461
             FOR on 8462
             FOR on 8463
             FOR on 8464

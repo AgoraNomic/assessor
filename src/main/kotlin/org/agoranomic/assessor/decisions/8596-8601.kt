@@ -220,7 +220,7 @@ targeting situations like:
             FOR on 8601
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             // AGAINST on 8596
             FOR on 8597
             FOR on 8598

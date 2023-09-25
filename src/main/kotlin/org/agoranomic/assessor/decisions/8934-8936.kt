@@ -24,7 +24,7 @@ fun assessment8934to8936() = assessment {
         onOrdinaryProposals {
             powerDream(Forest, 2)
             powerDream(G, 2)
-            powerDream(Aspen, 2)
+            powerDream(Aris, 2)
 
             powerStone(Janet, 3)
 
@@ -74,7 +74,7 @@ Each player who votes FOR this proposal gains 30 radiance."""
             title("Quicker Peer Expungement")
             ai("2.0")
             author(nix)
-            coauthors(Aspen, G)
+            coauthors(Aris, G)
             ordinary()
 
             text(

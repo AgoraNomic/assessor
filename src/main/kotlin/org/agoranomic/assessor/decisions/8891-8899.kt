@@ -66,7 +66,7 @@ fun assessment8891to8899() = assessment {
             title("Destroy current administrative regulations")
             ai("1.0")
             author(Forest)
-            coauthors(snail, nix, Janet, G, Aspen)
+            coauthors(snail, nix, Janet, G, Aris)
             ordinary()
 
             text(
@@ -339,7 +339,7 @@ by replacing "by 1, 3 times" with "by 3"."""
             FOR on 8899
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             PRESENT on 8891
             AGAINST on 8892
             PRESENT on 8893

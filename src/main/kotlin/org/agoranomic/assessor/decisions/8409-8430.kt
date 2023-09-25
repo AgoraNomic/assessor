@@ -26,8 +26,8 @@ fun assessment8409to8430() = assessment {
         Distributor to omd,
         Herald to PSS,
         Notary to null,
-        PrimeMinister to Aspen,
-        Promotor to Aspen,
+        PrimeMinister to Aris,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -50,7 +50,7 @@ fun assessment8409to8430() = assessment {
         proposal(8409) {
             title("College of Letters, Arts, and Sciences")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -122,7 +122,7 @@ second listed patent title on each row:
         proposal(8410) {
             title("Promise Powers Patch")
             ai("2.2")
-            author(Aspen)
+            author(Aris)
             chamber(Economy)
 
             text(
@@ -193,7 +193,7 @@ the words "explicitly states otherwise":
         proposal(8413) {
             title("Why Track Pendency?")
             ai("1.0")
-            author(Aspen)
+            author(Aris)
             chamber(Legislation)
 
             text(
@@ -212,7 +212,7 @@ negative boolean proposal switch tracked by the Promotor." to read
         proposal(8414) {
             title("Ministerial Reshuffling")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             chamber(Legislation)
 
             text(
@@ -230,7 +230,7 @@ Amend Rule 2605, "Ministries", by changing the lettered list to read:
         proposal(8415) {
             title("Proposal Recycling Initiative")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -281,7 +281,7 @@ against changing IDs.]"""
         proposal(8417) {
             title("Properly Prioritized Popular Proposal Proposer Privilege")
             ai("1.0")
-            author(Aspen)
+            author(Aris)
             coauthors(G)
             chamber(Legislation)
 
@@ -312,7 +312,7 @@ by changing it to read in full:
         proposal(8418) {
             title("Referenda")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -402,7 +402,7 @@ last seven days"."""
         proposal(8419) {
             title("Executive Expansion")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             chamber(Efficiency)
 
             text(
@@ -483,7 +483,7 @@ Amend Rule 2451 (Executive Orders) by appending the following paragraph:
             title("No More Numbers!")
             ai("3.0")
             author(PSS)
-            coauthors(G, Trigon, Aspen, nix)
+            coauthors(G, Trigon, Aris, nix)
             democratic()
 
             text(
@@ -513,7 +513,7 @@ Remove the final paragraph and all included list items from Rule 2139,
         proposal(8424) {
             title("Certifiable Patches")
             ai("1.0")
-            author(Aspen)
+            author(Aris)
             coauthors(nix, PSS)
             chamber(Legislation)
 
@@ -556,7 +556,7 @@ text:
         proposal(8425) {
             title("Impossibility Defense")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             chamber(Justice)
 
             text(
@@ -576,7 +576,7 @@ and renumbering the list accordingly."""
         proposal(8426) {
             title("Impracticability Defense")
             ai("2.0")
-            author(Aspen)
+            author(Aris)
             chamber(Justice)
 
             text(
@@ -608,7 +608,7 @@ zero, is to grant em N blots""""
         proposal(8428) {
             title("Pending Pends")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
 
             text(
@@ -636,7 +636,7 @@ with:
         proposal(8429) {
             title("Why Limit Clemency?")
             ai("1.7")
-            author(Aspen)
+            author(Aris)
             chamber(Justice)
 
             text(
@@ -712,7 +712,7 @@ for eir proposal, "Winning by apathy"."""
             endorse(RLee) on all
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8409
             FOR on 8410
             FOR on 8411

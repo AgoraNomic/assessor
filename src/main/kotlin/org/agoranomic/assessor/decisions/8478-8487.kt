@@ -30,7 +30,7 @@ fun assessment8478to8487() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -78,7 +78,7 @@ possesses more than one" with the following:
             title("Competitive Finger Pointing v2")
             ai("1.7")
             author(nix)
-            coauthors(Aspen, PSS, ATMunn)
+            coauthors(Aris, PSS, ATMunn)
             chamber(Justice)
             sponsored()
 
@@ -148,7 +148,7 @@ makes most scams not worth the hassle).]"""
             title("If it's not pending we don't care v2")
             ai("3.0")
             author(Trigon)
-            coauthors(Aspen)
+            coauthors(Aris)
             democratic()
             sponsored()
 
@@ -252,7 +252,7 @@ specified in that body of text."""
             title("Clarify asset ownership")
             ai("3.0")
             author(Murphy)
-            coauthors(Madrid, Aspen)
+            coauthors(Madrid, Aris)
             democratic()
             sponsored()
 
@@ -282,7 +282,7 @@ Amend Rule 2576 (Ownership) to read:
             title("Eternal Personhood")
             ai("3.0")
             author(Gaelan)
-            coauthors(Aspen)
+            coauthors(Aris)
             democratic()
             sponsored()
 
@@ -376,7 +376,7 @@ Ribbon Ownership to True."""
             PRESENT on others
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8478
             FOR on 8479
             FOR on 8480
@@ -436,7 +436,7 @@ Ribbon Ownership to True."""
             FOR on 8478
             FOR on 8479
             FOR on 8480
-            endorse(Aspen) on 8481
+            endorse(Aris) on 8481
             FOR on 8482
             FOR on 8483 comment legacyConditionalComment("P8483 would be ADOPTED even if all parties to the Foot Draggers Union voted AGAINST")
             FOR on 8484

@@ -47,7 +47,7 @@ fun assessment8215Ato8234A() = assessment {
             FOR on 8234 comment NO_VETO
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8215
             AGAINST on 8216
             endorse(G) on 8217
@@ -131,7 +131,7 @@ fun assessment8215Ato8234A() = assessment {
             FOR on 8215
             AGAINST on 8216
             FOR on 8217
-            endorse(Aspen) on 8218
+            endorse(Aris) on 8218
             FOR on 8221
             FOR on 8222
             AGAINST on 8223

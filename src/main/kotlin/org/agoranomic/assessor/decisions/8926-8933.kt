@@ -303,7 +303,7 @@ that the ritual number was declared.""""
             endorse(G) on 8933
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             endorse(Janet) on all
         }
     }

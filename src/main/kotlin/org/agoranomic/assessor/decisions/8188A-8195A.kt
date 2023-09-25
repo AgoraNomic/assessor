@@ -31,7 +31,7 @@ fun assessment8188Ato8195A() = assessment {
     }
 
     voting {
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8188
             FOR on 8189
             FOR on 8190

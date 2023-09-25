@@ -30,7 +30,7 @@ fun assessment8495to8497() = assessment {
         Herald to PSS,
         Notary to ATMunn,
         PrimeMinister to nix,
-        Promotor to Aspen,
+        Promotor to Aris,
         Referee to PSS,
         Registrar to Falsifian,
         Rulekeepor to Janet,
@@ -85,14 +85,14 @@ grant a Pendant to the player that pended the proposal."""")
     }
 
     voting {
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8499
             // FOR on 8496
             AGAINST on 8497
         }
 
         votes(Telna) {
-            endorse(Aspen) on all
+            endorse(Aris) on all
         }
 
         votes(Janet) {

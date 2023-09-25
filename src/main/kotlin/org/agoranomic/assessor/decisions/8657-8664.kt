@@ -68,7 +68,7 @@ the extra complexity in the ADoP's report.]""")
         proposal(8658) {
             title("SLR Ratification")
             ai("3.0")
-            author(Aspen)
+            author(Aris)
             democratic()
             sponsored()
 
@@ -644,7 +644,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
 
         votes(snail) {
             endorse(Murphy) on 8657
-            endorse(Aspen) on 8658
+            endorse(Aris) on 8658
             endorse(nix) on 8659
             endorse(nix) on 8660
             endorse(nix) on 8661
@@ -664,7 +664,7 @@ Amend Rule 2657 (Scoring) by deleting the text:
             PRESENT on 8664
         }
 
-        votes(Aspen) {
+        votes(Aris) {
             FOR on 8657
             FOR on 8658
             FOR on 8659
