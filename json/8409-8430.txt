@@ -12,7 +12,7 @@
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
             "title": "College of Letters, Arts, and Sciences",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "[I fixed the problems pointed out with the last version. I also added an\nA.N.A. degree (I hadn't done so previously, because I thought it was\nunnecessary, but exceptions are messy). I rephrased and reordered some things\ntoo.]\n\nAmend Rule 1367, \"Degrees\", by changing it to read as follows:\n\nCertain patent titles are known as degrees. The degrees are\n\n  - Associate of Nomic Artistry        (A.N.A.)\n  - Associate of Nomic                 (A.N.)\n  - Juris Doctorate of Nomic           (J.N.)\n  - Baccalaureate of Nomic Artistry    (B.N.A.)\n  - Baccalaureate of Nomic             (B.N.)\n  - Magisteriate of Nomic Artistry     (M.N.A)\n  - Magisteriate of Nomic              (M.N.)\n  - Doctorate of Nomic Artistry        (D.N.Art.)\n  - Doctorate of Nomic History         (D.N.Hist.)\n  - Doctorate of Nomic Law             (D.N.Law.)\n  - Doctorate of Nomic Science         (D.N.Sci.)\n  - Doctorate of Nomic Philosophy      (D.N.Phil.)\n\n  There are four classes of degrees, ranked in ascending order of merit:\n  Associate degrees (A.N.A. and A.N.), Baccalaureate degrees\n  (J.N through B.N.), Magisteriate degrees (M.N.A and M.N), and\n  Doctorate degrees (D.N.Art. through D.N.Phil.).\n\n  A specified degree CAN be awarded by any player other than the\n  awardee, with 2 Agoran consent. It SHOULD only be awarded for the\n  publication of an original thesis of scholarly worth (including\n  responses to peer-review), published with explicit intent to\n  qualify for a degree. The Herald SHOULD coordinate the peer-review\n  process and the awarding of degrees.\n\n  Degrees SHOULD be awarded according to the extent to which the thesis\n  contributes to Nomic culture or thought: Associate degrees for an\n  appreciable contribution, Baccalaureate degrees for a substantial\n  contribution, Magisteriate degrees for a remarkable contribution, and\n  Doctorate degrees for an exceptional contribution. Any degree at the\n  Doctorate level SHOULD take into account the awardee's academic history\n  and participation in Agora over time.\n\n  Theses for Artistry degrees SHOULD demonstrate substantial creativity\n  and need not be in written form. Theses for all other degrees SHOULD\n  demonstrate substantial research or analysis. J.N. and D.N.Law are\n  appropriate for high-quality legal analysis, of the sort typical to CFJs,\n  but exceeding an ordinary CFJ in depth. The D.N.Hist. degree is\n  appropriate for historical research, especially when it presents a\n  narrative that educates Agorans about the events of the past. The D.N.Sci.\n  degree is appropriate for theses that demonstrate concrete or scientific\n  thinking, whereas the D.N.Phil. is appropriate for theses that demonstrate\n  abstract or philosophical thinking.\n\nRename every instance of the first listed patent title on each row to the\nsecond listed patent title on each row:\n\n- Juris Doctor of Nomic, Juris Doctorate of Nomic\n- Doctor of Nomic History, Doctorate of Nomic History\n- Doctor of Nomic Law, Doctorate of Nomic Law\n- Doctor of Nomic Science, Doctorate of Nomic Science\n- Doctor of Nomic Philosophy, Doctorate of Nomic Philosophy"
@@ -23,7 +23,7 @@
             "proposal_ai": "2.2",
             "decision_ai": "2.2",
             "title": "Promise Powers Patch",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "[There was a bug in my original version (in the sense of it doing something\nother than what I intended); I solved the problem of people acting on behalf of\ntheir zombies to enter promises by putting an \"acting as emself\" requirement,\nforgetting that this also affected contracts and stopped promises from\ncreating other promises. This proposal remedies my error.]\n\nAmend the rule entitled \"Promises\" by deleting the text \"acting as emself, \".\n\nAmend Rule 2532, \"Zombies\", by changing the text\n\n  \"- enter a contract, pledge, or other type of agreement\"\n\nto read\n\n  \"- enter a contract, pledge, promise, or other type of agreement\""
@@ -56,7 +56,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Why Track Pendency?",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "[Currently, Sets would make me track proposals forever. The simplest\nfix is just to make the Pended switch untracked. It'll end up getting\neffectively tracked anyway, since it determines whether a proposal must\nbe distributed.]\n\nAmend the rule entitled \"Pending Proposals\" by changing the text \"Pended is a\nnegative boolean proposal switch tracked by the Promotor.\" to read\n\"Pended is an untracked negative boolean proposal switch.\""
@@ -67,7 +67,7 @@
             "proposal_ai": "2.0",
             "decision_ai": "2.0",
             "title": "Ministerial Reshuffling",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "Amend Rule 2605, \"Ministries\", by changing the lettered list to read:\n\n  A. Ministry of Economy: regulate the economy\n  B. Ministry of Efficiency: maximize official efficiency\n  C. Ministry of Justice: serve justice\n  D. Ministry of Legislation: effectuate legislation\n  E. Ministry of Participation: encourage participation"
@@ -78,7 +78,7 @@
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
             "title": "Proposal Recycling Initiative",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "[This helps for any proposals that either were distributed before the new\nregime and failed quorum, or any proposals that are accidentally distributed\nand failed quorum. While I'm at it, there's no reason this needs to be at\npower 3.0.]\n\nAmend Rule 2350, \"Proposals\", by deleting the text:\n  If a decision of whether to adopt a proposal was resolved as\n  FAILED QUORUM in the last seven days, the Promotor CAN once add\n  the proposal back to the Proposal Pool by announcement.\n\nEnact a new rule entitled \"Proposal Recycling\", with the following text:\n\n  If a decision of whether to adopt a proposal was resolved as\n  FAILED QUORUM in the last seven days, the Promotor CAN once recycle\n  the proposal by announcement, adding it to the Proposal Pool and causing\n  it to become pended."
@@ -102,7 +102,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Properly Prioritized Popular Proposal Proposer Privilege",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
                 "G."
             ],
@@ -114,7 +114,7 @@
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
             "title": "Referenda",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "Amend Rule 1607, \"Distribution\", by replacing:\n\n  Determining whether to adopt a proposal is an Agoran decision. For\n  this decision, the vote collector is the Assessor, the adoption\n  index is initially the adoption index of the proposal, or 1.0 if\n  the proposal does not have one, and the text, author, coauthors,\n  class and (if applicable) chamber of the proposal are essential\n  parameters. Initiating such a decision is known as distribution,\n  and removes the proposal from the Proposal Pool.\n\nwith:\n\n  A referendum is the Agoran decision to determine whether to adopt a proposal.\n  For this decision, the vote collector is the Assessor, the adoption index is\n  initially the adoption index of the proposal, or 1.0 if the proposal does not\n  have one, and the text, author, coauthors, class and (if applicable) chamber\n  of the proposal are essential parameters. Initiating a referendum is known\n  as distribution, and removes the proposal from the Proposal Pool.\n\nAmend Rule 2606, \"Proposal Classes\", by changing the text \"Agoran decision on\nits adoption\" to read \"referendum on it\".\n\nAmend Rule 2607, \"Proposal Chambers\", by changing the text \"Agoran decision on\nits adoption\" to read \"referendum on it\".\n\nAmend Rule 106, \"Adopting Proposals\", by changing the text \"a decision about\nwhether to adopt a proposal\" to read \"a referendum on a proposal\".\n\nAmend Rule 879, \"Quorum\", by changing the text \"the Agoran decision on whether\nto adopt a proposal\" to read \"the referendum\".\n\nAmend Rule 2168, \"Extending the voting period\", by changing the text\n\"whether to adopt a proposal\" to read \"a referendum on a proposal\".\n\nAmend Rule 2496, Rewards, by changing the text \"FOR the decision\" to read\n\"FOR the referendum\" and replacing:\n  Resolving an Agoran Decision on whether to adopt a proposal,\n  provided that no other Agoran Decision on whether to adopt that\n  or any other proposal had been resolved earlier in that Agoran\n  week: 5 coins (ADoP).\nwith:\n  Resolving a referendum, provided that no other referendum had been resolved\n  earlier in that Agoran week: 5 coins (ADoP).\n\nAmend Rule 2438, \"Ribbons\", by changing the text \"an Agoran Decision\" to\nread \"a referendum\".\n\nIf the proposal entitled \"Properly Prioritized Popular Proposal Proposer\nPrivilege\" has passed:\n  Amend the Rule entitled \"Popular Proposal Proposer Privilege\" by changing it\n  to read in full:\n    For a referendum, let F be the total number of valid ballots resolving to\n    FOR, A be the same for AGAINST, and T be the total number of valid ballots.\n    The referendum's popularity is equal to (F - A)/T. The Assessor SHOULD\n    publish the popularity of each referendum when resolving it.\n\n    The player who proposed the adopted proposal whose referendum had\n    the greatest popularity among all referenda assessed in the last 7 days CAN\n    once earn one Legislative Card by announcement, provided that no referendum\n    initiated in the same message as it remains unresolved. If there is a tie,\n    all authors of the tied proposals can do so once each.\nOtherwise:\n  Amend the rule entitled \"Popular Proposal Proposer Privilege\" by\n  changing the text \"provided that no decision on whether to adopt any proposal\n  distributed in the same message remains open.\" to read \"provided that\n  no referendum initiated in the same message remains open.\"\n\n[Note: One of these will fail.]\n\nAmend Rule 2350, \"Proposals\", by changing the text \"If a decision of whether to\nadopt a proposal was resolved as FAILED QUORUM in the last seven days\"\nto read \"If a referendum on a proposal was resolved as FAILED QUORUM in the\nlast seven days\".\n\nAmend the rule entitled \"Proposal Recycling\" by changing \"If a\ndecision of whether\nto adopt a proposal was resolved as FAILED QUORUM in the last seven days\"\nto read \"If a referendum on a proposal was resolved as FAILED QUORUM in the\nlast seven days\"."
@@ -125,7 +125,7 @@
             "proposal_ai": "2.0",
             "decision_ai": "2.0",
             "title": "Executive Expansion",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "Amend Rule 2451, \"Executive Orders\", to read in full:\n\n  Once per week, except as otherwise forbidden by this rule, the\n  current Prime Minister CAN issue a Cabinet Order by announcement\n  to cause the effect specified by the order. The Prime Minister\n  CANNOT issue the same executive order more than once in a month.\n\n  The available Cabinet Orders are:\n\n  - Certiorari: The Prime Minister assigns emself as judge\n    of a specified open case.\n\n  - Corram Vobis: The Prime Minister enters a specified case, the current\n    judgement of which was assigned within the past quarter, into Moot.\n\n  - Dive: The Prime Minister levies a fine of 2 on a\n    specified player. Rules to the contrary notwithstanding, the\n    reason for the fine MAY be any grievance held by the Prime\n    Minister, not necessarily a violation of the rules, against the\n    person to whom the fine is levied.\n\n  - Imprimatur: The Prime Minister acts on behalf of the vote collector\n    of an Agoran Decision to resolve that decision.\n\n  - Manifesto: The Prime Minister distributes a specified\n    proposal in the Proposal Pool.\n\n  - Pardon: N of a person's blots are expunged, where N is the number\n    of blots e received from a specified fine that has not previously been\n    pardoned. This power SHOULD be used only when extraordinary factors counsel\n    in favor of clemency, and any further mention of the fine SHOULD\n    include the fact that it has been pardoned.\n\n  - Reshuffle: The Prime Minister initiates elections for a specified\n    set of elected offices."
@@ -151,7 +151,7 @@
             "coauthors": [
                 "G.",
                 "Trigon",
-                "Aspen",
+                "Aris",
                 "nix"
             ],
             "text": "Remove the text \", as described in Rule 478\" from Rule 2139, \"The Registrar\".\n\nRemove the text \"as described in Rule 1789\" from Rule 2139, \"The Registrar\".\n\nRemove the text \"identified in Rule 1728\" in Rule 2595."
@@ -174,7 +174,7 @@
             "proposal_ai": "1.0",
             "decision_ai": "1.0",
             "title": "Certifiable Patches",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
                 "nix",
                 "Publius Scribonius Scholasticus"
@@ -187,7 +187,7 @@
             "proposal_ai": "2.0",
             "decision_ai": "2.0",
             "title": "Impossibility Defense",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "Amend 2531, \"Defendant's Rights\", by adding the following after item (2)\nof the second numbered list:\n\n  (3) it attempts to levy a fine on a person for failure to take an action\n      that e, through no fault of eir own, COULD NOT have performed;\n  (4) it attempts to levy a fine on a person for conduct that e, through\n      no fault of eir own, was obliged to undertake by a rule of equal\n      or greater power to the one e violated;\nand renumbering the list accordingly."
@@ -198,7 +198,7 @@
             "proposal_ai": "2.0",
             "decision_ai": "2.0",
             "title": "Impracticability Defense",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "Amend 2531, \"Defendant's Rights\", by adding the following to the second\nnumbered list as a new item immediately before the item beginning\n\"it attempts to levy a fine with a value\":\n  \"it attempts to levy a fine on a person taking an action or inaction e could\n  not have avoided when exercising the highest reasonably possible standard\n  of care;\""
@@ -220,7 +220,7 @@
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
             "title": "Pending Pends",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "[This restores my ability to backdate.]\n\nAmend Rule 1607, \"Distribution\", by replacing:\n\n  In a given Agoran week, the Promotor SHALL distribute each\n  pending proposal that was in the Proposal Pool at the beginning\n  of that week, except for those excepted from automatic\n  distribution by other rules, or those that are otherwise removed\n  from the Pool.\n\nwith:\n\n  In a given Agoran week, the Promotor SHALL distribute each\n  proposal that was in the Proposal Pool and pending at the beginning\n  of that week, except for those excepted from automatic\n  distribution by other rules, or those that are otherwise removed\n  from the Pool."
@@ -231,7 +231,7 @@
             "proposal_ai": "1.7",
             "decision_ai": "1.7",
             "title": "Why Limit Clemency?",
-            "author": "Aspen",
+            "author": "Aris",
             "coauthors": [
             ],
             "text": "[This removes the arbitrary three blot limit on apology clemency.]\n\nAmend Rule 2557, \"Removing Blots\", by replacing:\n\n  Optionally, in the same message in which e imposes justice, the\n  investigator CAN specify that the violation is forgivable,\n  specifying up to 10 words to be included in an apology.  If the\n  investigator does so, the perp CAN, in a timely fashion, expunge P\n  blots from emself, where P is the minimum of the value of the fine\n  and 3, by publishing a formal apology of at least 200 words and\n  including all the specified words, explaining eir error, shame,\n  remorse, and ardent desire for self-improvement.\n\nwith:\n\n  Optionally, in the same message in which e imposes justice, the\n  investigator CAN specify that the violation is forgivable,\n  specifying up to 10 words to be included in an apology.  If the\n  investigator does so, the perp CAN, in a timely fashion, expunge P\n  blots from emself, where P is the value of the fine, by publishing a\n  formal apology of at least 200 words and including all the specified words,\n  explaining eir error, shame, remorse, and ardent desire for\n  self-improvement."
@@ -295,7 +295,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -470,7 +470,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -663,7 +663,7 @@
                     "final": 10
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -754,7 +754,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1018,7 +1018,7 @@
                     "final": 7
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -1155,7 +1155,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1352,7 +1352,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -1489,7 +1489,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -1707,7 +1707,7 @@
                     "final": 7
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -1819,7 +1819,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2037,7 +2037,7 @@
                     "final": 7
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -2149,7 +2149,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2324,7 +2324,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2499,7 +2499,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -2717,7 +2717,7 @@
                     "final": 7
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -2829,7 +2829,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3004,7 +3004,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3247,7 +3247,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -3384,7 +3384,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -3627,7 +3627,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -3764,7 +3764,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -3939,7 +3939,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "AGAINST",
                         "comments": [
                         ]
@@ -4182,7 +4182,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -4319,7 +4319,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -4537,7 +4537,7 @@
                     "final": 7
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -4649,7 +4649,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -4846,7 +4846,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -4983,7 +4983,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -5180,7 +5180,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -5317,7 +5317,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -5514,7 +5514,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -5651,7 +5651,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -5826,7 +5826,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -6023,7 +6023,7 @@
                     "final": 5
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
@@ -6160,7 +6160,7 @@
                         ]
                     },
                     {
-                        "voter": "Aspen",
+                        "voter": "Aris",
                         "vote": "FOR",
                         "comments": [
                         ]
@@ -6424,7 +6424,7 @@
                     "final": 7
                 },
                 {
-                    "person": "Aspen",
+                    "person": "Aris",
                     "initial": 3,
                     "initial_description": null,
                     "modifications": [
