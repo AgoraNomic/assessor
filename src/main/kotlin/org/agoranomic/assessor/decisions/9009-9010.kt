@@ -211,7 +211,7 @@ you somewhere, but it's public that that is the team...
 
         votes(kiako) {
             FOR on 9009
-            FOR on 9010
+            AGAINST on 9010
         }
 
         votes(Forest) {
