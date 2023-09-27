@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9009to9010() = assessment {
@@ -202,6 +203,11 @@ you somewhere, but it's public that that is the team...
         votes(snail) {
             FOR on 9009
             FOR on 9010
+        }
+
+        votes(juan) {
+            PRESENT on 9009
+            PRESENT on 9010
         }
     }
 }
