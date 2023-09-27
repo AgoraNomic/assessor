@@ -209,5 +209,10 @@ you somewhere, but it's public that that is the team...
             PRESENT on 9009
             PRESENT on 9010
         }
+
+        votes(kiako) {
+            FOR on 9009
+            FOR on 9010
+        }
     }
 }
