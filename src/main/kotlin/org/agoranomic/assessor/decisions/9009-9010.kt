@@ -218,5 +218,10 @@ you somewhere, but it's public that that is the team...
             FOR on 9009
             AGAINST on 9010
         }
+
+        votes(Kate) {
+            FOR on 9009
+            AGAINST on 9010
+        }
     }
 }
