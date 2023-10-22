@@ -858,7 +858,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             (8617..8618).forEach { FOR on it }
             AGAINST on 8619
             AGAINST on 8620
-            endorse(Aris) on 8621 comment "Aspen is the Promotor"
+            endorse(Aris) on 8621 comment "${Aris.name} is the Promotor"
             AGAINST on 8622
             FOR on 8623
             endorse(nix) on 8624 comment "nix is the Herald"
@@ -915,7 +915,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8623
             AGAINST on 8624
             FOR on 8625
-            AGAINST on 8626 comment legacyConditionalComment("G. and Aspen do not hafe equivalent votes because Aspen did not vote")
+            AGAINST on 8626 comment legacyConditionalComment("G. and ${Aris.name} do not have equivalent votes because ${Aris.name} did not vote")
             AGAINST on 8627
             FOR on 8628
             FOR on 8629
@@ -975,7 +975,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8618
             FOR on 8619
             AGAINST on 8620 comment legacyConditionalComment("proposal would not pass if AGAINST")
-            endorse(Aris) on 8621 comment "Aspen is the Promotor"
+            endorse(Aris) on 8621 comment "${Aris.name} is the Promotor"
             FOR on 8622 comment legacyConditionalComment("Independence Day will be adopted")
             FOR on 8623
             AGAINST on 8624
@@ -1027,7 +1027,7 @@ functionality stays in the rewrite as per the will of the voters.]""")
             FOR on 8618
             AGAINST on 8619
             AGAINST on 8620
-            endorse(Aris) on 8621 comment "Aspen is the Promotor"
+            endorse(Aris) on 8621 comment "${Aris.name} is the Promotor"
             AGAINST on 8622
             PRESENT on 8623
             AGAINST on 8624
