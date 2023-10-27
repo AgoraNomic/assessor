@@ -325,5 +325,16 @@ sent to at "agoranomic at groups.io" is hereby flipped to Public."""
             AGAINST on 9018
             FOR on 9019
         }
+
+        votes(nix) {
+            FOR on 9011
+            AGAINST on 9013
+            FOR on 9014
+            AGAINST on 9015
+            PRESENT on 9016
+            PRESENT on 9017
+            PRESENT on 9018
+            FOR on 9019
+        }
     }
 }
