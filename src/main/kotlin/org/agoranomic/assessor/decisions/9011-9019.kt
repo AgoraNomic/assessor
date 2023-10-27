@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -315,6 +312,18 @@ sent to at "agoranomic at groups.io" is hereby flipped to Public."""
 
         votes(Forest) {
             FOR on all
+        }
+
+        votes(kiako) {
+            PRESENT on 9011
+            endorse(Janet) on 9012
+            AGAINST on 9013
+            FOR on 9014
+            FOR on 9015
+            FOR on 9016
+            PRESENT on 9017
+            AGAINST on 9018
+            FOR on 9019
         }
     }
 }
