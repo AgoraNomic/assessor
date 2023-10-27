@@ -8,6 +8,9 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
+import java.math.BigDecimal
 
 @UseAssessment
 fun assessment9011to9018() = assessment {
@@ -107,7 +110,8 @@ switch" with "Complexity is a secured office switch"."""
 
         proposal(9013) {
             title("Cool numbers")
-            ai("1.0")
+            proposalAI(ProposalAI(BigDecimal("1.0")))
+            decisionAI(DecisionAI(BigDecimal("2.0")))
             author(Forest)
             ordinary()
 
