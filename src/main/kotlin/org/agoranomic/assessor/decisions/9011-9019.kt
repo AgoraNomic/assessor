@@ -10,6 +10,7 @@ import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 import java.math.BigDecimal
 
 @UseAssessment
@@ -300,5 +301,16 @@ sent to at "agoranomic at groups.io" is hereby flipped to Public."""
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9011
+            FOR on 9012
+            FOR on 9013
+            PRESENT on 9014
+            PRESENT on 9015
+            AGAINST on 9016
+            AGAINST on 9017
+            AGAINST on 9018
+            FOR on 9019
+        }
     }
 }
