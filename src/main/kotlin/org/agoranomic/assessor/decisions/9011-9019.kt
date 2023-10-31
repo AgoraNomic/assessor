@@ -355,5 +355,9 @@ sent to at "agoranomic at groups.io" is hereby flipped to Public."""
             AGAINST on 9018
             FOR on 9019
         }
+
+        votes(Yachay) {
+            PRESENT on 9012
+        }
     }
 }
