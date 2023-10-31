@@ -15,6 +15,13 @@ fun assessment9011to9018() = assessment {
     name("9011-9019")
     quorum(5)
 
+    // Note: the voting periods of these proposals was during a period where the main mailing lists were down.
+    // Some purported votes were sent during the voting period, stuck at the list, then finally delivered later after
+    // the initial voting period had passed (except for 9012, which was delayed due to being inquorate at 7 days;
+    // thanks, nix).
+    //
+    // I have elected to not include those votes here.
+
     strengths {
         default(3)
         min(0)
