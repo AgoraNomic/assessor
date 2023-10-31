@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
@@ -13,6 +14,13 @@ import java.math.BigDecimal
 @UseAssessment
 fun assessment9011to9018() = assessment {
     name("9011-9019")
+
+    url(
+        "https://agoranomic.groups.io/g/main/message/120",
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-October/017412.html",
+        "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-October/017413.html",
+    )
+
     quorum(5)
 
     // Note: the voting periods of these proposals was during a period where the main mailing lists were down.
