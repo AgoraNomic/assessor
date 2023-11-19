@@ -168,4 +168,7 @@ office, responsible for tracking radiance. }
             )
         }
     }
+
+    voting {
+    }
 }
