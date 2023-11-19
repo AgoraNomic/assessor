@@ -108,28 +108,28 @@ Grant each player that voted FOR this proposal 1 stamp of eir own type."""
             )
         }
 
-        proposal(9024) {
-            title("Investigation time limits")
-            ai("1.7")
-            author(Janet)
-            ordinary()
-
-            text(
-                """
-Amend Rule 2478 by, as a single amendment:
-
-* Replacing "Within 14 days of an infraction being committed," with
-"Within 14 days of an infraction being committed, or if the infraction
-has been noted,".
-
-* Replacing "any other player in the last 7 days" with "any other player
-in the last 14 days".
-
-[Harmonize the time limits to investigate and to note, and ensure a
-noted infraction can always be investigated beyond the time limit to do
-so (allowing deputization).]"""
-            )
-        }
+//        proposal(9024) {
+//            title("Investigation time limits")
+//            ai("1.7")
+//            author(Janet)
+//            ordinary()
+//
+//            text(
+//                """
+//Amend Rule 2478 by, as a single amendment:
+//
+//* Replacing "Within 14 days of an infraction being committed," with
+//"Within 14 days of an infraction being committed, or if the infraction
+//has been noted,".
+//
+//* Replacing "any other player in the last 7 days" with "any other player
+//in the last 14 days".
+//
+//[Harmonize the time limits to investigate and to note, and ensure a
+//noted infraction can always be investigated beyond the time limit to do
+//so (allowing deputization).]"""
+//            )
+//        }
 
         proposal(9025) {
             title("Stone Repeal")
@@ -173,7 +173,7 @@ office, responsible for tracking radiance. }
             AGAINST on 9021
             AGAINST on 9022
             AGAINST on 9023
-            FOR on 9024
+//            FOR on 9024
             PRESENT on 9025
             FOR on 9026
         }
@@ -183,7 +183,7 @@ office, responsible for tracking radiance. }
             AGAINST on 9021
             AGAINST on 9022
             AGAINST on 9023
-            FOR on 9024
+//            FOR on 9024
             FOR on 9025
             endorse(snail) on 9026 comment "${snail.name} is the Herald"
         }
@@ -193,7 +193,7 @@ office, responsible for tracking radiance. }
             AGAINST on 9021
             AGAINST on 9022
             AGAINST on 9023
-            endorse(Janet) on 9024
+//            endorse(Janet) on 9024
             FOR on 9025
             endorse(Janet) on 9026
         }
@@ -203,7 +203,7 @@ office, responsible for tracking radiance. }
             AGAINST on 9021
             AGAINST on 9022
             AGAINST on 9023
-            FOR on 9024
+//            FOR on 9024
             AGAINST on 9025
             FOR on 9026
         }
@@ -213,7 +213,7 @@ office, responsible for tracking radiance. }
             AGAINST on 9021
             AGAINST on 9022
             AGAINST on 9023
-            FOR on 9024
+//            FOR on 9024
             FOR on 9025
             FOR on 9026
         }
@@ -223,7 +223,7 @@ office, responsible for tracking radiance. }
             AGAINST on 9021
             AGAINST on 9022
             AGAINST on 9023
-            endorse(Janet) on 9024
+//            endorse(Janet) on 9024
             AGAINST on 9025
             FOR on 9026
         }
