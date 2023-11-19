@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9020t9026() = assessment {
@@ -170,5 +171,14 @@ office, responsible for tracking radiance. }
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9020
+            AGAINST on 9021
+            AGAINST on 9022
+            AGAINST on 9023
+            FOR on 9024
+            PRESENT on 9025
+            FOR on 9026
+        }
     }
 }
