@@ -197,5 +197,15 @@ office, responsible for tracking radiance. }
             FOR on 9025
             endorse(Janet) on 9026
         }
+
+        votes(ais523) {
+            AGAINST on 9020
+            AGAINST on 9021
+            AGAINST on 9022
+            AGAINST on 9023
+            FOR on 9024
+            AGAINST on 9025
+            FOR on 9026
+        }
     }
 }
