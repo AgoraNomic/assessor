@@ -187,5 +187,15 @@ office, responsible for tracking radiance. }
             FOR on 9025
             endorse(snail) on 9026 comment "${snail.name} is the Herald"
         }
+
+        votes(kiako) {
+            AGAINST on 9020
+            AGAINST on 9021
+            AGAINST on 9022
+            AGAINST on 9023
+            endorse(Janet) on 9024
+            FOR on 9025
+            endorse(Janet) on 9026
+        }
     }
 }
