@@ -237,5 +237,9 @@ office, responsible for tracking radiance. }
             AGAINST on 9025
             FOR on 9026
         }
+
+        votes(Forest) {
+            FOR on all
+        }
     }
 }
