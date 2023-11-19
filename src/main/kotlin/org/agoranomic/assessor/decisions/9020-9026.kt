@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -179,6 +176,16 @@ office, responsible for tracking radiance. }
             FOR on 9024
             PRESENT on 9025
             FOR on 9026
+        }
+
+        votes(Murphy) {
+            AGAINST on 9020
+            AGAINST on 9021
+            AGAINST on 9022
+            AGAINST on 9023
+            FOR on 9024
+            FOR on 9025
+            endorse(snail) on 9026 comment "${snail.name} is the Herald"
         }
     }
 }
