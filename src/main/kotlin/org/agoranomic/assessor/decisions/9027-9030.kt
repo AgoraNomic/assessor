@@ -216,51 +216,51 @@ Amend Rule 2675 (Dream of Wandering) to read, in full:
             )
         }
 
-        proposal(9030) {
-            title("(n/a)")
-            ai("1.0")
-            author(Forest)
-            ordinary()
-
-            text(
-                """
-The Geologist is the office that tracks crystals.
-Each crystal is a liquid asset.
-Each crystal has three secured natural integer switches,
-one of which is the size, the second is its identity,
-and the third is the instability.
-The default size of a crystal is 1.
-The default instability of a crystal is 0.
-Each Quarter, the size is increased by 3 of all crystals with
-identifiers that don't match any rule number in the current ruleset.
-
-Once for each rule a proposal amends or repeals:
-- If a crystal with an identity equal to the number of that rule
-  exists, combine that proposal with that crystal.
-- Otherwise, grant the author of the proposal a crystal with the
-  identity equal to the number of that rule, and size equal
-  to the power of that proposal, rounded up to the nearest integer.
-
-Whenever a proposal and a crystal combine:
-- Increase the size of the crystal by the power of the proposal,
-  rounded up to the nearest integer.
-- If the proposal's author doesn't own the crystal,
-  increase the instability of the crystal by 3.
-- If the instability is larger than the size of the
-  crystal, transfer the crystal to the author of the proposal, and
-  reduce the instability of the crystal to its size.
-
-A player CAN, by announcement, Shatter the System, and attempting to
-specify all crystallized players, provided that no player has won the
-game by doing so in the past 30 days. An player is crystallized if
-it owns crystals with a total size greater than or equal to the
-number of rules in the current ruleset.
-
-When the System is Shattered, all crystallized players win the game.
-If a player won the game in this manner 4 or more days ago, any
-player CAN repeal this rule by announcement."""
-            )
-        }
+//        proposal(9030) {
+//            title("(n/a)")
+//            ai("1.0")
+//            author(Forest)
+//            ordinary()
+//
+//            text(
+//                """
+//The Geologist is the office that tracks crystals.
+//Each crystal is a liquid asset.
+//Each crystal has three secured natural integer switches,
+//one of which is the size, the second is its identity,
+//and the third is the instability.
+//The default size of a crystal is 1.
+//The default instability of a crystal is 0.
+//Each Quarter, the size is increased by 3 of all crystals with
+//identifiers that don't match any rule number in the current ruleset.
+//
+//Once for each rule a proposal amends or repeals:
+//- If a crystal with an identity equal to the number of that rule
+//  exists, combine that proposal with that crystal.
+//- Otherwise, grant the author of the proposal a crystal with the
+//  identity equal to the number of that rule, and size equal
+//  to the power of that proposal, rounded up to the nearest integer.
+//
+//Whenever a proposal and a crystal combine:
+//- Increase the size of the crystal by the power of the proposal,
+//  rounded up to the nearest integer.
+//- If the proposal's author doesn't own the crystal,
+//  increase the instability of the crystal by 3.
+//- If the instability is larger than the size of the
+//  crystal, transfer the crystal to the author of the proposal, and
+//  reduce the instability of the crystal to its size.
+//
+//A player CAN, by announcement, Shatter the System, and attempting to
+//specify all crystallized players, provided that no player has won the
+//game by doing so in the past 30 days. An player is crystallized if
+//it owns crystals with a total size greater than or equal to the
+//number of rules in the current ruleset.
+//
+//When the System is Shattered, all crystallized players win the game.
+//If a player won the game in this manner 4 or more days ago, any
+//player CAN repeal this rule by announcement."""
+//            )
+//        }
     }
 
     voting {
@@ -268,7 +268,7 @@ player CAN repeal this rule by announcement."""
             FOR on 9027
             FOR on 9028
             FOR on 9029
-            AGAINST on 9030
+//            AGAINST on 9030
         }
 
         votes(nix) {
@@ -281,7 +281,7 @@ player CAN repeal this rule by announcement."""
             FOR on 9027
             FOR on 9028
             AGAINST on 9029
-            AGAINST on 9030
+//            AGAINST on 9030
         }
 
         votes(Forest) {
@@ -294,7 +294,7 @@ player CAN repeal this rule by announcement."""
             FOR on 9027
             FOR on 9028
             FOR on 9029
-            AGAINST on 9030
+//            AGAINST on 9030
         }
     }
 }
