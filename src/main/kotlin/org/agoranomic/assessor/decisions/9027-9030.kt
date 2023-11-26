@@ -283,5 +283,11 @@ player CAN repeal this rule by announcement."""
             AGAINST on 9029
             AGAINST on 9030
         }
+
+        votes(Forest) {
+            FOR on 9027
+            FOR on 9028
+            FOR on 9029
+        }
     }
 }
