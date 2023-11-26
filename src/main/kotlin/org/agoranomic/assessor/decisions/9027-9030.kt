@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.blotPenalty
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -308,6 +305,13 @@ Amend Rule 2675 (Dream of Wandering) to read, in full:
             FOR on 9027
             FOR on 9028
             FOR on 9029
+            // AGAINST on 9030
+        }
+
+        votes(Murphy) {
+            FOR on 9027
+            endorse(ais523) on 9028 comment "${ais523.name} is the Referee"
+            endorse(snail) on 9029 comment "${snail.name} is the Dream Keeper"
             // AGAINST on 9030
         }
     }
