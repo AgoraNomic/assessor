@@ -303,5 +303,12 @@ Amend Rule 2675 (Dream of Wandering) to read, in full:
             PRESENT on 9029
             // AGAINST on 9030
         }
+
+        votes(kiako) {
+            FOR on 9027
+            FOR on 9028
+            FOR on 9029
+            // AGAINST on 9030
+        }
     }
 }
