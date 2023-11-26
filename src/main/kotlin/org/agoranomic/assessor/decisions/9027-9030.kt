@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9027to9030() = assessment {
@@ -270,6 +269,12 @@ player CAN repeal this rule by announcement."""
             FOR on 9028
             FOR on 9029
             AGAINST on 9030
+        }
+
+        votes(nix) {
+            FOR on 9027
+            PRESENT on 9028
+            PRESENT on 9029
         }
     }
 }
