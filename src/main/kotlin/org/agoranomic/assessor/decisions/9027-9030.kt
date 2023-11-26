@@ -276,5 +276,12 @@ player CAN repeal this rule by announcement."""
             PRESENT on 9028
             PRESENT on 9029
         }
+
+        votes(Janet) {
+            FOR on 9027
+            FOR on 9028
+            AGAINST on 9029
+            AGAINST on 9030
+        }
     }
 }
