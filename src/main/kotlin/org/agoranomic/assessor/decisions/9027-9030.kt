@@ -261,4 +261,7 @@ player CAN repeal this rule by announcement."""
             )
         }
     }
+
+    voting {
+    }
 }
