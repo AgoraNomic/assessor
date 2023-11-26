@@ -8,6 +8,8 @@ import org.agoranomic.assessor.dsl.votes.blotPenalty
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9027to9030() = assessment {
@@ -263,5 +265,11 @@ player CAN repeal this rule by announcement."""
     }
 
     voting {
+        votes(snail) {
+            FOR on 9027
+            FOR on 9028
+            FOR on 9029
+            AGAINST on 9030
+        }
     }
 }
