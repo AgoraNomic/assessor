@@ -314,5 +314,12 @@ Amend Rule 2675 (Dream of Wandering) to read, in full:
             endorse(snail) on 9029 comment "${snail.name} is the Dream Keeper"
             // AGAINST on 9030
         }
+
+        votes(Yachay) {
+            FOR on 9027
+            PRESENT on 9028
+            PRESENT on 9029
+            // AGAINST on 9030
+        }
     }
 }
