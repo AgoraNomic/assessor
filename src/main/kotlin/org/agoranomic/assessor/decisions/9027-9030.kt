@@ -274,7 +274,7 @@ player CAN repeal this rule by announcement."""
         votes(nix) {
             FOR on 9027
             PRESENT on 9028
-            AGAINST on 9029
+            PRESENT on 9029
         }
     }
 }
