@@ -289,5 +289,12 @@ player CAN repeal this rule by announcement."""
             FOR on 9028
             FOR on 9029
         }
+
+        votes(Kate) {
+            FOR on 9027
+            FOR on 9028
+            FOR on 9029
+            AGAINST on 9030
+        }
     }
 }
