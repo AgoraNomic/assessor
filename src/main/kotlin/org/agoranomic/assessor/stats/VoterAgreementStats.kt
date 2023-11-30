@@ -109,6 +109,7 @@ fun buildVoterMutualAgreementStats(
                 }
                 .mapKeys { (voter, _) -> voter.name },
             title = "Voter agreement",
+            adjustSize = 1.5,
         ).tiles().build(),
     )
 }
