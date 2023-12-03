@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 import org.agoranomic.assessor.lib.vote.finalResolution
 import org.agoranomic.assessor.lib.vote.voteIfVoted
 
@@ -159,6 +158,12 @@ with:
             } on 9032
 
             endorse(Janet) on 9033 comment "${Janet.name} is the Rulekeepor"
+            FOR on 9034
+        }
+
+        votes(Janet) {
+            AGAINST on 9032
+            PRESENT on 9033
             FOR on 9034
         }
     }
