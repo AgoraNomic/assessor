@@ -4,11 +4,11 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment9032to9034() = assessment {
@@ -148,6 +148,18 @@ with:
             FOR on 9032
             FOR on 9033
             AGAINST on 9034
+        }
+
+        votes(kiako) {
+            function { ctx ->
+                if (ctx.resolve(ctx.currentProposal, ais523)?.finalResolution(ctx)?.voteIfVoted == AGAINST)
+                    resolvedConditional(AGAINST, "${ais523.name} voted AGAINST")
+                else
+                    resolvedConditional(FOR, "${ais523.name} did not vote AGAINST")
+            } on 9032
+
+            endorse(Janet) on 9033 comment "${Janet.name} is the Rulekeepor"
+            FOR on 9034
         }
     }
 }
