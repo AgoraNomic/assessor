@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9032to9034() = assessment {
@@ -136,5 +137,10 @@ with:
     }
 
     voting {
+        votes(snail) {
+            FOR on 9032
+            FOR on 9033
+            FOR on 9034
+        }
     }
 }
