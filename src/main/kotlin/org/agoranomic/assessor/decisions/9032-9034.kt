@@ -166,5 +166,11 @@ with:
             PRESENT on 9033
             FOR on 9034
         }
+
+        votes(Goren) {
+            FOR on 9032
+            FOR on 9033
+            FOR on 9034
+        }
     }
 }
