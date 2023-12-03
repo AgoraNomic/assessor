@@ -172,5 +172,11 @@ with:
             FOR on 9033
             FOR on 9034
         }
+
+        votes(ais523) {
+            FOR on 9032
+            AGAINST on 9033
+            PRESENT on 9034
+        }
     }
 }
