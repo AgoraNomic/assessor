@@ -178,5 +178,11 @@ with:
             AGAINST on 9033
             PRESENT on 9034
         }
+
+        votes(Murphy) {
+            FOR on 9032
+            endorse(Janet) on 9033 comment "${Janet.name} is the Rulekeepor"
+            FOR on 9034
+        }
     }
 }
