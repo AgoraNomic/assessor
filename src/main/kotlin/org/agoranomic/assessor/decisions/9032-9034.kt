@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -141,6 +142,12 @@ with:
             FOR on 9032
             FOR on 9033
             FOR on 9034
+        }
+
+        votes(Forest) {
+            FOR on 9032
+            FOR on 9033
+            AGAINST on 9034
         }
     }
 }
