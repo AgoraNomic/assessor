@@ -163,7 +163,7 @@ with:
 
         votes(Janet) {
             AGAINST on 9032
-            PRESENT on 9033
+            AGAINST on 9033
             FOR on 9034
         }
 
