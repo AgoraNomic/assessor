@@ -1,0 +1,57 @@
+PROPOSAL 9032 (Rules as Items v6)
+AUTHOR: 4st
+CLASS: ORDINARY
+FOR (6): 4st, Goren, Murphy%, ais523%, kiako, snail^
+AGAINST (1): Janet^
+PRESENT (0): 
+BALLOTS: 7
+AI (F/A): 25/6 (AI=1.0)
+POPULARITY: 0.714
+OUTCOME: ADOPTED
+[
+kiako: Conditional resolved: ais523 did not vote AGAINST
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-December/017486.html
+
+ID: 9032
+Title: Rules as Items v6
+Adoption index: 1.0
+Author: 4st
+Co-authors: Janet, kiako, snail
+
+
+Enact the following rule entitled "Crystals":{
+The Geologist is an office that tracks crystals.
+
+A crystal is an asset with secured integer switches identity, size (default
+0), and instability (default 0).
+
+Each quarter, each crystal whose identity is not equal to the ID of any
+rule in the current ruleset has its size increased by 3.
+
+If a proposal amends or repeals a rule, if a crystal exists whose identity
+equals that rule's id, that crystal absorbs that proposal. Otherwise, grant
+to the author of the proposal a crystal with identity equal to the ID of
+that rule, then that crystal absorbs that proposal. Each crystal can only
+absorb a given proposal once by this method.
+
+When a crystal absorbs a proposal, the following occur in sequence:
+- The size of that crystal is increased by the power of that proposal
+(rounded down).
+- If that crystal's owner is not the author of that proposal, the
+instability of that crystal is increased by 3.
+- If the instability of that crystal is greater than its size, it is
+transferred to the author of the proposal, then its instability becomes
+equal to its size.
+
+A player is crystallized if the total size of crystals e owns is at least
+the number of rules in the current ruleset.
+
+Any player CAN, by announcement, Shatter the System, specifying each
+crystallized player, and provided that no player has done so in the past 30
+days. When a player does so, each crystallized player wins the game.
+
+If at least 4 days have passed since any player won the game in this
+manner, any player CAN repeal this rule by announcement.
+}
