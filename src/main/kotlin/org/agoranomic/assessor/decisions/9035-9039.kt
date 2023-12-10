@@ -226,5 +226,12 @@ cuddlybanana, Anneke-Constantine and kiako Black Ribbons."""
             AGAINST on 9038
             AGAINST on 9039
         }
+
+        votes(nix) {
+            endorse(Aris) on 9035
+            FOR on 9037
+            FOR on 9038
+            AGAINST on 9039
+        }
     }
 }
