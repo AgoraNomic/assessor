@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9035to9039() = assessment {
@@ -185,6 +184,14 @@ cuddlybanana, Anneke-Constantine and kiako Black Ribbons."""
             endorse(Janet) on 9036
             FOR on 9037
             FOR on 9038
+            AGAINST on 9039
+        }
+
+        votes(Janet) {
+            AGAINST on 9035
+            FOR on 9036
+            AGAINST on 9037
+            PRESENT on 9038
             AGAINST on 9039
         }
     }
