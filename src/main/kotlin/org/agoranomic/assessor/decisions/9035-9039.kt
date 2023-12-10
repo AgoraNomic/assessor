@@ -241,5 +241,13 @@ cuddlybanana, Anneke-Constantine and kiako Black Ribbons."""
             endorse(Janet) on 9038 comment "${Janet.name} is the Rulekeepor"
             AGAINST on 9039
         }
+
+        votes(Kate) {
+            FOR on 9035
+            endorse(Janet) on 9036
+            FOR on 9037
+            FOR on 9038
+            AGAINST on 9039
+        }
     }
 }
