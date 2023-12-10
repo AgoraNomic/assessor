@@ -218,5 +218,13 @@ cuddlybanana, Anneke-Constantine and kiako Black Ribbons."""
             FOR on 9038
             FOR on 9039
         }
+
+        votes(Yachay) {
+            FOR on 9035
+            PRESENT on 9036
+            FOR on 9037
+            AGAINST on 9038
+            AGAINST on 9039
+        }
     }
 }
