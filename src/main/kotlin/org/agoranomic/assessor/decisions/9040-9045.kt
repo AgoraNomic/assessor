@@ -155,4 +155,7 @@ Repeal Rule 879 ("Quorum")"""
             )
         }
     }
+
+    voting {
+    }
 }
