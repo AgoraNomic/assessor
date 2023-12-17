@@ -203,11 +203,11 @@ Repeal Rule 879 ("Quorum")"""
 
         votes(juan) {
             endorse(Forest) on 9040
-            endorse(Forest) on 9041
-            endorse(Forest) on 9042
-            endorse(Forest) on 9043
-            endorse(Forest) on 9044
-            endorse(Forest) on 9045
+            AGAINST on 9041
+            AGAINST on 9042
+            AGAINST on 9043
+            AGAINST on 9044
+            AGAINST on 9045
         }
 
         votes(Gaelan) {
