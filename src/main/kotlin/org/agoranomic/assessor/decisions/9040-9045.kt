@@ -4,10 +4,9 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.VoteKind
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 
 @UseAssessment
 fun assessment9040to9045() = assessment {
@@ -157,5 +156,13 @@ Repeal Rule 879 ("Quorum")"""
     }
 
     voting {
+        votes(Kate) {
+            endorse(Janet) on 9040
+            AGAINST on 9041
+            AGAINST on 9042
+            AGAINST on 9043
+            AGAINST on 9044
+            AGAINST on 9045
+        }
     }
 }
