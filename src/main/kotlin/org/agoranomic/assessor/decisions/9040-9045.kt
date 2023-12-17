@@ -182,5 +182,14 @@ Repeal Rule 879 ("Quorum")"""
             AGAINST on 9044
             AGAINST on 9045
         }
+
+        votes(Forest) {
+            FOR on 9040
+            AGAINST on 9041
+            FOR on 9042
+            FOR on 9043
+            FOR on 9044
+            AGAINST on 9045
+        }
     }
 }
