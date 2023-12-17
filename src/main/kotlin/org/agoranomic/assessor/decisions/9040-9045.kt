@@ -218,5 +218,9 @@ Repeal Rule 879 ("Quorum")"""
             AGAINST on 9044
             AGAINST on 9045
         }
+
+        votes(nix) {
+            AGAINST on all
+        }
     }
 }
