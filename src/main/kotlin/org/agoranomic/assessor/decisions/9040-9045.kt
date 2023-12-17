@@ -191,5 +191,14 @@ Repeal Rule 879 ("Quorum")"""
             FOR on 9044
             AGAINST on 9045
         }
+
+        votes(Janet) {
+            FOR on 9040
+            AGAINST on 9041
+            AGAINST on 9042
+            AGAINST on 9043
+            AGAINST on 9044
+            AGAINST on 9045
+        }
     }
 }
