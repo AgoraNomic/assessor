@@ -211,7 +211,7 @@ Repeal Rule 879 ("Quorum")"""
         }
 
         votes(Gaelan) {
-            FOR on 9040
+            AGAINST on 9040
             AGAINST on 9041
             AGAINST on 9042
             AGAINST on 9043
