@@ -5,8 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
-import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9040to9045() = assessment {
@@ -158,6 +158,15 @@ Repeal Rule 879 ("Quorum")"""
     voting {
         votes(Kate) {
             endorse(Janet) on 9040
+            AGAINST on 9041
+            AGAINST on 9042
+            AGAINST on 9043
+            AGAINST on 9044
+            AGAINST on 9045
+        }
+
+        votes(Murphy) {
+            FOR on 9040
             AGAINST on 9041
             AGAINST on 9042
             AGAINST on 9043
