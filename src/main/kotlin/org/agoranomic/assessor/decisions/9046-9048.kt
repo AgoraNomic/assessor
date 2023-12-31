@@ -135,4 +135,7 @@ https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/
             )
         }
     }
+
+    voting {
+    }
 }
