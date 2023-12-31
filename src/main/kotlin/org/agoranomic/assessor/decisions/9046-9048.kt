@@ -150,5 +150,11 @@ https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/
             FOR on 9047
             endorse(Janet) on 9048
         }
+
+        votes(Murphy) {
+            FOR on 9046
+            FOR on 9047
+            FOR on 9048
+        }
     }
 }
