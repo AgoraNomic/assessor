@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -142,6 +143,12 @@ https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/
             FOR on 9046
             FOR on 9047
             FOR on 9048
+        }
+
+        votes(Gaelan) {
+            FOR on 9046
+            FOR on 9047
+            endorse(Janet) on 9048
         }
     }
 }
