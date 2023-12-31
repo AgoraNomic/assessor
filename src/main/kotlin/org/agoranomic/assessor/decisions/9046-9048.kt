@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9046to9048() = assessment {
@@ -180,6 +179,12 @@ https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/
             endorse(Forest) on 9046
             endorse(Janet) on 9047
             FOR on 9048
+        }
+
+        votes(ais523) {
+            FOR on 9046
+            FOR on 9047
+            AGAINST on 9048
         }
     }
 }
