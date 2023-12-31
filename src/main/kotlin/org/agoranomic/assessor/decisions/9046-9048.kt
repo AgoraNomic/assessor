@@ -175,5 +175,11 @@ https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/
             FOR on 9047
             PRESENT on 9048
         }
+
+        votes(nix) {
+            endorse(Forest) on 9046
+            endorse(Janet) on 9047
+            FOR on 9048
+        }
     }
 }
