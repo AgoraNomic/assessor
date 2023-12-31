@@ -1,0 +1,49 @@
+PROPOSAL 9040 (Adoption AI security)
+AUTHOR: Janet
+CLASS: ORDINARY
+FOR (4): 4st$, Murphy%, juan$, snail^
+AGAINST (5): Gaelan, Janet+, Kate%, kiako, nix
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 19/23 (AI=1.0)
+POPULARITY: -0.111
+OUTCOME: REJECTED
+[
+Kate: Endorsement of Janet
+juan: Endorsement of 4st
+kiako: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-December/017521.html
+
+ID: 9040
+Title: Adoption AI security
+Adoption index: 1.0
+Author: Janet
+Co-authors: ais523
+
+
+Amend Rule 1607 ("Distribution") by deleting the text ", or 1.0 if the
+proposal does not have one".
+
+[A proposal always has a numeric AI, so this clause can never be
+triggered. And, even if it could be triggered, this isn't the right
+behavior (AI 3 would be a more sensible default, but we don't add that
+here because it's impossible).]
+
+
+Amend Rule 106 ("Adopting Proposals") by replacing "its power is set to
+the minimum of four and its adoption index" with "its power is set to
+the minimum of four, the adoption index of the proposal, and the
+adoption index of the referendum".
+
+[Defend against any case where a proposal does not have an AI but the
+referendum does, or where the referendum has a lower AI than the proposal.]
+
+
+[Currently, these issues combine so that if there were somehow a
+proposal without an AI (which cannot exist not but has been possible in
+the past, according to ais523), it would be voted on at AI 1.0 but
+adopted at power 4; this fixes both: it would no longer be
+distributable, and if it were to take effect it would only take effect
+at power 1.]
