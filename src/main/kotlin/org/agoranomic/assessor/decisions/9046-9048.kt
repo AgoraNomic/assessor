@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9046to9048() = assessment {
@@ -137,5 +138,10 @@ https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/
     }
 
     voting {
+        votes(snail) {
+            FOR on 9046
+            FOR on 9047
+            FOR on 9048
+        }
     }
 }
