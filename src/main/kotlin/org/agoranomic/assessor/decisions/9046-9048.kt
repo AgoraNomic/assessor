@@ -41,7 +41,7 @@ fun assessment9046to9048() = assessment {
                 "Herald"(2) heldBy snail
                 "Illuminator"(1) heldBy snail
                 "Notary"(2) heldBy snail
-                "Prime Minister"(0) heldBy Janet
+                "Prime Minister"(0) heldBy Jimmy
                 "Promotor"(3) heldBy snail
                 "Referee"(2) heldBy ais523
                 "Registrar"(1) heldBy juan
