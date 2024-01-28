@@ -180,5 +180,11 @@ a specified stone by 2.
             endorse(ais523) on 9050
             PRESENT on 9051
         }
+
+        votes(Murphy) {
+            FOR on 9049
+            FOR on 9050
+            endorse(Janet) on 9051 comment "${Janet.name} is the Stonemason"
+        }
     }
 }
