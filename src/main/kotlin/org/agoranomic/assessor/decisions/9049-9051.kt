@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -172,6 +173,12 @@ a specified stone by 2.
             PRESENT on 9049
             PRESENT on 9050
             FOR on 9051
+        }
+
+        votes(Janet) {
+            endorse(ais523) on 9049
+            endorse(ais523) on 9050
+            PRESENT on 9051
         }
     }
 }
