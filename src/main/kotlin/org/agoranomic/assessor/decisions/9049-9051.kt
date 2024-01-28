@@ -164,4 +164,7 @@ a specified stone by 2.
             )
         }
     }
+
+    voting {
+    }
 }
