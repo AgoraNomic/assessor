@@ -190,5 +190,11 @@ a specified stone by 2.
         votes(juan) {
             PRESENT on all
         }
+
+        votes(ais523) {
+            FOR on 9049
+            FOR on 9050
+            PRESENT on 9051
+        }
     }
 }
