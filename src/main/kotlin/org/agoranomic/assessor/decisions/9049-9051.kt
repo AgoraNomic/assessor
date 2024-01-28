@@ -186,5 +186,9 @@ a specified stone by 2.
             FOR on 9050
             endorse(Janet) on 9051 comment "${Janet.name} is the Stonemason"
         }
+
+        votes(juan) {
+            PRESENT on all
+        }
     }
 }
