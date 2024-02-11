@@ -248,5 +248,9 @@ following text:
             endorse(nix) on 9056
             endorse(nix) on 9057
         }
+
+        votes(Forest) {
+            FOR on all
+        }
     }
 }
