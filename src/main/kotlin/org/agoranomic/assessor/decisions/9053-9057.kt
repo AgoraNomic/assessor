@@ -260,5 +260,13 @@ following text:
             // TODO: resolve conditional on 9056 AGAINST if 9057 to be adopted, else FOR
             FOR on 9057
         }
+
+        votes(Mercury) {
+            PRESENT on 9053
+            AGAINST on 9054
+            FOR on 9055
+            AGAINST on 9056
+            FOR on 9057
+        }
     }
 }
