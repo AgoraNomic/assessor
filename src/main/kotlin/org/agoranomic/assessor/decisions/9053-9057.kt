@@ -268,5 +268,13 @@ following text:
             AGAINST on 9056
             FOR on 9057
         }
+
+        votes(Murphy) {
+            AGAINST on 9053
+            AGAINST on 9054
+            endorse(snail) on 9055 comment "${snail.name} is the Illuminator"
+            AGAINST on 9056
+            FOR on 9057
+        }
     }
 }
