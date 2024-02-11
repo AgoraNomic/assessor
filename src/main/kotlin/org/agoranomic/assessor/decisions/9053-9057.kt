@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -238,6 +239,14 @@ following text:
             PRESENT on 9055
             FOR on 9056
             AGAINST on 9057
+        }
+
+        votes(Janet) {
+            AGAINST on 9053
+            AGAINST on 9054
+            AGAINST on 9055
+            endorse(nix) on 9056
+            endorse(nix) on 9057
         }
     }
 }
