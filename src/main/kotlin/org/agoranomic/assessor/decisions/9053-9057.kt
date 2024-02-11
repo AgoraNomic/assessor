@@ -221,4 +221,7 @@ following text:
             )
         }
     }
+
+    voting {
+    }
 }
