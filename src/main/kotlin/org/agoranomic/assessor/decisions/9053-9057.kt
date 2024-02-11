@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -257,7 +254,7 @@ following text:
             AGAINST on 9053
             AGAINST on 9054
             PRESENT on 9055
-            // TODO: resolve conditional on 9056 AGAINST if 9057 to be adopted, else FOR
+            resolvedConditional(FOR, "Proposal 9057 is not to be adopted") on 9056
             FOR on 9057
         }
 
