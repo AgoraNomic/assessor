@@ -1,107 +1,60 @@
 {
     "metadata": {
-        "name": "9046-9048",
+        "name": "9049-9051",
         "urls": [
-            "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-December/017537.html"
+            "https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-January/017579.html"
         ]
     },
     "proposals": [
         {
             "version": "4",
-            "number": 9046,
-            "proposal_ai": "1.0",
-            "decision_ai": "1.0",
-            "title": "Crystal fix 1",
-            "author": "4st",
-            "coauthors": [
-                "ais523",
-                "Gaelan"
-            ],
-            "text": "Amend Rule 2685 (\"Crystals\") by replacing {\nThe size of that crystal is increased by the power of that\n        proposal (rounded down).\n} with {\nThe size of that crystal is increased by the power of that\n        proposal when that proposal's power was greater than 0 (rounded\ndown).\n}\n\nAmend Rule 2685 (\"Crystals\") by replacing {\nEach quarter, each crystal whose identity is not equal to the ID\n      of any rule in the current ruleset has its size increased by 3.\n} with {\nAt the beginning of each quarter, each crystal whose identity is not equal\nto the ID\n      of any rule in the current ruleset has its size increased by 3.\n}\n\nChange the size of crystal 2659 to 1."
-        },
-        {
-            "version": "4",
-            "number": 9047,
+            "number": 9049,
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
-            "title": "Shameless copy of Adoption AI Security with the right AI",
-            "author": "4st",
+            "title": "Registration restrictions",
+            "author": "Janet",
             "coauthors": [
-                "Janet",
+                "Aris",
                 "ais523"
             ],
-            "text": "Amend Rule 1607 (\"Distribution\") by deleting the text \", or 1.0 if the\nproposal does not have one\".\n\n[A proposal always has a numeric AI, so this clause can never be\ntriggered. And, even if it could be triggered, this isn't the right\nbehavior (AI 3 would be a more sensible default, but we don't add that\nhere because it's impossible).]\n\n\nAmend Rule 106 (\"Adopting Proposals\") by replacing \"its power is set to\nthe minimum of four and its adoption index\" with \"its power is set to\nthe minimum of four, the adoption index of the proposal, and the\nadoption index of the referendum\".\n\n[Defend against any case where a proposal does not have an AI but the\nreferendum does, or where the referendum has a lower AI than the proposal.]\n\n\n[Currently, these issues combine so that if there were somehow a\nproposal without an AI (which cannot exist not but has been possible in\nthe past, according to ais523), it would be voted on at AI 1.0 but\nadopted at power 4; this fixes both: it would no longer be\ndistributable, and if it were to take effect it would only take effect\nat power 1.]"
+            "text": "Amend Rule 869 by, as a single amendment (in order):\n\n* Replacing the text \"No person can be a player if e is part of another\nplayer or another player is part of em.\" with \"Rules to the contrary\nnotwithstanding, two or more persons CANNOT become Registered\nsimultaneously.\".\n\n* Inserting the following paragraph after the paragraph beginning \"An\nUnregistered person CAN\":\n\n{\n\nThe basis of a person is the set of all persons that are (recursively)\npart of em, in addition to emself. Rules to the contrary\nnotwithstanding, a person CANNOT become Registered if eir basis overlaps\nwith that of any current player.\n\n}\n\n\n[\n\nThis fixes a bug where two group persons [A B] and [B C] could be both\nbe players, since neither is a part of the other.\n\nIn order to let this work, this also prohibits simultaneous\nregistrations. This is done now because simultaneous registrations would\nbreak the check for overlapping persons (if [A B] and [B C] could\nregister simultaneously, neither would overlap with any existing player,\neven if they overlapped with each other). As a more general matter,\nsimultaneous registrations seem likely to result in bugs, and\nregistration order has been used as a tiebreak before (e.g. for Spaaace).\n\n]"
         },
         {
             "version": "4",
-            "number": 9048,
+            "number": 9050,
             "proposal_ai": "3.0",
             "decision_ai": "3.0",
-            "title": "It's been 4+ years, Agora. 4+ YEARS.",
-            "author": "nix",
+            "title": "Self-ratification limitations",
+            "author": "Janet",
             "coauthors": [
-                "4st",
-                "snail"
             ],
-            "text": "Ratify the Short Logical Ruleset published on the 19th of June, 2023,\navailable here [1].\n\n[1]\nhttps://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2023-June/017167.html"
+            "text": "Amend Rule 2201 (\"Self-Ratification\") by, as a single amendment (in order):\n\n* Replacing \"When a public document is continuously undoubted for one\nweek after publication\" with \"When a public document published less than\n180 days ago is first continuously undoubted for one week after publication\"\n\n* Replacing the text \"identifying a document and explaining\" with\n\"identifying a public document published less than 180 days ago and\nexplaining\".\n\n[First, prevent self-ratifying documents from ratifying more than once\nif they go from undoubted to doubted to undoubted. Next, add a\n(generous) time limit on self-ratification and doubts to prevent very\nold documents from surprisingly being ratified or imposing a requirement\non their publishers to respond. Also, only allow claims of error on\npublished documents (which later parts of the rule assume anyway).]\n\n\nAmend Rule 2201 (\"Self-Ratification\") by, as a single amendment (in order):\n\n* Inserting the following paragraph before the paragraph beginning \"Any\nperson CAN\": \"The definition of documents as self-ratifying and the\ndefinition of documents as self-ratifying attestations are secured at\npower 3.\"\n\n* Appending the following paragraph to the Rule:\n\n{\n\nThe issuance of a doubt on a documents, the denial of a claim of error,\nand the ceasing of a doubt on a document to be a doubt are secured at\npower 3.\n\n}\n\n[Prevent low-power dictatorships from making random things\nself-ratifying and from automatically making or denying claims of error.\nAll self-ratifying things (assets, Proposal Pool, switches, Festivity,\ndecision initiation/termination) are already defined at power >= 3.]"
+        },
+        {
+            "version": "4",
+            "number": 9051,
+            "proposal_ai": "2.0",
+            "decision_ai": "2.0",
+            "title": "A Mossy Cabinet",
+            "author": "snail",
+            "coauthors": [
+            ],
+            "text": "Amend Rule 2451 (Executive Orders) by appending the following Cabinet Order:\n\n{\n      - Growth (Stonemason): The Prime Minister increases the mossiness of\na specified stone by 2.\n}"
         }
     ],
-    "quorum": 6,
+    "quorum": 5,
     "resolutions": [
         {
-            "proposal": 9046,
+            "proposal": 9049,
             "resolution": {
                 "result": "ADOPTED",
-                "strength_for": 25,
+                "strength_for": 9,
                 "strength_against": 0,
                 "votes": [
                     {
                         "voter": "snail",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "Gaelan",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "Murphy",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "juan",
                         "vote": "PRESENT",
                         "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "4st",
-                        "vote": "PRESENT",
-                        "comments": [
-                            {
-                                "kind": "conditional",
-                                "parameters": [
-                                ]
-                            },
-                            {
-                                "kind": "endorsement",
-                                "parameters": [
-                                    {
-                                        "name": "endorsee",
-                                        "value": "juan"
-                                    },
-                                    {
-                                        "name": "inextricable",
-                                        "value": "false"
-                                    }
-                                ],
-                                "readable": "Endorsement of juan"
-                            }
                         ]
                     },
                     {
@@ -130,8 +83,49 @@
                         ]
                     },
                     {
-                        "voter": "nix",
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
                         "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 9050,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 9,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "FOR",
                         "comments": [
                             {
                                 "kind": "conditional",
@@ -143,20 +137,113 @@
                                 "parameters": [
                                     {
                                         "name": "endorsee",
-                                        "value": "4st"
+                                        "value": "ais523"
                                     },
                                     {
                                         "name": "inextricable",
                                         "value": "false"
                                     }
                                 ],
-                                "readable": "Endorsement of 4st"
+                                "readable": "Endorsement of ais523"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
                             }
                         ]
                     },
                     {
                         "voter": "ais523",
                         "vote": "FOR",
+                        "comments": [
+                        ]
+                    }
+                ]
+            },
+            "strengths": [
+            ]
+        },
+        {
+            "proposal": 9051,
+            "resolution": {
+                "result": "ADOPTED",
+                "strength_for": 6,
+                "strength_against": 0,
+                "votes": [
+                    {
+                        "voter": "snail",
+                        "vote": "FOR",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Janet",
+                        "vote": "PRESENT",
+                        "comments": [
+                        ]
+                    },
+                    {
+                        "voter": "Murphy",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "commented",
+                                "parameters": [
+                                    {
+                                        "name": "comment",
+                                        "value": "Janet is the Stonemason"
+                                    }
+                                ],
+                                "readable": "Janet is the Stonemason"
+                            },
+                            {
+                                "kind": "conditional",
+                                "parameters": [
+                                ]
+                            },
+                            {
+                                "kind": "endorsement",
+                                "parameters": [
+                                    {
+                                        "name": "endorsee",
+                                        "value": "Janet"
+                                    },
+                                    {
+                                        "name": "inextricable",
+                                        "value": "false"
+                                    }
+                                ],
+                                "readable": "Endorsement of Janet"
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "juan",
+                        "vote": "PRESENT",
+                        "comments": [
+                            {
+                                "kind": "part_of_all_vote",
+                                "parameters": [
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "voter": "ais523",
+                        "vote": "PRESENT",
                         "comments": [
                         ]
                     }
@@ -422,12 +509,12 @@
                     "modifications": [
                         {
                             "description": {
-                                "readable": "Complexity bonus for offices Assessor, Rulekeepor, Stonemason; clamped to 3",
+                                "readable": "Complexity bonus for offices Assessor, Prime Minister, Rulekeepor, Stonemason; clamped to 3",
                                 "kind": "office_complexity",
                                 "parameters": [
                                     {
                                         "name": "offices",
-                                        "value": "Assessor,Rulekeepor,Stonemason"
+                                        "value": "Assessor,Prime Minister,Rulekeepor,Stonemason"
                                     },
                                     {
                                         "name": "total_complexity",
@@ -600,52 +687,6 @@
                     "final": 4
                 },
                 {
-                    "person": "Jimmy",
-                    "initial": 3,
-                    "initial_description": null,
-                    "modifications": [
-                        {
-                            "description": {
-                                "readable": "Complexity bonus for offices Prime Minister",
-                                "kind": "office_complexity",
-                                "parameters": [
-                                    {
-                                        "name": "offices",
-                                        "value": "Prime Minister"
-                                    },
-                                    {
-                                        "name": "total_complexity",
-                                        "value": "0"
-                                    },
-                                    {
-                                        "name": "bonus_clamp",
-                                        "value": "3"
-                                    }
-                                ]
-                            },
-                            "current_strength": 3
-                        },
-                        {
-                            "description": {
-                                "readable": "Clamped between 0 and 15.",
-                                "kind": "clamp",
-                                "parameters": [
-                                    {
-                                        "name": "min",
-                                        "value": "0"
-                                    },
-                                    {
-                                        "name": "max",
-                                        "value": "15"
-                                    }
-                                ]
-                            },
-                            "current_strength": 3
-                        }
-                    ],
-                    "final": 3
-                },
-                {
                     "person": "ais523",
                     "initial": 3,
                     "initial_description": null,
@@ -691,202 +732,6 @@
                     ],
                     "final": 5
                 }
-            ]
-        },
-        {
-            "proposal": 9047,
-            "resolution": {
-                "result": "ADOPTED",
-                "strength_for": 18,
-                "strength_against": 0,
-                "votes": [
-                    {
-                        "voter": "snail",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "Gaelan",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "Murphy",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "juan",
-                        "vote": "PRESENT",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "4st",
-                        "vote": "PRESENT",
-                        "comments": [
-                            {
-                                "kind": "conditional",
-                                "parameters": [
-                                ]
-                            },
-                            {
-                                "kind": "endorsement",
-                                "parameters": [
-                                    {
-                                        "name": "endorsee",
-                                        "value": "juan"
-                                    },
-                                    {
-                                        "name": "inextricable",
-                                        "value": "false"
-                                    }
-                                ],
-                                "readable": "Endorsement of juan"
-                            }
-                        ]
-                    },
-                    {
-                        "voter": "Janet",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "nix",
-                        "vote": "FOR",
-                        "comments": [
-                            {
-                                "kind": "conditional",
-                                "parameters": [
-                                ]
-                            },
-                            {
-                                "kind": "endorsement",
-                                "parameters": [
-                                    {
-                                        "name": "endorsee",
-                                        "value": "Janet"
-                                    },
-                                    {
-                                        "name": "inextricable",
-                                        "value": "false"
-                                    }
-                                ],
-                                "readable": "Endorsement of Janet"
-                            }
-                        ]
-                    },
-                    {
-                        "voter": "ais523",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    }
-                ]
-            },
-            "strengths": [
-            ]
-        },
-        {
-            "proposal": 9048,
-            "resolution": {
-                "result": "ADOPTED",
-                "strength_for": 9,
-                "strength_against": 3,
-                "votes": [
-                    {
-                        "voter": "snail",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "Gaelan",
-                        "vote": "PRESENT",
-                        "comments": [
-                            {
-                                "kind": "conditional",
-                                "parameters": [
-                                ]
-                            },
-                            {
-                                "kind": "endorsement",
-                                "parameters": [
-                                    {
-                                        "name": "endorsee",
-                                        "value": "Janet"
-                                    },
-                                    {
-                                        "name": "inextricable",
-                                        "value": "false"
-                                    }
-                                ],
-                                "readable": "Endorsement of Janet"
-                            }
-                        ]
-                    },
-                    {
-                        "voter": "Murphy",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "juan",
-                        "vote": "PRESENT",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "4st",
-                        "vote": "PRESENT",
-                        "comments": [
-                            {
-                                "kind": "conditional",
-                                "parameters": [
-                                ]
-                            },
-                            {
-                                "kind": "endorsement",
-                                "parameters": [
-                                    {
-                                        "name": "endorsee",
-                                        "value": "juan"
-                                    },
-                                    {
-                                        "name": "inextricable",
-                                        "value": "false"
-                                    }
-                                ],
-                                "readable": "Endorsement of juan"
-                            }
-                        ]
-                    },
-                    {
-                        "voter": "Janet",
-                        "vote": "PRESENT",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "nix",
-                        "vote": "FOR",
-                        "comments": [
-                        ]
-                    },
-                    {
-                        "voter": "ais523",
-                        "vote": "AGAINST",
-                        "comments": [
-                        ]
-                    }
-                ]
-            },
-            "strengths": [
             ]
         }
     ]

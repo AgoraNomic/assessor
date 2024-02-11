@@ -1,0 +1,57 @@
+PROPOSAL 9049 (Registration restrictions)
+AUTHOR: Janet
+CLASS: DEMOCRATIC
+FOR (3): Janet, Murphy, ais523
+AGAINST (0): 
+PRESENT (2): juan, snail
+BALLOTS: 5
+AI (F/A): 9/0 (AI=3.0)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
+[
+Janet: Endorsement of ais523
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-January/017579.html
+
+ID: 9049
+Title: Registration restrictions
+Adoption index: 3.0
+Author: Janet
+Co-authors: Aris, ais523
+
+
+Amend Rule 869 by, as a single amendment (in order):
+
+* Replacing the text "No person can be a player if e is part of another
+player or another player is part of em." with "Rules to the contrary
+notwithstanding, two or more persons CANNOT become Registered
+simultaneously.".
+
+* Inserting the following paragraph after the paragraph beginning "An
+Unregistered person CAN":
+
+{
+
+The basis of a person is the set of all persons that are (recursively)
+part of em, in addition to emself. Rules to the contrary
+notwithstanding, a person CANNOT become Registered if eir basis overlaps
+with that of any current player.
+
+}
+
+
+[
+
+This fixes a bug where two group persons [A B] and [B C] could be both
+be players, since neither is a part of the other.
+
+In order to let this work, this also prohibits simultaneous
+registrations. This is done now because simultaneous registrations would
+break the check for overlapping persons (if [A B] and [B C] could
+register simultaneously, neither would overlap with any existing player,
+even if they overlapped with each other). As a more general matter,
+simultaneous registrations seem likely to result in bugs, and
+registration order has been used as a tiebreak before (e.g. for Spaaace).
+
+]
