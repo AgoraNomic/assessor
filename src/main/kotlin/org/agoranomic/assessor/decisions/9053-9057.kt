@@ -252,5 +252,13 @@ following text:
         votes(Forest) {
             FOR on all
         }
+
+        votes(kiako) {
+            AGAINST on 9053
+            AGAINST on 9054
+            PRESENT on 9055
+            // TODO: resolve conditional on 9056 AGAINST if 9057 to be adopted, else FOR
+            FOR on 9057
+        }
     }
 }
