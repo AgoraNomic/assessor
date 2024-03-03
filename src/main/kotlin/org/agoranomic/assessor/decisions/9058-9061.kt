@@ -292,5 +292,12 @@ Clapped in the past 2 weeks.
             AGAINST on 9060
             AGAINST on 9061
         }
+
+        votes(Murphy) {
+            FOR on 9058
+            AGAINST on 9059
+            AGAINST on 9060
+            endorse(snail) on 9061 comment "${snail.name} is the Dream Keeper"
+        }
     }
 }
