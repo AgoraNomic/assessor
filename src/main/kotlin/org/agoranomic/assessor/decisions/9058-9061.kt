@@ -306,5 +306,12 @@ Clapped in the past 2 weeks.
             PRESENT on 9060
             FOR on 9061
         }
+
+        votes(Yachay) {
+            FOR on 9058
+            AGAINST on 9059
+            AGAINST on 9060
+            AGAINST on 9061
+        }
     }
 }
