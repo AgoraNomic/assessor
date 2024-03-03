@@ -271,5 +271,12 @@ Clapped in the past 2 weeks.
             AGAINST on 9060
             PRESENT on 9061
         }
+
+        votes(juan) {
+            PRESENT on 9058
+            PRESENT on 9059
+            PRESENT on 9060
+            AGAINST on 9061
+        }
     }
 }
