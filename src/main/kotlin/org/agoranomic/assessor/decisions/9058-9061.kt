@@ -299,5 +299,12 @@ Clapped in the past 2 weeks.
             AGAINST on 9060
             endorse(snail) on 9061 comment "${snail.name} is the Dream Keeper"
         }
+
+        votes(Mercury) {
+            FOR on 9058
+            PRESENT on 9059
+            PRESENT on 9060
+            FOR on 9061
+        }
     }
 }
