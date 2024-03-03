@@ -285,5 +285,12 @@ Clapped in the past 2 weeks.
             AGAINST on 9060
             AGAINST on 9061
         }
+
+        votes(Janet) {
+            endorse(ais523) on 9058
+            AGAINST on 9059
+            AGAINST on 9060
+            AGAINST on 9061
+        }
     }
 }
