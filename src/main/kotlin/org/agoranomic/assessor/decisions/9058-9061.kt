@@ -264,5 +264,12 @@ Clapped in the past 2 weeks.
                 }
             } on 9061
         }
+
+        votes(kiako) {
+            endorse(Janet) on 9058 comment "${Janet.name} is the Rulekeepor"
+            AGAINST on 9059
+            AGAINST on 9060
+            PRESENT on 9061
+        }
     }
 }
