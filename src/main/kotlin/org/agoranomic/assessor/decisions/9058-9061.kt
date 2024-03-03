@@ -5,8 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment9058to9051() = assessment {
@@ -248,6 +249,20 @@ Clapped in the past 2 weeks.
             AGAINST on 9059
             AGAINST on 9060
             FOR on 9061
+        }
+
+        votes(Aris) {
+            FOR on 9058
+            AGAINST on 9059
+            AGAINST on 9060
+
+            function { ctx ->
+                when (ctx.resolve(ctx.currentProposal, Janet)?.finalResolution(ctx)?.voteIfVoted) {
+                    FOR -> resolvedConditional(PRESENT, "Janet voted FOR")
+                    PRESENT -> resolvedConditional(PRESENT, "Janet voted PRESENT")
+                    else -> resolvedConditional(AGAINST, "Janet did not vote FOR or PRESENT")
+                }
+            } on 9061
         }
     }
 }
