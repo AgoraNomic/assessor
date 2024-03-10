@@ -286,5 +286,14 @@ following text:
             FOR on 9066
             PRESENT on 9067
         }
+
+        votes(Murphy) {
+            PRESENT on 9062
+            PRESENT on 9063
+            endorse(Janet) on 9064 comment "${Janet.name} is the Stonemason"
+            AGAINST on 9065
+            AGAINST on 9066
+            FOR on 9067
+        }
     }
 }
