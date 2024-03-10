@@ -260,5 +260,14 @@ following text:
             AGAINST on 9066
             endorse(nix) on 9067
         }
+
+        votes(Yachay) {
+            AGAINST on 9062
+            AGAINST on 9063
+            FOR on 9064
+            FOR on 9065
+            FOR on 9066
+            AGAINST on 9067
+        }
     }
 }
