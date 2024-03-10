@@ -277,5 +277,14 @@ following text:
             AGAINST on 9066
             // TODO resolve conditional vote: PRESENT if 9062 and 9063 enactable, else AGAINST
         }
+
+        votes(Mercury) {
+            FOR on 9062
+            PRESENT on 9063
+            PRESENT on 9064
+            FOR on 9065
+            FOR on 9066
+            PRESENT on 9067
+        }
     }
 }
