@@ -5,7 +5,6 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
-import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -275,7 +274,7 @@ following text:
             PRESENT on 9064
             AGAINST on 9065
             AGAINST on 9066
-            // TODO resolve conditional vote: PRESENT if 9062 and 9063 enactable, else AGAINST
+            resolvedConditional(AGAINST, "Proposal 9063 is not enactable") on 9067
         }
 
         votes(Mercury) {
