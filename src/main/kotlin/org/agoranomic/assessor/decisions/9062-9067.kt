@@ -245,5 +245,14 @@ following text:
             AGAINST on 9066
             FOR on 9067
         }
+
+        votes(kiako) {
+            FOR on 9062
+            FOR on 9063
+            FOR on 9064
+            AGAINST on 9065
+            AGAINST on 9066
+            FOR on 9067
+        }
     }
 }
