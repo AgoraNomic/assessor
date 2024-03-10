@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9062to9067() = assessment {
@@ -268,6 +267,15 @@ following text:
             FOR on 9065
             FOR on 9066
             AGAINST on 9067
+        }
+
+        votes(ais523) {
+            FOR on 9062
+            FOR on 9063
+            PRESENT on 9064
+            AGAINST on 9065
+            AGAINST on 9066
+            // TODO resolve conditional vote: PRESENT if 9062 and 9063 enactable, else AGAINST
         }
     }
 }
