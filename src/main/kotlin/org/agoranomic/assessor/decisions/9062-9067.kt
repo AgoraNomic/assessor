@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -253,6 +250,15 @@ following text:
             AGAINST on 9065
             AGAINST on 9066
             FOR on 9067
+        }
+
+        votes(Janet) {
+            endorse(ais523) on 9062
+            endorse(ais523) on 9063
+            AGAINST on 9064
+            AGAINST on 9065
+            AGAINST on 9066
+            endorse(nix) on 9067
         }
     }
 }
