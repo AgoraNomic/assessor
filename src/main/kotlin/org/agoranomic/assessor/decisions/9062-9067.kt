@@ -232,4 +232,7 @@ following text:
             )
         }
     }
+
+    voting {
+    }
 }
