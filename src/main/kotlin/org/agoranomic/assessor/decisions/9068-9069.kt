@@ -3,12 +3,8 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9068to9069() = assessment {
@@ -135,6 +131,11 @@ instability is only increased by 1 instead of 3.]"""
         votes(Janet) {
             AGAINST on 9068
             PRESENT on 9069
+        }
+
+        votes(Murphy) {
+            FOR on 9068
+            endorse(Forest) on 9069 comment "${Forest.name} is the Geologist"
         }
     }
 }
