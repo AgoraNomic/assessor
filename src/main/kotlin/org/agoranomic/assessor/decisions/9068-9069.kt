@@ -142,5 +142,10 @@ instability is only increased by 1 instead of 3.]"""
             PRESENT on 9068
             FOR on 9069
         }
+
+        votes(Yachay) {
+            FOR on 9068
+            PRESENT on 9069
+        }
     }
 }
