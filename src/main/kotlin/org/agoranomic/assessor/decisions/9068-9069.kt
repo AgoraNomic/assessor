@@ -137,5 +137,10 @@ instability is only increased by 1 instead of 3.]"""
             FOR on 9068
             endorse(Forest) on 9069 comment "${Forest.name} is the Geologist"
         }
+
+        votes(snail) {
+            PRESENT on 9068
+            FOR on 9069
+        }
     }
 }
