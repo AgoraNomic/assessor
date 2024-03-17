@@ -128,4 +128,7 @@ instability is only increased by 1 instead of 3.]"""
             )
         }
     }
+
+    voting {
+    }
 }
