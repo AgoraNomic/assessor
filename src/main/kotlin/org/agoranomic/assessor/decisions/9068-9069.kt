@@ -147,5 +147,10 @@ instability is only increased by 1 instead of 3.]"""
             FOR on 9068
             PRESENT on 9069
         }
+
+        votes(kiako) {
+            PRESENT on 9068
+            PRESENT on 9069
+        }
     }
 }
