@@ -7,6 +7,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9070to9072() = assessment {
@@ -150,5 +152,10 @@ flip the Delegate
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9070
+            FOR on 9071
+            FOR on 9072
+        }
     }
 }
