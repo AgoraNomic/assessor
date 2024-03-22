@@ -5,10 +5,13 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.commented
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment9070to9072() = assessment {
@@ -155,6 +158,24 @@ flip the Delegate
         votes(snail) {
             AGAINST on 9070
             FOR on 9071
+            FOR on 9072
+        }
+
+        votes(Murphy) {
+            PRESENT on 9070
+
+            function { ctx ->
+                if (ctx.resolve(ctx.currentProposal, snail)?.finalResolution(ctx)?.voteIfVoted in listOf(
+                        FOR,
+                        AGAINST
+                    )
+                ) {
+                    endorse(snail).commented("${snail.name} is the Dream Keeper and voted FOR or AGAINST")
+                } else {
+                    endorse(Janet).commented("${Janet.name} is the Assessor, and Dream Keeper ${snail.name} did not vote FOR or AGAINST")
+                }
+            } on 9071
+
             FOR on 9072
         }
     }
