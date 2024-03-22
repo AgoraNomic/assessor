@@ -184,5 +184,11 @@ flip the Delegate
             AGAINST on 9071
             endorse(ais523) on 9072
         }
+
+        votes(Ben) {
+            AGAINST on 9070
+            FOR on 9071
+            FOR on 9072
+        }
     }
 }
