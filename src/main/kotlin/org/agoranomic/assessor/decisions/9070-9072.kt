@@ -165,9 +165,9 @@ flip the Delegate
             PRESENT on 9070
 
             function { ctx ->
-                if (ctx.resolve(ctx.currentProposal, snail)?.finalResolution(ctx)?.voteIfVoted in listOf(
-                        FOR,
-                        AGAINST
+                if (
+                    listOf(FOR, AGAINST).contains(
+                        ctx.resolve(ctx.currentProposal, snail)?.finalResolution(ctx)?.voteIfVoted,
                     )
                 ) {
                     endorse(snail).commented("${snail.name} is the Dream Keeper and voted FOR or AGAINST")
@@ -177,6 +177,12 @@ flip the Delegate
             } on 9071
 
             FOR on 9072
+        }
+
+        votes(kiako) {
+            AGAINST on 9070
+            AGAINST on 9071
+            endorse(ais523) on 9072
         }
     }
 }
