@@ -196,5 +196,11 @@ flip the Delegate
             endorse(snail) on 9071
             endorse(snail) on 9072
         }
+
+        votes(Janet) {
+            AGAINST on 9070
+            AGAINST on 9071
+            endorse(ais523) on 9072
+        }
     }
 }
