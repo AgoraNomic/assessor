@@ -202,5 +202,11 @@ flip the Delegate
             AGAINST on 9071
             endorse(ais523) on 9072
         }
+
+        votes(Mercury) {
+            PRESENT on 9070
+            endorse(snail) on 9071 comment "${snail} is the Dream Keeper"
+            FOR on 9072
+        }
     }
 }
