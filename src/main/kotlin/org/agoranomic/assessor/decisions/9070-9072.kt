@@ -190,5 +190,11 @@ flip the Delegate
             FOR on 9071
             FOR on 9072
         }
+
+        votes(Gaelan) {
+            AGAINST on 9070
+            endorse(snail) on 9071
+            endorse(snail) on 9072
+        }
     }
 }
