@@ -4,11 +4,11 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.commented
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment9073to9086() = assessment {
@@ -657,6 +657,28 @@ Repeal rule 2683 'The Boulder'"""
             FOR on 9084
             FOR on 9085
             PRESENT on 9086
+        }
+
+        votes(Gaelan) {
+            endorse(Kate) on 9073
+            PRESENT on 9074
+            endorse(nix) on 9075
+            endorse(nix) on 9076
+            endorse(snail) on 9077
+            endorse(Janet) on 9078
+            function { ctx ->
+                if (ctx.resolve(ctx.currentProposal, nix)?.finalResolution(ctx)?.voteIfVoted == AGAINST)
+                    resolvedConditional(AGAINST, "${nix.name} voted AGAINST")
+                else
+                    endorse(snail).commented("${nix.name} did not vote AGAINST")
+            } on 9079
+            FOR on 9080
+            FOR on 9081
+            PRESENT on 9082
+            endorse(Janet) on 9083
+            FOR on 9084
+            endorse(ais523) on 9085
+            // TODO: resolve conditional vote on 9086: FOR if Boulder is at 0 or 1, else AGAINST
         }
     }
 }
