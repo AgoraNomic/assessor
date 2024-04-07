@@ -678,7 +678,7 @@ Repeal rule 2683 'The Boulder'"""
             endorse(Janet) on 9083
             FOR on 9084
             endorse(ais523) on 9085
-            // TODO: resolve conditional vote on 9086: FOR if Boulder is at 0 or 1, else AGAINST
+            resolvedConditional(AGAINST, "The Boulder is not at 0 or 1.") on 9086
         }
 
         votes(kiako) {
@@ -746,7 +746,7 @@ Repeal rule 2683 'The Boulder'"""
             FOR on 9073
             AGAINST on 9074
             FOR on 9075
-            // TODO resolve conditional vote on 9076: PRESENT if ais523 endorsed, else FOR
+            resolvedConditional(FOR, "${ais523.name} was not endorsed") on 9076
             PRESENT on 9077
             FOR on 9078
             FOR on 9079
