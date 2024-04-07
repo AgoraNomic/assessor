@@ -632,7 +632,7 @@ Repeal rule 2683 'The Boulder'"""
             FOR on 9076
             FOR on 9077
             FOR on 9078
-            // TODO: resolve conditional vote on 9079: FOR if snail owns a promise with nix as the creator and the following text: "I transfer the bearer crystal 2675.", otherwise AGAINST
+            FOR on 9079
             FOR on 9080
             FOR on 9081
             AGAINST on 9082
