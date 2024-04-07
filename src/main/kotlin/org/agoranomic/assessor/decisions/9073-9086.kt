@@ -680,5 +680,15 @@ Repeal rule 2683 'The Boulder'"""
             endorse(ais523) on 9085
             // TODO: resolve conditional vote on 9086: FOR if Boulder is at 0 or 1, else AGAINST
         }
+
+        votes(kiako) {
+            endorse(Janet) on 9074 comment "${Janet.name} is the Rulekeepor"
+            endorse(nix) on 9079
+            endorse(Janet) on 9081 comment "${Janet.name} is the Assessor"
+            AGAINST on 9082
+            endorse(Janet) on 9083 comment "${Janet.name} is the Rulekeepor"
+            AGAINST on 9086
+            FOR on others
+        }
     }
 }
