@@ -741,5 +741,22 @@ Repeal rule 2683 'The Boulder'"""
             FOR on 9085
             FOR on 9086
         }
+
+        votes(ais523) {
+            FOR on 9073
+            AGAINST on 9074
+            FOR on 9075
+            // TODO resolve conditional vote on 9076: PRESENT if ais523 endorsed, else FOR
+            PRESENT on 9077
+            FOR on 9078
+            FOR on 9079
+            FOR on 9080
+            FOR on 9081
+            FOR on 9082
+            FOR on 9083
+            PRESENT on 9084
+            FOR on 9085
+            AGAINST on 9086
+        }
     }
 }
