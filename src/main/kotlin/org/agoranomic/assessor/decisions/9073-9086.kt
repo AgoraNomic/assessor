@@ -621,4 +621,7 @@ Repeal rule 2683 'The Boulder'"""
             )
         }
     }
+
+    voting {
+    }
 }
