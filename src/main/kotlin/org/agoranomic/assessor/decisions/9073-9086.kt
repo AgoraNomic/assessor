@@ -5,8 +5,10 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerDream
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9073to9086() = assessment {
@@ -623,5 +625,21 @@ Repeal rule 2683 'The Boulder'"""
     }
 
     voting {
+        votes(snail) {
+            FOR on 9073
+            FOR on 9074
+            FOR on 9075
+            FOR on 9076
+            FOR on 9077
+            FOR on 9078
+            // TODO: resolve conditional vote on 9079: FOR if snail owns a promise with nix as the creator and the following text: "I transfer the bearer crystal 2675.", otherwise AGAINST
+            FOR on 9080
+            FOR on 9081
+            AGAINST on 9082
+            endorse(Janet) on 9083
+            PRESENT on 9084
+            endorse(ais523) on 9085
+            AGAINST on 9086
+        }
     }
 }
