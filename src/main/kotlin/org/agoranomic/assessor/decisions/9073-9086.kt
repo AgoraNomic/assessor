@@ -758,5 +758,22 @@ Repeal rule 2683 'The Boulder'"""
             FOR on 9085
             AGAINST on 9086
         }
+
+        votes(Murphy) {
+            FOR on 9073
+            endorse(Janet) on 9074 comment "${Janet.name} is the Rulekeepor"
+            FOR on 9075
+            PRESENT on 9076
+            endorse(RLee) on 9077 comment "${RLee.name} is the Geologist"
+            FOR on 9078
+            FOR on 9079
+            FOR on 9080
+            FOR on 9081
+            FOR on 9082
+            FOR on 9083
+            endorse(snail) on 9084 comment "${snail.name} is the Dream Keeper"
+            FOR on 9085
+            AGAINST on 9086
+        }
     }
 }
