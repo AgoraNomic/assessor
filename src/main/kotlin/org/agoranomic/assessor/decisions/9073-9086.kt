@@ -690,5 +690,22 @@ Repeal rule 2683 'The Boulder'"""
             AGAINST on 9086
             FOR on others
         }
+
+        votes(RLee) {
+            AGAINST on 9073
+            AGAINST on 9074
+            AGAINST on 9075
+            FOR on 9076
+            FOR on 9077
+            PRESENT on 9078
+            FOR on 9079
+            AGAINST on 9080
+            AGAINST on 9081
+            FOR on 9082
+            PRESENT on 9083
+            AGAINST on 9084
+            FOR on 9085
+            FOR on 9086
+        }
     }
 }
