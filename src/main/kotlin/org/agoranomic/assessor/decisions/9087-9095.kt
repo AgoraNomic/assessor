@@ -327,5 +327,17 @@ a fee of 11 spendies.
             FOR on 9094
             FOR on 9095
         }
+
+        votes(juan) {
+            PRESENT on 9087
+            FOR on 9088
+            FOR on 9089
+            PRESENT on 9090
+            FOR on 9091
+            AGAINST on 9092
+            FOR on 9093
+            PRESENT on 9094
+            PRESENT on 9095
+        }
     }
 }
