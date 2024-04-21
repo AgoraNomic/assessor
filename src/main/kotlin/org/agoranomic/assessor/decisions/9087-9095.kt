@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9087to9095() = assessment {
@@ -279,5 +280,16 @@ a fee of 11 spendies.
     }
 
     voting {
+        votes(snail) {
+            PRESENT on 9087
+            FOR on 9088
+            FOR on 9089
+            AGAINST on 9090
+            FOR on 9091
+            FOR on 9092
+            AGAINST on 9093
+            FOR on 9094
+            FOR on 9095
+        }
     }
 }
