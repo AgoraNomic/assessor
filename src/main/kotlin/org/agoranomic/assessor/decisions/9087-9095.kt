@@ -303,5 +303,17 @@ a fee of 11 spendies.
             PRESENT on 9094
             AGAINST on 9095
         }
+
+        votes(Murphy) {
+            PRESENT on 9087
+            FOR on 9088
+            FOR on 9089
+            FOR on 9090
+            FOR on 9091
+            FOR on 9092
+            FOR on 9093
+            FOR on 9094
+            FOR on 9095
+        }
     }
 }
