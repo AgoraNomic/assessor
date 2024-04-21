@@ -291,5 +291,17 @@ a fee of 11 spendies.
             FOR on 9094
             FOR on 9095
         }
+
+        votes(Janet) {
+            FOR on 9087
+            FOR on 9088
+            FOR on 9089
+            AGAINST on 9090
+            FOR on 9091
+            FOR on 9092
+            AGAINST on 9093
+            PRESENT on 9094
+            AGAINST on 9095
+        }
     }
 }
