@@ -278,4 +278,6 @@ a fee of 11 spendies.
 
     }
 
+    voting {
+    }
 }
