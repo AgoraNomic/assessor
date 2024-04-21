@@ -1,0 +1,68 @@
+PROPOSAL 9077 (Less Fragile Crystals)
+AUTHOR: snail
+CLASS: ORDINARY
+FOR (6): Gaelan, Murphy%, R. Lee$, juan$, kiako, snail^
+AGAINST (0): 
+PRESENT (3): Janet^, ais523*, nix%
+BALLOTS: 9
+AI (F/A): 25/0 (AI=1.0)
+POPULARITY: 0.667
+OUTCOME: ADOPTED
+[
+Gaelan: Endorsement of snail
+Murphy: R. Lee is the Geologist: Endorsement of R. Lee
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017715.html
+
+ID: 9077
+Title: Less Fragile Crystals
+Adoption index: 1.0
+Author: snail
+Co-authors: 
+
+
+[Makes it so crystals can't be destroyed by the player that owns them,
+which doesn't seem fun. Also gets rid of the "repeal this rule once someone
+wins" part since we can just do that by proposal if we want. I'd rather it
+stay around by default.]
+
+Amend Rule 2685 (Crystals) by replacing
+
+{
+A crystal is an asset with secured integer switches identity, size
+      (default 0), and instability (default 0).
+}
+
+with
+
+{
+A crystal is an indestructible asset with secured integer switches
+identity, size
+      (default 0), and instability (default 0).
+}
+
+and by replacing
+
+{
+      Any player CAN, by announcement, Shatter the System, specifying
+      each crystallized player, and provided that no player has done so
+      in the past 30 days. When a player does so, each crystallized
+      player wins the game.
+
+      If at least 4 days have passed since any player won the game in
+      this manner, any player CAN repeal this rule by announcement.
+}
+
+with
+
+{
+      Any player CAN, by announcement, Shatter the System, specifying
+      at least 1 crystallized player, and provided that no person has done
+so
+      in the past 30 days. When a player does so, each crystallized
+      player wins the game.
+
+      If a player won the game in this manner 4 days ago, then all existing
+      crystals are destroyed.
+}

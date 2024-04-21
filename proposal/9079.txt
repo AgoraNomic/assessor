@@ -1,0 +1,109 @@
+PROPOSAL 9079 (Spendies v1.1)
+AUTHOR: nix
+CLASS: ORDINARY
+FOR (9): Gaelan, Janet^, Murphy%, R. Lee$, ais523*, juan$, kiako, nix%, snail^
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 44/0 (AI=2.0)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+[
+Gaelan: nix did not vote AGAINST: Endorsement of snail
+kiako: Endorsement of nix
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017715.html
+
+ID: 9079
+Title: Spendies v1.1
+Adoption index: 2.0
+Author: nix
+Co-authors: Janet, kiako
+
+
+[Spendies are simple. We all start with the same amount every month,
+and if you don't use them you lose them. You can transfer them, put
+them in contracts, etc. But they will go away. What's important is what
+you do with them in that month.]
+
+Enact a new (Power=1) rule titled Spendies with the text:
+
+    Spendies are a currency ownable by players and contracts. Spendies
+    are tracked by the Spendor in eir weekly report.
+
+    At the end of each month, all Spendies are destroyed. At the
+    beginning of each month, every player is granted 20 Spendies.
+
+[Quick compatibility with another proposal]
+
+If a proposal titled "FUNgibility" and authored by nix has been adopted
+within the last 90 days, amend the rule titled "Spendies" to replace
+"currency" with "fungible liquid asset".
+
+[Delete dream of wandering.]
+
+Repeal R2675 (Dream of Wandering).
+
+[Below stones are simplified, similarly to the stamp specialization
+proposal I made previously. You simply buy them for a cost that
+decreases every month while the stone has the same owner.]
+
+Amend R2640 (Stones) by replacing:
+
+    A stone is a unique indestructible liquid asset
+
+with:
+
+    A stone is a unique indestructible fixed asset
+
+and deleting its last two paragraphs.
+
+Amend R2641 (Wielding Stones) by replacing:
+
+    While a stone is hot, it is IMPOSSIBLE to wield it or to transfer it
+    by announcement.
+
+with:
+
+    While a stone is hot, it is IMPOSSIBLE to wield it.
+
+Retitle R2642 (Gathering Stones) to "Stone Cost" and then amend R2642 to
+read in full:
+
+    Stone Cost is a Stone switch with values of non-negative integers
+    and a default of 10. Stone Cost is tracked by the Stonemason.
+
+    Any player CAN pay a fee of X Spendies to transfer a specified stone
+    to emself, where X is the current Stone Cost of the specified stone.
+
+    When a stone is transferred, its Stone Cost is set to the default.
+    At the beginning of every week, the Stone Cost for each stone is
+    reduced by 1, to a minimum of 0.
+
+Repeal R2642 (Gathering Stones).
+
+[Similarly, let's include stamps. Remember Dreams are gone, so this is
+now the primary way to get new stamps. Use Spendies to get stamps from
+L&FD, or mint more of your own. There's some modifications to the cost
+to account for scale, which also discourages timing scams somewhat.]
+
+Amend R2659 (Stamps) by appending the following paragraphs:
+
+    Any player CAN pay a fee of 5 Spendies to grant emself X stamps of
+    eir own type. When less than 8 Stamps of eir type exist, X is 2.
+    When 8 to 15 Stamps of eir type exist, X is 1. When 16 or more
+    stamps of eir type exist, X is 0.
+
+    Any player CAN pay a fee of 5 + (X) Spendies to transfer a
+    specified stamp from the L&FD to emself. X is equal to the number of
+    times e has already done so in the current month.
+
+[Finally, you can buy some radiance, tho the cost is fairly high. Might
+push you across the finish line tho, or at least give a use for some
+spare Spendies.]
+
+Amend R2656 (Radiance) by appending the following paragraph:
+
+    Any player CAN increase eir radiance by 1 by paying a fee of 2
+    Spendies.

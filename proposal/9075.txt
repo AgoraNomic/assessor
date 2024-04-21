@@ -1,0 +1,50 @@
+PROPOSAL 9075 (No Hidden Ownership Restrictions)
+AUTHOR: nix
+CLASS: DEMOCRATIC
+FOR (8): Gaelan, Janet, Murphy, ais523, juan, kiako, nix, snail
+AGAINST (1): R. Lee
+PRESENT (0): 
+BALLOTS: 9
+AI (F/A): 24/3 (AI=3.0)
+POPULARITY: 0.778
+OUTCOME: ADOPTED
+[
+Gaelan: Endorsement of nix
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017715.html
+
+ID: 9075
+Title: No Hidden Ownership Restrictions
+Adoption index: 3.0
+Author: nix
+Co-authors: Janet, kiako
+
+
+[Right now, sentences like "Blank are an asset ownable by..." is
+interpreted to adding to a default within R2576. This seems unintuitive.
+This proposal makes that default only apply if there's no mention of
+ownership.]
+
+Amend R2576 (Ownership) by replacing:
+
+    If ownership of an asset is restricted to a class of entities, then
+    that asset CANNOT be gained by or transferred to an entity outside
+    that class. By default, ownership of an asset is restricted to
+    Agora, players, and contracts, but an asset's backing document may
+    modify this.
+
+with:
+
+    An asset CANNOT be gained by or transferred to an entity unless its
+    backing document specifies that entity can own it. If an asset's
+    backing document is otherwise silent on which entities can own it,
+    then it can be owned by Agora, players, and contracts.
+
+Amend R2659 (Stamps) by replacing:
+
+    Stamps are a category of asset ownable by players .
+
+with:
+
+    Stamps are a category of asset ownable by players and Agora.

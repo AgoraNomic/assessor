@@ -1,0 +1,37 @@
+PROPOSAL 9082 (yes, yes, I got the memo)
+AUTHOR: Gaelan
+CLASS: ORDINARY
+FOR (4): Janet^, Murphy%, R. Lee$, ais523*
+AGAINST (2): kiako, snail^
+PRESENT (3): Gaelan, juan$, nix%
+BALLOTS: 9
+AI (F/A): 23/9 (AI=1.7)
+POPULARITY: 0.222
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017715.html
+
+ID: 9082
+Title: yes, yes, I got the memo
+Adoption index: 1.7
+Author: Gaelan
+Co-authors: 
+
+
+Amend rule 2478 (“Justice”) by replacing: {
+  A player CAN, by announcement, "note" an unforgiven infraction
+  committed by any other player in the last 14 days, specifying the
+  incident and the rule it violates (or name of the Infraction if
+  it has one).
+} with {
+  A player CAN, by announcement, "note" an unforgiven infraction
+  committed by any other player in the last 14 days, specifying the
+  incident and the rule it violates (or name of the Infraction if
+  it has one); but a player CANNOT note an infraction that has
+  already been investigated.
+}
+
+[Currently, if an infraction is noted after it is investigated,
+the Investigator SHALL but CANNOT investigate it. This would be
+automatically forgiven by 2531, so it’s not an issue in practice,
+but let’s fix it properly.]

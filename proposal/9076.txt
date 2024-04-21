@@ -1,0 +1,54 @@
+PROPOSAL 9076 (FUNgibility)
+AUTHOR: nix
+CLASS: DEMOCRATIC
+FOR (8): Gaelan, Janet, R. Lee, ais523, juan, kiako, nix, snail
+AGAINST (0): 
+PRESENT (1): Murphy
+BALLOTS: 9
+AI (F/A): 24/0 (AI=3.0)
+POPULARITY: 0.889
+OUTCOME: ADOPTED
+[
+Gaelan: Endorsement of nix
+ais523: Conditional resolved: ais523 was not endorsed
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017715.html
+
+ID: 9076
+Title: FUNgibility
+Adoption index: 3.0
+Author: nix
+Co-authors: 
+
+
+[Right now, sentences like "Blank are an asset ownable by..." is
+interpreted to adding to a default within R2576. This seems unintuitive.
+This proposal makes that default only apply if there's no mention of
+ownership.]
+
+Retitle R2578 (Currencies) to "Fungibility"
+
+Amend R2578 to read in full:
+
+    A fungible asset is one where two instances of it are considered
+    equivalent if they have the same owner, for the purposes of
+    specification, granting, and transferring. The total amount of a
+    fungible asset that an entity owns is also know as that entities
+    "balance" of that asset.
+
+Amend R2659 (Stamps) by replacing:
+
+    Stamps of a given type are a currency.
+
+with:
+
+    Stamps of a given type are fungible.
+
+Amend R2555 (Blots) by replacing:
+
+    Blots are an indestructible fixed currency
+
+with:
+
+    Blots are an indestructible fixed fungible asset

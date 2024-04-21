@@ -1,0 +1,87 @@
+PROPOSAL 9084 (Oneironauts in the Ocean)
+AUTHOR: kiako
+CLASS: ORDINARY
+FOR (3): Gaelan, kiako, nix%
+AGAINST (2): Janet^, R. Lee$
+PRESENT (4): Murphy%, ais523*, juan$, snail^
+BALLOTS: 9
+AI (F/A): 11/10 (AI=2.0)
+POPULARITY: 0.111
+OUTCOME: REJECTED
+[
+Murphy: snail is the Dream Keeper: Endorsement of snail
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017715.html
+
+ID: 9084
+Title: Oneironauts in the Ocean
+Adoption index: 2.0
+Author: kiako
+Co-authors: 
+
+
+Amend Rule 2675 ("Dream of Wandering") so that the list of Dreams reads in
+its entirety:
+
+{
+- Wandering: This dream has no effect.
+
+- Charity: Immediately after a wandering, one stamp (chosen by
+most-to-least owned by the L&FD at time of transfer, tie-broken
+alphabetically) is transferred to each Charity Dreamer (in order from
+least-to-most stamps owned, tie-broken alphabetically) from the L&FD. If
+the number of Wealth Dreamers is more than the number of Charity Dreamers,
+this process happens a second time. If it is more than twice the number of
+Charity Dreamers, this happens a third time.
+
+
+- Justice: Immediately after a wandering, a number of blots are expunged
+from each Justice Dreamer equal to one-half the number of Power Dreamers,
+rounded up. If a Justice Dreamer had no blots immediately after a
+wandering, e CAN once expunge one blot, by announcement, from a specified
+player before the next wandering.
+
+
+- Sharing: Immediately after a wandering, each Sharing Dreamer has eir
+Radiance increased by X/Y, rounded down, where X is the number of
+non-Wandering, non-Sharing Dreamers, and Y is the number of Sharing
+Dreamers.
+
+
+- Wealth: Immediately after a wandering, X stamps of eir own type are
+granted to each Wealth Dreamer, where X is the minimum of the following:
+
+  - One more than the number of true statements among the following:
+    - Fewer than 8 stamps of eir own type exist.
+    - There are at least 3 Wealth Dreamers.
+    - There are at most 2 Charity Dreamers.
+
+  - 16 minus the number of stamps of eir own type that exist, to a minimum
+of 0.
+
+
+- Gardens: Immediately after a wandering, the Base Rockiness of each
+Gardens Dreamer is increased by the number of Gardens Dreamers, and the
+Base Rockiness of each non-Gardens Dreamer is decreased by 1 to a minimum
+of 0.
+
+
+- Power: Let Y be the number of Dreamers of the non-Wandering, non-Power
+Dream with the most Dreamers. Each Power Dreamer has eir voting strength
+increased by X for referenda on ordinary proposals, where X is
+
+  - 1 if Y is at most 2,
+  - 2 if Y is between 3 and 5 (inclusive),
+  - 3 if Y is between 6 and 9 (inclusive), and
+  - 4 if Y is at least 10.
+
+- Revolution: A revolution is happening if the majority of active players
+are Revolution Dreamers. Immediately after a wandering, if a revolution is
+not happening, then all Revolution Dreamers have eir radiance decreased by
+1 to a minimum of 0. Immediately after a wandering, if a revolution is
+happening, then all players have eir radiance set to 100-X, where X was eir
+radiance when the wandering occurred, and all player's Dreams are set to
+Wandering.
+
+}
