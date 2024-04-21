@@ -315,5 +315,17 @@ a fee of 11 spendies.
             FOR on 9094
             FOR on 9095
         }
+
+        votes(Quadrantal) {
+            PRESENT on 9087
+            FOR on 9088
+            FOR on 9089
+            AGAINST on 9090
+            PRESENT on 9091
+            FOR on 9092
+            AGAINST on 9093
+            FOR on 9094
+            FOR on 9095
+        }
     }
 }
