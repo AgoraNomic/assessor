@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -374,6 +375,15 @@ a fee of 11 spendies.
             FOR on 9093
             PRESENT on 9094
             FOR on 9095
+        }
+
+        votes(kiako) {
+            PRESENT on 9087
+            AGAINST on 9090
+            AGAINST on 9093
+            AGAINST on 9095
+            endorse(Janet) on 9091
+            FOR on others
         }
     }
 }
