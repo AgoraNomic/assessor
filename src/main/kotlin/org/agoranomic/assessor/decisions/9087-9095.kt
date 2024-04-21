@@ -385,5 +385,17 @@ a fee of 11 spendies.
             endorse(Janet) on 9091
             FOR on others
         }
+
+        votes(RLee) {
+            FOR on 9087
+            PRESENT on 9088
+            FOR on 9089
+            PRESENT on 9090
+            FOR on 9091
+            PRESENT on 9092
+            PRESENT on 9093
+            PRESENT on 9094
+            AGAINST on 9095
+        }
     }
 }
