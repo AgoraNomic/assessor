@@ -351,5 +351,17 @@ a fee of 11 spendies.
             PRESENT on 9094
             PRESENT on 9095
         }
+
+        votes(nix) {
+            FOR on 9087
+            FOR on 9088
+            FOR on 9089
+            PRESENT on 9090
+            PRESENT on 9091
+            FOR on 9092
+            PRESENT on 9093
+            PRESENT on 9094
+            PRESENT on 9095
+        }
     }
 }
