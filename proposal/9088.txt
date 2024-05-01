@@ -1,0 +1,43 @@
+PROPOSAL 9088 (Spendie Fixie)
+AUTHOR: nix
+CLASS: ORDINARY
+FOR (9): Jaff, Janet^, Murphy%, Quadrantal, ais523%, juan$, kiako, nix%, snail^
+AGAINST (0): 
+PRESENT (2): R. Lee$, wunst
+BALLOTS: 11
+AI (F/A): 40/0 (AI=2.0)
+POPULARITY: 0.818
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-April/017742.html
+
+ID: 9088
+Title: Spendie Fixie
+Adoption index: 2.0
+Author: nix
+Co-authors: Murphy, ais523, Janet
+
+
+[Spendies v1.1 both failed to repeal R2643 and may have accidentally
+repealed 2642. This proposal fixes both of those.]
+
+Reenact R2642 (Stone Cost) with a Power of 2 and the full text:
+
+    Stone Cost is a Stone switch with values of non-negative integers
+    and a default of 10. Stone Cost is tracked by the Stonemason.
+
+    Any player CAN pay a fee of X Spendies to transfer a specified stone
+    to emself, where X is the current Stone Cost of the specified stone.
+
+    When a stone is transferred, its Stone Cost is set to the default.
+    At the beginning of every week, the Stone Cost for each stone is
+    reduced by 1, to a minimum of 0.
+
+[If the rule is repealed, this brings it back. If the rule isn't
+repealed, it does nothing.]
+
+Repeal R2643 (Collecting Stones).
+
+If no player has any Spendies, grant each player 20 Spendies.
+
+[Get Spendies running properly if they aren't already.]
