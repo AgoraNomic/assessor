@@ -176,4 +176,7 @@ instability is increased by 3.
             )
         }
     }
+
+    voting {
+    }
 }
