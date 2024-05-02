@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -187,6 +188,15 @@ instability is increased by 3.
             FOR on 9099
             FOR on 9100
             FOR on 9101
+        }
+
+        votes(Janet) {
+            FOR on 9096
+            FOR on 9097
+            FOR on 9098
+            AGAINST on 9099
+            AGAINST on 9100
+            AGAINST on 9101
         }
     }
 }
