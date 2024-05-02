@@ -215,5 +215,14 @@ instability is increased by 3.
             PRESENT on 9100
             PRESENT on 9101
         }
+
+        votes(wunst) {
+            FOR on 9096
+            FOR on 9097
+            FOR on 9098
+            FOR on 9099
+            AGAINST on 9100
+            FOR on 9101
+        }
     }
 }
