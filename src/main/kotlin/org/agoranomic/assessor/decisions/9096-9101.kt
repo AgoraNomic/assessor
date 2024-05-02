@@ -198,5 +198,14 @@ instability is increased by 3.
             AGAINST on 9100
             AGAINST on 9101
         }
+
+        votes(Murphy) {
+            endorse(Janet) on 9096 comment "${Janet.name} is the Stonemason"
+            FOR on 9097
+            FOR on 9098
+            endorse(Janet) on 9099 comment "${Janet.name} is the Stonemason"
+            endorse(Janet) on 9100 comment "${Janet.name} is the Stonemason"
+            endorse(Janet) on 9101 comment "${Janet.name} is the Stonemason"
+        }
     }
 }
