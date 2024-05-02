@@ -4,7 +4,9 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9096to9101() = assessment {
@@ -178,5 +180,13 @@ instability is increased by 3.
     }
 
     voting {
+        votes(snail) {
+            FOR on 9096
+            endorse(Janet) on 9097
+            FOR on 9098
+            FOR on 9099
+            FOR on 9100
+            FOR on 9101
+        }
     }
 }
