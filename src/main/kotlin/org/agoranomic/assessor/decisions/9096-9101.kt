@@ -233,5 +233,14 @@ instability is increased by 3.
             PRESENT on 9100
             PRESENT on 9101
         }
+
+        votes(nix) {
+            AGAINST on 9096
+            FOR on 9097
+            FOR on 9098
+            PRESENT on 9099
+            AGAINST on 9100
+            PRESENT on 9101
+        }
     }
 }
