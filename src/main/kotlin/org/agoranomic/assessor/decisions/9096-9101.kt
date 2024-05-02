@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9096to9101() = assessment {
@@ -206,6 +205,15 @@ instability is increased by 3.
             endorse(Janet) on 9099 comment "${Janet.name} is the Stonemason"
             endorse(Janet) on 9100 comment "${Janet.name} is the Stonemason"
             endorse(Janet) on 9101 comment "${Janet.name} is the Stonemason"
+        }
+
+        votes(Jaff) {
+            FOR on 9096
+            FOR on 9097
+            FOR on 9098
+            AGAINST on 9099
+            PRESENT on 9100
+            PRESENT on 9101
         }
     }
 }
