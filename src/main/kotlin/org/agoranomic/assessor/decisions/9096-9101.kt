@@ -190,7 +190,7 @@ instability is increased by 3.
         }
 
         votes(Janet) {
-            FOR on 9096
+            endorse(nix) on 9096
             FOR on 9097
             FOR on 9098
             AGAINST on 9099
