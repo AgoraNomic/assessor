@@ -281,5 +281,14 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
         votes(Forest) {
             FOR on all
         }
+
+        votes(Jaff) {
+            PRESENT on 9114
+            FOR on 9115
+            FOR on 9116
+            FOR on 9117
+            PRESENT on 9118
+            FOR on 9119
+        }
     }
 }
