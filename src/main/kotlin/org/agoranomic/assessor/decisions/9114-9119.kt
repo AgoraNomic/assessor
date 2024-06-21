@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9114to9119() = assessment {
@@ -241,6 +240,15 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
             FOR on 9117
             AGAINST on 9118
             FOR on 9119
+        }
+
+        votes(Yachay) {
+            FOR on 9114
+            PRESENT on 9115
+            FOR on 9116
+            FOR on 9117
+            AGAINST on 9118
+            PRESENT on 9119
         }
     }
 }
