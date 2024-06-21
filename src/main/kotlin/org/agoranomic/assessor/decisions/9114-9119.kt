@@ -230,4 +230,7 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
             )
         }
     }
+
+    voting {
+    }
 }
