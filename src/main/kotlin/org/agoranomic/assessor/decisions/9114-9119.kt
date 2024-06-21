@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -270,8 +271,8 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
         }
 
         votes(Janet) {
-            PRESENT on 9114
-            PRESENT on 9115
+            endorse(nix) on 9114
+            endorse(nix) on 9115
             AGAINST on 9116
             PRESENT on 9117
             AGAINST on 9118
