@@ -268,5 +268,14 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
             AGAINST on 9118
             FOR on 9119
         }
+
+        votes(Janet) {
+            PRESENT on 9114
+            PRESENT on 9115
+            AGAINST on 9116
+            PRESENT on 9117
+            AGAINST on 9118
+            FOR on 9119
+        }
     }
 }
