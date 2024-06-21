@@ -277,5 +277,9 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
             AGAINST on 9118
             FOR on 9119
         }
+
+        votes(Forest) {
+            FOR on all
+        }
     }
 }
