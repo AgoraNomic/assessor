@@ -254,7 +254,7 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
 
         votes(Mischief) {
             FOR on 9114
-            FOR on 9115
+            endorse(nix) on 9115
             FOR on 9116
             FOR on 9117
             PRESENT on 9118
