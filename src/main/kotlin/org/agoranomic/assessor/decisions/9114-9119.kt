@@ -293,7 +293,7 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
 
         votes(nix) {
             FOR on 9114
-            PRESENT on 9115
+            AGAINST on 9115
             PRESENT on 9116
             PRESENT on 9117
             AGAINST on 9118
