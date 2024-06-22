@@ -34,7 +34,7 @@ fun assessment9114to9119() = assessment {
                 "Assessor"(3) heldBy Janet
                 "Collector"(2) heldBy null
                 "Distributor"(0) heldBy omd
-                "Geologist"(1) heldBy null
+                "Geologist"(1) heldBy Forest
                 "Herald"(2) heldBy snail
                 "Illuminator"(1) heldBy Quadrantal
                 "Notary"(2) heldBy snail
@@ -43,7 +43,8 @@ fun assessment9114to9119() = assessment {
                 "Referee"(2) heldBy ais523
                 "Registrar"(1) heldBy juan
                 "Rulekeepor"(3) heldBy Janet
-                "Speaker"(0) heldBy snail
+                "Speaker"(0) heldBy Jaff
+                "Spendor"(1) heldBy nix
                 "Stonemason"(1) heldBy Janet
                 "Tailor"(1) heldBy Murphy
                 "Webmastor"(1) heldBy null
