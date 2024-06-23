@@ -162,5 +162,10 @@ actually governs.
             AGAINST on 9120
             FOR on 9121
         }
+
+        votes(Janet) {
+            AGAINST on 9120
+            PRESENT on 9121
+        }
     }
 }
