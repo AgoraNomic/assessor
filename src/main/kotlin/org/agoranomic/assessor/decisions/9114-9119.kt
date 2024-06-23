@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -256,7 +257,7 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
 
         votes(Mischief) {
             FOR on 9114
-            AGAINST on 9115
+            endorse(nix) on 9115
             FOR on 9116
             FOR on 9117
             PRESENT on 9118
