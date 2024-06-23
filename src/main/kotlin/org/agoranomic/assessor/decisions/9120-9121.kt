@@ -147,5 +147,10 @@ actually governs.
             AGAINST on 9120
             endorse(Janet) on 9121 comment "${Janet.name} is the Rulekeepor"
         }
+
+        votes(Yachay) {
+            PRESENT on 9120
+            FOR on 9121
+        }
     }
 }
