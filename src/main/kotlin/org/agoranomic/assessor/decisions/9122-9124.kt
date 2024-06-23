@@ -172,5 +172,11 @@ with this text:
             FOR on 9123
             FOR on 9124
         }
+
+        votes(Murphy) {
+            FOR on 9122
+            PRESENT on 9123
+            FOR on 9124
+        }
     }
 }
