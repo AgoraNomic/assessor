@@ -131,5 +131,10 @@ actually governs.
         votes(Forest) {
             FOR on all
         }
+
+        votes(juan) {
+            AGAINST on 9120
+            AGAINST on 9121
+        }
     }
 }
