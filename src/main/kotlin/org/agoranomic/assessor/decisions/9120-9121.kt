@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.powerStone
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -140,6 +141,11 @@ actually governs.
         votes(Mischief) {
             AGAINST on 9120
             FOR on 9121
+        }
+
+        votes(Jaff) {
+            AGAINST on 9120
+            endorse(Janet) on 9121 comment "${Janet.name} is the Rulekeepor"
         }
     }
 }
