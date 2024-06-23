@@ -178,5 +178,11 @@ with this text:
             PRESENT on 9123
             FOR on 9124
         }
+
+        votes(wunst) {
+            FOR on 9122
+            PRESENT on 9123
+            AGAINST on 9124
+        }
     }
 }
