@@ -167,5 +167,10 @@ actually governs.
             AGAINST on 9120
             PRESENT on 9121
         }
+
+        votes(juniper) {
+            AGAINST on 9120
+            PRESENT on 9121
+        }
     }
 }
