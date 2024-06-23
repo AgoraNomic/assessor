@@ -146,4 +146,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
