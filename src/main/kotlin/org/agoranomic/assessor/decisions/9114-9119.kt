@@ -260,8 +260,8 @@ deleting the sentence "Adoption index is secured with a Power Threshold of
             endorse(nix) on 9115
             FOR on 9116
             FOR on 9117
-            PRESENT on 9118
-            AGAINST on 9119
+            AGAINST on 9118
+            FOR on 9119
         }
 
         votes(juan) {
