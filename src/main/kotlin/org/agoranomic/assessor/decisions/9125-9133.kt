@@ -7,6 +7,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -307,6 +309,18 @@ Amend Rule 2645 (The Stones) by replacing "last 7 days" with "past 7 days"."""
             PRESENT on 9131
             FOR on 9132
             AGAINST on 9133
+        }
+
+        votes(Murphy) {
+            AGAINST on 9125
+            endorse(Janet) on 9126 comment "${Janet.name} is the Stonemason"
+            FOR on 9127
+            endorse(Janet) on 9128 comment "${Janet.name} is the Stonemason"
+            FOR on 9129
+            FOR on 9130
+            resolvedConditional(InextricableResolvingVote, "Collector is vacant") on 9131
+            FOR on 9132
+            FOR on 9133
         }
     }
 }
