@@ -271,5 +271,17 @@ Amend Rule 2645 (The Stones) by replacing "last 7 days" with "past 7 days"."""
             FOR on 9132
             FOR on 9133
         }
+
+        votes(Janet) {
+            AGAINST on 9125
+            FOR on 9126
+            AGAINST on 9127
+            FOR on 9128
+            FOR on 9129
+            FOR on 9130
+            AGAINST on 9131
+            FOR on 9132
+            PRESENT on 9133
+        }
     }
 }
