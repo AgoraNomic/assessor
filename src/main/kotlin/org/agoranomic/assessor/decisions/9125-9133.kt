@@ -296,5 +296,17 @@ Amend Rule 2645 (The Stones) by replacing "last 7 days" with "past 7 days"."""
             FOR on 9132
             endorse(Janet) on 9133 comment "${Janet.name} is the Rulekeepor"
         }
+
+        votes(Quadrantal) {
+            endorse(Janet) on 9125 comment "${Janet.name} is the Rulekeepor"
+            endorse(Janet) on 9126 comment "${Janet.name} is the Stonemason"
+            AGAINST on 9127
+            FOR on 9128
+            FOR on 9129
+            FOR on 9130
+            PRESENT on 9131
+            FOR on 9132
+            AGAINST on 9133
+        }
     }
 }
