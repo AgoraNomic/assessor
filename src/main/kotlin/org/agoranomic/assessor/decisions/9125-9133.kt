@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9125to9133() = assessment {
@@ -247,5 +249,16 @@ Amend Rule 2645 (The Stones) by replacing "last 7 days" with "past 7 days"."""
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9125
+            FOR on 9126
+            AGAINST on 9127
+            FOR on 9128
+            FOR on 9129
+            FOR on 9130
+            AGAINST on 9131
+            FOR on 9132
+            FOR on 9133
+        }
     }
 }
