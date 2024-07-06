@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -282,6 +283,18 @@ Amend Rule 2645 (The Stones) by replacing "last 7 days" with "past 7 days"."""
             AGAINST on 9131
             FOR on 9132
             PRESENT on 9133
+        }
+
+        votes(Mischief) {
+            AGAINST on 9125
+            FOR on 9126
+            FOR on 9127
+            FOR on 9128
+            FOR on 9129
+            FOR on 9130
+            FOR on 9131
+            FOR on 9132
+            endorse(Janet) on 9133 comment "${Janet.name} is the Rulekeepor"
         }
     }
 }
