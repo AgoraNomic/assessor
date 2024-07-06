@@ -245,4 +245,7 @@ Amend Rule 2645 (The Stones) by replacing "last 7 days" with "past 7 days"."""
             )
         }
     }
+
+    voting {
+    }
 }
