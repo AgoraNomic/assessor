@@ -7,7 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9134to9141() = assessment {
@@ -350,6 +350,17 @@ and because it would be a nightmare to try to specify the changes.]"""
             FOR on 9139
             FOR on 9140
             endorse(Janet) on 9141
+        }
+
+        votes(ais523) {
+            FOR on 9134
+            AGAINST on 9135
+            FOR on 9136
+            FOR on 9137
+            FOR on 9138
+            FOR on 9139
+            FOR on 9140
+            PRESENT on 9141
         }
     }
 }
