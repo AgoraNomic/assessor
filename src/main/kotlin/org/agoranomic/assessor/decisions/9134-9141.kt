@@ -337,4 +337,7 @@ and because it would be a nightmare to try to specify the changes.]"""
             )
         }
     }
+
+    voting {
+    }
 }
