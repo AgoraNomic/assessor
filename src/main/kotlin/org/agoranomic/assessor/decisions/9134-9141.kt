@@ -395,5 +395,16 @@ and because it would be a nightmare to try to specify the changes.]"""
             FOR on 9140
             FOR on 9141
         }
+
+        votes(Yachay) {
+            FOR on 9134
+            AGAINST on 9135
+            PRESENT on 9136
+            AGAINST on 9137
+            FOR on 9138
+            FOR on 9139
+            FOR on 9140
+            FOR on 9141
+        }
     }
 }
