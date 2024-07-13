@@ -384,5 +384,16 @@ and because it would be a nightmare to try to specify the changes.]"""
             FOR on 9140
             FOR on 9141
         }
+
+        votes(juan) {
+            PRESENT on 9134
+            PRESENT on 9135
+            FOR on 9136
+            FOR on 9137
+            PRESENT on 9138
+            PRESENT on 9139
+            FOR on 9140
+            FOR on 9141
+        }
     }
 }
