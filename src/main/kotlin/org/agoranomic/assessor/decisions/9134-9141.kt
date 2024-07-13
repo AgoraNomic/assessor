@@ -417,5 +417,16 @@ and because it would be a nightmare to try to specify the changes.]"""
             FOR on 9140
             FOR on 9141
         }
+
+        votes(Murphy) {
+            FOR on 9134
+            FOR on 9135
+            FOR on 9136
+            FOR on 9137
+            endorse(Janet) on 9138 comment "${Janet.name} is the Stonemason"
+            endorse(Janet) on 9139 comment "${Janet.name} is the Stonemason"
+            PRESENT on 9140
+            FOR on 9141
+        }
     }
 }
