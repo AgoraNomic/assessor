@@ -5,7 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9134to9141() = assessment {
@@ -339,5 +341,15 @@ and because it would be a nightmare to try to specify the changes.]"""
     }
 
     voting {
+        votes(snail) {
+            FOR on 9134
+            FOR on 9135
+            FOR on 9136
+            FOR on 9137
+            FOR on 9138
+            FOR on 9139
+            FOR on 9140
+            endorse(Janet) on 9141
+        }
     }
 }
