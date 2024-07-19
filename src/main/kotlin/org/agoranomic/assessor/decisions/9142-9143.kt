@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9142to9143() = assessment {
@@ -194,6 +193,11 @@ A complete rewrite of bangs with many changes, including but not limited to:
 
         votes(Mischief) {
             FOR on 9142
+            FOR on 9143
+        }
+
+        votes(Janet) {
+            AGAINST on 9142
             FOR on 9143
         }
     }
