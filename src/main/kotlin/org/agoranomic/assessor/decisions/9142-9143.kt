@@ -191,5 +191,10 @@ A complete rewrite of bangs with many changes, including but not limited to:
             InextricableResolvingVote on 9142 comment "endorsement of self"
             PRESENT on 9143
         }
+
+        votes(Mischief) {
+            FOR on 9142
+            FOR on 9143
+        }
     }
 }
