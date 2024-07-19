@@ -200,5 +200,10 @@ A complete rewrite of bangs with many changes, including but not limited to:
             AGAINST on 9142
             FOR on 9143
         }
+
+        votes(Murphy) {
+            FOR on 9142
+            PRESENT on 9143
+        }
     }
 }
