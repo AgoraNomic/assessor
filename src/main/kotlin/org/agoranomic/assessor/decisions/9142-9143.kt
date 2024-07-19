@@ -5,7 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9142to9143() = assessment {
@@ -178,5 +180,9 @@ A complete rewrite of bangs with many changes, including but not limited to:
     }
 
     voting {
+        votes(snail) {
+            FOR on 9142
+            endorse(Janet) on 9143
+        }
     }
 }
