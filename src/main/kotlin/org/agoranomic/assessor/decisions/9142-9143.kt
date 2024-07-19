@@ -176,4 +176,7 @@ A complete rewrite of bangs with many changes, including but not limited to:
             )
         }
     }
+
+    voting {
+    }
 }
