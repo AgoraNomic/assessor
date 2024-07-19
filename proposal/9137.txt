@@ -1,0 +1,29 @@
+PROPOSAL 9137 (A possible patch for a peculiar persisting pledge paradox)
+AUTHOR: Quadrantal
+CLASS: ORDINARY
+FOR (7): Janet^, Mischief, Murphy%, ais523%, juan$, juniper$, snail^
+AGAINST (1): Yachay Wayllukuq
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 33/3 (AI=1.7)
+POPULARITY: 0.750
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-July/017906.html
+
+ID: 9137
+Title: A possible patch for a peculiar persisting pledge paradox
+Adoption index: 1.7
+Author: Quadrantal
+Co-authors: Aris
+
+
+[A fix for pledge indeterminacy (see CFJ 3907). Defaults to the pledge
+having been violated, as the infraction system seems to have enough
+flexibility to forgive pledges that are broken on a technicality]
+
+Amend Rule 2450 ("Pledges") by appending to the first paragraph as follows:
+{
+If it would otherwise be indeterminate whether a player has violated a
+pledge, then e shall be deemed to have violated that pledge.
+}
