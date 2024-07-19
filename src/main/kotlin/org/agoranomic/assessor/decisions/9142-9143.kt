@@ -7,7 +7,9 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9142to9143() = assessment {
@@ -183,6 +185,11 @@ A complete rewrite of bangs with many changes, including but not limited to:
         votes(snail) {
             FOR on 9142
             endorse(Janet) on 9143
+        }
+
+        votes(juan) {
+            InextricableResolvingVote on 9142 comment "endorsement of self"
+            PRESENT on 9143
         }
     }
 }
