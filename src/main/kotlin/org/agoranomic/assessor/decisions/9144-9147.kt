@@ -206,5 +206,12 @@ Amend the first paragraph of rule 2553 to read:
             PRESENT on 9146
             FOR on 9147
         }
+
+        votes(ais523) {
+            FOR on 9144
+            AGAINST on 9145
+            PRESENT on 9146
+            FOR on 9147
+        }
     }
 }
