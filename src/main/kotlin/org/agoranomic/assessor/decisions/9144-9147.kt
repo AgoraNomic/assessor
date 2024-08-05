@@ -183,4 +183,7 @@ Amend the first paragraph of rule 2553 to read:
             )
         }
     }
+
+    voting {
+    }
 }
