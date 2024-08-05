@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9144to9147() = assessment {
@@ -198,6 +197,13 @@ Amend the first paragraph of rule 2553 to read:
             FOR on 9144
             AGAINST on 9145
             FOR on 9146
+            FOR on 9147
+        }
+
+        votes(Janet) {
+            FOR on 9144
+            AGAINST on 9145
+            PRESENT on 9146
             FOR on 9147
         }
     }
