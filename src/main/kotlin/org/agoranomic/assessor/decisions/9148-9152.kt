@@ -183,4 +183,7 @@ first paragraph of the rule the following text (including an embedded list):
             )
         }
     }
+
+    voting {
+    }
 }
