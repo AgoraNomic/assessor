@@ -218,5 +218,13 @@ first paragraph of the rule the following text (including an embedded list):
             AGAINST on 9151
             FOR on 9152
         }
+
+        votes(Mischief) {
+            PRESENT on 9148
+            FOR on 9149
+            AGAINST on 9150
+            PRESENT on 9151
+            FOR on 9152
+        }
     }
 }
