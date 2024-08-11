@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9148to9152() = assessment {
@@ -201,6 +200,14 @@ first paragraph of the rule the following text (including an embedded list):
             FOR on 9149
             FOR on 9150
             FOR on 9151
+            FOR on 9152
+        }
+
+        votes(Janet) {
+            AGAINST on 9148
+            PRESENT on 9149
+            FOR on 9150
+            AGAINST on 9151
             FOR on 9152
         }
     }
