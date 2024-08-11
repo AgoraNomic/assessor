@@ -195,5 +195,13 @@ first paragraph of the rule the following text (including an embedded list):
             endorse(juniper) on 9151 comment "${juniper.name} is the Stonemason"
             endorse(juniper) on 9152 comment "${juniper.name} is the Stonemason"
         }
+
+        votes(lare290) {
+            FOR on 9148
+            FOR on 9149
+            FOR on 9150
+            FOR on 9151
+            FOR on 9152
+        }
     }
 }
