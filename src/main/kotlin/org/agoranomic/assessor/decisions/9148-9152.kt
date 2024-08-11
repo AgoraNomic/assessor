@@ -210,5 +210,13 @@ first paragraph of the rule the following text (including an embedded list):
             AGAINST on 9151
             FOR on 9152
         }
+
+        votes(snail) {
+            AGAINST on 9148
+            PRESENT on 9149
+            FOR on 9150
+            AGAINST on 9151
+            FOR on 9152
+        }
     }
 }
