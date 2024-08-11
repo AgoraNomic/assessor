@@ -20,6 +20,7 @@ private fun playerName(player: String): String {
         "Janet" -> "Janet"
         "juan" -> "juan"
         "Kate" -> "Kate"
+        "Mischief" -> "Mischief"
         "Murphy" -> "Murphy"
         "nix" -> "nix"
         "omd" -> "omd"
