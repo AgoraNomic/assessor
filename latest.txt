@@ -1,11 +1,19 @@
-RESOLUTION OF PROPOSALS 9153-9155
+RESOLUTION OF PROPOSALS 9148-9152
 =================================
 
-ID    Title                                   Result       
------------------------------------------------------------
-9153  No double harvest                       FAILED QUORUM
-9154  Pragmatic quarters, take two            FAILED QUORUM
-9155  Some stones are more equal than others  FAILED QUORUM
+THIS IS AN AUTOMATICALLY GENERATED REPORT.
+SOME INFORMATION MAY DIFFER FROM THE HISTORICAL REPORT.
+THE ASSESSMENT SENT TO THE PUBLIC FORUM IS THE DEFINITIVE SOURCE OF HISTORICAL INFORMATION.
+
+The official historical report is located at https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-August/017956.html
+
+ID    Title           Result  
+------------------------------
+9148  Corpse Looting  REJECTED
+9149  Silly Bangs     ADOPTED 
+9150  *sigh*          ADOPTED 
+9151  Baa             REJECTED
+9152  Ugh             ADOPTED 
 
 I hereby resolve the Agoran decisions to adopt the below proposals.
 
@@ -23,37 +31,162 @@ $: player has voting strength 4
 PROPOSALS
 =========
 
-PROPOSAL 9153 (No double harvest)
-AUTHOR: Murphy
-CLASS: DEMOCRATIC
-FOR (1): snail
+PROPOSAL 9148 (Corpse Looting)
+AUTHOR: 4st
+CLASS: ORDINARY
+FOR (1): lare290
+AGAINST (2): Janet^, snail^
+PRESENT (2): Mischief%, Murphy%
+BALLOTS: 5
+AI (F/A): 3/12 (AI=1.0)
+POPULARITY: -0.200
+OUTCOME: REJECTED
+[
+Murphy: juan is the Absurdor: Endorsement of non-voter juan: Inextricable
+]
+
+PROPOSAL 9149 (Silly Bangs)
+AUTHOR: 4st
+CLASS: ORDINARY
+FOR (2): Mischief%, lare290
 AGAINST (0): 
+PRESENT (3): Janet^, Murphy%, snail^
+BALLOTS: 5
+AI (F/A): 8/0 (AI=1.0)
+POPULARITY: 0.400
+OUTCOME: ADOPTED
+
+PROPOSAL 9150 (*sigh*)
+AUTHOR: Janet
+CLASS: ORDINARY
+FOR (4): Janet^, Murphy%, lare290, snail^
+AGAINST (1): Mischief%
 PRESENT (0): 
-BALLOTS: 1
-AI (F/A): 3/0 (AI=3.0)
-POPULARITY: 1.000
-OUTCOME: FAILED QUORUM
+BALLOTS: 5
+AI (F/A): 20/5 (AI=1.0)
+POPULARITY: 0.600
+OUTCOME: ADOPTED
 
-PROPOSAL 9154 (Pragmatic quarters, take two)
-AUTHOR: Murphy
+PROPOSAL 9151 (Baa)
+AUTHOR: Mischief
 CLASS: ORDINARY
-FOR (0): 
-AGAINST (0): 
-PRESENT (1): snail^
-BALLOTS: 1
-AI (F/A): 0/0 (AI=2.0)
-POPULARITY: 0.000
-OUTCOME: FAILED QUORUM
+FOR (1): lare290
+AGAINST (2): Janet^, snail^
+PRESENT (2): Mischief%, Murphy%
+BALLOTS: 5
+AI (F/A): 3/12 (AI=2.0)
+POPULARITY: -0.200
+OUTCOME: REJECTED
+[
+Murphy: juniper is the Stonemason: Endorsement of non-voter juniper: Inextricable
+]
 
-PROPOSAL 9155 (Some stones are more equal than others)
-AUTHOR: Murphy
+PROPOSAL 9152 (Ugh)
+AUTHOR: Mischief
 CLASS: ORDINARY
-FOR (0): 
+FOR (4): Janet^, Mischief%, lare290, snail^
 AGAINST (0): 
-PRESENT (1): snail^
-BALLOTS: 1
-AI (F/A): 0/0 (AI=2.0)
-POPULARITY: 0.000
-OUTCOME: FAILED QUORUM
+PRESENT (1): Murphy%
+BALLOTS: 5
+AI (F/A): 20/0 (AI=2.0)
+POPULARITY: 0.800
+OUTCOME: ADOPTED
+[
+Murphy: juniper is the Stonemason: Endorsement of non-voter juniper: Inextricable
+]
 
-No proposals were adopted.
+The full text of each ADOPTED proposal is included below:
+
+//////////////////////////////////////////////////////////////////////
+ID: 9149
+Title: Silly Bangs
+Adoption index: 1.0
+Author: 4st
+Co-authors: 
+
+
+Amend Rule 2696 ("Bang Actions") by replacing:
+{
+if the shooter is alive and has two bangs
+}
+with
+{
+if the shooter is alive and has at least two bangs
+}
+
+[it's not really exploitable, but rather just annoying: having your reveal
+fail bc you had more than 2 bangs for any reason, since you can simply
+transfer bangs away from you freely.]
+
+//////////////////////////////////////////////////////////////////////
+ID: 9150
+Title: *sigh*
+Adoption index: 1.0
+Author: Janet
+Co-authors: 
+
+
+Amend the Rule entitled "The Veblen" to read, in whole:
+
+{
+
+The Veblen is a unique indestructible fixed asset tracked by the
+Abusrdor, with ownership entirely restricted to players and Agora. If
+the Veblen would otherwise be in abeyance, or if it is owned by the Lost
+and Found Department, it is immediately transferred to Agora.
+
+The Veblen cost is a secured singleton positive integer switch tracked
+by the Absurdor and with default value one.
+
+A player who does not own the Veblen CAN pay a fee of X spendies to
+purchase the Veblen, where X is an integer not less than the current
+Veblen cost. When e does so, the Veblen is transferred to em, then the
+Veblen cost is set to X+1.
+
+The owner of the Veblen SHOULD conspicuously show off eir ownership of
+it from time to time.
+
+}
+
+
+The Veblen is hereby transferred to the entity that owned the Veblen
+immediately before this proposal began taking effect (if e does not
+already own it).
+
+The Veblen cost is hereby flipped to what the Veblen Cost was
+immediately before this proposal began taking effect (if it does not
+already have that value).
+
+[Normalize tracking language. Normalize transfer language. Fix
+"ownership of the Veblen", if such a thing exists. Prohibit
+self-purchases.]
+
+//////////////////////////////////////////////////////////////////////
+ID: 9152
+Title: Ugh
+Adoption index: 2.0
+Author: Mischief
+Co-authors: 
+
+
+[Creates a stone that's effectively worth -1 in the count.]
+
+Amend rule 2645 (The Stones) by adding, at the end, to the list of stones:
+
+       - Tacky Stone (monthly): Wielding the Tacky Stone reminds
+         everyone how much of an eyesore it is. If the Tacky Stone is
+         not immune, any player CAN pay a fee of X Spendies to transfer
+         the Tacky Stone to a specified entity that the rules permit to
+         own stones, where X is the current Stone Cost of the Tacky
+         Stone. When this occurs, the stone cost of the Tacky Stone is
+         set to its default value.
+
+Amend rule 2644 (Zen Gardening) by replacing "that owns 8 or more
+stones" with "with an impressive rock collection" and inserting as the
+first paragraph of the rule the following text (including an embedded list):
+
+       A player has an impressive rock collection if e:
+         1) owns 10 or more stones; or
+         2) owns 8 or more stones and does not own the Tacky Stone.
+
+//////////////////////////////////////////////////////////////////////
