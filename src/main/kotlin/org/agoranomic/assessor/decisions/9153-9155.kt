@@ -214,5 +214,11 @@ with this text:
             FOR on 9154
             AGAINST on 9155
         }
+
+        votes(Murphy) {
+            FOR on 9153
+            FOR on 9154
+            FOR on 9155
+        }
     }
 }
