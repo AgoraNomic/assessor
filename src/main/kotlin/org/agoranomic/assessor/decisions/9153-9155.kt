@@ -173,5 +173,11 @@ with this text:
             PRESENT on 9154
             PRESENT on 9155
         }
+
+        votes(Immae) {
+            PRESENT on 9153
+            FOR on 9154
+            FOR on 9155
+        }
     }
 }
