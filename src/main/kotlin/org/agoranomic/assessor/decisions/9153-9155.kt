@@ -196,5 +196,11 @@ with this text:
             PRESENT on 9154
             PRESENT on 9155
         }
+
+        votes(ais523) {
+            AGAINST on 9153
+            PRESENT on 9154
+            AGAINST on 9155
+        }
     }
 }
