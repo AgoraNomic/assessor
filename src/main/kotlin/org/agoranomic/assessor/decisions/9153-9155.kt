@@ -190,5 +190,11 @@ with this text:
             FOR on 9154
             AGAINST on 9155
         }
+
+        votes(Janet) {
+            AGAINST on 9153
+            PRESENT on 9154
+            PRESENT on 9155
+        }
     }
 }
