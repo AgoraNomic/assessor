@@ -164,4 +164,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
