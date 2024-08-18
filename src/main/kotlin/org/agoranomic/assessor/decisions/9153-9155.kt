@@ -179,5 +179,11 @@ with this text:
             FOR on 9154
             FOR on 9155
         }
+
+        votes(juan) {
+            FOR on 9153
+            PRESENT on 9154
+            PRESENT on 9155
+        }
     }
 }
