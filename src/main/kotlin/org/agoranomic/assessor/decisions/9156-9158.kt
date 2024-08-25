@@ -182,5 +182,11 @@ that one intent is invalidated.]"""
             AGAINST on 9157
             AGAINST on 9158
         }
+
+        votes(Yachay) {
+            AGAINST on 9156
+            FOR on 9157
+            PRESENT on 9158
+        }
     }
 }
