@@ -164,5 +164,11 @@ that one intent is invalidated.]"""
             FOR on 9157
             AGAINST on 9158
         }
+
+        votes(Gaelan) {
+            PRESENT on 9156
+            FOR on 9157
+            AGAINST on 9158
+        }
     }
 }
