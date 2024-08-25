@@ -198,5 +198,11 @@ that one intent is invalidated.]"""
         votes(Forest) {
             AGAINST on 9157
         }
+
+        votes(Murphy) {
+            PRESENT on 9156
+            AGAINST on 9157
+            FOR on 9158
+        }
     }
 }
