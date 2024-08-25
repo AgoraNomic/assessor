@@ -194,5 +194,9 @@ that one intent is invalidated.]"""
             AGAINST on 9157
             AGAINST on 9158
         }
+
+        votes(Forest) {
+            AGAINST on 9157
+        }
     }
 }
