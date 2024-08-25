@@ -188,5 +188,11 @@ that one intent is invalidated.]"""
             FOR on 9157
             PRESENT on 9158
         }
+
+        votes(Janet) {
+            AGAINST on 9156
+            AGAINST on 9157
+            AGAINST on 9158
+        }
     }
 }
