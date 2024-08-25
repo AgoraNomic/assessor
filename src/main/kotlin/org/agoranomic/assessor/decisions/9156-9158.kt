@@ -6,6 +6,9 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.proposal.DecisionAI
+import org.agoranomic.assessor.lib.proposal.ProposalAI
+import java.math.BigDecimal
 
 @UseAssessment
 fun assessment9156to9158() = assessment {
@@ -79,7 +82,8 @@ and appending at the end of that rule, as a new paragraph:
 
         proposal(9157) {
             title("Shameless Bribery")
-            ai("1.0")
+            proposalAI(ProposalAI(BigDecimal("1.0")))
+            decisionAI(DecisionAI(BigDecimal("2.0")))
             author(Mischief)
             ordinary()
 
