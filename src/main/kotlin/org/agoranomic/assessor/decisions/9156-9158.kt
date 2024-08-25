@@ -137,4 +137,7 @@ that one intent is invalidated.]"""
             )
         }
     }
+
+    voting {
+    }
 }
