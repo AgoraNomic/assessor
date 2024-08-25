@@ -5,11 +5,11 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 import java.math.BigDecimal
 
 @UseAssessment
@@ -145,6 +145,12 @@ that one intent is invalidated.]"""
             AGAINST on 9156
             AGAINST on 9157
             FOR on 9158
+        }
+
+        votes(juan) {
+            PRESENT on 9156
+            FOR on 9157
+            endorse(Janet) on 9158
         }
     }
 }
