@@ -8,6 +8,8 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.proposal.DecisionAI
 import org.agoranomic.assessor.lib.proposal.ProposalAI
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import java.math.BigDecimal
 
 @UseAssessment
@@ -139,5 +141,10 @@ that one intent is invalidated.]"""
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9156
+            AGAINST on 9157
+            FOR on 9158
+        }
     }
 }
