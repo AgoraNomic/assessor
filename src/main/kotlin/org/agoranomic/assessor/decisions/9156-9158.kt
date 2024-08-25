@@ -152,5 +152,11 @@ that one intent is invalidated.]"""
             FOR on 9157
             endorse(Janet) on 9158
         }
+
+        votes(lare290) {
+            AGAINST on 9156
+            FOR on 9157
+            PRESENT on 9158
+        }
     }
 }
