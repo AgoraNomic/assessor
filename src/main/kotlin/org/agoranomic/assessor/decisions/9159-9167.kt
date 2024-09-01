@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9159to9167() = assessment {
@@ -255,5 +257,16 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9159
+            FOR on 9160
+            FOR on 9161
+            AGAINST on 9162
+            AGAINST on 9163
+            AGAINST on 9164
+            AGAINST on 9165
+            FOR on 9166
+            FOR on 9167
+        }
     }
 }
