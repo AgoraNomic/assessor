@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -357,6 +359,18 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             AGAINST on 9165
             AGAINST on 9166
             FOR on 9167
+        }
+
+        votes(juan) {
+            FOR on 9159
+            AGAINST on 9160
+            PRESENT on 9161
+            resolvedConditional(InextricableResolvingVote, "coin flips are not determinate") on 9162
+            resolvedConditional(InextricableResolvingVote, "coin flips are not determinate") on 9163
+            resolvedConditional(InextricableResolvingVote, "coin flips are not determinate") on 9164
+            PRESENT on 9165
+            PRESENT on 9166
+            PRESENT on 9167
         }
     }
 }
