@@ -253,4 +253,7 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             )
         }
     }
+
+    voting {
+    }
 }
