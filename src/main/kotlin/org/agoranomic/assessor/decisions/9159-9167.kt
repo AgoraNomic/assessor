@@ -396,5 +396,17 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             PRESENT on 9166
             endorse(nix) on 9167 comment "${nix.name} is the Spendor"
         }
+
+        votes(Murphy) {
+            endorse(juniper) on 9159 comment "${juniper.name} is the Simplifior"
+            AGAINST on 9160
+            FOR on 9161
+            AGAINST on 9162
+            AGAINST on 9163
+            AGAINST on 9164
+            InextricableResolvingVote on 9165 comment "Stonemason is vacant"
+            FOR on 9166
+            PRESENT on 9167
+        }
     }
 }
