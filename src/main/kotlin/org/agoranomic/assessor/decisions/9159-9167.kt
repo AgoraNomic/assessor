@@ -333,7 +333,7 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             AGAINST on 9163
             AGAINST on 9164
             FOR on 9165
-            endorse(Janet) on 9166
+            endorse(Kate) on 9166
             PRESENT on 9167
         }
 
