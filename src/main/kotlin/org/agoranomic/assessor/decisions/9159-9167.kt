@@ -346,5 +346,17 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             FOR on 9166
             PRESENT on 9167
         }
+
+        votes(lare290) {
+            FOR on 9159
+            AGAINST on 9160
+            FOR on 9161
+            FOR on 9162
+            FOR on 9163
+            FOR on 9164
+            AGAINST on 9165
+            AGAINST on 9166
+            FOR on 9167
+        }
     }
 }
