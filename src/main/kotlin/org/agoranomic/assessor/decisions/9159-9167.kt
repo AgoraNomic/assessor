@@ -3,11 +3,49 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 
 @UseAssessment
 fun assessment9159to9167() = assessment {
     name("9159-9167")
     quorum(6)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        onOrdinaryProposals {
+            complexityBonuses {
+                maxBonus(3)
+
+                "Absurdor"(1) heldBy juan
+                "ADoP"(1) heldBy Murphy
+                "Arbitor"(2) heldBy Kate
+                "Archivist"(1) heldBy Gaelan
+                "Assessor"(3) heldBy Janet
+                "Collector"(2) heldBy Mischief
+                "Distributor"(0) heldBy omd
+                "Geologist"(1) heldBy Forest
+                "Herald"(2) heldBy Forest
+                "Illuminator"(1) heldBy Quadrantal
+                "Notary"(2) heldBy Forest
+                "Prime Minister"(0) heldBy null
+                "Promotor"(3) heldBy snail
+                "Referee"(2) heldBy ais523
+                "Registrar"(1) heldBy juan
+                "Rulekeepor"(3) heldBy Janet
+                "Simplifior"(1) heldBy juniper
+                "Speaker"(0) heldBy ais523
+                "Spendor"(1) heldBy nix
+                "Stonemason"(1) heldBy null
+                "Tailor"(1) heldBy Murphy
+                "Tracker of Hats"(1) heldBy Mischief
+                "Webmastor"(1) heldBy Quadrantal
+            }
+        }
+    }
 
     proposals(v4) {
         proposal(9159) {
