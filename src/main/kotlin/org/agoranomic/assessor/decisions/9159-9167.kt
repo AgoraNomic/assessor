@@ -327,7 +327,7 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
 
         votes(Aris) {
             endorse(Janet) on 9159
-            endorse(Janet) on 9160
+            AGAINST on 9160
             endorse(Janet) on 9161
             AGAINST on 9162
             AGAINST on 9163
