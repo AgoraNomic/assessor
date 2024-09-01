@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -319,6 +320,18 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             FOR on 9164
             FOR on 9165
             PRESENT on 9166
+            PRESENT on 9167
+        }
+
+        votes(Aris) {
+            endorse(Janet) on 9159
+            endorse(Janet) on 9160
+            endorse(Janet) on 9161
+            AGAINST on 9162
+            AGAINST on 9163
+            AGAINST on 9164
+            FOR on 9165
+            endorse(Janet) on 9166
             PRESENT on 9167
         }
     }
