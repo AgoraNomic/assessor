@@ -291,5 +291,11 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             FOR on 9166
             AGAINST on 9167
         }
+
+        votes(Forest) {
+            FOR on 9162
+            FOR on 9163
+            FOR on 9164
+        }
     }
 }
