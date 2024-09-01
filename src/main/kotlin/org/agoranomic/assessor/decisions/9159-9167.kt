@@ -334,5 +334,17 @@ elimination when e eliminates a target with a non-zero Bounty Amount.
             endorse(Janet) on 9166
             PRESENT on 9167
         }
+
+        votes(ais523) {
+            FOR on 9159
+            FOR on 9160
+            FOR on 9161
+            AGAINST on 9162
+            AGAINST on 9163
+            AGAINST on 9164
+            AGAINST on 9165
+            FOR on 9166
+            PRESENT on 9167
+        }
     }
 }
