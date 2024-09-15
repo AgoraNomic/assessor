@@ -52,6 +52,7 @@ val nix = Person("nix")
 val Noah = Person("Noah")
 val o = Person("o")
 val Oerjan = Person("Oerjan") // Not a player, just a watcher
+val oliver = Person("oliver.n")
 val omd = Person("omd")
 val Pat = Person("Pat")
 val pikhq = Person("pikhq")
