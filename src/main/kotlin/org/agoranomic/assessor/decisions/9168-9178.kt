@@ -445,5 +445,19 @@ bang." with "after which each alive player is granted 2 bangs."
             FOR on 9177
             FOR on 9178
         }
+
+        votes(Mischief) {
+            FOR on 9168
+            FOR on 9169
+            AGAINST on 9170
+            FOR on 9171
+            FOR on 9172
+            FOR on 9173
+            FOR on 9174
+            FOR on 9175
+            FOR on 9176
+            FOR on 9177
+            FOR on 9178
+        }
     }
 }
