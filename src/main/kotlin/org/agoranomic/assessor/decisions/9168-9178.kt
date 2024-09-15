@@ -577,5 +577,19 @@ bang." with "after which each alive player is granted 2 bangs."
             FOR on 9177
             FOR on 9178
         }
+
+        votes(Murphy) {
+            InextricableResolvingVote on 9168 comment "Stonemason is vacant"
+            FOR on 9169
+            FOR on 9170
+            FOR on 9171
+            PRESENT on 9172
+            FOR on 9173
+            FOR on 9174
+            endorse(Forest) on 9175 comment "${Forest.name} is the Geologist"
+            PRESENT on 9176
+            InextricableResolvingVote on 9177 comment "Stonemason is vacant"
+            PRESENT on 9178
+        }
     }
 }
