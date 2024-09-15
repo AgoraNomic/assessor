@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9168to9178() = assessment {
@@ -430,5 +432,18 @@ bang." with "after which each alive player is granted 2 bangs."
     }
 
     voting {
+        votes(snail) {
+            FOR on 9168
+            AGAINST on 9169
+            AGAINST on 9170
+            FOR on 9171
+            FOR on 9172
+            FOR on 9173
+            FOR on 9174
+            FOR on 9175
+            // TODO: resolve conditional on 9176: FOR if 9175 will pass, else AGAINST
+            FOR on 9177
+            FOR on 9178
+        }
     }
 }
