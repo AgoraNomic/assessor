@@ -428,4 +428,7 @@ bang." with "after which each alive player is granted 2 bangs."
             )
         }
     }
+
+    voting {
+    }
 }
