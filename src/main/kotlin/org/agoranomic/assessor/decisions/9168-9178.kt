@@ -445,7 +445,7 @@ bang." with "after which each alive player is granted 2 bangs."
             FOR on 9173
             FOR on 9174
             FOR on 9175
-            // TODO: resolve conditional on 9176: FOR if 9175 will pass, else AGAINST
+            resolvedConditional(AGAINST, "P9175 does not have sufficient votes to be adopted") on 9176
             FOR on 9177
             FOR on 9178
         }
@@ -517,7 +517,7 @@ bang." with "after which each alive player is granted 2 bangs."
             endorse(Janet) on 9173
             endorse(Janet) on 9174
             AGAINST on 9175
-            // TODO: resolve conditional on 9176: FOR if 9175 will pass, else endorse(Janet)
+            resolvedConditional(endorse(Janet), "P9175 does not have sufficient votes to be adopted") on 9176
             endorse(Janet) on 9177
             FOR on 9178
         }
@@ -567,7 +567,7 @@ bang." with "after which each alive player is granted 2 bangs."
         votes(ais523) {
             AGAINST on 9168
             FOR on 9169
-            // TODO: conditional vote on 9170: AGAINST if P9169 could be adopted, else FOR
+            resolvedConditional(FOR, "P9169 does not have sufficient votes to be adopted") on 9170
             AGAINST on 9171
             FOR on 9172
             FOR on 9173
