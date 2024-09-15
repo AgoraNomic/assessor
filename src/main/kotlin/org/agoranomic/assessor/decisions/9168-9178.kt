@@ -563,5 +563,19 @@ bang." with "after which each alive player is granted 2 bangs."
             PRESENT on 9177
             FOR on 9178
         }
+
+        votes(ais523) {
+            AGAINST on 9168
+            FOR on 9169
+            // TODO: conditional vote on 9170: AGAINST if P9169 could be adopted, else FOR
+            AGAINST on 9171
+            FOR on 9172
+            FOR on 9173
+            FOR on 9174
+            AGAINST on 9175
+            AGAINST on 9176
+            FOR on 9177
+            FOR on 9178
+        }
     }
 }
