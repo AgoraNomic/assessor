@@ -521,5 +521,19 @@ bang." with "after which each alive player is granted 2 bangs."
             endorse(Janet) on 9177
             FOR on 9178
         }
+
+        votes(Kate) {
+            FOR on 9168
+            AGAINST on 9169
+            AGAINST on 9170
+            FOR on 9171
+            FOR on 9172
+            endorse(Janet) on 9173
+            FOR on 9174
+            AGAINST on 9175
+            endorse(kiako) on 9176
+            FOR on 9177
+            PRESENT on 9178
+        }
     }
 }
