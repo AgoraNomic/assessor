@@ -480,7 +480,7 @@ bang." with "after which each alive player is granted 2 bangs."
             AGAINST on 9170
             FOR on 9171
             FOR on 9172
-            // NO VOTE on 9173
+            PRESENT on 9173
             FOR on 9174
             AGAINST on 9175
             FOR on 9176
