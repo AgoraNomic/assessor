@@ -7,7 +7,11 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment9168to9178() = assessment {
@@ -486,6 +490,36 @@ bang." with "after which each alive player is granted 2 bangs."
             FOR on 9176
             FOR on 9177
             PRESENT on 9178
+        }
+
+        votes(kiako) {
+            FOR on 9168
+            AGAINST on 9169
+            AGAINST on 9170
+
+            function { ctx ->
+                val kateVote = ctx.resolve(ctx.currentProposal, Kate)?.finalResolution(ctx)?.voteIfVoted
+                val janetVote = ctx.resolve(ctx.currentProposal, Janet)?.finalResolution(ctx)?.voteIfVoted
+
+                if (kateVote == AGAINST || janetVote == AGAINST) {
+                    resolvedConditional(AGAINST, "Either ${Kate.name} or ${Janet.name} voted AGAINST")
+                } else if (kateVote == FOR || janetVote == FOR) {
+                    resolvedConditional(FOR, "Either ${Kate.name} or ${Janet.name} voted FOR")
+                } else {
+                    resolvedConditional(
+                        InextricableResolvingVote,
+                        "Neither ${Kate.name} nor ${Janet.name} voted FOR or AGAINST"
+                    )
+                }
+            } on 9171
+
+            FOR on 9172
+            endorse(Janet) on 9173
+            endorse(Janet) on 9174
+            AGAINST on 9175
+            // TODO: resolve conditional on 9176: FOR if 9175 will pass, else endorse(Janet)
+            endorse(Janet) on 9177
+            FOR on 9178
         }
     }
 }
