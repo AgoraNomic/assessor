@@ -5,9 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9168to9178() = assessment {
@@ -458,6 +458,20 @@ bang." with "after which each alive player is granted 2 bangs."
             FOR on 9176
             FOR on 9177
             FOR on 9178
+        }
+
+        votes(juan) {
+            FOR on 9168
+            endorse(Yachay) on 9169
+            endorse(Yachay) on 9170
+            FOR on 9171
+            PRESENT on 9172
+            FOR on 9173
+            FOR on 9174
+            PRESENT on 9175
+            PRESENT on 9176
+            PRESENT on 9177
+            PRESENT on 9178
         }
     }
 }
