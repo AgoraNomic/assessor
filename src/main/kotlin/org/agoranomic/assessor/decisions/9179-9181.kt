@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -288,6 +289,12 @@ Perform the Allocation."""
             FOR on 9179
             FOR on 9180
             FOR on 9181
+        }
+
+        votes(Janet) {
+            FOR on 9179
+            FOR on 9180
+            AGAINST on 9181
         }
     }
 }
