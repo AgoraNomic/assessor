@@ -5,9 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9179to9181() = assessment {
@@ -295,6 +295,12 @@ Perform the Allocation."""
             FOR on 9179
             FOR on 9180
             AGAINST on 9181
+        }
+
+        votes(juan) {
+            PRESENT on 9179
+            PRESENT on 9180
+            endorse(Janet) on 9181 comment "${Janet.name} is the Assessor"
         }
     }
 }
