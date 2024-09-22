@@ -320,5 +320,11 @@ Perform the Allocation."""
             PRESENT on 9180
             FOR on 9181
         }
+
+        votes(Kate) {
+            PRESENT on 9179
+            PRESENT on 9180
+            endorse(Janet) on 9181 comment "${Janet.name} is the Assessor"
+        }
     }
 }
