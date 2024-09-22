@@ -283,5 +283,11 @@ Perform the Allocation."""
             FOR on 9180
             FOR on 9181
         }
+
+        votes(lare290) {
+            FOR on 9179
+            FOR on 9180
+            FOR on 9181
+        }
     }
 }
