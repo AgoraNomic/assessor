@@ -308,5 +308,11 @@ Perform the Allocation."""
             FOR on 9180
             endorse(Janet) on 9181 comment "${Janet.name} is the Assessor"
         }
+
+        votes(ais523) {
+            PRESENT on 9179
+            PRESENT on 9180
+            FOR on 9181
+        }
     }
 }
