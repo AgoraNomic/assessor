@@ -314,5 +314,11 @@ Perform the Allocation."""
             PRESENT on 9180
             FOR on 9181
         }
+
+        votes(Murphy) {
+            PRESENT on 9179
+            PRESENT on 9180
+            FOR on 9181
+        }
     }
 }
