@@ -120,5 +120,10 @@ It feels like both should be rewarded.]"""
             FOR on 9182
             PRESENT on 9183
         }
+
+        votes(oliver) {
+            FOR on 9182
+            FOR on 9183
+        }
     }
 }
