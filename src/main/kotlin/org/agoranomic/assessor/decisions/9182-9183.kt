@@ -96,5 +96,10 @@ It feels like both should be rewarded.]"""
             endorse(juan) on 9182 comment "${juan.name} is the Absurdor"
             AGAINST on 9183
         }
+
+        votes(kiako) {
+            endorse(juan) on 9182 comment "${juan.name} is the Absurdor"
+            endorse(Forest) on 9183 comment "${Forest.name} is the Geologist"
+        }
     }
 }
