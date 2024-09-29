@@ -115,5 +115,10 @@ It feels like both should be rewarded.]"""
             AGAINST on 9182
             AGAINST on 9183
         }
+
+        votes(lare290) {
+            FOR on 9182
+            PRESENT on 9183
+        }
     }
 }
