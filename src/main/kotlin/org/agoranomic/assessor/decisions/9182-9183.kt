@@ -5,7 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -88,6 +90,11 @@ It feels like both should be rewarded.]"""
         votes(snail) {
             FOR on 9182
             FOR on 9183
+        }
+
+        votes(Forest) {
+            endorse(juan) on 9182 comment "${juan.name} is the Absurdor"
+            AGAINST on 9183
         }
     }
 }
