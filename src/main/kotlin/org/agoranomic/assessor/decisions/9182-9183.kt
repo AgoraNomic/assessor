@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9182to9183() = assessment {
@@ -84,5 +85,9 @@ It feels like both should be rewarded.]"""
     }
 
     voting {
+        votes(snail) {
+            FOR on 9182
+            FOR on 9183
+        }
     }
 }
