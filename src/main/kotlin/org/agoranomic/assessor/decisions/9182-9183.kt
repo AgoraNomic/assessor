@@ -125,5 +125,10 @@ It feels like both should be rewarded.]"""
             FOR on 9182
             FOR on 9183
         }
+
+        votes(ais523) {
+            AGAINST on 9182
+            PRESENT on 9183
+        }
     }
 }
