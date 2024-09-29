@@ -130,5 +130,10 @@ It feels like both should be rewarded.]"""
             AGAINST on 9182
             PRESENT on 9183
         }
+
+        votes(Murphy) {
+            endorse(juan) on 9182 comment "${juan.name} is the Absurdor"
+            AGAINST on 9183
+        }
     }
 }
