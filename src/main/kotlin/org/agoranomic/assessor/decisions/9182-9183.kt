@@ -22,7 +22,7 @@ fun assessment9182to9183() = assessment {
                 maxBonus(3)
 
                 "Absurdor"(1) heldBy juan
-                "ADoP"(1) heldBy Murphy
+                "ADoP"(2) heldBy Murphy
                 "Arbitor"(2) heldBy Kate
                 "Archivist"(1) heldBy Gaelan
                 "Assessor"(3) heldBy Janet
@@ -32,7 +32,7 @@ fun assessment9182to9183() = assessment {
                 "Herald"(2) heldBy Forest
                 "Illuminator"(1) heldBy Mischief
                 "Notary"(2) heldBy Forest
-                "Prime Minister"(0) heldBy null
+                "Prime Minister"(0) heldBy literallyAmbiguous
                 "Promotor"(3) heldBy snail
                 "Referee"(2) heldBy ais523
                 "Registrar"(1) heldBy juan
@@ -81,5 +81,8 @@ rule" with "If a proposal enacts, amends, or repeals a rule".
 It feels like both should be rewarded.]"""
             )
         }
+    }
+
+    voting {
     }
 }
