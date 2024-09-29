@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9182to9183() = assessment {
@@ -100,6 +99,11 @@ It feels like both should be rewarded.]"""
         votes(kiako) {
             endorse(juan) on 9182 comment "${juan.name} is the Absurdor"
             endorse(Forest) on 9183 comment "${Forest.name} is the Geologist"
+        }
+
+        votes(juan) {
+            AGAINST on 9182
+            PRESENT on 9183
         }
     }
 }
