@@ -128,7 +128,7 @@ has always seemed like a lot to me.]"""
 
         votes(Kate) {
             FOR on 9184
-            FOR on 9185
+            AGAINST on 9185
         }
 
         votes(Mischief) {
