@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9184to9185() = assessment {
@@ -110,5 +112,9 @@ has always seemed like a lot to me.]"""
     }
 
     voting {
+        votes(snail) {
+            PRESENT on 9184
+            AGAINST on 9185
+        }
     }
 }
