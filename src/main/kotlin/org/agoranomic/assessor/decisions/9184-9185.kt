@@ -120,5 +120,10 @@ has always seemed like a lot to me.]"""
             FOR on 9184
             FOR on 9185
         }
+
+        votes(Murphy) {
+            FOR on 9184
+            PRESENT on 9185
+        }
     }
 }
