@@ -1,0 +1,76 @@
+package org.agoranomic.assessor.decisions
+
+import org.agoranomic.assessor.dsl.assessment
+import org.agoranomic.assessor.dsl.receivers.ai
+import org.agoranomic.assessor.dsl.receivers.quorum
+
+@UseAssessment
+fun assessment9184to9185() = assessment {
+    name("9184-9185")
+    quorum(5)
+
+    proposals(v4) {
+        proposal(9184) {
+            title("Ratification fix")
+            ai("3.2")
+            author(ais523)
+            democratic()
+
+            text(
+                """
+Amend rule 1551 by changing
+{{{
+* The publication time is the instant at which the document to be
+  ratified was published.
+}}}
+to
+{{{
+* The publication time can be specified by the instrument allowing
+  the ratification, defaulting to the instant at which the document
+  to be ratified was published.
+}}}
+
+Amend rule 2201 by changing
+{{{
+- If the rules define it as a self-ratifying attestation to a
+  given statement, the statement is ratified.
+}}}
+to
+{{{
+- If the rules define it as a self-ratifying attestation to a
+  given statement, the statement is ratified, with the publication
+  time being the instant at which the document was published.
+}}}
+
+[This has been broken for a while, and was observed to be broken a
+while ago: self-ratifying attestations, such as proposal results,
+currently don't usually self-ratify because the definition of the
+publication time doesn't work for them unless the statement being
+attested to is explicitly published.
+
+If this proposal is adopted, I encourage the Assessor to explicitly
+publish the statement being attested to as part of the resolution
+message, in order to ensure that those results self-ratify.]"""
+            )
+        }
+
+        proposal(9185) {
+            title("Gun control")
+            ai("1.0")
+            author(Janet)
+            ordinary()
+
+            text(
+                """
+Amend Rule 2692 ("Bang!") by replacing "When a player stands alone, e
+wins the game. If a player won the game in this manner 4 days ago, then
+the match state is flipped to none (if it is not already)." with the
+following: "When a player stands alone, eir radiance is increased by 30,
+then the match state is flipped to none (if it is not already).".
+
+[A full win for this relatively fast (even after the changes) subgame
+has always seemed like a lot to me.]"""
+            )
+        }
+    }
+}
