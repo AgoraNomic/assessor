@@ -135,5 +135,10 @@ has always seemed like a lot to me.]"""
             FOR on 9184
             FOR on 9185
         }
+
+        votes(ais523) {
+            FOR on 9184
+            FOR on 9185
+        }
     }
 }
