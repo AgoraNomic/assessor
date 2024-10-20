@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -288,6 +289,15 @@ Spendies" with "every player is granted 20 Spendies"."""
             FOR on 9189
             FOR on 9190
             FOR on 9191
+        }
+
+        votes(Murphy) {
+            endorse(Mischief) on 9186 comment "${Mischief.name} is the Collector"
+            FOR on 9187
+            PRESENT on 9188
+            FOR on 9189
+            FOR on 9190
+            endorse(oliver) on 9191 comment "${oliver.name} is the Collector"
         }
     }
 }
