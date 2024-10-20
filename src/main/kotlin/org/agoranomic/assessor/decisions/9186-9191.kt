@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9186to9191() = assessment {
@@ -231,5 +233,13 @@ Spendies" with "every player is granted 20 Spendies"."""
     }
 
     voting {
+        votes(snail) {
+            AGAINST on 9186
+            FOR on 9187
+            FOR on 9188
+            FOR on 9189
+            FOR on 9190
+            FOR on 9191
+        }
     }
 }
