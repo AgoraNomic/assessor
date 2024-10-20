@@ -258,5 +258,9 @@ Spendies" with "every player is granted 20 Spendies"."""
             PRESENT on 9190
             PRESENT on 9191
         }
+
+        votes(Kate) {
+            FOR on all
+        }
     }
 }
