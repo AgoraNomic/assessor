@@ -229,4 +229,7 @@ Spendies" with "every player is granted 20 Spendies"."""
             )
         }
     }
+
+    voting {
+    }
 }
