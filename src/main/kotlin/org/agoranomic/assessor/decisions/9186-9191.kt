@@ -262,5 +262,14 @@ Spendies" with "every player is granted 20 Spendies"."""
         votes(Kate) {
             FOR on all
         }
+
+        votes(Janet) {
+            FOR on 9186
+            PRESENT on 9187
+            AGAINST on 9188
+            FOR on 9189
+            PRESENT on 9190
+            AGAINST on 9191
+        }
     }
 }
