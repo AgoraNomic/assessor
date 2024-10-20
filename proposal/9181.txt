@@ -1,0 +1,160 @@
+PROPOSAL 9181 (A New Economy)
+AUTHOR: ais523
+CLASS: ORDINARY
+FOR (4): Murphy%, ais523%, lare290, snail^
+AGAINST (4): Janet^, Kate%, Mischief^, juan%
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 19/22 (AI=2.0)
+POPULARITY: 0.000
+OUTCOME: REJECTED
+[
+Kate: Janet is the Assessor: Endorsement of Janet
+Mischief: Janet is the Assessor: Endorsement of Janet
+juan: Janet is the Assessor: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-September/018045.html
+
+ID: 9181
+Title: A New Economy
+Adoption index: 2.0
+Author: ais523
+Co-authors: kiako
+
+
+[The main idea: you can request a grantable thing (radiance or certain
+selected assets) once per month; the next month, you get an amount of
+that thing based on how many other players requested the same thing.
+Later in the proposal, some new tradeable requestable assets are added
+in order to make this function correctly.]
+
+Create a new power 2 rule, "Allocation":
+{{{
+      The Allocator is a sortitioned office, responsible for tracking
+      Requests and performing the Allocation.
+
+      Once per month, the Allocator CAN by announcement perform the
+      Allocation. E SHALL do so in a timely fashion after the start
+      of each month, and when e does so, e SHALL list the changes
+      to assets and switches that occur as a result (either by stating
+      the value after the change or by stating the size and direction
+      of the change).
+
+      When the Allocation is performed, the following events happen, in
+      sequence:
+
+      * All Pendants are destroyed;
+      * All Megaphones are destroyed;
+      * One Pardon is revoked from each entity that owns any;
+      * For each requestable category of assets and switches, each
+        player whose Request is set to that category is granted (S / N)
+        rounded down of the relevant asset, or has their value of the
+        relevant switch increased by (S / N) rounded down, where S is
+        the supply of that category, and N is the number of players
+        whose Request is set to that category;
+      * Officers are granted Megaphones, as stated elsewhere;
+      * Each player's Request becomes unset.
+}}}
+Create a new power 2 rule, "Requests":
+{{{
+      Some categories of assets and switches are requestable; each of
+      these has a supply. The list of categories of requestable assets
+      and switches is as follows:
+
+      * Pendants (supply 24)
+      * Spendies (supply 24)
+      * Radiance (supply 18)
+      * Stamps (supply 12)
+      * Pardons (supply 6)
+      * Megaphones (supply 6)
+
+      When a player is granted stamps via the Allocation, the stamps
+      that are granted are of that player's type.
+
+      Request is an active player switch, tracked by the Allocator,
+      for which "unset" is a possible value (and the default), and
+      each category of requestable asset is also a possible value.
+
+      A player whose Request is unset can change their Request by
+      announcement, as long as the Allocation has already been
+      performed in the current month.
+}}}
+
+[Tie voting power to an asset. Megaphones are tradeable but temporary
+assets that grant voting power, that reset during the Allocation.
+Voting power from offices is tied into the Megaphone system, primarily
+to make tracking easier for the Assessor.]
+
+Create a new power 2 rule, "Megaphones":
+{{{
+      Megaphones are fungible assets. The Assessor is the recordkeepor
+      of Megaphones. The creation, destruction and transfer of
+      Megaphones is secured.
+
+      Each player's voting strength on referenda on ordinary proposals
+      is increased by the number of Megaphones e holds.
+}}}
+
+In Rule 2632, amend
+{{{
+      For each office a player holds, eir voting strength is increased
+      by the complexity of the office for referenda on ordinary
+      proposals, up to a maximum increase of 3 by this method.
+}}}
+to
+{{{
+      As part of the Allocation, each player who is an officer
+is granted a number of Megaphones equal to the total complexity
+      of all offices e holds, to a maximum of 3. The precise timing
+      of this grant is stated elsewhere.
+}}}
+
+[Add a cost to creating proposals – this helps ensure the economy is
+backed by something.]
+
+Create a new power 2 rule, "Pendants":
+{{{
+      Pendants are fungible assets. The Promotor is the recordkeepor of
+      Pendants.
+
+      Immediately after a player submits a proposal, one Pendant is
+      revoked from em, if possible.  A player SHALL NOT submit a
+      proposal if e owns no Pendants; violating this requirement has
+      a Class of 4.
+
+      A player CAN pay a fee of 4 Spendies to grant emself a Pendant.
+}}}
+
+To the list in rule 2499, add the following list item:
+{{{
+      * 3 Pendants, if the Allocation has not been performed since e
+        last registered.
+}}}
+
+[Allow players to stockpile Blot removal to a limited extent; the
+stockpiles decay slightly during the Allocation.]
+
+Delete the following paragraph from rule 2555:
+{{{
+      Any player CAN pay a fee of 7 Spendies to revoke a blot from a
+      specified person.
+}}}
+
+Create a new power 1.7 rule, "Pardons":
+{{{
+      Pardons are fungible assets. The Referee is the recordkeepor of
+      Pardons. The creation and transfer of Pardons is secured.
+
+      A player CAN pay a fee of 1 Pardon to revoke 1 Blot from a
+      specified person.
+
+      A player CAN pay a fee of 7 Spendies to grant emself 1 Pardon.
+}}}
+
+[Unlock everyone's Request switch – otherwise we'll have to wait until
+the start of November before the new economy does anything. This won't
+change any assets/switches other than converting officer voting power
+to the Megaphone system, because all the Requests will be unset.]
+
+Perform the Allocation.

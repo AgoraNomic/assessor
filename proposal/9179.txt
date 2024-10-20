@@ -1,0 +1,43 @@
+PROPOSAL 9179 (No Race Conditions)
+AUTHOR: Mischief
+CLASS: ORDINARY
+FOR (4): Janet^, Mischief^, lare290, snail^
+AGAINST (0): 
+PRESENT (4): Kate%, Murphy%, ais523%, juan%
+BALLOTS: 8
+AI (F/A): 21/0 (AI=1.0)
+POPULARITY: 0.500
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-September/018045.html
+
+ID: 9179
+Title: No Race Conditions
+Adoption index: 1.0
+Author: Mischief
+Co-authors: 
+
+
+[The intent here is the order folks fire rounds in a given week
+shouldn't matter -- essentially everyone shoots simultaneously. That
+way, there's no incentive to schedule things around midnight Monday.]
+
+Amend rule 2692 (Bang!) by replacing "a single player is alive" with "a
+single player was alive at the beginning of the week"
+
+Amend rule 2696 (Bang actions) by replacing the paragraph reading:
+
+       When a player (the shooter) fires a round, sequentially for each
+       person (the target) in the target list, if the shooter is alive
+       and has at least two bangs, and the target is an alive player,
+       then two of the shooter's bangs are destroyed, after which the
+       target is eliminated.
+
+with:
+
+       When a player (the shooter) fires a round, sequentially for each
+       person (the target) in the target list, if the shooter has at
+       least two bangs and was alive at the beginning of the week, and
+       the target was an alive player at the beginning of the week, then
+       two of the shooter's bangs are destroyed, after which the target
+       is eliminated.

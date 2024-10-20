@@ -1,0 +1,44 @@
+PROPOSAL 9177 (Prevent cheap Stone wins)
+AUTHOR: ais523
+CLASS: ORDINARY
+FOR (7): Janet^, Kate%, Lily, Mischief^, ais523%, kiako, snail^
+AGAINST (0): 
+PRESENT (3): Murphy%, juan%, lare290
+BALLOTS: 10
+AI (F/A): 34/0 (AI=2.0)
+POPULARITY: 0.700
+OUTCOME: ADOPTED
+[
+Murphy: Stonemason is vacant: Inextricable
+kiako: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-September/018032.html
+
+ID: 9177
+Title: Prevent cheap Stone wins
+Adoption index: 2.0
+Author: ais523
+Co-authors: 
+
+
+In rule 2642, amend:
+{{{
+      Stone Cost is a Stone switch with values of non-negative integers
+      and a default of 10.
+}}}
+to
+{{{
+      Stone Cost is a Stone switch with values of non-negative integers
+      and a default of 20.
+}}}
+
+Then increase the Stone Cost of every Stone by 10.
+
+[At present, Stones are sufficiently cheap that the defensive measures
+necessary to prevent easy Stone wins by other players are too expensive
+for players to take them in practice – and the Stones system was
+designed assuming that they would be harder to obtain than that.
+Starting a descending-price auction from a price of 10 doesn't function
+because Stones are frequently more valuable than that. Doubling the
+starting cost should make the Stone gameplay work better.]

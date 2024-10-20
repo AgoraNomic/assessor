@@ -1,0 +1,39 @@
+PROPOSAL 9167 (The Bounty Board)
+AUTHOR: snail
+CLASS: ORDINARY
+FOR (2): lare290, snail^
+AGAINST (1): Janet^
+PRESENT (9): Aris, Gaelan$, Immae, Kate%, Mischief^, Murphy%, Yachay Wayllukuq, ais523%, juan%
+BALLOTS: 12
+AI (F/A): 9/6 (AI=1.0)
+POPULARITY: 0.083
+OUTCOME: ADOPTED
+[
+Gaelan: nix is the Spendor: Endorsement of non-voter nix: Inextricable
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-September/017995.html
+
+ID: 9167
+Title: The Bounty Board
+Adoption index: 1.0
+Author: snail
+Co-authors: 
+
+
+Enact a new Rule with title "Bounties" and the following text:
+{
+Bounty Amount is an untracked player switch. Its possible values are all
+integers from 0 to 10 inclusive, where 0 is the default.
+
+Twice each month, each player CAN, by announcement, put a bounty on a
+specified player. Doing so increases the specified player's Bounty Amount
+by 1.
+
+Immediately after an alive player is eliminated, the shooter gains a number
+of spendies equal to the target's Bounty Amount, and then the target's
+bounty amount is flipped to 0.
+
+The shooter SHOULD publish the target's Bounty Amount at the time of the
+elimination when e eliminates a target with a non-zero Bounty Amount.
+}

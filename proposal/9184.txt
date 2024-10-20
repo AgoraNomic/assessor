@@ -1,0 +1,53 @@
+PROPOSAL 9184 (Ratification fix)
+AUTHOR: ais523
+CLASS: DEMOCRATIC
+FOR (6): Janet, Kate, Mischief, Murphy, ais523, lare290
+AGAINST (0): 
+PRESENT (1): snail
+BALLOTS: 7
+AI (F/A): 18/0 (AI=3.2)
+POPULARITY: 0.857
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-October/018083.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-October/018087.html
+
+ID: 9184
+Title: Ratification fix
+Adoption index: 3.2
+Author: ais523
+Co-authors: 
+
+
+Amend rule 1551 by changing
+{{{
+* The publication time is the instant at which the document to be
+  ratified was published.
+}}}
+to
+{{{
+* The publication time can be specified by the instrument allowing
+  the ratification, defaulting to the instant at which the document
+  to be ratified was published.
+}}}
+
+Amend rule 2201 by changing
+{{{
+- If the rules define it as a self-ratifying attestation to a
+  given statement, the statement is ratified.
+}}}
+to
+{{{
+- If the rules define it as a self-ratifying attestation to a
+  given statement, the statement is ratified, with the publication
+  time being the instant at which the document was published.
+}}}
+
+[This has been broken for a while, and was observed to be broken a
+while ago: self-ratifying attestations, such as proposal results,
+currently don't usually self-ratify because the definition of the
+publication time doesn't work for them unless the statement being
+attested to is explicitly published.
+
+If this proposal is adopted, I encourage the Assessor to explicitly
+publish the statement being attested to as part of the resolution
+message, in order to ensure that those results self-ratify.]
