@@ -4,11 +4,46 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 
 @UseAssessment
 fun assessment9186to9191() = assessment {
     name("9186-9191")
     quorum(7)
+
+    strengths {
+        default(3)
+        min(0)
+        max(15)
+
+        onOrdinaryProposals {
+            complexityBonuses {
+                maxBonus(3)
+
+                "Absurdor"(1) heldBy juan
+                "ADoP"(2) heldBy Murphy
+                "Arbitor"(2) heldBy Kate
+                "Archivist"(1) heldBy Gaelan
+                "Assessor"(3) heldBy Janet
+                "Collector"(2) heldBy Mischief
+                "Distributor"(0) heldBy omd
+                "Geologist"(1) heldBy Forest
+                "Herald"(2) heldBy Forest
+                "Illuminator"(1) heldBy Mischief
+                "Notary"(2) heldBy Forest
+                "Prime Minister"(0) heldBy Mischief
+                "Promotor"(3) heldBy snail
+                "Referee"(2) heldBy ais523
+                "Registrar"(1) heldBy juan
+                "Rulekeepor"(3) heldBy Janet
+                "Speaker"(0) heldBy snail
+                "Spendor"(1) heldBy oliver
+                "Tailor"(1) heldBy Murphy
+                "Webmastor"(1) heldBy Quadrantal
+            }
+        }
+    }
 
     proposals(v4) {
         proposal(9186) {
