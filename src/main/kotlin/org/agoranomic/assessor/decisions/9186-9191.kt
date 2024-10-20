@@ -249,5 +249,14 @@ Spendies" with "every player is granted 20 Spendies"."""
             PRESENT on 9190
             AGAINST on 9191
         }
+
+        votes(kiako) {
+            FOR on 9186
+            FOR on 9187
+            FOR on 9188
+            FOR on 9189
+            PRESENT on 9190
+            PRESENT on 9191
+        }
     }
 }
