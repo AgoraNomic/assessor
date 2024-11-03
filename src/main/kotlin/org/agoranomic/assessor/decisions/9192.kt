@@ -79,5 +79,9 @@ Repeal rule 2685 (Crystals)"""
         votes(juan) {
             PRESENT on 9192
         }
+
+        votes(Murphy) {
+            AGAINST on 9192
+        }
     }
 }
