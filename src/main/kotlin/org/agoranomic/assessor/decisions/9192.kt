@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9192() = assessment {
@@ -69,6 +70,10 @@ Repeal rule 2685 (Crystals)"""
     voting {
         votes(snail) {
             AGAINST on 9192
+        }
+
+        votes(Mischief) {
+            PRESENT on 9192
         }
     }
 }
