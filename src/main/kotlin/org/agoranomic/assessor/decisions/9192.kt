@@ -64,4 +64,7 @@ Repeal rule 2685 (Crystals)"""
             )
         }
     }
+
+    voting {
+    }
 }
