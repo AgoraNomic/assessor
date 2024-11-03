@@ -1,0 +1,46 @@
+PROPOSAL 9188 (Double Default Trouble)
+AUTHOR: kiako
+CLASS: ORDINARY
+FOR (4): Kate%, kiako, lare290, snail^
+AGAINST (1): Janet^
+PRESENT (3): Mischief^, Murphy^, juan%
+BALLOTS: 8
+AI (F/A): 17/6 (AI=2.0)
+POPULARITY: 0.375
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-October/018099.html
+
+ID: 9188
+Title: Double Default Trouble
+Adoption index: 2.0
+Author: kiako
+Co-authors: 
+
+
+[No numerical switch uses the "default to 0" fallback, except for
+Crystal's identity, which is always set to a different value before it
+can be used. Considering the "default to null" fallback, 5 switches
+explicitly create and define a "none" instance, and two more define
+similar values under different names ("unassigned" and "vacant"). It is
+clear then that neither of these fallbacks take on the semantic meaning
+of "a default value meant to be used".
+
+In this case, it would make more sense to unambiguously allow Crystal
+identity to default to "null", assigning that fallback the semantic
+meaning of "This switch must have a default value, but it does not
+matter what it is because it is never used in practice."
+
+Janet noted that this would break mathematical operations if a numerical
+switch ends up using the default, but under this new semantic meaning I
+believe the outcome is what is expected: since "null + 3" is undefined,
+the switch fails to be flipped, and remains "null". (Defaulting to 0, on
+the other hand, would give the guise that the default should be
+considered a usable instance.)]
+
+Amend Rule 2509 ("Agoran Numbers") by removing the following paragraph:
+{
+     If 0 is in the specified values for a numerical switch and no
+default value is otherwise specified, 0 is the default value for that
+switch.
+}
