@@ -85,4 +85,7 @@ Amend rule 2697 (The Bounty Board) by adding at the end as a new paragraph:
             )
         }
     }
+
+    voting {
+    }
 }
