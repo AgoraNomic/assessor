@@ -104,5 +104,10 @@ Amend rule 2697 (The Bounty Board) by adding at the end as a new paragraph:
             PRESENT on 9193
             FOR on 9194
         }
+
+        votes(Murphy) {
+            FOR on 9193
+            FOR on 9194
+        }
     }
 }
