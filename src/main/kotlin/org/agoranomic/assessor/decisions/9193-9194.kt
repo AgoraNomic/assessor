@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9193to9194() = assessment {
@@ -87,5 +88,9 @@ Amend rule 2697 (The Bounty Board) by adding at the end as a new paragraph:
     }
 
     voting {
+        votes(snail) {
+            FOR on 9193
+            FOR on 9194
+        }
     }
 }
