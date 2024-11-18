@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9193to9194() = assessment {
@@ -96,6 +97,11 @@ Amend rule 2697 (The Bounty Board) by adding at the end as a new paragraph:
 
         votes(Mischief) {
             endorseOrElse(oliver, FOR) on 9193 comment "${oliver.name} owns the Veblen"
+            FOR on 9194
+        }
+
+        votes(Janet) {
+            PRESENT on 9193
             FOR on 9194
         }
     }
