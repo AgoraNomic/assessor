@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9195to9196() = assessment {
@@ -109,6 +108,11 @@ containing "Spendies are tracked by the Spendor":
         votes(juan) {
             FOR on 9195
             PRESENT on 9196
+        }
+
+        votes(Janet) {
+            AGAINST on 9195
+            AGAINST on 9196
         }
     }
 }
