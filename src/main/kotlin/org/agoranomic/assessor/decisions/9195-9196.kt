@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
@@ -102,6 +103,11 @@ containing "Spendies are tracked by the Spendor":
     voting {
         votes(snail) {
             PRESENT on 9195
+            PRESENT on 9196
+        }
+
+        votes(juan) {
+            FOR on 9195
             PRESENT on 9196
         }
     }
