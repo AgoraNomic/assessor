@@ -97,4 +97,7 @@ containing "Spendies are tracked by the Spendor":
             )
         }
     }
+
+    voting {
+    }
 }
