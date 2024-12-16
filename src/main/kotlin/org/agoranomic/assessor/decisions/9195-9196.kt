@@ -124,5 +124,10 @@ containing "Spendies are tracked by the Spendor":
             FOR on 9195
             // NO VOTE on 9196
         }
+
+        votes(Kate) {
+            FOR on 9195
+            FOR on 9196
+        }
     }
 }
