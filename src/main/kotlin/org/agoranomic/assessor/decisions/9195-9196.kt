@@ -114,5 +114,10 @@ containing "Spendies are tracked by the Spendor":
             FOR on 9195
             AGAINST on 9196
         }
+
+        votes(Mischief) {
+            FOR on 9195
+            FOR on 9196
+        }
     }
 }
