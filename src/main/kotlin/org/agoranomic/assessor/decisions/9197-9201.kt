@@ -256,5 +256,13 @@ Amend rule 2690 (Spendies) by replacing "a sortitioned" with "an""""
             PRESENT on 9200
             PRESENT on 9201
         }
+
+        votes(ais523) {
+            FOR on 9197
+            AGAINST on 9198
+            AGAINST on 9199
+            FOR on 9200
+            AGAINST on 9201
+        }
     }
 }
