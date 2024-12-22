@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.resolvedConditional
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 import org.agoranomic.assessor.lib.vote.finalResolution
 import org.agoranomic.assessor.lib.vote.voteIfVoted
 
@@ -232,6 +231,14 @@ Amend rule 2690 (Spendies) by replacing "a sortitioned" with "an""""
             FOR on 9199
             FOR on 9200
             FOR on 9201
+        }
+
+        votes(Janet) {
+            PRESENT on 9197
+            AGAINST on 9198
+            AGAINST on 9199
+            PRESENT on 9200
+            PRESENT on 9201
         }
     }
 }
