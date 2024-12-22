@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -203,6 +204,14 @@ Amend rule 2690 (Spendies) by replacing "a sortitioned" with "an""""
             AGAINST on 9198
             FOR on 9199
             AGAINST on 9200
+            FOR on 9201
+        }
+
+        votes(Murphy) {
+            FOR on 9197
+            endorse(juan) on 9198 comment "${juan.name} is the Absurdor"
+            FOR on 9199
+            FOR on 9200
             FOR on 9201
         }
     }
