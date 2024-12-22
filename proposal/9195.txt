@@ -1,0 +1,42 @@
+PROPOSAL 9195 (Commitment Issues)
+AUTHOR: Mischief
+CLASS: ORDINARY
+FOR (5): 4st^, Janet^, Kate%, Mischief^, juan%
+AGAINST (0): 
+PRESENT (1): snail^
+BALLOTS: 6
+AI (F/A): 28/0 (AI=1.0)
+POPULARITY: 0.833
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-December/018199.html
+
+ID: 9195
+Title: Commitment Issues
+Adoption index: 1.0
+Author: Mischief
+Co-authors: Kate, Janet
+
+
+[This is a useful but under-utilized mechanism; hopefully these tweaks
+make it easier to build on.]
+
+Amend rule 2681 (Acting on Commitment) by replacing:
+
+       Where the rules define an action that a person CAN perform "by
+       commitment" to a particular kind of document, that person performs
+       that action by performing it by announcement while, in the same
+       message, also publishing a what is purportedly a Fingerprint for a
+       document of that kind.
+
+with:
+
+       A person CAN make a commitment to a particular kind of document
+       by publishing a statement that purports to be a Fingerprint for a
+       document of that kind. If the statement is in fact such a
+       Fingerprint, the person CAN then reveal the commitment by
+       publishing the Plaintext corresponding to that Fingerprint and
+       clearly indicating which Fingerprint the Plaintext relates to.
+
+       A person making a commitment SHOULD specify the method used to
+       produce the Fingerprint from the Plaintext.
