@@ -194,4 +194,7 @@ Amend rule 2690 (Spendies) by replacing "a sortitioned" with "an""""
             )
         }
     }
+
+    voting {
+    }
 }
