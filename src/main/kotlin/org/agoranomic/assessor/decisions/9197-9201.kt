@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9197to9201() = assessment {
@@ -196,5 +198,12 @@ Amend rule 2690 (Spendies) by replacing "a sortitioned" with "an""""
     }
 
     voting {
+        votes(snail) {
+            FOR on 9197
+            AGAINST on 9198
+            FOR on 9199
+            AGAINST on 9200
+            FOR on 9201
+        }
     }
 }
