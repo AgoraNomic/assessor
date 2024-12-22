@@ -7,8 +7,11 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.finalResolution
+import org.agoranomic.assessor.lib.vote.voteIfVoted
 
 @UseAssessment
 fun assessment9197to9201() = assessment {
@@ -210,6 +213,22 @@ Amend rule 2690 (Spendies) by replacing "a sortitioned" with "an""""
         votes(Murphy) {
             FOR on 9197
             endorse(juan) on 9198 comment "${juan.name} is the Absurdor"
+            FOR on 9199
+            FOR on 9200
+            FOR on 9201
+        }
+
+        votes(Mischief) {
+            FOR on 9197
+
+            function { ctx ->
+                if (ctx.resolve(ctx.currentProposal, juan)?.finalResolution(ctx)?.voteIfVoted == FOR) {
+                    resolvedConditional(FOR, "${juan.name} is the Absurdor and voted FOR")
+                } else {
+                    resolvedConditional(AGAINST, "${juan.name} is the Absurdor and did not vote FOR")
+                }
+            } on 9198
+
             FOR on 9199
             FOR on 9200
             FOR on 9201
