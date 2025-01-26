@@ -356,5 +356,9 @@ Yes."""
             FOR on 9209
             FOR on 9210
         }
+
+        votes(Forest) {
+            FOR on all
+        }
     }
 }
