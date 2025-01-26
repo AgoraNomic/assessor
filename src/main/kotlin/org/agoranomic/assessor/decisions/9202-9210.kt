@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -330,6 +331,18 @@ Yes."""
             PRESENT on 9208
             PRESENT on 9209
             PRESENT on 9210
+        }
+
+        votes(Murphy) {
+            FOR on 9202
+            FOR on 9203
+            endorse(Mischief) on 9204 comment "${Mischief.name} is the Collector"
+            FOR on 9205
+            FOR on 9206
+            AGAINST on 9207
+            InextricableResolvingVote on 9208 comment "Geologist is vacant"
+            FOR on 9209
+            FOR on 9210
         }
     }
 }
