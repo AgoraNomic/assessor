@@ -319,5 +319,17 @@ Yes."""
             AGAINST on 9209
             AGAINST on 9210
         }
+
+        votes(sprock) {
+            PRESENT on 9202
+            FOR on 9203
+            PRESENT on 9204
+            FOR on 9205
+            FOR on 9206
+            AGAINST on 9207
+            PRESENT on 9208
+            PRESENT on 9209
+            PRESENT on 9210
+        }
     }
 }
