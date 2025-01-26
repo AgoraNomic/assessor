@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -303,6 +304,18 @@ Yes."""
             FOR on 9206
             AGAINST on 9207
             FOR on 9208
+            AGAINST on 9209
+            AGAINST on 9210
+        }
+
+        votes(Janet) {
+            FOR on 9202
+            FOR on 9203
+            FOR on 9204
+            endorse(ais523) on 9205
+            AGAINST on 9206
+            AGAINST on 9207
+            // NO VOTE on 9208
             AGAINST on 9209
             AGAINST on 9210
         }
