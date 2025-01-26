@@ -1,0 +1,65 @@
+PROPOSAL 9197 (The Game is Afoot)
+AUTHOR: Mischief
+CLASS: ORDINARY
+FOR (5): Kate%, Mischief^, Murphy^, ais523%, snail^
+AGAINST (0): 
+PRESENT (2): Janet^, juan%
+BALLOTS: 7
+AI (F/A): 28/0 (AI=1.5)
+POPULARITY: 0.714
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2024-December/018190.html
+
+ID: 9197
+Title: The Game is Afoot
+Adoption index: 1.5
+Author: Mischief
+Co-authors: ais523, Kate
+
+
+[Maybe this could be a way to spur some more gameplay.
+
+The underlying idea:
+Spendies -> candles (contest subgames) -> radiance
+
+Players can still buy radiance directly, they still get a universal
+basic income in spendies, etc.
+
+Candles are a shelf-stable form of radiance but can only be held by
+contests. 1 spendie grants 1 candle; 1 candle grants 1 radiance.
+
+Under this model, Bang! could be reconstituted as a contest if folks
+wished.]
+
+
+Create a rule entitled "Contests" with power 1.5 reading:
+
+       Contestation is a secured negative boolean contract switch
+       tracked by the Notary. A contract whose contestation switch is
+       true is a contest.
+
+       A player CAN flip a specified contract's contestation to true
+       without 2 objections.
+
+       A player CAN flip a specified contract's contestation to false
+       with Agoran consent.
+
+
+Create a rule entitled "Candles" with power 1.5 reading:
+
+       Candles are fixed fungible assets tracked by the Illuminator.
+
+       Contests are the only entities permitted to own candles, and any
+       candles held by any other entity are immediately destroyed.
+
+       A player CAN pay a fee of 1 spendie to grant 1 candle to a
+       contest.
+
+       As explicitly and unambiguously permitted by a contest's body, a
+       party to that contest CAN bestow a prize by an announcement
+       clearly identifying the recipient player, the amount of radiance
+       to award (N), and the relevant contest. Upon doing so, if the
+       specified contest possesses at least N candles the following
+       happen in order: N of its candles are destroyed, then the
+       specified player gains N radiance.
