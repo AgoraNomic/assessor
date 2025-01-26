@@ -344,5 +344,17 @@ Yes."""
             FOR on 9209
             FOR on 9210
         }
+
+        votes(juan) {
+            PRESENT on 9202
+            FOR on 9203
+            PRESENT on 9204
+            FOR on 9205
+            FOR on 9206
+            FOR on 9207
+            endorse(Forest) on 9208
+            FOR on 9209
+            FOR on 9210
+        }
     }
 }
