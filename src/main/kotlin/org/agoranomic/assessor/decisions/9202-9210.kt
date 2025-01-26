@@ -282,5 +282,17 @@ Yes."""
             FOR on 9209
             FOR on 9210
         }
+
+        votes(Kate) {
+            FOR on 9202
+            FOR on 9203
+            AGAINST on 9204
+            FOR on 9205
+            FOR on 9206
+            AGAINST on 9207
+            // NO VOTE on 9208
+            AGAINST on 9209
+            AGAINST on 9210
+        }
     }
 }
