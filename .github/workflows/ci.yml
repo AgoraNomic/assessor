@@ -106,12 +106,31 @@ jobs:
       - uses: actions/checkout@v4.2.1
         with:
           submodules: "recursive"
-      
+
+      - name: Clean repo for officer template
+        run: |
+          mkdir -p generation
+          rm -rf generation/gh-pages
+
+      - name: Checkout officer-template for Github Pages
+        uses: actions/checkout@v4.2.1
+        with:
+          repository: "agoranomic/officer-template"
+          ref: "gh-pages"
+          path: "generation/gh-pages"
+
       - name: Fetch reports artifact
         uses: actions/download-artifact@v4.1.8
         with:
           name: reports
           path: artifacts/reports
+
+      - name: Remove nested .git directory
+        run: "rm -rf generation/gh-pages/.git"
+
+      - name: Update Jekyll config
+        run: |
+          sed -i "s/^baseurl:.*$/baseurl: \/assessor/" generation/gh-pages/_config.yml
 
       - name: Copy reports to gh-pages dir
         run: "cp -R artifacts/reports/* generation/gh-pages"
