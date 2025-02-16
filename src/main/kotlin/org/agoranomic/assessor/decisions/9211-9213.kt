@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -162,6 +163,12 @@ player CAN," with this text:
             PRESENT on 9211
             FOR on 9212
             AGAINST on 9213
+        }
+
+        votes(juan) {
+            endorse(Kate) on 9211 comment "${Kate.name} is the Arbitor"
+            PRESENT on 9212
+            endorse(juan) on 9213 comment "${juan.name} is the Absurdor"
         }
     }
 }
