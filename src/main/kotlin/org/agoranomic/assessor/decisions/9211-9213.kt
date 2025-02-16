@@ -170,5 +170,11 @@ player CAN," with this text:
             PRESENT on 9212
             endorse(juan) on 9213 comment "${juan.name} is the Absurdor"
         }
+
+        votes(kiako) {
+            endorse(Kate) on 9211 comment "${Kate.name} is the Arbitor"
+            AGAINST on 9212
+            endorse(juan) on 9213 comment "${juan.name} is the Absurdor"
+        }
     }
 }
