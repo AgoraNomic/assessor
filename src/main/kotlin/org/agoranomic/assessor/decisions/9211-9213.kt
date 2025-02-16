@@ -188,5 +188,11 @@ player CAN," with this text:
             AGAINST on 9212
             PRESENT on 9213
         }
+
+        votes(ais523) {
+            FOR on 9211
+            FOR on 9212
+            FOR on 9213
+        }
     }
 }
