@@ -1,0 +1,62 @@
+PROPOSAL 9205 (Switch It Up)
+AUTHOR: Mischief
+CLASS: DEMOCRATIC
+FOR (7): 4st, Kate, Mischief, Murphy, juan, snail, sprock
+AGAINST (0): 
+PRESENT (2): Janet, ais523
+BALLOTS: 9
+AI (F/A): 21/0 (AI=3.0)
+POPULARITY: 0.778
+OUTCOME: ADOPTED
+[
+Janet: Endorsement of ais523
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-January/018259.html
+
+ID: 9205
+Title: Switch It Up
+Adoption index: 3.0
+Author: Mischief
+Co-authors: Janet
+
+
+[This explicitly allow contracts to define switches. They maybe work
+okay anyway, but this puts things on a firmer foundation. The "secured"
+definition is deliberately left referencing Rules only, as a contract
+doesn't have power.
+
+I considered amending the third paragraph of rule 2698 (Recordkeepors),
+but contracts have plenty of flexibility to impose any desired reporting
+requirements for their switches (or to leave them untracked).]
+
+Amend rule 2162 (Switches) by making the following replacements, in order:
+
+1) Replace:
+
+       A type of switch is a property that the rules define as a switch,
+       and specify the following:
+
+    with:
+
+       A type of switch is a property that a rule or a contract defines
+       as a switch (with such rule or contract being its backing
+       document) and specifies the following:
+
+2) Replace:
+
+       If a type of switch is not explicitly designated as
+       possibly-indeterminate by the rule that defines it, and if an
+       action or set of actions would cause the value of an instance of
+       that type of switch to become indeterminate, that instance instead
+       takes on its last determinate and possible value, if any,
+       otherwise it takes on its default value.
+
+    with:
+
+       If a type of switch is not explicitly designated as
+       possibly-indeterminate by its backing document, and if an action
+       or set of actions would cause the value of an instance of that
+       type of switch to become indeterminate, that instance instead
+       takes on its last determinate and possible value, if any,
+       otherwise it takes on its default value.
