@@ -155,4 +155,7 @@ player CAN," with this text:
             )
         }
     }
+
+    voting {
+    }
 }
