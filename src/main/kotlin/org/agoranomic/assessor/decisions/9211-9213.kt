@@ -194,5 +194,11 @@ player CAN," with this text:
             FOR on 9212
             FOR on 9213
         }
+
+        votes(Mischief) {
+            FOR on 9211
+            FOR on 9212
+            endorse(juan) on 9213 comment "${juan.name} is the Absurdor"
+        }
     }
 }
