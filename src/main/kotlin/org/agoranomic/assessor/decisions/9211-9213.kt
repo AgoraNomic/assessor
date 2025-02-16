@@ -182,5 +182,11 @@ player CAN," with this text:
             FOR on 9212
             FOR on 9213
         }
+
+        votes(Janet) {
+            FOR on 9211
+            AGAINST on 9212
+            PRESENT on 9213
+        }
     }
 }
