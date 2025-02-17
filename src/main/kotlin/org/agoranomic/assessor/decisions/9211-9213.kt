@@ -206,5 +206,11 @@ player CAN," with this text:
             FOR on 9212
             FOR on 9213
         }
+
+        votes(Murphy) {
+            FOR on 9211
+            PRESENT on 9212
+            FOR on 9213
+        }
     }
 }
