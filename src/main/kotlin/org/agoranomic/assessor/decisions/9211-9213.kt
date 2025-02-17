@@ -168,7 +168,7 @@ player CAN," with this text:
         votes(juan) {
             endorse(Kate) on 9211 comment "${Kate.name} is the Arbitor"
             PRESENT on 9212
-            endorse(juan) on 9213 comment "${juan.name} is the Absurdor"
+            FOR on 9213
         }
 
         votes(kiako) {
