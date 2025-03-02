@@ -96,5 +96,9 @@ Yachay Wayllukuq"""
         votes(snail) {
             FOR on 9214
         }
+
+        votes(ais523) {
+            FOR on 9214
+        }
     }
 }
