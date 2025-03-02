@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9214() = assessment {
@@ -103,6 +104,10 @@ Yachay Wayllukuq"""
 
         votes(Mischief) {
             FOR on 9214
+        }
+
+        votes(Murphy) {
+            PRESENT on 9214
         }
     }
 }
