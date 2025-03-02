@@ -117,5 +117,9 @@ Yachay Wayllukuq"""
         votes(juniper) {
             PRESENT on 9214
         }
+
+        votes(kiako) {
+            FOR on 9214
+        }
     }
 }
