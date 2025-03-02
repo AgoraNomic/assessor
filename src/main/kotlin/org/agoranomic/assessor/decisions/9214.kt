@@ -113,5 +113,9 @@ Yachay Wayllukuq"""
         votes(Kate) {
             FOR on 9214
         }
+
+        votes(juniper) {
+            PRESENT on 9214
+        }
     }
 }
