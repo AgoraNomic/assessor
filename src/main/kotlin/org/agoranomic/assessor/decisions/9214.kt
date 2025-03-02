@@ -109,5 +109,9 @@ Yachay Wayllukuq"""
         votes(Murphy) {
             PRESENT on 9214
         }
+
+        votes(Kate) {
+            FOR on 9214
+        }
     }
 }
