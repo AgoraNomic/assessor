@@ -100,5 +100,9 @@ Yachay Wayllukuq"""
         votes(ais523) {
             FOR on 9214
         }
+
+        votes(Mischief) {
+            FOR on 9214
+        }
     }
 }
