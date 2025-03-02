@@ -90,4 +90,7 @@ Yachay Wayllukuq"""
             )
         }
     }
+
+    voting {
+    }
 }
