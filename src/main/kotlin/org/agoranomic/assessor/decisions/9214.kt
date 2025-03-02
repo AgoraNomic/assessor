@@ -121,5 +121,9 @@ Yachay Wayllukuq"""
         votes(kiako) {
             FOR on 9214
         }
+
+        votes(Janet) {
+            FOR on 9214
+        }
     }
 }
