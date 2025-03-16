@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -404,6 +405,18 @@ unless bugs are discovered."""
             endorse(Murphy) on 9221 comment "${Murphy.name} is the Tailor"
             endorse(Murphy) on 9222 comment "${Murphy.name} is the Tailor"
             endorse(Murphy) on 9223 comment "${Murphy.name} is the Tailor"
+        }
+
+        votes(kiako) {
+            FOR on 9215
+            AGAINST on 9216
+            PRESENT on 9217
+            endorse(Janet) on 9218 comment "${Janet.name} is the Rulekeepor"
+            endorse(ais523) on 9219
+            resolvedConditional(endorse(Murphy), "${Murphy.name} is the Tailor and voted") on 9220
+            AGAINST on 9221
+            // TODO resolve conditional vote on 9222: FOR if 9223 has been or would be ADOPTED; otherwise, AGAINST
+            resolvedConditional(endorse(Murphy), "${Murphy.name} is the Tailor and voted") on 9223
         }
     }
 }
