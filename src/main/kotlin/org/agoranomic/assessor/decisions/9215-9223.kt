@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9215to9223() = assessment {
@@ -313,5 +314,16 @@ unless bugs are discovered."""
     }
 
     voting {
+        votes(snail) {
+            FOR on 9215
+            FOR on 9216
+            FOR on 9217
+            PRESENT on 9218
+            PRESENT on 9219
+            PRESENT on 9220
+            AGAINST on 9221
+            PRESENT on 9222
+            PRESENT on 9223
+        }
     }
 }
