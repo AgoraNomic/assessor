@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -324,6 +325,18 @@ unless bugs are discovered."""
             AGAINST on 9221
             PRESENT on 9222
             PRESENT on 9223
+        }
+
+        votes(Kate) {
+            FOR on 9215
+            FOR on 9216
+            PRESENT on 9217
+            endorse(Gaelan) on 9218 comment "${Gaelan.name} is the Archivist"
+            FOR on 9219
+            FOR on 9220
+            AGAINST on 9221
+            FOR on 9222
+            FOR on 9223
         }
     }
 }
