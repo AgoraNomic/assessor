@@ -350,5 +350,17 @@ unless bugs are discovered."""
             // TODO resolve conditional vote: AGAINST if 9223 was or could be adopted; otherwise, FOR
             FOR on 9223
         }
+
+        votes(ShyOwl) {
+            FOR on 9215
+            AGAINST on 9216
+            PRESENT on 9217
+            FOR on 9218
+            AGAINST on 9219
+            FOR on 9220
+            AGAINST on 9221
+            AGAINST on 9222
+            AGAINST on 9223
+        }
     }
 }
