@@ -348,7 +348,7 @@ unless bugs are discovered."""
             FOR on 9219
             AGAINST on 9220
             AGAINST on 9221
-            // TODO resolve conditional vote: AGAINST if 9223 was or could be adopted; otherwise, FOR
+            resolvedConditional(AGAINST, "Proposal 9223 would be resolved as ADOPTED") on 9222
             FOR on 9223
         }
 
@@ -389,7 +389,7 @@ unless bugs are discovered."""
             PRESENT on 9217
             AGAINST on 9218
             PRESENT on 9219
-            // TODO: resolve conditional vote on 9220: AGAINST if 9223 adopted or could be adopted; otherwise FOR
+            resolvedConditional(AGAINST, "Proposal 9223 would be resolved as ADOPTED") on 9220
             AGAINST on 9221
             AGAINST on 9222
             FOR on 9223
@@ -415,7 +415,7 @@ unless bugs are discovered."""
             endorse(ais523) on 9219
             resolvedConditional(endorse(Murphy), "${Murphy.name} is the Tailor and voted") on 9220
             AGAINST on 9221
-            // TODO resolve conditional vote on 9222: FOR if 9223 has been or would be ADOPTED; otherwise, AGAINST
+            resolvedConditional(FOR, "Proposal 9223 would be resolved as ADOPTED") on 9222
             resolvedConditional(endorse(Murphy), "${Murphy.name} is the Tailor and voted") on 9223
         }
 
