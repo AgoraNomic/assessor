@@ -393,5 +393,17 @@ unless bugs are discovered."""
             AGAINST on 9222
             FOR on 9223
         }
+
+        votes(juan) {
+            endorse(Kate) on 9215 comment "${Kate.name} is the Arbitor"
+            AGAINST on 9216
+            PRESENT on 9217
+            AGAINST on 9218
+            FOR on 9219
+            endorse(Murphy) on 9220 comment "${Murphy.name} is the Tailor"
+            endorse(Murphy) on 9221 comment "${Murphy.name} is the Tailor"
+            endorse(Murphy) on 9222 comment "${Murphy.name} is the Tailor"
+            endorse(Murphy) on 9223 comment "${Murphy.name} is the Tailor"
+        }
     }
 }
