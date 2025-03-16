@@ -374,5 +374,12 @@ unless bugs are discovered."""
             PRESENT on 9222
             FOR on 9223
         }
+
+        votes(Forest) {
+            AGAINST on 9220
+            FOR on 9221
+            AGAINST on 9222
+            FOR on 9223
+        }
     }
 }
