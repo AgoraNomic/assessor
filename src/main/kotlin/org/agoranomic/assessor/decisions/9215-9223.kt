@@ -362,5 +362,17 @@ unless bugs are discovered."""
             AGAINST on 9222
             AGAINST on 9223
         }
+
+        votes(Mischief) {
+            AGAINST on 9215
+            FOR on 9216
+            FOR on 9217
+            endorse(Gaelan) on 9218 comment "${Gaelan.name} is the Archivist"
+            FOR on 9219
+            PRESENT on 9220
+            AGAINST on 9221
+            PRESENT on 9222
+            FOR on 9223
+        }
     }
 }
