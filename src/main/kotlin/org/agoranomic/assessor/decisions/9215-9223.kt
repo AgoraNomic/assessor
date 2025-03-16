@@ -338,5 +338,17 @@ unless bugs are discovered."""
             FOR on 9222
             FOR on 9223
         }
+
+        votes(ais523) {
+            AGAINST on 9215
+            AGAINST on 9216
+            AGAINST on 9217
+            PRESENT on 9218
+            FOR on 9219
+            AGAINST on 9220
+            AGAINST on 9221
+            // TODO resolve conditional vote: AGAINST if 9223 was or could be adopted; otherwise, FOR
+            FOR on 9223
+        }
     }
 }
