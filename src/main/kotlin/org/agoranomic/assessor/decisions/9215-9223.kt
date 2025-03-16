@@ -372,7 +372,7 @@ unless bugs are discovered."""
             FOR on 9219
             PRESENT on 9220
             AGAINST on 9221
-            PRESENT on 9222
+            AGAINST on 9222
             FOR on 9223
         }
 
