@@ -381,5 +381,17 @@ unless bugs are discovered."""
             AGAINST on 9222
             FOR on 9223
         }
+
+        votes(Janet) {
+            FOR on 9215
+            PRESENT on 9216
+            PRESENT on 9217
+            AGAINST on 9218
+            PRESENT on 9219
+            // TODO: resolve conditional vote on 9220: AGAINST if 9223 adopted or could be adopted; otherwise FOR
+            AGAINST on 9221
+            AGAINST on 9222
+            FOR on 9223
+        }
     }
 }
