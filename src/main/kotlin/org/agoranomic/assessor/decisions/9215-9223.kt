@@ -311,4 +311,7 @@ unless bugs are discovered."""
             )
         }
     }
+
+    voting {
+    }
 }
