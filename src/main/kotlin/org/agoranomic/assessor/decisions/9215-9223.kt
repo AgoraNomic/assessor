@@ -418,5 +418,17 @@ unless bugs are discovered."""
             // TODO resolve conditional vote on 9222: FOR if 9223 has been or would be ADOPTED; otherwise, AGAINST
             resolvedConditional(endorse(Murphy), "${Murphy.name} is the Tailor and voted") on 9223
         }
+
+        votes(Murphy) {
+            FOR on 9215
+            FOR on 9216
+            PRESENT on 9217
+            endorse(Gaelan) on 9218 comment "${Gaelan.name} is the Archivist"
+            FOR on 9219
+            PRESENT on 9220
+            FOR on 9221
+            FOR on 9222
+            FOR on 9223
+        }
     }
 }
