@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9224to9226() = assessment {
@@ -166,6 +165,12 @@ to be a regulation of that same tournament for the purposes of Rule 2464.
         votes(snail) {
             PRESENT on 9224
             PRESENT on 9225
+            FOR on 9226
+        }
+
+        votes(kiako) {
+            FOR on 9224
+            AGAINST on 9225
             FOR on 9226
         }
     }
