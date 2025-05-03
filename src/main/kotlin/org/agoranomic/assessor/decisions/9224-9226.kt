@@ -159,4 +159,7 @@ to be a regulation of that same tournament for the purposes of Rule 2464.
             )
         }
     }
+
+    voting {
+    }
 }
