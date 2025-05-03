@@ -204,5 +204,9 @@ to be a regulation of that same tournament for the purposes of Rule 2464.
             PRESENT on 9225
             FOR on 9226
         }
+
+        votes(Forest) {
+            PRESENT on 9225
+        }
     }
 }
