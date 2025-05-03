@@ -208,5 +208,11 @@ to be a regulation of that same tournament for the purposes of Rule 2464.
         votes(Forest) {
             PRESENT on 9225
         }
+
+        votes(juan) {
+            PRESENT on 9224
+            PRESENT on 9225
+            PRESENT on 9226
+        }
     }
 }
