@@ -192,5 +192,11 @@ to be a regulation of that same tournament for the purposes of Rule 2464.
             AGAINST on 9225
             PRESENT on 9226
         }
+
+        votes(kambri) {
+            FOR on 9224
+            PRESENT on 9225
+            FOR on 9226
+        }
     }
 }
