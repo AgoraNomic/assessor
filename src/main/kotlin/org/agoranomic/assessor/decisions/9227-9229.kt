@@ -126,5 +126,11 @@ with this text:
             PRESENT on 9228
             PRESENT on 9229
         }
+
+        votes(Cosmo) {
+            FOR on 9227
+            PRESENT on 9228
+            PRESENT on 9229
+        }
     }
 }
