@@ -114,5 +114,11 @@ with this text:
             FOR on 9228
             PRESENT on 9229
         }
+
+        votes(Mischief) {
+            FOR on 9227
+            PRESENT on 9228
+            PRESENT on 9229
+        }
     }
 }
