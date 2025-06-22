@@ -137,5 +137,11 @@ with this text:
             FOR on 9228
             AGAINST on 9229
         }
+
+        votes(Kate) {
+            AGAINST on 9227
+            PRESENT on 9228
+            AGAINST on 9229
+        }
     }
 }
