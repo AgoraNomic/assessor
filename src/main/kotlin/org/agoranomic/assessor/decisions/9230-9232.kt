@@ -225,5 +225,11 @@ with:
             FOR on 9231
             PRESENT on 9232
         }
+
+        votes(oliver) {
+            FOR on 9230
+            FOR on 9231
+            FOR on 9232
+        }
     }
 }
