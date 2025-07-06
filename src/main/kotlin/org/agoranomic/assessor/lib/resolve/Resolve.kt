@@ -11,6 +11,7 @@ import org.agoranomic.assessor.lib.proposal.proposal_set.toImmutableProposalSet
 import org.agoranomic.assessor.lib.proposal.proposal_set.toProposalSet
 import org.agoranomic.assessor.lib.vote.MultiPersonPendingVoteMap
 import org.agoranomic.assessor.lib.vote.SimplifiedSingleProposalVoteMap
+import org.agoranomic.assessor.lib.vote.SinglePersonPendingVoteMap
 import org.agoranomic.assessor.lib.voting_strength.VotingStrengthTrailForPersons
 
 enum class ProposalResult {
@@ -166,5 +167,21 @@ fun resolve(assessmentData: AssessmentData): ProposalResolutionMap {
                 )
             },
         quorum = assessmentData.quorum,
+    )
+}
+
+fun AssessmentData.subAssessment(proposalNumbers: ProposalNumbers): AssessmentData {
+    val keptProposals = this.proposals.filter { proposalNumbers.contains(it.number) }.toImmutableProposalSet()
+
+    return this.copy(
+        votingStrengths = this.votingStrengths.filterKeys { proposalNumbers.contains(it) }.toImmutableMap(),
+        proposals = keptProposals,
+        votes = MultiPersonPendingVoteMap(
+            this.votes.toMap().mapValues { (_, v) ->
+                SinglePersonPendingVoteMap(
+                    v.toMap().filterKeys { proposalNumbers.contains(it) },
+                )
+            },
+        )
     )
 }
