@@ -54,7 +54,7 @@ fun assessment9230to9232() = assessment {
             ai("1.0")
             author(Murphy)
             coauthors(Mischief, ais523)
-            democratic()
+            ordinary()
 
             text(
                 """
