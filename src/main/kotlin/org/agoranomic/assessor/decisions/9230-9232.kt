@@ -195,5 +195,11 @@ with:
             FOR on 9231
             FOR on 9232
         }
+
+        votes(Caramel) {
+            FOR on 9230
+            FOR on 9231
+            FOR on 9232
+        }
     }
 }
