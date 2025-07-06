@@ -189,5 +189,11 @@ with:
             FOR on 9231
             // Attempted re-vote on 9230 fails.
         }
+
+        votes(Mischief) {
+            FOR on 9230
+            FOR on 9231
+            FOR on 9232
+        }
     }
 }
