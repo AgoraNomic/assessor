@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9230to9232() = assessment {
@@ -183,5 +184,10 @@ with:
     }
 
     voting {
+        votes(Forest) {
+            FOR on 9230
+            FOR on 9231
+            // Attempted re-vote on 9230 fails.
+        }
     }
 }
