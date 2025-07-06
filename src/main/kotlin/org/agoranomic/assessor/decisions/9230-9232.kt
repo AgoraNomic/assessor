@@ -208,5 +208,11 @@ with:
             FOR on 9231
             PRESENT on 9232
         }
+
+        votes(Trigon) {
+            PRESENT on 9230
+            FOR on 9231
+            FOR on 9232
+        }
     }
 }
