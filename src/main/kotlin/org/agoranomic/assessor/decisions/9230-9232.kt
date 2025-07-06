@@ -6,13 +6,14 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.proposal.ProposalNumber
+import org.agoranomic.assessor.lib.proposal.ProposalNumbers
+import org.agoranomic.assessor.lib.resolve.AssessmentData
+import org.agoranomic.assessor.lib.resolve.AssessmentMetadata
+import org.agoranomic.assessor.lib.resolve.subAssessment
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
-@UseAssessment
-fun assessment9230to9232() = assessment {
-    // NOTE: Proposal 9230 resolved separately due to
-    // https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-July/018548.html
-
+private fun assessment9230to9232() = assessment {
     name("9230-9232")
     quorum(4)
 
@@ -238,4 +239,29 @@ with:
             FOR on 9232
         }
     }
+}
+
+// NOTE: Proposal 9230 resolved separately due to
+// https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-July/018548.html
+
+private val commonAssessment = assessment9230to9232()
+
+@UseAssessment
+fun assessment9230(): AssessmentData {
+    return commonAssessment.subAssessment(ProposalNumbers(setOf(ProposalNumber(9230)))).copy(
+        metadata = AssessmentMetadata(
+            name = "9230",
+            urls = null,
+        )
+    )
+}
+
+@UseAssessment
+fun assessment9231to9232(): AssessmentData {
+    return commonAssessment.subAssessment(ProposalNumbers(setOf(ProposalNumber(9231), ProposalNumber(9232)))).copy(
+        metadata = AssessmentMetadata(
+            name = "9231-9232",
+            urls = null,
+        )
+    )
 }
