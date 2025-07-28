@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 
 @UseAssessment
@@ -88,5 +89,8 @@ with this text:
     }
 
     voting {
+        votes(juan) {
+            endorse(Janet) on 9233 comment "${Janet.name} is the Assessor"
+        }
     }
 }
