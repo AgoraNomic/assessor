@@ -1,5 +1,6 @@
 package org.agoranomic.assessor.decisions
 
+import kotlinx.collections.immutable.persistentListOf
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
@@ -10,6 +11,7 @@ import org.agoranomic.assessor.lib.proposal.ProposalNumber
 import org.agoranomic.assessor.lib.proposal.ProposalNumbers
 import org.agoranomic.assessor.lib.resolve.AssessmentData
 import org.agoranomic.assessor.lib.resolve.AssessmentMetadata
+import org.agoranomic.assessor.lib.resolve.AssessmentUrl
 import org.agoranomic.assessor.lib.resolve.subAssessment
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -261,7 +263,9 @@ fun assessment9231to9232(): AssessmentData {
     return commonAssessment.subAssessment(ProposalNumbers(setOf(ProposalNumber(9231), ProposalNumber(9232)))).copy(
         metadata = AssessmentMetadata(
             name = "9231-9232",
-            urls = null,
+            urls = persistentListOf(
+                AssessmentUrl("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-July/018555.html"),
+            ),
         )
     )
 }
