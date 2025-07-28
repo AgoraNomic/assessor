@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9233() = assessment {
@@ -99,6 +100,10 @@ with this text:
 
         votes(Kate) {
             endorse(Cosmo) on 9233 comment "${Cosmo.name} is the Promotor"
+        }
+
+        votes(Mischief) {
+            FOR on 9233
         }
     }
 }
