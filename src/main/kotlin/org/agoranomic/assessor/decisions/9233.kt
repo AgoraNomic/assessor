@@ -92,5 +92,9 @@ with this text:
         votes(juan) {
             endorse(Janet) on 9233 comment "${Janet.name} is the Assessor"
         }
+
+        votes(Trigon) {
+            endorse(Janet) on 9233 comment "${Janet.name} is the Assessor"
+        }
     }
 }
