@@ -110,5 +110,9 @@ with this text:
         votes(Janet) {
             AGAINST on 9233
         }
+
+        votes(Murphy) {
+            FOR on 9233
+        }
     }
 }
