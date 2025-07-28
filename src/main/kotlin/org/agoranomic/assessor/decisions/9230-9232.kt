@@ -249,16 +249,6 @@ with:
 private val commonAssessment = assessment9230to9232()
 
 @UseAssessment
-fun assessment9230(): AssessmentData {
-    return commonAssessment.subAssessment(ProposalNumbers(setOf(ProposalNumber(9230)))).copy(
-        metadata = AssessmentMetadata(
-            name = "9230",
-            urls = null,
-        )
-    )
-}
-
-@UseAssessment
 fun assessment9231to9232(): AssessmentData {
     return commonAssessment.subAssessment(ProposalNumbers(setOf(ProposalNumber(9231), ProposalNumber(9232)))).copy(
         metadata = AssessmentMetadata(
