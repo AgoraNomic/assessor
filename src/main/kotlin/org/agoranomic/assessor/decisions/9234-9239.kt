@@ -286,5 +286,19 @@ with this text:
             FOR on 9238
             endorse(Murphy) on 9239 comment "${Murphy.name} is the Tailor"
         }
+
+        votes(juan) {
+            // Note: votes at https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-July/054493.html
+            // failed per https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-July/054523.html
+
+            // Note: votes at https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-July/054524.html
+            // failed due to wrong numbers.
+
+            // In any event, the votes were converged to this.
+
+            for (id in 9234..9239) {
+                FOR on id
+            }
+        }
     }
 }
