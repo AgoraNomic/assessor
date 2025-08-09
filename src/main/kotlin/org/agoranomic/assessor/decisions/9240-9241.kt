@@ -174,5 +174,10 @@ Repeal rule 2495 (The Birthday Tournament)"""
             FOR on 9240
             AGAINST on 9241
         }
+
+        votes(Cosmo) {
+            FOR on 9240
+            AGAINST on 9241
+        }
     }
 }
