@@ -5,7 +5,10 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9234to9239() = assessment {
@@ -218,5 +221,13 @@ with this text:
     }
 
     voting {
+        votes(Mischief) {
+            FOR on 9234
+            AGAINST on 9235
+            AGAINST on 9236
+            AGAINST on 9237
+            FOR on 9238
+            endorse(Murphy) on 9239 comment "${Murphy.name} is the Tailor"
+        }
     }
 }
