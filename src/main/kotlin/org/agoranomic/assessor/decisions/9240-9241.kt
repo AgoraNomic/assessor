@@ -147,4 +147,7 @@ Repeal rule 2495 (The Birthday Tournament)"""
             )
         }
     }
+
+    voting {
+    }
 }
