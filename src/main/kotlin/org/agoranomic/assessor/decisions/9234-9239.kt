@@ -255,5 +255,14 @@ with this text:
             FOR on 9238
             FOR on 9239
         }
+
+        votes(Trigon) {
+            PRESENT on 9234
+            AGAINST on 9235
+            AGAINST on 9236
+            AGAINST on 9237
+            FOR on 9238
+            FOR on 9239
+        }
     }
 }
