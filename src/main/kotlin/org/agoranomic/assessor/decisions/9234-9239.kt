@@ -264,5 +264,14 @@ with this text:
             FOR on 9238
             FOR on 9239
         }
+
+        votes(juniper) {
+            AGAINST on 9234
+            AGAINST on 9235
+            AGAINST on 9236
+            FOR on 9237
+            FOR on 9238
+            FOR on 9239
+        }
     }
 }
