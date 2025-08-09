@@ -6,7 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9240to9241() = assessment {
@@ -153,6 +153,11 @@ Repeal rule 2495 (The Birthday Tournament)"""
         votes(Mischief) {
             FOR on 9240
             FOR on 9241
+        }
+
+        votes(Janet) {
+            PRESENT on 9240
+            AGAINST on 9241
         }
     }
 }
