@@ -277,5 +277,14 @@ with this text:
         votes(BuringBeef) {
             // TODO: resolve conditional vote on 9234-9239: endorse Cosmo if Cosmo has not since changed vote, else PRESENT
         }
+
+        votes(Caramel) {
+            FOR on 9234
+            endorse(Cosmo) on 9235
+            endorse(Cosmo) on 9236
+            endorse(Cosmo) on 9237
+            FOR on 9238
+            endorse(Murphy) on 9239 comment "${Murphy.name} is the Tailor"
+        }
     }
 }
