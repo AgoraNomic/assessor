@@ -273,5 +273,9 @@ with this text:
             FOR on 9238
             FOR on 9239
         }
+
+        votes(BuringBeef) {
+            // TODO: resolve conditional vote on 9234-9239: endorse Cosmo if Cosmo has not since changed vote, else PRESENT
+        }
     }
 }
