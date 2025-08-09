@@ -159,5 +159,10 @@ Repeal rule 2495 (The Birthday Tournament)"""
             PRESENT on 9240
             AGAINST on 9241
         }
+
+        votes(Murphy) {
+            FOR on 9240
+            PRESENT on 9241
+        }
     }
 }
