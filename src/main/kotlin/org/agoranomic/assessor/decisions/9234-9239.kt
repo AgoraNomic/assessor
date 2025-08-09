@@ -246,5 +246,14 @@ with this text:
             PRESENT on 9238
             FOR on 9239
         }
+
+        votes(Murphy) {
+            FOR on 9234
+            // TODO: resolve conditional vote on 9235: FOR if 9230 resolved as ADOPTED, else AGAINST.
+            // TODO: resolve conditional vote on 9236: FOR if 9230 resolved as ADOPTED, else AGAINST.
+            // TODO: resolve conditional vote on 9237: FOR if 9230 resolved as ADOPTED, else AGAINST.
+            FOR on 9238
+            FOR on 9239
+        }
     }
 }
