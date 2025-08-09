@@ -152,7 +152,7 @@ Repeal rule 2495 (The Birthday Tournament)"""
     voting {
         votes(Mischief) {
             FOR on 9240
-            FOR on 9241
+            PRESENT on 9241
         }
 
         votes(Janet) {
