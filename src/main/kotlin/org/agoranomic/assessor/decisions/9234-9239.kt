@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -231,9 +232,9 @@ with this text:
 
         votes(Cosmo) {
             FOR on 9234
-            // TODO: resolve conditional vote on 9235: FOR if 9230 resolved as ADOPTED, else AGAINST.
-            // TODO: resolve conditional vote on 9236: FOR if 9230 resolved as ADOPTED, else AGAINST.
-            // TODO: resolve conditional vote on 9237: FOR if 9230 resolved as ADOPTED, else AGAINST.
+            resolvedConditional(AGAINST, "The referendum on Proposal 9230 has not been resolved as ADOPTED") on 9235
+            resolvedConditional(AGAINST, "The referendum on Proposal 9230 has not been resolved as ADOPTED") on 9236
+            resolvedConditional(AGAINST, "The referendum on Proposal 9230 has not been resolved as ADOPTED") on 9237
             FOR on 9238
             endorse(Murphy) on 9239 comment "${Murphy.name} is the Tailor"
         }
@@ -249,9 +250,9 @@ with this text:
 
         votes(Murphy) {
             FOR on 9234
-            // TODO: resolve conditional vote on 9235: FOR if 9230 resolved as ADOPTED, else AGAINST.
-            // TODO: resolve conditional vote on 9236: FOR if 9230 resolved as ADOPTED, else AGAINST.
-            // TODO: resolve conditional vote on 9237: FOR if 9230 resolved as ADOPTED, else AGAINST.
+            resolvedConditional(AGAINST, "The referendum on Proposal 9230 has not been resolved as ADOPTED") on 9235
+            resolvedConditional(AGAINST, "The referendum on Proposal 9230 has not been resolved as ADOPTED") on 9236
+            resolvedConditional(AGAINST, "The referendum on Proposal 9230 has not been resolved as ADOPTED") on 9237
             FOR on 9238
             FOR on 9239
         }
@@ -275,7 +276,9 @@ with this text:
         }
 
         votes(BuringBeef) {
-            // TODO: resolve conditional vote on 9234-9239: endorse Cosmo if Cosmo has not since changed vote, else PRESENT
+            for (id in 9234..9239) {
+                resolvedConditional(endorse(Cosmo), "${Cosmo.name} has not since changed eir vote") on id
+            }
         }
 
         votes(Caramel) {
