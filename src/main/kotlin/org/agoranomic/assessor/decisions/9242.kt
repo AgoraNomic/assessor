@@ -73,4 +73,7 @@ Mischief's proposal.]"""
             )
         }
     }
+
+    voting {
+    }
 }
