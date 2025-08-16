@@ -79,5 +79,9 @@ Mischief's proposal.]"""
         votes(Cosmo) {
             FOR on 9242
         }
+
+        votes(Murphy) {
+            FOR on 9242
+        }
     }
 }
