@@ -87,5 +87,9 @@ Mischief's proposal.]"""
         votes(Mischief) {
             FOR on 9242
         }
+
+        votes(Janet) {
+            FOR on 9242
+        }
     }
 }
