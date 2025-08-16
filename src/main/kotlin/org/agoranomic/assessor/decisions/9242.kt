@@ -96,5 +96,9 @@ Mischief's proposal.]"""
         votes(juan) {
             PRESENT on 9242
         }
+
+        votes(Caramel) {
+            FOR on 9242
+        }
     }
 }
