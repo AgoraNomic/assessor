@@ -83,5 +83,9 @@ Mischief's proposal.]"""
         votes(Murphy) {
             FOR on 9242
         }
+
+        votes(Mischief) {
+            FOR on 9242
+        }
     }
 }
