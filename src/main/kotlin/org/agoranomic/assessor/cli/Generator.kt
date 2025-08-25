@@ -110,18 +110,32 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
         }
     }
 
+    fun requireBlanks() {
+        val next = nextLine()
+        require(next.isBlank()) { "Expected blank line, but got: $next" }
+
+        skipBlanks()
+    }
+
     skipBlanks()
 
     val tocHeader = nextLine()
-    require(tocHeader.matches(Regex("ID\\s+Author\\(s\\)\\s+AI\\s+Title\\s*")))
+    require(tocHeader.matches(Regex("ID\\s+Author(?:\\(s\\))?\\s+AI\\s+Title\\s*")))
     require(nextLine().matches(HEADER_DELIMITER))
 
     val idIndex = tocHeader.indexOf("ID ").also { require(it >= 0) }
-    val authorIndex = tocHeader.indexOf("Author(s) ").also { require(it >= 0) }
+
+    val authorIndex = listOf(
+        tocHeader.indexOf("Author "),
+        tocHeader.indexOf("Author(s) "),
+    ).single { it >= 0 }
+
     val aiIndex = tocHeader.indexOf("AI ").also { require(it >= 0) }
     val titleIndex = tocHeader.indexOf("Title").also { require(it >= 0) }
 
     val headers = mutableListOf<Header>()
+    val pendingAuthors = mutableMapOf<BigInteger, List<String>>()
+    val textAuthors = mutableMapOf<BigInteger, List<String>>()
 
     run {
         while (!peekLine().matches(HEADER_DELIMITER)) {
@@ -140,11 +154,18 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
                 throw IllegalArgumentException("Expected ID to have class signifier: $idPart")
             }
 
-            require(!authorPart.contains("[")) {
-                "Author appears to contain reference to footnote"
-            }
+            val authors: List<String>
 
-            val authors = authorPart.split(",").map { it.trim() }
+            if (authorPart.endsWith("+")) {
+                authors = emptyList()
+
+                val headerAuthors = authorPart.removeSuffix("+").split(",").map { it.trim() }
+                require(headerAuthors.size == 1)
+
+                pendingAuthors[id] = headerAuthors
+            } else {
+                authors = authorPart.split(",").map { it.trim() }
+            }
 
             headers.add(
                 Header(
@@ -190,7 +211,17 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
             val header = headersById.getValue(id)
             require(titleAiLine == "${header.title} (AI=${header.ai})")
 
-            skipBlanks()
+            if (pendingAuthors.containsKey(id)) {
+                val coauthorsLine = nextLine()
+
+                val coauthorsParts = coauthorsLine.split(": ")
+                require(coauthorsParts.size == 2)
+                require(coauthorsParts.first().contentEquals("coauthors", ignoreCase = true))
+
+                textAuthors[id] = pendingAuthors.getValue(id) + coauthorsParts[1].split(", ").map { it.trim() }
+            }
+
+            requireBlanks()
 
             val textBuilder = StringBuilder()
 
@@ -210,8 +241,20 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
         "Mismatch in IDs between header and text sections: ${headersById.keys} vs ${textById.keys}"
     }
 
+    require(pendingAuthors.keys == textAuthors.keys) {
+        "Mismatch between proposals with \"+\" in author header and proposals with coauthors in text section: " +
+                "${pendingAuthors.keys} vs ${textAuthors.keys}"
+    }
+
     return headersById.map { (id, header) ->
-        ProposalData(header = header, text = textById.getValue(id))
+        val effectiveHeader = if (textAuthors.keys.contains(id)) {
+            check(header.authors.isEmpty())
+            header.copy(authors = textAuthors.getValue(id))
+        } else {
+            header
+        }
+
+        ProposalData(header = effectiveHeader, text = textById.getValue(id))
     }
 }
 
