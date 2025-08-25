@@ -240,5 +240,11 @@ with this text:
             FOR on 9244
             endorse(Janet) on 9245 comment "${Janet.name} is the Rulekeepor"
         }
+
+        votes(juan) {
+            FOR on 9243
+            FOR on 9244
+            PRESENT on 9245
+        }
     }
 }
