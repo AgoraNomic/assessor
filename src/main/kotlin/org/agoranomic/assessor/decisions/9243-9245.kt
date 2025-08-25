@@ -251,5 +251,11 @@ with this text:
             FOR on 9244
             AGAINST on 9245
         }
+
+        votes(kiako) {
+            PRESENT on 9243
+            endorse(Janet) on 9244 comment "${Janet.name} is the Rulekeepor"
+            endorse(Janet) on 9245
+        }
     }
 }
