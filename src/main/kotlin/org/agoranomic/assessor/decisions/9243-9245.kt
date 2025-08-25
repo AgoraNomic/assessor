@@ -224,4 +224,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
