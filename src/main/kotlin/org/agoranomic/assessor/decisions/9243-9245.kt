@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
@@ -232,6 +233,12 @@ with this text:
             FOR on 9243
             FOR on 9244
             PRESENT on 9245
+        }
+
+        votes(Mischief) {
+            FOR on 9243
+            FOR on 9244
+            endorse(Janet) on 9245 comment "${Janet.name} is the Rulekeepor"
         }
     }
 }
