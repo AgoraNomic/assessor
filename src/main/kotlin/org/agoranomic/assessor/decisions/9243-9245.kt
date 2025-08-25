@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9243to9245() = assessment {
@@ -245,6 +244,12 @@ with this text:
             FOR on 9243
             FOR on 9244
             PRESENT on 9245
+        }
+
+        votes(Janet) {
+            PRESENT on 9243
+            FOR on 9244
+            AGAINST on 9245
         }
     }
 }
