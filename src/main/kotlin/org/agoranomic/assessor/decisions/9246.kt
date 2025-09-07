@@ -120,5 +120,9 @@ with this text:
         votes(Janet) {
             PRESENT on 9246
         }
+
+        votes(Murphy) {
+            FOR on 9246
+        }
     }
 }
