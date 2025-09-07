@@ -111,5 +111,9 @@ with this text:
         votes(Cosmo) {
             FOR on 9246
         }
+
+        votes(Mischief) {
+            FOR on 9246
+        }
     }
 }
