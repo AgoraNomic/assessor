@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9246() = assessment {
@@ -107,5 +108,8 @@ with this text:
     }
 
     voting {
+        votes(Cosmo) {
+            FOR on 9246
+        }
     }
 }
