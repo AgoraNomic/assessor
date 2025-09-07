@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9246() = assessment {
@@ -114,6 +115,10 @@ with this text:
 
         votes(Mischief) {
             FOR on 9246
+        }
+
+        votes(Janet) {
+            PRESENT on 9246
         }
     }
 }
