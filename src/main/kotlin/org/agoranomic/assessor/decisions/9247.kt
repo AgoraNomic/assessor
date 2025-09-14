@@ -80,5 +80,9 @@ Amend Rule 2667 (Succumbing to Time) to read:
         votes(juan) {
             FOR on 9247
         }
+
+        votes(Cosmo) {
+            FOR on 9247
+        }
     }
 }
