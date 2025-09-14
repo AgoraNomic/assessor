@@ -70,4 +70,7 @@ Amend Rule 2667 (Succumbing to Time) to read:
             )
         }
     }
+
+    voting {
+    }
 }
