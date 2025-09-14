@@ -89,5 +89,9 @@ Amend Rule 2667 (Succumbing to Time) to read:
         votes(Janet) {
             PRESENT on 9247
         }
+
+        votes(Murphy) {
+            FOR on 9247
+        }
     }
 }
