@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9247() = assessment {
@@ -83,6 +84,10 @@ Amend Rule 2667 (Succumbing to Time) to read:
 
         votes(Cosmo) {
             FOR on 9247
+        }
+
+        votes(Janet) {
+            PRESENT on 9247
         }
     }
 }
