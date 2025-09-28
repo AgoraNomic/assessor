@@ -70,4 +70,6 @@ paragraph at the end:
         }
     }
 
+    voting {
+    }
 }
