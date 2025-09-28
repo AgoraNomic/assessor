@@ -75,5 +75,9 @@ paragraph at the end:
         votes(Cosmo) {
             FOR on 9248
         }
+
+        votes(juan) {
+            FOR on 9248
+        }
     }
 }
