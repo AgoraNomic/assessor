@@ -88,5 +88,9 @@ paragraph at the end:
         votes(Janet) {
             PRESENT on 9248
         }
+
+        votes(Murphy) {
+            FOR on 9248
+        }
     }
 }
