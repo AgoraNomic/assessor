@@ -80,4 +80,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
