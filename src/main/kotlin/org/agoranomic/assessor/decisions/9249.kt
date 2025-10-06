@@ -86,5 +86,9 @@ with this text:
         votes(Mischief) {
             endorse(Janet) on 9249 comment "${Janet.name} is the Rulekeepor"
         }
+
+        votes(Cosmo) {
+            endorse(Janet) on 9249 comment "${Janet.name} is the Rulekeepor"
+        }
     }
 }
