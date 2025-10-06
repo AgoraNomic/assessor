@@ -211,14 +211,27 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
             val header = headersById.getValue(id)
             require(titleAiLine == "${header.title} (AI=${header.ai})")
 
-            if (pendingAuthors.containsKey(id)) {
-                val coauthorsLine = nextLine()
+            if (peekLine().startsWith("author:", ignoreCase = true)) {
+                val authorLine = nextLine()
+                val author = (pendingAuthors[id] ?: headers.single { it.id == id }.authors).first()
+                require(authorLine.lowercase().removePrefix("author:").trim().equals(author, ignoreCase = true))
+            }
 
-                val coauthorsParts = coauthorsLine.split(": ")
-                require(coauthorsParts.size == 2)
+            val needsCoauthors = pendingAuthors.containsKey(id)
+
+            if (needsCoauthors || peekLine().startsWith("coauthors", ignoreCase = true)) {
+                val coauthorsLine = nextLine()
+                val coauthorsParts = coauthorsLine.split(":").map { it.trim() }
+
+                require(coauthorsParts.size <= 2)
                 require(coauthorsParts.first().contentEquals("coauthors", ignoreCase = true))
 
-                textAuthors[id] = pendingAuthors.getValue(id) + coauthorsParts[1].split(", ").map { it.trim() }
+                if (needsCoauthors) {
+                    require(coauthorsParts.size == 2)
+                    textAuthors[id] = pendingAuthors.getValue(id) + coauthorsParts[1].split(", ").map { it.trim() }
+                } else {
+                    require(coauthorsParts.size == 1 || coauthorsParts[1].isBlank())
+                }
             }
 
             requireBlanks()
