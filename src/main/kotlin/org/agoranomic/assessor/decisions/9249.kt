@@ -95,5 +95,9 @@ with this text:
         votes(juan) {
             FOR on 9249
         }
+
+        votes(Murphy) {
+            FOR on 9249
+        }
     }
 }
