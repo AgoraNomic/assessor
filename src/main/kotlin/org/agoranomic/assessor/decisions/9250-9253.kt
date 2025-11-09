@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -226,6 +227,13 @@ BETTER or WORSE.
             FOR on 9251
             FOR on 9252
             PRESENT on 9253
+        }
+
+        votes(Mischief) {
+            endorse(Janet) on 9250 comment "${Janet.name} is the Rulekeepor"
+            FOR on 9251
+            FOR on 9252
+            AGAINST on 9253
         }
     }
 }
