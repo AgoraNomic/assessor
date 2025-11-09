@@ -1,3 +1,5 @@
+@file:Suppress("MISSING_DEPENDENCY_SUPERCLASS_IN_TYPE_ARGUMENT")
+
 package org.agoranomic.assessor.decisions
 
 import org.agoranomic.assessor.dsl.assessment
@@ -6,6 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9250to9253() = assessment {
@@ -197,5 +200,11 @@ BETTER or WORSE.
     }
 
     voting {
+        votes(juan) {
+            FOR on 9250
+            FOR on 9251
+            FOR on 9252
+            FOR on 9253
+        }
     }
 }
