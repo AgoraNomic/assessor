@@ -120,7 +120,7 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
     skipBlanks()
 
     val tocHeader = nextLine()
-    require(tocHeader.matches(Regex("ID\\s+Author(?:\\(s\\))?\\s+AI\\s+Title\\s*")))
+    require(tocHeader.matches(Regex("ID\\s+Author(?:\\(s\\))?\\s+AI\\s+Name\\s*")))
     require(nextLine().matches(HEADER_DELIMITER))
 
     val idIndex = tocHeader.indexOf("ID ").also { require(it >= 0) }
@@ -131,7 +131,7 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
     ).single { it >= 0 }
 
     val aiIndex = tocHeader.indexOf("AI ").also { require(it >= 0) }
-    val titleIndex = tocHeader.indexOf("Title").also { require(it >= 0) }
+    val nameIndex = tocHeader.indexOf("Name").also { require(it >= 0) }
 
     val headers = mutableListOf<Header>()
     val pendingAuthors = mutableMapOf<BigInteger, List<String>>()
@@ -143,8 +143,8 @@ private fun parseProposals(lines: List<String>): List<ProposalData> {
 
             val idPart = tocLine.substring(idIndex, authorIndex).trimEnd()
             val authorPart = tocLine.substring(authorIndex, aiIndex).trimEnd()
-            val aiPart = tocLine.substring(aiIndex, titleIndex).trimEnd()
-            val titlePart = tocLine.substring(titleIndex).trimEnd()
+            val aiPart = tocLine.substring(aiIndex, nameIndex).trimEnd()
+            val titlePart = tocLine.substring(nameIndex).trimEnd()
 
             val (id, proposalClass) = if (idPart.endsWith("*")) {
                 idPart.dropLast(1).toBigInteger() to ProposalClass.DEMOCRATIC
