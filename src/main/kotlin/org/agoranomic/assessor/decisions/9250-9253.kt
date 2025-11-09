@@ -206,5 +206,12 @@ BETTER or WORSE.
             FOR on 9252
             FOR on 9253
         }
+
+        votes(Automaticat) {
+            FOR on 9250
+            FOR on 9251
+            FOR on 9252
+            FOR on 9253
+        }
     }
 }
