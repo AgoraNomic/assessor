@@ -242,5 +242,12 @@ BETTER or WORSE.
             FOR on 9252
             AGAINST on 9253
         }
+
+        votes(Forest) {
+            // NO VOTE on 9250
+            FOR on 9251
+            // NO VOTE on 9252
+            FOR on 9253
+        }
     }
 }
