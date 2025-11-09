@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9250to9253() = assessment {
@@ -220,6 +219,13 @@ BETTER or WORSE.
             FOR on 9251
             FOR on 9252
             AGAINST on 9253
+        }
+
+        votes(Cosmo) {
+            FOR on 9250
+            FOR on 9251
+            FOR on 9252
+            PRESENT on 9253
         }
     }
 }
