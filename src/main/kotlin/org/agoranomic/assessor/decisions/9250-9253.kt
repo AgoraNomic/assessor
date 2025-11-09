@@ -249,5 +249,12 @@ BETTER or WORSE.
             // NO VOTE on 9252
             FOR on 9253
         }
+
+        votes(Trigon) {
+            PRESENT on 9250
+            FOR on 9251
+            FOR on 9252
+            AGAINST on 9253
+        }
     }
 }
