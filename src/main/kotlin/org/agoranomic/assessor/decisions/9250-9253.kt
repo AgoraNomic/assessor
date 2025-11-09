@@ -235,5 +235,12 @@ BETTER or WORSE.
             FOR on 9252
             AGAINST on 9253
         }
+
+        votes(kiako) {
+            endorse(author) on 9250
+            FOR on 9251
+            FOR on 9252
+            AGAINST on 9253
+        }
     }
 }
