@@ -199,5 +199,12 @@ prevent timing scams.]
             PRESENT on 9259
             PRESENT on 9260
         }
+
+        votes(ais523) {
+            AGAINST on 9257
+            FOR on 9258
+            FOR on 9259
+            PRESENT on 9260
+        }
     }
 }
