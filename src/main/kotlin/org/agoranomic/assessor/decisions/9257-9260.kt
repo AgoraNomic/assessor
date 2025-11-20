@@ -155,4 +155,7 @@ prevent timing scams.]
             )
         }
     }
+
+    voting {
+    }
 }
