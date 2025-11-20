@@ -178,5 +178,12 @@ prevent timing scams.]
             // NO VOTE on 9259
             // NO VOTE on 9260
         }
+
+        votes(Janet) {
+            AGAINST on 9257
+            FOR on 9258
+            FOR on 9259
+            FOR on 9260
+        }
     }
 }
