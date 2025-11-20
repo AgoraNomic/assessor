@@ -206,5 +206,12 @@ prevent timing scams.]
             FOR on 9259
             PRESENT on 9260
         }
+
+        votes(kambri) {
+            PRESENT on 9257
+            FOR on 9258
+            FOR on 9259
+            PRESENT on 9260
+        }
     }
 }
