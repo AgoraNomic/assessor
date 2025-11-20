@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9257to9260() = assessment {
@@ -157,5 +158,11 @@ prevent timing scams.]
     }
 
     voting {
+        votes(juan) {
+            FOR on 9257
+            PRESENT on 9258
+            AGAINST on 9259
+            AGAINST on 9260
+        }
     }
 }
