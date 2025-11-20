@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9254to9256() = assessment {
@@ -175,5 +177,10 @@ Amend Rule 2465 (Victory by Apathy) by appending this text:
     }
 
     voting {
+        votes(juan) {
+            FOR on 9254
+            FOR on 9255
+            AGAINST on 9256
+        }
     }
 }
