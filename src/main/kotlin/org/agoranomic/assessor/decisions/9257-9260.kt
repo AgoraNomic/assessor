@@ -185,5 +185,12 @@ prevent timing scams.]
             FOR on 9259
             FOR on 9260
         }
+
+        votes(Mischief) {
+            AGAINST on 9257
+            FOR on 9258
+            AGAINST on 9259
+            AGAINST on 9260
+        }
     }
 }
