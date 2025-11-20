@@ -173,4 +173,7 @@ Amend Rule 2465 (Victory by Apathy) by appending this text:
             )
         }
     }
+
+    voting {
+    }
 }
