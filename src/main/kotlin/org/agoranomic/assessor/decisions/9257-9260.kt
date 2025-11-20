@@ -164,5 +164,12 @@ prevent timing scams.]
             AGAINST on 9259
             AGAINST on 9260
         }
+
+        votes(Cosmo) {
+            FOR on 9257
+            FOR on 9258
+            PRESENT on 9259
+            PRESENT on 9260
+        }
     }
 }
