@@ -182,5 +182,11 @@ Amend Rule 2465 (Victory by Apathy) by appending this text:
             FOR on 9255
             AGAINST on 9256
         }
+
+        votes(Cosmo) {
+            FOR on 9254
+            FOR on 9255
+            AGAINST on 9256
+        }
     }
 }
