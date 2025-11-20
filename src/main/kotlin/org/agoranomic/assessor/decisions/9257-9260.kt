@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -219,6 +220,13 @@ prevent timing scams.]
             PRESENT on 9258
             PRESENT on 9259
             PRESENT on 9260
+        }
+
+        votes(kiako) {
+            AGAINST on 9257
+            FOR on 9258
+            FOR on 9259
+            endorse(Janet) on 9260
         }
     }
 }
