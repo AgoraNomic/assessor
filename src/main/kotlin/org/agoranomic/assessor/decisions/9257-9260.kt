@@ -228,5 +228,12 @@ prevent timing scams.]
             FOR on 9259
             endorse(Janet) on 9260
         }
+
+        votes(Murphy) {
+            PRESENT on 9257
+            PRESENT on 9258
+            FOR on 9259
+            AGAINST on 9260
+        }
     }
 }
