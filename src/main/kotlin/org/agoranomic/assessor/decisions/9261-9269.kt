@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
@@ -390,6 +391,18 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             AGAINST on 9267
             AGAINST on 9268
             AGAINST on 9269
+        }
+
+        votes(Mischief) {
+            FOR on 9261
+            PRESENT on 9262
+            AGAINST on 9263
+            endorse(Janet) on 9264 comment "${Janet.name} is the Rulekeepor"
+            endorse(Janet) on 9265 comment "${Janet.name} is the Rulekeepor"
+            FOR on 9266
+            PRESENT on 9267
+            AGAINST on 9267
+            endorse(Janet) on 9269 comment "${Janet.name} is the Assessor"
         }
     }
 }
