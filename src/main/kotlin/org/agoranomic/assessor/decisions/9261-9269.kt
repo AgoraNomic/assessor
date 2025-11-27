@@ -319,5 +319,17 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             PRESENT on 9268
             FOR on 9269
         }
+
+        votes(Forest) {
+            FOR on 9261
+            FOR on 9262
+            FOR on 9263
+            FOR on 9264
+            FOR on 9265
+            FOR on 9266
+            FOR on 9267
+            FOR on 9268
+            FOR on 9269
+        }
     }
 }
