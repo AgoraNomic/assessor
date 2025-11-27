@@ -379,5 +379,17 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             AGAINST on 9268
             AGAINST on 9269
         }
+
+        votes(Janet) {
+            FOR on 9261
+            FOR on 9262
+            AGAINST on 9263
+            AGAINST on 9264
+            FOR on 9265
+            FOR on 9266
+            FOR on 9267
+            AGAINST on 9268
+            AGAINST on 9269
+        }
     }
 }
