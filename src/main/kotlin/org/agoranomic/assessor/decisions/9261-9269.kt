@@ -356,5 +356,16 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             AGAINST on 9268
             FOR on 9269
         }
+
+        votes(Aris) {
+            FOR on 9261
+            PRESENT on 9262
+            FOR on 9263
+            FOR on 9264
+            PRESENT on 9265
+            FOR on 9266
+            PRESENT on 9267
+            AGAINST on 9268
+        }
     }
 }
