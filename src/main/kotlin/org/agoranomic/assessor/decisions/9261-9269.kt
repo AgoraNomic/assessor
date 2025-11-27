@@ -331,5 +331,17 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             FOR on 9268
             FOR on 9269
         }
+
+        votes(juan) {
+            PRESENT on 9261
+            AGAINST on 9262
+            FOR on 9263
+            PRESENT on 9264
+            PRESENT on 9265
+            PRESENT on 9266
+            AGAINST on 9267
+            PRESENT on 9268
+            PRESENT on 9269
+        }
     }
 }
