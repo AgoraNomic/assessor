@@ -305,4 +305,7 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             )
         }
     }
+
+    voting {
+    }
 }
