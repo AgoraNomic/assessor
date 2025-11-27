@@ -367,5 +367,17 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             PRESENT on 9267
             AGAINST on 9268
         }
+
+        votes(Trigon) {
+            PRESENT on 9261
+            PRESENT on 9262
+            AGAINST on 9263
+            FOR on 9264
+            PRESENT on 9265
+            PRESENT on 9266
+            AGAINST on 9267
+            AGAINST on 9268
+            AGAINST on 9269
+        }
     }
 }
