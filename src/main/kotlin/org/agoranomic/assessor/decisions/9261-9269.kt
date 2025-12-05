@@ -402,7 +402,7 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             endorse(Janet) on 9265 comment "${Janet.name} is the Rulekeepor"
             FOR on 9266
             PRESENT on 9267
-            AGAINST on 9267
+            AGAINST on 9268
             endorse(Janet) on 9269 comment "${Janet.name} is the Assessor"
         }
 
