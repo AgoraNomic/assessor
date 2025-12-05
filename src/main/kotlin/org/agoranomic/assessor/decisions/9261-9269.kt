@@ -367,6 +367,7 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             FOR on 9266
             PRESENT on 9267
             AGAINST on 9268
+            PRESENT on 9269
         }
 
         votes(Trigon) {
