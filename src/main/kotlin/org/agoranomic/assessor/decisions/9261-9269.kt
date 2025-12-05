@@ -405,5 +405,17 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
             AGAINST on 9267
             endorse(Janet) on 9269 comment "${Janet.name} is the Assessor"
         }
+
+        votes(kiako) {
+            PRESENT on 9261
+            FOR on 9262
+            PRESENT on 9263
+            PRESENT on 9264
+            endorse(Janet) on 9265
+            PRESENT on 9266
+            PRESENT on 9267
+            PRESENT on 9268
+            endorse(Janet) on 9269
+        }
     }
 }
