@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -321,15 +322,15 @@ is created, its text, author, coauthors, and AI cannot be changed.""""
         }
 
         votes(Forest) {
-            FOR on 9261
-            FOR on 9262
-            FOR on 9263
-            FOR on 9264
-            FOR on 9265
-            FOR on 9266
-            FOR on 9267
-            FOR on 9268
-            FOR on 9269
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9261
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9262
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9263
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9264
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9265
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9266
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9267
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9268
+            resolvedConditional(AGAINST, "This referendum has not yet been resolved") on 9269
         }
 
         votes(juan) {
