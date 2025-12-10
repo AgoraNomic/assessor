@@ -287,5 +287,10 @@ manner, grant up to three other players a Yellow Ribbon."""
             PRESENT on 9273
             FOR on 9274
         }
+
+        votes(Mischief) {
+            AGAINST on 9270
+            // No other votes
+        }
     }
 }
