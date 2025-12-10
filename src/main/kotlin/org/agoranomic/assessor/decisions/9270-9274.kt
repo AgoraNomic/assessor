@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -269,7 +270,11 @@ manner, grant up to three other players a Yellow Ribbon."""
             FOR on 9271
             FOR on 9272
             FOR on 9273
-            // AGAINST of two or more of {Janet, Murphy, Aris, qenya} vote other than conditionally FOR, else PRESENT
+
+            resolvedConditional(
+                PRESENT,
+                "Two or more of Janet, Murphy, Aris, and qenya did not cast a vote other than unconditional FOR on this decision"
+            ) on 9274
         }
 
         votes(juan) {
