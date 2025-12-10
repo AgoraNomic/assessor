@@ -279,5 +279,13 @@ manner, grant up to three other players a Yellow Ribbon."""
             AGAINST on 9273
             PRESENT on 9274
         }
+
+        votes(Murphy) {
+            FOR on 9270
+            FOR on 9271
+            FOR on 9272
+            PRESENT on 9273
+            FOR on 9274
+        }
     }
 }
