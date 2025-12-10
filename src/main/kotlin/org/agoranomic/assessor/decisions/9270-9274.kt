@@ -292,5 +292,13 @@ manner, grant up to three other players a Yellow Ribbon."""
             AGAINST on 9270
             // No other votes
         }
+
+        votes(Janet) {
+            AGAINST on 9270
+            FOR on 9271
+            FOR on 9272
+            FOR on 9273
+            AGAINST on 9274
+        }
     }
 }
