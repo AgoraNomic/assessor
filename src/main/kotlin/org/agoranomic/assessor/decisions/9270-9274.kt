@@ -308,5 +308,13 @@ manner, grant up to three other players a Yellow Ribbon."""
             FOR on 9273
             AGAINST on 9274
         }
+
+        votes(Trigon) {
+            FOR on 9270
+            PRESENT on 9271
+            FOR on 9272
+            PRESENT on 9273
+            AGAINST on 9274
+        }
     }
 }
