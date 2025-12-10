@@ -253,4 +253,7 @@ manner, grant up to three other players a Yellow Ribbon."""
             )
         }
     }
+
+    voting {
+    }
 }
