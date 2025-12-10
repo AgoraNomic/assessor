@@ -6,7 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9270to9274() = assessment {
@@ -270,6 +270,14 @@ manner, grant up to three other players a Yellow Ribbon."""
             FOR on 9272
             FOR on 9273
             // AGAINST of two or more of {Janet, Murphy, Aris, qenya} vote other than conditionally FOR, else PRESENT
+        }
+
+        votes(juan) {
+            FOR on 9270
+            PRESENT on 9271
+            PRESENT on 9272
+            AGAINST on 9273
+            PRESENT on 9274
         }
     }
 }
