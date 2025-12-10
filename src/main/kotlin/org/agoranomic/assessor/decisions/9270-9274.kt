@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9270to9274() = assessment {
@@ -255,5 +256,12 @@ manner, grant up to three other players a Yellow Ribbon."""
     }
 
     voting {
+        votes(Cosmo) {
+            FOR on 9270
+            FOR on 9271
+            FOR on 9272
+            FOR on 9273
+            FOR on 9274
+        }
     }
 }
