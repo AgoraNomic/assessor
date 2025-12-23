@@ -76,5 +76,9 @@ requires thought and potentially a judicial process.]"""
         votes(Mischief) {
             FOR on 9275
         }
+
+        votes(juan) {
+            FOR on 9275
+        }
     }
 }
