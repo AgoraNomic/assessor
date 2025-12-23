@@ -1,0 +1,85 @@
+PROPOSAL 9270 (The Number Cards Game)
+AUTHOR: ais523
+CLASS: ORDINARY
+FOR (6): Cosmo^, Murphy^, Trigon, ais523%, juan%, snail%
+AGAINST (2): Janet^, Mischief^
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 30/12 (AI=2.0)
+POPULARITY: 0.500
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-December/018871.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-December/055011.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-December/055012.html
+
+ID: 9270
+Title: The Number Cards Game
+Adoption index: 2.0
+Author: ais523
+Co-authors: 
+
+
+In rule 991, after
+{{{
+When an open CFJ's judge is unassigned, the Arbitor CAN assign any
+eligible player to be its judge by announcement, and SHALL do so
+in a timely fashion after it becomes an open and unassigned CFJ.
+}}},
+add
+{{{
+In the same message in which e does so, e SHALL also (and CAN by
+announcement or by clear specification) assign it an ID number, unless
+it already has one.
+}}}
+
+Create a new power-1 rule, "Number Cards":
+{{{
+Number cards are a type of asset. Ownership of number cards is
+restricted to players and contracts. Each number card has a type, which
+is a decimal digit in the range 0 to 9 inclusive. Number cards with the
+same type are fungible.
+
+The Numerator is an office, and the recordkeepor of number cards.
+}}}
+
+Create a new power-1 rule, "Scoring Numbers":
+{{{
+Whenever an inquiry case with an ID number is assigned a judgement, if
+it had never previously been assigned a judgement, its judge scores its
+ID number, unless its initiator had initiated 4 or more other CFJs
+earlier in the same week that it was initiated.
+
+Whenever a distributed proposal is adopted, its author scores its ID
+number, unless its author had submitted 8 or more proposals earlier in
+the same week that it was submitted.
+
+Whenever a player scores a number as described in this rule, the
+Numerator CAN once, and SHALL in a timely manner, grant its author
+(and, if the number was scored due to the adoption of a proposal, also
+a randomly chosen other player who voted FOR on a referendum to adopt
+that proposal) a number card for each digit in that number, whose type
+is that digit.
+
+Officers SHALL NOT assign ID numbers to distributed proposals or CFJs
+that are out of sequence, but are given reasonable discretion to
+determine what "in sequence" means (e.g. officers may choose whether to
+include or exclude in the numbering sequence entities whose proposal or
+CFJ status is disputed or unclear). ID numbers that are more than 5
+digits long cannot be scored (this is an exception to the other
+paragraphs of this rule and takes precedence over them).
+}}}
+
+Create a new power-1 rule, "Spending Number Cards":
+{{{
+A player CAN, once per week, pay ten number cards, where each of those
+number cards is of a different type, to gain 25 radiance.
+
+For any two decimal digits X and Y (which may be the same), a player
+CAN pay 2 spendies, a number card of type X, and a number card of type
+Y to grant emself a number card whose type is the last digit of the sum
+X+Y.
+}}}
+
+[Trigon said via IRC/Discord: "ais523: if you draft your idea, you have
+my express permission to install me to the office by proposal."]
+
+Flip the Officeholder of the Numerator office to Trigon.

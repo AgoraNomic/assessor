@@ -1,0 +1,48 @@
+PROPOSAL 9273 (The Weather Forecast)
+AUTHOR: ais523
+CLASS: ORDINARY
+FOR (4): Cosmo^, Janet^, ais523%, snail%
+AGAINST (1): juan%
+PRESENT (2): Murphy^, Trigon
+BALLOTS: 7
+AI (F/A): 22/5 (AI=1.0)
+POPULARITY: 0.429
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-December/018871.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-December/055011.html and https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2025-December/055012.html
+
+ID: 9273
+Title: The Weather Forecast
+Adoption index: 1.0
+Author: ais523
+Co-authors: Janet
+
+
+In rule 2709, before the last paragraph, add a new paragraph:
+{{{
+Once each week, the Land Managor SHALL randomly select and announce the
+Weather for that week, which is either Good, Neutral, or Bad (each of
+which has an equal probability). At the end of each week in which Bad
+Weather was selected this way, all unharvested Crops are lost.
+}}}
+and amend the paragraph starting "Once per Crop" to read as follows:
+{{{
+Once per Crop that a player planted earlier in the current Crop
+Season and at least <Growth Duration> days ago, e CAN harvest it
+by announcement, gaining Pyrite equal to its Sell Price (exception: if
+the Weather for the week e planted it had already been selected at the
+time e planted it, e CANNOT harvest it before the end of the week after
+the week e planted it).
+}}}
+
+[This is intended to reduce the potential for exponential growth in the
+farming subgame by introducing a chance that planting crops will fail:
+repeatedly investing everything means that eventually everything will
+be destroyed by bad weather, so a prudent farmer will keep some
+proportion of eir Pyrite back. It still probably grows exponentially,
+but at least the strategy is more interesting.
+
+This could potentially be expanded by listing out types of weather with
+varying probabilities per season and having different crops respond to
+different types of weather in different ways, but I didn't want to make
+it unnecessarily complex.]
