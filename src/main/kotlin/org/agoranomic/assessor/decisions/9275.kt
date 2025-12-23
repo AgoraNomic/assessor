@@ -80,5 +80,9 @@ requires thought and potentially a judicial process.]"""
         votes(juan) {
             FOR on 9275
         }
+
+        votes(Janet) {
+            FOR on 9275
+        }
     }
 }
