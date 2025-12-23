@@ -65,4 +65,7 @@ requires thought and potentially a judicial process.]"""
             )
         }
     }
+
+    voting {
+    }
 }
