@@ -80,5 +80,9 @@ the rule eventually ends up being given.]"""
         votes(Cosmo) {
             FOR on 9276
         }
+
+        votes(ais523) {
+            FOR on 9276
+        }
     }
 }
