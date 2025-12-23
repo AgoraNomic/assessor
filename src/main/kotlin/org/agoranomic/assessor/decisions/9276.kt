@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9276() = assessment {
@@ -83,6 +84,10 @@ the rule eventually ends up being given.]"""
 
         votes(ais523) {
             FOR on 9276
+        }
+
+        votes(Murphy) {
+            PRESENT on 9276
         }
     }
 }
