@@ -3,6 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
+import org.agoranomic.assessor.dsl.receivers.url
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
@@ -11,6 +12,7 @@ import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 @UseAssessment
 fun assessment9275() = assessment {
     name("9275")
+    url("https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2025-December/018897.html")
     quorum(7)
 
     strengths {
