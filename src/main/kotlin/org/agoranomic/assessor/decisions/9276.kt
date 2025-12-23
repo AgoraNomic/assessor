@@ -89,5 +89,9 @@ the rule eventually ends up being given.]"""
         votes(Murphy) {
             PRESENT on 9276
         }
+
+        votes(Janet) {
+            FOR on 9276
+        }
     }
 }
