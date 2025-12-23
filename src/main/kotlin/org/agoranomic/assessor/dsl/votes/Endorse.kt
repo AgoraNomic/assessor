@@ -129,3 +129,6 @@ private data class EndorseOrElseResolvingVote(val endorsee: Person, val default:
 
 fun endorseOrElse(endorsee: Person, default: VoteKind): ResolvingVote =
     EndorseOrElseResolvingVote(endorsee = endorsee, default = default)
+
+fun endorseOfficer(office: String, holder: Person): ResolvingVote =
+    endorse(holder).commented("${holder.name} is the $office")
