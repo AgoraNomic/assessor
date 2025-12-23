@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9275() = assessment {
@@ -70,6 +71,10 @@ requires thought and potentially a judicial process.]"""
     voting {
         votes(Cosmo) {
             endorseOfficer("Rulekeepor", Janet) on 9275
+        }
+
+        votes(Mischief) {
+            FOR on 9275
         }
     }
 }
