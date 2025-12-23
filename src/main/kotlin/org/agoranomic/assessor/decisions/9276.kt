@@ -93,5 +93,9 @@ the rule eventually ends up being given.]"""
         votes(Janet) {
             FOR on 9276
         }
+
+        votes(Trigon) {
+            FOR on 9276
+        }
     }
 }
