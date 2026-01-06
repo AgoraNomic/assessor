@@ -121,4 +121,7 @@ was discharged at the time of eir original appointment.]"""
             )
         }
     }
+
+    voting {
+    }
 }
