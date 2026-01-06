@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9277to9279() = assessment {
@@ -129,6 +128,12 @@ was discharged at the time of eir original appointment.]"""
             AGAINST on 9277
             AGAINST on 9278
             FOR on 9279
+        }
+
+        votes(juan) {
+            PRESENT on 9277
+            PRESENT on 9278
+            PRESENT on 9279
         }
     }
 }
