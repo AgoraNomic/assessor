@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -134,6 +135,12 @@ was discharged at the time of eir original appointment.]"""
             PRESENT on 9277
             PRESENT on 9278
             PRESENT on 9279
+        }
+
+        votes(Forest) {
+            endorseOfficer("Tailor", Murphy) on 9277
+            endorseOfficer("Tailor", Murphy) on 9278
+            endorseOfficer("Tailor", Murphy) on 9279
         }
     }
 }
