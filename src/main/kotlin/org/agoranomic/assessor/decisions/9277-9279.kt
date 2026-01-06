@@ -142,5 +142,11 @@ was discharged at the time of eir original appointment.]"""
             endorseOfficer("Tailor", Murphy) on 9278
             endorseOfficer("Tailor", Murphy) on 9279
         }
+
+        votes(Mischief) {
+            AGAINST on 9277
+            AGAINST on 9278
+            AGAINST on 9279
+        }
     }
 }
