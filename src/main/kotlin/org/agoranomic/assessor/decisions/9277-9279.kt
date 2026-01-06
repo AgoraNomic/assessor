@@ -159,5 +159,11 @@ was discharged at the time of eir original appointment.]"""
         votes(Trigon) {
             AGAINST on all
         }
+
+        votes(Cosmo) {
+            PRESENT on 9277
+            PRESENT on 9278
+            PRESENT on 9279
+        }
     }
 }
