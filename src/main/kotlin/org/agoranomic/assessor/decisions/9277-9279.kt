@@ -155,5 +155,9 @@ was discharged at the time of eir original appointment.]"""
             AGAINST on 9278
             endorse(Mischief) on 9279
         }
+
+        votes(Trigon) {
+            AGAINST on all
+        }
     }
 }
