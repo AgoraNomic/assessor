@@ -159,4 +159,7 @@ Amend Rule 2710 (Genetic Modification) to read:
             )
         }
     }
+
+    voting {
+    }
 }
