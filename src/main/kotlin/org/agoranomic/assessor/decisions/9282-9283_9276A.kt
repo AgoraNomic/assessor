@@ -163,5 +163,11 @@ stamps) yet another stamp of eir type.]"""
             endorseOfficer("Rulekeepor", Janet) on 9282
             FOR on 9283
         }
+
+        votes(Murphy) {
+            FOR on 9276
+            FOR on 9282
+            endorseOfficer("Collector", Mischief) on 9283
+        }
     }
 }
