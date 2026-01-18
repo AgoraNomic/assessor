@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -183,6 +184,12 @@ Amend Rule 2710 (Genetic Modification) to read:
             FOR on 9275
             PRESENT on 9280
             AGAINST on 9281
+        }
+
+        votes(Mischief) {
+            FOR on 9275
+            endorseOfficer("Rulekeepor", Janet) on 9280
+            endorseOfficer("Rulekeepor", Janet) on 9281
         }
     }
 }
