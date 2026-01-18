@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9280to9281_9275A() = assessment {
@@ -178,6 +177,12 @@ Amend Rule 2710 (Genetic Modification) to read:
             AGAINST on 9275
             endorse(Murphy) on 9280
             endorse(Murphy) on 9281
+        }
+
+        votes(juan) {
+            FOR on 9275
+            PRESENT on 9280
+            AGAINST on 9281
         }
     }
 }
