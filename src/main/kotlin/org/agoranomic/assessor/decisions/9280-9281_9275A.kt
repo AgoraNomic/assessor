@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -171,6 +172,12 @@ Amend Rule 2710 (Genetic Modification) to read:
             FOR on 9275
             AGAINST on 9280
             AGAINST on 9281
+        }
+
+        votes(Forest) {
+            AGAINST on 9275
+            endorse(Murphy) on 9280
+            endorse(Murphy) on 9281
         }
     }
 }
