@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -142,6 +143,12 @@ stamps) yet another stamp of eir type.]"""
             FOR on 9276
             PRESENT on 9282
             AGAINST on 9283
+        }
+
+        votes(Janet) {
+            FOR on 9276
+            endorse(ais523) on 9282
+            FOR on 9283
         }
     }
 }
