@@ -191,5 +191,11 @@ Amend Rule 2710 (Genetic Modification) to read:
             endorseOfficer("Rulekeepor", Janet) on 9280
             endorseOfficer("Rulekeepor", Janet) on 9281
         }
+
+        votes(kambri) {
+            FOR on 9275
+            FOR on 9280
+            FOR on 9281
+        }
     }
 }
