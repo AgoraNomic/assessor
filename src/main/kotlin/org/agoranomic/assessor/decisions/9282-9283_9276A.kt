@@ -6,7 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9282to9283_9276A() = assessment {
@@ -136,6 +136,12 @@ stamps) yet another stamp of eir type.]"""
     voting {
         votes(Cosmo) {
             FOR on all
+        }
+
+        votes(Trigon) {
+            FOR on 9276
+            PRESENT on 9282
+            AGAINST on 9283
         }
     }
 }
