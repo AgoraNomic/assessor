@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9280to9281_9275A() = assessment {
@@ -161,5 +162,8 @@ Amend Rule 2710 (Genetic Modification) to read:
     }
 
     voting {
+        votes(Cosmo) {
+            FOR on all
+        }
     }
 }
