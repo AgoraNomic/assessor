@@ -150,5 +150,11 @@ stamps) yet another stamp of eir type.]"""
             endorse(ais523) on 9282
             FOR on 9283
         }
+
+        votes(ais523) {
+            FOR on 9276
+            FOR on 9282
+            PRESENT on 9283
+        }
     }
 }
