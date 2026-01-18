@@ -197,5 +197,11 @@ Amend Rule 2710 (Genetic Modification) to read:
             FOR on 9280
             FOR on 9281
         }
+
+        votes(ais523) {
+            FOR on 9275
+            AGAINST on 9280
+            PRESENT on 9281
+        }
     }
 }
