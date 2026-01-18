@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -155,6 +156,12 @@ stamps) yet another stamp of eir type.]"""
             FOR on 9276
             FOR on 9282
             PRESENT on 9283
+        }
+
+        votes(Mischief) {
+            PRESENT on 9276
+            endorseOfficer("Rulekeepor", Janet) on 9282
+            FOR on 9283
         }
     }
 }
