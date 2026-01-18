@@ -131,4 +131,7 @@ stamps) yet another stamp of eir type.]"""
             )
         }
     }
+
+    voting {
+    }
 }
