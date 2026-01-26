@@ -1,0 +1,46 @@
+PROPOSAL 9280 (Rounded integer switches)
+AUTHOR: Murphy
+CLASS: DEMOCRATIC
+FOR (4): 4st, Cosmo, Murphy, kambri
+AGAINST (3): Janet, Mischief, ais523
+PRESENT (1): juan
+BALLOTS: 8
+AI (F/A): 12/9 (AI=3.0)
+POPULARITY: 0.125
+OUTCOME: REJECTED
+[
+4st: Endorsement of Murphy
+Mischief: Janet is the Rulekeepor: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-January/018945.html
+
+ID: 9280
+Title: Rounded integer switches
+Adoption index: 3.0
+Author: Murphy
+Co-authors: 4st
+
+
+Amend Rule 2162 (Switches) by replacing this text:
+
+       If an instance of a switch would otherwise fail to have a possible
+       value, it comes to have its default value.
+
+with this text:
+
+       If an instance of a switch would otherwise fail to have a possible
+       value, and no other method defined by this rule or its backing
+       document would assign it a possible value, then it comes to have
+       its default value.
+
+and by inserting this paragraph after the
+paragraph starting with "A boolean switch":
+
+       A rounded switch is a switch defined as such by its backing
+       document. Each type of rounded switch has a granularity (a real
+       number, equal to 1 unless otherwise specified by its backing
+       document). If an instance of a rounded switch would otherwise
+       have a real but impossible value (V), then it comes to have a
+       value of the multiple of its granularity closest to V (breaking
+       ties toward zero, unless its backing document says otherwise).
