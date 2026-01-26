@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -149,6 +150,12 @@ with this text:
 
         votes(Trigon) {
             PRESENT on all
+        }
+
+        votes(Mischief) {
+            endorseOfficer("Land Managor", Murphy) on 9284
+            AGAINST on 9285
+            endorseOfficer("Land Managor", Murphy) on 9286
         }
     }
 }
