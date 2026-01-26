@@ -163,5 +163,11 @@ with this text:
             AGAINST on 9285
             PRESENT on 9286
         }
+
+        votes(Janet) {
+            PRESENT on 9284
+            AGAINST on 9285
+            AGAINST on 9286
+        }
     }
 }
