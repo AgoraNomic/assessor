@@ -141,5 +141,11 @@ with this text:
             AGAINST on 9285
             FOR on 9286
         }
+
+        votes(juan) {
+            FOR on 9284
+            AGAINST on 9285
+            FOR on 9286
+        }
     }
 }
