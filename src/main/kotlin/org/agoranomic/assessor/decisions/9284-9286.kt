@@ -49,6 +49,9 @@ fun assessment9284to9286() = assessment {
     }
 
     proposals(v4) {
+        // Never distributed because the text was incorrectly specified. (The quotation marks on the last line have been
+        // changed to other characters.)
+        /*
         proposal(9284) {
             title("Protecting Farmer's Sovereignty")
             ai("1.0")
@@ -69,6 +72,7 @@ In the paragraph of Rule 2710 that reads
 replace the number ô1000ö with ô10000ö:"""
             )
         }
+         */
 
         proposal(9285) {
             title("Push to 1000")
@@ -137,13 +141,13 @@ with this text:
 
     voting {
         votes(Cosmo) {
-            FOR on 9284
+            // FOR on 9284
             AGAINST on 9285
             FOR on 9286
         }
 
         votes(juan) {
-            FOR on 9284
+            // FOR on 9284
             AGAINST on 9285
             FOR on 9286
         }
@@ -153,25 +157,25 @@ with this text:
         }
 
         votes(Mischief) {
-            endorseOfficer("Land Managor", Murphy) on 9284
+            // endorseOfficer("Land Managor", Murphy) on 9284
             AGAINST on 9285
             endorseOfficer("Land Managor", Murphy) on 9286
         }
 
         votes(ais523) {
-            FOR on 9284
+            // FOR on 9284
             AGAINST on 9285
             PRESENT on 9286
         }
 
         votes(Janet) {
-            PRESENT on 9284
+            // PRESENT on 9284
             AGAINST on 9285
             AGAINST on 9286
         }
 
         votes(Murphy) {
-            PRESENT on 9284
+            // PRESENT on 9284
             PRESENT on 9285
             FOR on 9286
         }
