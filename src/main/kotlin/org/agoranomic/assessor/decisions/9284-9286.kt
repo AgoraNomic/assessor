@@ -169,5 +169,11 @@ with this text:
             AGAINST on 9285
             AGAINST on 9286
         }
+
+        votes(Murphy) {
+            PRESENT on 9284
+            PRESENT on 9285
+            FOR on 9286
+        }
     }
 }
