@@ -157,5 +157,11 @@ with this text:
             AGAINST on 9285
             endorseOfficer("Land Managor", Murphy) on 9286
         }
+
+        votes(ais523) {
+            FOR on 9284
+            AGAINST on 9285
+            PRESENT on 9286
+        }
     }
 }
