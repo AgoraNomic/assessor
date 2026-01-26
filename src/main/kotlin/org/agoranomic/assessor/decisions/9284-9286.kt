@@ -132,4 +132,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
