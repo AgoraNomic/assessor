@@ -1,0 +1,54 @@
+PROPOSAL 9285 (Push to 1000)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (0): 
+AGAINST (5): Cosmo^, Janet^, Mischief^, ais523%, juan%
+PRESENT (2): Murphy^, Trigon$
+BALLOTS: 7
+AI (F/A): 0/28 (AI=1.0)
+POPULARITY: -0.714
+OUTCOME: REJECTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-January/018966.html
+
+ID: 9285
+Title: Push to 1000
+Adoption index: 1.0
+Author: Murphy
+Co-authors: 
+
+
+Amend Rule 2683 (The Boulder) by replacing this text:
+
+       The Boulder's Slope is a singleton integer switch defaulting to 1,
+       tracked by the Absurdor.
+
+       Each player CAN, once a week, by announcement, push the boulder.
+       When a player pushes the Boulder, its Height is increased by 1.
+       At the beginning of each week, if the boulder was pushed in the
+       previous week at least as many times as the Boulder's Slope, then
+       the Boulder's Slope is increased by 1; otherwise, the Boulder's
+       Height is set to 0, and the Boulder's Slope is set to 1. The
+       Absurdor SHOULD list the largest Height and Slope of the Boulder
+       ever reached in eir report.
+
+with this text:
+
+       Each player CAN, by announcement, push the Boulder, unless e was
+       the most recent player to do so. When a player pushes the Boulder,
+       if e correctly and unambiguously specified its previous Height,
+       then its Height is increased by 1; otherwise, its Height is set to
+       0. At the beginning of each week, if the Boulder was not pushed in
+       the previous week, then its Height is set to 0. The Absurdor
+       SHOULD list the largest Height of the Boulder ever reached in eir
+       report.
+
+       Upon a correct announcement that the Boulder's Height is at least
+       1000, each player who pushed it at least once since its Height was
+       last 0 Reaches the Summit, then its Height is set to 0. When a
+       player Reaches the Summit, e wins the game.
+
+[Inspired by a Discord bot on another server that implements the same
+  challenge. I've been watching it for a couple months now; it's failed
+  in the 300-600 range about three times, one of which was my fault due
+  to not scrolling down properly.]
