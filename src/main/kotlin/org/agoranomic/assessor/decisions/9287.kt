@@ -115,5 +115,9 @@ with this text:
         votes(Janet) {
             AGAINST on 9287
         }
+
+        votes(ais523) {
+            AGAINST on 9287
+        }
     }
 }
