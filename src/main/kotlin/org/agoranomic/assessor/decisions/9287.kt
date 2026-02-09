@@ -95,4 +95,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
