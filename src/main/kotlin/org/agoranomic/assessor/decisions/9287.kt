@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -109,6 +110,10 @@ with this text:
 
         votes(Murphy) {
             endorseOfficer("Absurdor", juan) on 9287
+        }
+
+        votes(Janet) {
+            AGAINST on 9287
         }
     }
 }
