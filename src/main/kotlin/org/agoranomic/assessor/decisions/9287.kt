@@ -124,5 +124,9 @@ with this text:
         votes(Forest) {
             endorse(nix) on 9287
         }
+
+        votes(Mischief) {
+            endorse(ais523) on 9287
+        }
     }
 }
