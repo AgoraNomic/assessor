@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
@@ -118,6 +119,10 @@ with this text:
 
         votes(ais523) {
             AGAINST on 9287
+        }
+
+        votes(Forest) {
+            endorse(nix) on 9287
         }
     }
 }
