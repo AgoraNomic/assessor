@@ -101,5 +101,9 @@ with this text:
         votes(juan) {
             FOR on 9287
         }
+
+        votes(Cosmo) {
+            FOR on 9287
+        }
     }
 }
