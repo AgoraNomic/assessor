@@ -3,9 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -196,6 +194,13 @@ Agoran Birthday.""""
         votes(Trigon) {
             PRESENT on 9288
             FOR on 9289
+            FOR on 9290
+            FOR on 9291
+        }
+
+        votes(Mischief) {
+            endorse(Cosmo) on 9288
+            endorseOfficer("Land Managor", Murphy) on 9289
             FOR on 9290
             FOR on 9291
         }
