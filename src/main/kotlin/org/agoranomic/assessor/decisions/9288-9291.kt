@@ -163,4 +163,7 @@ Agoran Birthday.""""
             )
         }
     }
+
+    voting {
+    }
 }
