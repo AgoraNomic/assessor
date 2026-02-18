@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -171,6 +173,17 @@ Agoran Birthday.""""
             PRESENT on 9289
             FOR on 9290
             FOR on 9291
+        }
+
+        votes(juan) {
+            resolvedConditional(
+                InextricableResolvingVote,
+                "${juan.name}'s vote depends on that of the Absurdor, whom e is"
+            ) on 9288
+
+            FOR on 9289
+            PRESENT on 9290
+            PRESENT on 9291
         }
     }
 }
