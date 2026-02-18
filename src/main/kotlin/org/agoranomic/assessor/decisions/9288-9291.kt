@@ -218,5 +218,12 @@ Agoran Birthday.""""
             AGAINST on 9290
             FOR on 9291
         }
+
+        votes(Murphy) {
+            endorse(juan) on 9288
+            FOR on 9289
+            FOR on 9290
+            FOR on 9291
+        }
     }
 }
