@@ -41,7 +41,10 @@ private fun playerName(player: String): String {
 }
 
 private fun String.afterExpected(prefix: String): String {
-    require(startsWith(prefix))
+    require(startsWith(prefix)) {
+        "Expected '$this' to start with '$prefix'"
+    }
+
     return substring(prefix.length)
 }
 
