@@ -192,5 +192,12 @@ Agoran Birthday.""""
             FOR on 9290
             FOR on 9291
         }
+
+        votes(Trigon) {
+            PRESENT on 9288
+            FOR on 9289
+            FOR on 9290
+            FOR on 9291
+        }
     }
 }
