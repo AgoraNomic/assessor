@@ -185,5 +185,12 @@ Agoran Birthday.""""
             PRESENT on 9290
             PRESENT on 9291
         }
+
+        votes(Nilrem) {
+            AGAINST on 9288
+            PRESENT on 9289
+            FOR on 9290
+            FOR on 9291
+        }
     }
 }
