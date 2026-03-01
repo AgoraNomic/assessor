@@ -355,5 +355,18 @@ election, which would not cause the office to become vacant.]"""
             FOR on 9300
             FOR on 9301
         }
+
+        votes(Nilrem) {
+            FOR on 9292
+            FOR on 9293
+            endorseOfficer("Rulekeepor", Janet) on 9294
+            PRESENT on 9295
+            endorseOfficer("Registrar", juan) on 9296
+            PRESENT on 9297
+            FOR on 9298
+            FOR on 9299
+            PRESENT on 9300
+            FOR on 9301
+        }
     }
 }
