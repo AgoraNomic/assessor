@@ -342,5 +342,18 @@ election, which would not cause the office to become vacant.]"""
             AGAINST on 9300
             FOR on 9301
         }
+
+        votes(Mischief) {
+            FOR on 9292
+            FOR on 9293
+            FOR on 9294
+            AGAINST on 9295
+            FOR on 9296
+            FOR on 9297
+            FOR on 9298
+            FOR on 9299
+            FOR on 9300
+            FOR on 9301
+        }
     }
 }
