@@ -381,5 +381,18 @@ election, which would not cause the office to become vacant.]"""
             FOR on 9300
             FOR on 9301
         }
+
+        votes(juan) {
+            PRESENT on 9292
+            PRESENT on 9293
+            PRESENT on 9294
+            PRESENT on 9295
+            FOR on 9296
+            FOR on 9297
+            PRESENT on 9298
+            PRESENT on 9299
+            PRESENT on 9300
+            PRESENT on 9301
+        }
     }
 }
