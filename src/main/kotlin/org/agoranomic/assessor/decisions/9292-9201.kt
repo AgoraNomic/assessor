@@ -433,5 +433,18 @@ election, which would not cause the office to become vacant.]"""
             PRESENT on 9300
             PRESENT on 9301
         }
+
+        votes(Janet) {
+            FOR on 9292
+            FOR on 9293
+            AGAINST on 9294
+            AGAINST on 9295
+            FOR on 9296
+            FOR on 9297
+            PRESENT on 9298
+            FOR on 9299
+            FOR on 9300
+            FOR on 9301
+        }
     }
 }
