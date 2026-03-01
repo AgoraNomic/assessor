@@ -326,4 +326,7 @@ election, which would not cause the office to become vacant.]"""
             )
         }
     }
+
+    voting {
+    }
 }
