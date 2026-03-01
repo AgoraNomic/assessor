@@ -339,7 +339,7 @@ election, which would not cause the office to become vacant.]"""
             FOR on 9297
             FOR on 9298
             FOR on 9299
-            AGAINST on 9300
+            FOR on 9300
             FOR on 9301
         }
 
