@@ -5,7 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9292to9301() = assessment {
@@ -328,5 +330,17 @@ election, which would not cause the office to become vacant.]"""
     }
 
     voting {
+        votes(Cosmo) {
+            PRESENT on 9292
+            FOR on 9293
+            FOR on 9294
+            FOR on 9295
+            endorseOfficer("Registrar", juan) on 9296
+            FOR on 9297
+            FOR on 9298
+            FOR on 9299
+            AGAINST on 9300
+            FOR on 9301
+        }
     }
 }
