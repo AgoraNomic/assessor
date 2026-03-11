@@ -325,5 +325,16 @@ with this text:
             FOR on 9308
             AGAINST on 9309
         }
+
+        votes(ais523) {
+            FOR on 9302
+            PRESENT on 9303
+            FOR on 9304
+            FOR on 9305
+            FOR on 9306
+            FOR on 9307
+            FOR on 9308
+            AGAINST on 9309
+        }
     }
 }
