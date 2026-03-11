@@ -283,5 +283,16 @@ with this text:
             FOR on 9308
             FOR on 9309
         }
+
+        votes(Mischief) {
+            FOR on 9302
+            FOR on 9303
+            FOR on 9304
+            FOR on 9305
+            FOR on 9306
+            FOR on 9307
+            FOR on 9308
+            FOR on 9309
+        }
     }
 }
