@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9302to9309() = assessment {
@@ -249,5 +251,15 @@ with this text:
     }
 
     voting {
+        votes(Cosmo) {
+            FOR on 9302
+            PRESENT on 9303
+            FOR on 9304
+            PRESENT on 9305
+            FOR on 9306
+            FOR on 9307
+            FOR on 9308
+            FOR on 9309
+        }
     }
 }
