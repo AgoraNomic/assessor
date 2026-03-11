@@ -1,0 +1,67 @@
+PROPOSAL 9295 (Overexertion v1.11)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (2): Cosmo^, kambri
+AGAINST (2): Janet^, Mischief^
+PRESENT (5): Murphy^, Nilrem, Trigon$, ais523%, juan%
+BALLOTS: 9
+AI (F/A): 9/12 (AI=1.0)
+POPULARITY: 0.000
+OUTCOME: REJECTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-March/019040.html
+
+ID: 9295
+Title: Overexertion v1.11
+Adoption index: 1.0
+Author: Murphy
+Co-authors: ais523, Nilrem
+
+
+If Rule 2683 (The Boulder) defines Instability, then amend it by
+replacing "ceiling(S/(P+V))" with "ceiling(S/(P+W))". Otherwise, amend
+it by replacing this text:
+
+       Each player CAN, once a week, by announcement, push the boulder.
+       When a player pushes the Boulder, its Height is increased by 1.
+       At the beginning of each week, if the boulder was pushed in the
+       previous week at least as many times as the Boulder's Slope, then
+       the Boulder's Slope is increased by 1; otherwise, the Boulder's
+       Height is set to 0, and the Boulder's Slope is set to 1. The
+       Absurdor SHOULD list the largest Height and Slope of the Boulder
+       ever reached in eir report.
+
+with this text:
+
+       The Boulder's Instability is an untracked integer switch,
+       defaulting to 0.
+
+       Boulder Waivers are a currency, tracked by the Absurdor. A
+       player CAN pay a fee of one or more Boulder Waivers to affect
+       the Boulder's Instability as described by this rule.
+
+       When the Boulder Falls, all its switches are set to their
+       default values.
+
+       Each player CAN, once a week, by announcement, push the boulder.
+       When a player pushes the Boulder, its Height is increased by 1.
+
+       At the beginning of each week, the Boulder's Instability is set
+       to ceiling(S/(P+W)), where S is its Slope, P is the number of
+       distinct players who pushed it in the previous week, and W is the
+       the number of Boulder Waivers spent in the previous week.
+
+         * If P+W is zero, then the Boulder Falls.
+
+         * Otherwise, during that week, the Absurdor SHALL select and
+           announce a number of random integers from 1 to 10 (inclusive)
+           equal ot the Boulder's Instability. If none of them are 1,
+           then the Boulder's Instability is set to 0.
+
+       At the end of each week, if the Boulder's Instability is greater
+       than zero, then the Boulder Falls.
+
+[Make it possible, though unreliable, for a smaller set of players to
+  push the Boulder up a steeper Slope. Methods and incentives for
+  obtaining Boulder Waivers is left to future proposals, e.g. ais523
+  suggested buying them with Spendies.]

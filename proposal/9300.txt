@@ -1,0 +1,46 @@
+PROPOSAL 9300 (Fix Election Notices)
+AUTHOR: ais523
+CLASS: ORDINARY
+FOR (6): Cosmo^, Janet^, Mischief^, Trigon$, ais523%, kambri
+AGAINST (0): 
+PRESENT (3): Murphy^, Nilrem, juan%
+BALLOTS: 9
+AI (F/A): 30/0 (AI=2.0)
+POPULARITY: 0.667
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-March/019040.html
+
+ID: 9300
+Title: Fix Election Notices
+Adoption index: 2.0
+Author: ais523
+Co-authors: 
+
+
+In rule 2651, change
+{{{
+Once per quarter, the ADoP CAN and SHALL publish a Notice of
+Election specifying between 2-4 term-limited offices (if there
+fewer than 2 term-limited offices, the ADoP MUST instead list all
+them).  Such a notice initiates elections for the specified
+offices.  The ADoP SHOULD prioritize offices that have gone
+longest since their last elections.
+}}}
+to
+{{{
+Once per quarter, the ADoP SHALL publish a document, labeled as a
+Notice of Election, that specifies 2-4 term-limited offices for which
+elections can be initiated (if fewer than 2 such offices exist, the
+notice MAY instead specify all such offices). The first time each
+quarter the ADoP does so, elections are initiated for the specified
+offices.  The ADoP SHOULD prioritize offices that have gone
+longest since their last elections.
+}}}
+
+[The old text is broken in a few ways: "can publish a Notice of X" is a
+bit confusing and IIRC we're moving away from that terminology; it
+isn't clear what happens if the ADoP attempts to do it multiple times;
+and it doesn't handle offices that are term-limited but that cannot
+have elections initiated (e.g. because there's already an ongoing
+election).]
