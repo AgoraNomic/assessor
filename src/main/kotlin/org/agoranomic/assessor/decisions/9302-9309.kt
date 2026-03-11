@@ -4,9 +4,11 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.ResolvedVote
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9302to9309() = assessment {
@@ -304,6 +306,24 @@ with this text:
             FOR on 9307
             FOR on 9308
             FOR on 9309
+        }
+
+        votes(Janet) {
+            function { ctx ->
+                if (ctx.resolve(ctx.currentProposal, ais523) != null) {
+                    resolvedConditional(endorse(ais523), "ais523 voted")
+                } else {
+                    ResolvedVote(FOR)
+                }
+            } on 9302
+
+            AGAINST on 9303
+            FOR on 9304
+            FOR on 9305
+            FOR on 9306
+            FOR on 9307
+            FOR on 9308
+            AGAINST on 9309
         }
     }
 }
