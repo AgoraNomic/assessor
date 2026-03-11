@@ -247,4 +247,7 @@ with this text:
             )
         }
     }
+
+    voting {
+    }
 }
