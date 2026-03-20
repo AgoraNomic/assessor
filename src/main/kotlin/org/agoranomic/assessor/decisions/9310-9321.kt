@@ -6,6 +6,8 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9310to9321() = assessment {
@@ -557,5 +559,19 @@ Create a rule titled "Scheduled Actions" with Power 2 and this text:
     }
 
     voting {
+        votes(Cosmo) {
+            PRESENT on 9310
+            FOR on 9311
+            PRESENT on 9312
+            FOR on 9313
+            FOR on 9314
+            FOR on 9315
+            FOR on 9316
+            FOR on 9317
+            FOR on 9318
+            FOR on 9319
+            PRESENT on 9320
+            FOR on 9321
+        }
     }
 }
