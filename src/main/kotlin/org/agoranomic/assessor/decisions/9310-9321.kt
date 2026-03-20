@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -584,6 +585,21 @@ Create a rule titled "Scheduled Actions" with Power 2 and this text:
             PRESENT on 9317
             PRESENT on 9318
             PRESENT on 9319
+            AGAINST on 9320
+            AGAINST on 9321
+        }
+
+        votes(Trigon) {
+            AGAINST on 9310
+            FOR on 9311
+            FOR on 9312
+            FOR on 9313
+            FOR on 9314
+            endorse(Mischief) on 9315
+            FOR on 9316
+            FOR on 9317
+            PRESENT on 9318
+            AGAINST on 9319
             AGAINST on 9320
             AGAINST on 9321
         }
