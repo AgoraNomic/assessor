@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -602,6 +603,21 @@ Create a rule titled "Scheduled Actions" with Power 2 and this text:
             AGAINST on 9319
             AGAINST on 9320
             AGAINST on 9321
+        }
+
+        votes(Nilrem) {
+            AGAINST on 9310
+            FOR on 9311
+            FOR on 9312
+            FOR on 9313
+            FOR on 9314
+            FOR on 9315
+            FOR on 9316
+            endorseOfficer("ADoP", Murphy) on 9317
+            FOR on 9318
+            PRESENT on 9319
+            AGAINST on 9320
+            FOR on 9321
         }
     }
 }
