@@ -634,5 +634,20 @@ Create a rule titled "Scheduled Actions" with Power 2 and this text:
             FOR on 9320
             FOR on 9321
         }
+
+        votes(Mischief) {
+            FOR on 9310
+            FOR on 9311
+            FOR on 9312
+            FOR on 9313
+            FOR on 9314
+            FOR on 9315
+            FOR on 9316
+            FOR on 9317
+            FOR on 9318
+            FOR on 9319
+            endorseOfficer("Assessor", Janet) on 9320
+            FOR on 9321
+        }
     }
 }
