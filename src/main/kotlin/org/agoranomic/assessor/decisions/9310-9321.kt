@@ -555,4 +555,7 @@ Create a rule titled "Scheduled Actions" with Power 2 and this text:
             )
         }
     }
+
+    voting {
+    }
 }
