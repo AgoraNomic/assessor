@@ -1,0 +1,35 @@
+PROPOSAL 9306 (Ratification timing clarification)
+AUTHOR: ais523
+CLASS: DEMOCRATIC
+FOR (8): Cosmo, Janet, Mischief, Murphy, Nilrem, Trigon, ais523, juan
+AGAINST (0): 
+PRESENT (0): 
+BALLOTS: 8
+AI (F/A): 24/0 (AI=3.2)
+POPULARITY: 1.000
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-March/019066.html
+
+ID: 9306
+Title: Ratification timing clarification
+Adoption index: 3.2
+Author: ais523
+Co-authors: 
+
+
+In rule 1551, change
+{{{
+the gamestate is modified to what it would be if
+}}}
+to
+{{{
+the gamestate is modified to what it would currently be if
+}}}
+
+[A possible reading of rule 1551 is that ratification rewinds the
+entire gamestate to the truth time. I think (or at least hope) that
+reading loses the rule 217 tiebreak, but given how important
+ratification is to keeping Agora working, and how problematic it would
+be to have the gamestate randomly rewind, I would like to make this
+unambiguous.]
