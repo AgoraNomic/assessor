@@ -187,5 +187,11 @@ years back.]"""
             FOR on 9323
             FOR on 9324
         }
+
+        votes(Murphy) {
+            endorseOfficer("Notary", Nilrem) on 9322
+            endorseOfficer("Numerator", Trigon) on 9323
+            FOR on 9324
+        }
     }
 }
