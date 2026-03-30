@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9322to9324() = assessment {
@@ -172,6 +173,12 @@ years back.]"""
         votes(Trigon) {
             FOR on 9322
             FOR on 9323
+        }
+
+        votes(Janet) {
+            PRESENT on 9322
+            FOR on 9323
+            FOR on 9324
         }
     }
 }
