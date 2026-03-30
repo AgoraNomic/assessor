@@ -193,5 +193,11 @@ years back.]"""
             endorseOfficer("Numerator", Trigon) on 9323
             FOR on 9324
         }
+
+        votes(juan) {
+            FOR on 9322
+            FOR on 9323
+            PRESENT on 9324
+        }
     }
 }
