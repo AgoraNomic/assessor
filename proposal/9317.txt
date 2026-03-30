@@ -1,0 +1,127 @@
+PROPOSAL 9317 (Office cleanup)
+AUTHOR: Murphy
+CLASS: DEMOCRATIC
+FOR (6): Cosmo, Mischief, Murphy, Nilrem, Trigon, juan
+AGAINST (0): 
+PRESENT (1): Janet
+BALLOTS: 7
+AI (F/A): 18/0 (AI=3.0)
+POPULARITY: 0.857
+OUTCOME: ADOPTED
+[
+Nilrem: Murphy is the ADoP: Endorsement of Murphy
+juan: Endorsement of Murphy
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-March/019088.html
+
+ID: 9317
+Title: Office cleanup
+Adoption index: 3.0
+Author: Murphy
+Co-authors: Mischief
+
+
+Amend Rule 2689 (Vacations & Delegation) by replacing this text:
+
+       Delegate is an Office switch with possible values of "None" and
+       any active player, and default value of "None". Delegates are
+       tracked by the ADoP in eir weekly report.
+
+       A player CAN flip the Delegate switch of a specified office to
+       emself with Agoran Consent. If the Delegate switch of an office is
+       set to "None", the holder of that office CAN flip the Delegate
+       switch of that office to a specified player with support from that
+       specified player.
+
+with this text:
+
+       Delegate is an Office switch, tracked by the ADoP, with possible
+       values "None" (default) and any active player.
+
+       A player CAN flip the Delegate switch of a specified office to
+       emself with Agoran Consent, or from "None" to emself with support
+       from its holder. The holder of an office CAN flip its Delegate
+       switch from "None" to a specified player with support from the
+       specified player.
+
+[Allow the with-support option to be initiated by either party, and
+  simplify language.]
+
+Amend Rule 1006 (Offices) by replacing this text:
+
+       Officeholder is an office switch tracked by the ADoP, with
+       possible values of any person or "vacant" (default).
+
+with this text:
+
+       Officeholder is an office switch tracked by the ADoP, with
+       possible values of any player or "vacant" (default).
+
+and removing this text:
+
+       If the holder of an office is ever not a player, it becomes
+       vacant.
+
+and replacing this text:
+
+       Immediately after a proposal finishes taking effect, if one or
+       more offices exist that did not exist prior to the proposal taking
+       effect, each such office, if it is vacant, becomes held by the
+       author of the proposal.
+
+with this text:
+
+       Immediately after a proposal finishes taking effect, each vacant
+       office that did not exist prior to the proposal taking effect
+       becomes held by the author of the proposal.
+
+[Outsource removing non-players from office to Rule 2162's "If an
+  instance of a switch would otherwise fail to have a possible value".]
+
+Amend Rule 2651 (The Election Cycle) by replacing this text:
+
+       a) With 2 support (if the office is either interim or term-
+       limited) or 4 support (otherwise), and provided that the initiator
+       becomes a candidate in the same message.
+
+       b) By announcement, if e is the ADoP (or, if the office is the
+       ADoP, if e is the Assessor) and the office is interim, or if e is
+       the holder of that office.
+
+with this text:
+
+       a) With 2 support (if the office is either interim or term-
+       limited) or 4 support (otherwise), provided that the initiator
+       becomes a candidate in the same message.
+
+       b) By announcement, if e is the office's Overseer and the office
+       is interim, or if e is the holder of that office.
+
+       The Overseer of the ADoP is the Assessor. The Overseer of all
+       other offices (including any held by the ADoP) is the ADoP.
+
+[Overseer is similar to Investigator in Rule 2478. Amending Rule 2472
+  to generalize this type of relationship between offices is left as an
+  exercise.]
+
+Amend Rule 2154 (Election Procedure) by replacing this text:
+
+       After the nomination period ends, the ADoP (or, if the office is
+       the ADoP, the Assessor) CAN and, in a timely fashion, SHALL:
+
+       1) If the election is contested, initiate an Agoran decision to
+          select the winner of the election (the poll). For this
+          decision, the Vote Collector is the ADoP (or, if the office is
+          the ADoP, the Assessor),
+
+with this text:
+
+       After the nomination period ends, the Overseer of the office CAN
+       and, in a timely fashion, SHALL:
+
+       1) If the election is contested, initiate an Agoran decision to
+          select the winner of the election (the poll). For this
+          decision, the Vote Collector is the Overseer of the office,
+
+[Use the new definition from Rule 2651.]

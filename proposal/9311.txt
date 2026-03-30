@@ -1,0 +1,69 @@
+PROPOSAL 9311 (Lux Solis)
+AUTHOR: Mischief
+CLASS: ORDINARY
+FOR (5): Cosmo^, Mischief^, Murphy^, Nilrem%, Trigon$
+AGAINST (0): 
+PRESENT (2): Janet^, juan%
+BALLOTS: 7
+AI (F/A): 27/0 (AI=1.5)
+POPULARITY: 0.714
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-March/019088.html
+
+ID: 9311
+Title: Lux Solis
+Adoption index: 1.5
+Author: Mischief
+Co-authors: Murphy
+
+
+[Outshining the Sun has effects in two separate rules. This
+consolidates the effects into a single rule. Given that we probably owe
+Janet a win for spotting the welcome package glitch, I wanted to make
+extra sure this didn't break anything while that's outstanding, hence
+the non-severability.
+
+This also has the side effect of clarifying the relative timing of
+R2656's and R2711's effects, in case that ever matters.]
+
+Apply the following rule changes in order and non-severably (that is,
+if any one would fail, they all fail):
+
+1. Retitle rule 2711 (Light Overexposure) to "Outshining the Sun"
+
+2. Set rule 2711's power to 1.5
+
+3. Amend rule 2711 to read:
+
+       Upon a correct announcement from a player that eir radiance is 100
+       or more (correctly specifying the amount), e Outshines the Sun.
+
+       When a player Outshines the Sun, e wins the game. When a player
+       wins the game this way, the following happen in order:
+
+       * Eir radiance is set to 0.
+
+       * The radiance of each other player is set to half its current
+         value (rounded down).
+
+       * All Pyrite is destroyed.
+
+       * The Fields Wither.
+
+       * All Hectares are destroyed.
+
+       * Each player is granted 16 Hectares.
+
+4. Amend rule 2656 (Radiance) by removing the text reading:
+
+       Upon a correct announcement from a player that eir radiance is 100
+       or more (correctly specifying the amount), e Outshines the Sun.
+
+       When a player Outshines the Sun, e wins the game. When a player
+       wins the game this way, the following happen in order:
+
+       * Eir radiance is set to 0.
+
+       * The radiance of each other player is set to half its current
+         value (rounded down).

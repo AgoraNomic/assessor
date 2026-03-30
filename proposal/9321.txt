@@ -1,0 +1,40 @@
+PROPOSAL 9321 (Scheduled actions)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (5): Cosmo^, Mischief^, Murphy^, Nilrem%, juan%
+AGAINST (2): Janet^, Trigon$
+PRESENT (0): 
+BALLOTS: 7
+AI (F/A): 28/10 (AI=2.0)
+POPULARITY: 0.429
+OUTCOME: ADOPTED
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-March/019088.html
+
+ID: 9321
+Title: Scheduled actions
+Adoption index: 2.0
+Author: Murphy
+Co-authors: Mischief
+
+
+Create a rule titled "Scheduled Actions" with Power 2 and this text:
+
+       A player CAN pay a fee of N spendies (where N is an integer from 1
+       to 7, inclusive) to create a Scheduled Action, specifying a time
+       between 0 and N days in the future (the Trigger) and a body of
+       text (the Payload). However, a Scheduled Action CANNOT be created
+       while another Scheduled Action is taking effect.
+
+       At a Scheduled Action's Trigger, it takes effect (its creator
+       performs actions as if e had published its Payload at that time),
+       then it is destroyed. Scheduled Actions take effect after any
+       actions performed at the same time by other means; multiple
+       Scheduled Actions with the same Trigger take effect in order of
+       creation.
+
+       Destroying or altering a Scheduled Action is secured.
+
+[Change from proto: Blocked recursive Scheduled Actions. Whether this
+  could cause any additional shenanigans when combined with Promises
+  and/or act-on-behalf is left as an exercise.]
