@@ -1,9 +1,10 @@
 # Assessor's Archive
 
-[Latest Assessment](9310-9321.txt)
+[Latest Assessment](9322-9324.txt)
 
 List of assessments:
 
+* [9322-9324.txt](9322-9324.txt)
 * [9310-9321.txt](9310-9321.txt)
 * [9302-9309.txt](9302-9309.txt)
 * [9292-9301.txt](9292-9301.txt)
