@@ -157,5 +157,11 @@ It seems silly to leave this information out of the report"""
             endorseOfficer("Land Managor", Murphy) on 9326
             endorseOfficer("Notary", Nilrem) on 9327
         }
+
+        votes(Murphy) {
+            AGAINST on 9325
+            FOR on 9326
+            endorseOfficer("Notary", Nilrem) on 9327
+        }
     }
 }
