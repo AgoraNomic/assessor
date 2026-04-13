@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -149,6 +150,12 @@ It seems silly to leave this information out of the report"""
         votes(Forest) {
             // No votes.
             // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2026-April/055411.html
+        }
+
+        votes(Mischief) {
+            endorseOfficer("Rulekeepor", Janet) on 9325
+            endorseOfficer("Land Managor", Murphy) on 9326
+            endorseOfficer("Notary", Nilrem) on 9327
         }
     }
 }
