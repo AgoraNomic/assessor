@@ -163,5 +163,11 @@ It seems silly to leave this information out of the report"""
             FOR on 9326
             endorseOfficer("Notary", Nilrem) on 9327
         }
+
+        votes(juan) {
+            FOR on 9325
+            PRESENT on 9326
+            endorseOfficer("Notary", Nilrem) on 9327
+        }
     }
 }
