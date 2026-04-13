@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9325to9327() = assessment {
@@ -127,5 +128,10 @@ It seems silly to leave this information out of the report"""
     }
 
     voting {
+        votes(Galle) {
+            FOR on 9325
+            FOR on 9326
+            FOR on 9327
+        }
     }
 }
