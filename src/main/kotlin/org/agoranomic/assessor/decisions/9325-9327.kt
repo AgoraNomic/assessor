@@ -145,5 +145,10 @@ It seems silly to leave this information out of the report"""
             AGAINST on 9326
             FOR on 9327
         }
+
+        votes(Forest) {
+            // No votes.
+            // See https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-business/2026-April/055411.html
+        }
     }
 }
