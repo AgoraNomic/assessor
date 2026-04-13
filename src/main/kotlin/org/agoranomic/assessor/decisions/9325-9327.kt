@@ -139,5 +139,11 @@ It seems silly to leave this information out of the report"""
             PRESENT on 9326
             PRESENT on 9327
         }
+
+        votes(Nilrem) {
+            PRESENT on 9325
+            AGAINST on 9326
+            FOR on 9327
+        }
     }
 }
