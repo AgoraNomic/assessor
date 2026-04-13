@@ -125,4 +125,7 @@ It seems silly to leave this information out of the report"""
             )
         }
     }
+
+    voting {
+    }
 }
