@@ -76,5 +76,9 @@ right now.
         votes(Cosmo) {
             FOR on 9328
         }
+
+        votes(Murphy) {
+            FOR on 9328
+        }
     }
 }
