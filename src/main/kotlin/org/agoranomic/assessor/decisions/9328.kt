@@ -89,5 +89,9 @@ right now.
         votes(Galle) {
             AGAINST on 9328
         }
+
+        votes(juan) {
+            FOR on 9328
+        }
     }
 }
