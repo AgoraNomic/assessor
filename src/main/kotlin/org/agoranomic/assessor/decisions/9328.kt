@@ -93,5 +93,9 @@ right now.
         votes(juan) {
             FOR on 9328
         }
+
+        votes(ais523) {
+            FOR on 9328
+        }
     }
 }
