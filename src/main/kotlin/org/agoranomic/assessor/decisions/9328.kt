@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
@@ -83,6 +84,10 @@ right now.
 
         votes(Nilrem) {
             FOR on 9328
+        }
+
+        votes(Galle) {
+            AGAINST on 9328
         }
     }
 }
