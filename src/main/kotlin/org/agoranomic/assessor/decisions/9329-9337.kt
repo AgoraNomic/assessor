@@ -413,5 +413,17 @@ its body as of the beginning of this year."""
             AGAINST on 9336
             AGAINST on 9337
         }
+
+        votes(Janet) {
+            PRESENT on 9329
+            AGAINST on 9330
+            FOR on 9331
+            FOR on 9332
+            AGAINST on 9333
+            AGAINST on 9334
+            FOR on 9335
+            AGAINST on 9336
+            AGAINST on 9337
+        }
     }
 }
