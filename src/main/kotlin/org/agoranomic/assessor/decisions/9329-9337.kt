@@ -406,5 +406,12 @@ its body as of the beginning of this year."""
             FOR on 9336
             FOR on 9337
         }
+
+        votes(Forest) {
+            FOR on 9329
+            FOR on 9335
+            AGAINST on 9336
+            AGAINST on 9337
+        }
     }
 }
