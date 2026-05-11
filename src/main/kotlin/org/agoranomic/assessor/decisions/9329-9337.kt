@@ -425,5 +425,17 @@ its body as of the beginning of this year."""
             AGAINST on 9336
             AGAINST on 9337
         }
+
+        votes(juan) {
+            FOR on 9329
+            PRESENT on 9330
+            FOR on 9331
+            FOR on 9332
+            PRESENT on 9333
+            FOR on 9334
+            PRESENT on 9335
+            PRESENT on 9336
+            PRESENT on 9337
+        }
     }
 }
