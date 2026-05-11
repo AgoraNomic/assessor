@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
@@ -365,6 +366,18 @@ its body as of the beginning of this year."""
             FOR on 9331
             PRESENT on 9332
             FOR on 9333
+            FOR on 9334
+            FOR on 9335
+            FOR on 9336
+            FOR on 9337
+        }
+
+        votes(Murphy) {
+            endorseOfficer("Rulekeepor", Janet) on 9329
+            endorseOfficer("Numerator", Trigon) on 9330
+            FOR on 9331
+            FOR on 9332
+            PRESENT on 9333
             FOR on 9334
             FOR on 9335
             FOR on 9336
