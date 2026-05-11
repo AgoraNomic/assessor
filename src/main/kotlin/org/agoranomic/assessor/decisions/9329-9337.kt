@@ -449,5 +449,10 @@ its body as of the beginning of this year."""
             FOR on 9336
             FOR on 9337
         }
+
+        votes(Nilrem) {
+            FOR on 9334
+            PRESENT on others
+        }
     }
 }
