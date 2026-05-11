@@ -437,5 +437,17 @@ its body as of the beginning of this year."""
             PRESENT on 9336
             PRESENT on 9337
         }
+
+        votes(Mischief) {
+            endorseOfficer("Rulekeepor", Janet) on 9329
+            FOR on 9330
+            FOR on 9331
+            FOR on 9332
+            endorseOfficer("Land Managor", Murphy) on 9333
+            FOR on 9334
+            endorseOfficer("Referee", ais523) on 9335
+            FOR on 9336
+            FOR on 9337
+        }
     }
 }
