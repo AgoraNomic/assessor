@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9329to9337() = assessment {
@@ -381,6 +380,18 @@ its body as of the beginning of this year."""
             FOR on 9334
             FOR on 9335
             FOR on 9336
+            FOR on 9337
+        }
+
+        votes(Galle) {
+            FOR on 9329
+            FOR on 9330
+            FOR on 9331
+            FOR on 9332
+            FOR on 9333
+            FOR on 9334
+            FOR on 9335
+            AGAINST on 9336
             FOR on 9337
         }
     }
