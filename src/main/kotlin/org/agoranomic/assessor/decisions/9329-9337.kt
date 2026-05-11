@@ -394,5 +394,17 @@ its body as of the beginning of this year."""
             AGAINST on 9336
             FOR on 9337
         }
+
+        votes(Trigon) {
+            PRESENT on 9329
+            AGAINST on 9330
+            FOR on 9331
+            FOR on 9332
+            PRESENT on 9333
+            PRESENT on 9334
+            FOR on 9335
+            FOR on 9336
+            FOR on 9337
+        }
     }
 }
