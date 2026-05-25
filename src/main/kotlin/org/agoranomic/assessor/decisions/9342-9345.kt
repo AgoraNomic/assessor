@@ -171,5 +171,12 @@ starting "For any two decimal digits X and Y" with this text:
             AGAINST on 9342
             AGAINST on 9343
         }
+
+        votes(Trigon) {
+            FOR on 9342
+            FOR on 9343
+            PRESENT on 9344
+            AGAINST on 9345
+        }
     }
 }
