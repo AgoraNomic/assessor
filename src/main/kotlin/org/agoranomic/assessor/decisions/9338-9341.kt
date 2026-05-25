@@ -172,4 +172,7 @@ rule change is any effect that falls into the above classes." with:
             )
         }
     }
+
+    voting {
+    }
 }
