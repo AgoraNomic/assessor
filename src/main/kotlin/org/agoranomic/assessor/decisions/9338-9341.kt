@@ -210,5 +210,12 @@ rule change is any effect that falls into the above classes." with:
             FOR on 9340
             AGAINST on 9341
         }
+
+        votes(ais523) {
+            PRESENT on 9338
+            FOR on 9339
+            FOR on 9340
+            AGAINST on 9341
+        }
     }
 }
