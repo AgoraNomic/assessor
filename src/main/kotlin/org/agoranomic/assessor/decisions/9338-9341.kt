@@ -4,9 +4,8 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.endorse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.*
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -223,6 +222,13 @@ rule change is any effect that falls into the above classes." with:
             FOR on 9339
             AGAINST on 9340
             FOR on 9341
+        }
+
+        votes(Murphy) {
+            FOR on 9338
+            resolvedConditional(InextricableResolvingVote, "Notary is vacant") on 9339
+            endorseOfficer("Rulekeepor", Janet) on 9340
+            endorseOfficer("Rulekeepor", Janet) on 9341
         }
     }
 }
