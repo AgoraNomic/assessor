@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9342to9345() = assessment {
@@ -139,5 +141,11 @@ starting "For any two decimal digits X and Y" with this text:
     }
 
     voting {
+        votes(Cosmo) {
+            FOR on 9342
+            FOR on 9343
+            PRESENT on 9344
+            PRESENT on 9345
+        }
     }
 }
