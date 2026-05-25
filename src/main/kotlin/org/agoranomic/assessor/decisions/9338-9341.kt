@@ -6,8 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9338to9341() = assessment {
@@ -188,6 +187,13 @@ rule change is any effect that falls into the above classes." with:
             FOR on 9339
             FOR on 9340
             FOR on 9341
+        }
+
+        votes(Janet) {
+            PRESENT on 9338
+            AGAINST on 9339
+            FOR on 9340
+            AGAINST on 9341
         }
     }
 }
