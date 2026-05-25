@@ -182,5 +182,12 @@ rule change is any effect that falls into the above classes." with:
             PRESENT on 9340
             FOR on 9341
         }
+
+        votes(Galle) {
+            FOR on 9338
+            FOR on 9339
+            FOR on 9340
+            FOR on 9341
+        }
     }
 }
