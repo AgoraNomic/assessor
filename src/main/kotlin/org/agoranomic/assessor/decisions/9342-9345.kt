@@ -192,5 +192,12 @@ starting "For any two decimal digits X and Y" with this text:
             FOR on 9344
             AGAINST on 9345
         }
+
+        votes(Janet) {
+            AGAINST on 9342
+            AGAINST on 9343
+            PRESENT on 9344
+            AGAINST on 9345
+        }
     }
 }
