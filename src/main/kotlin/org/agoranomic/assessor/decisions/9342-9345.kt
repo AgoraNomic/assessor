@@ -168,8 +168,8 @@ starting "For any two decimal digits X and Y" with this text:
         }
 
         votes(Forest) {
-            AGAINST on 9342
-            AGAINST on 9343
+            FOR on 9342
+            FOR on 9343
         }
 
         votes(Trigon) {
