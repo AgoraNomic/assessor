@@ -178,5 +178,12 @@ starting "For any two decimal digits X and Y" with this text:
             PRESENT on 9344
             AGAINST on 9345
         }
+
+        votes(juniper) {
+            FOR on 9342
+            FOR on 9343
+            AGAINST on 9344
+            PRESENT on 9345
+        }
     }
 }
