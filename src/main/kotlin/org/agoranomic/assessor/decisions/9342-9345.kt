@@ -206,5 +206,12 @@ starting "For any two decimal digits X and Y" with this text:
             PRESENT on 9344
             AGAINST on 9345
         }
+
+        votes(Murphy) {
+            PRESENT on 9342
+            PRESENT on 9343
+            FOR on 9344
+            endorseOfficer("Numerator", Trigon) on 9345
+        }
     }
 }
