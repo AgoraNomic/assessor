@@ -1,0 +1,94 @@
+PROPOSAL 9333 (Whither Weather?)
+AUTHOR: Galle
+CLASS: ORDINARY
+FOR (3): Cosmo^, Galle, ais523%
+AGAINST (1): Janet^
+PRESENT (5): Mischief^, Murphy^, Nilrem%, Trigon$, juan%
+BALLOTS: 9
+AI (F/A): 14/6 (AI=1.0)
+POPULARITY: 0.222
+OUTCOME: ADOPTED
+[
+Mischief: Murphy is the Land Managor: Endorsement of Murphy
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-May/019258.html
+
+ID: 9333
+Title: Whither Weather?
+Adoption index: 1.0
+Author: Galle
+Co-authors: 
+
+
+Amend Rule 2708 ("Crops") to read as follows:
+---
+Creating and destroying types of Crop is secured.
+
+Growing Season, Seed Cost, Growth Duration, Resilience, Opportunity, and
+Sell Price are Crop type switches, tracked by the Land Managor, with
+these values:
+
+- Growing Season - all Crop Seasons
+- Seed Cost - integers from 50 to 200 inclusive
+- Growth Duration - integers from 3 to 24 inclusive
+- Resilience - integers from 70 to 100 inclusive
+- Opportunity - integers from 1 to 30 inclusive
+- Sell Price - integers from 100 to 400 inclusive
+
+Rules to the contrary notwithstanding, a Crop type CANNOT be planted
+while its Seed Cost is null, and CANNOT be harvested while its Growth
+Duration or Sell Price is null.
+
+When rounding Seed Cost or Growth Duration, ties are broken toward the
+larger value.
+
+An in-season Crop is one whose Growth Season is in progress. All others
+are out-of-season.
+---
+
+Amend Rule 2709 ('The Growth Cycle') to read as follows:
+---
+A player CAN plant an in-season Crop by paying a fee in Pyrite equal to
+its Seed Cost, provided that eir number of Hectares is greater than the
+number of unlost, unharvested Crops e planted earlier in the current
+Crop Season. <Growth Duration> days after it is planted, an unlost Crop
+ripens.
+
+Once per ripe, unlost, unharvested Crop that a player planted, e CAN
+harvest it by announcement gaining Pyrite equal to its Sell Price
+(exception: if the Weather for the week e planted it had already been
+selected at the time e planted it, e CANNOT harvest it before the end of
+the week after the week e planted it).
+
+When the Fields Wither, all unharvested Crops are lost.
+
+Weather is a secured singleton integer switch with values between 1 and
+100 inclusive, tracked by the Land Managor, with a default value of 50.
+Once per week, the Land Managor SHALL select and announce a random
+integer between 1 and 100 to be that week's Weather. Upon such an
+announcement, the Weather is flipped to that value. At the end of each
+week, all crops with Resilience lower than the current Weather are lost
+and all crops with Opportunity greater than the current Weather ripen.
+
+At the end of each Crop Season, the Fields Wither.
+---
+
+Amend the second sentence of the first paragraph of Rule 2710 ('Genetic
+Modification') to read as follows:
+---
+The Land Managor CAN once by announcement, and SHALL in a timely
+fashion, set its Growth Season, Seed Cost, Growth Duration, Resilience,
+Opportunity, and Sell Price to randomly selected valid values.
+---
+
+Amend the second paragraph of Rule 2710 ('Genetic Modification') to read
+as follows:
+---
+Once per Crop Season, a player CAN pay a fee of 750 Pyrite to alter a
+type of out-of-season Crop's Seed Cost, Growth Duration, Resilience,
+Opportunity, or Sell Price by up to 25% in either direction.
+---
+
+Set the Resilience of all Crop types to 90. Set the Opportunity of all
+Crop types to 20.
