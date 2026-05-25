@@ -3,12 +3,13 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
+import org.agoranomic.assessor.dsl.receivers.quorum
 
 @UseAssessment
 fun assessment9338to9341() = assessment {
-    name("9338-9342")
+    name("9338-9341")
     quorum(5)
-    
+
     proposals(v4) {
         proposal(9338) {
             title("Claim of Error Withdrawal")
@@ -16,7 +17,8 @@ fun assessment9338to9341() = assessment {
             author(Galle)
             democratic()
 
-            text("""
+            text(
+                """
 Amend Rule 2201, "Self-Ratification", by inserting the following
 paragraph immediately before the final paragraph:
 ---
@@ -25,7 +27,8 @@ in any of the above ways, the issuer of a doubt CAN, by announcement,
 withdraw the doubt, causing it to cease to be a doubt. The above
 notwithstanding, the publisher of the original document NEED NOT respond
 to a withdrawn doubt.
----""")
+---"""
+            )
         }
 
         proposal(9339) {
@@ -35,7 +38,8 @@ to a withdrawn doubt.
             coauthors(ais523)
             ordinary()
 
-            text("""
+            text(
+                """
 Create a new Rule with power 2.2 Titled "Temporary Helper" with the
 following text:
 
@@ -63,7 +67,8 @@ With this text:
        In a promise's text, "this promise" (or the like) refers to the
        promise. The text of the promise can refer to the context of the
        message in which it is cashed, but the context of the message does
-       not otherwise change the meaning of the promise.""")
+       not otherwise change the meaning of the promise."""
+            )
         }
 
         proposal(9340) {
@@ -72,7 +77,8 @@ With this text:
             author(Galle)
             democratic()
 
-            text("""
+            text(
+                """
 Amend Rule 105 ("Rule Changes") by replacing the following text:
 ---
 A rule change is any effect that falls into the above classes. Rule
@@ -91,7 +97,8 @@ happen at once, it is instead interpreted as attempting to cause them to
 occur separately, in the order they are listed in the specification. If
 no such order can be inferred, then the specified rule changes are void
 and without effect.
----""")
+---"""
+            )
         }
 
         proposal(9341) {
@@ -100,7 +107,8 @@ and without effect.
             author(Murphy)
             democratic()
 
-            text("""
+            text(
+                """
 Amend Rule 105 (Rule Changes) by replacing the paragraph containing "A
 rule change is any effect that falls into the above classes." with:
 
@@ -121,7 +129,8 @@ rule change is any effect that falls into the above classes." with:
   A malformed proposal amounting to "Repeal all or most rules" would be
   pretty much guaranteed to make a substantive difference, in which case
   this clause would remain silent, and the next paragraph of R105 would
-  still negate it due to ambiguity.]""")
+  still negate it due to ambiguity.]"""
+            )
         }
     }
 }
