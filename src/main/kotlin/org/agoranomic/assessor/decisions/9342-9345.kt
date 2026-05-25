@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
@@ -146,6 +147,13 @@ starting "For any two decimal digits X and Y" with this text:
             FOR on 9343
             PRESENT on 9344
             PRESENT on 9345
+        }
+
+        votes(Galle) {
+            FOR on 9342
+            FOR on 9343
+            FOR on 9344
+            endorseOfficer("Numerator", Trigon) on 9345
         }
     }
 }
