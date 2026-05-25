@@ -199,5 +199,12 @@ starting "For any two decimal digits X and Y" with this text:
             PRESENT on 9344
             AGAINST on 9345
         }
+
+        votes(ais523) {
+            AGAINST on 9342
+            AGAINST on 9343
+            PRESENT on 9344
+            AGAINST on 9345
+        }
     }
 }
