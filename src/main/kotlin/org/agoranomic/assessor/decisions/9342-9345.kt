@@ -137,4 +137,7 @@ starting "For any two decimal digits X and Y" with this text:
             )
         }
     }
+
+    voting {
+    }
 }
