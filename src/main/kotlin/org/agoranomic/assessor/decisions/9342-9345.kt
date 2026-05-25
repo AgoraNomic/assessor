@@ -155,5 +155,12 @@ starting "For any two decimal digits X and Y" with this text:
             FOR on 9344
             endorseOfficer("Numerator", Trigon) on 9345
         }
+
+        votes(juan) {
+            PRESENT on 9342
+            PRESENT on 9343
+            FOR on 9344
+            PRESENT on 9345
+        }
     }
 }
