@@ -162,5 +162,10 @@ starting "For any two decimal digits X and Y" with this text:
             FOR on 9344
             PRESENT on 9345
         }
+
+        votes(msh210) {
+            endorseOfficer("Absurdor", juan) on 9344
+            // No other votes.
+        }
     }
 }
