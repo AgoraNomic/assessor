@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9346to9350() = assessment {
@@ -139,5 +140,12 @@ Agoran Birthday.
     }
 
     voting {
+        votes(Cosmo) {
+            FOR on 9346
+            FOR on 9347
+            FOR on 9348
+            AGAINST on 9349
+            PRESENT on 9350
+        }
     }
 }
