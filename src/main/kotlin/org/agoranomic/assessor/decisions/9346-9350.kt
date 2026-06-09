@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -146,6 +147,14 @@ Agoran Birthday.
             FOR on 9348
             AGAINST on 9349
             PRESENT on 9350
+        }
+
+        votes(juan) {
+            endorse(msh210) on 9346
+            PRESENT on 9347
+            PRESENT on 9348
+            FOR on 9349
+            endorse(msh210) on 9350
         }
     }
 }
