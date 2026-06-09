@@ -156,5 +156,13 @@ Agoran Birthday.
             FOR on 9349
             endorse(msh210) on 9350
         }
+
+        votes(Galle) {
+            AGAINST on 9346
+            FOR on 9347
+            FOR on 9348
+            AGAINST on 9349
+            FOR on 9350
+        }
     }
 }
