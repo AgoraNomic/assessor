@@ -180,5 +180,12 @@ Agoran Birthday.
             AGAINST on 9349
             FOR on 9350
         }
+
+        votes(msh210) {
+            FOR on 9346
+            AGAINST on 9349
+            FOR on 9350
+            // No other votes.
+        }
     }
 }
