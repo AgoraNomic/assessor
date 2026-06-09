@@ -1,0 +1,47 @@
+PROPOSAL 9345 (Operands v1.1/1)
+AUTHOR: Murphy
+CLASS: ORDINARY
+FOR (0): 
+AGAINST (6): Galle, Janet^, Mischief^, Murphy^, Trigon$, ais523%
+PRESENT (3): Cosmo^, juan%, juniper
+BALLOTS: 9
+AI (F/A): 0/30 (AI=1.0)
+POPULARITY: -0.667
+OUTCOME: REJECTED
+[
+Galle: Trigon is the Numerator: Endorsement of Trigon
+Murphy: Trigon is the Numerator: Endorsement of Trigon
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-May/019292.html
+
+ID: 9345
+Title: Operands v1.1/1
+Adoption index: 1.0
+Author: Murphy
+Co-authors: 
+
+
+Create a rule titled "Operands" with this text:
+
+       Operand is a player switch, tracked by the Numerator, with values
+       Sum (default), Difference, Product, and Quotient.
+
+       Once per month, a player CAN flip eir Operand by announcement.
+
+Amend Rule 2714 (Spending Number Cards) by replacing the paragraph
+starting "For any two decimal digits X and Y" with this text:
+
+       For any two decimal digits X and Y (which may be the same), a
+       player CAN pay 2 spendies, a number card of type X, and a number
+       card of type Y to grant emself a number card whose type is equal
+       (modulo 10) to:
+
+         * X+Y, if eir Operand is Sum
+
+         * X-Y or Y-X, if eir Operand is Difference
+
+         * X*Y, if eir Operand is Product
+
+         * floor(X/Y) or ceiling(X/Y), if eir Operand is Quotient and Y
+           is not 0
