@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -191,6 +192,14 @@ Agoran Birthday.
         votes(ais523) {
             // TODO resolve conditional vote on 9346: AGAINST if 9350 could be resolved as ADOPTED, else FOR
             PRESENT on 9347
+            AGAINST on 9348
+            AGAINST on 9349
+            FOR on 9350
+        }
+
+        votes(Murphy) {
+            FOR on 9346
+            endorseOfficer("Numerator", Trigon) on 9347
             AGAINST on 9348
             AGAINST on 9349
             FOR on 9350
