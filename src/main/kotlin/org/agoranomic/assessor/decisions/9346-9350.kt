@@ -164,5 +164,13 @@ Agoran Birthday.
             AGAINST on 9349
             FOR on 9350
         }
+
+        votes(Janet) {
+            PRESENT on 9346
+            AGAINST on 9347
+            PRESENT on 9348
+            AGAINST on 9349
+            PRESENT on 9350
+        }
     }
 }
