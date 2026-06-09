@@ -187,5 +187,13 @@ Agoran Birthday.
             FOR on 9350
             // No other votes.
         }
+
+        votes(ais523) {
+            // TODO resolve conditional vote on 9346: AGAINST if 9350 could be resolved as ADOPTED, else FOR
+            PRESENT on 9347
+            AGAINST on 9348
+            AGAINST on 9349
+            FOR on 9350
+        }
     }
 }
