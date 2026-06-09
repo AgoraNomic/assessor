@@ -1,0 +1,42 @@
+PROPOSAL 9340 (Simultaneous Rule Changes Fix)
+AUTHOR: Galle
+CLASS: DEMOCRATIC
+FOR (5): Galle, Janet, Mischief, Murphy, ais523
+AGAINST (1): Kate
+PRESENT (2): Cosmo, juan
+BALLOTS: 8
+AI (F/A): 15/3 (AI=3.0)
+POPULARITY: 0.500
+OUTCOME: ADOPTED
+[
+Murphy: Janet is the Rulekeepor: Endorsement of Janet
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-May/019291.html
+
+ID: 9340
+Title: Simultaneous Rule Changes Fix
+Adoption index: 3.0
+Author: Galle
+Co-authors: 
+
+
+Amend Rule 105 ("Rule Changes") by replacing the following text:
+---
+A rule change is any effect that falls into the above classes. Rule
+changes always occur sequentially, never simultaneously. If a
+specification would ever be interpreted as causing multiple changes to
+happen at once, it is instead interpreted as attempting to cause them to
+occur separately, in the order they are listed in the specification.
+---
+
+With the following text:
+---
+A rule change is any effect that falls into the above classes. Rule
+changes always occur sequentially, never simultaneously. If a
+specification would ever be interpreted as causing multiple changes to
+happen at once, it is instead interpreted as attempting to cause them to
+occur separately, in the order they are listed in the specification. If
+no such order can be inferred, then the specified rule changes are void
+and without effect.
+---
