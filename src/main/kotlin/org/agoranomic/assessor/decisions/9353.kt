@@ -68,4 +68,7 @@ rare cards rather than creating new rare cards.]"""
             )
         }
     }
+
+    voting {
+    }
 }
