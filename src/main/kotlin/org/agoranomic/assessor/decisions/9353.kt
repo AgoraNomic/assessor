@@ -87,5 +87,9 @@ rare cards rather than creating new rare cards.]"""
         votes(Murphy) {
             endorseOfficer("Numerator", Trigon) on 9353
         }
+
+        votes(msh210) {
+            FOR on 9353
+        }
     }
 }
