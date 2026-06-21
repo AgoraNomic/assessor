@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9353() = assessment {
@@ -98,6 +99,10 @@ rare cards rather than creating new rare cards.]"""
 
         votes(Forest) {
             FOR on 9353
+        }
+
+        votes(juan) {
+            PRESENT on 9353
         }
     }
 }
