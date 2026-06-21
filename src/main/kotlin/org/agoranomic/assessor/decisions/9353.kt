@@ -104,5 +104,9 @@ rare cards rather than creating new rare cards.]"""
         votes(juan) {
             PRESENT on 9353
         }
+
+        votes(Janet) {
+            FOR on 9353
+        }
     }
 }
