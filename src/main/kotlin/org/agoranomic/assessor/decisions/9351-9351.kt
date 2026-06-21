@@ -127,5 +127,10 @@ with:
             PRESENT on 9351
             endorseOfficer("Speaker", Janet) on 9352
         }
+
+        votes(Salad) {
+            PRESENT on 9351
+            endorseOfficer("Speaker", Janet) on 9352
+        }
     }
 }
