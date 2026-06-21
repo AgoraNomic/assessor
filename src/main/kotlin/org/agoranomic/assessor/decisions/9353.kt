@@ -74,5 +74,9 @@ rare cards rather than creating new rare cards.]"""
         votes(ais523) {
             FOR on 9353
         }
+
+        votes(Cosmo) {
+            FOR on 9353
+        }
     }
 }
