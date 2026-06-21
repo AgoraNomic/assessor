@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -81,6 +82,10 @@ rare cards rather than creating new rare cards.]"""
 
         votes(pizza723) {
             FOR on 9353
+        }
+
+        votes(Murphy) {
+            endorseOfficer("Numerator", Trigon) on 9353
         }
     }
 }
