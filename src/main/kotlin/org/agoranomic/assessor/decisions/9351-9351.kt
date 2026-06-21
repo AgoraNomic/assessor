@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9351to9352() = assessment {
@@ -100,5 +101,9 @@ with:
     }
 
     voting {
+        votes(msh210) {
+            // NO VOTE on 9351
+            FOR on 9352
+        }
     }
 }
