@@ -95,5 +95,9 @@ rare cards rather than creating new rare cards.]"""
         votes(Galle) {
             FOR on 9353
         }
+
+        votes(Forest) {
+            FOR on 9353
+        }
     }
 }
