@@ -108,5 +108,9 @@ rare cards rather than creating new rare cards.]"""
         votes(Janet) {
             FOR on 9353
         }
+
+        votes(Mischief) {
+            FOR on 9353
+        }
     }
 }
