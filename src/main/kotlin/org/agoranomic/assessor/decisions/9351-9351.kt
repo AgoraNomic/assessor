@@ -7,6 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9351to9352() = assessment {
@@ -115,6 +116,11 @@ with:
         votes(Murphy) {
             FOR on 9351
             endorseOfficer("Speaker", Janet) on 9352
+        }
+
+        votes(Trigon) {
+            PRESENT on 9351
+            FOR on 9352
         }
     }
 }
