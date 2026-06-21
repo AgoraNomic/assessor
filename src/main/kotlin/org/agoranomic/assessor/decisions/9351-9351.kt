@@ -4,6 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
@@ -109,6 +110,11 @@ with:
         votes(Mischief) {
             FOR on 9351
             FOR on 9352
+        }
+
+        votes(Murphy) {
+            FOR on 9351
+            endorseOfficer("Speaker", Janet) on 9352
         }
     }
 }
