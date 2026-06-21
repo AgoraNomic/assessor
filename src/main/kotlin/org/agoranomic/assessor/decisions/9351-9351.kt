@@ -105,5 +105,10 @@ with:
             // NO VOTE on 9351
             FOR on 9352
         }
+
+        votes(Mischief) {
+            FOR on 9351
+            FOR on 9352
+        }
     }
 }
