@@ -8,8 +8,8 @@ import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
-fun assessment9354to9355() = assessment {
-    name("9354-9355")
+fun assessment9355() = assessment {
+    name("9355")
     quorum(5)
 
     strengths {
@@ -49,6 +49,7 @@ fun assessment9354to9355() = assessment {
     }
 
     proposals(v4) {
+        /*
         proposal(9354) {
             title("Don't scribble in my calendar")
             ai("2.0")
@@ -72,6 +73,7 @@ With:
       A player CAN, acting as emself, pay a fee of N spendies"""
             )
         }
+         */
 
         proposal(9355) {
             title("Active Confederation")
@@ -92,7 +94,7 @@ with "who confederate""""
 
     voting {
         votes(Cosmo) {
-            FOR on 9354
+            // FOR on 9354
             FOR on 9355
         }
     }
