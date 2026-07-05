@@ -133,5 +133,10 @@ with "who confederate""""
             // FOR on 9354
             FOR on 9355
         }
+
+        votes(Murphy) {
+            // FOR on 9354
+            FOR on 9355
+        }
     }
 }
