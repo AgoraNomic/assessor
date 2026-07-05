@@ -189,5 +189,11 @@ I don't see any reason to stop em.)"""
             FOR on 9356
             // PRESENT on 9357
         }
+
+        votes(ais523) {
+            FOR on 9354
+            AGAINST on 9356
+            // AGAINST on 9357
+        }
     }
 }
