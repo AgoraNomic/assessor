@@ -107,5 +107,10 @@ with "who confederate""""
             // AGAINST on 9354
             // NO VOTE on 9355
         }
+
+        votes(ais523) {
+            // FOR on 9354
+            FOR on 9355
+        }
     }
 }
