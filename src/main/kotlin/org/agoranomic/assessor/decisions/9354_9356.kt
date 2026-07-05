@@ -172,5 +172,10 @@ I don't see any reason to stop em.)"""
             AGAINST on 9356
             // FOR on 9357
         }
+
+        votes(juan) {
+            PRESENT on 9354
+            FOR on 9356
+        }
     }
 }
