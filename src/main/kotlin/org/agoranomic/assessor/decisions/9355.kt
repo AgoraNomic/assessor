@@ -97,5 +97,10 @@ with "who confederate""""
             // FOR on 9354
             FOR on 9355
         }
+
+        votes(Galle) {
+            // FOR on 9354
+            FOR on 9355
+        }
     }
 }
