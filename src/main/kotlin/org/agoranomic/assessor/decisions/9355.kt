@@ -123,5 +123,10 @@ with "who confederate""""
             // FOR on 9354
             FOR on 9355
         }
+
+        votes(pizza723) {
+            // FOR on 9354
+            FOR on 9355
+        }
     }
 }
