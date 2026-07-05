@@ -183,5 +183,11 @@ I don't see any reason to stop em.)"""
             FOR on 9356
             // PRESENT on 9357
         }
+
+        votes(Murphy) {
+            FOR on 9354
+            FOR on 9356
+            // PRESENT on 9357
+        }
     }
 }
