@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9355() = assessment {
@@ -111,6 +112,11 @@ with "who confederate""""
         votes(ais523) {
             // FOR on 9354
             FOR on 9355
+        }
+
+        votes(juan) {
+            // PRESENT on 9354
+            PRESENT on 9355
         }
     }
 }
