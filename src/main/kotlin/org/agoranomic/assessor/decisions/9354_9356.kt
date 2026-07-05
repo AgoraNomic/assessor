@@ -5,7 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9354_9356() = assessment {
@@ -137,5 +139,10 @@ I don't see any reason to stop em.)"""
     }
 
     voting {
+        votes(Galle) {
+            FOR on 9354
+            endorseOfficer("Absurdor", juan) on 9356
+            // AGAINST on 9357
+        }
     }
 }
