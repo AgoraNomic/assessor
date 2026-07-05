@@ -160,5 +160,11 @@ I don't see any reason to stop em.)"""
             FOR on 9356
             // FOR on 9357
         }
+
+        votes(Janet) {
+            FOR on 9354
+            AGAINST on 9356
+            // AGAINST on 9357
+        }
     }
 }
