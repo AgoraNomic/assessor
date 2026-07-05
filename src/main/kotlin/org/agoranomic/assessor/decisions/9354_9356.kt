@@ -8,6 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9354_9356() = assessment {
@@ -143,6 +144,11 @@ I don't see any reason to stop em.)"""
             FOR on 9354
             endorseOfficer("Absurdor", juan) on 9356
             // AGAINST on 9357
+        }
+
+        votes(msh210) {
+            FOR on 9354
+            PRESENT on 9356
         }
     }
 }
