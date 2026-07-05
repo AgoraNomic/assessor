@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9354_9356() = assessment {
@@ -149,6 +148,11 @@ I don't see any reason to stop em.)"""
         votes(msh210) {
             FOR on 9354
             PRESENT on 9356
+        }
+
+        votes(Forest) {
+            AGAINST on 9354
+            FOR on 9356
         }
     }
 }
