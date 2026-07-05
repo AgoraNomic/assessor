@@ -8,8 +8,8 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 
 @UseAssessment
-fun assessment9354_9356to9357() = assessment {
-    name("9354, 9356-9357")
+fun assessment9354_9356() = assessment {
+    name("9354, 9356")
     quorum(7)
 
     strengths {
@@ -104,6 +104,7 @@ one.
             )
         }
 
+        /*
         proposal(9357) {
             title("(no title)")
             ai("1.0")
@@ -132,6 +133,7 @@ equal to N in the past 21 days.
 I don't see any reason to stop em.)"""
             )
         }
+        */
     }
 
     voting {
