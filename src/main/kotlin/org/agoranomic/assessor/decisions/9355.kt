@@ -118,5 +118,10 @@ with "who confederate""""
             // PRESENT on 9354
             PRESENT on 9355
         }
+
+        votes(Mischief) {
+            // FOR on 9354
+            FOR on 9355
+        }
     }
 }
