@@ -222,5 +222,9 @@ difference X - Y.
             FOR on 9361
             endorseOrElse(Trigon, AGAINST) on 9362 comment "${Trigon.name} is the Numerator"
         }
+
+        votes(msh210) {
+            FOR on all
+        }
     }
 }
