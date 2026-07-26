@@ -197,5 +197,13 @@ difference X - Y.
             AGAINST on 9361
             endorseOfficer("Numerator", Trigon) on 9362
         }
+
+        votes(pizza723) {
+            FOR on 9358
+            FOR on 9359
+            FOR on 9360
+            AGAINST on 9361
+            AGAINST on 9362
+        }
     }
 }
