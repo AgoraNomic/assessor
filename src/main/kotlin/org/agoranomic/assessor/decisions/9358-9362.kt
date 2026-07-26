@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9358to9362() = assessment {
@@ -180,5 +181,12 @@ difference X - Y.
     }
 
     voting {
+        votes(Galle) {
+            FOR on 9358
+            FOR on 9359
+            FOR on 9360
+            FOR on 9361
+            FOR on 9362
+        }
     }
 }
