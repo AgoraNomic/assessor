@@ -5,8 +5,9 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9358to9362() = assessment {
@@ -187,6 +188,14 @@ difference X - Y.
             FOR on 9360
             FOR on 9361
             FOR on 9362
+        }
+
+        votes(Salad) {
+            FOR on 9358
+            FOR on 9359
+            PRESENT on 9360
+            AGAINST on 9361
+            endorseOfficer("Numerator", Trigon) on 9362
         }
     }
 }
