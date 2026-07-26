@@ -226,5 +226,13 @@ difference X - Y.
         votes(msh210) {
             FOR on all
         }
+
+        votes(Janet) {
+            AGAINST on 9358
+            PRESENT on 9359
+            AGAINST on 9360
+            AGAINST on 9361
+            AGAINST on 9362
+        }
     }
 }
