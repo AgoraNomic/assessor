@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
+import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
@@ -212,6 +213,14 @@ difference X - Y.
             FOR on 9360
             FOR on 9361
             FOR on 9362
+        }
+
+        votes(Mischief) {
+            FOR on 9358
+            FOR on 9359
+            AGAINST on 9360
+            FOR on 9361
+            endorseOrElse(Trigon, AGAINST) on 9362 comment "${Trigon.name} is the Numerator"
         }
     }
 }
