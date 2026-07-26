@@ -258,5 +258,13 @@ difference X - Y.
             FOR on 9361
             endorseOfficer("Numerator", Trigon) on 9362
         }
+
+        votes(juan) {
+            PRESENT on 9358
+            PRESENT on 9359
+            AGAINST on 9360
+            PRESENT on 9361
+            PRESENT on 9362
+        }
     }
 }
