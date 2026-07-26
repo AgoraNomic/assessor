@@ -250,5 +250,13 @@ difference X - Y.
             // TODO resolve conditional vote on 9361: AGAINST if affects outcome (or indeterminate), else FOR
             PRESENT on 9362
         }
+
+        votes(Murphy) {
+            FOR on 9358
+            FOR on 9359
+            FOR on 9360
+            FOR on 9361
+            endorseOfficer("Numerator", Trigon) on 9362
+        }
     }
 }
