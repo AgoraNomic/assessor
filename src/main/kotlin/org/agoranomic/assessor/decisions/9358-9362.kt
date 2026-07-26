@@ -242,5 +242,13 @@ difference X - Y.
             // TODO resolve conditional vote on 9361: FOR in msh210 has transferred Trigon at least 1 spendy in a message containing the text "Senseless Bribery"
             AGAINST on 9362
         }
+
+        votes(ais523) {
+            FOR on 9358
+            AGAINST on 9359
+            FOR on 9360
+            // TODO resolve conditional vote on 9361: AGAINST if affects outcome (or indeterminate), else FOR
+            PRESENT on 9362
+        }
     }
 }
