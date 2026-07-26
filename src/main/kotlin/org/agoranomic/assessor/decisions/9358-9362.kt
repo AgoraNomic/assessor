@@ -4,10 +4,7 @@ import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.endorseOfficer
-import org.agoranomic.assessor.dsl.votes.endorseOrElse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -239,7 +236,12 @@ difference X - Y.
             PRESENT on 9358
             FOR on 9359
             PRESENT on 9360
-            // TODO resolve conditional vote on 9361: FOR in msh210 has transferred Trigon at least 1 spendy in a message containing the text "Senseless Bribery"
+
+            resolvedConditional(
+                FOR,
+                "msh210 has transferred at least 1 spendy to Trigon in a message containing the text \"Senseless Bribery\""
+            ) on 9361
+
             AGAINST on 9362
         }
 
@@ -247,7 +249,10 @@ difference X - Y.
             FOR on 9358
             AGAINST on 9359
             FOR on 9360
-            // TODO resolve conditional vote on 9361: AGAINST if affects outcome (or indeterminate), else FOR
+            resolvedConditional(
+                FOR,
+                "changing between FOR/AGAINST does not affect the outcome of this referendum"
+            ) on 9361
             PRESENT on 9362
         }
 
