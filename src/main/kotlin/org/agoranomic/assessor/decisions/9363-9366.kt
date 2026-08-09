@@ -174,5 +174,12 @@ there is no such type to select, then e SHALL instead announce that fact.
             AGAINST on 9365
             FOR on 9366
         }
+
+        votes(pizza723) {
+            FOR on 9363
+            FOR on 9364
+            FOR on 9365
+            FOR on 9366
+        }
     }
 }
