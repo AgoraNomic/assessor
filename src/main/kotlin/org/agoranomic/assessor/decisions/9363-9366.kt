@@ -181,5 +181,12 @@ there is no such type to select, then e SHALL instead announce that fact.
             FOR on 9365
             FOR on 9366
         }
+
+        votes(snail) {
+            FOR on 9363
+            FOR on 9364
+            FOR on 9365
+            FOR on 9366
+        }
     }
 }
