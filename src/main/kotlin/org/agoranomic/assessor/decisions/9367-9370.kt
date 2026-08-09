@@ -5,6 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.lib.vote.VoteKind.FOR
@@ -193,6 +194,13 @@ Repeal the rule entitled "Purchased Re-enactment"."""
         votes(msh210) {
             FOR on 9368
             FOR on 9369
+            FOR on 9370
+        }
+
+        votes(Murphy) {
+            endorse(Kate) on 9367
+            FOR on 9368
+            endorseOfficer("Numerator", Trigon) on 9369
             FOR on 9370
         }
     }
