@@ -189,5 +189,11 @@ Repeal the rule entitled "Purchased Re-enactment"."""
             FOR on 9369
             FOR on 9370
         }
+
+        votes(msh210) {
+            FOR on 9368
+            FOR on 9369
+            FOR on 9370
+        }
     }
 }
