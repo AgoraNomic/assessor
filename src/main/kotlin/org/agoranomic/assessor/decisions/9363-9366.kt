@@ -3,10 +3,7 @@ package org.agoranomic.assessor.decisions
 import org.agoranomic.assessor.dsl.assessment
 import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
-import org.agoranomic.assessor.dsl.votes.complexityBonuses
-import org.agoranomic.assessor.dsl.votes.endorseOrElse
-import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.dsl.votes.*
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -162,6 +159,13 @@ there is no such type to select, then e SHALL instead announce that fact.
             FOR on 9364
             FOR on 9365
             PRESENT on 9366
+        }
+
+        votes(Murphy) {
+            FOR on 9363
+            endorseOfficer("Absurdor", juan) on 9364
+            FOR on 9365
+            FOR on 9366
         }
     }
 }
