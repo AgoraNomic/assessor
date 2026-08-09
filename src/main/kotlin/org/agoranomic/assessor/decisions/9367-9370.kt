@@ -223,5 +223,12 @@ Repeal the rule entitled "Purchased Re-enactment"."""
             FOR on 9369
             FOR on 9370
         }
+
+        votes(Janet) {
+            FOR on 9367
+            // AGAINST on 9368
+            endorse(ais523) on 9369
+            endorse(ais523) on 9370
+        }
     }
 }
