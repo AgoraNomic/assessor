@@ -168,5 +168,12 @@ Repeal the rule entitled "Purchased Re-enactment"."""
             endorseOfficer("Numerator", Trigon) on 9369
             FOR on 9370
         }
+
+        votes(pizza723) {
+            PRESENT on 9367
+            PRESENT on 9368
+            FOR on 9369
+            FOR on 9370
+        }
     }
 }
