@@ -182,5 +182,12 @@ Repeal the rule entitled "Purchased Re-enactment"."""
             FOR on 9369
             FOR on 9370
         }
+
+        votes(Mischief) {
+            FOR on 9367
+            endorseOfficer("Land Managor", Murphy) on 9368
+            FOR on 9369
+            FOR on 9370
+        }
     }
 }
