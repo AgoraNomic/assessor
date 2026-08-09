@@ -7,8 +7,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorseOrElse
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
 import org.agoranomic.assessor.dsl.votes.resolvedConditional
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9363to9366() = assessment {
@@ -156,6 +155,13 @@ there is no such type to select, then e SHALL instead announce that fact.
             FOR on 9364
             FOR on 9365
             FOR on 9366
+        }
+
+        votes(juan) {
+            PRESENT on 9363
+            FOR on 9364
+            FOR on 9365
+            PRESENT on 9366
         }
     }
 }
