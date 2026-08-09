@@ -5,7 +5,10 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
+import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
 
 @UseAssessment
 fun assessment9367to9370() = assessment {
@@ -159,5 +162,11 @@ Repeal the rule entitled "Purchased Re-enactment"."""
     }
 
     voting {
+        votes(Cosmo) {
+            PRESENT on 9367
+            FOR on 9368
+            endorseOfficer("Numerator", Trigon) on 9369
+            FOR on 9370
+        }
     }
 }
