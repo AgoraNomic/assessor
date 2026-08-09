@@ -188,5 +188,12 @@ there is no such type to select, then e SHALL instead announce that fact.
             FOR on 9365
             FOR on 9366
         }
+
+        votes(Janet) {
+            AGAINST on 9363
+            PRESENT on 9364
+            AGAINST on 9365
+            PRESENT on 9366
+        }
     }
 }
