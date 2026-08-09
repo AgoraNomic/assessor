@@ -8,8 +8,7 @@ import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.endorse
 import org.agoranomic.assessor.dsl.votes.endorseOfficer
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
-import org.agoranomic.assessor.lib.vote.VoteKind.PRESENT
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9367to9370() = assessment {
@@ -209,6 +208,11 @@ Repeal the rule entitled "Purchased Re-enactment"."""
             PRESENT on 9368
             FOR on 9369
             FOR on 9370
+        }
+
+        votes(Forest) {
+            AGAINST on 9367
+            AGAINST on 9370
         }
     }
 }
