@@ -1,0 +1,48 @@
+PROPOSAL 9362 (Rebalanced Operands)
+AUTHOR: Galle
+CLASS: ORDINARY
+FOR (3): 4st, Galle, msh210
+AGAINST (6): Janet^, Mischief^, Murphy^, Salad, Trigon$, pizza723
+PRESENT (2): ais523%, juan%
+BALLOTS: 11
+AI (F/A): 9/28 (AI=1.0)
+POPULARITY: -0.273
+OUTCOME: REJECTED
+[
+Mischief: Trigon is the Numerator: Endorsement of Trigon
+Murphy: Trigon is the Numerator: Endorsement of Trigon
+Salad: Trigon is the Numerator: Endorsement of Trigon
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-July/019470.html
+
+ID: 9362
+Title: Rebalanced Operands
+Adoption index: 1.0
+Author: Galle
+Co-authors: Murphy
+
+
+Create a new power 1 rule, entitled "Operators", with the following text:
+---
+Operator is a player switch, tracked by the Numerator, with values Sum
+(default), Difference, and Product.
+
+Once per month, a player CAN flip eir Operator by announcement.
+---
+
+Amend rule 2714 ("Spending Number Cards") by replacing the second
+paragraph with the following text:
+---
+For any two decimal digits X and Y (which may be the same), a player CAN:
+
+* If eir Operator is Product, pay 5 spendies, an X card, and a Y card to
+grant emself a number card with a type equal to the last digit of the
+product X * Y.
+* If eir Operator is Sum, pay 6 spendies, an X card, and a Y card to
+grant emself a number card with a type equal to the last digit of the
+sum X + Y.
+* If eir Operator is Difference, pay 8 spendies, an X card, and a Y card
+to grant emself a number card with a type equal to the last digit of the
+difference X - Y.
+---
