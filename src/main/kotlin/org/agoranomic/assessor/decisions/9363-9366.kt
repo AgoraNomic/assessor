@@ -126,4 +126,7 @@ there is no such type to select, then e SHALL instead announce that fact.
             )
         }
     }
+
+    voting {
+    }
 }
