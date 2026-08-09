@@ -74,6 +74,7 @@ Set the Indigo Ribbon Ownership of the author of this proposal to False.
             )
         }
 
+        /*
         proposal(9368) {
             title("Greater Genetic Mutation v3")
             ai("1.0")
@@ -92,6 +93,7 @@ in-season during the previous season to a randomly selected valid value.
 If there is no such type to select, then e SHALL instead announce that fact."""
             )
         }
+         */
 
         proposal(9369) {
             title("Oops")
@@ -164,48 +166,48 @@ Repeal the rule entitled "Purchased Re-enactment"."""
     voting {
         votes(Cosmo) {
             PRESENT on 9367
-            FOR on 9368
+            // FOR on 9368
             endorseOfficer("Numerator", Trigon) on 9369
             FOR on 9370
         }
 
         votes(pizza723) {
             PRESENT on 9367
-            PRESENT on 9368
+            // PRESENT on 9368
             FOR on 9369
             FOR on 9370
         }
 
         votes(Galle) {
             FOR on 9367
-            FOR on 9368
+            // FOR on 9368
             FOR on 9369
             FOR on 9370
         }
 
         votes(Mischief) {
             FOR on 9367
-            endorseOfficer("Land Managor", Murphy) on 9368
+            // endorseOfficer("Land Managor", Murphy) on 9368
             FOR on 9369
             FOR on 9370
         }
 
         votes(msh210) {
-            FOR on 9368
+            // FOR on 9368
             FOR on 9369
             FOR on 9370
         }
 
         votes(Murphy) {
             endorse(Kate) on 9367
-            FOR on 9368
+            // FOR on 9368
             endorseOfficer("Numerator", Trigon) on 9369
             FOR on 9370
         }
 
         votes(juan) {
             endorse(Kate) on 9367
-            PRESENT on 9368
+            // PRESENT on 9368
             FOR on 9369
             FOR on 9370
         }
@@ -217,7 +219,7 @@ Repeal the rule entitled "Purchased Re-enactment"."""
 
         votes(snail) {
             FOR on 9367
-            FOR on 9368
+            // FOR on 9368
             FOR on 9369
             FOR on 9370
         }
