@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.dsl.votes.resolvedConditional
+import org.agoranomic.assessor.lib.vote.InextricableResolvingVote
 import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
@@ -145,6 +147,12 @@ Repeal the rule titled "Test Alpha""""
             FOR on 9368
             AGAINST on 9371
             FOR on 9372
+        }
+
+        votes(Janet) {
+            PRESENT on 9368
+            resolvedConditional(InextricableResolvingVote, "recursive conditional vote") on 9371
+            AGAINST on 9372
         }
     }
 }
