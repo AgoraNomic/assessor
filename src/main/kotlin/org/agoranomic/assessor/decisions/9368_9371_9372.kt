@@ -102,4 +102,7 @@ Repeal the rule titled "Test Alpha""""
             )
         }
     }
+
+    voting {
+    }
 }
