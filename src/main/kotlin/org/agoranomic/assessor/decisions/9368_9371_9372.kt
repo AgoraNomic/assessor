@@ -123,5 +123,11 @@ Repeal the rule titled "Test Alpha""""
             // Ambiguous vote on 9371
             // No vote on 9372
         }
+
+        votes(Galle) {
+            FOR on 9368
+            AGAINST on 9371
+            FOR on 9372
+        }
     }
 }
