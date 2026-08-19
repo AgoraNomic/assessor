@@ -117,5 +117,11 @@ Repeal the rule titled "Test Alpha""""
             FOR on 9371
             AGAINST on 9372
         }
+
+        votes(Cosmo) {
+            FOR on 9368
+            // Ambiguous vote on 9371
+            // No vote on 9372
+        }
     }
 }
