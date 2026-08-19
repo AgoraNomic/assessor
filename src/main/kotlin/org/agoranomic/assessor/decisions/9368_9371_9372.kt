@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9368_9371to9372() = assessment {
@@ -104,5 +106,10 @@ Repeal the rule titled "Test Alpha""""
     }
 
     voting {
+        votes(Mischief) {
+            FOR on 9368
+            AGAINST on 9371
+            FOR on 9372
+        }
     }
 }
