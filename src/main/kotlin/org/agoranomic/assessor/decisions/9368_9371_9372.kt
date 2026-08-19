@@ -140,5 +140,11 @@ Repeal the rule titled "Test Alpha""""
             AGAINST on 9371
             FOR on 9372
         }
+
+        votes(pizza723) {
+            FOR on 9368
+            AGAINST on 9371
+            FOR on 9372
+        }
     }
 }
