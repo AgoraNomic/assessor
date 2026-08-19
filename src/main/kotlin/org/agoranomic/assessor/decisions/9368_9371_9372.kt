@@ -111,5 +111,10 @@ Repeal the rule titled "Test Alpha""""
             AGAINST on 9371
             FOR on 9372
         }
+
+        votes(msh210) {
+            FOR on 9371
+            AGAINST on 9372
+        }
     }
 }
