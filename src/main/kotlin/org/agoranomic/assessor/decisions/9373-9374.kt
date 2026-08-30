@@ -6,6 +6,7 @@ import org.agoranomic.assessor.dsl.receivers.coauthors
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9373to9374() = assessment {
@@ -163,5 +164,9 @@ everyone who was already blocked is still blocked.]"""
     }
 
     voting {
+        votes(Galle) {
+            FOR on 9373
+            FOR on 9374
+        }
     }
 }
