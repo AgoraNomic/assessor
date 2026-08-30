@@ -188,5 +188,10 @@ everyone who was already blocked is still blocked.]"""
             PRESENT on 9373
             FOR on 9374
         }
+
+        votes(snail) {
+            FOR on 9373
+            FOR on 9374
+        }
     }
 }
