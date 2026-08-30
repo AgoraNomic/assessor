@@ -183,5 +183,10 @@ everyone who was already blocked is still blocked.]"""
             PRESENT on 9373
             FOR on 9374
         }
+
+        votes(Murphy) {
+            PRESENT on 9373
+            FOR on 9374
+        }
     }
 }
