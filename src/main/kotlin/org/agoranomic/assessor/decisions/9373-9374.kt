@@ -193,5 +193,10 @@ everyone who was already blocked is still blocked.]"""
             FOR on 9373
             FOR on 9374
         }
+
+        votes(Mischief) {
+            FOR on 9373
+            FOR on 9374
+        }
     }
 }
