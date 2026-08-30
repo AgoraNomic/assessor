@@ -172,5 +172,10 @@ everyone who was already blocked is still blocked.]"""
         votes(msh210) {
             FOR on 9373
         }
+
+        votes(juan) {
+            FOR on 9373
+            FOR on 9374
+        }
     }
 }
