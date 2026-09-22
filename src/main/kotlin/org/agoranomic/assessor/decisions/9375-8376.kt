@@ -127,5 +127,10 @@ free."""
             resolvedConditional(PRESENT, "${juan.name}'s vote evaluates to a valid vote") on 9375
             PRESENT on 9376
         }
+
+        votes(Janet) {
+            AGAINST on 9376
+            AGAINST on 9375
+        }
     }
 }
