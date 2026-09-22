@@ -101,5 +101,10 @@ free."""
             AGAINST on 9375
             FOR on 9376
         }
+
+        votes(Mischief) {
+            AGAINST on 9375
+            AGAINST on 9376
+        }
     }
 }
