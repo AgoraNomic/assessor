@@ -110,5 +110,10 @@ free."""
             FOR on 9375
             PRESENT on 9376
         }
+
+        votes(Murphy) {
+            FOR on 9375
+            AGAINST on 9376
+        }
     }
 }
