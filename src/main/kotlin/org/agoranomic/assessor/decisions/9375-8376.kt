@@ -5,8 +5,7 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
-import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
-import org.agoranomic.assessor.lib.vote.VoteKind.FOR
+import org.agoranomic.assessor.lib.vote.VoteKind.*
 
 @UseAssessment
 fun assessment9375to9376() = assessment {
@@ -105,6 +104,11 @@ free."""
         votes(Mischief) {
             AGAINST on 9375
             AGAINST on 9376
+        }
+
+        votes(Galle) {
+            FOR on 9375
+            PRESENT on 9376
         }
     }
 }
