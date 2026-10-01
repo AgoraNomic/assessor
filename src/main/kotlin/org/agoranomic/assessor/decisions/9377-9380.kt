@@ -171,5 +171,12 @@ officeholder self-ratifies through R2698]"""
             FOR on 9379
             FOR on 9380
         }
+
+        votes(juan) {
+            PRESENT on 9377
+            PRESENT on 9378
+            PRESENT on 9379
+            PRESENT on 9380
+        }
     }
 }
