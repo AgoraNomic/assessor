@@ -178,5 +178,12 @@ officeholder self-ratifies through R2698]"""
             PRESENT on 9379
             PRESENT on 9380
         }
+
+        votes(Cosmo) {
+            AGAINST on 9377
+            AGAINST on 9378
+            AGAINST on 9379
+            FOR on 9380
+        }
     }
 }
