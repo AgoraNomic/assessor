@@ -189,5 +189,12 @@ officeholder self-ratifies through R2698]"""
         votes(msh210) {
             FOR on 9380
         }
+
+        votes(kambri) {
+            PRESENT on 9377
+            PRESENT on 9378
+            FOR on 9379
+            FOR on 9380
+        }
     }
 }
