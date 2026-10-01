@@ -127,4 +127,7 @@ officeholder self-ratifies through R2698]"""
             )
         }
     }
+
+    voting {
+    }
 }
