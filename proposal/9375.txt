@@ -1,0 +1,36 @@
+PROPOSAL 9375 (Acyclic Voting)
+AUTHOR: pizza723
+CLASS: DEMOCRATIC
+FOR (2): Galle, Murphy
+AGAINST (4): 4st, Cosmo, Janet, Mischief
+PRESENT (1): juan
+BALLOTS: 7
+AI (F/A): 6/12 (AI=3.0)
+POPULARITY: -0.286
+OUTCOME: REJECTED
+[
+Cosmo: Janet is the Assessor: Endorsement of Janet
+juan: Conditional resolved: juan's vote evaluates to a valid vote
+]
+
+Resolved at: https://mailman.agoranomic.org/cgi-bin/mailman/private/agora-official/2026-September/019605.html
+
+ID: 9375
+Title: Acyclic Voting
+Adoption index: 3.0
+Author: pizza723
+Co-authors: 
+
+
+Amend rule 2127 "Conditional Votes" by replacing the sentence
+
+     If the conditional is clearly specified, and evaluates to
+     a valid vote, it is counted as that vote; otherwise, it is counted
+     as PRESENT.
+
+with
+
+     If the conditional is clearly specified, and evaluates to
+     a valid vote that does not depend on its own evaluation, it is
+counted as that vote; otherwise, it is counted
+     as PRESENT.
