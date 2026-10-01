@@ -164,5 +164,12 @@ officeholder self-ratifies through R2698]"""
             AGAINST on 9379
             AGAINST on 9380
         }
+
+        votes(snail) {
+            FOR on 9377
+            FOR on 9378
+            FOR on 9379
+            FOR on 9380
+        }
     }
 }
