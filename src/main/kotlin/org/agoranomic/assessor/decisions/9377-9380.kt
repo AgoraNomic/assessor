@@ -5,6 +5,8 @@ import org.agoranomic.assessor.dsl.receivers.ai
 import org.agoranomic.assessor.dsl.receivers.quorum
 import org.agoranomic.assessor.dsl.votes.complexityBonuses
 import org.agoranomic.assessor.dsl.votes.onOrdinaryProposals
+import org.agoranomic.assessor.lib.vote.VoteKind.AGAINST
+import org.agoranomic.assessor.lib.vote.VoteKind.FOR
 
 @UseAssessment
 fun assessment9377to9380() = assessment {
@@ -129,5 +131,11 @@ officeholder self-ratifies through R2698]"""
     }
 
     voting {
+        votes(Galle) {
+            AGAINST on 9377
+            AGAINST on 9378
+            AGAINST on 9379
+            FOR on 9380
+        }
     }
 }
